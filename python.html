@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="logopython.png" type="image/jpeg">
+  <link rel="icon" type="image/jpeg" sizes="32x32" href="logopython.png">
+  <link rel="icon" type="image/jpeg" sizes="16x16" href="logopython.png">
+  <link rel="shortcut icon" href="logopython.png" type="image/x-jpeg">
+  <title>Python Tutorial</title>
+ <style>
+  body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #537D5D;
+}
+
+.sidebar {
+  width: 250px;
+  background: #73946B;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+}
+
+
+.sidebar h2 {
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid #0c0000;
+}
+
+.sidebar a {
+  display: block;
+  color: rgb(1, 2, 12);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar a:hover {
+  background: #34495e;
+  color: rgb(236, 157, 52);
+}
+.content {
+  margin-left: 260px; 
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+section {
+  background: #90D1CA;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10 2px 6px rgba(114, 204, 53, 0.1);
+  
+}
+
+code, pre {
+  background: #1d9df3;
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+h2, h3 {
+  color: #F4631E;
+}
+.h1{
+  color: #D6BD98;
+  text-align: center;
+  font-display:auto ;
+  display: flex ;
+   text-shadow:0 2px 6px #c96023;
+
+}
+  </style>
+</head>
+<body>
+  <nav class="sidebar">
+    <h2>Python Basics</h2>
+    <a href="#home">Python HOME</a>
+    <a href="#intro">Python Intro</a>
+    <a href="#syntax">Python Syntax</a>
+    <a href="#comments">Python Comments</a>
+    <a href="#variables">Python Variables</a>
+    <a href="#data-types">Python Data Types</a>
+    <a href="#numbers">Python Numbers</a>
+    <a href="#casting">Python Casting</a>
+    <a href="#strings">Python Strings</a>
+    <a href="#booleans">Python Booleans</a>
+    <a href="#operators">Python Operators</a>
+    <a href="#lists">Python Lists</a>
+    <a href="#tuples">Python Tuples</a>
+    <a href="#sets">Python Sets</a>
+    <a href="#dictionaries">Python Dictionaries</a>
+    <a href="#ifelse">Python If...Else</a>
+    <a href="#match">Python Match</a>
+    <a href="#while-loops">Python While Loops</a>
+    <a href="#for-loops">Python For Loops</a>
+    <a href="#functions">Python Functions</a>
+    <a href="#lambda">Python Lambda</a>
+    <a href="#arrays">Python Arrays</a>
+    <a href="#classes">Python Classes/Objects</a>
+    <a href="#inheritance">Python Inheritance</a>
+    <a href="#iterators">Python Iterators</a>
+    <a href="#polymorphism">Python Polymorphism</a>
+    <a href="#scope">Python Scope</a>
+    <a href="#modules">Python Modules</a>
+    <a href="#dates">Python Dates</a>
+    <a href="#math">Python Math</a>
+    <a href="#json">Python JSON</a>
+    <a href="#regex">Python RegEx</a>
+    <a href="#pip">Python PIP</a>
+    <a href="#tryexcept">Python Try...Except</a>
+    <a href="#string-formatting">Python String Formatting</a>
+    <a href="#user-input">Python User Input</a>
+    <a href="#virtualenv">Python VirtualEnv</a>
+     <h2>Python File Handling</h2>
+    <a href="#file-handling">Python File Handling</a>
+    <a href="#read-files">Python Read Files</a>
+    <a href="#write-files">Python Write/Create Files</a>
+    <a href="#delete-files">Python Delete Files</a>
+     <h2>Python Modules</h2>    
+    <a href="#python-modules">Python Modules</a>
+    <a href="#numpy">NumPy Tutorial</a>
+    <a href="#pandas">Pandas Tutorial</a>
+    <a href="#scipy">SciPy Tutorial</a>
+    <a href="#django">Django Tutorial</a>
+    <h2>Python Matplotlib</h2>
+    <a href="#intro1">Intro</a>
+    <a href="#get-started">Get Started</a>
+    <a href="#pyplot">Pyplot</a>
+    <a href="#plotting">Plotting</a>
+    <a href="#markers">Markers</a>
+    <a href="#line">Line</a>
+    <a href="#labels">Labels</a>
+    <a href="#grid">Grid</a>
+    <a href="#subplot">Subplot</a>
+    <a href="#scatter">Scatter</a>
+    <a href="#bars">Bars</a>
+    <a href="#histograms">Histograms</a>
+    <a href="#pie">Pie Charts</a>
+    <h2>ML Topics</h2>
+    <a href="#getting-started">Getting Started</a>
+    <a href="#mean-median-mode">Mean Median Mode</a>
+    <a href="#standard-deviation">Standard Deviation</a>
+    <a href="#percentile">Percentile</a>
+    <a href="#data-distribution">Data Distribution</a>
+    <a href="#normal-distribution">Normal Data Distribution</a>
+    <a href="#scatter-plot">Scatter Plot</a>
+    <a href="#linear-regression">Linear Regression</a>
+    <a href="#polynomial-regression">Polynomial Regression</a>
+    <a href="#multiple-regression">Multiple Regression</a>
+    <a href="#scale">Scale</a>
+    <a href="#train-test">Train/Test</a>
+    <a href="#decision-tree">Decision Tree</a>
+    <a href="#confusion-matrix">Confusion Matrix</a>
+    <a href="#hierarchical-clustering">Hierarchical Clustering</a>
+    <a href="#logistic-regression">Logistic Regression</a>
+    <a href="#grid-search">Grid Search</a>
+    <a href="#categorical-data">Categorical Data</a>
+    <a href="#kmeans">K-means</a>
+    <a href="#bootstrap">Bootstrap Aggregation</a>
+    <a href="#cross-validation">Cross Validation</a>
+    <a href="#roc-curve">AUC - ROC Curve</a>
+    <a href="#knn">K-nearest neighbors</a>
+    <h2>Python DSA Topics</h2>
+    <a href="#python-dsa">Python DSA</a>
+    <a href="#lists-arrays">Lists and Arrays</a>
+    <a href="#stacks">Stacks</a>
+    <a href="#queues">Queues</a>
+    <a href="#linked-lists">Linked Lists</a>
+    <a href="#hash-tables">Hash Tables</a>
+    <a href="#trees">Trees</a>
+    <a href="#binary-trees">Binary Trees</a>
+    <a href="#bst">Binary Search Trees</a>
+    <a href="#avl-trees">AVL Trees</a></li>
+    <a href="#graphs">Graphs</a></li>
+    <a href="#linear-search">Linear Search</a>
+    <a href="#binary-search">Binary Search</a>
+    <a href="#bubble-sort">Bubble Sort</a>
+    <a href="#selection-sort">Selection Sort</a>
+    <a href="#insertion-sort">Insertion Sort</a>
+    <a href="#quick-sort">Quick Sort</a>
+    <a href="#counting-sort">Counting Sort</a>
+    <a href="#radix-sort">Radix Sort</a>
+    <a href="#merge-sort">Merge Sort</a>
+     <h2>Python MySQL</h2>
+  <a href="#mysql-get-started">MySQL Get Started</a>
+  <a href="#mysql-create-db">MySQL Create Database</a>
+  <a href="#mysql-create-table">MySQL Create Table</a>
+  <a href="#mysql-insert">MySQL Insert</a>
+  <a href="#mysql-select">MySQL Select</a>
+  <a href="#mysql-where">MySQL Where</a>
+  <a href="#mysql-order-by">MySQL Order By</a>
+  <a href="#mysql-update">MySQL Update</a>
+  <a href="#mysql-delete">MySQL Delete</a>
+  <a href="#mysql-drop-table">MySQL Drop Table</a>
+  <a href="#mysql-limit">MySQL Limit</a>
+  <a href="#mysql-join">MySQL Join</a>
+  <h2>Python MongoDB</h2>
+  <a href="#mongodb-get-started">MongoDB Get Started</a>
+  <a href="#mongodb-create-db">MongoDB Create DB</a>
+  <a href="#mongodb-collection">MongoDB Collection</a>
+  <a href="#mongodb-insert">MongoDB Insert</a>
+  <a href="#mongodb-find">MongoDB Find</a>
+  <a href="#mongodb-query">MongoDB Query</a>
+  <a href="#mongodb-sort">MongoDB Sort</a>
+  <a href="#mongodb-delete">MongoDB Delete</a>
+  <a href="#mongodb-drop-collection">MongoDB Drop Collection</a>
+  <a href="#mongodb-update">MongoDB Update</a>
+  <a href="#mongodb-limit">MongoDB Limit</a>
+  <h2>Python Reference</h2>
+  <a href="#python-overview">Python Overview</a>
+  <a href="#builtin-functions">Python Built-in Functions</a>
+  <a href="#string-methods">Python String Methods</a>
+  <a href="#list-methods">Python List Methods</a>
+  <a href="#dictionary-methods">Python Dictionary Methods</a>
+  <a href="#tuple-methods">Python Tuple Methods</a>
+  <a href="#set-methods">Python Set Methods</a>
+  <a href="#file-methods">Python File Methods</a>
+  <a href="#python-keywords">Python Keywords</a>
+  <a href="#python-exceptions">Python Exceptions</a>
+  <a href="#python-glossary">Python Glossary</a>
+</nav>
+  
+
+  <div class="content">
+     <h1 class="h1">Python Basics</h1>
+    <section id="home">
+      <h2>Python HOME</h2>
+      <p><strong>Definition:</strong> Python is an interpreted, high-level, general-purpose programming language.</p>
+      <p><strong>Syntax:</strong> No special syntax needed to start Python.</p>
+      <pre><code># This is Python code
+print("Hello, World!")</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>Hello, World!</pre>
+    </section>
+
+    <section id="intro">
+      <h2>Python Intro</h2>
+      <p><strong>Definition:</strong> Python was created by Guido van Rossum and released in 1991.</p>
+      <p><strong>Tag/Keyword:</strong> `print`, `def`, `import`, etc.</p>
+      <pre><code># Intro code
+x = 5
+y = "John"
+print(x)
+print(y)</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>5
+John</pre>
+    </section>
+
+    <section id="syntax">
+      <h2>Python Syntax</h2>
+      <p><strong>Definition:</strong> Python uses indentation to define blocks of code.</p>
+      <p><strong>Syntax:</strong> No curly braces `{}` or semicolons `;` needed.</p>
+      <pre><code>if 5 > 2:
+    print("Five is greater than two!")</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>Five is greater than two!</pre>
+    </section>
+
+    <section id="comments">
+      <h2>Python Comments</h2>
+      <p><strong>Definition:</strong> Comments are used to explain Python code.</p>
+      <p><strong>Syntax:</strong> Use `#` for single-line and triple quotes for multi-line.</p>
+      <pre><code># This is a single-line comment
+
+"""
+This is a
+multi-line comment
+"""</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>(No output)</pre>
+    </section>
+
+    <section id="variables">
+      <h2>Python Variables</h2>
+      <p><strong>Definition:</strong> Variables store data values.</p>
+      <p><strong>Syntax:</strong> Python has no command for declaring a variable.</p>
+      <pre><code>x = 5
+y = "Hello"
+print(x)
+print(y)</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>5
+Hello</pre>
+    </section>
+  </div>
+  <div class="content">
+        <section id="data-types">
+      <h2>Python Data Types</h2>
+      <p><strong>Definition:</strong> Python has various built-in data types such as numbers, strings, lists, tuples, etc.</p>
+      <p><strong>Syntax:</strong> Data types are automatically inferred by Python.</p>
+      <pre><code>x = 5           # int
+y = "Hello"     # str
+z = 3.14        # float
+is_true = True  # bool</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>5
+Hello
+3.14
+True</pre>
+    </section>
+
+    <section id="numbers">
+      <h2>Python Numbers</h2>
+      <p><strong>Definition:</strong> Numbers in Python include int, float, and complex types.</p>
+      <pre><code>x = 10      # int
+y = 3.5     # float
+z = 2j      # complex
+
+print(type(x))
+print(type(y))
+print(type(z))</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'complex'&gt;</pre>
+    </section>
+
+    <section id="casting">
+      <h2>Python Casting</h2>
+      <p><strong>Definition:</strong> Type casting converts the data type of a value into another.</p>
+      <pre><code>x = int(1)   # x will be 1
+y = float(2) # y will be 2.0
+z = str(3)   # z will be '3'</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>1
+2.0
+'3'</pre>
+    </section>
+
+    <section id="strings">
+      <h2>Python Strings</h2>
+      <p><strong>Definition:</strong> Strings in Python are arrays of bytes representing Unicode characters.</p>
+      <pre><code>text = "Hello, World!"
+print(text)
+print(text[1])</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>Hello, World!
+e</pre>
+    </section>
+
+    <section id="booleans">
+      <h2>Python Booleans</h2>
+      <p><strong>Definition:</strong> Booleans represent one of two values: `True` or `False`.</p>
+      <pre><code>print(10 > 9)
+print(10 == 9)
+print(10 < 9)</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>True
+False
+False</pre>
+    </section>
+
+    <section id="operators">
+      <h2>Python Operators</h2>
+      <p><strong>Definition:</strong> Operators are used to perform operations on variables and values.</p>
+      <p><strong>Types:</strong> Arithmetic, Assignment, Comparison, Logical, Identity, Membership, Bitwise</p>
+      <pre><code>a = 10
+b = 5
+print(a + b)  # Addition
+print(a > b)  # Comparison
+print(a != b) # Logical</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>15
+True
+True</pre>
+    </section>
+  </div>
+  <div class="content">
+        <section id="lists">
+      <h2>Python Lists</h2>
+      <p><strong>Definition:</strong> Lists are used to store multiple items in a single variable. Lists are ordered, changeable, and allow duplicate values.</p>
+      <pre><code>mylist = ["apple", "banana", "cherry"]
+print(mylist)
+print(mylist[1])</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>['apple', 'banana', 'cherry']
+banana</pre>
+    </section>
+
+    <section id="tuples">
+      <h2>Python Tuples</h2>
+      <p><strong>Definition:</strong> Tuples are used to store multiple items in a single variable. Tuples are ordered and unchangeable.</p>
+      <pre><code>mytuple = ("apple", "banana", "cherry")
+print(mytuple)
+print(mytuple[0])</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>('apple', 'banana', 'cherry')
+apple</pre>
+    </section>
+
+    <section id="sets">
+      <h2>Python Sets</h2>
+      <p><strong>Definition:</strong> Sets are unordered, unchangeable (but can add/remove), and do not allow duplicate values.</p>
+      <pre><code>myset = {"apple", "banana", "cherry"}
+print(myset)</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>{'banana', 'cherry', 'apple'}</pre>
+    </section>
+
+    <section id="dictionaries">
+      <h2>Python Dictionaries</h2>
+      <p><strong>Definition:</strong> Dictionaries are used to store data values in key:value pairs.</p>
+      <pre><code>mydict = {
+  "name": "John",
+  "age": 25,
+  "city": "New York"
+}
+print(mydict["name"])</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>John</pre>
+    </section>
+
+    <section id="ifelse">
+      <h2>Python If...Else</h2>
+      <p><strong>Definition:</strong> Used to perform conditional execution of code blocks.</p>
+      <pre><code>x = 20
+if x > 10:
+    print("x is greater than 10")
+else:
+    print("x is 10 or less")</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>x is greater than 10</pre>
+    </section>
+
+    <section id="match">
+      <h2>Python Match</h2>
+      <p><strong>Definition:</strong> The match statement is similar to switch-case in other languages. Introduced in Python 3.10.</p>
+      <pre><code>value = 2
+match value:
+    case 1:
+        print("One")
+    case 2:
+        print("Two")
+    case _:
+        print("Default")</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>Two</pre>
+    </section>
+
+    <section id="while-loops">
+      <h2>Python While Loops</h2>
+      <p><strong>Definition:</strong> The while loop executes a block of code as long as a condition is true.</p>
+      <pre><code>i = 1
+while i < 4:
+    print(i)
+    i += 1</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>1
+2
+3</pre>
+    </section>
+
+    <section id="for-loops">
+      <h2>Python For Loops</h2>
+      <p><strong>Definition:</strong> Used for iterating over sequences (like a list, tuple, or string).</p>
+      <pre><code>fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+    print(x)</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>apple
+banana
+cherry</pre>
+    </section>
+  </div>
+<div class="content">
+        <section id="functions">
+      <h2>Python Functions</h2>
+      <p><strong>Definition:</strong> Functions are blocks of code that only run when called.</p>
+      <pre><code>def greet(name):
+    print("Hello, " + name)
+
+greet("Alice")</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>Hello, Alice</pre>
+    </section>
+
+    <section id="lambda">
+      <h2>Python Lambda</h2>
+      <p><strong>Definition:</strong> A lambda function is a small anonymous function.</p>
+      <pre><code>x = lambda a : a + 10
+print(x(5))</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>15</pre>
+    </section>
+
+    <section id="arrays">
+      <h2>Python Arrays</h2>
+      <p><strong>Definition:</strong> Arrays can store multiple values in one single variable (requires the <code>array</code> module).</p>
+      <pre><code>import array as arr
+a = arr.array('i', [1, 2, 3])
+print(a[0])</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>1</pre>
+    </section>
+
+    <section id="classes">
+      <h2>Python Classes/Objects</h2>
+      <p><strong>Definition:</strong> Classes provide a means of bundling data and functionality together. Objects are instances of classes.</p>
+      <pre><code>class Person:
+    def __init__(self, name):
+        self.name = name
+
+p = Person("John")
+print(p.name)</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>John</pre>
+    </section>
+
+    <section id="inheritance">
+      <h2>Python Inheritance</h2>
+      <p><strong>Definition:</strong> Inheritance allows a class to inherit properties and methods from another class.</p>
+      <pre><code>class Parent:
+    def say(self):
+        print("Hello from Parent")
+
+class Child(Parent):
+    pass
+
+c = Child()
+c.say()</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>Hello from Parent</pre>
+    </section>
+
+    <section id="iterators">
+      <h2>Python Iterators</h2>
+      <p><strong>Definition:</strong> An iterator is an object that contains a countable number of values.</p>
+      <pre><code>mytuple = ("apple", "banana", "cherry")
+myit = iter(mytuple)
+
+print(next(myit))
+print(next(myit))</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>apple
+banana</pre>
+    </section>
+
+    <section id="polymorphism">
+      <h2>Python Polymorphism</h2>
+      <p><strong>Definition:</strong> Polymorphism allows functions and methods to use objects of different types.</p>
+      <pre><code>class Bird:
+    def fly(self):
+        print("Bird can fly")
+
+class Airplane:
+    def fly(self):
+        print("Airplane can fly")
+
+for obj in (Bird(), Airplane()):
+    obj.fly()</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>Bird can fly
+Airplane can fly</pre>
+    </section>
+
+    <section id="scope">
+      <h2>Python Scope</h2>
+      <p><strong>Definition:</strong> Scope determines the visibility of variables within different parts of the code.</p>
+      <pre><code>x = "global"
+
+def test():
+    x = "local"
+    print(x)
+
+test()
+print(x)</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>local
+global</pre>
+    </section>
+
+    <section id="modules">
+      <h2>Python Modules</h2>
+      <p><strong>Definition:</strong> Modules are files containing Python code that can be imported into another program.</p>
+      <pre><code># mymodule.py
+def greet(name):
+    print("Hello, " + name)
+
+# main.py
+import mymodule
+mymodule.greet("Bob")</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>Hello, Bob</pre>
+    </section>
+
+</div>
+<div class="content">
+        <section id="dates">
+      <h2>Python Dates</h2>
+      <p><strong>Definition:</strong> Python has a built-in module called <code>datetime</code> to work with dates and times.</p>
+      <pre><code>import datetime
+        x = datetime.datetime.now()
+        print(x)</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>2025-05-26 12:00:00.000000 (example)</pre>
+    </section>
+
+    <section id="math">
+      <h2>Python Math</h2>
+      <p><strong>Definition:</strong> Python has a built-in module called <code>math</code> for mathematical functions.</p>
+      <pre><code>import math
+        print(math.sqrt(16))
+        print(math.pi)</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>4.0
+        3.141592653589793</pre>
+    </section>
+
+    <section id="json">
+      <h2>Python JSON</h2>
+      <p><strong>Definition:</strong> Python can parse and convert JSON strings using the <code>json</code> module.</p>
+      <pre><code>import json
+        data = '{"name": "John", "age": 30}'
+        parsed = json.loads(data)
+        print(parsed["name"])</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>John</pre>
+    </section>
+
+    <section id="regex">
+      <h2>Python RegEx</h2>
+      <p><strong>Definition:</strong> Python has a built-in module called <code>re</code> for regular expression operations.</p>
+      <pre><code>import re
+        txt = "The rain in Spain"
+        x = re.search("rain", txt)
+        print(x.group())</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>rain</pre>
+    </section>
+
+    <section id="pip">
+      <h2>Python PIP</h2>
+      <p><strong>Definition:</strong> PIP is the package installer for Python used to install and manage packages.</p>
+      <pre><code>pip install numpy</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>Successfully installed numpy</pre>
+    </section>
+
+    <section id="tryexcept">
+      <h2>Python Try...Except</h2>
+      <p><strong>Definition:</strong> Used to handle errors during execution without stopping the program.</p>
+      <pre><code>try:
+    print(10 / 0)
+        except ZeroDivisionError:
+    print("You can't divide by zero!")</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>You can't divide by zero!</pre>
+    </section>
+
+    <section id="string-formatting">
+      <h2>Python String Formatting</h2>
+      <p><strong>Definition:</strong> You can format strings using <code>f-strings</code> or <code>format()</code>.</p>
+      <pre><code>name = "Alice"
+        age = 25
+        print(f"My name is {name} and I am {age} years old.")</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>My name is Alice and I am 25 years old.</pre>
+    </section>
+
+    <section id="user-input">
+      <h2>Python User Input</h2>
+      <p><strong>Definition:</strong> Used to get input from users through the console.</p>
+      <pre><code>name = input("Enter your name: ")
+        print("Hello, " + name)</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>Enter your name: John
+        Hello, John</pre>
+    </section>
+
+    <section id="virtualenv">
+      <h2>Python Virtual Environment</h2>
+      <p><strong>Definition:</strong> Virtual environments are used to create isolated Python environments for projects.</p>
+      <pre><code>python -m venv myenv
+        myenv\Scripts\activate  # Windows
+        source myenv/bin/activate  # macOS/Linux</code></pre>
+      <p><strong>Output:</strong></p>
+      <pre>(myenv) $</pre>
+    </section>
+
+</div>
+ <div class="content">
+  <h1 class="h1">Python File Handling</h1>
+    <section id="file-handling">
+      <h2>Python File Handling</h2>
+      <p><strong>Definition:</strong> Python provides functions to create, read, write, and delete files.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre><code>f = open("file.txt", "mode")</code></pre>
+      <p><strong>Tag Description:</strong>  
+        "r" - read, "w" - write, "a" - append, "x" - create  
+      </p>
+      <p><strong>Output:</strong></p>
+      <pre  ><code>File opened successfully</code></pre>
+    </section>
+
+    <section id="read-files">
+      <h2>Python Read Files</h2>
+      <p><strong>Definition:</strong> Use the `open()` function with mode `"r"` to read a file.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre><code>f = open("demo.txt", "r")
+print(f.read())</code></pre>
+      <p><strong>Tag Description:</strong> `"r"` opens the file for reading. File must exist.</p>
+      <p><strong>Output:</strong></p>
+      <pre  ><code>Hello! This is demo file content.</code></pre>
+    </section>
+
+    <section id="write-files">
+      <h2>Python Write/Create Files</h2>
+      <p><strong>Definition:</strong> Use mode `"w"` to write and `"a"` to append to a file. If the file doesn’t exist, it will be created.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre><code>f = open("demo.txt", "w")
+f.write("Hello World!")
+f.close()</code></pre>
+      <p><strong>Tag Description:</strong> `"w"` overwrites, `"a"` appends, `"x"` creates new file and fails if it exists.</p>
+      <p><strong>Output:</strong></p>
+      <pre  ><code>File written successfully</code></pre>
+    </section>
+
+    <section id="delete-files">
+      <h2>Python Delete Files</h2>
+      <p><strong>Definition:</strong> Use the `os` module to delete files.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre><code>import os
+os.remove("demo.txt")</code></pre>
+      <p><strong>Tag Description:</strong> `os.remove()` deletes the specified file.</p>
+      <p><strong>Output:</strong></p>
+      <pre  ><code>File deleted successfully</code></pre>
+    </section>
+  </div>
+<div class="content">
+  <h1 class="h1">Python Modules</h1>
+    <section id="python-modules">
+      <h2>Python Modules</h2>
+      <p><strong>Definition:</strong> Modules are Python files containing functions, classes, and variables. They help in organizing code.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre><code>import math
+print(math.sqrt(16))</code></pre>
+      <p><strong>Tag Description:</strong> `import` is used to bring a module into your program.</p>
+      <p><strong>Output:</strong></p>
+      <pre  ><code>4.0</code></pre>
+    </section>
+
+    <section id="numpy">
+      <h2>NumPy Tutorial</h2>
+      <p><strong>Definition:</strong> NumPy is a powerful library for numerical computations and handling arrays.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre><code>import numpy as np
+arr = np.array([1, 2, 3])
+print(arr)</code></pre>
+      <p><strong>Tag Description:</strong> `np.array()` creates a NumPy array for efficient computation.</p>
+      <p><strong>Output:</strong></p>
+      <pre  ><code>[1 2 3]</code></pre>
+    </section>
+
+    <section id="pandas">
+      <h2>Pandas Tutorial</h2>
+      <p><strong>Definition:</strong> Pandas is a library used for data manipulation and analysis using DataFrames.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre><code>import pandas as pd
+data = {'Name': ['John', 'Anna'], 'Age': [28, 24]}
+df = pd.DataFrame(data)
+print(df)</code></pre>
+      <p><strong>Tag Description:</strong> `pd.DataFrame()` creates a table-like structure for data analysis.</p>
+      <p><strong>Output:</strong></p>
+      <pre  ><code>   Name  Age
+0  John   28
+1  Anna   24</code></pre>
+    </section>
+
+    <section id="scipy">
+      <h2>SciPy Tutorial</h2>
+      <p><strong>Definition:</strong> SciPy is used for scientific and technical computing, built on top of NumPy.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre><code>from scipy import stats
+print(stats.mode([1, 2, 2, 3]))</code></pre>
+      <p><strong>Tag Description:</strong> `stats.mode()` calculates the mode (most frequent value).</p>
+      <p><strong>Output:</strong></p>
+      <pre  ><code>ModeResult(mode=array([2]), count=array([2]))</code></pre>
+    </section>
+
+    <section id="django">
+      <h2>Django Tutorial</h2>
+      <p><strong>Definition:</strong> Django is a high-level Python web framework that encourages rapid development.</p>
+      <p><strong>Syntax:</strong></p>
+      <pre><code>django-admin startproject mysite</code></pre>
+      <p><strong>Tag Description:</strong> `django-admin` is the CLI tool to create and manage Django projects.</p>
+      <p><strong>Output:</strong></p>
+      <pre  ><code>Project 'mysite' created with settings.py, urls.py, etc.</code></pre>
+    </section>
+  </div>
+  <div class="content">
+    <h1 class="h1">Python Matplotlib </h1>
+    <section id="intro1">
+      <h2>Matplotlib Intro</h2>
+      <p><strong>Definition:</strong> Matplotlib is a Python library used to create static, interactive, and animated visualizations.</p>
+      <pre><code>import matplotlib.pyplot as plt</code></pre>
+      <pre  ><code>Library imported</code></pre>
+    </section>
+
+    <section id="get-started">
+      <h2>Matplotlib Get Started</h2>
+      <p><strong>Definition:</strong> Install and use Matplotlib in your Python project.</p>
+      <pre><code>pip install matplotlib</code></pre>
+      <pre  ><code>Successfully installed matplotlib</code></pre>
+    </section>
+
+    <section id="pyplot">
+      <h2>Matplotlib Pyplot</h2>
+      <p><strong>Definition:</strong> Pyplot is a Matplotlib module for creating plots easily.</p>
+      <pre><code>plt.plot([1, 2, 3], [4, 5, 1])
+plt.show()</code></pre>
+      <pre  ><code>Line graph with 3 points</code></pre>
+    </section>
+
+    <section id="plotting">
+      <h2>Matplotlib Plotting</h2>
+      <p><strong>Definition:</strong> Use the plot() function to draw lines or curves.</p>
+      <pre><code>x = [1, 2, 3]
+y = [2, 4, 1]
+plt.plot(x, y)
+plt.show()</code></pre>
+      <pre  ><code>Line graph</code></pre>
+    </section>
+
+    <section id="markers">
+      <h2>Matplotlib Markers</h2>
+      <pre><code>plt.plot([1, 2, 3], [4, 1, 5], marker='o')
+plt.show()</code></pre>
+      <pre  ><code>Line with circle markers</code></pre>
+    </section>
+
+    <section id="line">
+      <h2>Matplotlib Line</h2>
+      <pre><code>plt.plot([1, 2, 3], [4, 1, 5], linestyle='dashed')
+plt.show()</code></pre>
+      <pre  ><code>Dashed line</code></pre>
+    </section>
+
+    <section id="labels">
+      <h2>Matplotlib Labels</h2>
+      <pre><code>plt.xlabel("x-axis")
+plt.ylabel("y-axis")
+plt.title("My Graph")
+plt.plot([1,2],[2,3])
+plt.show()</code></pre>
+      <pre  ><code>Labeled graph</code></pre>
+    </section>
+
+    <section id="grid">
+      <h2>Matplotlib Grid</h2>
+      <pre><code>plt.plot([1,2,3], [4,1,5])
+plt.grid()
+plt.show()</code></pre>
+      <pre  ><code>Graph with grid</code></pre>
+    </section>
+
+    <section id="subplot">
+      <h2>Matplotlib Subplot</h2>
+      <pre><code>plt.subplot(1, 2, 1)
+plt.plot([1,2],[2,3])
+plt.subplot(1, 2, 2)
+plt.plot([1,2],[3,4])
+plt.show()</code></pre>
+      <pre  ><code>Two plots side by side</code></pre>
+    </section>
+
+    <section id="scatter">
+      <h2>Matplotlib Scatter</h2>
+      <pre><code>plt.scatter([1, 2], [3, 4])
+plt.show()</code></pre>
+      <pre  ><code>Scatter plot</code></pre>
+    </section>
+
+    <section id="bars">
+      <h2>Matplotlib Bars</h2>
+      <pre><code>plt.bar([1,2,3], [3,5,1])
+plt.show()</code></pre>
+      <pre  ><code>Bar chart</code></pre>
+    </section>
+
+    <section id="histograms">
+      <h2>Matplotlib Histograms</h2>
+      <pre><code>data = [1, 2, 1, 3, 2, 1, 4]
+plt.hist(data)
+plt.show()</code></pre>
+      <pre  ><code>Histogram</code></pre>
+    </section>
+
+    <section id="pie">
+      <h2>Matplotlib Pie Charts</h2>
+      <pre><code>plt.pie([30, 50, 20], labels=['A', 'B', 'C'])
+plt.show()</code></pre>
+      <pre  ><code>Pie chart with labels A, B, C</code></pre>
+    </section>
+
+  </div>
+   <div class="content">
+    </div>
+  <div class="content">
+    <h1 class="h1">Machine learning basics</h1>
+    <section id="getting-started">
+      <h2>Getting Started</h2>
+      <p>This section introduces the basics of working with data in machine learning, including setup and initial analysis.</p>
+    </section>
+
+    <section id="mean-median-mode">
+      <h2>Mean Median Mode</h2>
+      <p>Statistical measures to summarize a dataset.</p>
+      <pre><code>import numpy as np
+from scipy import stats
+
+data = [1, 2, 3, 4, 5, 5]
+print("Mean:", np.mean(data))
+print("Median:", np.median(data))
+print("Mode:", stats.mode(data).mode[0])</code></pre>
+    </section>
+
+    <section id="standard-deviation">
+      <h2>Standard Deviation</h2>
+      <p>A measure of the amount of variation or dispersion in a dataset.</p>
+      <pre><code>import numpy as np
+
+data = [10, 12, 23, 23, 16, 23, 21, 16]
+print("Standard Deviation:", np.std(data))</code></pre>
+    </section>
+
+    <section id="percentile">
+      <h2>Percentile</h2>
+      <p>Indicates the value below which a given percentage of observations fall.</p>
+      <pre><code>import numpy as np
+
+data = [1, 2, 3, 4, 5]
+print("90th Percentile:", np.percentile(data, 90))</code></pre>
+    </section>
+
+    <section id="data-distribution">
+      <h2>Data Distribution</h2>
+      <p>Describes the way data values are spread across a range.</p>
+      <pre><code>import matplotlib.pyplot as plt
+print("Standard Deviation:", np.std(data))</code></pre>
+    </section>
+
+    <section id="percentile">
+      <h2>Percentile</h2>
+      <p>Indicates the value below which a given percentage of observations fall.</p>
+      <pre><code>import numpy as np
+
+data = [1, 2, 3, 4, 5]
+print("90th Percentile:", np.percentile(data, 90))</code></pre>
+    </section>
+
+    <section id="data-distribution">
+      <h2>Data Distribution</h2>
+      <p>Describes the way data values are spread across a range.</p>
+      <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+data = np.random.normal(170, 10, 250)
+plt.hist(data, bins=10)
+plt.show()</code></pre>
+    </section>
+
+    <section id="normal-distribution">
+      <h2>Normal Data Distribution</h2>
+      <p>A common probability distribution with a bell-shaped curve.</p>
+      <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+data = np.random.normal(loc=0.0, scale=1.0, size=1000)
+plt.hist(data, bins=30, density=True)
+plt.title("Normal Distribution")
+plt.show()</code></pre>
+    </section>
+
+    <section id="scatter-plot">
+      <h2>Scatter Plot</h2>
+      <p>Visualizes the relationship between two numerical variables.</p>
+      <pre><code>import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [2, 3, 5, 6, 5]
+plt.scatter(x, y)
+plt.title("Scatter Plot")
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.show()</code></pre>
+    </section>
+
+    <section id="linear-regression">
+      <h2>Linear Regression</h2>
+      <p>Used to model the relationship between a dependent variable and one independent variable using a straight line.</p>
+      <pre><code>from sklearn.linear_model import LinearRegression
+import numpy as np
+
+x = np.array([[1], [2], [3], [4]])
+y = np.array([2, 4, 6, 8])
+model = LinearRegression()
+model.fit(x, y)
+print(model.predict([[5]]))</code></pre>
+    </section>
+
+    <section id="polynomial-regression">
+      <h2>Polynomial Regression</h2>
+      <p>Models the relationship between variables as an nth degree polynomial.</p>
+      <pre><code>from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import make_pipeline
+
+x = np.array([[1], [2], [3], [4]])
+y = np.array([1, 4, 9, 16])
+model = make_pipeline(PolynomialFeatures(degree=2), LinearRegression())
+model.fit(x, y)
+print(model.predict([[5]]))</code></pre>
+    </section>
+
+    <section id="multiple-regression">
+      <h2>Multiple Regression</h2>
+      <p>Linear regression with multiple independent variables.</p>
+      <pre><code>from sklearn.linear_model import LinearRegression
+
+x = np.array([[1, 2], [2, 3], [4, 5]])
+y = np.array([6, 9, 15])
+model = LinearRegression()
+model.fit(x, y)
+print(model.coef_)</code></pre>
+    </section>
+
+    <section id="scale">
+      <h2>Scale</h2>
+      <p>Used to normalize or standardize features to a common scale.</p>
+      <pre><code>from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+data = [[0, 0], [0, 0], [1, 1], [1, 1]]
+print(scaler.fit_transform(data))</code></pre>
+    </section>
+
+    <section id="train-test">
+      <h2>Train/Test</h2>
+      <p>Splitting data into training and testing sets for model validation.</p>
+      <pre><code>from sklearn.model_selection import train_test_split
+
+x = [[1], [2], [3], [4]]
+y = [2, 4, 6, 8]
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25)</code></pre>
+    </section>
+
+    <section id="decision-tree">
+      <h2>Decision Tree</h2>
+      <p>A tree-like model used to make decisions and predictions.</p>
+      <pre><code>from sklearn.tree import DecisionTreeClassifier
+
+x = [[0, 0], [1, 1]]
+y = [0, 1]
+model = DecisionTreeClassifier()
+model.fit(x, y)</code></pre>
+    </section>
+
+    <section id="confusion-matrix">
+      <h2>Confusion Matrix</h2>
+      <p>Summarizes prediction results by showing correct and incorrect predictions.</p>
+      <pre><code>from sklearn.metrics import confusion_matrix
+
+y_true = [0, 1, 2, 2]
+y_pred = [0, 0, 2, 2]
+print(confusion_matrix(y_true, y_pred))</code></pre>
+    </section>
+
+    <section id="hierarchical-clustering">
+      <h2>Hierarchical Clustering</h2>
+      <p>Builds nested clusters by merging or splitting them successively.</p>
+      <pre><code>from scipy.cluster.hierarchy import dendrogram, linkage
+import matplotlib.pyplot as plt
+
+x = [[1, 2], [2, 3], [5, 8], [8, 8]]
+linked = linkage(x, 'single')
+dendrogram(linked)
+plt.show()</code></pre>
+    </section>
+
+    <section id="logistic-regression">
+      <h2>Logistic Regression</h2>
+      <p>Used for binary classification problems.</p>
+      <pre><code>from sklearn.linear_model import LogisticRegression
+
+x = [[0], [1], [2], [3]]
+y = [0, 0, 1, 1]
+model = LogisticRegression()
+model.fit(x, y)</code></pre>
+    </section>
+
+    <section id="grid-search">
+      <h2>Grid Search</h2>
+      <p>Used to tune hyperparameters of a model using exhaustive search.</p>
+      <pre><code>from sklearn.model_selection import GridSearchCV
+from sklearn.svm import SVC
+
+parameters = {'kernel': ('linear', 'rbf'), 'C': [1, 10]}
+svc = SVC()
+clf = GridSearchCV(svc, parameters)
+clf.fit([[1, 2], [2, 3], [3, 4]], [0, 1, 0])</code></pre>
+    </section>
+
+    <section id="categorical-data">
+      <h2>Categorical Data</h2>
+      <p>Non-numeric data that needs encoding before training.</p>
+      <pre><code>import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+df = pd.DataFrame({'color': ['red', 'blue', 'green']})
+encoder = LabelEncoder()
+df['color_encoded'] = encoder.fit_transform(df['color'])
+print(df)</code></pre>
+    </section>
+
+    <section id="kmeans">
+      <h2>K-means</h2>
+      <p>Unsupervised algorithm for clustering data into k groups.</p>
+      <pre><code>from sklearn.cluster import KMeans
+import numpy as np
+
+x = np.array([[1, 2], [1, 4], [1, 0], [10, 2], [10, 4], [10, 0]])
+kmeans = KMeans(n_clusters=2)
+kmeans.fit(x)
+print(kmeans.labels_)</code></pre>
+    </section>
+
+    <section id="bootstrap">
+      <h2>Bootstrap Aggregation</h2>
+      <p>Also known as bagging, it improves accuracy by combining predictions from multiple models.</p>
+      <pre><code>from sklearn.ensemble import BaggingClassifier
+from sklearn.tree import DecisionTreeClassifier
+
+model = BaggingClassifier(base_estimator=DecisionTreeClassifier(), n_estimators=10)
+model.fit([[1], [2], [3], [4]], [0, 0, 1, 1])</code></pre>
+    </section>
+
+    <section id="cross-validation">
+      <h2>Cross Validation</h2>
+      <p>Method for evaluating a model by training on different subsets of data.</p>
+      <pre><code>from sklearn.model_selection import cross_val_score
+from sklearn.linear_model import LogisticRegression
+
+x = [[0], [1], [2], [3]]
+y = [0, 0, 1, 1]
+scores = cross_val_score(LogisticRegression(), x, y, cv=2)
+print(scores)</code></pre>
+    </section>
+
+    <section id="roc-curve">
+      <h2>AUC - ROC Curve</h2>
+      <p>Graphical plot that illustrates the diagnostic ability of a binary classifier.</p>
+      <pre><code>from sklearn.metrics import roc_curve, auc
+import matplotlib.pyplot as plt
+
+# Dummy example
+fpr = [0.0, 0.1, 0.3, 1.0]
+tpr = [0.0, 0.4, 0.8, 1.0]
+roc_auc = auc(fpr, tpr)
+plt.plot(fpr, tpr, label=f'AUC = {roc_auc:.2f}')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve')
+plt.legend()
+plt.show()</code></pre>
+    </section>
+
+    <section id="knn">
+      <h2>K-nearest neighbors</h2>
+      <p>A classification algorithm that assigns the class of the majority of its k nearest neighbors.</p>
+      <pre><code>from sklearn.neighbors import KNeighborsClassifier
+
+x = [[0], [1], [2], [3]]
+y = [0, 0, 1, 1]
+model = KNeighborsClassifier(n_neighbors=3)
+model.fit(x, y)</code></pre>
+    </section>
+  </div>
+  <div class="content">
+<h1 class="h1">Python DSA Topics</h1>
+  <section id="python-dsa">
+    <h1>Python DSA</h1>
+    <p><strong>Definition:</strong> Data Structures and Algorithms (DSA) is a way to store data efficiently and perform operations like search, insert, delete, and sort efficiently.</p>
+    <p><strong>Description:</strong> Python provides built-in data structures like lists, dictionaries, sets, and also supports custom implementations of stacks, queues, trees, and graphs.</p>
+  </section>
+
+  <section id="lists-arrays">
+    <h1>Lists and Arrays</h1>
+    <p><strong>Definition:</strong> Lists are Python’s built-in dynamic arrays supporting ordered collections of items.</p>
+    <p><strong>Syntax & Code Example:</strong></p>
+    <pre><code>my_list = [10, 20, 30, 40]
+print(my_list[2])  # Output: 30
+my_list.append(50)
+print(my_list)  # Output: [10, 20, 30, 40, 50]</code></pre>
+    <p><strong>Description:</strong> Lists support indexing, slicing, appending, and removing elements dynamically.</p>
+  </section>
+
+  <section id="stacks">
+    <h1>Stacks</h1>
+    <p><strong>Definition:</strong> Stack is a Last-In-First-Out (LIFO) data structure where the last added element is removed first.</p>
+    <p><strong>Code Example:</strong></p>
+    <pre><code>stack = []
+stack.append(1)  # push
+stack.append(2)
+print(stack.pop())  # Output: 2
+print(stack)        # Output: [1]</code></pre>
+    <p><strong>Description:</strong> Python list can be used to implement stacks with <code>append()</code> and <code>pop()</code>.</p>
+  </section>
+
+  <section id="queues">
+    <h1>Queues</h1>
+    <p><strong>Definition:</strong> Queue is a First-In-First-Out (FIFO) data structure where the first added element is removed first.</p>
+    <p><strong>Code Example:</strong></p>
+    <pre><code>from collections import deque
+
+queue = deque()
+queue.append(1)  # enqueue
+queue.append(2)
+print(queue.popleft())  # Output: 1
+print(queue)            # Output: deque([2])</code></pre>
+    <p><strong>Description:</strong> <code>deque</code> from collections module is efficient for queue operations.</p>
+  </section>
+
+  <section id="linked-lists">
+    <h1>Linked Lists</h1>
+    <p><strong>Definition:</strong> A linked list is a linear data structure where each element points to the next.</p>
+    <p><strong>Code Example:</strong></p>
+    <pre><code>class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+
+    def print_list(self):
+        current = self.head
+        while current:
+            print(current.data, end=" ")
+            current = current.next
+
+ll = LinkedList()
+ll.append(1)
+ll.append(2)
+ll.print_list()  # Output: 1 2</code></pre>
+    <p><strong>Description:</strong> Nodes contain data and a pointer to next node. Linked lists allow efficient insertions/deletions.</p>
+  </section>
+
+  <section id="hash-tables">
+    <h1>Hash Tables</h1>
+    <p><strong>Definition:</strong> Hash Tables store key-value pairs and allow fast data retrieval using a hash function.</p>
+    <p><strong>Code Example:</strong></p>
+    <pre><code>hash_table = {}
+hash_table["apple"] = 5
+hash_table["banana"] = 10
+print(hash_table["apple"])  # Output: 5</code></pre>
+    <p><strong>Description:</strong> Python dictionaries implement hash tables.</p>
+  </section>
+
+  <section id="trees">
+    <h1>Trees</h1>
+    <p><strong>Definition:</strong> Trees are hierarchical data structures with nodes connected as parent and children.</p>
+  </section>
+
+  <section id="binary-trees">
+    <h1>Binary Trees</h1>
+    <p><strong>Definition:</strong> Each node has up to two children, called left and right child.</p>
+    <p><strong>Code Example:</strong></p>
+    <pre><code>class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+print(root.left.data)  # Output: 2</code></pre>
+  </section>
+
+  <section id="bst">
+    <h1>Binary Search Trees (BST)</h1>
+    <p><strong>Definition:</strong> A binary tree where left subtree nodes are less and right subtree nodes are greater than the root.</p>
+    <p><strong>Code Example:</strong></p>
+    <pre><code>class BSTNode:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+def insert(root, key):
+    if not root:
+        return BSTNode(key)
+    if key &lt; root.data:
+        root.left = insert(root.left, key)
+    else:
+        root.right = insert(root.right, key)
+    return root
+
+root = None
+for key in [8, 3, 10, 1, 6]:
+    root = insert(root, key)
+print(root.left.right.data)  # Output: 6</code></pre>
+  </section>
+
+  <section id="avl-trees">
+    <h1>AVL Trees</h1>
+    <p><strong>Definition:</strong> Self-balancing BSTs that keep height difference ≤ 1 for any node.</p>
+    <p><strong>Description:</strong> Balances the tree automatically using rotations to ensure O(log n) operations.</p>
+  </section>
+
+  <section id="graphs">
+    <h1>Graphs</h1>
+    <p><strong>Definition:</strong> A set of nodes connected by edges, can be directed or undirected.</p>
+    <p><strong>Code Example (Adjacency List):</strong></p>
+    <pre><code>graph = {
+    "A": ["B", "C"],
+    "B": ["A", "D"],
+    "C": ["A"],
+    "D": ["B"]
+}
+print(graph["B"])  # Output: ['A', 'D']</code></pre>
+  </section>
+
+  <section id="linear-search">
+    <h1>Linear Search</h1>
+    <p><strong>Definition:</strong> Searching for an element by checking each item sequentially.</p>
+    <p><strong>Code Example:</strong></p>
+    <pre><code>def linear_search(arr, target):
+    for i, val in enumerate(arr):
+        if val == target:
+            return i
+    return -1
+
+print(linear_search([5,3,8,6], 8))  # Output: 2</code></pre>
+  </section>
+
+  <section id="binary-search">
+    <h1>Binary Search</h1>
+    <p><strong>Definition:</strong> Efficient search on sorted array by repeatedly dividing search interval in half.</p>
+    <p><strong>Code Example:</strong></p>
+    <pre><code>def binary_search(arr, target):
+    low, high = 0, len(arr) -1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] &lt; target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+print(binary_search([1,3,5,7,9], 7))  # Output: 3</code></pre>
+  </section>
+
+  <section id="bubble-sort">
+    <h1>Bubble Sort</h1>
+    <p><strong>Definition:</strong> Repeatedly swapping adjacent elements if they are in wrong order.</p>
+    <p><strong>Code Example:</strong></p>
+    <pre><code>def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] &gt; arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+arr = [5,2,9,1]
+bubble_sort(arr)
+print(arr)  # Output: [1, 2, 5, 9]</code></pre>
+  </section>
+
+  <section id="selection-sort">
+    <h1>Selection Sort</h1>
+    <p><strong>Definition:</strong> Select the minimum element and swap it with the first unsorted element.</p>
+    <p><strong>Code Example:</strong></p>
+    <pre><code>def selection_sort(arr):
+    for i in range(len(arr)):
+        min_idx = i
+        for j in range(i+1, len(arr)):
+            if arr[j] &lt; arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+arr = [64, 25, 12, 22]
+selection_sort(arr)
+print(arr)  # Output: [12, 22, 25, 64]</code></pre>
+  </section>
+
+  <section id="insertion-sort">
+    <h1>Insertion Sort</h1>
+    <p><strong>Definition:</strong> Builds sorted array one element at a time by inserting elements into their correct position.</p>
+    <p><strong>Code Example:</strong></p>
+    <pre><code>def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i-1
+        while j &gt;= 0 and arr[j] &gt; key:
+            arr[j+1] = arr[j]
+            j -= 1
+        arr[j+1] = key
+
+arr = [12, 11, 13, 5]
+insertion_sort(arr)
+print(arr)  # Output: [5, 11, 12, 13]</code></pre>
+  </section>
+
+  <section id="quick-sort">
+    <h1>Quick Sort</h1>
+    <p><strong>Definition:</strong> Divide-and-conquer algorithm that picks a pivot and partitions the array.</p>
+    <p><strong>Code Example:</strong></p>
+    <pre><code>def quick_sort(arr):
+    if len(arr) &lt;= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x &lt; pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x &gt; pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+
+arr = [3,6,8,10,1,2]
+print(quick_sort(arr))  # Output: [1, 2, 3, 6, 8, 10]</code></pre>
+  </section>
+
+  <section id="counting-sort">
+    <h1>Counting Sort</h1>
+    <p><strong>Description:</strong><br>
+    Counting Sort is an integer sorting algorithm that counts the number of occurrences of each distinct element, then calculates their positions, and finally places them in the sorted output. It works efficiently when the range of input data is not significantly larger than the number of elements.</p>
+    <p><strong>Time Complexity:</strong> O(n + k), where n = number of elements, k = range of input values<br>
+    <strong>Space Complexity:</strong> O(k)</p>
+    <h2>Python Code:</h2>
+    <pre><code>def counting_sort(arr):
+    max_val = max(arr)
+    count = [0] * (max_val + 1)
+    
+    # Count occurrences
+    for num in arr:
+        count[num] += 1
+    
+    # Reconstruct sorted array
+    index = 0
+    for i, c in enumerate(count):
+        for _ in range(c):
+            arr[index] = i
+            index += 1
+
+arr = [4, 2, 2, 8, 3, 3, 1]
+counting_sort(arr)
+print(arr)  # Output: [1, 2, 2, 3, 3, 4, 8]</code></pre>
+    <div >
+      Output: [1, 2, 2, 3, 3, 4, 8]
+    </div>
+  </section>
+
+  <section id="radix-sort">
+    <h1>Radix Sort</h1>
+    <p><strong>Description:</strong><br>
+    Radix Sort processes integers digit by digit, starting from the least significant digit to the most significant digit, using a stable sorting algorithm (often Counting Sort) as a subroutine to sort the digits.</p>
+    <p><strong>Time Complexity:</strong> O(d * (n + k)) where d = number of digits, k = base (usually 10)<br>
+    <strong>Space Complexity:</strong> O(n + k)</p>
+    <h2>Python Code:</h2>
+    <pre><code>def counting_sort_for_radix(arr, exp):
+    n = len(arr)
+    output = [0] * n
+    count = [0] * 10
+    
+    # Count occurrences of digits
+    for i in range(n):
+        index = (arr[i] // exp) % 10
+        count[index] += 1
+    
+    # Change count[i] so it contains actual position of this digit
+    for i in range(1, 10):
+        count[i] += count[i-1]
+    
+    # Build output array
+    for i in range(n-1, -1, -1):
+        index = (arr[i] // exp) % 10
+        output[count[index] - 1] = arr[i]
+        count[index] -= 1
+    
+    for i in range(n):
+        arr[i] = output[i]
+
+def radix_sort(arr):
+    max_val = max(arr)
+    exp = 1
+    while max_val // exp > 0:
+        counting_sort_for_radix(arr, exp)
+        exp *= 10
+
+arr = [170, 45, 75, 90, 802, 24, 2, 66]
+radix_sort(arr)
+print(arr)  # Output: [2, 24, 45, 66, 75, 90, 170, 802]</code></pre>
+    <div  >
+      Output: [2, 24, 45, 66, 75, 90, 170, 802]
+    </div>
+  </section>
+
+  <section id="merge-sort">
+    <h1>Merge Sort</h1>
+    <p><strong>Description:</strong><br>
+    Merge Sort is a divide-and-conquer algorithm that divides the array into halves, recursively sorts each half, and then merges the sorted halves.</p>
+    <p><strong>Time Complexity:</strong> O(n log n)<br>
+    <strong>Space Complexity:</strong> O(n)</p>
+    <h2>Python Code:</h2>
+    <pre><code>def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left = arr[:mid]
+        right = arr[mid:]
+        
+        merge_sort(left)
+        merge_sort(right)
+        
+        i = j = k = 0
+        
+        # Merge left and right arrays
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                arr[k] = left[i]
+                i += 1
+            else:
+                arr[k] = right[j]
+                j += 1
+            k += 1
+        
+        # Check for remaining elements
+        while i < len(left):
+            arr[k] = left[i]
+            i += 1
+            k += 1
+        
+        while j < len(right):
+            arr[k] = right[j]
+            j += 1
+            k += 1
+
+arr = [12, 11, 13, 5, 6, 7]
+merge_sort(arr)
+print(arr)  # Output: [5, 6, 7, 11, 12, 13]</code></pre>
+    <div  >
+      Output: [5, 6, 7, 11, 12, 13]
+    </div>
+  </section>
+
+  
+   <h1 class="h1">Python MySQL</h1>
+  <section id="mysql-get-started">
+    <h1>MySQL Get Started</h1>
+    <p>MySQL is an open-source relational database management system. To use MySQL with Python, you need the <code>mysql-connector-python</code> or <code>pymysql</code> library.</p>
+    <h2>Sample Python code to connect:</h2>
+    <pre><code>import mysql.connector
+
+conn = mysql.connector.connect(
+    host="localhost",
+    user="yourusername",
+    password="yourpassword",
+    database="yourdatabase"
+)
+cursor = conn.cursor()
+print("Connected to MySQL!")</code></pre>
+    <div class="output">Output: Connected to MySQL!</div>
+  </section>
+
+  <section id="mysql-create-db">
+    <h1>MySQL Create Database</h1>
+    <p>Use SQL <code>CREATE DATABASE</code> to create a new database.</p>
+    <h2>Python Example:</h2>
+    <pre><code>cursor.execute("CREATE DATABASE mydatabase")</code></pre>
+    <div class="output">Output: Database created.</div>
+  </section>
+
+  <section id="mysql-create-table">
+    <h1>MySQL Create Table</h1>
+    <p>Use SQL <code>CREATE TABLE</code> to create a new table.</p>
+    <h2>Python Example:</h2>
+    <pre><code>cursor.execute("""
+CREATE TABLE customers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    address VARCHAR(255)
+)
+""")</code></pre>
+    <div class="output">Output: Table created.</div>
+  </section>
+
+  <section id="mysql-insert">
+    <h1>MySQL Insert</h1>
+    <p>Use SQL <code>INSERT INTO</code> to add records to a table.</p>
+    <h2>Python Example:</h2>
+    <pre><code>sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+val = ("John", "Highway 21")
+cursor.execute(sql, val)
+conn.commit()
+print(cursor.rowcount, "record inserted.")</code></pre>
+    <div class="output">Output: 1 record inserted.</div>
+  </section>
+
+  <section id="mysql-select">
+    <h1>MySQL Select</h1>
+    <p>Use SQL <code>SELECT</code> to retrieve records from a table.</p>
+    <h2>Python Example:</h2>
+    <pre><code>cursor.execute("SELECT * FROM customers")
+result = cursor.fetchall()
+for row in result:
+    print(row)</code></pre>
+    <div class="output">Output:<br>(1, 'John', 'Highway 21')</div>
+  </section>
+
+  <section id="mysql-where">
+    <h1>MySQL Where</h1>
+    <p>Use <code>WHERE</code> to filter records.</p>
+    <h2>Python Example:</h2>
+    <pre><code>cursor.execute("SELECT * FROM customers WHERE address = 'Highway 21'")
+result = cursor.fetchall()
+for row in result:
+    print(row)</code></pre>
+    <div class="output">Output:<br>(1, 'John', 'Highway 21')</div>
+  </section>
+
+  <section id="mysql-order-by">
+    <h1>MySQL Order By</h1>
+    <p>Use <code>ORDER BY</code> to sort results.</p>
+    <h2>Python Example:</h2>
+    <pre><code>cursor.execute("SELECT * FROM customers ORDER BY name DESC")
+result = cursor.fetchall()
+for row in result:
+    print(row)</code></pre>
+    <div class="output">Output:<br>(1, 'John', 'Highway 21')</div>
+  </section>
+  <section id="mysql-update">
+    <h1>MySQL Update</h1>
+    <p>Use <code>UPDATE</code> to modify existing records.</p>
+    <h2>Python Example:</h2>
+    <pre><code>sql = "UPDATE customers SET address = 'Canyon 123' WHERE name = 'John'"
+cursor.execute(sql)
+conn.commit()
+print(cursor.rowcount, "record(s) updated.")</code></pre>
+    <div class="output">Output: 1 record(s) updated.</div>
+  </section>
+
+  <section id="mysql-delete">
+    <h1>MySQL Delete</h1>
+    <p>Use <code>DELETE</code> to remove records.</p>
+    <h2>Python Example:</h2>
+    <pre><code>sql = "DELETE FROM customers WHERE address = 'Highway 21'"
+cursor.execute(sql)
+conn.commit()
+print(cursor.rowcount, "record(s) deleted.")</code></pre>
+    <div class="output">Output: 1 record(s) deleted.</div>
+  </section>
+
+  <section id="mysql-drop-table">
+    <h1>MySQL Drop Table</h1>
+    <p>Use <code>DROP TABLE</code> to delete a table.</p>
+    <h2>Python Example:</h2>
+    <pre><code>cursor.execute("DROP TABLE customers")
+conn.commit()
+print("Table dropped.")</code></pre>
+    <div class="output">Output: Table dropped.</div>
+  </section>
+
+  
+
+  <section id="mysql-limit">
+    <h1>MySQL Limit</h1>
+    <p>Use <code>LIMIT</code> to specify the number of records to return.</p>
+    <h2>Python Example:</h2>
+    <pre><code>cursor.execute("SELECT * FROM customers LIMIT 5")
+result = cursor.fetchall()
+for row in result:
+    print(row)</code></pre>
+    <div class="output">Output: First 5 records</div>
+  </section>
+
+  <section id="mysql-join">
+    <h1>MySQL Join</h1>
+    <p>Use <code>JOIN</code> to combine rows from two or more tables based on related columns.</p>
+    <h2>Python Example:</h2>
+    <pre><code>cursor.execute("""
+SELECT customers.name, orders.order_id 
+FROM customers 
+JOIN orders ON customers.id = orders.customer_id
+""")
+result = cursor.fetchall()
+for row in result:
+    print(row)</code></pre>
+    <div class="output">Output: Joined records</div>
+  </section></div>
+
+
+<h1 class="h1">Python MongoDB</h1>
+  <div class="content">
+  <section id="mongodb-get-started">
+    <h1>MongoDB Get Started</h1>
+    <p>MongoDB is a NoSQL document-oriented database. Use the <code>pymongo</code> library to interact with MongoDB in Python.</p>
+    <h2>Python Example to connect:</h2>
+    <pre><code>from pymongo import MongoClient
+
+client = MongoClient('mongodb://localhost:27017/')
+print("Connected to MongoDB!")</code></pre>
+    <div class="output">Output: Connected to MongoDB!</div>
+  </section>
+
+  <section id="mongodb-create-db">
+    <h1>MongoDB Create DB</h1>
+    <p>In MongoDB, a database is created automatically when you insert data.</p>
+    <h2>Python Example:</h2>
+    <pre><code>db = client["mydatabase"]  # creates or connects</code></pre>
+    <div class="output">Output: Database 'mydatabase' ready.</div>
+  </section>
+
+  <section id="mongodb-collection">
+    <h1>MongoDB Collection</h1>
+    <p>A collection is like a table in relational databases.</p>
+    <h2>Python Example:</h2>
+    <pre><code>collection = db["customers"]</code></pre>
+    <div class="output">Output: Collection 'customers' ready.</div>
+  </section>
+
+  <section id="mongodb-insert">
+    <h1>MongoDB Insert</h1>
+    <p>Use <code>insert_one()</code> or <code>insert_many()</code> to add documents.</p>
+    <h2>Python Example:</h2>
+    <pre><code>customer = {"name": "John", "address": "Highway 21"}
+collection.insert_one(customer)</code></pre>
+    <div class="output">Output: Document inserted.</div>
+  </section>
+
+  <section id="mongodb-find">
+    <h1>MongoDB Find</h1>
+    <p>Use <code>find()</code> to retrieve documents.</p>
+    <h2>Python Example:</h2>
+    <pre><code>for doc in collection.find():
+    print(doc)</code></pre>
+    <div class="output">Output: List of documents.</div>
+  </section>
+
+  <section id="mongodb-query">
+    <h1>MongoDB Query</h1>
+    <p>Use query operators to filter documents.</p>
+    <h2>Python Example:</h2>
+    <pre><code>for doc in collection.find({"address": "Highway 21"}):
+    print(doc)</code></pre>
+    <div class="output">Output: Filtered documents.</div>
+  </section>
+
+  <section id="mongodb-sort">
+    <h1>MongoDB Sort</h1>
+    <p>Use <code>sort()</code> to sort documents.</p>
+    <h2>Python Example:</h2>
+    <pre><code>for doc in collection.find().sort("name", -1):
+    print(doc)</code></pre>
+    <div class="output">Output: Sorted documents.</div>
+  </section>
+
+  <section id="mongodb-delete">
+    <h1>MongoDB Delete</h1>
+    <p>Use <code>delete_one()</code> or <code>delete_many()</code> to remove documents.</p>
+    <h2>Python Example:</h2>
+    <pre><code>collection.delete_one({"name": "John"})</code></pre>
+    <div class="output">Output: Document deleted.</div>
+  </section>
+
+  <section id="mongodb-drop-collection">
+    <h1>MongoDB Drop Collection</h1>
+    <p>Use <code>drop()</code> to delete a collection.</p>
+    <h2>Python Example:</h2>
+    <pre><code>collection.drop()</code></pre>
+    <div class="output">Output: Collection dropped.</div>
+  </section>
+
+  <section id="mongodb-update">
+    <h1>MongoDB Update</h1>
+    <p>Use <code>update_one()</code> or <code>update_many()</code> to modify documents.</p>
+    <h2>Python Example:</h2>
+    <pre><code>collection.update_one({"name": "John"}, {"$set": {"address": "Canyon 123"}})</code></pre>
+    <div class="output">Output: Document updated.</div>
+  </section>
+
+  <section id="mongodb-limit">
+    <h1>MongoDB Limit</h1>
+    <p>Use <code>limit()</code> to restrict the number of returned documents.</p>
+    <h2>Python Example:</h2>
+    <pre><code>for doc in collection.find().limit(5):
+    print(doc)</code></pre>
+    <div class="output">Output: Limited documents.</div>
+  </section>
+</div>
+
+<div class="content">
+  <h1 class="h1">Python Reference</h1>
+  <section id="python-overview">
+  <h1>Python Overview</h1>
+  <p>Python is a high-level, interpreted programming language known for its clear syntax and readability.</p>
+  <p>It supports multiple programming paradigms: procedural, object-oriented, and functional.</p>
+  <pre><code># Example: Print Hello World
+print("Hello, World!")</code></pre>
+  <div class="output">Output: Hello, World!</div>
+</section>
+
+<section id="builtin-functions">
+  <h1>Python Built-in Functions</h1>
+  <p>Python has many built-in functions available without importing any module.</p>
+  <pre><code># Examples:
+print(len("Python"))    # 6
+print(type(123))        # &lt;class 'int'&gt;
+print(int("10"))        # 10
+print(range(5))         # range(0, 5)</code></pre>
+  <div class="output">
+Output:<br>6<br>&lt;class 'int'&gt;<br>10<br>range(0, 5)
+  </div>
+</section>
+
+<section id="string-methods">
+  <h1>Python String Methods</h1>
+  <p>Strings have many useful methods to manipulate text.</p>
+  <pre><code>text = "Hello World"
+print(text.lower())         # hello world
+print(text.upper())         # HELLO WORLD
+print(text.replace("World", "Python"))  # Hello Python
+print(text.split())         # ['Hello', 'World']</code></pre>
+  <div class="output">
+Output:<br>hello world<br>HELLO WORLD<br>Hello Python<br>['Hello', 'World']
+  </div>
+</section>
+
+<section id="list-methods">
+  <h1>Python List Methods</h1>
+  <p>Lists are mutable sequences with many methods.</p>
+  <pre><code>numbers = [1, 2, 3]
+numbers.append(4)
+print(numbers)           # [1, 2, 3, 4]
+numbers.pop()
+print(numbers)           # [1, 2, 3]
+numbers.sort()
+print(numbers)           # [1, 2, 3]</code></pre>
+  <div class="output">
+Output:<br>[1, 2, 3, 4]<br>[1, 2, 3]<br>[1, 2, 3]
+  </div>
+</section>
+
+<section id="dictionary-methods">
+  <h1>Python Dictionary Methods</h1>
+  <p>Dictionaries store key-value pairs.</p>
+  <pre><code>person = {"name": "Alice", "age": 25}
+print(person.keys())          # dict_keys(['name', 'age'])
+print(person.values())        # dict_values(['Alice', 25])
+print(person.get("name"))     # Alice
+person.update({"age": 26})
+print(person)</code></pre>
+  <div class="output">
+Output:<br>dict_keys(['name', 'age'])<br>dict_values(['Alice', 25])<br>Alice<br>{'name': 'Alice', 'age': 26}
+  </div>
+</section>
+
+<section id="tuple-methods">
+  <h1>Python Tuple Methods</h1>
+  <p>Tuples are immutable sequences with limited methods.</p>
+  <pre><code>t = (1, 2, 3, 2)
+print(t.count(2))        # 2
+print(t.index(3))        # 2</code></pre>
+  <div class="output">
+Output:<br>2<br>2
+  </div>
+</section>
+
+<section id="set-methods">
+  <h1>Python Set Methods</h1>
+  <p>Sets are unordered collections of unique elements.</p>
+  <pre><code>s = {1, 2, 3}
+s.add(4)
+print(s)                 # {1, 2, 3, 4}
+s.remove(2)
+print(s)                 # {1, 3, 4}
+print(len(s))            # 3</code></pre>
+  <div class="output">
+Output:<br>{1, 2, 3, 4}<br>{1, 3, 4}<br>3
+  </div>
+</section>
+
+<section id="file-methods">
+  <h1>Python File Methods</h1>
+  <p>Python provides file handling functions.</p>
+  <pre><code>with open("file.txt", "w") as f:
+    f.write("Hello file!")
+
+with open("file.txt", "r") as f:
+    content = f.read()
+    print(content)</code></pre>
+  <div class="output">
+Output:<br>Hello file!
+  </div>
+</section>
+
+<section id="python-keywords">
+  <h1>Python Keywords</h1>
+  <p>Keywords are reserved words with special meaning in Python.</p>
+  <pre><code>import keyword
+print(keyword.kwlist)</code></pre>
+  <div class="output">
+Output:<br>['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', ... ]
+  </div>
+</section>
+
+<section id="python-exceptions">
+  <h1>Python Exceptions</h1>
+  <p>Exceptions handle errors in Python programs.</p>
+  <pre><code>try:
+    x = 1 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")</code></pre>
+  <div class="output">
+Output:<br>Cannot divide by zero!
+  </div>
+</section>
+
+<section id="python-glossary">
+  <h1>Python Glossary</h1>
+  <p><b>Variable:</b> Storage location for data.<br>
+  <b>Function:</b> A block of reusable code.<br>
+  <b>List:</b> Ordered mutable collection.<br>
+  <b>Tuple:</b> Ordered immutable collection.<br>
+  <b>Set:</b> Unordered unique elements.<br>
+  <b>Dictionary:</b> Key-value pairs collection.<br>
+  <b>Module:</b> File containing Python code.<br>
+  <b>Package:</b> Collection of modules.<br>
+  <b>Class:</b> Blueprint for objects.<br>
+  <b>Exception:</b> Error detected during execution.<br>
+  </p>
+</section>
+</div>
+</div> <!-- End container -->
+<div class="content">
+<section>
+  <h2>🐍 Congratulations on Completing the Python Tutorial!</h2>
+  <p>You’ve gained a strong foundation in Python — one of the most versatile and powerful programming languages.</p>
+  <p>Now you're ready to build applications, automate tasks, analyze data, and dive into fields like AI, ML, and web development.</p>
+  <p>Keep exploring libraries, frameworks, and real-world projects to master your Python skills.</p>
+  <p><strong>Happy Coding! 💻</strong></p>
+</section>
+
+<footer style="text-align:center; padding:20px; background-color:#222; color:#fff; margin-top:40px;">
+  <p>© 2025 Aryan's Python Tutorial. All rights reserved.</p>
+  <p>Created by Aryan Kumar Ojha</p>
+</footer>
+</div>
+</body>
+</html>

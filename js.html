@@ -1,0 +1,3121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link rel="icon" href="logojs.png" type="image/jpeg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="logojs.png">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="logojs.png">
+    <link rel="shortcut icon" href="logojs.png" type="image/x-jpeg">
+<title>JavaScript Tutorial</title>
+<style>
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .sidebar h2 {
+    color: #f39c12;
+    margin-bottom: 16px;
+  }
+
+  .sidebar a {
+    display: block;
+    padding: 8px 0;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  .sidebar a:hover {
+    color: #22c3c9;
+    padding-left: 10px;
+    transition: 0.3s;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    margin-left: 270px;
+    background: #6E8E59;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  section {
+    background: #d8baba;
+    border-radius: 8px;
+    padding: 15px;
+     margin-left: 80px;
+    margin-bottom: 20px;
+    gap: 30px;
+    box-shadow: 0 0 10px #ee491f;
+  }
+
+  pre {
+    background: #060704;
+    color: #a5a558;
+    padding: 10px;
+    overflow-x: auto;
+    border-radius: 5px;
+  }
+
+  code {
+    font-family: Consolas, monospace;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: none;
+    background: #007acc;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  button:hover {
+    background: #005f99;
+  }
+
+  .output {
+    background: #64d3b1;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    min-height: 30px;
+    font-weight: bold;
+  }
+</style>
+
+
+</head>
+<body>
+  <div class="sidebar">
+  <h2>JS Topics</h2>
+  <a href="#js-introduction">JS Introduction</a>
+  <a href="#js-variables">JS Variables</a>
+  <a href="#js-functions">JS Functions</a>
+  <a href="#js-arrays">JS Arrays</a>
+  <a href="#js-objects">JS Objects</a>
+  <a href="#js-if-else">JS If Else</a>
+  <a href="#js-loop-for">JS Loop For</a>
+  <a href="#js-strings">JS Strings</a>
+  <a href="#js-comments">JS Comments</a>
+  <a href="#js-operators">JS Operators</a>
+  <a href="#js-data-types">JS Data Types</a>
+  <a href="#js-const">JS Const</a>
+  <a href="#js-let">JS Let</a>
+  <a href="#js-arrow-function">JS Arrow Function</a>
+  <a href="#js-classes">JS Classes</a>
+  <a href="#js-while-loop">JS While Loop</a>
+  <a href="#js-do-while-loop">JS Do While Loop</a>
+  <a href="#js-switch">JS Switch</a>
+  <a href="#js-events">JS Events</a>
+  <a href="#js-dom">JS DOM</a>
+  <a href="#js-timers">JS Timers</a>
+  <a href="#js-promises">JS Promises</a>
+  <a href="#js-async-await">JS Async/Await</a>
+  <a href="#js-json">JS JSON</a>
+  <a href="#js-dom-events">JS DOM Events</a>
+  <a href="#js-typeof">JS typeof</a>
+  <a href="#js-arithmetic">JS Arithmetic</a>
+  <a href="#js-assignment">JS Assignment</a>
+  <a href="#js-string-methods">JS String Methods</a>
+  <a href="#js-boolean">JS Booleans</a>
+  <a href="#js-string-search">JS String Search</a>
+  <a href="#js-string-templates">JS String Templates</a>
+  <a href="#js-numbers">JS Numbers</a>
+  <a href="#js-bigint">JS BigInt</a>
+  <a href="#js-number-methods">JS Number Methods</a>
+  <a href="#js-number-properties">JS Number Properties</a>
+  <a href="#js-array-methods">JS Array Methods</a>
+  <a href="#js-array-search">JS Array Search</a>
+  <a href="#js-array-sort">JS Array Sort</a>
+  <a href="#js-array-iteration">JS Array Iteration</a>
+  <a href="#js-array-const">JS Array Const</a>
+  <a href="#js-dates">JS Dates</a>
+  <a href="#js-date-formats">JS Date Formats</a>
+  <a href="#js-date-get-methods">JS Date Get Methods</a>
+  <a href="#js-object-properties">JS Object Properties</a>
+  <a href="#js-object-methods">JS Object Methods</a>
+  <a href="#js-object-constructors">JS Object Constructors</a>
+  <a href="#js-json-stringify">JS JSON Stringify</a>
+  <a href="#js-json-parse">JS JSON Parse</a>
+  <a href="#js-error-handling">JS Error Handling</a>
+</div>
+
+
+
+<h1>JavaScript  Tutorial</h1>
+
+<section id="js-introduction">
+  <h2>JS Introduction</h2>
+  <h3>Definition</h3>
+  <p>JavaScript is a programming language commonly used to create interactive effects within web browsers.</p>
+  <h3>Syntax</h3>
+  <pre><code>// JavaScript code example
+console.log("Hello, World!");</code></pre>
+  <h3>Output</h3>
+  <button onclick="alert('Hello, World!')">Show Alert</button>
+</section>
+
+<section id="js-variables">
+  <h2>JS Variables</h2>
+  <h3>Definition</h3>
+  <p>Variables are containers for storing data values.</p>
+  <h3>Syntax</h3>
+  <pre><code>let variableName = value;</code></pre>
+  <h3>Tag Description</h3>
+  <p>Use <code>let</code>, <code>const</code>, or <code>var</code> to declare variables.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('var-output').innerText = letExample()">Show Variable Value</button>
+  <div id="var-output" class="output"></div>
+  <script>
+    function letExample() {
+      let message = "Hello from variable!";
+      return message;
+    }
+  </script>
+</section>
+
+<section id="js-functions">
+  <h2>JS Functions</h2>
+  <h3>Definition</h3>
+  <p>A function is a block of code designed to perform a particular task and can be reused.</p>
+  <h3>Syntax</h3>
+  <pre><code>function functionName(parameters) {
+  // code to be executed
+}</code></pre>
+  <h3>Tag Description</h3>
+  <p>Functions are declared using the <code>function</code> keyword.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('func-output').innerText = greet('Aryan')">Call Function</button>
+  <div id="func-output" class="output"></div>
+  <script>
+    function greet(name) {
+      return "Hello, " + name + "!";
+    }
+  </script>
+</section>
+
+<section id="js-arrays">
+  <h2>JS Arrays</h2>
+  <h3>Definition</h3>
+  <p>An array is a special variable that can hold more than one value at a time.</p>
+  <h3>Syntax</h3>
+  <pre><code>let arrayName = [item1, item2, item3];</code></pre>
+  <h3>Tag Description</h3>
+  <p>Arrays are declared using square brackets <code>[]</code>.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('arr-output').innerText = showArray()">Show Array Items</button>
+  <div id="arr-output" class="output"></div>
+  <script>
+    function showArray() {
+      let fruits = ["Apple", "Banana", "Cherry"];
+      return fruits.join(", ");
+    }
+  </script>
+</section>
+
+<section id="js-objects">
+  <h2>JS Objects</h2>
+  <h3>Definition</h3>
+  <p>Objects are variables that can contain many values in terms of properties and methods.</p>
+  <h3>Syntax</h3>
+  <pre><code>let objectName = {
+  property1: value1,
+  property2: value2
+};</code></pre>
+  <h3>Tag Description</h3>
+  <p>Objects use curly braces <code>{}</code> with key-value pairs.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('obj-output').innerText = showObject()">Show Object Property</button>
+  <div id="obj-output" class="output"></div>
+  <script>
+    function showObject() {
+      let person = {name: "Aryan", age: 21};
+      return "Name: " + person.name + ", Age: " + person.age;
+    }
+  </script>
+</section>
+
+<section id="js-if-else">
+  <h2>JS If Else</h2>
+  <h3>Definition</h3>
+  <p>Used to perform different actions based on different conditions.</p>
+  <h3>Syntax</h3>
+  <pre><code>if (condition) {
+  // code to run if condition is true
+} else {
+  // code to run if condition is false
+}</code></pre>
+  <h3>Tag Description</h3>
+  <p><code>if</code> checks a condition, <code>else</code> runs alternative code if the condition is false.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('ifelse-output').innerText = checkAge(18)">Check Age</button>
+  <div id="ifelse-output" class="output"></div>
+  <script>
+    function checkAge(age) {
+      if (age >= 18) {
+        return "You are an adult.";
+      } else {
+        return "You are a minor.";
+      }
+    }
+  </script>
+</section>
+
+<section id="js-loops-for">
+  <h2>JS Loop For</h2>
+  <h3>Definition</h3>
+  <p>Loops are used to run the same block of code multiple times.</p>
+  <h3>Syntax</h3>
+  <pre><code>for (initialization; condition; increment) {
+  // code to run
+}</code></pre>
+  <h3>Tag Description</h3>
+  <p>Runs a loop with a counter variable.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('loop-output').innerText = loopDemo()">Show Loop Output</button>
+  <div id="loop-output" class="output"></div>
+  <script>
+    function loopDemo() {
+      let result = "";
+      for (let i = 1; i <= 5; i++) {
+        result += i + " ";
+      }
+      return result.trim();
+    }
+  </script>
+</section>
+
+<section id="js-strings">
+  <h2>JS Strings</h2>
+  <h3>Definition</h3>
+  <p>A string is a sequence of characters used to represent text.</p>
+  <h3>Syntax</h3>
+  <pre><code>let text = "Hello, world!";</code></pre>
+  <h3>Tag Description</h3>
+  <p>Strings are enclosed in single or double quotes.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('string-output').innerText = stringDemo()">Show String</button>
+  <div id="string-output" class="output"></div>
+  <script>
+    function stringDemo() {
+      let greeting = "Hello";
+      let place = "World";
+      return greeting + ", " + place + "!";
+    }
+  </script>
+</section>
+
+<section id="js-comments">
+  <h2>JS Comments</h2>
+  <h3>Definition</h3>
+  <p>Comments are used to explain code and are ignored by the browser.</p>
+  <h3>Syntax</h3>
+  <pre><code>// This is a single-line comment
+/*
+This is a
+multi-line comment
+*/</code></pre>
+  <h3>Tag Description</h3>
+  <p>Single-line comments start with <code>//</code>, multi-line with <code>/* ... */</code>.</p>
+  <h3>Output</h3>
+  <p>Comments don't produce output; they are for developers only.</p>
+</section>
+
+<section id="js-operators">
+  <h2>JS Operators</h2>
+  <h3>Definition</h3>
+  <p>Operators perform operations on variables and values.</p>
+  <h3>Syntax</h3>
+  <pre><code>let x = 5 + 3;  // addition operator</code></pre>
+  <h3>Tag Description</h3>
+  <p>Common operators: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>=</code>.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('operator-output').innerText = operatorsDemo()">Show Operators</button>
+  <div id="operator-output" class="output"></div>
+  <script>
+    function operatorsDemo() {
+      let x = 5 + 3;
+      let y = 10 - 4;
+      return `5 + 3 = ${x}, 10 - 4 = ${y}`;
+    }
+  </script>
+</section>
+
+<section id="js-data-types">
+  <h2>JS Data Types</h2>
+  <h3>Definition</h3>
+  <p>JavaScript variables can hold different data types: string, number, boolean, object, etc.</p>
+  <h3>Syntax</h3>
+  <pre><code>let str = "Hello";  // string
+let num = 10;        // number
+let bool = true;     // boolean</code></pre>
+  <h3>Tag Description</h3>
+  <p>JS has dynamic typing, so variable types can change.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('datatype-output').innerText = dataTypeDemo()">Show Data Types</button>
+  <div id="datatype-output" class="output"></div>
+  <script>
+    function dataTypeDemo() {
+      let str = "Hello";
+      let num = 10;
+      let bool = true;
+      return `str is ${typeof str}, num is ${typeof num}, bool is ${typeof bool}`;
+    }
+  </script>
+</section>
+
+<section id="js-const">
+  <h2>JS Const</h2>
+  <h3>Definition</h3>
+  <p><code>const</code> declares variables with constant values that cannot be reassigned.</p>
+  <h3>Syntax</h3>
+  <pre><code>const PI = 3.14159;</code></pre>
+  <h3>Tag Description</h3>
+  <p>Constants must be initialized when declared and cannot be changed later.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('const-output').innerText = constDemo()">Show Constant</button>
+  <div id="const-output" class="output"></div>
+  <script>
+    function constDemo() {
+      const PI = 3.14159;
+      return `The value of PI is ${PI}`;
+    }
+  </script>
+</section>
+
+<section id="js-let">
+  <h2>JS Let</h2>
+  <h3>Definition</h3>
+  <p><code>let</code> declares block-scoped variables, introduced in ES6.</p>
+  <h3>Syntax</h3>
+  <pre><code>let age = 25;</code></pre>
+  <h3>Tag Description</h3>
+  <p><code>let</code> variables are limited to the block, statement, or expression where they are used.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('let-output').innerText = letDemo()">Show Let Variable</button>
+  <div id="let-output" class="output"></div>
+  <script>
+    function letDemo() {
+      let age = 25;
+      return `Age is ${age}`;
+    }
+  </script>
+</section>
+
+<section id="js-arrow-function">
+  <h2>JS Arrow Function</h2>
+  <h3>Definition</h3>
+  <p>Arrow functions provide a shorter syntax for writing functions.</p>
+  <h3>Syntax</h3>
+  <pre><code>const add = (a, b) => a + b;</code></pre>
+  <h3>Tag Description</h3>
+  <p>Arrow functions are anonymous and do not have their own <code>this</code> context.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('arrow-output').innerText = arrowDemo()">Show Arrow Function</button>
+  <div id="arrow-output" class="output"></div>
+  <script>
+    function arrowDemo() {
+      const add = (a, b) => a + b;
+      return `5 + 3 = ${add(5,3)}`;
+    }
+  </script>
+</section>
+
+<section id="js-classes">
+  <h2>JS Classes</h2>
+  <h3>Definition</h3>
+  <p>Classes are templates for creating objects, introduced in ES6.</p>
+  <h3>Syntax</h3>
+  <pre><code>class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}</code></pre>
+  <h3>Tag Description</h3>
+  <p>Use the <code>class</code> keyword to declare a class with a constructor method.</p>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('class-output').innerText = classDemo()">Show Class Object</button>
+  <div id="class-output" class="output"></div>
+  <script>
+    function classDemo() {
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+      }
+      let person1 = new Person("Aryan", 21);
+      return `Name: ${person1.name}, Age: ${person1.age}`;
+    }
+  </script>
+</section>
+<!-- Continue inside the same <body> after previous sections -->
+
+<section id="js-while-loop">
+  <h2>JS While Loop</h2>
+  <h3>Definition</h3>
+  <p>The while loop executes a block of code as long as the specified condition is true.</p>
+  <h3>Syntax</h3>
+  <pre><code>while (condition) {
+  // code block to be executed
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('while-output').innerText = whileDemo()">Show While Loop</button>
+  <div id="while-output" class="output"></div>
+  <script>
+    function whileDemo() {
+      let i = 1;
+      let result = "";
+      while(i <= 5) {
+        result += i + " ";
+        i++;
+      }
+      return result.trim();
+    }
+  </script>
+</section>
+
+<section id="js-do-while-loop">
+  <h2>JS Do While Loop</h2>
+  <h3>Definition</h3>
+  <p>The do...while loop executes the code block once, then repeats while the condition is true.</p>
+  <h3>Syntax</h3>
+  <pre><code>do {
+  // code block to be executed
+} while (condition);</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('dowhile-output').innerText = doWhileDemo()">Show Do While Loop</button>
+  <div id="dowhile-output" class="output"></div>
+  <script>
+    function doWhileDemo() {
+      let i = 1;
+      let result = "";
+      do {
+        result += i + " ";
+        i++;
+      } while (i <= 5);
+      return result.trim();
+    }
+  </script>
+</section>
+
+<section id="js-switch">
+  <h2>JS Switch</h2>
+  <h3>Definition</h3>
+  <p>The switch statement evaluates an expression and executes code based on matching cases.</p>
+  <h3>Syntax</h3>
+  <pre><code>switch(expression) {
+  case value1:
+    // code
+    break;
+  case value2:
+    // code
+    break;
+  default:
+    // code
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('switch-output').innerText = switchDemo('apple')">Show Switch Result</button>
+  <div id="switch-output" class="output"></div>
+  <script>
+    function switchDemo(fruit) {
+      switch(fruit) {
+        case 'apple':
+          return 'Apple is red';
+        case 'banana':
+          return 'Banana is yellow';
+        default:
+          return 'Unknown fruit';
+      }
+    }
+  </script>
+</section>
+
+<section id="js-events">
+  <h2>JS Events</h2>
+  <h3>Definition</h3>
+  <p>Events are actions or occurrences that happen in the system you are programming, which the system tells you about so your code can respond to them.</p>
+  <h3>Syntax</h3>
+  <pre><code>element.addEventListener('click', function() {
+  // code to run on click
+});</code></pre>
+  <h3>Output</h3>
+  <button id="event-btn">Click Me</button>
+  <div id="event-output" class="output"></div>
+  <script>
+    document.getElementById('event-btn').addEventListener('click', function() {
+      document.getElementById('event-output').innerText = "Button clicked!";
+    });
+  </script>
+</section>
+
+<section id="js-dom">
+  <h2>JS DOM (Document Object Model)</h2>
+  <h3>Definition</h3>
+  <p>The DOM represents the page so that programs can change the document structure, style, and content.</p>
+  <h3>Syntax</h3>
+  <pre><code>document.getElementById('id')</code></pre>
+  <h3>Output</h3>
+  <p>Below text will be changed by clicking the button:</p>
+  <p id="dom-text">Original text</p>
+  <button onclick="document.getElementById('dom-text').innerText = 'Text changed by DOM!'">Change Text</button>
+</section>
+
+<section id="js-timers">
+  <h2>JS Timers (setTimeout & setInterval)</h2>
+  <h3>Definition</h3>
+  <p>Timers allow you to run code after a delay (setTimeout) or repeatedly (setInterval).</p>
+  <h3>Syntax</h3>
+  <pre><code>setTimeout(function, delay);
+setInterval(function, interval);</code></pre>
+  <h3>Output</h3>
+  <button onclick="timerDemo()">Start Timer</button>
+  <div id="timer-output" class="output"></div>
+  <script>
+    function timerDemo() {
+      document.getElementById('timer-output').innerText = "Wait for 3 seconds...";
+      setTimeout(() => {
+        document.getElementById('timer-output').innerText = "3 seconds passed!";
+      }, 3000);
+    }
+  </script>
+</section>
+
+<section id="js-promises">
+  <h2>JS Promises</h2>
+  <h3>Definition</h3>
+  <p>Promises represent the eventual completion (or failure) of an asynchronous operation and its resulting value.</p>
+  <h3>Syntax</h3>
+  <pre><code>let promise = new Promise(function(resolve, reject) {
+  // async code
+});</code></pre>
+  <h3>Output</h3>
+  <button onclick="promiseDemo()">Show Promise Result</button>
+  <div id="promise-output" class="output"></div>
+  <script>
+    function promiseDemo() {
+      let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Promise resolved!"), 2000);
+      });
+      promise.then(result => {
+        document.getElementById('promise-output').innerText = result;
+      });
+    }
+  </script>
+</section>
+
+<section id="js-async-await">
+  <h2>JS Async/Await</h2>
+  <h3>Definition</h3>
+  <p>Async/await is syntax to work with promises more comfortably, making async code look like synchronous.</p>
+  <h3>Syntax</h3>
+  <pre><code>async function myFunc() {
+  let result = await someAsyncCall();
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="asyncAwaitDemo()">Run Async/Await Demo</button>
+  <div id="async-await-output" class="output"></div>
+  <script>
+    async function asyncAwaitDemo() {
+      function wait(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      await wait(2000);
+      document.getElementById('async-await-output').innerText = "Async/Await finished after 2 seconds!";
+    }
+  </script>
+</section>
+
+<section id="js-json">
+  <h2>JS JSON</h2>
+  <h3>Definition</h3>
+  <p>JSON (JavaScript Object Notation) is a syntax for storing and exchanging data.</p>
+  <h3>Syntax</h3>
+  <pre><code>let obj = {name: "Aryan", age: 21};
+let jsonStr = JSON.stringify(obj);
+let parsedObj = JSON.parse(jsonStr);</code></pre>
+  <h3>Output</h3>
+  <button onclick="jsonDemo()">Show JSON</button>
+  <div id="json-output" class="output"></div>
+  <script>
+    function jsonDemo() {
+      let obj = {name: "Aryan", age: 21};
+      let jsonStr = JSON.stringify(obj);
+      let parsedObj = JSON.parse(jsonStr);
+      return `JSON String: ${jsonStr} | Parsed Object Name: ${parsedObj.name}`;
+    }
+  </script>
+</section>
+
+<section id="js-error-handling">
+  <h2>JS Error Handling (try/catch)</h2>
+  <h3>Definition</h3>
+  <p>try/catch blocks allow you to handle runtime errors gracefully.</p>
+  <h3>Syntax</h3>
+  <pre><code>try {
+  // code that may throw error
+} catch(error) {
+  // handle error
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="errorHandlingDemo()">Try Catch Demo</button>
+  <div id="error-output" class="output"></div>
+  <script>
+    function errorHandlingDemo() {
+      try {
+        throw new Error("Something went wrong!");
+      } catch (e) {
+        return `Caught error: ${e.message}`;
+      }
+    }
+  </script>
+</section>
+<section id="js-let">
+  <h2>JS Let</h2>
+  <h3>Definition</h3>
+  <p><code>let</code> declares a block-scoped variable, unlike <code>var</code> which is function-scoped.</p>
+  <h3>Syntax</h3>
+  <pre><code>let x = 10;
+if (true) {
+  let x = 20; // different variable
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('let-output').innerText = letDemo()">Show Let Demo</button>
+  <div id="let-output" class="output"></div>
+  <script>
+    function letDemo() {
+      let x = 10;
+      if (true) {
+        let x = 20; // block scoped
+        return "Inside block x = " + x;
+      }
+      return "Outside block x = " + x;
+    }
+  </script>
+</section>
+
+<section id="js-const">
+  <h2>JS Const</h2>
+  <h3>Definition</h3>
+  <p><code>const</code> declares a block-scoped constant. Its value cannot be reassigned.</p>
+  <h3>Syntax</h3>
+  <pre><code>const PI = 3.14;
+PI = 3; // error</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('const-output').innerText = constDemo()">Show Const Demo</button>
+  <div id="const-output" class="output"></div>
+  <script>
+    function constDemo() {
+      const PI = 3.14;
+      try {
+        PI = 3;
+      } catch (e) {
+        return "Error: Cannot reassign a const variable.";
+      }
+    }
+  </script>
+</section>
+
+<section id="js-functions">
+  <h2>JS Functions</h2>
+  <h3>Definition</h3>
+  <p>Functions are blocks of code designed to perform a particular task and can be reused.</p>
+  <h3>Syntax</h3>
+  <pre><code>function greet(name) {
+  return "Hello " + name;
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('functions-output').innerText = greet('Aryan')">Greet Aryan</button>
+  <div id="functions-output" class="output"></div>
+  <script>
+    function greet(name) {
+      return "Hello " + name + "!";
+    }
+  </script>
+</section>
+
+<section id="js-arrow-function">
+  <h2>JS Arrow Function</h2>
+  <h3>Definition</h3>
+  <p>Arrow functions provide a shorter syntax for writing functions and lexically bind <code>this</code>.</p>
+  <h3>Syntax</h3>
+  <pre><code>const add = (a, b) => a + b;</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('arrow-output').innerText = add(5, 3)">Add 5 + 3</button>
+  <div id="arrow-output" class="output"></div>
+  <script>
+    const Add = (a, b) => a + b;
+  </script>
+</section>
+
+<section id="js-objects">
+  <h2>JS Objects</h2>
+  <h3>Definition</h3>
+  <p>Objects are collections of key-value pairs used to store related data and functionality.</p>
+  <h3>Syntax</h3>
+  <pre><code>let person = {
+  name: "Aryan",
+  age: 21,
+  greet: function() { return "Hi!"; }
+};</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('objects-output').innerText = objectDemo()">Show Object Demo</button>
+  <div id="objects-output" class="output"></div>
+  <script>
+    function objectDemo() {
+      let person = {
+        name: "Aryan",
+        age: 21,
+        greet: function() { return "Hi, I am " + this.name; }
+      };
+      return person.greet();
+    }
+  </script>
+</section>
+
+<section id="js-arrays">
+  <h2>JS Arrays</h2>
+  <h3>Definition</h3>
+  <p>Arrays are ordered lists of values.</p>
+  <h3>Syntax</h3>
+  <pre><code>let fruits = ["Apple", "Banana", "Cherry"];</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('arrays-output').innerText = arrayDemo()">Show Array Demo</button>
+  <div id="arrays-output" class="output"></div>
+  <script>
+    function arrayDemo() {
+      let fruits = ["Apple", "Banana", "Cherry"];
+      return "First fruit: " + fruits[0];
+    }
+  </script>
+</section>
+
+<section id="js-classes">
+  <h2>JS Classes</h2>
+  <h3>Definition</h3>
+  <p>Classes are templates for creating objects.</p>
+  <h3>Syntax</h3>
+  <pre><code>class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    return "Hello " + this.name;
+  }
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('classes-output').innerText = classDemo()">Show Class Demo</button>
+  <div id="classes-output" class="output"></div>
+  <script>
+    function classDemo() {
+      class Person {
+        constructor(name) {
+          this.name = name;
+        }
+        greet() {
+          return "Hello " + this.name;
+        }
+      }
+      let p = new Person("Aryan");
+      return p.greet();
+    }
+  </script>
+</section>
+
+<section id="js-dom-events">
+  <h2>JS DOM Events</h2>
+  <h3>Definition</h3>
+  <p>Events allow interaction with HTML elements through JavaScript.</p>
+  <h3>Syntax</h3>
+  <pre><code>element.addEventListener('click', function() {
+  // code here
+});</code></pre>
+  <h3>Output</h3>
+  <button id="dom-event-btn">Click me</button>
+  <div id="dom-event-output" class="output"></div>
+  <script>
+    document.getElementById('dom-event-btn').addEventListener('click', function() {
+      document.getElementById('dom-event-output').innerText = "Button clicked!";
+    });
+  </script>
+</section>
+
+<section id="js-typeof">
+  <h2>JS typeof</h2>
+  <h3>Definition</h3>
+  <p>The <code>typeof</code> operator returns the data type of a variable or expression.</p>
+  <h3>Syntax</h3>
+  <pre><code>typeof variable;</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('typeof-output').innerText = typeofDemo()">Show typeof Demo</button>
+  <div id="typeof-output" class="output"></div>
+  <script>
+    function typeofDemo() {
+      let x = 123;
+      let y = "Hello";
+      let z = true;
+      return `typeof x: ${typeof x}\ntypeof y: ${typeof y}\ntypeof z: ${typeof z}`;
+    }
+  </script>
+</section>
+<section id="js-comments">
+  <h2>JS Comments</h2>
+  <h3>Definition</h3>
+  <p>Comments are used to explain code and are ignored by the JavaScript engine.</p>
+  <h3>Syntax</h3>
+  <pre><code>// Single line comment
+/* Multi-line
+   comment */</code></pre>
+  <h3>Output</h3>
+  <p>Comments do not produce any output.</p>
+</section>
+
+<section id="js-operators">
+  <h2>JS Operators</h2>
+  <h3>Definition</h3>
+  <p>Operators perform operations on variables and values.</p>
+  <h3>Syntax</h3>
+  <pre><code>let sum = 5 + 3; // Addition</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('operators-output').innerText = 5 + 3">5 + 3</button>
+  <div id="operators-output" class="output"></div>
+</section>
+
+<section id="js-arithmetic">
+  <h2>JS Arithmetic</h2>
+  <h3>Definition</h3>
+  <p>Arithmetic operators perform mathematical operations like addition, subtraction, multiplication, and division.</p>
+  <h3>Syntax</h3>
+  <pre><code>+, -, *, /, %</code></pre>
+  <h3>Output</h3>
+  <button onclick="document.getElementById('arithmetic-output').innerText = '5 * 3 = ' + (5 * 3)">Multiply 5 * 3</button>
+  <div id="arithmetic-output" class="output"></div>
+</section>
+
+<section id="js-assignment">
+  <h2>JS Assignment</h2>
+  <h3>Definition</h3>
+  <p>Assignment operators assign values to variables.</p>
+  <h3>Syntax</h3>
+  <pre><code>=, +=, -=, *=, /=</code></pre>
+  <h3>Output</h3>
+  <button onclick="assignmentDemo()">Assignment += demo</button>
+  <div id="assignment-output" class="output"></div>
+  <script>
+    function assignmentDemo() {
+      let x = 10;
+      x += 5; // x = x + 5
+      document.getElementById('assignment-output').innerText = "x after x += 5 is: " + x;
+    }
+  </script>
+</section>
+
+<section id="js-data-types">
+  <h2>JS Data Types</h2>
+  <h3>Definition</h3>
+  <p>JavaScript has primitive data types such as Number, String, Boolean, Null, Undefined, Symbol, and BigInt.</p>
+  <h3>Syntax</h3>
+  <pre><code>let num = 10;          // Number
+let str = "Hello";      // String
+let bool = true;        // Boolean
+let nul = null;         // Null
+let undef;              // Undefined
+let sym = Symbol();     // Symbol
+let bigInt = 9007199254740991n; // BigInt</code></pre>
+  <h3>Output</h3>
+  <button onclick="dataTypesDemo()">Show Data Types</button>
+  <div id="data-types-output" class="output"></div>
+  <script>
+    function dataTypesDemo() {
+      let num = 10;
+      let str = "Hello";
+      let bool = true;
+      let nul = null;
+      let undef;
+      let sym = Symbol();
+      let bigInt = 9007199254740991n;
+      return `Number: ${num}
+String: ${str}
+Boolean: ${bool}
+Null: ${nul}
+Undefined: ${undef}
+Symbol: ${typeof sym}
+BigInt: ${bigInt}`;
+    }
+  </script>
+</section>
+
+<section id="js-string-methods">
+  <h2>JS String Methods</h2>
+  <h3>Definition</h3>
+  <p>String methods allow manipulation and examination of string values.</p>
+  <h3>Syntax</h3>
+  <pre><code>str.length
+str.toUpperCase()
+str.includes('text')</code></pre>
+  <h3>Output</h3>
+  <button onclick="stringMethodsDemo()">String Methods Demo</button>
+  <div id="string-methods-output" class="output"></div>
+  <script>
+    function stringMethodsDemo() {
+      let str = "Hello World";
+      return `Original: ${str}
+Length: ${str.length}
+Uppercase: ${str.toUpperCase()}
+Includes "World": ${str.includes("World")}`;
+    }
+  </script>
+</section>
+
+<section id="js-boolean">
+  <h2>JS Booleans</h2>
+  <h3>Definition</h3>
+  <p>Boolean represents logical entities and can be either true or false.</p>
+  <h3>Syntax</h3>
+  <pre><code>let isActive = true;
+let isComplete = false;</code></pre>
+  <h3>Output</h3>
+  <button onclick="booleanDemo()">Show Booleans</button>
+  <div id="boolean-output" class="output"></div>
+  <script>
+    function booleanDemo() {
+      let isActive = true;
+      let isComplete = false;
+      return `isActive: ${isActive}
+isComplete: ${isComplete}`;
+    }
+  </script>
+</section>
+
+<section id="js-if-else">
+  <h2>JS If Else</h2>
+  <h3>Definition</h3>
+  <p>Used to execute code based on a condition.</p>
+  <h3>Syntax</h3>
+  <pre><code>if (condition) {
+  // code if true
+} else {
+  // code if false
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="ifElseDemo()">Check Number</button>
+  <div id="if-else-output" class="output"></div>
+  <script>
+    function ifElseDemo() {
+      let num = 7;
+      if (num % 2 === 0) {
+        return num + " is even.";
+      } else {
+        return num + " is odd.";
+      }
+    }
+  </script>
+</section>
+<section id="js-switch">
+  <h2>JS Switch</h2>
+  <h3>Definition</h3>
+  <p>The <code>switch</code> statement is used to perform different actions based on different conditions.</p>
+  <h3>Syntax</h3>
+  <pre><code>switch(expression) {
+  case value1:
+    // code block
+    break;
+  case value2:
+    // code block
+    break;
+  default:
+    // default code block
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="switchDemo()">Choose Day</button>
+  <div id="switch-output" class="output"></div>
+  <script>
+    function switchDemo() {
+      let day = 3;
+      let result;
+      switch(day) {
+        case 1:
+          result = "Monday";
+          break;
+        case 2:
+          result = "Tuesday";
+          break;
+        case 3:
+          result = "Wednesday";
+          break;
+        default:
+          result = "Another day";
+      }
+      return "Day " + day + " is " + result;
+    }
+  </script>
+</section>
+
+<section id="js-loop-for">
+  <h2>JS Loop For</h2>
+  <h3>Definition</h3>
+  <p>The <code>for</code> loop repeats a block of code a specified number of times.</p>
+  <h3>Syntax</h3>
+  <pre><code>for (initialization; condition; increment) {
+  // code block
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="forLoopDemo()">Run For Loop</button>
+  <div id="for-loop-output" class="output"></div>
+  <script>
+    function forLoopDemo() {
+      let result = "";
+      for(let i = 1; i <= 5; i++) {
+        result += i + " ";
+      }
+      return result.trim();
+    }
+  </script>
+</section>
+
+<section id="js-loop-while">
+  <h2>JS Loop While</h2>
+  <h3>Definition</h3>
+  <p>The <code>while</code> loop repeats a block of code while a condition is true.</p>
+  <h3>Syntax</h3>
+  <pre><code>while (condition) {
+  // code block
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="whileLoopDemo()">Run While Loop</button>
+  <div id="while-loop-output" class="output"></div>
+  <script>
+    function whileLoopDemo() {
+      let i = 1;
+      let result = "";
+      while(i <= 5) {
+        result += i + " ";
+        i++;
+      }
+      return result.trim();
+    }
+  </script>
+</section>
+
+<section id="js-functions">
+  <h2>JS Functions</h2>
+  <h3>Definition</h3>
+  <p>A function is a block of code designed to perform a particular task, executed when called.</p>
+  <h3>Syntax</h3>
+  <pre><code>function functionName(parameters) {
+  // code block
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="functionDemo()">Call Function</button>
+  <div id="function-output" class="output"></div>
+  <script>
+    function greet(name) {
+      return "Hello, " + name + "!";
+    }
+    function functionDemo() {
+      return greet("Alice");
+    }
+  </script>
+</section>
+
+<section id="js-arrow-function">
+  <h2>JS Arrow Function</h2>
+  <h3>Definition</h3>
+  <p>Arrow functions provide a shorter syntax for writing function expressions.</p>
+  <h3>Syntax</h3>
+  <pre><code>const functionName = (parameters) => {
+  // code block
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="arrowFunctionDemo()">Arrow Function Demo</button>
+  <div id="arrow-function-output" class="output"></div>
+  <script>
+    const add = (a, b) => a + b;
+    function arrowFunctionDemo() {
+      return "5 + 3 = " + add(5, 3);
+    }
+  </script>
+</section>
+
+<section id="js-objects">
+  <h2>JS Objects</h2>
+  <h3>Definition</h3>
+  <p>Objects are collections of properties, and a property is an association between a name (key) and a value.</p>
+  <h3>Syntax</h3>
+  <pre><code>const obj = {
+  key1: value1,
+  key2: value2
+};</code></pre>
+  <h3>Output</h3>
+  <button onclick="objectDemo()">Show Object</button>
+  <div id="object-output" class="output"></div>
+  <script>
+    function objectDemo() {
+      const person = {
+        name: "John",
+        age: 30
+      };
+      return `Name: ${person.name}, Age: ${person.age}`;
+    }
+  </script>
+</section>
+
+<section id="js-arrays">
+  <h2>JS Arrays</h2>
+  <h3>Definition</h3>
+  <p>Arrays are list-like objects used to store multiple values in a single variable.</p>
+  <h3>Syntax</h3>
+  <pre><code>const arr = [value1, value2, value3];</code></pre>
+  <h3>Output</h3>
+  <button onclick="arrayDemo()">Show Array</button>
+  <div id="array-output" class="output"></div>
+  <script>
+    function arrayDemo() {
+      const fruits = ["Apple", "Banana", "Cherry"];
+      return fruits.join(", ");
+    }
+  </script>
+</section>
+
+<section id="js-json">
+  <h2>JS JSON</h2>
+  <h3>Definition</h3>
+  <p>JSON (JavaScript Object Notation) is a lightweight format for storing and transporting data.</p>
+  <h3>Syntax</h3>
+  <pre><code>{
+  "key": "value",
+  "array": [1, 2, 3]
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="jsonDemo()">Show JSON Data</button>
+  <div id="json-output" class="output"></div>
+  <script>
+    function jsonDemo() {
+      const jsonStr = '{"name":"Jane","age":25}';
+      const obj = JSON.parse(jsonStr);
+      return `Name: ${obj.name}, Age: ${obj.age}`;
+    }
+  </script>
+</section>
+<section id="js-async-await">
+  <h2>JS Async/Await</h2>
+  <h3>Definition</h3>
+  <p>Async/Await syntax allows writing asynchronous code in a synchronous manner, improving readability.</p>
+  <h3>Syntax</h3>
+  <pre><code>async function myFunction() {
+  let result = await someAsyncTask();
+  }</code></pre>
+  <h3>Output</h3>
+  <button onclick="asyncAwaitDemo()">Run Async/Await Demo</button>
+  <div id="async-await-output" class="output"></div>
+  <script>
+    async function fetchData() {
+      // Simulate async task with Promise
+      return new Promise(resolve => {
+        setTimeout(() => resolve("Data fetched!"), 1000);
+      });
+    }
+    async function asyncAwaitDemo() {
+      document.getElementById('async-await-output').innerText = "Fetching data...";
+      const data = await fetchData();
+      document.getElementById('async-await-output').innerText = data;
+    }
+  </script>
+</section>
+
+<section id="js-promises">
+  <h2>JS Promises</h2>
+  <h3>Definition</h3>
+  <p>A Promise represents an eventual completion (or failure) of an asynchronous operation.</p>
+  <h3>Syntax</h3>
+  <pre><code>let promise = new Promise(function(resolve, reject) {
+  // async code
+});</code></pre>
+  <h3>Output</h3>
+  <button onclick="promiseDemo()">Run Promise Demo</button>
+  <div id="promise-output" class="output"></div>
+  <script>
+    function promiseDemo() {
+      let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Promise resolved!"), 1000);
+      });
+      promise.then(message => {
+        document.getElementById('promise-output').innerText = message;
+      });
+      document.getElementById('promise-output').innerText = "Waiting for promise...";
+    }
+  </script>
+</section>
+
+<section id="js-dom-events">
+  <h2>JS DOM Events</h2>
+  <h3>Definition</h3>
+  <p>Events are actions that happen in the browser, which JavaScript can respond to.</p>
+  <h3>Syntax</h3>
+  <pre><code>element.addEventListener('click', function() {
+  // code to run on click
+});</code></pre>
+  <h3>Output</h3>
+  <button id="event-button">Click me</button>
+  <div id="event-output" class="output"></div>
+  <script>
+    document.getElementById('event-button').addEventListener('click', () => {
+      document.getElementById('event-output').innerText = "Button clicked!";
+    });
+  </script>
+</section>
+
+<section id="js-json-stringify">
+  <h2>JS JSON Stringify</h2>
+  <h3>Definition</h3>
+  <p>Converts a JavaScript object or value to a JSON string.</p>
+  <h3>Syntax</h3>
+  <pre><code>JSON.stringify(object);</code></pre>
+  <h3>Output</h3>
+  <button onclick="jsonStringifyDemo()">Stringify Object</button>
+  <div id="json-stringify-output" class="output"></div>
+  <script>
+    function jsonStringifyDemo() {
+      const obj = {name: "Sam", age: 28};
+      return JSON.stringify(obj);
+    }
+  </script>
+</section>
+
+<section id="js-json-parse">
+  <h2>JS JSON Parse</h2>
+  <h3>Definition</h3>
+  <p>Parses a JSON string, constructing the JavaScript value or object described by the string.</p>
+  <h3>Syntax</h3>
+  <pre><code>JSON.parse(jsonString);</code></pre>
+  <h3>Output</h3>
+  <button onclick="jsonParseDemo()">Parse JSON String</button>
+  <div id="json-parse-output" class="output"></div>
+  <script>
+    function jsonParseDemo() {
+      const jsonStr = '{"city":"New York","population":8000000}';
+      const obj = JSON.parse(jsonStr);
+      return `City: ${obj.city}, Population: ${obj.population}`;
+    }
+  </script>
+</section>
+
+<section id="js-error-handling">
+  <h2>JS Errors</h2>
+  <h3>Definition</h3>
+  <p>Errors occur during code execution; handling them properly avoids crashes.</p>
+  <h3>Syntax</h3>
+  <pre><code>try {
+  // code that may throw error
+} catch(error) {
+  // error handling code
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="errorDemo()">Error Handling Demo</button>
+  <div id="error-output" class="output"></div>
+  <script>
+    function errorDemo() {
+      try {
+        throw new Error("An error occurred!");
+      } catch (e) {
+        return e.message;
+      }
+    }
+  </script>
+</section>
+
+<section id="js-classes">
+  <h2>JS Classes</h2>
+  <h3>Definition</h3>
+  <p>Classes are templates for creating objects.</p>
+  <h3>Syntax</h3>
+  <pre><code>class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    return `Hello, my name is ${this.name}`;
+  }
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="classDemo()">Create Class Instance</button>
+  <div id="class-output" class="output"></div>
+  <script>
+    function classDemo() {
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        greet() {
+          return `Hello, my name is ${this.name}`;
+        }
+      }
+      const person = new Person("Anna", 22);
+      return person.greet();
+    }
+  </script>
+</section>
+<section id="js-variables">
+  <h2>JS Variables</h2>
+  <h3>Definition</h3>
+  <p>Variables are containers for storing data values.</p>
+  <h3>Syntax</h3>
+  <pre><code>let variableName = value;</code></pre>
+  <h3>Output</h3>
+  <button onclick="variablesDemo()">Show Variable Value</button>
+  <div id="variables-output" class="output"></div>
+  <script>
+    function variablesDemo() {
+      let message = "Hello, JavaScript!";
+      return message;
+    }
+  </script>
+</section>
+
+<section id="js-let">
+  <h2>JS Let</h2>
+  <h3>Definition</h3>
+  <p><code>let</code> declares a block-scoped variable.</p>
+  <h3>Syntax</h3>
+  <pre><code>let variableName = value;</code></pre>
+  <h3>Output</h3>
+  <button onclick="letDemo()">Let Demo</button>
+  <div id="let-output" class="output"></div>
+  <script>
+    function letDemo() {
+      let count = 10;
+      if (true) {
+        let count = 5;  // different variable in block scope
+        return `Inside block: ${count}`;
+      }
+    }
+  </script>
+</section>
+
+<section id="js-const">
+  <h2>JS Const</h2>
+  <h3>Definition</h3>
+  <p><code>const</code> declares a block-scoped constant variable which cannot be reassigned.</p>
+  <h3>Syntax</h3>
+  <pre><code>const variableName = value;</code></pre>
+  <h3>Output</h3>
+  <button onclick="constDemo()">Const Demo</button>
+  <div id="const-output" class="output"></div>
+  <script>
+    function constDemo() {
+      const pi = 3.14;
+      return `Value of pi is ${pi}`;
+    }
+  </script>
+</section>
+
+<section id="js-operators">
+  <h2>JS Operators</h2>
+  <h3>Definition</h3>
+  <p>Operators perform operations on variables and values.</p>
+  <h3>Syntax</h3>
+  <pre><code>let sum = a + b;</code></pre>
+  <h3>Output</h3>
+  <button onclick="operatorsDemo()">Operators Demo</button>
+  <div id="operators-output" class="output"></div>
+  <script>
+    function operatorsDemo() {
+      let a = 5;
+      let b = 3;
+      let sum = a + b;
+      return `5 + 3 = ${sum}`;
+    }
+  </script>
+</section>
+
+<section id="js-arithmetic">
+  <h2>JS Arithmetic</h2>
+  <h3>Definition</h3>
+  <p>Arithmetic operators perform mathematical calculations.</p>
+  <h3>Syntax</h3>
+  <pre><code>+, -, *, /, %</code></pre>
+  <h3>Output</h3>
+  <button onclick="arithmeticDemo()">Arithmetic Demo</button>
+  <div id="arithmetic-output" class="output"></div>
+  <script>
+    function arithmeticDemo() {
+      let a = 10, b = 4;
+      let remainder = a % b;
+      return `Remainder of 10 % 4 is ${remainder}`;
+    }
+  </script>
+</section>
+
+<section id="js-assignment">
+  <h2>JS Assignment</h2>
+  <h3>Definition</h3>
+  <p>Assignment operators assign values to variables.</p>
+  <h3>Syntax</h3>
+  <pre><code>=, +=, -=, *=, /=</code></pre>
+  <h3>Output</h3>
+  <button onclick="assignmentDemo()">Assignment Demo</button>
+  <div id="assignment-output" class="output"></div>
+  <script>
+    function assignmentDemo() {
+      let x = 5;
+      x += 3; // x = x + 3
+      return `x after += 3 is ${x}`;
+    }
+  </script>
+</section>
+
+<section id="js-comments">
+  <h2>JS Comments</h2>
+  <h3>Definition</h3>
+  <p>Comments are ignored by the browser and used to explain code.</p>
+  <h3>Syntax</h3>
+  <pre><code>// Single-line comment
+/* Multi-line
+   comment */</code></pre>
+  <h3>Output</h3>
+  <p>Comments don’t produce output, but help document code.</p>
+</section>
+
+<section id="js-data-types">
+  <h2>JS Data Types</h2>
+  <h3>Definition</h3>
+  <p>JavaScript variables can hold different types: String, Number, Boolean, Object, Undefined, Null, Symbol, BigInt.</p>
+  <h3>Syntax</h3>
+  <pre><code>let type = typeof value;</code></pre>
+  <h3>Output</h3>
+  <button onclick="dataTypesDemo()">Show Data Types</button>
+  <div id="data-types-output" class="output"></div>
+  <script>
+    function dataTypesDemo() {
+      let str = "Hello";
+      let num = 123;
+      let bool = true;
+      return `String: ${typeof str}, Number: ${typeof num}, Boolean: ${typeof bool}`;
+    }
+  </script>
+</section>
+
+<section id="js-functions">
+  <h2>JS Functions</h2>
+  <h3>Definition</h3>
+  <p>Functions are reusable blocks of code that perform a task.</p>
+  <h3>Syntax</h3>
+  <pre><code>function myFunction() {
+  // code here
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="functionsDemo()">Call Function</button>
+  <div id="functions-output" class="output"></div>
+  <script>
+    function sayHello() {
+      return "Hello World!";
+    }
+    function functionsDemo() {
+      return sayHello();
+    }
+  </script>
+</section>
+<section id="js-objects">
+  <h2>JS Objects</h2>
+  <h3>Definition</h3>
+  <p>Objects are collections of key-value pairs used to store data.</p>
+  <h3>Syntax</h3>
+  <pre><code>let obj = {key1: value1, key2: value2};</code></pre>
+  <h3>Output</h3>
+  <button onclick="objectsDemo()">Show Object</button>
+  <div id="objects-output" class="output"></div>
+  <script>
+    function objectsDemo() {
+      let person = {name: "John", age: 30};
+      return `Name: ${person.name}, Age: ${person.age}`;
+    }
+  </script>
+</section>
+
+<section id="js-object-properties">
+  <h2>JS Object Properties</h2>
+  <h3>Definition</h3>
+  <p>Properties are the values associated with an object’s keys.</p>
+  <h3>Syntax</h3>
+  <pre><code>object.propertyName or object['propertyName'];</code></pre>
+  <h3>Output</h3>
+  <button onclick="objectPropertiesDemo()">Access Property</button>
+  <div id="object-properties-output" class="output"></div>
+  <script>
+    function objectPropertiesDemo() {
+      let car = {make: "Tesla", model: "Model 3"};
+      return `Car make is ${car.make}`;
+    }
+  </script>
+</section>
+
+<section id="js-object-methods">
+  <h2>JS Object Methods</h2>
+  <h3>Definition</h3>
+  <p>Methods are functions attached to objects.</p>
+  <h3>Syntax</h3>
+  <pre><code>object.methodName = function() { // code }</code></pre>
+  <h3>Output</h3>
+  <button onclick="objectMethodsDemo()">Call Method</button>
+  <div id="object-methods-output" class="output"></div>
+  <script>
+    function objectMethodsDemo() {
+      let person = {
+        name: "Alice",
+        greet: function() {
+          return `Hello, ${this.name}!`;
+        }
+      };
+      return person.greet();
+    }
+  </script>
+</section>
+
+<section id="js-object-constructors">
+  <h2>JS Object Constructors</h2>
+  <h3>Definition</h3>
+  <p>Constructors are special functions used to create new objects.</p>
+  <h3>Syntax</h3>
+  <pre><code>function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="objectConstructorsDemo()">Create Object</button>
+  <div id="object-constructors-output" class="output"></div>
+  <script>
+    function objectConstructorsDemo() {
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      let bob = new Person("Bob", 40);
+      return `Name: ${bob.name}, Age: ${bob.age}`;
+    }
+  </script>
+</section>
+
+<section id="js-events">
+  <h2>JS Events</h2>
+  <h3>Definition</h3>
+  <p>Events are actions like clicks or key presses that can be handled by JavaScript.</p>
+  <h3>Syntax</h3>
+  <pre><code>element.addEventListener('click', function() { // code });</code></pre>
+  <h3>Output</h3>
+  <button id="event-demo-btn">Click me!</button>
+  <div id="events-output" class="output"></div>
+  <script>
+    document.getElementById('event-demo-btn').addEventListener('click', () => {
+      document.getElementById('events-output').innerText = "Button was clicked!";
+    });
+  </script>
+</section>
+
+<section id="js-strings">
+  <h2>JS Strings</h2>
+  <h3>Definition</h3>
+  <p>Strings represent text data enclosed in quotes.</p>
+  <h3>Syntax</h3>
+  <pre><code>let str = "Hello World";</code></pre>
+  <h3>Output</h3>
+  <button onclick="stringsDemo()">Show String</button>
+  <div id="strings-output" class="output"></div>
+  <script>
+    function stringsDemo() {
+      let greeting = "Hello, JS!";
+      return greeting;
+    }
+  </script>
+</section>
+
+<section id="js-string-methods">
+  <h2>JS String Methods</h2>
+  <h3>Definition</h3>
+  <p>String methods perform operations on strings, like changing case or extracting substrings.</p>
+  <h3>Syntax</h3>
+  <pre><code>string.toUpperCase();</code></pre>
+  <h3>Output</h3>
+  <button onclick="stringMethodsDemo()">String Method Demo</button>
+  <div id="string-methods-output" class="output"></div>
+  <script>
+    function stringMethodsDemo() {
+      let text = "hello world";
+      return text.toUpperCase();
+    }
+  </script>
+</section>
+<section id="js-string-search">
+  <h2>JS String Search</h2>
+  <h3>Definition</h3>
+  <p>String search methods find the position of a substring within a string.</p>
+  <h3>Syntax</h3>
+  <pre><code>string.indexOf('searchTerm');</code></pre>
+  <h3>Output</h3>
+  <button onclick="stringSearchDemo()">Search String</button>
+  <div id="string-search-output" class="output"></div>
+  <script>
+    function stringSearchDemo() {
+      let phrase = "JavaScript tutorial";
+      return phrase.indexOf("script".toLowerCase()) >= 0 ? "Found 'script'!" : "Not found";
+    }
+  </script>
+</section>
+
+<section id="js-string-templates">
+  <h2>JS String Templates</h2>
+  <h3>Definition</h3>
+  <p>Template literals allow embedded expressions in strings using backticks `` and ${}.</p>
+  <h3>Syntax</h3>
+  <pre><code>let greeting = `Hello, ${name}!`;</code></pre>
+  <h3>Output</h3>
+  <button onclick="stringTemplatesDemo()">Template String</button>
+  <div id="string-templates-output" class="output"></div>
+  <script>
+    function stringTemplatesDemo() {
+      let name = "Aryan";
+      return `Hello, ${name}! Welcome to JS templates.`;
+    }
+  </script>
+</section>
+
+<section id="js-numbers">
+  <h2>JS Numbers</h2>
+  <h3>Definition</h3>
+  <p>Numbers represent both integer and floating point values in JS.</p>
+  <h3>Syntax</h3>
+  <pre><code>let num = 42;</code></pre>
+  <h3>Output</h3>
+  <button onclick="numbersDemo()">Number Demo</button>
+  <div id="numbers-output" class="output"></div>
+  <script>
+    function numbersDemo() {
+      let num = 123.45;
+      return `Number: ${num}`;
+    }
+  </script>
+</section>
+
+<section id="js-bigint">
+  <h2>JS BigInt</h2>
+  <h3>Definition</h3>
+  <p>BigInt allows representation of integers larger than Number.MAX_SAFE_INTEGER.</p>
+  <h3>Syntax</h3>
+  <pre><code>let big = 123456789012345678901234567890n;</code></pre>
+  <h3>Output</h3>
+  <button onclick="bigIntDemo()">BigInt Demo</button>
+  <div id="bigint-output" class="output"></div>
+  <script>
+    function bigIntDemo() {
+      let big = 123456789012345678901234567890n;
+      return `BigInt: ${big}`;
+    }
+  </script>
+</section>
+
+<section id="js-number-methods">
+  <h2>JS Number Methods</h2>
+  <h3>Definition</h3>
+  <p>Methods like toFixed(), toPrecision(), parseInt() are used to manipulate numbers.</p>
+  <h3>Syntax</h3>
+  <pre><code>num.toFixed(2);</code></pre>
+  <h3>Output</h3>
+  <button onclick="numberMethodsDemo()">Number Methods</button>
+  <div id="number-methods-output" class="output"></div>
+  <script>
+    function numberMethodsDemo() {
+      let num = 3.14159;
+      return `Rounded to 2 decimals: ${num.toFixed(2)}`;
+    }
+  </script>
+</section>
+
+<section id="js-number-properties">
+  <h2>JS Number Properties</h2>
+  <h3>Definition</h3>
+  <p>Properties like Number.MAX_VALUE, Number.MIN_VALUE represent numeric limits.</p>
+  <h3>Syntax</h3>
+  <pre><code>Number.MAX_VALUE;</code></pre>
+  <h3>Output</h3>
+  <button onclick="numberPropertiesDemo()">Number Properties</button>
+  <div id="number-properties-output" class="output"></div>
+  <script>
+    function numberPropertiesDemo() {
+      return `Max number: ${Number.MAX_VALUE}`;
+    }
+  </script>
+</section>
+
+<section id="js-arrays">
+  <h2>JS Arrays</h2>
+  <h3>Definition</h3>
+  <p>Arrays store multiple values in an ordered list.</p>
+  <h3>Syntax</h3>
+  <pre><code>let arr = [1, 2, 3];</code></pre>
+  <h3>Output</h3>
+  <button onclick="arraysDemo()">Show Array</button>
+  <div id="arrays-output" class="output"></div>
+  <script>
+    function arraysDemo() {
+      let fruits = ["Apple", "Banana", "Cherry"];
+      return `First fruit: ${fruits[0]}`;
+    }
+  </script>
+</section>
+
+<section id="js-array-methods">
+  <h2>JS Array Methods</h2>
+  <h3>Definition</h3>
+  <p>Methods like push(), pop(), shift(), unshift() manipulate arrays.</p>
+  <h3>Syntax</h3>
+  <pre><code>arr.push(value);</code></pre>
+  <h3>Output</h3>
+  <button onclick="arrayMethodsDemo()">Array Methods Demo</button>
+  <div id="array-methods-output" class="output"></div>
+  <script>
+    function arrayMethodsDemo() {
+      let arr = [1, 2, 3];
+      arr.push(4);
+      return `Array after push: [${arr}]`;
+    }
+  </script>
+</section>
+<section id="js-array-search">
+  <h2>JS Array Search</h2>
+  <h3>Definition</h3>
+  <p>Array search methods find elements in arrays, like indexOf() and includes().</p>
+  <h3>Syntax</h3>
+  <pre><code>arr.indexOf(element);</code></pre>
+  <h3>Output</h3>
+  <button onclick="arraySearchDemo()">Array Search Demo</button>
+  <div id="array-search-output" class="output"></div>
+  <script>
+    function arraySearchDemo() {
+      let colors = ["red", "green", "blue"];
+      return colors.includes("green") ? "'green' is found" : "'green' not found";
+    }
+  </script>
+</section>
+
+<section id="js-array-sort">
+  <h2>JS Array Sort</h2>
+  <h3>Definition</h3>
+  <p>The sort() method sorts the elements of an array.</p>
+  <h3>Syntax</h3>
+  <pre><code>arr.sort();</code></pre>
+  <h3>Output</h3>
+  <button onclick="arraySortDemo()">Array Sort Demo</button>
+  <div id="array-sort-output" class="output"></div>
+  <script>
+    function arraySortDemo() {
+      let numbers = [4, 2, 9, 1];
+      numbers.sort((a,b) => a - b);
+      return `Sorted: [${numbers}]`;
+    }
+  </script>
+</section>
+
+<section id="js-array-iteration">
+  <h2>JS Array Iteration</h2>
+  <h3>Definition</h3>
+  <p>Iteration methods like forEach() let you loop over array elements.</p>
+  <h3>Syntax</h3>
+  <pre><code>arr.forEach(function(item) { // code });</code></pre>
+  <h3>Output</h3>
+  <button onclick="arrayIterationDemo()">Array Iteration Demo</button>
+  <div id="array-iteration-output" class="output"></div>
+  <script>
+    function arrayIterationDemo() {
+      let nums = [1, 2, 3];
+      let result = "";
+      nums.forEach(num => result += num * 2 + " ");
+      return `Doubled: ${result.trim()}`;
+    }
+  </script>
+</section>
+
+<section id="js-array-const">
+  <h2>JS Array Const</h2>
+  <h3>Definition</h3>
+  <p>const declares an array reference that cannot be reassigned, but array contents can change.</p>
+  <h3>Syntax</h3>
+  <pre><code>const arr = [1, 2, 3];</code></pre>
+  <h3>Output</h3>
+  <button onclick="arrayConstDemo()">Array Const Demo</button>
+  <div id="array-const-output" class="output"></div>
+  <script>
+    function arrayConstDemo() {
+      const fruits = ["apple", "banana"];
+      fruits.push("cherry");
+      return `Fruits: [${fruits}]`;
+    }
+  </script>
+</section>
+
+<section id="js-dates">
+  <h2>JS Dates</h2>
+  <h3>Definition</h3>
+  <p>The Date object stores date and time information.</p>
+  <h3>Syntax</h3>
+  <pre><code>let now = new Date();</code></pre>
+  <h3>Output</h3>
+  <button onclick="datesDemo()">Current Date</button>
+  <div id="dates-output" class="output"></div>
+  <script>
+    function datesDemo() {
+      let now = new Date();
+      return now.toString();
+    }
+  </script>
+</section>
+
+<section id="js-date-formats">
+  <h2>JS Date Formats</h2>
+  <h3>Definition</h3>
+  <p>Date formats allow display of date/time in different string formats.</p>
+  <h3>Syntax</h3>
+  <pre><code>date.toDateString();</code></pre>
+  <h3>Output</h3>
+  <button onclick="dateFormatsDemo()">Date Format Demo</button>
+  <div id="date-formats-output" class="output"></div>
+  <script>
+    function dateFormatsDemo() {
+      let now = new Date();
+      return `Date: ${now.toDateString()}<br>Time: ${now.toTimeString()}`;
+    }
+  </script>
+</section>
+
+<section id="js-date-get-methods">
+  <h2>JS Date Get Methods</h2>
+  <h3>Definition</h3>
+  <p>Methods to get parts of a date, like getFullYear(), getMonth(), getDate().</p>
+  <h3>Syntax</h3>
+  <pre><code>date.getFullYear();</code></pre>
+  <h3>Output</h3>
+  <button onclick="dateGetMethodsDemo()">Date Get Demo</button>
+  <div id="date-get-methods-output" class="output"></div>
+  <script>
+    function dateGetMethodsDemo() {
+      let now = new Date();
+      return `Year: ${now.getFullYear()}, Month: ${now.getMonth() + 1}, Date: ${now.getDate()}`;
+    }
+  </script>
+</section>
+
+<section id="js-date-set-methods">
+  <h2>JS Date Set Methods</h2>
+  <h3>Definition</h3>
+  <p>Methods to set parts of a date, like setFullYear(), setMonth(), setDate().</p>
+  <h3>Syntax</h3>
+  <pre><code>date.setFullYear(2025);</code></pre>
+  <h3>Output</h3>
+  <button onclick="dateSetMethodsDemo()">Date Set Demo</button>
+  <div id="date-set-methods-output" class="output"></div>
+  <script>
+    function dateSetMethodsDemo() {
+      let d = new Date();
+      d.setFullYear(2025);
+      d.setMonth(0);
+      d.setDate(1);
+      return d.toDateString();
+    }
+  </script>
+</section>
+<section id="js-math">
+  <h2>JS Math</h2>
+  <h3>Definition</h3>
+  <p>The Math object provides mathematical constants and functions.</p>
+  <h3>Syntax</h3>
+  <pre><code>Math.sqrt(16);</code></pre>
+  <h3>Output</h3>
+  <button onclick="mathDemo()">Math Demo</button>
+  <div id="math-output" class="output"></div>
+  <script>
+    function mathDemo() {
+      return `Square root of 16 is ${Math.sqrt(16)}`;
+    }
+  </script>
+</section>
+
+<section id="js-random">
+  <h2>JS Random</h2>
+  <h3>Definition</h3>
+  <p>Math.random() generates a random number between 0 (inclusive) and 1 (exclusive).</p>
+  <h3>Syntax</h3>
+  <pre><code>Math.random();</code></pre>
+  <h3>Output</h3>
+  <button onclick="randomDemo()">Random Number</button>
+  <div id="random-output" class="output"></div>
+  <script>
+    function randomDemo() {
+      return `Random number: ${Math.random()}`;
+    }
+  </script>
+</section>
+
+<section id="js-booleans">
+  <h2>JS Booleans</h2>
+  <h3>Definition</h3>
+  <p>Boolean values represent true or false.</p>
+  <h3>Syntax</h3>
+  <pre><code>let isReady = true;</code></pre>
+  <h3>Output</h3>
+  <button onclick="booleansDemo()">Boolean Demo</button>
+  <div id="booleans-output" class="output"></div>
+  <script>
+    function booleansDemo() {
+      let isReady = true;
+      return `Is ready? ${isReady}`;
+    }
+  </script>
+</section>
+
+<section id="js-comparisons">
+  <h2>JS Comparisons</h2>
+  <h3>Definition</h3>
+  <p>Comparison operators compare two values and return a boolean.</p>
+  <h3>Syntax</h3>
+  <pre><code>5 === 5; // true</code></pre>
+  <h3>Output</h3>
+  <button onclick="comparisonsDemo()">Comparison Demo</button>
+  <div id="comparisons-output" class="output"></div>
+  <script>
+    function comparisonsDemo() {
+      return `5 === 5: ${5 === 5}`;
+    }
+  </script>
+</section>
+
+<section id="js-if-else">
+  <h2>JS If Else</h2>
+  <h3>Definition</h3>
+  <p>If-else statements execute code blocks based on conditions.</p>
+  <h3>Syntax</h3>
+  <pre><code>if(condition) { ... } else { ... }</code></pre>
+  <h3>Output</h3>
+  <button onclick="ifElseDemo()">If Else Demo</button>
+  <div id="if-else-output" class="output"></div>
+  <script>
+    function ifElseDemo() {
+      let num = 10;
+      if(num > 5) {
+        return "Number is greater than 5";
+      } else {
+        return "Number is 5 or less";
+      }
+    }
+  </script>
+</section>
+
+<section id="js-switch">
+  <h2>JS Switch</h2>
+  <h3>Definition</h3>
+  <p>Switch statements select one of many code blocks to execute.</p>
+  <h3>Syntax</h3>
+  <pre><code>switch(expression) { case value: ... break; ... }</code></pre>
+  <h3>Output</h3>
+  <button onclick="switchDemo()">Switch Demo</button>
+  <div id="switch-output" class="output"></div>
+  <script>
+    function switchDemo() {
+      let fruit = "Apple";
+      switch(fruit) {
+        case "Banana": return "Banana selected";
+        case "Apple": return "Apple selected";
+        default: return "No fruit selected";
+      }
+    }
+  </script>
+</section>
+
+<section id="js-loop-for">
+  <h2>JS Loop For</h2>
+  <h3>Definition</h3>
+  <p>For loops repeat a block of code a set number of times.</p>
+  <h3>Syntax</h3>
+  <pre><code>for(let i=0; i<5; i++) { ... }</code></pre>
+  <h3>Output</h3>
+  <button onclick="forLoopDemo()">For Loop Demo</button>
+  <div id="for-loop-output" class="output"></div>
+  <script>
+    function forLoopDemo() {
+      let result = "";
+      for(let i=1; i<=5; i++) {
+        result += i + " ";
+      }
+      return result.trim();
+    }
+  </script>
+</section>
+<section id="js-maps">
+  <h2>JS Maps</h2>
+  <h3>Definition</h3>
+  <p>A Map is a collection of keyed data items, just like an Object, but the keys can be any type, including functions, objects, or primitives.</p>
+  <h3>Syntax</h3>
+  <pre><code>let map = new Map();</code></pre>
+  <h3>Output</h3>
+  <button onclick="mapsDemo()">Map Demo</button>
+  <div id="maps-output" class="output"></div>
+  <script>
+    function mapsDemo() {
+      let map = new Map();
+      map.set('name', 'Alice');
+      map.set('age', 25);
+      map.set(1, 'one');
+      let result = '';
+      map.forEach((value, key) => {
+        result += `${key} => ${value}<br>`;
+      });
+      return result;
+    }
+  </script>
+</section>
+
+<section id="js-map-methods">
+  <h2>JS Map Methods</h2>
+  <h3>Definition</h3>
+  <p>Common Map methods include set(), get(), has(), delete(), and clear().</p>
+  <h3>Syntax</h3>
+  <pre><code>map.set(key, value);</code></pre>
+  <h3>Output</h3>
+  <button onclick="mapMethodsDemo()">Map Methods Demo</button>
+  <div id="map-methods-output" class="output"></div>
+  <script>
+    function mapMethodsDemo() {
+      let map = new Map();
+      map.set('a', 1);
+      map.set('b', 2);
+      let hasA = map.has('a'); // true
+      let valB = map.get('b'); // 2
+      map.delete('a');
+      return `Has key 'a'? ${hasA}<br>Value for 'b': ${valB}<br>After delete 'a', has 'a'? ${map.has('a')}`;
+    }
+  </script>
+</section>
+
+<section id="js-typeof">
+  <h2>JS typeof</h2>
+  <h3>Definition</h3>
+  <p>The typeof operator returns a string indicating the type of the unevaluated operand.</p>
+  <h3>Syntax</h3>
+  <pre><code>typeof operand;</code></pre>
+  <h3>Output</h3>
+  <button onclick="typeofDemo()">typeof Demo</button>
+  <div id="typeof-output" class="output"></div>
+  <script>
+    function typeofDemo() {
+      return `typeof 42: ${typeof 42}<br>` +
+             `typeof 'hello': ${typeof 'hello'}<br>` +
+             `typeof true: ${typeof true}<br>` +
+             `typeof {}: ${typeof {}}<br>` +
+             `typeof undefined: ${typeof undefined}<br>` +
+             `typeof null: ${typeof null} (this is a JS quirk)`;
+    }
+  </script>
+</section>
+
+<section id="js-type-conversion">
+  <h2>JS Type Conversion</h2>
+  <h3>Definition</h3>
+  <p>Type conversion is converting a value from one type to another, either automatically (coercion) or manually.</p>
+  <h3>Syntax</h3>
+  <pre><code>String(123); Number('456'); Boolean(0);</code></pre>
+  <h3>Output</h3>
+  <button onclick="typeConversionDemo()">Type Conversion Demo</button>
+  <div id="type-conversion-output" class="output"></div>
+  <script>
+    function typeConversionDemo() {
+      let str = String(123);        // "123"
+      let num = Number('456');      // 456
+      let bool = Boolean(0);        // false
+      return `String(123): "${str}"<br>Number('456'): ${num}<br>Boolean(0): ${bool}`;
+    }
+  </script>
+</section>
+
+<section id="js-destructuring">
+  <h2>JS Destructuring</h2>
+  <h3>Definition</h3>
+  <p>Destructuring assignment allows unpacking values from arrays or properties from objects into distinct variables.</p>
+  <h3>Syntax</h3>
+  <pre><code>const [a, b] = [1, 2]; const {x, y} = {x:10, y:20};</code></pre>
+  <h3>Output</h3>
+  <button onclick="destructuringDemo()">Destructuring Demo</button>
+  <div id="destructuring-output" class="output"></div>
+  <script>
+    function destructuringDemo() {
+      const [a, b] = [1, 2];
+      const {x, y} = {x:10, y:20};
+      return `Array destructuring: a = ${a}, b = ${b}<br>` +
+             `Object destructuring: x = ${x}, y = ${y}`;
+    }
+  </script>
+</section>
+
+<section id="js-bitwise">
+  <h2>JS Bitwise</h2>
+  <h3>Definition</h3>
+  <p>Bitwise operators perform operations on 32-bit numbers at the binary level.</p>
+  <h3>Syntax</h3>
+  <pre><code>5 & 1;  // bitwise AND</code></pre>
+  <h3>Output</h3>
+  <button onclick="bitwiseDemo()">Bitwise Demo</button>
+  <div id="bitwise-output" class="output"></div>
+  <script>
+    function bitwiseDemo() {
+      let and = 5 & 1;   // 0101 & 0001 = 0001 = 1
+      let or = 5 | 1;    // 0101 | 0001 = 0101 = 5
+      let xor = 5 ^ 1;   // 0101 ^ 0001 = 0100 = 4
+      let not = ~5;      // ~0101 = 1010 (in 32-bit)
+      return `5 & 1 = ${and}<br>5 | 1 = ${or}<br>5 ^ 1 = ${xor}<br>~5 = ${not}`;
+    }
+  </script>
+</section>
+<section id="js-regexp">
+  <h2>JS RegExp (Regular Expressions)</h2>
+  <h3>Definition</h3>
+  <p>Regular expressions are patterns used to match character combinations in strings.</p>
+  <h3>Syntax</h3>
+  <pre><code>let pattern = /abc/;
+let result = pattern.test("abcdef");</code></pre>
+  <h3>Output</h3>
+  <button onclick="regexpDemo()">RegExp Demo</button>
+  <div id="regexp-output" class="output"></div>
+  <script>
+    function regexpDemo() {
+      let pattern = /abc/;
+      let result = pattern.test("abcdef"); // true
+      return `Does "abcdef" match /abc/? ${result}`;
+    }
+  </script>
+</section>
+
+<section id="js-precedence">
+  <h2>JS Operator Precedence</h2>
+  <h3>Definition</h3>
+  <p>Operator precedence determines the order in which operators are evaluated.</p>
+  <h3>Syntax</h3>
+  <pre><code>let result = 5 + 3 * 2; // Multiplication before addition</code></pre>
+  <h3>Output</h3>
+  <button onclick="precedenceDemo()">Precedence Demo</button>
+  <div id="precedence-output" class="output"></div>
+  <script>
+    function precedenceDemo() {
+      let result = 5 + 3 * 2;
+      return `5 + 3 * 2 = ${result} (Multiplication before addition)`;
+    }
+  </script>
+</section>
+
+<section id="js-errors">
+  <h2>JS Errors</h2>
+  <h3>Definition</h3>
+  <p>JavaScript errors are thrown when code execution fails. Common types are SyntaxError, TypeError, and ReferenceError.</p>
+  <h3>Syntax</h3>
+  <pre><code>try {
+  // code
+} catch(err) {
+  // handle error
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="errorsDemo()">Errors Demo</button>
+  <div id="errors-output" class="output"></div>
+  <script>
+    function errorsDemo() {
+      try {
+        nonExistentFunction();
+      } catch(err) {
+        return `Caught error: ${err.message}`;
+      }
+    }
+  </script>
+</section>
+
+<section id="js-scope">
+  <h2>JS Scope</h2>
+  <h3>Definition</h3>
+  <p>Scope determines the accessibility of variables. JavaScript has function scope and block scope.</p>
+  <h3>Syntax</h3>
+  <pre><code>function test() {
+  let a = 5; // a is local to test
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="scopeDemo()">Scope Demo</button>
+  <div id="scope-output" class="output"></div>
+  <script>
+    function scopeDemo() {
+      let a = 10;
+      {
+        let a = 20;
+        var b = 30;
+      }
+      return `Outer a = ${a} (inner block does not affect it)<br>b = ${b} (declared with var inside block)`;
+    }
+  </script>
+</section>
+
+<section id="js-hoisting">
+  <h2>JS Hoisting</h2>
+  <h3>Definition</h3>
+  <p>Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.</p>
+  <h3>Syntax</h3>
+  <pre><code>console.log(a); // undefined
+var a = 5;</code></pre>
+  <h3>Output</h3>
+  <button onclick="hoistingDemo()">Hoisting Demo</button>
+  <div id="hoisting-output" class="output"></div>
+  <script>
+    function hoistingDemo() {
+      try {
+        return `Before declaration: ${hoistVar}`;
+      } catch {
+        return "ReferenceError";
+      } finally {
+        var hoistVar = "Declared later";
+      }
+    }
+  </script>
+</section>
+
+<section id="js-strict-mode">
+  <h2>JS Strict Mode</h2>
+  <h3>Definition</h3>
+  <p>Strict mode helps catch common coding mistakes and unsafe actions, like defining global variables unintentionally.</p>
+  <h3>Syntax</h3>
+  <pre><code>'use strict';
+x = 3.14; // Error: x is not declared</code></pre>
+  <h3>Output</h3>
+  <button onclick="strictModeDemo()">Strict Mode Demo</button>
+  <div id="strict-mode-output" class="output"></div>
+  <script>
+    function strictModeDemo() {
+      'use strict';
+      try {
+        undeclared = 10;
+        return "No error";
+      } catch (e) {
+        return "Error: " + e.message;
+      }
+    }
+  </script>
+</section>
+<section id="js-this">
+  <h2>JS this Keyword</h2>
+  <h3>Definition</h3>
+  <p>The <code>this</code> keyword refers to the object it belongs to. Its value depends on where it is used.</p>
+  <h3>Syntax</h3>
+  <pre><code>let person = {
+  name: "Aryan",
+  greet: function() {
+    return "Hello, " + this.name;
+  }
+};</code></pre>
+  <h3>Output</h3>
+  <button onclick="thisKeywordDemo()">this Keyword Demo</button>
+  <div id="this-output" class="output"></div>
+  <script>
+    function thisKeywordDemo() {
+      let person = {
+        name: "Aryan",
+        greet: function() {
+          return "Hello, " + this.name;
+        }
+      };
+      return person.greet();
+    }
+  </script>
+</section>
+
+<section id="js-arrow-function">
+  <h2>JS Arrow Function</h2>
+  <h3>Definition</h3>
+  <p>Arrow functions provide a shorter syntax for writing functions and do not have their own <code>this</code>.</p>
+  <h3>Syntax</h3>
+  <pre><code>const add = (a, b) => a + b;</code></pre>
+  <h3>Output</h3>
+  <button onclick="arrowFunctionDemo()">Arrow Function Demo</button>
+  <div id="arrow-output" class="output"></div>
+  <script>
+    function arrowFunctionDemo() {
+      const add = (a, b) => a + b;
+      return `5 + 3 = ${add(5, 3)}`;
+    }
+  </script>
+</section>
+
+<section id="js-classes">
+  <h2>JS Classes</h2>
+  <h3>Definition</h3>
+  <p>Classes are templates for JavaScript objects, introduced in ES6.</p>
+  <h3>Syntax</h3>
+  <pre><code>class Car {
+  constructor(name) {
+    this.name = name;
+  }
+  drive() {
+    return this.name + " is driving";
+  }
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="classDemo()">Class Demo</button>
+  <div id="class-output" class="output"></div>
+  <script>
+    function classDemo() {
+      class Car {
+        constructor(name) {
+          this.name = name;
+        }
+        drive() {
+          return this.name + " is driving";
+        }
+      }
+      let myCar = new Car("Tata Curvv");
+      return myCar.drive();
+    }
+  </script>
+</section>
+
+<section id="js-modules">
+  <h2>JS Modules</h2>
+  <h3>Definition</h3>
+  <p>Modules allow you to divide your JavaScript code into multiple files. Each module is isolated and can export or import functionality.</p>
+  <h3>Syntax</h3>
+  <pre><code>// file: message.js
+export function greet() {
+  return "Hello from module!";
+}
+
+// file: main.js
+import { greet } from './message.js';</code></pre>
+  <h3>Output</h3>
+  <p><strong>Note:</strong> Modules must be run in a server environment or with type="module" in script tag.</p>
+</section>
+
+<section id="js-json">
+  <h2>JS JSON</h2>
+  <h3>Definition</h3>
+  <p>JSON (JavaScript Object Notation) is a format for storing and transporting data.</p>
+  <h3>Syntax</h3>
+  <pre><code>let text = '{"name":"Aryan","age":21}';
+let obj = JSON.parse(text);</code></pre>
+  <h3>Output</h3>
+  <button onclick="jsonDemo()">JSON Demo</button>
+  <div id="json-output" class="output"></div>
+  <script>
+    function jsonDemo() {
+      let text = '{"name":"Aryan","age":21}';
+      let obj = JSON.parse(text);
+      return `Name: ${obj.name}, Age: ${obj.age}`;
+    }
+  </script>
+</section>
+
+<section id="js-debugging">
+  <h2>JS Debugging</h2>
+  <h3>Definition</h3>
+  <p>Debugging is the process of finding and fixing errors in your JavaScript code using tools like <code>console.log()</code> or browser dev tools.</p>
+  <h3>Syntax</h3>
+  <pre><code>console.log("Debugging message");</code></pre>
+  <h3>Output</h3>
+  <button onclick="debugDemo()">Debug Demo</button>
+  <div id="debug-output" class="output"></div>
+  <script>
+    function debugDemo() {
+      let msg = "Debugging in progress...";
+      console.log(msg);
+      return "Check the browser console!";
+    }
+  </script>
+</section>
+<section id="js-style-guide">
+  <h2>JS Style Guide</h2>
+  <h3>Definition</h3>
+  <p>The JavaScript Style Guide provides conventions for writing readable, maintainable code.</p>
+  <h3>Best Practices</h3>
+  <ul>
+    <li>Use camelCase for variable and function names.</li>
+    <li>Use <code>const</code> and <code>let</code> instead of <code>var</code>.</li>
+    <li>Always end statements with semicolons.</li>
+    <li>Use strict equality (<code>===</code>).</li>
+  </ul>
+  <h3>Output</h3>
+  <button onclick="styleGuideDemo()">Style Guide Demo</button>
+  <div id="style-output" class="output"></div>
+  <script>
+    function styleGuideDemo() {
+      const userName = "Aryan";
+      const greeting = `Hello, ${userName}!`;
+      return greeting;
+    }
+  </script>
+</section>
+
+<section id="js-best-practices">
+  <h2>JS Best Practices</h2>
+  <h3>Definition</h3>
+  <p>Best practices are recommended coding techniques to avoid bugs and ensure better performance.</p>
+  <h3>Examples</h3>
+  <ul>
+    <li>Keep code DRY (Don't Repeat Yourself).</li>
+    <li>Use meaningful variable names.</li>
+    <li>Modularize code using functions or classes.</li>
+    <li>Avoid global variables.</li>
+  </ul>
+  <h3>Output</h3>
+  <button onclick="bestPracticeDemo()">Best Practice Demo</button>
+  <div id="best-output" class="output"></div>
+  <script>
+    function bestPracticeDemo() {
+      function calculateArea(width, height) {
+        return width * height;
+      }
+      return `Area of 4x6: ${calculateArea(4, 6)}`;
+    }
+  </script>
+</section>
+
+<section id="js-mistakes">
+  <h2>JS Mistakes</h2>
+  <h3>Definition</h3>
+  <p>Common JavaScript mistakes include syntax errors, undefined variables, and incorrect type usage.</p>
+  <h3>Examples</h3>
+  <ul>
+    <li>Using <code>==</code> instead of <code>===</code>.</li>
+    <li>Accessing undefined variables.</li>
+    <li>Forgetting to declare variables with <code>let</code> or <code>const</code>.</li>
+  </ul>
+  <h3>Output</h3>
+  <button onclick="mistakeDemo()">Common Mistake Demo</button>
+  <div id="mistake-output" class="output"></div>
+  <script>
+    function mistakeDemo() {
+      let x = "5";
+      let y = 5;
+      return `x == y: ${x == y}, x === y: ${x === y}`;
+    }
+  </script>
+</section>
+
+<section id="js-performance">
+  <h2>JS Performance</h2>
+  <h3>Definition</h3>
+  <p>Improving performance in JavaScript means making the code run faster and more efficiently.</p>
+  <h3>Tips</h3>
+  <ul>
+    <li>Minimize DOM access.</li>
+    <li>Use local variables.</li>
+    <li>Debounce input events.</li>
+    <li>Use <code>requestAnimationFrame</code> for animations.</li>
+  </ul>
+  <h3>Output</h3>
+  <button onclick="performanceDemo()">Performance Demo</button>
+  <div id="performance-output" class="output"></div>
+  <script>
+    function performanceDemo() {
+      let start = performance.now();
+      for (let i = 0; i < 100000; i++) {
+        let x = i * i;
+      }
+      let end = performance.now();
+      return `Execution time: ${(end - start).toFixed(2)} ms`;
+    }
+  </script>
+</section>
+
+<section id="js-reserved-words">
+  <h2>JS Reserved Words</h2>
+  <h3>Definition</h3>
+  <p>Reserved words are part of JavaScript syntax and cannot be used as identifiers (variable or function names).</p>
+  <h3>Examples</h3>
+  <ul>
+    <li><code>let</code></li>
+    <li><code>class</code></li>
+    <li><code>return</code></li>
+    <li><code>function</code></li>
+    <li><code>this</code></li>
+  </ul>
+  <h3>Output</h3>
+  <p>Using reserved words incorrectly will throw syntax errors in your browser's console.</p>
+</section>
+
+<section id="js-versions">
+  <h2>JS Versions Overview</h2>
+  <h3>Definition</h3>
+  <p>JavaScript has evolved over time. Each version introduces new features and improvements.</p>
+  <h3>Important Versions</h3>
+  <ul>
+    <li><strong>ES5 (2009):</strong> Strict mode, JSON support, array methods</li>
+    <li><strong>ES6 (2015):</strong> let/const, arrow functions, classes, promises, modules</li>
+    <li><strong>ES7 to ES14 (2016-2023):</strong> Async/Await, includes(), optional chaining, nullish coalescing, etc.</li>
+  </ul>
+</section>
+
+<section id="js-ie-edge-history">
+  <h2>JS in IE/Edge and History</h2>
+  <h3>Definition</h3>
+  <p>JavaScript history started in 1995 by Netscape. Browser support has evolved greatly, with modern browsers supporting ES6+.</p>
+  <h3>IE/Edge Compatibility</h3>
+  <p>Legacy IE supports ES5. Microsoft Edge (Chromium) supports all modern JavaScript features.</p>
+</section>
+<section id="js-objects">
+  <h2>JavaScript Objects</h2>
+  <h3>Definition</h3>
+  <p>JavaScript objects are collections of key-value pairs. They can contain properties and methods.</p>
+  <h3>Syntax</h3>
+  <pre><code>const person = {
+  name: "John",
+  age: 30,
+  greet: function() {
+    return "Hello " + this.name;
+  }
+};</code></pre>
+  <h3>Output</h3>
+  <button onclick="showObject()">Show Object</button>
+  <div id="object-output" class="output"></div>
+  <script>
+    function showObject() {
+      const person = {
+        name: "John",
+        age: 30,
+        greet: function() {
+          return "Hello " + this.name;
+        }
+      };
+      document.getElementById("object-output").innerText = person.greet();
+    }
+  </script>
+</section>
+
+<section id="js-object-properties">
+  <h2>Object Properties</h2>
+  <h3>Description</h3>
+  <p>Properties are the values associated with a JavaScript object.</p>
+  <h3>Example</h3>
+  <pre><code>console.log(person.name);</code></pre>
+</section>
+
+<section id="js-object-methods">
+  <h2>Object Methods</h2>
+  <h3>Description</h3>
+  <p>Methods are functions stored as object properties.</p>
+  <h3>Example</h3>
+  <pre><code>person.greet = function() {
+  return "Hi " + this.name;
+};</code></pre>
+</section>
+
+<section id="js-object-display">
+  <h2>Displaying Objects</h2>
+  <h3>Description</h3>
+  <p>Objects can be displayed using dot notation or looping.</p>
+  <pre><code>for (let key in person) {
+  console.log(key + ": " + person[key]);
+}</code></pre>
+</section>
+
+<section id="js-object-constructors">
+  <h2>Object Constructors</h2>
+  <h3>Description</h3>
+  <p>Object constructors define object types using functions.</p>
+  <pre><code>function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+const p1 = new Person("Alice", 25);</code></pre>
+</section>
+
+<section id="js-object-prototypes">
+  <h2>Object Prototypes</h2>
+  <h3>Description</h3>
+  <p>Prototypes allow adding properties and methods to object types.</p>
+  <pre><code>Person.prototype.greet = function() {
+  return "Hi " + this.name;
+};</code></pre>
+</section>
+
+<section id="js-object-get-set">
+  <h2>Object Getters and Setters</h2>
+  <h3>Syntax</h3>
+  <pre><code>const person = {
+  firstName: "John",
+  lastName: "Doe",
+  get fullName() {
+    return this.firstName + " " + this.lastName;
+  },
+  set fullName(name) {
+    [this.firstName, this.lastName] = name.split(" ");
+  }
+};</code></pre>
+</section>
+
+<section id="js-object-protection">
+  <h2>Object Protection</h2>
+  <h3>Description</h3>
+  <p>Use <code>Object.freeze()</code> and <code>Object.seal()</code> to protect object properties.</p>
+  <pre><code>const obj = {name: "John"};
+Object.freeze(obj);
+obj.name = "Doe"; // Won't change</code></pre>
+</section>
+
+<section id="js-functions">
+  <h2>JavaScript Functions</h2>
+  <h3>Definition</h3>
+  <p>Functions are blocks of code designed to perform a particular task and are executed when called.</p>
+  <pre><code>function greet(name) {
+  return "Hello " + name;
+}</code></pre>
+  <h3>Output</h3>
+  <button onclick="showFunction()">Call Function</button>
+  <div id="function-output" class="output"></div>
+  <script>
+    function showFunction() {
+      document.getElementById("function-output").innerText = greet("Aryan");
+    }
+    function greet(name) {
+      return "Hello " + name;
+    }
+  </script>
+</section>
+
+<section id="js-function-parameters">
+  <h2>Function Parameters</h2>
+  <h3>Description</h3>
+  <p>Parameters are listed inside the parentheses in the function definition and are passed during the call.</p>
+  <pre><code>function add(a, b) {
+  return a + b;
+}</code></pre>
+</section>
+
+<section id="js-function-invocation">
+  <h2>Function Invocation</h2>
+  <h3>Description</h3>
+  <p>Functions are invoked using parentheses: <code>myFunction()</code>.</p>
+</section>
+
+<section id="js-function-call">
+  <h2>Function call()</h2>
+  <h3>Description</h3>
+  <p>The <code>call()</code> method calls a function with a given <code>this</code> value and arguments.</p>
+  <pre><code>function sayHi() {
+  return this.name;
+}
+const person = {name: "Alice"};
+sayHi.call(person);</code></pre>
+</section>
+
+<section id="js-function-apply">
+  <h2>Function apply()</h2>
+  <h3>Description</h3>
+  <p><code>apply()</code> is similar to <code>call()</code>, but takes an array of arguments.</p>
+  <pre><code>sayHi.apply(person);</code></pre>
+</section>
+
+<section id="js-function-bind">
+  <h2>Function bind()</h2>
+  <h3>Description</h3>
+  <p><code>bind()</code> returns a new function, binding <code>this</code> to a specific object.</p>
+  <pre><code>const boundSayHi = sayHi.bind(person);</code></pre>
+</section>
+
+<section id="js-function-closures">
+  <h2>Function Closures</h2>
+  <h3>Description</h3>
+  <p>A closure is a function having access to its own scope, the outer function's scope, and the global scope.</p>
+  <pre><code>function outer() {
+  let count = 0;
+  return function inner() {
+    return ++count;
+  };
+}
+const counter = outer();
+counter(); // 1
+counter(); // 2</code></pre>
+</section>
+<section id="js-classes">
+  <h2>JavaScript Classes</h2>
+  <h3>Definition</h3>
+  <p>Classes are templates for creating objects and are introduced in ES6.</p>
+  <pre><code>class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    return "Hello " + this.name;
+  }
+}
+const p1 = new Person("John", 30);
+</code></pre>
+</section>
+
+<section id="js-class-inheritance">
+  <h2>Class Inheritance</h2>
+  <h3>Description</h3>
+  <p>Inheritance allows one class to acquire the properties and methods of another.</p>
+  <pre><code>class Student extends Person {
+  constructor(name, age, grade) {
+    super(name, age);
+    this.grade = grade;
+  }
+}
+const s1 = new Student("Aryan", 18, "A");</code></pre>
+</section>
+
+<section id="js-class-static">
+  <h2>Class Static Methods</h2>
+  <h3>Description</h3>
+  <p>Static methods are defined on the class itself, not on instances.</p>
+  <pre><code>class MathUtil {
+  static add(a, b) {
+    return a + b;
+  }
+}
+MathUtil.add(2, 3); // 5</code></pre>
+</section>
+
+<section id="js-async">
+  <h2>JavaScript Asynchronous Programming</h2>
+  <h3>Callbacks</h3>
+  <p>Callbacks are functions passed as arguments and executed later.</p>
+  <pre><code>function greet(name, callback) {
+  console.log("Hi " + name);
+  callback();
+}
+greet("John", function() {
+  console.log("Callback executed.");
+});</code></pre>
+
+  <h3>Promises</h3>
+  <p>Promises represent future completion or failure of an asynchronous operation.</p>
+  <pre><code>let promise = new Promise((resolve, reject) => {
+  let success = true;
+  if (success) resolve("Success!");
+  else reject("Failure!");
+});
+promise.then(alert).catch(alert);</code></pre>
+
+  <h3>Async / Await</h3>
+  <p><code>async</code> and <code>await</code> simplify working with promises.</p>
+  <pre><code>async function fetchData() {
+  let response = await fetch("https://api.example.com/data");
+  let data = await response.json();
+  console.log(data);
+}</code></pre>
+</section>
+
+<section id="js-dom-intro">
+  <h2>JavaScript HTML DOM</h2>
+  <h3>Definition</h3>
+  <p>The DOM (Document Object Model) allows JavaScript to access and change the content and structure of HTML.</p>
+  <pre><code>document.getElementById("demo").innerHTML = "Hello DOM!";</code></pre>
+  <div id="demo" class="output">Original Content</div>
+  <button onclick="document.getElementById('demo').innerHTML = 'Hello DOM!'">Change Text</button>
+</section>
+
+<section id="js-dom-methods">
+  <h2>DOM Methods</h2>
+  <ul>
+    <li><code>getElementById()</code> – Access an element by ID</li>
+    <li><code>getElementsByClassName()</code> – Access elements by class</li>
+    <li><code>querySelector()</code> – Access the first matching selector</li>
+  </ul>
+  <pre><code>document.querySelector("p").style.color = "red";</code></pre>
+</section>
+
+<section id="js-dom-elements">
+  <h2>DOM Elements</h2>
+  <p>DOM elements are HTML elements accessible using JavaScript.</p>
+  <pre><code>const elem = document.getElementById("myDiv");
+elem.innerHTML = "Updated";</code></pre>
+</section>
+
+<section id="js-dom-css">
+  <h2>DOM CSS Manipulation</h2>
+  <pre><code>document.getElementById("demo").style.fontSize = "20px";</code></pre>
+</section>
+
+<section id="js-dom-events">
+  <h2>DOM Events</h2>
+  <p>JavaScript reacts to events like clicks, mouse movements, or key presses.</p>
+  <pre><code>document.getElementById("btn").onclick = function() {
+  alert("Button clicked!");
+};</code></pre>
+  <button id="btn">Click Me</button>
+</section>
+
+<section id="js-dom-event-listener">
+  <h2>DOM Event Listener</h2>
+  <p>Event listeners listen for specified events and execute a callback when triggered.</p>
+  <pre><code>document.getElementById("btn").addEventListener("click", function() {
+  alert("Event Listener triggered!");
+});</code></pre>
+</section>
+
+<section id="js-dom-navigation">
+  <h2>DOM Navigation</h2>
+  <p>DOM navigation allows access to different parts of the document.</p>
+  <ul>
+    <li><code>parentNode</code></li>
+    <li><code>childNodes</code></li>
+    <li><code>firstChild</code></li>
+    <li><code>lastChild</code></li>
+  </ul>
+  <pre><code>const parent = document.getElementById("demo").parentNode;</code></pre>
+</section>
+
+<section id="js-dom-node-lists">
+  <h2>DOM Node Lists</h2>
+  <p>Node lists are collections of nodes retrieved using methods like <code>querySelectorAll()</code>.</p>
+  <pre><code>let items = document.querySelectorAll("li");
+items.forEach(item => item.style.color = "blue");</code></pre>
+</section>
+<section id="js-bom">
+  <h2>JavaScript Browser Object Model (BOM)</h2>
+  <p>The BOM allows interaction with the browser beyond the document.</p>
+  
+  <h3>Window Object</h3>
+  <pre><code>window.alert("Hello from window!");</code></pre>
+  <button onclick="window.alert('Window Alert!')">Window Alert</button>
+  
+  <h3>Screen Object</h3>
+  <pre><code>document.getElementById("screenInfo").innerHTML = 
+  "Width: " + screen.width + ", Height: " + screen.height;</code></pre>
+  <div id="screenInfo"></div>
+  <button onclick="document.getElementById('screenInfo').innerHTML = 'Width: ' + screen.width + ', Height: ' + screen.height;">Show Screen Info</button>
+
+  <h3>Location Object</h3>
+  <pre><code>document.getElementById("loc").innerHTML = location.href;</code></pre>
+  <div id="loc"></div>
+  <button onclick="document.getElementById('loc').innerHTML = location.href">Show Location</button>
+
+  <h3>Navigator Object</h3>
+  <pre><code>navigator.userAgent</code></pre>
+  <button onclick="alert(navigator.userAgent)">Show Browser Info</button>
+
+  <h3>Popup and Alert</h3>
+  <pre><code>alert("This is an alert box!");</code></pre>
+  <button onclick="alert('Alert box!')">Alert</button>
+
+  <h3>Timing Methods</h3>
+  <pre><code>setTimeout(() => alert("Hi after 2 seconds"), 2000);</code></pre>
+  <button onclick="setTimeout(() => alert('Hi after 2 seconds'), 2000)">Set Timeout</button>
+
+  <h3>Cookies</h3>
+  <pre><code>document.cookie = "username=John";</code></pre>
+  <button onclick="document.cookie = 'username=John'; alert(document.cookie)">Set Cookie</button>
+</section>
+
+<section id="js-web-apis">
+  <h2>JavaScript Web APIs</h2>
+  
+  <h3>Web Storage API</h3>
+  <p>Used for storing data locally in the browser.</p>
+  <pre><code>localStorage.setItem("name", "Aryan");
+let name = localStorage.getItem("name");</code></pre>
+  <button onclick="localStorage.setItem('name', 'Aryan'); alert(localStorage.getItem('name'));">Set & Get Local Storage</button>
+
+  <h3>Web Fetch API</h3>
+  <p>Used to fetch resources over the network.</p>
+  <pre><code>fetch("https://jsonplaceholder.typicode.com/todos/1")
+  .then(response => response.json())
+  .then(json => console.log(json));</code></pre>
+
+  <h3>Web Geolocation API</h3>
+  <p>Used to get the geographical position of a user.</p>
+  <pre><code>navigator.geolocation.getCurrentPosition(position => {
+  alert("Latitude: " + position.coords.latitude);
+});</code></pre>
+  <button onclick="navigator.geolocation.getCurrentPosition(position => alert('Lat: ' + position.coords.latitude + ', Long: ' + position.coords.longitude))">Get Location</button>
+</section>
+
+<section id="js-ajax">
+  <h2>JavaScript AJAX</h2>
+  <p>AJAX is used to exchange data with a server and update parts of a webpage without reloading.</p>
+  
+  <h3>AJAX Request</h3>
+  <pre><code>const xhttp = new XMLHttpRequest();
+xhttp.onload = function() {
+  document.getElementById("ajaxDemo").innerHTML = this.responseText;
+}
+xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts/1");
+xhttp.send();</code></pre>
+  <div id="ajaxDemo">Data will be loaded here</div>
+  <button onclick="const xhttp = new XMLHttpRequest(); xhttp.onload = function() { document.getElementById('ajaxDemo').innerHTML = this.responseText; }; xhttp.open('GET', 'https://jsonplaceholder.typicode.com/posts/1'); xhttp.send();">Load Data with AJAX</button>
+</section>
+
+<section id="js-json">
+  <h2>JavaScript JSON</h2>
+
+  <h3>Definition</h3>
+  <p>JSON (JavaScript Object Notation) is a format for storing and transporting data.</p>
+  
+  <h3>JSON Parse</h3>
+  <pre><code>const jsonStr = '{"name":"Aryan","age":20}';
+const obj = JSON.parse(jsonStr);</code></pre>
+  
+  <h3>JSON Stringify</h3>
+  <pre><code>const obj = { name: "Aryan", age: 20 };
+const jsonStr = JSON.stringify(obj);</code></pre>
+
+  <h3>JSON vs XML</h3>
+  <ul>
+    <li>JSON is lighter and easier to read than XML.</li>
+    <li>JSON uses key-value pairs.</li>
+    <li>XML uses nested tags and is more verbose.</li>
+  </ul>
+</section>
+
+</body><section id="js-vs-jquery">
+  <h2>JavaScript vs jQuery</h2>
+  <p><strong>JavaScript</strong> is a scripting language, whereas <strong>jQuery</strong> is a JavaScript library that simplifies DOM manipulation, event handling, and AJAX calls.</p>
+
+  <h3>jQuery Selectors</h3>
+  <pre><code>$("#demo").text("Hello jQuery!");</code></pre>
+  <div id="demo">Original Text</div>
+  <button onclick="$('#demo').text('Hello jQuery!')">Change Text</button>
+
+  <h3>jQuery HTML Methods</h3>
+  <pre><code>$("#htmlDemo").html("&lt;b&gt;Bold Text&lt;/b&gt;");</code></pre>
+  <div id="htmlDemo">Old HTML</div>
+  <button onclick="$('#htmlDemo').html('&lt;b&gt;Bold Text&lt;/b&gt;')">Change HTML</button>
+
+  <h3>jQuery CSS Methods</h3>
+  <pre><code>$("#cssDemo").css("color", "blue");</code></pre>
+  <div id="cssDemo">Style Me</div>
+  <button onclick="$('#cssDemo').css('color', 'blue')">Change Color</button>
+
+  <h3>jQuery DOM Manipulation</h3>
+  <pre><code>$("#appendDemo").append("&lt;p&gt;New Paragraph&lt;/p&gt;");</code></pre>
+  <div id="appendDemo">Existing Content</div>
+  <button onclick="$('#appendDemo').append('&lt;p&gt;New Paragraph&lt;/p&gt;')">Append</button>
+</section>
+
+<section id="js-graphics">
+  <h2>JavaScript Graphics</h2>
+
+  <h3>HTML5 Canvas</h3>
+  <pre><code>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(10, 10, 100, 50);</code></pre>
+  <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000;"></canvas>
+  <button onclick="const canvas = document.getElementById('myCanvas'); const ctx = canvas.getContext('2d'); ctx.fillStyle = '#FF0000'; ctx.fillRect(10, 10, 100, 50);">Draw Rectangle</button>
+
+  <h3>Chart.js Example</h3>
+  <canvas id="myChart" width="400" height="200"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctxChart = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctxChart, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3],
+          backgroundColor: ['red', 'blue', 'yellow']
+        }]
+      }
+    });
+  </script>
+
+  <h3>Google Charts</h3>
+  <div id="googleChart" style="width: 400px; height: 300px;"></div>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      const data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Work',     8],
+        ['Eat',      2],
+        ['Commute',  2],
+        ['Watch TV', 2],
+        ['Sleep',    8]
+      ]);
+      const options = { title: 'My Daily Activities' };
+      const chart = new google.visualization.PieChart(document.getElementById('googleChart'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <h3>D3.js Example</h3>
+  <div id="d3Demo"></div>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script>
+    d3.select("#d3Demo")
+      .append("p")
+      .text("Hello from D3.js!")
+      .style("color", "green");
+  </script>
+</section>
+<section id="js-summary">
+  <h2>JavaScript Summary</h2>
+  <ul>
+    <li><strong>JavaScript</strong> is a powerful scripting language for web development.</li>
+    <li>It adds interactivity to websites and is supported by all major browsers.</li>
+    <li>Modern JavaScript (ES6+) supports features like classes, modules, async/await, and arrow functions.</li>
+    <li>It interacts with the DOM to manipulate web page content dynamically.</li>
+    <li>JavaScript is essential for front-end development and useful on the back-end (Node.js).</li>
+  </ul>
+</section>
+
+<section id="js-reserved-words">
+  <h2>JavaScript Reserved Words</h2>
+  <p>These words cannot be used as identifiers (variable names, function names, etc.):</p>
+  <pre><code>
+abstract   arguments   await*     boolean
+break      byte        case       catch
+char       class*      const*     continue
+debugger   default     delete     do
+double     else        enum*      eval
+export*    extends*    false      final
+finally    float       for        function
+goto       if          implements import*
+in         instanceof  int        interface
+let*       long        native     new
+null       package     private    protected
+public     return      short      static
+super*     switch      synchronized this
+throw      throws      transient  true
+try        typeof      var        void
+volatile   while       with       yield
+  </code></pre>
+</section>
+
+<hr>
+<section id="end-of-tutorial" style="text-align: center; margin: 50px 0;">
+  <h2>🎉 Congratulations!</h2>
+  <p>You’ve reached the end of the <strong>Complete JavaScript Tutorial</strong>.</p>
+  <p>We hope this guide helped you learn JavaScript fundamentals, modern features, DOM manipulation, AJAX, APIs, and advanced concepts with practical examples.</p>
+  <p>Continue practicing, building projects, and exploring JavaScript frameworks like React, Vue, or Angular to advance your skills!</p>
+  <p><strong>Happy Coding! 🚀</strong></p>
+</section>
+<footer style="text-align:center; padding:20px; background-color:#222; color:#fff; margin-top:40px;">
+    <p>© 2025 Aryan's Web Tutorial. All rights reserved.</p>
+    <p>Created by Aryan kumar ojha</p>
+  </footer>
+</html>
+    
+</body>
+
+</html>

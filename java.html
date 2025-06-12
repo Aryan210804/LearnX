@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link rel="icon" href="logojava.png" type="image/jpeg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="logojava.png">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="logojava.png">
+    <link rel="shortcut icon" href="logojava.png" type="image/x-jpeg">
+<title> Java Tutorial </title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    background: #b3b451;
+  }
+  /* Sidebar */
+  #sidebar {
+    width: 280px;
+    background-color: #222;
+    color: white;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+  }
+  #sidebar h2 {
+    text-align: center;
+    padding: 1em 0;
+    border-bottom: 1px solid #444;
+  }
+  #sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  #sidebar li {
+    border-bottom: 1px solid #444;
+  }
+  #sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  #sidebar a:hover {
+    background-color: #444;
+  }
+
+  /* Content */
+  #content {
+    margin-left: 280px;
+    padding: 20px;
+    max-width: 900px;
+  }
+  section {
+    margin-bottom: 50px;
+  }
+  h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 8px;
+  }
+  h3 {
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+  }
+  p {
+    line-height: 1.4em;
+  }
+  ul {
+    margin-top: 0;
+  }
+  
+  /* Code blocks */
+  pre {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+  code {
+    font-family: Consolas, monospace;
+    font-size: 14px;
+  }
+  
+  /* Output box */
+  .output {
+    background: #222;
+    color: #0f0;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    white-space: pre-wrap;
+  }
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+  <h2>Java Tutorial</h2>
+  <ul>
+    <li><a href="#java-intro">Java Intro</a></li>
+    <li><a href="#java-get-started">Java Get Started</a></li>
+    <li><a href="#java-syntax">Java Syntax</a></li>
+    <li><a href="#java-output">Java Output</a></li>
+    <li><a href="#java-comments">Java Comments</a></li>
+    <li><a href="#java-variables">Java Variables</a></li>
+    <li><a href="#java-data-types">Java Data Types</a></li>
+    <li><a href="#java-type-casting">Java Type Casting</a></li>
+    <li><a href="#java-operators">Java Operators</a></li>
+    <li><a href="#java-strings">Java Strings</a></li>
+    <li><a href="#java-math">Java Math</a></li>
+    <li><a href="#java-booleans">Java Booleans</a></li>
+    <li><a href="#java-if-else">Java If...Else</a></li>
+    <li><a href="#java-switch">Java Switch</a></li>
+    <li><a href="#java-while-loop">Java While Loop</a></li>
+    <li><a href="#java-for-loop">Java For Loop</a></li>
+    <li><a href="#java-break-continue">Java Break/Continue</a></li>
+    <li><a href="#java-arrays">Java Arrays</a></li>
+    <li><a href="#java-methods">Java Methods</a></li>
+    <li><a href="#java-method-parameters">Java Method Parameters</a></li>
+    <li><a href="#java-method-overloading">Java Method Overloading</a></li>
+    <li><a href="#java-scope">Java Scope</a></li>
+    <li><a href="#java-recursion">Java Recursion</a></li>
+    <li><a href="#java-classes">Java Classes</a></li>
+    <li><a href="#java-oop">Java OOP</a></li>
+    <li><a href="#java-constructors">Java Constructors</a></li>
+    <li><a href="#java-modifiers">Java Modifiers</a></li>
+    <li><a href="#java-encapsulation">Java Encapsulation</a></li>
+    <li><a href="#java-packages-api">Java Packages / API</a></li>
+    <li><a href="#java-inheritance">Java Inheritance</a></li>
+    <li><a href="#java-polymorphism">Java Polymorphism</a></li>
+    <li><a href="#java-inner-classes">Java Inner Classes</a></li>
+    <li><a href="#java-abstraction">Java Abstraction</a></li>
+    <li><a href="#java-interface">Java Interface</a></li>
+    <li><a href="#java-enums">Java Enums</a></li>
+    <li><a href="#java-user-input">Java User Input</a></li>
+    <li><a href="#java-date">Java Date</a></li>
+    <li><a href="#java-data-structures">Java Data Structures</a></li>
+    <li><a href="#java-arraylist">Java ArrayList</a></li>
+    <li><a href="#java-linkedlist">Java LinkedList</a></li>
+    <li><a href="#java-list-sorting">Java List Sorting</a></li>
+    <li><a href="#java-hashmap">Java HashMap</a></li>
+    <li><a href="#java-hashset">Java HashSet</a></li>
+    <li><a href="#java-iterator">Java Iterator</a></li>
+    <li><a href="#java-wrapper-classes">Java Wrapper Classes</a></li>
+    <li><a href="#java-exceptions">Java Exceptions</a></li>
+    <li><a href="#java-regex">Java RegEx</a></li>
+    <li><a href="#java-threads">Java Threads</a></li>
+    <li><a href="#java-lambda">Java Lambda</a></li>
+    <li><a href="#java-advanced-sorting">Java Advanced Sorting</a></li>
+    <li><a href="#java-file-handling">Java File Handling</a></li>
+    <li><a href="#java-how-tos">Java How To's</a></li>
+  </ul>
+</div>
+
+<div id="content">
+
+<!-- Java Intro -->
+<section id="java-intro">
+  <h2>Java Introduction</h2>
+  <p><strong>Definition:</strong> Java is a high-level, class-based, object-oriented programming language designed to have as few implementation dependencies as possible.</p>
+  <p><strong>Use Cases:</strong> Java is widely used for building enterprise-scale applications, Android apps, web servers, and more.</p>
+</section>
+
+<!-- Java Get Started -->
+<section id="java-get-started">
+  <h2>Java Get Started</h2>
+  <p>To start programming in Java, you need:</p>
+  <ul>
+    <li>Java Development Kit (JDK) installed.</li>
+    <li>A text editor or IDE (e.g., IntelliJ, Eclipse, VS Code).</li>
+    <li>Basic knowledge of command-line for compiling and running Java programs.</li>
+  </ul>
+  <p><strong>Example:</strong> To compile and run HelloWorld.java:</p>
+  <pre><code>javac HelloWorld.java
+java HelloWorld</code></pre>
+</section>
+
+<!-- Java Syntax -->
+<section id="java-syntax">
+  <h2>Java Syntax</h2>
+  <p><strong>Basic Syntax Rules:</strong></p>
+  <ul>
+    <li>Java is case sensitive.</li>
+    <li>Every statement ends with a semicolon <code>;</code>.</li>
+    <li>Programs are structured into classes and methods.</li>
+    <li>Main method syntax: <code>public static void main(String[] args)</code></li>
+  </ul>
+  <h3>Example:</h3>
+  <pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+</section>
+
+<!-- Java Output -->
+<section id="java-output">
+  <h2>Java Output</h2>
+  <p>Use <code>System.out.println()</code> to output text with newline, and <code>System.out.print()</code> for text without newline.</p>
+  <h3>Example:</h3>
+  <pre><code>System.out.println("Welcome to Java!");
+System.out.print("This is ");
+System.out.print("on one line.");</code></pre>
+  <div class="output">
+Welcome to Java!
+This is on one line.
+  </div>
+</section>
+
+<!-- Java Comments -->
+<section id="java-comments">
+  <h2>Java Comments</h2>
+  <p><strong>Single-line comment:</strong> Starts with <code>//</code></p>
+  <p><strong>Multi-line comment:</strong> Enclosed between <code>/* ... */</code></p>
+  <h3>Example:</h3>
+  <pre><code>// This is a single-line comment
+/*
+  This is a
+  multi-line comment
+*/</code></pre>
+</section>
+
+<!-- Java Variables -->
+<section id="java-variables">
+  <h2>Java Variables</h2>
+  <p><strong>Definition:</strong> Variables are containers for storing data values.</p>
+  <p><strong>Syntax:</strong></p>
+  <pre><code>dataType variableName = value;</code></pre>
+  <h3>Example:</h3>
+  <pre><code>int age = 25;
+String name = "Aryan";</code></pre>
+</section>
+
+<!-- Java Data Types -->
+<section id="java-data-types">
+  <h2>Java Data Types</h2>
+  <p>Java supports:</p>
+  <ul>
+    <li><strong>Primitive types:</strong> <code>int</code>, <code>float</code>, <code>double</code>, <code>char</code>, <code>boolean</code>, <code>byte</code>, <code>short</code>, <code>long</code></li>
+    <li><strong>Non-primitive types:</strong> Classes, Arrays, Interfaces, Strings</li>
+  </ul>
+  <h3>Example:</h3>
+  <pre><code>int number = 10;
+double price = 99.99;
+char letter = 'A';
+boolean flag = true;</code></pre>
+</section>
+
+<!-- Java Type Casting -->
+<section id="java-type-casting">
+  <h2>Java Type Casting</h2>
+  <p><strong>Definition:</strong> Converting a variable from one type to another.</p>
+  <p><strong>Types:</strong></p>
+  <ul>
+    <li>Implicit (widening) casting: smaller to larger type automatically</li>
+    <li>Explicit (narrowing) casting: larger to smaller type manually</li>
+  </ul>
+  <h3>Example:</h3>
+  <pre><code>int i = 100;
+double d = i; // Implicit casting
+
+double x = 9.78;
+int y = (int) x; // Explicit casting</code></pre>
+</section>
+
+<!-- Java Operators -->
+<section id="java-operators">
+  <h2>Java Operators</h2>
+  <p>Java supports:</p>
+  <ul>
+    <li>Arithmetic operators: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code></li>
+    <li>Assignment operators: <code>=</code>, <code>+=</code>, <code>-=</code>, etc.</li>
+    <li>Comparison operators: <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, etc.</li>
+    <li>Logical operators: <code>&&</code>, <code>||</code>, <code>!</code></li>
+  </ul>
+  <h3>Example:</h3>
+  <pre><code>int a = 10;
+int b = 20;
+boolean result = (a < b) && (b > 15); // true</code></pre>
+</section>
+
+<!-- Java Strings -->
+<section id="java-strings">
+  <h2>Java Strings</h2>
+  <p>Strings are objects that represent sequences of characters.</p>
+  <h3>Example:</h3>
+  <pre><code>String greeting = "Hello, Java!";
+int length = greeting.length();</code></pre>
+</section>
+
+<!-- Java Math -->
+<section id="java-math">
+  <h2>Java Math</h2>
+  <p>The <code>Math</code> class provides methods for mathematical operations.</p>
+  <h3>Example:</h3>
+  <pre><code>double sqrt = Math.sqrt(16);
+double pow = Math.pow(2, 3);</code></pre>
+</section>
+
+<!-- Java Booleans -->
+<section id="java-booleans">
+  <h2>Java Booleans</h2>
+  <p>Boolean variables hold <code>true</code> or <code>false</code> values.</p>
+  <h3>Example:</h3>
+  <pre><code>boolean isJavaFun = true;
+boolean isFishTasty = false;</code></pre>
+</section>
+
+<!-- Java If...Else -->
+<section id="java-if-else">
+  <h2>Java If...Else</h2>
+  <p>Used for conditional branching.</p>
+  <h3>Syntax:</h3>
+  <pre><code>if (condition) {
+    // code if true
+} else {
+    // code if false
+}</code></pre>
+  <h3>Example:</h3>
+  <pre><code>int age = 20;
+if (age >= 18) {
+    System.out.println("Adult");
+} else {
+    System.out.println("Minor");
+}</code></pre>
+  <div class="output">Adult</div>
+</section>
+
+<!-- Java Switch -->
+<section id="java-switch">
+  <h2>Java Switch</h2>
+  <p>Used to select one of many blocks of code to be executed.</p>
+  <h3>Syntax:</h3>
+  <pre><code>switch(expression) {
+  case value1:
+    // code
+    break;
+  case value2:
+    // code
+    break;
+  default:
+    // code
+}</code></pre>
+  <h3>Example:</h3>
+  <pre><code>int day = 3;
+switch(day) {
+  case 1: System.out.println("Monday"); break;
+  case 2: System.out.println("Tuesday"); break;
+  case 3: System.out.println("Wednesday"); break;
+  default: System.out.println("Other day");
+}</code></pre>
+  <div class="output">Wednesday</div>
+</section>
+
+<!-- Java While Loop -->
+<section id="java-while-loop">
+  <h2>Java While Loop</h2>
+  <p>Repeats a block of code while a condition is true.</p>
+  <h3>Syntax:</h3>
+  <pre><code>while (condition) {
+    // code to execute
+}</code></pre>
+  <h3>Example:</h3>
+  <pre><code>int i = 1;
+while(i <= 5) {
+    System.out.println(i);
+    i++;
+}</code></pre>
+  <div class="output">
+1
+2
+3
+4
+5
+  </div>
+</section>
+
+<!-- Java For Loop -->
+<section id="java-for-loop">
+  <h2>Java For Loop</h2>
+  <p>Repeats a block of code a fixed number of times.</p>
+  <h3>Syntax:</h3>
+  <pre><code>for (initialization; condition; increment) {
+    // code to execute
+}</code></pre>
+  <h3>Example:</h3>
+  <pre><code>for (int i=1; i<=5; i++) {
+    System.out.println(i);
+}</code></pre>
+  <div class="output">
+1
+2
+3
+  </div>
+</section>
+
+<!-- Java For Loop -->
+<section id="java-for-loop">
+  <h2>Java For Loop</h2>
+  <p>Used to repeat a block of code a known number of times.</p>
+  <h3>Syntax:</h3>
+  <pre><code>for (initialization; condition; update) {
+    // code to execute
+}</code></pre>
+  <h3>Example:</h3>
+  <pre><code>for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}</code></pre>
+  <div class="output">
+1
+2
+3
+4
+5
+  </div>
+</section>
+
+<!-- Java Break and Continue -->
+<section id="java-break-continue">
+  <h2>Java Break and Continue</h2>
+  <p><strong>Break:</strong> Exits the current loop immediately.</p>
+  <p><strong>Continue:</strong> Skips the current iteration and continues with next iteration.</p>
+  <h3>Break Example:</h3>
+  <pre><code>for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        break;
+    }
+    System.out.println(i);
+}</code></pre>
+  <div class="output">
+1
+2
+  </div>
+  <h3>Continue Example:</h3>
+  <pre><code>for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue;
+    }
+    System.out.println(i);
+}</code></pre>
+  <div class="output">
+1
+2
+4
+5
+  </div>
+</section>
+
+<!-- Java Arrays -->
+<section id="java-arrays">
+  <h2>Java Arrays</h2>
+  <p>An array is a container that holds a fixed number of values of a single type.</p>
+  <h3>Syntax:</h3>
+  <pre><code>dataType[] arrayName = new dataType[size];</code></pre>
+  <h3>Example:</h3>
+  <pre><code>int[] numbers = new int[5];
+numbers[0] = 10;
+numbers[1] = 20;
+System.out.println(numbers[0]);  // Outputs 10</code></pre>
+</section>
+
+<!-- Java Methods -->
+<section id="java-methods">
+  <h2>Java Methods</h2>
+  <p>A method is a block of code which only runs when it is called. Methods help reuse code.</p>
+  <h3>Syntax:</h3>
+  <pre><code>modifier returnType methodName(parameters) {
+    // method body
+}</code></pre>
+  <h3>Example:</h3>
+  <pre><code>public void sayHello() {
+    System.out.println("Hello!");
+}</code></pre>
+</section>
+
+<!-- Java Method Parameters -->
+<section id="java-method-parameters">
+  <h2>Java Method Parameters</h2>
+  <p>Parameters allow methods to receive inputs.</p>
+  <h3>Example:</h3>
+  <pre><code>public void greet(String name) {
+    System.out.println("Hello, " + name);
+}</code></pre>
+</section>
+
+<!-- Java Method Overloading -->
+<section id="java-method-overloading">
+  <h2>Java Method Overloading</h2>
+  <p>Same method name with different parameters to perform different tasks.</p>
+  <h3>Example:</h3>
+  <pre><code>public void display(int a) {
+    System.out.println(a);
+}
+
+public void display(String s) {
+    System.out.println(s);
+}</code></pre>
+</section>
+
+<!-- Java Scope -->
+<section id="java-scope">
+  <h2>Java Scope</h2>
+  <p>Scope refers to the accessibility of variables and methods in different parts of a program.</p>
+  <p><strong>Types:</strong> Local, Instance, Class (Static) scope.</p>
+</section>
+
+<!-- Java Recursion -->
+<section id="java-recursion">
+  <h2>Java Recursion</h2>
+  <p>A method that calls itself to solve smaller instances of a problem.</p>
+  <h3>Example:</h3>
+  <pre><code>public int factorial(int n) {
+    if (n == 0) return 1;
+    else return n * factorial(n - 1);
+}</code></pre>
+</section>
+
+<!-- Java Classes -->
+<section id="java-classes">
+  <h2>Java Classes</h2>
+  <p>A class is a blueprint for creating objects, containing fields and methods.</p>
+  <h3>Syntax:</h3>
+  <pre><code>public class ClassName {
+    // fields
+    // methods
+}</code></pre>
+  <h3>Example:</h3>
+  <pre><code>public class Car {
+    String color;
+    void drive() {
+        System.out.println("Driving");
+    }
+}</code></pre>
+</section>
+
+<!-- Java OOP -->
+<section id="java-oop">
+  <h2>Java Object-Oriented Programming (OOP)</h2>
+  <p>Four main principles:</p>
+  <ul>
+    <li>Encapsulation</li>
+    <li>Inheritance</li>
+    <li>Polymorphism</li>
+    <li>Abstraction</li>
+  </ul>
+</section>
+
+<!-- Java Constructors -->
+<section id="java-constructors">
+  <h2>Java Constructors</h2>
+  <p>Special methods used to initialize objects.</p>
+  <h3>Example:</h3>
+  <pre><code>public class Car {
+    String model;
+    public Car(String model) {
+        this.model = model;
+    }
+}</code></pre>
+</section>
+
+<!-- Java Modifiers -->
+<section id="java-modifiers">
+  <h2>Java Modifiers</h2>
+  <p>Modifiers define the access level and behavior of classes, methods, and variables.</p>
+  <ul>
+    <li><strong>Access Modifiers:</strong> <code>public</code>, <code>private</code>, <code>protected</code>, default (package-private)</li>
+    <li><strong>Non-access Modifiers:</strong> <code>static</code>, <code>final</code>, <code>abstract</code>, <code>synchronized</code>, <code>volatile</code></li>
+  </ul>
+</section>
+
+<!-- Java Encapsulation -->
+<section id="java-encapsulation">
+  <h2>Java Encapsulation</h2>
+  <p>Wrapping data (variables) and code (methods) together and restricting access to some components.</p>
+  <h3>Example:</h3>
+  <pre><code>public class Person {
+    private String name;
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+}</code></pre>
+</section>
+
+<!-- Java Packages and API -->
+<section id="java-packages-api">
+  <h2>Java Packages and API</h2>
+  <p>Packages group related classes and interfaces. The Java API is a large set of packages and classes provided by Java.</p>
+  <p>Example of importing a package:</p>
+  <pre><code>import java.util.Scanner;</code></pre>
+</section>
+
+<!-- Java Inheritance -->
+<section id="java-inheritance">
+  <h2>Java Inheritance</h2>
+  <p>Mechanism where one class inherits properties and behaviors from another.</p>
+  <h3>Example:</h3>
+  <pre><code>class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}</code></pre>
+</section>
+
+<!-- Java Polymorphism -->
+<section id="java-polymorphism">
+  <h2>Java Polymorphism</h2>
+  <p>Ability of an object to take many forms. Two types:</p>
+  <ul>
+    <li>Compile-time (method overloading)</li>
+    <li>Runtime (method overriding)</li>
+  </ul>
+</section>
+
+<!-- Java Inner Classes -->
+<section id="java-inner-classes">
+  <h2>Java Inner Classes</h2>
+  <p>Classes defined within another class to logically group classes and control visibility.</p>
+  <h3>Example:</h3>
+  <pre><code>class Outer {
+    class Inner {
+        void display() {
+            System.out.println("Inner class method");
+        }
+    }
+}</code></pre>
+</section>
+
+<!-- Java Abstraction -->
+<section id="java-abstraction">
+  <h2>Java Abstraction</h2>
+  <p>Hiding complex implementation details and showing only essential features.</p>
+  <p>Achieved with abstract classes and interfaces.</p>
+</section>
+
+<!-- Java Interface -->
+<section id="java-interface">
+  <h2>Java Interface</h2>
+  <p>An interface defines a contract of methods that implementing classes must override.</p>
+  <h3>Example:</h3>
+  <pre><code>interface Vehicle {
+    void move();
+}
+
+class Bike implements Vehicle {
+    public void move() {
+        System.out.println("Bike moves");
+    }
+}</code></pre>
+</section>
+
+<!-- Java Exception Handling -->
+<section id="java-exception-handling">
+  <h2>Java Exception Handling</h2>
+  <p>Mechanism to handle runtime errors.</p>
+  <h3>Keywords:</h3>
+  <ul>
+    <li>try</li>
+    <li>catch</li>
+    <li>finally</li>
+    <li>throw</li>
+    <li>throws</li>
+  </ul>
+  <h3>Example:</h3>
+  <pre><code>try {
+    int result = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero");
+}</code></pre>
+</section>
+
+<!-- Java Multithreading -->
+<section id="java-multithreading">
+  <h2>Java Multithreading</h2>
+  <p>Allows concurrent execution of two or more threads to maximize CPU utilization.</p>
+  <h3>Example:</h3>
+  <pre><code>class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start();
+    }
+}</code></pre>
+</section>
+
+<!-- Java Applets -->
+<section id="java-applets">
+  <h2>Java Applets</h2>
+  <p>Small Java programs that run in a web browser (mostly obsolete now).</p>
+</section>
+
+<!-- Java AWT and Swing -->
+<section id="java-awt-swing">
+  <h2>Java AWT and Swing</h2>
+  <p>AWT (Abstract Window Toolkit) and Swing are used for building graphical user interfaces.</p>
+</section>
+
+<!-- Java JDBC -->
+<section id="java-jdbc">
+  <h2>Java JDBC</h2>
+  <p>Java Database Connectivity (JDBC) API allows Java programs to connect to databases.</p>
+</section>
+
+<!-- Java Network Programming -->
+<section id="java-network-programming">
+  <h2>Java Network Programming</h2>
+  <p>Allows communication between computers over a network using TCP/IP protocols.</p>
+</section>
+
+<!-- Java File Handling -->
+<section id="java-file-handling">
+  <h2>Java File Handling</h2>
+  <p>Java provides classes like File, FileReader, FileWriter, BufferedReader, BufferedWriter to work with files.</p>
+</section>
+
+<!-- Java Generics -->
+<section id="java-generics">
+  <h2>Java Generics</h2>
+  <p>Enable types (classes and interfaces) to be parameters when defining classes, methods, and interfaces.</p>
+</section>
+
+<!-- Java Lambda Expressions -->
+<section id="java-lambda-expressions">
+  <h2>Java Lambda Expressions</h2>
+  <p>Provide a clear and concise way to represent one method interface using an expression.</p>
+</section>
+
+<!-- Java Stream API -->
+<section id="java-stream-api">
+  <h2>Java Stream API</h2>
+  <p>Used to process collections of objects in a functional style.</p>
+</section>
+
+<!-- Java Records -->
+<section id="java-records">
+  <h2>Java Records</h2>
+  <p>New feature to create immutable data carriers easily.</p>
+</section>
+
+<!-- Java Modules -->
+<section id="java-modules">
+  <h2>Java Modules</h2>
+  <p>Introduced in Java 9, modules group packages and resources and provide strong encapsulation.</p>
+</section>
+
+<!-- Java Examples -->
+<section id="java-examples">
+  <h2>Java Examples</h2>
+  <p>Complete Java programs illustrating various concepts.</p>
+</section>
+
+<!-- Java References -->
+<section id="java-references">
+  <h2>Java References</h2>
+  <p>Useful links and books for further learning.</p>
+  <ul>
+    <li><a href="https://docs.oracle.com/javase/tutorial/">Oracle Java Tutorials</a></li>
+    <li><a href="https://www.geeksforgeeks.org/java/">GeeksforGeeks Java Programming</a></li>
+    <li>Head First Java - Kathy Sierra & Bert Bates</li>
+    <li>Effective Java - Joshua Bloch</li>
+  </ul>
+</section>
+<section id="end-of-excel-tutorial" style="text-align: center; margin: 50px 0; font-family: Arial, sans-serif;">
+  <h2>🎉 Congratulations on Completing the Excel Tutorial!</h2>
+  <p>You’ve learned Excel essentials, including formulas, formatting, charts, pivot tables, and data analysis techniques.</p>
+  <p>Keep practicing, explore macros, VBA, and Power Query to enhance your Excel skills further!</p>
+  <p><strong>Happy Spreadsheeting! 📊</strong></p>
+</section>
+
+<footer style="text-align:center; padding:20px; background-color:#222; color:#fff; margin-top:40px;">
+  <p>© 2025 Aryan's Excel Tutorial. All rights reserved.</p>
+  <p>Created by Aryan Kumar Ojha</p>
+</footer>
+
+</body>
+</html>

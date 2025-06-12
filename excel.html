@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+ <link rel="icon" href="logoexecl.png" type="image/jpeg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="logoexecl.png">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="logoexecl.png">
+    <link rel="shortcut icon" href="logoexecl.png" type="image/x-jpeg">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title> Excel Tutorial</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ebe853;
+    color: #333;
+  }
+  a {
+    color: #020000;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: rgb(84, 235, 240);
+  }
+
+  /* Sidebar styles */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 260px;
+    background-color: #ebe853;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  .sidebar h2 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 24px;
+    text-align: center;
+  }
+  .sidebar nav a {
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 6px;
+    background-color: #4772a0;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+  }
+  .sidebar nav a:hover,
+  .sidebar nav a.active {
+    background-color: #003d80;
+  }
+
+  /* Main content */
+  .main-content {
+    margin-left: 280px;
+    padding: 30px 40px;
+    max-width: 900px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  header h1 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 6px;
+  }
+  header p {
+    font-size: 18px;
+    color: #080303;
+  }
+
+  section {
+    background: white;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  section h2 {
+    color: #007bff;
+    margin-top: 0;
+  }
+  p {
+    line-height: 1.5;
+  }
+  code {
+    background-color: #f1f1f1;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+  pre {
+    background-color: #f8f8f8;
+    padding: 12px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 14px;
+  }
+
+  /* End section style */
+  #end-of-tutorial {
+    text-align: center;
+    margin: 50px 0;
+  }
+  #end-of-tutorial h2 {
+    font-size: 28px;
+    color: #28a745;
+  }
+  #end-of-tutorial p {
+    font-size: 18px;
+    margin: 8px 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px 0;
+    color: #666;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+  }
+
+  /* Scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Responsive sidebar for small screens */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 10px 15px;
+    }
+    .main-content {
+      margin-left: 0;
+      padding: 20px 15px;
+    }
+    .sidebar nav a {
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>Excel Tutorial</h2>
+  <nav>
+    <a href="#excel-home">Excel HOME</a>
+    <a href="#excel-introduction">Excel Introduction</a>
+    <a href="#excel-get-started">Excel Get Started</a>
+    <a href="#excel-syntax">Excel Syntax</a>
+    <a href="#excel-ranges">Excel Ranges</a>
+    <a href="#excel-fill">Excel Fill</a>
+    <a href="#excel-formulas">Excel Formulas</a>
+    <a href="#excel-functions">Excel Functions</a>
+    <a href="#excel-formatting">Excel Formatting</a>
+    <a href="#excel-charts">Excel Charts</a>
+    <a href="#excel-tables">Excel Tables</a>
+    <a href="#excel-conditional-formatting">Excel Conditional Formatting</a>
+    <a href="#excel-highlight-cell-rules">Highlight Cell Rules</a>
+    <a href="#excel-top-bottom-rules">Top Bottom Rules</a>
+    <a href="#excel-data-bars">Data Bars</a>
+    <a href="#excel-color-scales">Color Scales</a>
+    <a href="#excel-icon-sets">Icon Sets</a>
+    <a href="#excel-manage-rules">Manage Rules (CF)</a>
+    <a href="#table-pivot-intro">Table Pivot Intro</a>
+    <a href="#case-poke-mart">Case: Poke Mart</a>
+    <a href="#case-poke-mart-styling">Case: Poke Mart, Styling</a>
+    <a href="#functions-list">Functions List</a>
+    <a href="#end-of-tutorial">End of Tutorial</a>
+  </nav>
+</div>
+
+<div class="main-content">
+  <header>
+    <h1>Complete Excel Tutorial</h1>
+    <p>Learn Excel from Basics to Advanced</p>
+  </header>
+
+  <section id="excel-home">
+    <h2>Excel HOME</h2>
+    <p><strong>Definition:</strong> The Excel Home tab provides core functionalities like copy, paste, font, alignment, number formats, and styles.</p>
+    <p><strong>Example:</strong> Copy cells A1 to A3 and paste in B1 to B3.</p>
+  </section>
+
+  <section id="excel-introduction">
+    <h2>Excel Introduction</h2>
+    <p><strong>Definition:</strong> Microsoft Excel is a spreadsheet application used for data entry, analysis, visualization, and calculation.</p>
+    <p><strong>Syntax:</strong> Use cells (like A1) to store data. Functions like <code>=SUM(A1:A3)</code> perform calculations.</p>
+    <pre><code>=SUM(A1:A5)
+=AVERAGE(B1:B3)</code></pre>
+  </section>
+
+  <section id="excel-get-started">
+    <h2>Excel Get Started</h2>
+    <p><strong>Definition:</strong> Getting started includes launching Excel, opening a workbook, and understanding the user interface.</p>
+    <p><strong>Syntax:</strong> N/A (interface-based)</p>
+    <pre><code>Open Excel > File > New Workbook</code></pre>
+  </section>
+
+  <section id="excel-syntax">
+    <h2>Excel Syntax</h2>
+    <p><strong>Definition:</strong> Excel formulas begin with <code>=</code> followed by the function name and parameters.</p>
+    <pre><code>=FUNCTION(arguments)
+Example:
+=SUM(A1:A3)</code></pre>
+  </section>
+
+  <section id="excel-ranges">
+    <h2>Excel Ranges</h2>
+    <p><strong>Definition:</strong> A range is a group of cells selected for performing operations.</p>
+    <pre><code>A1:A10 (vertical range)
+A1:D1 (horizontal range)</code></pre>
+  </section>
+
+  <section id="excel-fill">
+    <h2>Excel Fill</h2>
+    <p><strong>Definition:</strong> Fill feature is used to auto-complete a series like numbers, dates, or formulas.</p>
+    <pre><code>Enter 1 in A1, drag down to auto-fill 2, 3, ...</code></pre>
+  </section>
+
+  <section id="excel-formulas">
+    <h2>Excel Formulas</h2>
+    <p><strong>Definition:</strong> A formula is an expression that calculates the value of a cell.</p>
+    <pre><code>=A1+B1
+=A1*B1</code></pre>
+  </section>
+
+  <section id="excel-functions">
+    <h2>Excel Functions</h2>
+    <p><strong>Definition:</strong> Functions are predefined formulas to perform calculations.</p>
+    <pre><code>=SUM(A1:A5)
+=IF(B1>100, "Yes", "No")</code></pre>
+  </section>
+
+  <section id="excel-formatting">
+    <h2>Excel Formatting</h2>
+    <p><strong>Definition:</strong> Formatting refers to changing the appearance of data using font, color, borders, number styles etc.</p>
+    <pre><code>Change cell B1 to bold and red color</code></pre>
+  </section>
+
+  <section id="excel-charts">
+    <h2>Excel Charts</h2>
+    <p><strong>Definition:</strong> Charts provide a visual representation of data using bars, lines, pies etc.</p>
+    <pre><code>Select data > Insert > Chart > Column</code></pre>
+  </section>
+
+  <section id="excel-tables">
+    <h2>Excel Tables</h2>
+    <p><strong>Definition:</strong> Excel Tables organize data in a structured format with filtering, sorting, and styling built-in.</p>
+    <pre><code>Select range > Insert > Table > Confirm headers</code></pre>
+  </section>
+
+  <section id="excel-conditional-formatting">
+    <h2>Excel Conditional Formatting</h2>
+    <p><strong>Definition:</strong> Automatically format cells based on rules or conditions.</p>
+    <pre><code>Home > Conditional Formatting > Highlight Cells Rules > Greater Than > 100</code></pre>
+  </section>
+
+  <section id="excel-highlight-cell-rules">
+    <h2>Highlight Cell Rules</h2>
+    <p><strong>Definition:</strong> Predefined rules to highlight cells meeting specific criteria (e.g., values, duplicates).</p>
+    <pre><code>Highlight all cells greater than 500</code></pre>
+  </section>
+
+  <section id="excel-top-bottom-rules">
+    <h2>Top Bottom Rules</h2>
+    <p><strong>Definition:</strong> Format top or bottom percentage or number of cells.</p>
+    <pre><code>Highlight top 10 items in sales data</code></pre>
+  </section>
+
+  <section id="excel-data-bars">
+    <h2>Data Bars</h2>
+    <p><strong>Definition:</strong> Adds horizontal bars inside cells to visualize data magnitude.</p>
+    <pre><code>Select cells > Conditional Formatting > Data Bars > Choose style</code></pre>
+  </section>
+
+  <section id="excel-color-scales">
+    <h2>Color Scales</h2>
+    <p><strong>Definition:</strong> Colors cells based on their values, creating a gradient effect.</p>
+    <pre><code>Select data > Conditional Formatting > Color Scales > Select color scale</code></pre>
+  </section>
+
+  <section id="excel-icon-sets">
+    <h2>Icon Sets</h2>
+    <p><strong>Definition:</strong> Add icons (arrows, flags, stars) to cells based on value ranges.</p>
+    <pre><code>Conditional Formatting > Icon Sets > Choose icons</code></pre>
+  </section>
+
+  <section id="excel-manage-rules">
+    <h2>Manage Rules (CF)</h2>
+    <p><strong>Definition:</strong> Manage, edit, or delete existing conditional formatting rules.</p>
+    <pre><code>Home > Conditional Formatting > Manage Rules > Edit or Delete rules</code></pre>
+  </section>
+
+  <section id="table-pivot-intro">
+    <h2>Table Pivot Intro</h2>
+    <p><strong>Definition:</strong> Pivot Tables summarize large data sets quickly and flexibly.</p>
+    <pre><code>Select data > Insert > Pivot Table > Choose fields to summarize</code></pre>
+  </section>
+
+  <section id="case-poke-mart">
+    <h2>Case: Poke Mart</h2>
+    <p><strong>Definition:</strong> Example case study demonstrating Excel for managing sales and inventory.</p>
+    <pre><code>Create a sales sheet with product names, quantities, prices, and calculate totals</code></pre>
+  </section>
+
+  <section id="case-poke-mart-styling">
+    <h2>Case: Poke Mart, Styling</h2>
+    <p><strong>Definition:</strong> Applying formatting and styles to the Poke Mart sales sheet for clarity and presentation.</p>
+    <pre><code>Apply bold headers, currency formatting, and conditional formatting for low stock</code></pre>
+  </section>
+
+  <section id="functions-list">
+    <h2>Functions List</h2>
+    <p>Below are some common Excel functions with syntax and examples:</p>
+    <ul>
+      <li><strong>AND:</strong> <code>=AND(logical1, logical2, ...)</code> - Returns TRUE if all arguments are TRUE.</li>
+      <li><strong>AVERAGE:</strong> <code>=AVERAGE(range)</code> - Returns average of numbers in range.</li>
+      <li><strong>IF:</strong> <code>=IF(condition, value_if_true, value_if_false)</code> - Conditional logic.</li>
+      <li><strong>VLOOKUP:</strong> <code>=VLOOKUP(lookup_value, table_array, col_index, [range_lookup])</code> - Lookup value vertically.</li>
+      <li><strong>SUM:</strong> <code>=SUM(range)</code> - Adds all numbers in range.</li>
+      <li><strong>COUNT:</strong> <code>=COUNT(range)</code> - Counts numeric cells in range.</li>
+      <li><strong>LEN:</strong> <code>=LEN(text)</code> - Counts number of characters.</li>
+      <li><strong>NOW:</strong> <code>=NOW()</code> - Current date and time.</li>
+      <li><strong>CONCATENATE (or CONCAT):</strong> <code>=CONCATENATE(text1, text2,...)</code> - Joins text.</li>
+    </ul>
+  </section>
+
+  <section id="end-of-tutorial">
+    <h2>End of Tutorial</h2>
+    <section id="end-of-excel-tutorial" style="text-align: center; margin: 50px 0; font-family: Arial, sans-serif;">
+  <h2>🎉 Congratulations on Completing the Excel Tutorial!</h2>
+  <p>You’ve learned Excel essentials, including formulas, formatting, charts, pivot tables, and data analysis techniques.</p>
+  <p>Keep practicing, explore macros, VBA, and Power Query to enhance your Excel skills further!</p>
+  <p><strong>Happy Spreadsheeting! 📊</strong></p>
+</section>
+
+<footer style="text-align:center; padding:20px; background-color:#222; color:#fff; margin-top:40px;">
+  <p>© 2025 Aryan's Excel Tutorial. All rights reserved.</p>
+  <p>Created by Aryan Kumar Ojha</p>
+</footer>
+
+
+</body>
+</html>

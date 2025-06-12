@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet" />
+    <link rel="icon" href="LOGO.jpeg" type="image/jpeg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="LOGO.jpeg">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="LOGO.jpeg">
+    <link rel="shortcut icon" href="LOGO.jpeg" type="image/x-jpeg">
+
+    <title>LearnX</title>
+
+    <style>
+        #mySidenav a {
+            position: absolute;
+            left: -80px;
+            transition: 0.2s;
+            padding: 15px;
+            width: 100px;
+            text-decoration: none;
+            font-size: 20px;
+            color: rgb(7, 1, 1);
+            border-radius: 0 10px 10px 0;
+        }
+
+        #mySidenav a:hover {
+            left: 0;
+        }
+
+        #HTML {
+            top: 120px;
+            background-color: #04AA6D;
+        }
+
+        #CSS {
+            top: 180px;
+            background-color: #2196F3;
+        }
+
+        #JAVASCRIPT {
+            top: 240px;
+            background-color: #e1f436;
+        }
+
+        #SQL {
+            top: 300px;
+            background-color: #4fe742
+        }
+
+        #C {
+            top: 360px;
+            background-color: #d5da9c
+        }
+
+        #JAVA {
+            top: 420px;
+            background-color: #1377b1
+        }
+
+        #PYTHON {
+            top: 480px;
+            background-color: #036410
+        }
+
+        #EXECL {
+            top: 540px;
+            background-color: #d60d0d
+        }
+.body {
+    
+     background-image: url("background.png");
+      background-size: cover;                 
+      background-position: center;            
+      background-repeat: no-repeat;           
+      margin: 0;                               
+      height: 100vh; 
+      
+           
+        }
+        
+
+        .h3 {
+            text-align: center;
+            color: rgb(230, 73, 17);
+             text-shadow: 2px 2px 4px #50830d;
+             font-size: x-large;
+        }
+
+        .scroll {
+            font-size: x-large;
+            text-shadow: 2px 2px 4px #04AA6D;
+             color: black;
+            text-decoration: none;
+            font-weight: normal;
+            transition: 0.3s;
+        }
+        .scroll:hover {
+            color: rgb(68, 166, 231);
+            font-weight: bold;
+            text-decoration:solid;
+        }
+
+        .article {
+            float: right;
+            padding: 20px;
+            width: 80%;
+            font-size: large;
+            height: 300px;
+             color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 4px #cf9e9e;
+        }
+
+
+/* LearnX Title Centered + Logo */
+.header {
+  position: relative;
+  background-color: #043044;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.brand {
+  font-size: 30px;
+  font-weight: bold;
+  color: #030f0b;
+  padding: 5px 20px;
+  border-radius: 50px;
+  text-shadow: 2px 2px 4px #e5ffe8;
+  transition: font-size 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+
+.brand:hover {
+  font-size: 44px;
+  color: #CD5656;
+  text-shadow: 2px 2px 4px #71C0BB;
+}
+
+.logo-img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgb(12, 7, 7);
+}
+
+
+/* Right Side Toggle Button */
+.menu-toggle {
+  position: absolute;
+  right: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+    </style>
+</head>
+
+<body class="body">
+
+    <div id="mySidenav" class="sidenav">
+        <a href="html.html"  id="HTML">HTML</a>
+        <a href="css.html" id="CSS">CSS</a>
+        <a href="js.html" id="JAVASCRIPT">JAVASCRIPT</a>
+        <a href="sql.html" id="SQL">SQL</a>
+        <a href="python.html" id="PYTHON">PYTHON</a>
+        <a href="java.html" id="JAVA">JAVA</a>
+        <a href="excel.html" id="EXECL">EXECL</a>
+        <a href="c.html" id="C">C</a>
+    </div>
+
+
+    <div class="header">
+  <a href="index.html" class="brand">
+    <img src="LOGO.jpeg" alt="LearnX Logo" class="logo-img"> LearnX
+  </a>
+  <span class="menu-toggle" onclick="openNav()">&#9776; </span>
+  
+</div>
+
+
+
+    <marquee  direction="fa-chevron-right" class="scroll"><a href="#"></a>Welcome to
+        LearnX!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Welcome to LearnX!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to
+        LearnX!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Welcome to LearnX!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to
+        LearnX!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Welcome to LearnX!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Welcome to LearnX!</a> </marquee>
+
+    <h3 class="h3"><u><b>Your Gateway to Tech Basics!</b></u></h3>
+    <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="about.html">About</a>
+    <a href="Contact.html">Contact</a>
+    <a href="feedback.html">feedback</a>
+
+  </div>
+</div>
+
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "2%";
+}
+</script>
+
+</body>
+
+</html>

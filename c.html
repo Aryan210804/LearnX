@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link rel="icon" href="logoc.png" type="image/jpeg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="logoc.png">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="logoc.png">
+    <link rel="shortcut icon" href="logoc.png" type="image/x-jpeg">
+<title>C Programming Tutorial</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #F0BB78;
+    color: #04070a;
+    margin-left: 220px; 
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  h1, h2 {
+    color: #4B4376;
+  }
+  .section {
+    background: rgb(138, 141, 160);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 10px #5a0a88;
+  }
+  code {
+    background: #eee;
+    padding: 10px;
+    border-radius: 6px;
+    display: block;
+    white-space: pre-wrap;
+    font-family: Consolas, monospace;
+    margin-top: 10px;
+    color: #2c3e50;
+  }
+  .output {
+    background: #222;
+    color: #0f0;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
+    font-family: monospace;
+    white-space: pre-wrap;
+  }
+  p.definition {
+    font-style: italic;
+    color: #0e0606;
+  }
+ nav {
+  position: fixed;    
+  top: 0;
+  left: 0;
+  height: 100vh;              
+  background: rgb(138, 141, 160);
+  color: white;
+  padding: 20px 15px;
+  border-radius: 0 6px 6px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; 
+  margin-bottom: 0;         
+  overflow-y: auto;         
+  z-index: 1000;
+}
+
+nav a {
+  color: #010303;
+  margin-bottom: 15px;     
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #1d833f;
+  font-display:fallback ;
+}
+
+</style>
+</head>
+<body>
+
+<h1>C Programming Tutorial</h1>
+
+<nav>
+  <a href="#intro">Intro</a>
+  <a href="#syntax">Syntax</a>
+  <a href="#variables">Variables</a>
+  <a href="#functions">Functions</a>
+  <a href="#loops">Loops</a>
+  <a href="#files">Files</a>
+  <a href="#structures">Structures</a>
+  <a href="#memory">Memory</a>
+  <a href="#macros">Macros</a>
+</nav>
+
+<div class="section" id="intro">
+  <h2>C Intro</h2>
+  <p class="definition">C is a general-purpose, procedural programming language developed in the 1970s. It is widely used for system and application software.</p>
+</div>
+
+<div class="section" id="get-started">
+  <h2>Get Started</h2>
+  <p class="definition">To start programming in C, you need a compiler like GCC. Save your code in a file with <code>.c</code> extension and compile it using the compiler.</p>
+  <code>
+  gcc filename.c -o outputname
+  </code>
+</div>
+
+<div class="section" id="syntax">
+  <h2>C Syntax</h2>
+  <p class="definition">Basic structure of a C program.</p>
+  <code>
+  #include &lt;stdio.h&gt;<br>
+  int main() {<br>
+  &nbsp;&nbsp;printf("Hello, World!\\n");<br>
+  &nbsp;&nbsp;return 0;<br>
+  }
+  </code>
+  <div class="output">Hello, World!</div>
+</div>
+
+<div class="section" id="output">
+  <h2>Output</h2>
+  <p class="definition">Use <code>printf()</code> to display output on the screen.</p>
+  <code>printf("Your message here");</code>
+</div>
+
+<div class="section" id="comments">
+  <h2>Comments</h2>
+  <p class="definition">Comments are non-executable code used to explain the program.</p>
+  <code>
+// Single line comment<br>
+/* Multi-line<br> comment */
+  </code>
+</div>
+
+<div class="section" id="variables">
+  <h2>Variables</h2>
+  <p class="definition">Variables store data values.</p>
+  <code>
+  int age = 25;<br>
+  float height = 5.9;
+  </code>
+</div>
+
+<div class="section" id="data-types">
+  <h2>Data Types</h2>
+  <p class="definition">Defines the type of data a variable can hold.</p>
+  <code>
+  int, float, double, char, void
+  </code>
+</div>
+
+<div class="section" id="constants">
+  <h2>Constants</h2>
+  <p class="definition">Fixed values that do not change during program execution.</p>
+  <code>#define PI 3.14</code>
+</div>
+
+<div class="section" id="operators">
+  <h2>Operators</h2>
+  <p class="definition">Symbols that perform operations on variables and values.</p>
+  <code>
+  +, -, *, /, %, ++, --, ==, !=, &lt;, &gt;, &lt;=, &gt;=, &&, ||, !
+  </code>
+</div>
+
+<div class="section" id="booleans">
+  <h2>Booleans</h2>
+  <p class="definition">Boolean type stores TRUE (1) or FALSE (0) values.</p>
+  <code>_Bool flag = 1; // true</code>
+</div>
+
+<div class="section" id="if-else">
+  <h2>If...Else</h2>
+  <p class="definition">Used for conditional branching.</p>
+  <code>
+  if (age &gt;= 18) {<br>
+  &nbsp;&nbsp;printf("Adult");<br>
+  } else {<br>
+  &nbsp;&nbsp;printf("Minor");<br>
+  }
+  </code>
+</div>
+
+<div class="section" id="switch">
+  <h2>Switch</h2>
+  <p class="definition">Selects one of many code blocks to execute.</p>
+  <code>
+  switch (choice) {<br>
+  &nbsp;&nbsp;case 1: printf("One"); break;<br>
+  &nbsp;&nbsp;case 2: printf("Two"); break;<br>
+  &nbsp;&nbsp;default: printf("Other");<br>
+  }
+  </code>
+</div>
+
+<div class="section" id="while-loop">
+  <h2>While Loop</h2>
+  <p class="definition">Repeats code while a condition is true.</p>
+  <code>
+  int i = 0;<br>
+  while (i &lt; 5) {<br>
+  &nbsp;&nbsp;printf("%d\\n", i);<br>
+  &nbsp;&nbsp;i++;<br>
+  }
+  </code>
+</div>
+
+<div class="section" id="for-loop">
+  <h2>For Loop</h2>
+  <p class="definition">Repeats code a known number of times.</p>
+  <code>
+  for (int i = 0; i &lt; 5; i++) {<br>
+  &nbsp;&nbsp;printf("%d\\n", i);<br>
+  }
+  </code>
+</div>
+
+<div class="section" id="break-continue">
+  <h2>Break / Continue</h2>
+  <p class="definition"><code>break</code> exits the loop; <code>continue</code> skips to the next iteration.</p>
+  <code>
+  for (int i = 0; i &lt; 5; i++) {<br>
+  &nbsp;&nbsp;if (i == 3) break;<br>
+  &nbsp;&nbsp;if (i == 1) continue;<br>
+  &nbsp;&nbsp;printf("%d\\n", i);<br>
+  }
+  </code>
+</div>
+
+<div class="section" id="arrays">
+  <h2>Arrays</h2>
+  <p class="definition">Collection of variables of the same type stored consecutively.</p>
+  <code>int numbers[5] = {1, 2, 3, 4, 5};</code>
+</div>
+
+<div class="section" id="strings">
+  <h2>Strings</h2>
+  <p class="definition">Array of characters ending with a null character <code>'\0'</code>.</p>
+  <code>char name[] = "Aryan";</code>
+</div>
+
+<div class="section" id="user-input">
+  <h2>User Input</h2>
+  <p class="definition">Using <code>scanf()</code> to get input from the user.</p>
+  <code>
+  int age;<br>
+  scanf("%d", &amp;age);
+  </code>
+</div>
+
+<div class="section" id="memory-address">
+  <h2>Memory Address</h2>
+  <p class="definition">Use <code>&amp;</code> to get the memory address of a variable.</p>
+  <code>
+  int x = 5;<br>
+  printf("%p", &amp;x);
+  </code>
+</div>
+
+<div class="section" id="pointers">
+  <h2>Pointers</h2>
+  <p class="definition">Variables that store memory addresses.</p>
+  <code>
+  int x = 5;<br>
+  int *ptr = &amp;x;<br>
+  printf("%d", *ptr);  // Output: 5
+  </code>
+</div>
+
+<div class="section" id="functions">
+  <h2>Functions</h2>
+  <p class="definition">Reusable blocks of code performing specific tasks.</p>
+  <code>
+int add(int a, int b) {<br>
+&nbsp;&nbsp;return a + b;<br>
+}
+  </code>
+</div>
+
+<div class="section" id="function-parameters">
+  <h2>Function Parameters</h2>
+  <p class="definition">Variables passed to functions to provide input.</p>
+  <code>
+void greet(char name[]) {<br>
+&nbsp;&nbsp;printf("Hello, %s!\\n", name);<br>
+}<br><br>
+greet("Aryan");  // Output: Hello, Aryan!
+  </code>
+  <div class="output">Hello, Aryan!</div>
+</div>
+
+<div class="section" id="scope">
+  <h2>Scope</h2>
+  <p class="definition">Defines where a variable is accessible.</p>
+  <code>
+int x = 10;  // Global<br>
+void func() {<br>
+&nbsp;&nbsp;int x = 5;  // Local<br>
+&nbsp;&nbsp;printf("x = %d\\n", x);<br>
+}<br><br>
+func();<br>
+printf("x = %d\\n", x);
+  </code>
+  <div class="output">
+x = 5<br>
+x = 10
+  </div>
+</div>
+
+<div class="section" id="function-declaration">
+  <h2>Function Declaration</h2>
+  <p class="definition">Declare functions before use or provide prototypes.</p>
+  <code>
+int multiply(int, int);  // Prototype<br><br>
+int main() {<br>
+&nbsp;&nbsp;printf("%d\\n", multiply(3, 4));<br>
+&nbsp;&nbsp;return 0;<br>
+}<br><br>
+int multiply(int a, int b) {<br>
+&nbsp;&nbsp;return a * b;<br>
+}
+  </code>
+  <div class="output">12</div>
+</div>
+
+<div class="section" id="recursion">
+  <h2>Recursion</h2>
+  <p class="definition">A function calling itself.</p>
+  <code>
+int factorial(int n) {<br>
+&nbsp;&nbsp;if (n == 0) return 1;<br>
+&nbsp;&nbsp;else return n * factorial(n - 1);<br>
+}
+  </code>
+</div>
+
+<div class="section" id="math-functions">
+  <h2>Math Functions</h2>
+  <p class="definition">Use <code>math.h</code> for math functions.</p>
+  <code>
+#include &lt;math.h&gt;<br>
+double result = sqrt(16);  // 4.0<br>
+result = pow(2, 3);        // 8.0
+  </code>
+</div>
+
+<div class="section" id="files">
+  <h2>Files</h2>
+  <p class="definition">Create, write, and read files using <code>fopen</code>, <code>fprintf</code>, <code>fscanf</code>, and <code>fclose</code>.</p>
+  <code>
+// Create and Write<br>
+FILE *fp = fopen("file.txt", "w");<br>
+fprintf(fp, "Hello file!\\n");<br>
+fclose(fp);<br><br>
+// Read<br>
+char str[100];<br>
+fp = fopen("file.txt", "r");<br>
+fscanf(fp, "%[^\n]", str);<br>
+printf("%s\\n", str);<br>
+fclose(fp);
+  </code>
+  <div class="output">Hello file!</div>
+</div>
+
+<div class="section" id="structures">
+  <h2>Structures</h2>
+  <p class="definition">Group of variables under one name.</p>
+  <code>
+struct Person {<br>
+&nbsp;&nbsp;char name[50];<br>
+&nbsp;&nbsp;int age;<br>
+};<br><br>
+struct Person p1 = {"Aryan", 21};<br>
+printf("%s is %d years old.", p1.name, p1.age);
+  </code>
+</div>
+
+<div class="section" id="unions">
+  <h2>Unions</h2>
+  <p class="definition">Similar to structures but members share same memory.</p>
+  <code>
+union Data {<br>
+&nbsp;&nbsp;int i;<br>
+&nbsp;&nbsp;float f;<br>
+&nbsp;&nbsp;char str[20];<br>
+};<br><br>
+union Data data;<br>
+data.i = 10;<br>
+printf("%d", data.i);
+  </code>
+</div>
+
+<div class="section" id="enums">
+  <h2>Enums</h2>
+  <p class="definition">User-defined types with named integer constants.</p>
+  <code>
+enum Color {RED, GREEN, BLUE};<br>
+enum Color c = RED;
+  </code>
+</div>
+
+<div class="section" id="memory-management">
+  <h2>Memory Management</h2>
+  <p class="definition">Dynamic memory allocation with <code>malloc</code>, <code>calloc</code>, <code>free</code>.</p>
+  <code>
+int *ptr = (int *) malloc(sizeof(int));<br>
+*ptr = 10;<br>
+free(ptr);
+  </code>
+</div>
+
+<div class="section" id="macros">
+  <h2>Macros</h2>
+  <p class="definition">Preprocessor directives for constants or functions.</p>
+  <code>
+#define PI 3.14<br>
+#define SQUARE(x) ((x) * (x))
+  </code>
+</div>
+<section id="end-of-c-tutorial" style="text-align: center; margin: 50px 0; font-family: Arial, sans-serif;">
+  <h2>🎉 Congratulations on Completing the C Programming Tutorial!</h2>
+  <p>You’ve mastered the fundamentals of C programming, including variables, control structures, functions, memory management, and more.</p>
+  <p>Keep practicing by writing programs and exploring advanced topics to become a confident C programmer!</p>
+  <p><strong>Happy Coding! 🖥️</strong></p>
+</section>
+
+<footer style="text-align:center; padding:20px; background-color:#222; color:#fff; margin-top:40px;">
+  <p>© 2025 Aryan's C Tutorial. All rights reserved.</p>
+  <p>Created by Aryan Kumar Ojha</p>
+</footer>
+</body>
+</html>
