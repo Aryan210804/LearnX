@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile - LearnX</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .profile-card {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .profile-card h2 {
+      margin: 0;
+      font-size: 26px;
+      color: #2c5364;
+    }
+
+    .profile-card p {
+      margin: 5px 0 20px;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      margin: 10px 0;
+      padding: 10px;
+      width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 12px 24px;
+      margin: 12px 5px 0;
+      background: #2c5364;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    button:hover {
+      background: #1c394c;
+      transform: scale(1.03);
+    }
+
+    @media screen and (max-width: 480px) {
+      .profile-card {
+        padding: 30px 20px;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <h2>Welcome, <span id="username">User</span></h2>
+    <p>Email: <span id="email">your@email.com</span></p>
+
+    <!-- Removed Profile Image & Upload -->
+
+    <input type="text" id="update-name" placeholder="Enter new name" />
+    <input type="text" id="bio" placeholder="Enter your bio" />
+    <input type="number" id="age" placeholder="Enter your age" />
+    <input type="text" id="location" placeholder="Enter your location" />
+
+    <button id="save-changes">Save Changes</button>
+    <button id="logout">Logout</button>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import {
+      getAuth, onAuthStateChanged, signOut, updateProfile
+    } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+    import {
+      getFirestore, doc, getDoc, setDoc
+    } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const username = document.getElementById("username");
+    const email = document.getElementById("email");
+    const updateNameInput = document.getElementById("update-name");
+    const bioInput = document.getElementById("bio");
+    const ageInput = document.getElementById("age");
+    const locationInput = document.getElementById("location");
+    const saveChangesBtn = document.getElementById("save-changes");
+    const logoutBtn = document.getElementById("logout");
+
+    let currentUser;
+
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        currentUser = user;
+        username.textContent = user.displayName || "No Name";
+        email.textContent = user.email;
+
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          bioInput.value = data.bio || "";
+          ageInput.value = data.age || "";
+          locationInput.value = data.location || "";
+        }
+      } else {
+        window.location.href = "index.html";
+      }
+    });
+
+    saveChangesBtn.addEventListener('click', async () => {
+      const newName = updateNameInput.value.trim();
+      const bio = bioInput.value.trim();
+      const age = ageInput.value.trim();
+      const location = locationInput.value.trim();
+
+      if (newName) {
+        await updateProfile(currentUser, { displayName: newName });
+        username.textContent = newName;
+      }
+
+      await setDoc(doc(db, "users", currentUser.uid), {
+        bio,
+        age,
+        location
+      });
+
+      alert("✅ Profile updated successfully!");
+    });
+
+    logoutBtn.addEventListener('click', () => {
+      signOut(auth).then(() => {
+        window.location.href = "index.html";
+      });
+    });
+  </script>
+</body>
+</html>

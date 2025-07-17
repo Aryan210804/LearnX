@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnX</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="LOGO.jpeg" type="image/jpeg" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url("background.png") center center/cover no-repeat;
+      height: 100vh;
+    }
+
+    /* Sidebar */
+    #mySidenav a {
+      position: absolute;
+      left: -80px;
+      transition: 0.2s;
+      padding: 15px;
+      width: 100px;
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+      border-radius: 0 10px 10px 0;
+    }
+
+    #mySidenav a:hover {
+      left: 0;
+    }
+
+    #HTML {
+      top: 120px;
+      background-color: #04AA6D;
+    }
+
+    #CSS {
+      top: 180px;
+      background-color: #2196F3;
+    }
+
+    #JAVASCRIPT {
+      top: 240px;
+      background-color: #e1f436;
+      color: #000;
+    }
+
+    #SQL {
+      top: 300px;
+      background-color: #4fe742;
+      color: #000;
+    }
+
+    #C {
+      top: 360px;
+      background-color: #d5da9c;
+      color: #000;
+    }
+
+    #JAVA {
+      top: 420px;
+      background-color: #1377b1;
+    }
+
+    #PYTHON {
+      top: 480px;
+      background-color: #036410;
+    }
+
+    #EXECL {
+      top: 540px;
+      background-color: #d60d0d;
+    }
+
+    /* Header */
+    .header {
+      position: relative;
+      background-color: #043044;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand {
+      font-size: 30px;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px #e5ffe8;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgb(12, 7, 7);
+    }
+
+    .menu-toggle {
+      position: absolute;
+      right: 20px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    #logout-button {
+      position: absolute;
+      right: 120px;
+      padding: 10px 16px;
+      background-color: #CD5656;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: none;
+    }
+
+    marquee {
+      font-size: 18px;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 5px;
+    }
+
+    /* Overlay Menu */
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      text-align: center;
+    }
+
+    .overlay a {
+      font-size: 30px;
+      padding: 8px;
+      text-decoration: none;
+      color: #fff;
+      display: block;
+    }
+
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 50px;
+    }
+
+    /* Modal */
+    #confirmModal {
+      display: none;
+      position: fixed;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .modal-content button {
+      margin: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .confirm {
+      background-color: #CD5656;
+      color: white;
+    }
+
+    .cancel {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Side Navigation -->
+  <div id="mySidenav">
+    <a href="html.html" id="HTML">HTML</a>
+    <a href="css.html" id="CSS">CSS</a>
+    <a href="js.html" id="JAVASCRIPT">JS</a>
+    <a href="sql.html" id="SQL">SQL</a>
+    <a href="python.html" id="PYTHON">Python</a>
+    <a href="java.html" id="JAVA">Java</a>
+    <a href="excel.html" id="EXECL">Excel</a>
+    <a href="c.html" id="C">C</a>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <a href="index.html" class="brand">
+      <img src="LOGO.jpeg" class="logo-img" alt="logo" /> LearnX
+    </a>
+    <span class="menu-toggle" onclick="openNav()">☰</span>
+    <button id="logout-button">Logout</button>
+  </div>
+
+  <!-- Marquee -->
+  <marquee>
+    Welcome to LearnX! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Your Gateway to Tech Basics! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Happy
+    Learning! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aWelcome to LearnX!
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Your Gateway to Tech Basics! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Happy
+    Learning! </marquee>
+
+  <!-- Overlay Nav -->
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="profile.html">Profile</a>
+      <a href="about.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+    </div>
+  </div>
+
+  <!-- Logout Confirmation Modal -->
+  <div id="confirmModal">
+    <div class="modal-content">
+      <p>Are you sure you want to logout?</p>
+      <button class="confirm" onclick="confirmLogout()">Yes</button>
+      <button class="cancel" onclick="cancelLogout()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+  </script>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const logoutBtn = document.getElementById("logout-button");
+    const confirmModal = document.getElementById("confirmModal");
+
+    logoutBtn.addEventListener("click", () => {
+      confirmModal.style.display = "block";
+    });
+
+    window.confirmLogout = function () {
+      signOut(auth).then(() => {
+        window.location.href = "login.html";
+      }).catch(error => {
+        alert("Error logging out: " + error.message);
+      });
+    };
+
+    window.cancelLogout = function () {
+      confirmModal.style.display = "none";
+    };
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        logoutBtn.style.display = "block";
+      } else {
+        logoutBtn.style.display = "none";
+        window.location.href = "index.html";
+      }
+    });
+  </script>
+</body>
+
+</html>

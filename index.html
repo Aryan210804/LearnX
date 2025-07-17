@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+   <link rel="icon" href="LOGO.png" type="image/jpeg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="LOGO.png">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="LOGO.png">
+    <link rel="shortcut icon" href="LOGO.png" type="image/x-jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LearnX Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #070303 url("background.png") center center/cover no-repeat;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 30px;
+      background-color: rgb(103, 161, 199);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #080505;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #0f0202;
+      border-radius: 6px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #04AA6D;
+      border: none;
+      border-radius: 6px;
+      color: rgb(15, 2, 2);
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #039e62;
+    }
+
+    .toggle {
+      text-align: center;
+      margin-top: 15px;
+      color: #4b3636;
+    }
+
+    .toggle span {
+      color: #04AA6D;
+      cursor: pointer;
+    }
+
+    .forgot {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .forgot a {
+      color: #0044cc;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
+    }
+
+    .message {
+      text-align: center;
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="auth-container">
+    <h2 id="form-title">Login</h2>
+
+    <!-- Name input (hidden by default) -->
+    <input type="text" id="name" placeholder="Full Name" style="display: none;" />
+
+    <input type="email" id="email" placeholder="Email" />
+    <div style="position: relative;">
+      <input type="password" id="password" placeholder="Password" />
+      <span id="toggle-password" style="
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        user-select:all;
+      ">👁️</span>
+    </div>
+    <button id="auth-button">Login</button>
+    
+    <div class="toggle">
+      <p id="toggle-text">Don't have an account? <span id="switch-mode">Sign Up</span></p>
+    </div>
+
+    <div class="forgot">
+      <a href="#" id="forgot-password">Forgot Password?</a>
+    </div>
+
+    <div class="message" id="message"></div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { 
+      getAuth, 
+      createUserWithEmailAndPassword, 
+      signInWithEmailAndPassword, 
+      sendPasswordResetEmail,
+      updateProfile
+    } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const authButton = document.getElementById('auth-button');
+    const switchMode = document.getElementById('switch-mode');
+    const toggleText = document.getElementById('toggle-text');
+    const formTitle = document.getElementById('form-title');
+    const messageDiv = document.getElementById('message');
+    const forgotPasswordLink = document.getElementById('forgot-password');
+    const togglePassword = document.getElementById('toggle-password');
+
+    let isLogin = true;
+
+    function showMessage(msg, isError = true) {
+      messageDiv.textContent = msg;
+      messageDiv.style.color = isError ? 'red' : 'green';
+    }
+
+    function updateForm() {
+      formTitle.textContent = isLogin ? "Login" : "Sign Up";
+      authButton.textContent = isLogin ? "Login" : "Sign Up";
+      nameInput.style.display = isLogin ? "none" : "block";
+      toggleText.innerHTML = isLogin
+        ? `Don't have an account? <span id="switch-mode">Sign Up</span>`
+        : `Already have an account? <span id="switch-mode">Login</span>`;
+      document.getElementById("switch-mode").addEventListener("click", () => {
+        isLogin = !isLogin;
+        updateForm();
+      });
+    }
+
+    authButton.addEventListener('click', () => {
+      const email = emailInput.value;
+      const password = passwordInput.value;
+      const name = nameInput.value;
+
+      if (!email || !password || (!isLogin && !name)) {
+        showMessage('Please fill in all fields.');
+        return;
+      }
+
+      if (isLogin) {
+        signInWithEmailAndPassword(auth, email, password)
+          .then(() => {
+            showMessage("Login successful!", false);
+            window.location.href = "index1.html";
+          })
+          .catch(error => showMessage(error.message));
+      } else {
+        createUserWithEmailAndPassword(auth, email, password)
+          .then(userCredential => {
+            updateProfile(userCredential.user, {
+              displayName: name
+            }).then(() => {
+              showMessage("Signup successful! Please login.", false);
+              isLogin = true;
+              updateForm();
+            });
+          })
+          .catch(error => showMessage(error.message));
+      }
+    });
+
+    forgotPasswordLink.addEventListener('click', () => {
+      const email = emailInput.value;
+      if (!email) {
+        showMessage("Enter your email to receive reset link.");
+        return;
+      }
+
+      sendPasswordResetEmail(auth, email)
+        .then(() => showMessage("Reset email sent. Check your inbox.", false))
+        .catch((error) => showMessage("Error: " + error.message));
+    });
+
+    togglePassword.addEventListener('click', () => {
+      const currentType = passwordInput.getAttribute('type');
+      const newType = currentType === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', newType);
+      togglePassword.textContent = newType === 'password' ? '👁️' : '🙈';
+    });
+
+    updateForm(); 
+  </script>
+</body>
+</html>

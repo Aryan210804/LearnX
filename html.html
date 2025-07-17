@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML  Tutorial</title>
+   <link rel="icon" href="logohtml.png" type="image/jpeg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="logohtml.png">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="logohtml.png">
+    <link rel="shortcut icon" href="logohtml.png" type="image/x-jpeg">
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 20px; 
+      background: #309898; 
+      
+    }
+   .h2 {
+       color: #2c3e50;
+       }
+       .h1{
+        text-align: center;
+        color: #010808;
+       }
+       .h1:hover{
+        color: #6dcc2e;
+        text-shadow: 0 2px 8px #eb1515;
+        font-size: xx-large;
+       }
+    .section { background: #fff; 
+      padding: 20px; 
+      margin-bottom: 20px;
+       border-radius: 10px;
+       margin-left: 260px; 
+       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+       gap: 30px;
+      }
+
+    code { background: #F3F3E0; 
+      padding: 4px 8px; border-radius: 5px; 
+      display: inline-block; margin: 10px 0;
+     }
+
+    pre { background: #90D1CA;
+       padding: 10px; 
+      border-left: 5px solid #3498db;
+       overflow-x: auto; 
+      }
+    .output {
+       background: #F3F3E0; 
+      padding: 10px; 
+      border: 1px dashed #2ecc71; }
+
+
+.sidebar {
+  position: fixed;    
+  top: 0;
+  left: 0;
+  height: 100vh;              
+  background: rgb(138, 141, 160);
+  color: white;
+  padding: 20px 15px;
+  border-radius: 0 6px 6px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; 
+  margin-bottom: 0;         
+  overflow-y: auto;         
+  z-index: 1000;
+}
+
+.sidebar a {
+  color: #010303;
+  margin-bottom: 15px;     
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+  color: #1d833f;
+  font-display:fallback ;
+}
+
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2> HTML Tutorial</h2>
+    <a href="#Introduction"> Introduction</a>
+    <a href="#Editors"> Editors</a>
+    <a href="#Basic"> Basic</a>
+    <a href="#Elements"> Elements</a>
+    <a href="#Attributes"> Attributes</a>
+    <a href="#Headings"> Headings</a>
+    <a href="#Paragraphs"> Paragraphs</a>
+    <a href="#Styles"> Styles</a>
+    <a href="#Formatting"> Formatting</a>
+    <a href="#Quotations"> Quotations</a>
+    <a href="#Comments"> Comments</a>
+    <a href="#Colors"> Colors</a>
+    <a href="#CSS"> CSS</a>
+    <a href="#Links"> Links</a>
+    <a href="#Images"> Images</a>
+    <a href="#Favicon"> Favicon</a>
+    <a href="#PageTitle"> Page Title</a>
+    <a href="#Tables"> Tables</a>
+    <a href="#Lists"> Lists</a>
+    <a href="#BlockInline"> Block & Inline</a>
+    <a href="#Div"> Div</a>
+    <a href="#Classes"> Classes</a>
+    <a href="#Id"> Id</a>
+    <a href="#Iframes"> Iframes</a>
+    <a href="#JavaScript"> JavaScript</a>
+    <a href="#FilePaths"> File Paths</a>
+    <a href="#Head"> Head</a>
+    <a href="#Layout"> Layout</a>
+    <a href="#Responsive"> Responsive</a>
+    <a href="#Computercode"> Computercode</a>
+    <a href="#Semantics"> Semantics</a>
+    <a href="#StyleGuide"> Style Guide</a>
+    <a href="#Entities"> Entities</a>
+    <a href="#Symbols"> Symbols</a>
+    <a href="#Emojis"> Emojis</a>
+    <a href="#Charsets"> Charsets</a>
+    <a href="#URLEncode"> URL Encode</a>
+    <a href="#vsX"> vs. X</a>
+
+    <h2> Forms</h2>
+    <a href="#Forms"> Forms</a>
+    <a href="#FormAttributes"> Form Attributes</a>
+    <a href="#FormElements"> Form Elements</a>
+    <a href="#InputTypes"> Input Types</a>
+    <a href="#InputAttributes"> Input Attributes</a>
+    <a href="#InputFormAttributes">Input Form Attributes</a>
+
+    <h2> Graphics</h2>
+    <a href="#Canvas"> Canvas</a>
+    <a href="#SVG"> SVG</a>
+
+    <h2> Media</h2>
+    <a href="#Media"> Media</a>
+    <a href="#Video"> Video</a>
+    <a href="#Audio"> Audio</a>
+    <a href="#Plugins"> Plug-ins</a>
+    <a href="#YouTube"> YouTube</a>
+
+    <h2> APIs</h2>
+    <a href="#WebAPIs"> Web APIs</a>
+    <a href="#Geolocation"> Geolocation</a>
+    <a href="#DragandDrop"> Drag and Drop</a>
+    <a href="#WebStorage"> Web Storage</a>
+    <a href="#WebWorkers"> Web Workers</a>
+    <a href="#SSE"> SSE</a>
+
+    <h2> Examples</h2>
+    <a href="#Examples"> Examples</a>
+    <a href="#Editor"> Editor</a>
+    <a href="#Quiz"> Quiz</a>
+
+    <h2> References</h2>
+   
+    <a href="#TagList"> Tag List</a>
+    <a href="#Attributes"> Attributes</a>
+    <a href="#GlobalAttributes"> Global Attributes</a>
+    <a href="#Events"> Events</a>
+    <a href="#ColorsRef"> Colors</a>
+    <a href="#CanvasRef"> Canvas</a>
+    <a href="#AudioVideo"> Audio/Video</a>
+    <a href="#Doctypes"> Doctypes</a>
+    <a href="#CharacterSets"> Character Sets</a>
+    <a href="#URLEncodeRef"> URL Encode</a>
+    <a href="#LangCodes"> Lang Codes</a>
+    <a href="#HTTPMessages">HTTP Messages</a>
+    <a href="#HTTPMethods">HTTP Methods</a>
+    <a href="#PXtoEMConverter">PX to EM Converter</a>
+    <a href="#KeyboardShortcuts">Keyboard Shortcuts</a>
+</div>
+
+  <h1 class="h1">HTML Tutorial</h1>
+  <div class="section" id="Introduction">
+    <h2>HTML Introduction</h2>
+    <p><strong>HTML</strong> stands for Hyper Text Markup Language. It is the standard markup language for creating web pages.</p>
+    <p>HTML describes the structure of a web page using elements and tags.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;This is a Heading&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <div class="output">
+      <h1>This is a Heading</h1>
+      <p>This is a paragraph.</p>
+    </div>
+  </div>
+
+  <!-- HTML Editors -->
+  <div class="section" id="Editors">
+    <h2>HTML Editors</h2>
+    <p>You can write HTML using any text editor like Notepad, VS Code, Sublime Text, etc.</p>
+    <p>Example of basic structure written in a text editor:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;...&lt;/html&gt;</code></pre>
+  </div>
+
+  <!-- HTML Basic -->
+  <div class="section" id="Basic">
+    <h2>HTML Basic</h2>
+    <p>The basic structure of every HTML page includes <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code>.</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;Your content here&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <div class="output">Your content here</div>
+  </div>
+
+  <!-- HTML Elements -->
+  <div class="section" id="Elements">
+    <h2>HTML Elements</h2>
+    <p>HTML elements are building blocks of HTML pages. Example:</p>
+    <pre><code>&lt;p&gt;This is a paragraph element.&lt;/p&gt;</code></pre>
+    <div class="output">
+      <p>This is a paragraph element.</p>
+    </div>
+  </div>
+
+  <!-- HTML Attributes -->
+  <div class="section" id="Attributes">
+    <h2>HTML Attributes</h2>
+    <p>Attributes provide additional information about elements. Example:</p>
+    <pre><code>&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;</code></pre>
+    <div class="output">
+      <a href="https://example.com" target="blank">Visit Example</a>
+    </div>
+  </div>
+  <div class="section" id="Headings">
+  <h2>HTML Headings</h2>
+  <p>HTML provides six levels of headings from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>.</p>
+  <pre><code>
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;
+  </code></pre>
+  <div class="output">
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+  </div>
+</div>
+<div class="section" id="Paragraphs">
+  <h2>HTML Paragraphs</h2>
+  <p><strong>Definition:</strong> The &lt;p&gt; tag defines a paragraph. Browsers automatically add space before and after a paragraph.</p>
+  <code>&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code>
+  <div class="output">
+    <p>This is a paragraph of text.</p>
+  </div>
+</div>
+
+<div class="section" id="Styles">
+  <h2>HTML Styles</h2>
+  <p><strong>Definition:</strong> The <code>style</code> attribute is used to add CSS directly to an element.</p>
+  <code>&lt;p style="color:blue;"&gt;This text is blue.&lt;/p&gt;</code>
+  <div class="output">
+    <p style="color:blue;">This text is blue.</p>
+  </div>
+</div>
+
+<div class="section" id="Formatting">
+  <h2>HTML Formatting</h2>
+  <p><strong>Definition:</strong> HTML formatting tags are used to make text bold, italic, underlined, etc.</p>
+  <code>
+    &lt;b&gt;Bold&lt;/b&gt;<br>
+    &lt;i&gt;Italic&lt;/i&gt;<br>
+    &lt;u&gt;Underline&lt;/u&gt;<br>
+    &lt;small&gt;Small&lt;/small&gt;
+  </code>
+  <div class="output">
+    <b>Bold</b><br>
+    <i>Italic</i><br>
+    <u>Underline</u><br>
+    <small>Small</small>
+  </div>
+</div>
+
+<div class="section" id="Quotations">
+  <h2>HTML Quotations</h2>
+  <p><strong>Definition:</strong> HTML offers different tags for quotations like &lt;blockquote&gt;, &lt;q&gt;, &lt;abbr&gt;, etc.</p>
+  <code>
+    &lt;blockquote&gt;This is a long quote.&lt;/blockquote&gt;<br>
+    &lt;q&gt;Short quote&lt;/q&gt;
+  </code>
+  <div class="output">
+    <blockquote>This is a long quote.</blockquote>
+    <q>Short quote</q>
+  </div>
+</div>
+
+<div class="section"  id="Comments">
+  <h2>HTML Comments</h2>
+  <p><strong>Definition:</strong> Comments are not displayed in the browser. They help developers understand the code.</p>
+  <code>&lt;!-- This is a comment --&gt;</code>
+  <div class="output">
+    <p>(No output shown, comment is invisible)</p>
+  </div>
+</div>
+<div class="section" id="colors">
+  <h2>HTML Colors</h2>
+  <p><strong>Definition:</strong> HTML colors can be set using names, RGB, HEX, or HSL values.</p>
+  <code>&lt;p style="color:green;"&gt;Green Text&lt;/p&gt;</code>
+  <div class="output">
+    <p style="color:green;">Green Text</p>
+  </div>
+</div>
+
+
+
+<div class="section" id="CSS">
+  <h2>HTML CSS</h2>
+  <p><strong>Definition:</strong> CSS (Cascading Style Sheets) is used to control the style and layout of HTML elements.</p>
+  <code>
+    &lt;style&gt;<br>
+      p { color: red; }<br>
+    &lt;/style&gt;<br>
+    &lt;p&gt;Styled with CSS&lt;/p&gt;
+  </code>
+  <div class="output">
+    <style>p.demo-css { color: red; }</style>
+    <p class="demo-css">Styled with CSS</p>
+  </div>
+</div>
+
+<div class="section" id="Links">
+  <h2>HTML Links</h2>
+  <p><strong>Definition:</strong> Links are created using the &lt;a&gt; tag.</p>
+  <code>&lt;a href="https://www.google.com"&gt;Go to Google&lt;/a&gt;</code>
+  <div class="output">
+    <a href="https://www.google.com" target="blank">Go to Google</a>
+  </div>
+</div>
+
+<div class="section" id="Images">
+  <h2>HTML Images</h2>
+  <p><strong>Definition:</strong> Images are displayed using the &lt;img&gt; tag with src and alt attributes.</p>
+  <code>&lt;img src="https://via.placeholder.com/150" alt="Example Image"&gt;</code>
+  <div class="output">
+    <img src="img_css2.png" alt="Example Image">
+  </div>
+</div>
+
+<div class="section" id="Favicon">
+  <h2>HTML Favicon</h2>
+  <p><strong>Definition:</strong> A favicon is a small icon shown in the browser tab. It's linked in the &lt;head&gt; section.</p>
+  <code>&lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;</code>
+  <div class="output">
+    <p>(Favicons appear in the browser tab, not on the page)</p>
+  </div>
+</div>
+
+<div class="section" id="PageTitle">
+  <h2>HTML Page Title</h2>
+  <p><strong>Definition:</strong> The page title is shown in the browser tab and is defined inside the &lt;title&gt; tag.</p>
+  <code>
+    &lt;head&gt;<br>
+      &lt;title&gt;My Web Page&lt;/title&gt;<br>
+    &lt;/head&gt;
+  </code>
+  <div class="output">
+    <p>(Check your browser tab to see the title)</p>
+  </div>
+</div>
+<div class="section" id="Tables">
+  <h2>HTML Tables</h2>
+  <p><strong>Definition:</strong> HTML tables are used to display data in rows and columns using &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;th&gt;.</p>
+  <code>
+    &lt;table border="1"&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;th&gt;Name&lt;/th&gt;<br>
+        &lt;th&gt;Age&lt;/th&gt;<br>
+      &lt;/tr&gt;<br>
+      &lt;tr&gt;<br>
+        &lt;td&gt;John&lt;/td&gt;<br>
+        &lt;td&gt;25&lt;/td&gt;<br>
+      &lt;/tr&gt;<br>
+    &lt;/table&gt;
+  </code>
+  <div class="output">
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>25</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="section" id="Lists">
+  <h2>HTML Lists</h2>
+  <p><strong>Definition:</strong> Lists are used to group related items. Types: Ordered (ol), Unordered (ul), Description (dl).</p>
+  <code>
+    &lt;ul&gt;&lt;li&gt;Apple&lt;/li&gt;&lt;li&gt;Banana&lt;/li&gt;&lt;/ul&gt;<br>
+    &lt;ol&gt;&lt;li&gt;First&lt;/li&gt;&lt;li&gt;Second&lt;/li&gt;&lt;/ol&gt;
+  </code>
+  <div class="output">
+    <ul><li>Apple</li><li>Banana</li></ul>
+    <ol><li>First</li><li>Second</li></ol>
+  </div>
+</div>
+
+<div class="section" id="BlockInline">
+  <h2>HTML Block & Inline</h2>
+  <p><strong>Definition:</strong> Block elements take up full width (e.g., &lt;div&gt;, &lt;p&gt;), while inline elements take only as much width as needed (e.g., &lt;span&gt;, &lt;a&gt;).</p>
+  <code>
+    &lt;div style="background:lightblue"&gt;Block Element&lt;/div&gt;<br>
+    &lt;span style="background:lightgreen"&gt;Inline Element&lt;/span&gt;
+  </code>
+  <div class="output">
+    <div style="background:lightblue">Block Element</div>
+    <span style="background:lightgreen">Inline Element</span>
+  </div>
+</div>
+
+<div class="section" id="Div">
+  <h2>HTML Div</h2>
+  <p><strong>Definition:</strong> The &lt;div&gt; tag defines a division or section in an HTML document.</p>
+  <code>
+    &lt;div style="border:1px solid black; padding:10px;"&gt;This is a div&lt;/div&gt;
+  </code>
+  <div class="output">
+    <div style="border:1px solid black; padding:10px;">This is a div</div>
+  </div>
+</div>
+
+<div class="section" id="Classes">
+  <h2>HTML Classes</h2>
+  <p><strong>Definition:</strong> Classes group multiple elements for CSS styling or JavaScript. Use the <code>class</code> attribute.</p>
+  <code>
+    &lt;style&gt;.highlight { color: red; }&lt;/style&gt;<br>
+    &lt;p class="highlight"&gt;This is highlighted.&lt;/p&gt;
+  </code>
+  <div class="output" >
+    <style>.highlight { color: red; }</style>
+    <p class="highlight">This is highlighted.</p>
+  </div>
+</div>
+
+<div class="section"  id="Id">
+  <h2>HTML Id</h2>
+  <p><strong>Definition:</strong> The <code>id</code> attribute assigns a unique identifier to an element.</p>
+  <code>
+    &lt;p id="unique"&gt;Unique paragraph&lt;/p&gt;<br>
+    &lt;style&gt;#unique { color: blue; }&lt;/style&gt;
+  </code>
+  <div class="output">
+    <style>#unique { color: blue; }</style>
+    <p id="unique">Unique paragraph</p>
+  </div>
+</div>
+
+<div class="section" id="Iframes">
+  <h2>HTML Iframes</h2>
+  <p><strong>Definition:</strong> An iframe embeds another HTML page within the current page.</p>
+  <code>
+    &lt;iframe src="https://www.example.com" width="300" height="200"&gt;&lt;/iframe&gt;
+  </code>
+  <div class="output">
+    <iframe src="https://www.example.com" width="300" height="200" title="Example Site"></iframe>
+  </div>
+</div>
+<div class="section" id="JavaScript">
+  <h2>HTML JavaScript</h2>
+  <p><strong>Definition:</strong> JavaScript adds interactivity to HTML pages. Use the &lt;script&gt; tag to include JS.</p>
+  <code>
+    &lt;button onclick="sayHello()"&gt;Click me&lt;/button&gt;<br>
+    &lt;script&gt;<br>
+      function sayHello() {<br>
+        alert("Hello, World!");<br>
+      }<br>
+    &lt;/script&gt;
+  </code>
+  <div class="output">
+    <button onclick="alert('Hello, World!')">Click me</button>
+  </div>
+</div>
+
+<div class="section" id="FilePaths">
+  <h2>HTML File Paths</h2>
+  <p><strong>Definition:</strong> File paths specify the location of files like images or links. Can be absolute or relative.</p>
+  <code>
+    &lt;img src="images/pic.jpg" alt="Relative Path"&gt;<br>
+    &lt;img src="https://example.com/pic.jpg" alt="Absolute Path"&gt;
+  </code>
+  <div class="output">
+    <p>(Images may not display unless correct path is used)</p>
+  </div>
+</div>
+
+<div class="section" id="Head">
+  <h2>HTML Head</h2>
+  <p><strong>Definition:</strong> The &lt;head&gt; element contains meta-information like title, styles, scripts, etc.</p>
+  <code>
+    &lt;head&gt;<br>
+      &lt;title&gt;My Page&lt;/title&gt;<br>
+      &lt;link rel="stylesheet" href="style.css"&gt;<br>
+    &lt;/head&gt;
+  </code>
+  <div class="output">
+    <p>(Head elements affect the browser tab or document setup)</p>
+  </div>
+</div>
+
+<div class="section" id="Layout">
+  <h2>HTML Layout</h2>
+  <p><strong>Definition:</strong> Layout uses elements like &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, &lt;footer&gt;.</p>
+  <code>
+    &lt;header&gt;Header&lt;/header&gt;<br>
+    &lt;nav&gt;Navigation&lt;/nav&gt;<br>
+    &lt;section&gt;Main Content&lt;/section&gt;<br>
+    &lt;footer&gt;Footer&lt;/footer&gt;
+  </code>
+  <div class="output">
+    <header style="background:#eee; padding:5px;">Header</header>
+    <nav style="background:#ccc; padding:5px;">Navigation</nav>
+    <section style="background:#ddd; padding:5px;">Main Content</section>
+    <footer style="background:#bbb; padding:5px;">Footer</footer>
+  </div>
+</div>
+<div class="section" id="Responsive">
+  <h2>HTML Responsive</h2>
+  <p><strong>Definition:</strong> Responsive design ensures the webpage looks good on all devices. Use the viewport meta tag and CSS media queries.</p>
+  <code>
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+    &lt;style&gt;<br>
+      body { font-size: 16px; }<br>
+      @media (max-width: 600px) {<br>
+        body { font-size: 12px; }<br>
+      }<br>
+    &lt;/style&gt;
+  </code>
+  <div class="output">
+    <p>Resize your browser to see responsiveness in action!</p>
+  </div>
+</div>
+
+<div class="section" id="Computercode">
+  <h2>HTML Computercode</h2>
+  <p><strong>Definition:</strong> Tags like &lt;code&gt;, &lt;pre&gt;, &lt;kbd&gt;, &lt;samp&gt; are used for displaying computer code.</p>
+  <code>
+    &lt;code&gt;print("Hello")&lt;/code&gt;<br>
+    &lt;pre&gt;for i in range(5): print(i)&lt;/pre&gt;
+  </code>
+  <div class="output">
+    <code>print("Hello")</code><br>
+    <pre>for i in range(5): print(i)</pre>
+  </div>
+</div>
+
+<div class="section" id="Semantics">
+  <h2>HTML Semantics</h2>
+  <p><strong>Definition:</strong> Semantic elements clearly describe their meaning (e.g., &lt;article&gt;, &lt;footer&gt;, &lt;section&gt;).</p>
+  <code>
+    &lt;article&gt;This is an article&lt;/article&gt;
+  </code>
+  <div class="output">
+    <article style="border:1px solid #aaa; padding:5px;">This is an article</article>
+  </div>
+</div>
+
+<div class="section" id="StyleGuide">
+  <h2>HTML Style Guide</h2>
+  <p><strong>Definition:</strong> A style guide is a set of standards for writing clean, consistent, and readable HTML.</p>
+  <code>
+    &lt;!-- Good practice: lowercase tags, indentation, closing tags --&gt;<br>
+    &lt;p&gt;Follow a consistent HTML style.&lt;/p&gt;
+  </code>
+  <div class="output">
+    <p>Follow a consistent HTML style.</p>
+  </div>
+</div>
+
+<div class="section" id="Entities">
+  <h2>HTML Entities</h2>
+  <p><strong>Definition:</strong> Entities display reserved characters like &lt;, &gt;, &amp; using codes.</p>
+  <code>
+    &amp;lt; means &lt;<br>
+    &amp;gt; means &gt;<br>
+    &amp;amp; means &amp;
+  </code>
+  <div class="output">
+    &lt; means < <br>
+    &gt; means > <br>
+    &amp; means &
+  </div>
+</div>
+
+<div class="section" id="Symbols">
+  <h2>HTML Symbols</h2>
+  <p><strong>Definition:</strong> HTML supports many symbols like arrows, currency, etc., using entities.</p>
+  <code>
+    &amp;copy; &amp;euro; &amp;#x1F600;
+  </code>
+  <div class="output">
+    &copy; &euro; &#x1F600;
+  </div>
+</div>
+
+<div class="section" id="Emojis">
+  <h2>HTML Emojis</h2>
+  <p><strong>Definition:</strong> Emojis can be inserted using Unicode codes or directly in the text.</p>
+  <code>
+    &#128512; 😀 🚀 ❤️
+  </code>
+  <div class="output">
+    😀 🚀 ❤️
+  </div>
+</div>
+
+<div class="section" id="Charsets">
+  <h2>HTML Charsets</h2>
+  <p><strong>Definition:</strong> Charsets specify the character encoding. Use UTF-8 for most modern pages.</p>
+  <code>
+    &lt;meta charset="UTF-8"&gt;
+  </code>
+  <div class="output">
+    <p>(Charset ensures characters display correctly)</p>
+  </div>
+</div>
+
+<div class="section" id="URLEncode">
+  <h2>HTML URL Encode</h2>
+  <p><strong>Definition:</strong> URL encoding replaces unsafe ASCII characters with % followed by hexadecimal code.</p>
+  <code>
+    Space = %20<br>
+    &lt;a href="https://example.com/query?name=John%20Doe"&gt;Link&lt;/a&gt;
+  </code>
+  <div class="output">
+    <a href="https://example.com/query?name=John%20Doe">Link</a>
+  </div>
+</div>
+
+<div class="section" id="vsX">
+  <h2>HTML vs. XHTML</h2>
+  <p><strong>Definition:</strong> XHTML is a stricter version of HTML that follows XML rules. Differences include closing all tags, lowercase tags, and properly nested elements.</p>
+  <code>
+    &lt;br /&gt; (XHTML style)<br>
+    &lt;img src="img.jpg" alt="image" /&gt;
+  </code>
+  <div class="output">
+    <p>XHTML requires well-formed syntax.</p>
+  </div>
+</div>
+ <h1 class="h1"> Forms</h1>
+<div class="section" id="Forms">
+  <h2>HTML Forms</h2>
+  <p><strong>Definition:</strong> Forms are used to collect user input. They contain elements like &lt;input&gt;, &lt;textarea&gt;, &lt;button&gt;, etc.</p>
+  <code>
+    &lt;form&gt;<br>
+      Name: &lt;input type="text" name="name"&gt;&lt;br&gt;<br>
+      &lt;input type="submit" value="Submit"&gt;<br>
+    &lt;/form&gt;
+  </code>
+  <div class="output">
+    <form>
+      Name: <input type="text" name="name"><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+
+<div class="section" id="FormAttributes">
+  <h2>HTML Form Attributes</h2>
+  <p><strong>Definition:</strong> Important attributes include <code>action</code>, <code>method</code>, <code>target</code>.</p>
+  <code>
+    &lt;form action="/submit" method="post" target="blank"&gt;...&lt;/form&gt;
+  </code>
+  <div class="output">
+    <p>(Form will submit to specified URL when real action is defined)</p>
+  </div>
+</div>
+
+<div class="section" id="FormElements">
+  <h2>HTML Form Elements</h2>
+  <p><strong>Definition:</strong> Elements include textboxes, checkboxes, radio buttons, dropdowns, etc.</p>
+  <code>
+    &lt;input type="checkbox"&gt; Accept<br>
+    &lt;input type="radio" name="gender"&gt; Male<br>
+    &lt;select&gt;&lt;option&gt;One&lt;/option&gt;&lt;/select&gt;
+  </code>
+  <div class="output">
+    <input type="checkbox"> Accept<br>
+    <input type="radio" name="gender"> Male<br>
+    <select><option>One</option></select>
+  </div>
+</div>
+
+<div class="section" id="InputTypes">
+  <h2>HTML Input Types</h2>
+  <p><strong>Definition:</strong> Input types include text, password, email, number, date, file, etc.</p>
+  <code>
+    &lt;input type="email"&gt;<br>
+    &lt;input type="date"&gt;
+  </code>
+  <div class="output">
+    <input type="email" placeholder="Email"><br>
+    <input type="date">
+  </div>
+</div>
+
+<div class="section" id="InputAttributes">
+  <h2>HTML Input Attributes</h2>
+  <p><strong>Definition:</strong> Attributes modify input behavior: <code>value</code>, <code>placeholder</code>, <code>required</code>, etc.</p>
+  <code>
+    &lt;input type="text" placeholder="Enter name" required&gt;
+  </code>
+  <div class="output">
+    <input type="text" placeholder="Enter name" required>
+  </div>
+</div>
+
+<div class="section" id="InputFormAttributes">
+  <h2>Input Form Attributes</h2>
+  <p><strong>Definition:</strong> These include <code>disabled</code>, <code>readonly</code>, <code>maxlength</code>, etc.</p>
+  <code>
+    &lt;input type="text" value="Read only" readonly&gt;
+  </code>
+  <div class="output">
+    <input type="text" value="Read only" readonly>
+  </div>
+</div>
+<h1 class="h1">Graphics</h1>
+<div class="section" id="Canvas">
+  <h2>HTML Canvas</h2>
+  <p><strong>Definition:</strong> &lt;canvas&gt; is used to draw graphics using JavaScript.</p>
+  <code>
+    &lt;canvas id="myCanvas" width="150" height="100" style="border:1px solid #000;"&gt;&lt;/canvas&gt;<br>
+    &lt;script&gt;<br>
+      var c = document.getElementById("myCanvas");<br>
+      var ctx = c.getContext("2d");<br>
+      ctx.fillStyle = "#FF0000";<br>
+      ctx.fillRect(10, 10, 100, 50);<br>
+    &lt;/script&gt;
+  </code>
+  <div class="output">
+    <canvas id="myCanvas" width="150" height="100" style="border:1px solid #000;"></canvas>
+    <script>
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      ctx.fillStyle = "#FF0000";
+      ctx.fillRect(10, 10, 100, 50);
+    </script>
+  </div>
+</div>
+
+<div class="section" id="SVG">
+  <h2>HTML SVG</h2>
+  <p><strong>Definition:</strong> SVG stands for Scalable Vector Graphics. It's used to define vector-based graphics in XML format.</p>
+  <code>
+    &lt;svg width="100" height="100"&gt;<br>
+      &lt;circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" /&gt;<br>
+    &lt;/svg&gt;
+  </code>
+  <div class="output">
+    <svg width="100" height="100">
+      <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+  </div>
+</div>
+<h1 clas="h1">Media</h1>
+<div class="section" id="Media">
+  <h2>HTML Media</h2>
+  <p><strong>Definition:</strong> HTML supports various media like video, audio, and interactive content using tags like &lt;video&gt;, &lt;audio&gt;.</p>
+  <code>
+    &lt;video controls width="250"&gt;<br>
+      &lt;source src="movie.mp4" type="video/mp4"&gt;<br>
+    &lt;/video&gt;<br>
+    &lt;audio controls&gt;<br>
+      &lt;source src="audio.mp3" type="audio/mpeg"&gt;<br>
+    &lt;/audio&gt;
+  </code>
+  <div class="output">
+    <video controls width="250">
+      <source src="movie.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video><br>
+    <audio controls>
+      <source src="audio.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</div>
+
+<div class="section" id="Video">
+  <h2>HTML Video</h2>
+  <p><strong>Definition:</strong> The &lt;video&gt; tag embeds video content.</p>
+  <code>
+    &lt;video width="320" height="240" controls&gt;<br>
+      &lt;source src="sample.mp4" type="video/mp4"&gt;<br>
+    &lt;/video&gt;
+  </code>
+  <div class="output">
+    <video width="320" height="240" controls>
+      <source src="sample.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<div class="section" id="Audio">
+  <h2>HTML Audio</h2>
+  <p><strong>Definition:</strong> The &lt;audio&gt; tag plays audio files.</p>
+  <code>
+    &lt;audio controls&gt;<br>
+      &lt;source src="song.mp3" type="audio/mpeg"&gt;<br>
+    &lt;/audio&gt;
+  </code>
+  <div class="output">
+    <audio controls>
+      <source src="song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</div>
+
+<div class="section" id="Plugins">
+  <h2>HTML Plug-ins</h2>
+  <p><strong>Definition:</strong> &lt;object&gt; and &lt;embed&gt; are used to include plug-in-based content (like PDFs, Flash, etc.).</p>
+  <code>
+    &lt;embed src="file.pdf" width="300" height="200"&gt;
+  </code>
+  <div class="output">
+    <p>(Plugin content will only display if supported by browser)</p>
+  </div>
+</div>
+
+<div class="section" id="YouTube">
+  <h2>HTML YouTube</h2>
+  <p><strong>Definition:</strong> Use &lt;iframe&gt; to embed YouTube videos.</p>
+  <code>
+    &lt;iframe width="300" height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+  </code>
+  <div class="output">
+    <iframe width="300" height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+<h1 class="h1">APIs</h1>
+<div class="section" id="WebAPIs">
+  <h2>HTML Web APIs</h2>
+  <p><strong>Definition:</strong> HTML APIs allow developers to interact with the browser and system using JavaScript. Examples include Geolocation, Web Storage, Web Workers, etc.</p>
+</div>
+
+<div class="section" id="Geolocation">
+  <h2>HTML Geolocation API</h2>
+  <p><strong>Definition:</strong> Allows the browser to detect and share the user's location with their permission.</p>
+  <code>
+    &lt;button onclick="getLocation()"&gt;Get Location&lt;/button&gt;<br>
+    &lt;p id="location"&gt;&lt;/p&gt;<br>
+    &lt;script&gt;<br>
+      function getLocation() {<br>
+        if (navigator.geolocation) {<br>
+          navigator.geolocation.getCurrentPosition(function(position) {<br>
+            document.getElementById("location").innerHTML = "Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude;<br>
+          });<br>
+        } else {<br>
+          document.getElementById("location").innerHTML = "Geolocation is not supported.";<br>
+        }<br>
+      }<br>
+    &lt;/script&gt;
+  </code>
+  <div class="output">
+    <button onclick="getLocation()">Get Location</button>
+    <p id="location"></p>
+  </div>
+</div>
+
+<div class="section" id="DragandDrop">
+  <h2>HTML Drag and Drop API</h2>
+  <p><strong>Definition:</strong> Allows elements to be dragged and dropped using mouse events and JavaScript.</p>
+  <code>
+    &lt;div id="drag1" draggable="true" ondragstart="drag(event)" style="width:100px;height:100px;background:red;"&gt;&lt;/div&gt;<br>
+    &lt;div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)" style="width:120px;height:120px;border:1px solid #000;"&gt;&lt;/div&gt;<br>
+    &lt;script&gt;<br>
+    function allowDrop(ev) { ev.preventDefault(); }<br>
+    function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }<br>
+    function drop(ev) {<br>
+      ev.preventDefault();<br>
+      var data = ev.dataTransfer.getData("text");<br>
+      ev.target.appendChild(document.getElementById(data));<br>
+    }<br>
+    &lt;/script&gt;
+  </code>
+  <div class="output">
+    <div id="drag1" draggable="true" ondragstart="drag(event)" style="width:100px;height:100px;background:red;"></div>
+    <div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)" style="width:120px;height:120px;border:1px solid #000;"></div>
+  </div>
+</div>
+
+<div class="section" id="WebStorage">
+  <h2>HTML Web Storage API</h2>
+  <p><strong>Definition:</strong> Allows storing data in the browser using <code>localStorage</code> and <code>sessionStorage</code>.</p>
+  <code>
+    &lt;input type="text" id="storeInput"&gt;<br>
+    &lt;button onclick="saveData()"&gt;Save&lt;/button&gt;<br>
+    &lt;p id="savedText"&gt;&lt;/p&gt;<br>
+    &lt;script&gt;<br>
+      function saveData() {<br>
+        var data = document.getElementById("storeInput").value;<br>
+        localStorage.setItem("myData", data);<br>
+        document.getElementById("savedText").innerText = "Saved: " + data;<br>
+      }<br>
+    &lt;/script&gt;
+  </code>
+  <div class="output">
+    <input type="text" id="storeInput">
+    <button onclick="saveData()">Save</button>
+    <p id="savedText"></p>
+  </div>
+</div>
+
+<div class="section" id="WebWorkers">
+  <h2>HTML Web Workers API</h2>
+  <p><strong>Definition:</strong> Allows running JavaScript in background threads without affecting the main page UI.</p>
+  <code>
+    &lt;script&gt;<br>
+      var worker;<br>
+      function startWorker() {<br>
+        if (typeof(Worker) !== "undefined") {<br>
+          if (!worker) {<br>
+            worker = new Worker("worker.js");<br>
+            worker.onmessage = function(event) {<br>
+              document.getElementById("result").innerText = event.data;<br>
+            };<br>
+          }<br>
+        }<br>
+      }<br>
+    &lt;/script&gt;
+  </code>
+  <p>(Note: Worker requires a separate JS file like <code>worker.js</code>)</p>
+
+</div>
+
+<div class="section"  id="SSE">
+  <h2>HTML Server-Sent Events (SSE)</h2>
+  <p><strong>Definition:</strong> SSE allows a server to push updates to the client automatically using EventSource.</p>
+  <code>
+    &lt;script&gt;<br>
+      if (typeof(EventSource) !== "undefined") {<br>
+        var source = new EventSource("server.php");<br>
+        source.onmessage = function(event) {<br>
+          document.getElementById("sse").innerHTML += event.data + "&lt;br&gt;";<br>
+        };<br>
+      } else {<br>
+        document.getElementById("sse").innerHTML = "SSE not supported.";<br>
+      }<br>
+    &lt;/script&gt;<br>
+    &lt;div id="sse"&gt;&lt;/div&gt;
+  </code>
+  <div class="output">
+    <p>(Server setup required for full demonstration)</p>
+    <div id="sse"></div>
+  </div>
+</div>
+<h1 class="h1"> Examples</h1>
+<div class="section" id="Examples">
+  <h2>HTML Examples</h2>
+  <p><strong>Definition:</strong> Practical HTML code snippets to practice and learn HTML concepts.</p>
+</div>
+
+<div class="section" id="Editor">
+  <h2>HTML Editor</h2>
+  <p><strong>Definition:</strong> An online or offline tool where you can write and test HTML code.</p>
+  <code>
+    &lt;textarea id="htmlEditor" rows="10" cols="50"&gt;&lt;/textarea&gt;<br>
+    &lt;button onclick="runHTML()"&gt;Run HTML&lt;/button&gt;<br>
+    &lt;iframe id="outputFrame" style="width:100%;height:200px;"&gt;&lt;/iframe&gt;<br>
+    &lt;script&gt;<br>
+    function runHTML() {<br>
+      var code = document.getElementById("htmlEditor").value;<br>
+      var iframe = document.getElementById("outputFrame").contentWindow.document;<br>
+      iframe.open();<br>
+      iframe.write(code);<br>
+      iframe.close();<br>
+    }<br>
+    &lt;/script&gt;
+  </code>
+  <div class="output">
+    <textarea id="htmlEditor" rows="10" cols="50"></textarea><br>
+    <button onclick="runHTML()">Run HTML</button><br>
+    <iframe id="outputFrame" style="width:100%;height:200px;"></iframe>
+  </div>
+</div>
+
+<div class="section" id="Quiz">
+  <h2>HTML Quiz</h2>
+  <p><strong>Definition:</strong> Interactive quizzes to test your HTML knowledge.</p>
+  <code>
+    &lt;form id="quizForm"&gt;<br>
+      &lt;label&gt;What does &lt;html&gt; tag define?&lt;/label&gt;&lt;br&gt;<br>
+      &lt;input type="radio" name="q1" value="a"&gt; Document type<br>
+      &lt;input type="radio" name="q1" value="b"&gt; Root element<br>
+      &lt;input type="radio" name="q1" value="c"&gt; Metadata<br><br>
+      &lt;button type="button" onclick="checkQuiz()"&gt;Submit&lt;/button&gt;<br>
+    &lt;/form&gt;<br>
+    &lt;script&gt;<br>
+      function checkQuiz() {<br>
+        var answers = document.forms["quizForm"]["q1"].value;<br>
+        if (answers == "b") alert("Correct!");<br>
+        else alert("Try again.");<br>
+      }<br>
+    &lt;/script&gt;
+  </code>
+  <div class="output">
+    <form id="quizForm">
+      <label>What does &lt;html&gt; tag define?</label><br>
+      <input type="radio" name="q1" value="a"> Document type<br>
+      <input type="radio" name="q1" value="b"> Root element<br>
+      <input type="radio" name="q1" value="c"> Metadata<br><br>
+      <button type="button" onclick="checkQuiz()">Submit</button>
+    </form>
+  </div>
+</div>
+<h1 class="h1">References</h1>
+<div class="section" id="TagList">
+  <h2>HTML Tag List</h2>
+  <p><strong>Definition:</strong> A complete list of HTML tags with descriptions and usage.</p>
+  <ul>
+    <li>&lt;html&gt; - Root element</li>
+    <li>&lt;head&gt; - Metadata container</li>
+    <li>&lt;body&gt; - Main content container</li>
+    <li>&lt;div&gt; - Division or section</li>
+    <li>&lt;span&gt; - Inline container</li>
+    <li>&lt;a&gt; - Hyperlink</li>
+    <li>&lt;img&gt; - Image</li>
+    <li>&lt;form&gt; - Form</li>
+    <li>...and many more</li>
+  </ul>
+</div>
+
+<div class="section"  id="AttributesRef">
+  <h2>HTML Attributes</h2>
+  <p><strong>Definition:</strong> Attributes provide additional info about HTML elements.</p>
+  <ul>
+    <li><code>id</code> - Unique identifier</li>
+    <li><code>class</code> - Class name for CSS/JS</li>
+    <li><code>href</code> - Link URL</li>
+    <li><code>src</code> - Source for images/scripts</li>
+    <li><code>alt</code> - Alternative text for images</li>
+  </ul>
+</div>
+
+<div class="section" id="GlobalAttributes">
+  <h2>HTML Global Attributes</h2>
+  <p><strong>Definition:</strong> Attributes that can be used on any HTML element.</p>
+  <ul>
+    <li><code>accesskey</code> - Keyboard shortcut</li>
+    <li><code>contenteditable</code> - Editable content</li>
+    <li><code>dir</code> - Text direction</li>
+    <li><code>hidden</code> - Hidden element</li>
+    <li><code>tabindex</code> - Tab order</li>
+  </ul>
+</div>
+
+<div class="section"  id="Events">
+  <h2>HTML Events</h2>
+  <p><strong>Definition:</strong> Actions that happen in the browser like clicks, mouse movements, keypresses.</p>
+  <ul>
+    <li><code>onclick</code> - Mouse click</li>
+    <li><code>onmouseover</code> - Mouse over element</li>
+    <li><code>onload</code> - When page finishes loading</li>
+  </ul>
+</div>
+
+<div class="section"  id="ColorsRef">
+  <h2>HTML Colors</h2>
+  <p><strong>Definition:</strong> Ways to specify colors in HTML and CSS.</p>
+  <ul>
+    <li>Named colors: <code>red</code>, <code>blue</code>, <code>green</code></li>
+    <li>Hexadecimal: <code>#FF0000</code> (red)</li>
+    <li>RGB: <code>rgb(255,0,0)</code></li>
+  </ul>
+</div>
+
+<div class="section" id="CanvasRef">
+  <h2>HTML Canvas</h2>
+  <p><strong>Definition:</strong> A tag for drawing graphics via JavaScript.</p>
+  <p>Example: &lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;</p>
+</div>
+
+<div class="section" id="AudioVideo">
+  <h2>HTML Audio/Video</h2>
+  <p><strong>Definition:</strong> Tags to embed media files.</p>
+  <ul>
+    <li>&lt;audio src="audio.mp3" controls&gt;&lt;/audio&gt;</li>
+    <li>&lt;video src="video.mp4" controls width="320" height="240"&gt;&lt;/video&gt;</li>
+  </ul>
+</div>
+
+<div class="section" id="Doctypes">
+  <h2>HTML Doctypes</h2>
+  <p><strong>Definition:</strong> Declaration to specify HTML version.</p>
+  <p>Example: <code>&lt;!DOCTYPE html&gt;</code> for HTML5.</p>
+</div>
+
+<div class="section" id="CharacterSets">
+  <h2>HTML Character Sets</h2>
+  <p><strong>Definition:</strong> Encoding used to display characters properly.</p>
+  <p>Example: <code>&lt;meta charset="UTF-8"&gt;</code></p>
+</div>
+
+<div class="section" id="URLEncodeRef">
+  <h2>HTML URL Encode</h2>
+  <p><strong>Definition:</strong> Encoding special characters in URLs.</p>
+  <p>Example: Space is encoded as <code>%20</code>.</p>
+</div>
+
+<div class="section" id="LangCodes">
+  <h2>HTML Lang Codes</h2>
+  <p><strong>Definition:</strong> Codes to specify the language of a document.</p>
+  <p>Example: <code>&lt;html lang="en"&gt;</code> for English.</p>
+</div>
+
+<div class="section" id="HTTPMessages">
+  <h2>HTTP Messages</h2>
+  <p><strong>Definition:</strong> Messages exchanged between client and server in HTTP protocol.</p>
+  <ul>
+    <li>Request: Sent from client to server.</li>
+    <li>Response: Sent from server to client.</li>
+  </ul>
+</div>
+
+<div class="section" id="HTTPMethods" >
+  <h2>HTTP Methods</h2>
+  <p><strong>Definition:</strong> Actions performed in HTTP requests.</p>
+  <ul>
+    <li>GET - Retrieve data</li>
+    <li>POST - Submit data</li>
+    <li>PUT - Update data</li>
+    <li>DELETE - Delete data</li>
+  </ul>
+</div>
+
+<div class="section" id="PXtoEMConverter">
+  <h2>PX to EM Converter</h2>
+  <p><strong>Definition:</strong> Convert pixel values to em units used in CSS for scalable font sizes.</p>
+  <p>Formula: <code>em = px / baseFontSize</code></p>
+</div>
+
+<div class="section" id="KeyboardShortcuts">
+  <h2>Keyboard Shortcuts</h2>
+  <p><strong>Definition:</strong> Common shortcuts for faster coding and browser usage.</p>
+  <ul>
+    <li><strong>Ctrl + S</strong> - Save file</li>
+    <li><strong>Ctrl + F</strong> - Find in page</li>
+    <li><strong>Ctrl + Shift + I</strong> - Open Developer Tools</li>
+  </ul>
+</div>
+<div>
+<hr>
+<section id="end-of-html-tutorial" style="text-align: center; margin: 50px 0; font-family: Arial, sans-serif;">
+  <h2>🎉 Congratulations on Completing the HTML Tutorial!</h2>
+  <p>You’ve mastered the foundation of web structure with HTML.</p>
+  <p>Now you can confidently create webpages with headings, paragraphs, lists, images, links, forms, and semantic elements.</p>
+  <p>Keep exploring advanced HTML5 features and accessibility best practices to make your websites even better!</p>
+  <p><strong>Happy Markup Crafting! 📝</strong></p>
+</section>
+</div>
+ 
+  <footer style="text-align:center; padding:20px; background-color:#222; color:#fff; margin-top:40px;">
+    <p>© 2025 Aryan's Web Tutorial. All rights reserved.</p>
+    <p>Created by Aryan kumar ojha</p>
+  </footer>
+
+
+</body>
+</html>
+
+

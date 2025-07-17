@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="logosql.png" type="image/jpeg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="logosql.png">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="logosql.png">
+    <link rel="shortcut icon" href="logosql.png" type="image/x-jpeg">
+  <title>Complete SQL Tutorial</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 20px; 
+      background: #7AE2CF; 
+      
+    }
+   .h2 {
+       color: #0074D9;
+       text-align: center;
+       text-decoration: underline;
+       }
+       .h1{
+        text-align: center;
+        color: #010808;
+       }
+       .h1:hover{
+        color: #6dcc2e;
+        text-shadow: 0 2px 8px #eb1515;
+        font-size: xx-large;
+       }
+    .section { background: #fff; 
+      padding: 20px; 
+      margin-bottom: 20px;
+       border-radius: 10px;
+       margin-left: 260px; 
+       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+       gap: 30px;
+      }
+
+    code { background: #F3F3E0; 
+      padding: 4px 8px; border-radius: 5px; 
+      display: inline-block; margin: 10px 0;
+     }
+
+    pre { background: #90D1CA;
+       padding: 10px; 
+      border-left: 5px solid #3498db;
+       overflow-x: auto; 
+      }
+    .output {
+       background: #F3F3E0; 
+      padding: 10px; 
+      border: 1px dashed #2ecc71; }
+
+
+.sidebar {
+  position: fixed;    
+  top: 0;
+  left: 0;
+  height: 100vh;              
+  background: rgb(7, 87, 90);
+  color: rgb(1, 13, 14);
+  padding: 20px 15px;
+  border-radius: 0 6px 6px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; 
+  margin-bottom: 0;         
+  overflow-y: auto;         
+  z-index: 1000;
+  ;
+}
+
+.sidebar a {
+  color: #b1d8d8;
+  margin-bottom: 15px;     
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+  color: #0074D9;
+  font-display:fallback ;
+}
+.h1{
+  text-align: center;
+  color: #010303;
+text-decoration: underline;
+
+}
+
+.h3{
+ margin-left: 260px;
+color: #010303;
+text-decoration: underline;
+}
+footer {
+text-align:center; 
+padding:20px; 
+background-color:#222; 
+color:#fff; 
+margin-top:40px;
+width: calc(100% - 300px);
+margin-left: 280px;
+}
+  </style>
+
+</head>
+<body>
+  <div class="sidebar">
+    <h2  class="h2">SQL Tutorial</h2>
+    <a href="#intro">Intro</a>
+    <a href="#syntax">Syntax</a>
+    <a href="#select">SELECT</a>
+    <a href="#select-distinct">SELECT DISTINCT</a>
+    <a href="#where">WHERE</a>
+    <a href="#order-by">ORDER BY</a>
+    <a href="#and">AND</a>
+    <a href="#or">OR</a>
+    <a href="#not">NOT</a>
+    <a href="#insert-into">INSERT INTO</a>
+    <a href="#null-values">NULL Values</a>
+    <a href="#update">UPDATE</a>
+    <a href="#delete">DELETE</a>
+    <a href="#select-top">SELECT TOP</a>
+    <a href="#aggregate-functions">Aggregate Functions</a>
+    <a href="#min-max">MIN & MAX</a>
+    <a href="#count">COUNT</a>
+    <a href="#sum">SUM</a>
+    <a href="#avg">AVG</a>
+    <a href="#like">LIKE</a>
+    <a href="#wildcards">Wildcards</a>
+    <a href="#in">IN</a>
+    <a href="#between">BETWEEN</a>
+    <a href="#aliases">ALIASES</a>
+    <a href="#joins">JOINS</a>
+    <a href="#inner-join">INNER JOIN</a>
+    <a href="#left-join">LEFT JOIN</a>
+    <a href="#right-join">RIGHT JOIN</a>
+    <a href="#full-join">FULL JOIN</a>
+    <a href="#self-join">SELF JOIN</a>
+    <a href="#union">UNION</a>
+    <a href="#group-by">GROUP BY</a>
+    <a href="#having">HAVING</a>
+    <a href="#exists">EXISTS</a>
+    <a href="#any-all">ANY, ALL</a>
+    <a href="#select-into">SELECT INTO</a>
+    <a href="#insert-into-select">INSERT INTO SELECT</a>
+    <a href="#case">CASE</a>
+    <a href="#null-functions">NULL Functions</a>
+    <a href="#stored-procedures">Stored Procedures</a>
+    <a href="#comments">Comments</a>
+    <a href="#operators">Operators</a>
+    <a href="#create-db">Create DB</a>
+    <a href="#drop-db">Drop DB</a>
+    <a href="#backup-db">Backup DB</a>
+    <a href="#create-table">Create Table</a>
+    <a href="#drop-table">Drop Table</a>
+    <a href="#alter-table">Alter Table</a>
+    <a href="#constraints">Constraints</a>
+    <a href="#not-null">NOT NULL</a>
+    <a href="#unique">UNIQUE</a>
+    <a href="#primary-key">Primary Key</a>
+    <a href="#foreign-key">Foreign Key</a>
+    <a href="#check">CHECK</a>
+    <a href="#default">DEFAULT</a>
+    <a href="#index">Index</a>
+    <a href="#auto-increment">Auto Increment</a>
+    <a href="#dates">Dates and Date Functions</a>
+    <a href="#views">Views</a>
+    <a href="#sql-injection">SQL Injection</a>
+    <a href="#hosting">Hosting</a>
+    <a href="#data-types">Data Types</a>
+    <a href="#references">References</a>
+    <a href="#keywords">Keywords</a>
+    <a href="#mysql-functions">MySQL Functions</a>
+    <a href="#server-functions">Server Functions</a>
+    <a href="#ms-access-functions">MS Access Functions</a>
+
+
+  </div>
+
+  <div class="content">
+    <h1 class="h1" id="intro">Introduction to SQL</h1>
+    <section class="section">SQL (Structured Query Language) is a standard language used to communicate with relational databases. It is used to store, retrieve, manage, and manipulate data.</section>
+    <section class="section">Popular databases that use SQL include MySQL, PostgreSQL, Microsoft SQL Server, Oracle, and SQLite.</section>
+
+    <h2 class="h2" id="syntax">SQL Syntax</h2>
+    <section class="section">Basic syntax of an SQL query:
+    <pre><code>SELECT column1, column2 FROM table_name WHERE condition;</code></pre></section>
+    <section class="section">SQL statements are not case-sensitive, but it's common to use uppercase for SQL keywords.</section>
+
+    <h2 class="h2" id="select">SELECT Statement</h2>
+    <section class="section">The <code>SELECT</code> statement is used to fetch data from a database table.
+    <pre><code>SELECT * FROM Customers;
+    SELECT name, email FROM Customers;</code></pre></section>
+    <section class="section"><code>*</code> selects all columns from the table.</section>
+
+    <h2 class="h2" id="select-distinct">SELECT DISTINCT</h2>
+    <section class="section"><code>SELECT DISTINCT</code> is used to return only distinct (different) values.
+    <pre><code>SELECT DISTINCT city FROM Customers;</code></pre></section>
+    <section class="section">This query returns only unique cities from the <code>Customers</code> table.</section>
+
+    <h2 class="h2" id="where">WHERE Clause</h2>
+    <section class="section">The <code>WHERE</code> clause is used to filter records that fulfill a specified condition.
+    <pre><code>SELECT * FROM Customers WHERE country = 'India';</code></pre>
+    </div></section>
+      <h2 class="h2" id="order-by">ORDER BY</h2>
+    <section class="section">The <code>ORDER BY</code> clause is used to sort the result-set in ascending or descending order.
+    <pre><code>SELECT * FROM Customers ORDER BY name ASC;
+    SELECT * FROM Customers ORDER BY id DESC;</code></pre></section>
+    <section class="section"><code>ASC</code> is the default (ascending order), while <code>DESC</code> is used for descending order.</section>
+
+    <h2 class="h2" id="and">AND Operator</h2>
+    <section class="section">The <code>AND</code> operator is used to filter records based on more than one condition, all of which must be true.
+    <pre><code>SELECT * FROM Customers WHERE country = 'India' AND city = 'Mumbai';</code></pre></section>
+
+    <h2 class="h2" id="or">OR Operator</h2>
+    <section class="section">The <code>OR</code> operator returns records if at least one condition is true.
+    <pre><code>SELECT * FROM Customers WHERE city = 'Mumbai' OR city = 'Delhi';</code></pre></section>
+
+    <h2 class="h2" id="not">NOT Operator</h2>
+    <section class="section">The <code>NOT</code> operator is used to exclude rows that meet a specified condition.
+    <pre><code>SELECT * FROM Customers WHERE NOT country = 'India';</code></pre></section>
+
+    <h2 class="h2" id="insert-into">INSERT INTO</h2>
+    <section class="section">The <code>INSERT INTO</code> statement is used to add new records to a table.
+    <h3 >Syntax 1: Insert into all columns</h3>
+    <pre><code>INSERT INTO Customers VALUES (1, 'Aryan', 'Mumbai', 'India');</code></pre>
+
+    <h3 >Syntax 2: Insert into specific columns</h3>
+    <pre><code>INSERT INTO Customers (name, city, country)
+    VALUES ('Aryan', 'Mumbai', 'India');</code></pre></section>
+
+    <section class="section">It is recommended to specify column names for clarity and to avoid errors.
+    <h2  id="null-values">NULL Values</h2>
+    <code>NULL</code> in SQL represents missing or unknown data. It is different from an empty string or a zero value.
+    SELECT * FROM Customers WHERE phone IS NOT NULL;</code></pre>
+    <ul><li></li>Use <code>IS NULL</code> and <code>IS NOT NULL</code> to filter records containing NULL values.</li></ul></section>
+
+    <h2 class="h2" id="update">UPDATE Statement</h2>
+    <section class="section">The <code>UPDATE</code> statement is used to modify existing records in a table.
+    <pre><code>UPDATE Customers
+SET city = 'Pune'
+WHERE name = 'Aryan';</code></pre></section>
+    <section class="section"><strong>⚠️ Always use a WHERE clause to avoid updating all rows unintentionally.</strong></section>
+
+    <h2 class="h2" id="delete">DELETE Statement</h2>
+    <section class="section">The <code>DELETE</code> statement is used to remove one or more records from a table.
+    <pre><code>DELETE FROM Customers WHERE id = 5;</code></pre></section>
+    <section class="section"><strong>⚠️ Without a WHERE clause, all records will be deleted.</strong></section>
+
+    <h2 class="h2" id="select-top">SELECT TOP</h2>
+    <section class="section"><code>SELECT TOP</code> is used to limit the number of rows returned. It is supported in SQL Server.
+    <pre><code>SELECT TOP 3 * FROM Customers;</code></pre>
+    <section>In MySQL, use:</section>
+    <pre><code>SELECT * FROM Customers LIMIT 3;</code></pre></section>
+
+    <h2 class="h2" id="aggregate-functions">Aggregate Functions</h2>
+    <section class="section">Aggregate functions perform calculations on a set of values and return a single result.</section>
+
+    <h3 class="h3" id="min-max">MIN() and MAX()</h3>
+    <section class="section">Return the smallest and largest values in a column
+    <pre><code>SELECT MIN(age) FROM Customers;
+SELECT MAX(age) FROM Customers;</code></pre>.</section>
+
+    <h3 class="h3" id="count">COUNT()</h3>
+    <section class="section">Returns the number of rows that match a condition.
+    <pre><code>SELECT COUNT(*) FROM Customers;
+SELECT COUNT(city) FROM Customers WHERE country = 'India';</code></pre>.</section>
+
+    <h3 class="h3" id="sum">SUM()</h3>
+    <section class="section">Adds up all values in a column.
+    <pre><code>SELECT SUM(balance) FROM Accounts;</code></pre>.</section>
+
+    <h3 class="h3" id="avg">AVG()</h3>
+    <section class="section">Calculates the average of a numeric column.
+    <pre><code>SELECT AVG(salary) FROM Employees;</code></pre></section>
+
+    <h2 class="h2" id="like">LIKE Operator</h2>
+    <section class="section">The <code>LIKE</code> operator is used in a <code>WHERE</code> clause to search for a specified pattern.
+    <pre><code>SELECT * FROM Customers WHERE name LIKE 'A%';  -- Starts with A
+SELECT * FROM Customers WHERE name LIKE '%n';  -- Ends with n</code></pre></section>
+
+    <h2 class="h2" id="wildcards">Wildcards</h2>
+    <section class="section">Wildcards are used with the <code>LIKE</code> operator to match patterns:
+    <ul>
+      <li><code>%</code> – represents zero or more characters</li>
+      <li><code>_</code> – represents a single character</li>
+    </ul>
+    <pre><code>SELECT * FROM Products WHERE name LIKE '_a%';</code></pre></section>
+    <section class="section">Finds products where the second letter is "a".</section>
+
+    <h2 class="h2" id="in">IN Operator</h2>
+    <section class="section">The <code>IN</code> operator allows you to specify multiple values in a WHERE clause.
+    <pre><code>SELECT * FROM Customers WHERE city IN ('Mumbai', 'Pune', 'Delhi');</code></pre></section>
+    <section class="section">This is the same as using multiple OR conditions.</section>
+
+    <h2 class="h2" id="between">BETWEEN Operator</h2>
+    <section class="section"><code>BETWEEN</code> selects values within a given range (inclusive).
+    <pre><code>SELECT * FROM Orders WHERE order_date BETWEEN '2024-01-01' AND '2024-12-31';</code></pre></section>
+
+    <h2 class="h2" id="aliases">SQL ALIASES</h2>
+    <section class="section">Aliases are used to rename a column or table for display or convenience. Use the <code>AS</code> keyword.
+SELECT o.id, c.name FROM Orders AS o JOIN Customers AS c ON o.customer_id = c.id;</code></pre></section>
+
+    <h2 class="h2" id="joins">SQL JOINS</h2>
+    <section class="section">Joins are used to combine rows from two or more tables, based on a related column.
+    <h3 class="h3" id="inner-join">INNER JOIN</h3></section>
+    <section class="section">Returns records that have matching values in both tables.
+    <pre><code>SELECT Orders.id, Customers.name
+FROM Orders
+INNER JOIN Customers ON Orders.customer_id = Customers.id;</code></pre></section>
+
+    <h3 class="h3" id="left-join">LEFT JOIN</h3>
+    <section class="section">Returns all records from the left table, and matched records from the right table.
+    <pre><code>SELECT Customers.name, Orders.id
+FROM Customers
+LEFT JOIN Orders ON Customers.id = Orders.customer_id;</code></pre></section>
+
+    <h3 class="h3" id="right-join">RIGHT JOIN</h3>
+    <section class="section">Returns all records from the right table, and matched records from the left table.
+    <pre><code>SELECT Customers.name, Orders.id
+FROM Customers
+RIGHT JOIN Orders ON Customers.id = Orders.customer_id;</code></pre></section>
+
+    <h3 class="h3" id="full-join">FULL JOIN</h3>
+    <section class="section">Returns all records when there is a match in either left or right table (not supported in MySQL directly).
+    <pre><code>SELECT Customers.name, Orders.id
+FROM Customers
+FULL OUTER JOIN Orders ON Customers.id = Orders.customer_id;</code></pre></section>
+
+    <h2 class="h2" id="self-join">SELF JOIN</h2>
+    <section class="section">A <code>SELF JOIN</code> is a regular join but the table is joined with itself.
+    <pre><code>SELECT A.name AS Employee, B.name AS Manager
+FROM Employees A, Employees B
+WHERE A.manager_id = B.id;</code></pre></section>
+
+    <h2 class="h2" id="union">UNION</h2>
+    <section class="section">The <code>UNION</code> operator is used to combine the result-set of two or more SELECT statements. Duplicate values are removed by default.
+    <pre><code>SELECT city FROM Customers
+UNION
+SELECT city FROM Suppliers;</code></pre></section>
+
+    <h2 class="h2" id="group-by">GROUP BY</h2>
+    <section class="section"><code>GROUP BY</code> groups rows that have the same values into summary rows, like "total sales per customer".
+    <pre><code>SELECT customer_id, COUNT(*) AS order_count
+FROM Orders
+GROUP BY customer_id;</code></pre></section>
+
+    <h2 class="h2" id="having">HAVING</h2>
+    <section class="section"><code>HAVING</code> is used to filter groups created by the <code>GROUP BY</code> clause.
+    <pre><code>SELECT customer_id, COUNT(*) AS order_count
+FROM Orders
+GROUP BY customer_id
+HAVING COUNT(*) > 5;</code></pre></section>
+
+    <h2 class="h2" id="exists">EXISTS</h2>
+    <section class="section"><code>EXISTS</code> checks whether a subquery returns any rows.
+    <pre><code>SELECT name FROM Customers
+WHERE EXISTS (
+  SELECT * FROM Orders WHERE Customers.id = Orders.customer_id
+);</code></pre></section>
+
+    <h2 class="h2" id="any-all">ANY and ALL</h2>
+    <section class="section"><code>ANY</code> returns true if any of the subquery values meet the condition. <code>ALL</code> returns true if all values meet the condition.
+    <pre><code>SELECT name FROM Products
+WHERE price > ANY (SELECT price FROM Products WHERE category = 'Electronics');
+
+SELECT name FROM Products
+WHERE price > ALL (SELECT price FROM Products WHERE category = 'Accessories');</code></pre></section>
+
+    <h2 class="h2" id="select-into">SELECT INTO</h2>
+    <section class="section"><code>SELECT INTO</code> copies data from one table into a new table.
+    <pre><code>SELECT * INTO CustomersBackup
+FROM Customers;</code></pre></section>
+
+    <h2 class="h2" id="insert-into-select">INSERT INTO SELECT</h2>
+    <section class="section">Used to copy data from one table to another existing table.
+    <pre><code>INSERT INTO CustomersArchive (id, name, city)
+    SELECT id, name, city FROM Customers
+    WHERE country = 'India';</code></pre></section>
+
+    <h2 class="h2" id="case">CASE Statement</h2>
+    <section class="section"><code>CASE</code> is SQL’s way of handling conditional logic
+    <pre><code>SELECT name, 
+CASE 
+  WHEN marks >= 75 THEN 'Distinction'
+  WHEN marks >= 60 THEN 'First Class'
+  ELSE 'Pass'
+END AS Grade
+FROM Students;</code></pre></section>
+
+    <h2 class="h2" id="null-functions">NULL Functions</h2>
+    <section class="section">Functions like <code>ISNULL()</code>, <code>COALESCE()</code>, and <code>IFNULL()</code> handle NULL values.
+    <pre><code>SELECT name, ISNULL(phone, 'Not Available') FROM Customers;
+SELECT name, COALESCE(email, alt_email, 'No Email') FROM Users;</code></pre></section>
+
+    <h2 class="h2" id="stored-procedures">Stored Procedures</h2>
+    <section class="section">A <strong>Stored Procedure</strong> is a set of SQL statements that can be saved and reused.
+    <pre><code>CREATE PROCEDURE GetCustomers
+AS
+BEGIN
+  SELECT * FROM Customers;
+END;
+
+-- Execute the procedure
+EXEC GetCustomers;</code></pre></section>
+
+    <h2 class="h2" id="comments">SQL Comments</h2>
+    <section class="section">Comments are used to explain SQL code.
+/* This is a
+   multi-line comment */</code></pre></section>
+
+    <h2 class="h2" id="operators">SQL Operators</h2>
+    <section class="section">Operators are used to perform operations on data:
+    <ul>
+      <li><strong>Arithmetic:</strong> +, -, *, /, %</li>
+      <li><strong>Comparison:</strong> =, <>, >, >=, &lt;, &lt;=</li>
+      <li><strong>Logical:</strong> AND, OR, NOT</li>
+    </ul>
+    <pre><code>SELECT * FROM Products WHERE price > 100 AND stock <> 0;</code></pre></section>
+
+    <h2 class="h2" id="create-db">Create Database</h2>
+    <section class="section">Creates a new SQL database.
+    <pre><code>CREATE DATABASE SchoolDB;</code></pre></section>
+
+    <h2 class="h2" id="drop-db">Drop Database</h2>
+    <section class="section">Deletes an existing database. <strong>Be careful!</strong>
+    <pre><code>DROP DATABASE SchoolDB;</code></pre></section>
+
+    <h2 class="h2" id="backup-db">Backup Database</h2>
+    <section class="section">Creates a backup of an existing database (mainly used in SQL Server).
+    <pre><code>BACKUP DATABASE SchoolDB
+TO DISK = 'D:\backups\SchoolDB.bak';</code></pre></section>
+
+    <h2 class="h2" id="create-table">Create Table</h2>
+    <section class="section">Creates a new table in the database.
+    <pre><code>CREATE TABLE Students (
+  id INT PRIMARY KEY,
+  name VARCHAR(100),
+  age INT,
+  email VARCHAR(100)
+);</code></pre></section>
+
+    <h2 class="h2" id="drop-table">Drop Table</h2>
+    <section class="section">Deletes an existing table and all its data.
+    <pre><code>DROP TABLE Students;</code></pre></section>
+
+    <h2 class="h2" id="alter-table">Alter Table</h2>
+    <section class="section">Modify an existing table structure (add, modify, drop columns).
+    <pre><code>-- Add a new column
+ALTER TABLE Students ADD phone VARCHAR(15);
+
+-- Modify a column datatype
+ALTER TABLE Students MODIFY age SMALLINT;
+
+-- Drop a column
+ALTER TABLE Students DROP COLUMN phone;</code></pre></section>
+
+    <h2 class="h2" id="constraints">Constraints</h2>
+    <section class="section">Constraints define rules for data in a table.</section>
+
+    <h3 class="h3" id="not-null">NOT NULL</h3>
+    <section class="section">Ensures that a column cannot have NULL values.
+    <pre><code>CREATE TABLE Employees (
+  id INT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL
+);</code></pre></section>
+
+    <h3 class="h3" id="unique">UNIQUE</h3>
+    <section class="section">Ensures all values in a column are unique.
+    <pre><code>CREATE TABLE Employees (
+  email VARCHAR(100) UNIQUE
+);</code></pre></section>
+
+    <h3 class="h3" id="primary-key">Primary Key</h3>
+    <section class="section">Uniquely identifies each row in a table.
+    <pre><code>CREATE TABLE Departments (
+  dept_id INT PRIMARY KEY,
+  dept_name VARCHAR(100)
+);</code></pre></section>
+
+    <h3 class="h3" id="foreign-key">Foreign Key</h3>
+    <section class="section">Ensures referential integrity between two tables.
+    <pre><code>CREATE TABLE Orders (
+  order_id INT PRIMARY KEY,
+  customer_id INT,
+  FOREIGN KEY (customer_id) REFERENCES Customers(id)
+);</code></pre></section>
+
+    <h3 class="h3" id="check">CHECK</h3>
+    <section class="section">Ensures that all values in a column satisfy a condition.
+    <pre><code>CREATE TABLE Employees (
+  salary DECIMAL(10,2),
+  CHECK (salary >= 0)
+);</code></pre>
+</section>
+    <h3 class="h3" id="default">DEFAULT</h3>
+    <section class="section">Provides a default value for a column when none is specified.
+    <pre><code>CREATE TABLE Products (
+  id INT PRIMARY KEY,
+  price DECIMAL(10,2) DEFAULT 0.00
+);</code></pre></section>
+
+    <h3 class="h3" id="index">Index</h3>
+    <section class="section">Improves the speed of data retrieval operations.
+    <pre><code>CREATE INDEX idx_name ON Employees(name);</code></pre></section>
+
+    <h3 class="h3" id="auto-increment">Auto Increment</h3>
+    <section class="section">Automatically generates a unique number for new rows (syntax may vary).
+    <pre><code>CREATE TABLE Users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50)
+);</code></pre></section>
+    <h2 class="h2" id="dates">Dates and Date Functions</h2>
+    <section class="section">SQL offers many functions to work with dates and times.
+    <ul>
+      <li><code>GETDATE()</code> - Returns current date and time (SQL Server)</li>
+      <li><code>CURDATE()</code> - Returns current date (MySQL)</li>
+      <li><code>DATEADD()</code> - Adds a specified time interval to a date</li>
+      <li><code>DATEDIFF()</code> - Calculates difference between two dates</li>
+      <li><code>DATE_FORMAT()</code> - Formats date values (MySQL)</li>
+    </ul>
+    <pre><code>SELECT GETDATE();  -- SQL Server
+SELECT CURDATE();   -- MySQL
+
+SELECT DATEADD(day, 7, GETDATE());  -- Adds 7 days
+
+SELECT DATEDIFF(day, '2024-01-01', '2024-06-01');  -- Days between dates
+
+SELECT DATE_FORMAT(NOW(), '%Y-%m-%d');  -- Formats date</code></pre>
+</section>
+    <h2 class="h2" id="views">Views</h2>
+    <section class="section">A <strong>View</strong> is a virtual table based on the result set of an SQL statement.
+    <pre><code>CREATE VIEW ActiveCustomers AS
+SELECT * FROM Customers WHERE status = 'Active';
+
+SELECT * FROM ActiveCustomers;</code></pre></section>
+
+    <h2 class="h2" id="sql-injection">SQL Injection</h2>
+    <section class="section"><strong>SQL Injection</strong> is a security vulnerability that allows attackers to interfere with queries.</section>
+    <section class="section">Always use parameterized queries or prepared statements to prevent it.</section>
+
+    <h2 class="h2" id="hosting">SQL Hosting</h2>
+    <section class="section">Databases can be hosted on local servers or cloud providers like AWS RDS, Azure SQL Database, Google Cloud SQL.</section>
+    <section class="section">Choosing a host depends on scalability, security, cost, and performance needs.</section>
+
+    <h2 class="h2" id="data-types">Data Types</h2>
+    <section class="section">SQL supports various data types including:
+    <ul>
+      <li><strong>Numeric:</strong> INT, FLOAT, DECIMAL</li>
+      <li><strong>String:</strong> CHAR, VARCHAR, TEXT</li>
+      <li><strong>Date/Time:</strong> DATE, TIME, DATETIME, TIMESTAMP</li>
+      <li><strong>Boolean:</strong> BIT, BOOLEAN</li>
+    </ul>
+</section>
+    <h2 class="h2" id="references">References</h2>
+    <section class="section">Use external references to improve your SQL knowledge:
+    <ul>
+      <li><a href="https://www.w3schools.com/sql/" target="_blank">W3Schools SQL Tutorial</a></li>
+      <li><a href="https://www.sqltutorial.org/" target="_blank">SQLTutorial.org</a></li>
+      <li><a href="https://dev.mysql.com/doc/" target="_blank">MySQL Documentation</a></li>
+      <li><a href="https://docs.microsoft.com/en-us/sql/" target="_blank">Microsoft SQL Docs</a></li>
+    </ul>
+</section>
+    <h2 class="h2" id="keywords">SQL Keywords</h2>
+    <section class="section">SQL keywords are reserved words that have special meaning like SELECT, FROM, WHERE, JOIN, INSERT, UPDATE, DELETE, etc.</section>
+
+    <h2 class="h2" id="mysql-functions">MySQL Functions</h2>
+    <section class="section">MySQL provides many built-in functions like:
+    <ul>
+      <li>String functions: <code>CONCAT(), LENGTH(), SUBSTRING()</code></li>
+      <li>Numeric functions: <code>ROUND(), CEIL(), FLOOR()</code></li>
+      <li>Date functions: <code>NOW(), CURDATE()</code></li>
+    </ul></section>
+
+    <h2 class="h2" id="server-functions">Server Functions</h2>
+    <section class="section">Server-specific functions (varies by RDBMS) can include:
+    <ul>
+      <li>System info: <code>@@version</code>, <code>@@servername</code></li>
+      <li>User info: <code>USER(), CURRENT_USER()</code></li>
+      <li>Performance: <code>SHOW PROCESSLIST</code></li>
+    </ul>
+    </section>
+
+    <h2 class="h2" id="ms-access-functions">MS Access Functions</h2>
+    <section class="section">MS Access provides many unique SQL functions, such as:
+    <ul>
+      <li><code>NZ()</code> - Replaces NULL with another value</li>
+      <li><code>IIF()</code> - Immediate If (like CASE)</li>
+      <li><code>DATEPART()</code> - Returns part of a date</li>
+      <li><code>FORMAT()</code> - Formats numbers and dates</li>
+    </ul>
+      </section>
+    </section>
+<section class="section">  <h2>🎉 Congratulations on Completing the SQL Tutorial!</h2>
+  <p>You’ve built a solid understanding of SQL — the language behind database management.</p>
+  <p>Now you can confidently write queries to create, read, update, and delete data, manage tables, and optimize your databases.</p>
+  <p>Keep exploring advanced SQL topics and best practices to become a true data expert!</p>
+  <p><strong>Happy Query Crafting! 💾</strong></p>
+</section>
+
+<footer>  <p>© 2025 Aryan's SQL Tutorial. All rights reserved.</p>
+  <p>Created by Aryan Kumar Ojha</p>
+</footer>
+</body>
+</html>

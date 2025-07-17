@@ -1,0 +1,2391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+   <link rel="icon" href="logocss.png" type="image/jpeg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="logocss.png">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="logocss.png">
+    <link rel="shortcut icon" href="logocss.png" type="image/x-jpeg">
+  <title>CSS Tutorial</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #F4631E;
+    color: #000;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    background: rgb(168, 54, 8);
+    color: white;
+    padding: 20px 15px;
+    overflow-y: auto;
+    border-radius: 0 6px 6px 0;
+    z-index: 1000;
+  }
+
+  .sidebar h2 {
+    color: #07090a;
+    margin-bottom: 10px;
+  }
+
+  .sidebar a {
+    color: #ccc;
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .sidebar a:hover {
+    text-decoration: underline;
+    color: #1d833f;
+  }
+ section {
+    background: #f3c5c5;
+    padding: 35px;
+    margin: 25px auto;
+    margin-left: 280px;
+    width: calc(100% - 300px);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(218, 15, 15, 0.1);
+ }
+
+  pre {
+    background: #aa8d8d;
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  h2 {
+    color: #052344;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 5px;
+  }
+  .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .end-section {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 50px auto;
+  max-width: 1000px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.end-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #052344;
+  border-bottom: 2px solid #007BFF;
+  padding-bottom: 10px;
+}
+
+.end-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.footer {
+text-align:center; 
+padding:20px; 
+background-color:#222; 
+color:#fff; 
+margin-top:40px;
+width: calc(100% - 300px);
+margin-left: 280px;
+}
+.h1 {
+  color: #000;
+  text-align: center;
+  text-decoration: underline;
+}
+.h1:hover{
+  color: #0f1c8b;
+  text-shadow: 0 4px 10px #FF0000;
+}
+
+    
+</style>
+
+</head>
+<body>
+<div class="sidebar">
+  <h2 class="h2">CSS Tutorial</h2>
+  <ul>
+    <a href="#css-home">CSS HOME</a>
+<a href="#css-intro">CSS Introduction</a>
+<a href="#css-syntax">CSS Syntax</a>
+<a href="#css-selectors">CSS Selectors</a>
+<a href="#css-howto">CSS How To</a>
+<a href="#css-comments">CSS Comments</a>
+<a href="#css-colors">CSS Colors</a>
+<a href="#css-backgrounds">CSS Backgrounds</a>
+<a href="#css-borders">CSS Borders</a>
+<a href="#css-margins">CSS Margins</a>
+<a href="#css-padding">CSS Padding</a>
+<a href="#css-heightwidth">CSS Height/Width</a>
+<a href="#css-boxmodel">CSS Box Model</a>
+<a href="#css-outline">CSS Outline</a>
+<a href="#css-text">CSS Text</a>
+<a href="#css-fonts">CSS Fonts</a>
+<a href="#css-icons">CSS Icons</a>
+<a href="#css-links">CSS Links</a>
+<a href="#css-lists">CSS Lists</a>
+<a href="#css-tables">CSS Tables</a>
+<a href="#css-display">CSS Display</a>
+<a href="#css-maxwidth">CSS Max-width</a>
+<a href="#css-position">CSS Position</a>
+<a href="#css-zindex">CSS Z-index</a>
+<a href="#css-overflow">CSS Overflow</a>
+<a href="#css-float">CSS Float</a>
+<a href="#css-inlineblock">CSS Inline-block</a>
+<a href="#css-align">CSS Align</a>
+<a href="#css-combinators">CSS Combinators</a>
+<a href="#css-pseudoclasses">CSS Pseudo-classes</a>
+<a href="#css-pseudoelements">CSS Pseudo-elements</a>
+<a href="#css-opacity">CSS Opacity</a>
+<a href="#css-navbar">CSS Navigation Bar</a>
+<a href="#css-dropdowns">CSS Dropdowns</a>
+<a href="#css-gallery">CSS Image Gallery</a>
+<a href="#css-sprites">CSS Image Sprites</a>
+<a href="#css-attrselectors">CSS Attr Selectors</a>
+<a href="#css-forms">CSS Forms</a>
+<a href="#css-counters">CSS Counters</a>
+<a href="#css-layout">CSS Website Layout</a>
+<a href="#css-units">CSS Units</a>
+<a href="#css-specificity">CSS Specificity</a>
+<a href="#css-important">CSS !important</a>
+<a href="#css-math">CSS Math Functions</a>
+
+<h2 class="h2">CSS Advanced</h2>
+<a href="#css-rounded">CSS Rounded Corners</a>
+<a href="#css-borderimages">CSS Border Images</a>
+<a href="#css-colorkeywords">CSS Color Keywords</a>
+<a href="#css-gradients">CSS Gradients</a>
+<a href="#css-shadows">CSS Shadows</a>
+<a href="#css-texteffects">CSS Text Effects</a>
+<a href="#css-webfonts">CSS Web Fonts</a>
+<a href="#css-2d">CSS 2D Transforms</a>
+<a href="#css-3d">CSS 3D Transforms</a>
+<a href="#css-transitions">CSS Transitions</a>
+<a href="#css-animations">CSS Animations</a>
+<a href="#css-tooltips">CSS Tooltips</a>
+<a href="#css-imagestyling">CSS Image Styling</a>
+<a href="#css-imagecentering">CSS Image Centering</a>
+<a href="#css-imagefilters">CSS Image Filters</a>
+<a href="#css-imageshapes">CSS Image Shapes</a>
+<a href="#css-objectfit">CSS object-fit</a>
+<a href="#css-objectposition">CSS object-position</a>
+<a href="#css-masking">CSS Masking</a>
+<a href="#css-buttons">CSS Buttons</a>
+<a href="#css-pagination">CSS Pagination</a>
+<a href="#css-columns">CSS Multiple Columns</a>
+<a href="#css-ui">CSS User Interface</a>
+<a href="#css-variables">CSS Variables</a>
+<a href="#css-property">CSS @property</a>
+<a href="#css-boxsizing">CSS Box Sizing</a>
+<a href="#css-mediaqueries">CSS Media Queries</a>
+<a href="#css-mqexamples">CSS MQ Examples</a>
+
+<h2 class="h2">CSS Flexbox</h2>
+<a href="#flexbox-intro">Flexbox Intro</a>
+<a href="#flex-container">Flex Container</a>
+<a href="#flex-items">Flex Items</a>
+<a href="#flex-responsive">Flex Responsive</a>
+
+<h2 class="h2">CSS Grid</h2>
+<a href="#grid-intro">Grid Intro</a>
+<a href="#grid-colsrows">Grid Columns/Rows</a>
+<a href="#grid-container">Grid Container</a>
+<a href="#grid-item">Grid Item</a>
+
+<h2 class="h2">CSS Responsive</h2>
+<a href="#rwd-intro">RWD Intro</a>
+<a href="#rwd-viewport">RWD Viewport</a>
+<a href="#rwd-grid">RWD Grid View</a>
+<a href="#rwd-mq">RWD Media Queries</a>
+<a href="#rwd-images">RWD Images</a>
+<a href="#rwd-videos">RWD Videos</a>
+<a href="#rwd-frameworks">RWD Frameworks</a>
+<a href="#rwd-templates">RWD Templates</a>
+
+<h2 class="h2">CSS SASS</h2>
+
+<a href="#sass">What is SASS</a>
+<a href="#sass-variables">SASS Variables</a>
+<a href="#sass-nesting">SASS Nesting</a>
+<a href="#sass-mixins">SASS Mixins</a>
+<a href="#sass-compiling">SASS Compilation</a>
+
+<h2 class="h2">CSS References</h2>
+<a href="#css-ref">CSS Reference</a>
+<a href="#css-ref-selectors">CSS Selectors</a>
+<a href="#css-ref-combinators">CSS Combinators</a>
+<a href="#css-ref-pseudoclasses">CSS Pseudo-classes</a>
+<a href="#css-ref-pseudoelements">CSS Pseudo-elements</a>
+<a href="#css-at-rules">CSS At-rules</a>
+<a href="#css-functions">CSS Functions</a>
+<a href="#css-aural">CSS Reference Aural</a>
+<a href="#css-safe-fonts">CSS Web Safe Fonts</a>
+<a href="#css-animatable">CSS Animatable</a>
+<a href="#css-units-ref">CSS Units</a>
+<a href="#css-px-em">CSS PX-EM Converter</a>
+<a href="#css-color-values">CSS Color Values</a>
+<a href="#css-default-values">CSS Default Values</a>
+<a href="#css-browser-support">CSS Browser Support</a>
+</ul>
+
+</div>
+
+  <h1 style="text-align:center; color:#072e57;"><u>CSS  Tutorial</u></h1>
+  <section id="css-home">
+    <h2>CSS HOME</h2>
+    <p><strong>Definition:</strong> CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML or XML. CSS controls the layout and look of elements on a webpage.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+p {
+  color: blue;
+  font-size: 16px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:1px solid #ccc; padding:10px;">
+      <p style="color:blue; font-size:16px;">This is a blue paragraph with 16px font size.</p>
+    </div>
+  </section>
+
+  <!-- CSS Introduction -->
+  <section id="css-intro">
+    <h2>CSS Introduction</h2>
+    <p><strong>Definition:</strong> CSS allows you to apply styles to web documents. More importantly, CSS enables you to do this independently of the HTML that makes up each web page.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre>
+selector {
+  property: value;
+}
+    </pre>
+    <p><strong>Example:</strong></p>
+    <pre>
+body {
+  background-color: lightyellow;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="background-color: lightyellow; padding: 10px;">
+      This area has a light yellow background using CSS.
+    </div>
+  </section>
+
+  <!-- CSS Syntax -->
+  <section id="css-syntax">
+    <h2>CSS Syntax</h2>
+    <p><strong>Definition:</strong> A CSS rule consists of a selector and a declaration block. The selector points to the HTML element to style. The declaration block contains one or more declarations separated by semicolons.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre>
+selector {
+  property: value;
+}
+    </pre>
+    <p><strong>Example:</strong></p>
+    <pre>
+h1 {
+  color: red;
+  text-align: center;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:1px solid #ccc; padding:10px;">
+      <h1 style="color:red; text-align:center;">Hello CSS Syntax</h1>
+    </div>
+  </section>
+
+  <!-- CSS Selectors -->
+  <section id="css-selectors">
+    <h2>CSS Selectors</h2>
+    <p><strong>Definition:</strong> CSS selectors are patterns used to select the elements you want to style.</p>
+    <p><strong>Common Selectors:</strong></p>
+    <ul>
+      <li><code>*</code> — Selects all elements</li>
+      <li><code>element</code> — Selects all elements of that type (e.g., <code>p</code>, <code>h1</code>)</li>
+      <li><code>.class</code> — Selects elements with a specific class</li>
+      <li><code>#id</code> — Selects an element with a specific id</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre>
+#title {
+  color: green;
+}
+.intro {
+  font-style: italic;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:1px solid #ccc; padding:10px;">
+      <h2 id="title" style="color:green;">Title using ID selector</h2>
+      <p class="intro" style="font-style:italic;">This paragraph uses the class selector.</p>
+    </div>
+  </section>
+
+  <!-- CSS How To -->
+  <section id="css-howto">
+    <h2>CSS How To</h2>
+    <p><strong>Definition:</strong> There are three ways to apply CSS to HTML:</p>
+    <ul>
+      <li>Inline — using the <code>style</code> attribute in HTML elements</li>
+      <li>Internal — using a <code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code></li>
+      <li>External — using an external CSS file linked with <code>&lt;link&gt;</code></li>
+    </ul>
+    <p><strong>Example (Internal):</strong></p>
+    <pre>
+&lt;style&gt;
+  h1 {
+    color: navy;
+  }
+&lt;/style&gt;
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:1px solid #ccc; padding:10px;">
+      <h1 style="color:navy;">Internal CSS Applied Here</h1>
+    </div>
+  </section>
+  <!-- CSS Comments -->
+  <section id="css-comments">
+    <h2>CSS Comments</h2>
+    <p><strong>Definition:</strong> CSS comments are used to explain the code and may help when editing the source code later. Comments are ignored by browsers.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre>
+/* This is a CSS comment */
+p {
+  color: green; /* comment inside CSS rule */
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:1px solid #ccc; padding:10px;">
+      <p style="color: green;">This paragraph is styled with CSS.</p>
+    </div>
+  </section>
+
+  <!-- CSS Colors -->
+  <section id="css-colors">
+    <h2>CSS Colors</h2>
+    <p><strong>Definition:</strong> CSS colors can be specified using color names, HEX values, RGB, RGBA, HSL, and HSLA values.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+h1 {
+  color: tomato;
+}
+div {
+  background-color: #f0f0f0;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:1px solid #ccc; padding:10px; background-color:#f0f0f0;">
+      <h1 style="color: tomato;">Tomato Colored Heading</h1>
+      <p>Div with light gray background.</p>
+    </div>
+  </section>
+
+  <!-- CSS Backgrounds -->
+  <section id="css-backgrounds">
+    <h2>CSS Backgrounds</h2>
+    <p><strong>Definition:</strong> CSS background properties are used to define the background effects for elements.</p>
+    <p><strong>Syntax:</strong></p>
+    <pre>
+element {
+  background-color: lightblue;
+  background-image: url('image.jpg');
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:1px solid #ccc; padding:20px; background-color: lightblue;">
+      Background with light blue color.
+    </div>
+  </section>
+
+  <!-- CSS Borders -->
+  <section id="css-borders">
+    <h2>CSS Borders</h2>
+    <p><strong>Definition:</strong> The CSS border property allows you to define the style, width, and color of an element’s border.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+p {
+  border: 2px solid black;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:1px solid #ccc; padding:10px;">
+      <p style="border: 2px solid black; padding: 10px;">This paragraph has a black border.</p>
+    </div>
+  </section>
+
+  <!-- CSS Margins -->
+  <section id="css-margins">
+    <h2>CSS Margins</h2>
+    <p><strong>Definition:</strong> The margin property defines the space outside the border of an element.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  margin: 30px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:1px solid #000; margin: 30px; padding:10px;">
+      This div has 30px margin around it.
+    </div>
+  </section>
+
+  <!-- CSS Padding -->
+  <section id="css-padding">
+    <h2>CSS Padding</h2>
+    <p><strong>Definition:</strong> Padding is the space between the content of an element and its border.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  padding: 20px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:1px solid #000; padding: 20px;">
+      This div has 20px padding inside the border.
+    </div>
+  </section>
+  <!-- CSS Height/Width -->
+  <section id="css-heightwidth">
+    <h2>CSS Height/Width</h2>
+    <p><strong>Definition:</strong> The <code>height</code> and <code>width</code> properties are used to set the height and width of an element.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  height: 100px;
+  width: 200px;
+  background-color: lightgreen;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="height:100px; width:200px; background-color:lightgreen; line-height:100px; text-align:center;">
+      Box 200x100px
+    </div>
+  </section>
+
+  <!-- CSS Box Model -->
+  <section id="css-boxmodel">
+    <h2>CSS Box Model</h2>
+    <p><strong>Definition:</strong> The CSS box model describes the rectangular boxes that are generated for elements, consisting of: <strong>content, padding, border, and margin</strong>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  width: 150px;
+  padding: 20px;
+  border: 5px solid red;
+  margin: 30px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="width:150px; padding:20px; border:5px solid red; margin:30px;">
+      Box Model Example
+    </div>
+  </section>
+
+  <!-- CSS Outline -->
+  <section id="css-outline">
+    <h2>CSS Outline</h2>
+    <p><strong>Definition:</strong> An outline is a line drawn outside the element’s border. It does not take up space and can be different in size and style than borders.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  outline: 2px dashed blue;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:1px solid gray; padding:10px; outline:2px dashed blue;">
+      This box has a dashed blue outline.
+    </div>
+  </section>
+
+  <!-- CSS Text -->
+  <section id="css-text">
+    <h2>CSS Text</h2>
+    <p><strong>Definition:</strong> CSS offers various properties to style text, such as <code>color</code>, <code>text-align</code>, <code>text-decoration</code>, <code>text-transform</code>, etc.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+h3 {
+  color: purple;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+    </pre>
+    <h4>Output:</h4>
+    <h3 style="color:purple; text-align:center; text-decoration:underline; text-transform:uppercase;">
+      Styled Text
+    </h2>
+  </section>
+
+  <!-- CSS Fonts -->
+  <section id="css-fonts">
+    <h2>CSS Fonts</h2>
+    <p><strong>Definition:</strong> CSS allows you to set font styles for elements using the <code>font-family</code>, <code>font-size</code>, <code>font-style</code>, and <code>font-weight</code> properties.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+p {
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  font-style: italic;
+}
+    </pre>
+    <h4>Output:</h4>
+    <p style="font-family:'Courier New', monospace; font-size:18px; font-style:italic;">
+      This paragraph uses Courier New and italic style.
+    </p>
+  </section>
+
+  <!-- CSS Icons -->
+  <section id="css-icons">
+    <h2>CSS Icons</h2>
+    <p><strong>Definition:</strong> CSS itself doesn’t include icons, but you can use icon libraries like Font Awesome or embed Unicode characters for basic icons.</p>
+    <p><strong>Example (using Unicode):</strong></p>
+    <pre>
+span {
+  font-size: 24px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <span style="font-size:24px;">&#x1F4BB; &#x1F4C8; &#x1F50D;</span> (Basic Unicode icons)
+  </section>
+  <!-- CSS Links -->
+  <section id="css-links">
+    <h2>CSS Links</h2>
+    <p><strong>Definition:</strong> You can style different states of links using pseudo-classes like <code>:link</code>, <code>:visited</code>, <code>:hover</code>, and <code>:active</code>.</p>
+    <p><strong>Example:</strong></p>
+    <style>
+      .link-style:link {
+        color: green;
+        text-decoration: none;
+      }
+      .link-style:visited {
+        color: gray;
+      }
+      .link-style:hover {
+        color: red;
+        text-decoration: underline;
+      }
+      .link-style:active {
+        color: blue;
+      }
+    </style>
+    <pre>
+a:link { color: green; }
+a:visited { color: gray; }
+a:hover { color: red; }
+a:active { color: blue; }
+    </pre>
+    <h4>Output:</h4>
+    <a href="https://www.Google.com" class="link-style" target="_blank">Visit Example</a>
+  </section>
+
+  <!-- CSS Lists -->
+  <section id="css-lists">
+    <h2>CSS Lists</h2>
+    <p><strong>Definition:</strong> CSS can control list appearance using properties like <code>list-style-type</code>, <code>list-style-position</code>, and <code>list-style-image</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+ul {
+  list-style-type: square;
+}
+ol {
+  list-style-type: upper-roman;
+}
+    </pre>
+    <h4>Output:</h4>
+    <ul style="list-style-type: square;">
+      <li>Item A</li>
+      <li>Item B</li>
+    </ul>
+    <ol style="list-style-type: upper-roman;">
+      <li>First</li>
+      <li>Second</li>
+    </ol>
+  </section>
+
+  <!-- CSS Tables -->
+  <section id="css-tables">
+    <h2>CSS Tables</h2>
+    <p><strong>Definition:</strong> CSS allows you to style HTML tables using properties like <code>border-collapse</code>, <code>padding</code>, and <code>text-align</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+    </pre>
+    <h4>Output:</h4>
+    <table style="border-collapse: collapse; width: 100%;">
+      <tr>
+        <th style="border: 1px solid black; padding: 8px;">Name</th>
+        <th style="border: 1px solid black; padding: 8px;">Age</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid black; padding: 8px;">Alice</td>
+        <td style="border: 1px solid black; padding: 8px;">25</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid black; padding: 8px;">Bob</td>
+        <td style="border: 1px solid black; padding: 8px;">30</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- CSS Display -->
+  <section id="css-display">
+    <h2>CSS Display</h2>
+    <p><strong>Definition:</strong> The <code>display</code> property specifies the display behavior of an element, such as block, inline, inline-block, none, flex, grid, etc.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+span {
+  display: block;
+}
+    </pre>
+    <h4>Output:</h4>
+    <span style="display:block; background-color:#eef; padding:5px;">This span is displayed as a block</span>
+  </section>
+  <!-- CSS Max-width -->
+  <section id="css-maxwidth">
+    <h2>CSS Max-width</h2>
+    <p><strong>Definition:</strong> The <code>max-width</code> property prevents an element from exceeding a specified width, making layouts more responsive.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  max-width: 500px;
+  background-color: lightgray;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="max-width:500px; background-color:lightgray; padding:10px;">
+      This div has a maximum width of 500px. Resize your browser to see how it behaves.
+    </div>
+  </section>
+
+  <!-- CSS Position -->
+  <section id="css-position">
+    <h2>CSS Position</h2>
+    <p><strong>Definition:</strong> The <code>position</code> property specifies how an element is positioned in a document. Values: <code>static</code>, <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.relative-box {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="position: relative; top: 10px; left: 20px; background-color: lightblue; padding: 10px;">
+      This box is relatively positioned.
+    </div>
+  </section>
+
+  <!-- CSS Z-index -->
+  <section id="css-zindex">
+    <h2>CSS Z-index</h2>
+    <p><strong>Definition:</strong> The <code>z-index</code> property specifies the stack order of elements. Higher values are on top.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.box1, .box2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.box1 {
+  background-color: red;
+  z-index: 1;
+}
+.box2 {
+  background-color: blue;
+  left: 50px;
+  top: 20px;
+  z-index: 2;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="position:relative; height: 130px;">
+      <div style="width:100px; height:100px; background:red; position:absolute; z-index:1;"></div>
+      <div style="width:100px; height:100px; background:blue; position:absolute; left:50px; top:20px; z-index:2;"></div>
+    </div>
+  </section>
+
+  <!-- CSS Overflow -->
+  <section id="css-overflow">
+    <h2>CSS Overflow</h2>
+    <p><strong>Definition:</strong> The <code>overflow</code> property controls what happens to content that is too large for an element's box. Values: <code>visible</code>, <code>hidden</code>, <code>scroll</code>, <code>auto</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  width: 150px;
+  height: 100px;
+  overflow: scroll;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="width:150px; height:100px; overflow:scroll; border:1px solid #ccc;">
+      This box has a scroll bar when content overflows. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque.
+    </div>
+  </section>
+
+  <!-- CSS Float -->
+  <section id="css-float">
+    <h2>CSS Float</h2>
+    <p><strong>Definition:</strong> The <code>float</code> property places an element on the left or right, allowing text and inline elements to wrap around it.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+img {
+  float: right;
+  margin-left: 10px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div>
+      <img src="https://via.placeholder.com/100" style="float:right; margin-left:10px;" alt="Placeholder">
+      <p>This text wraps around a floated image. Floating helps in text flow management and image alignment.</p>
+    </div>
+  </section>
+
+  <!-- CSS Inline-block -->
+  <section id="css-inlineblock">
+    <h2>CSS Inline-block</h2>
+    <p><strong>Definition:</strong> The <code>inline-block</code> value of the <code>display</code> property makes elements sit inline but behave like block elements.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: teal;
+  margin: 5px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div>
+      <div class="box" style="display:inline-block; width:100px; height:100px; background:teal; margin:5px;"></div>
+      <div class="box" style="display:inline-block; width:100px; height:100px; background:teal; margin:5px;"></div>
+    </div>
+  </section>
+  <!-- CSS Align -->
+  <section id="css-align">
+    <h2>CSS Align</h2>
+    <p><strong>Definition:</strong> CSS alignment properties control how text or elements align within a container. Common properties include <code>text-align</code>, <code>vertical-align</code>, and <code>align-items</code> in flexbox.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.text-center {
+  text-align: center;
+}
+.vertical-align-middle {
+  vertical-align: middle;
+}
+    </pre>
+    <h4>Output:</h4>
+    <p class="text-center" style="text-align:center; background:#eef; padding:5px;">This text is centered horizontally.</p>
+    <table>
+      <tr>
+        <td style="vertical-align: middle; height: 50px; border: 1px solid #ccc;">Middle aligned text</td>
+        <td style="border: 1px solid #ccc;">Normal aligned text</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- CSS Combinators -->
+  <section id="css-combinators">
+    <h2>CSS Combinators</h2>
+    <p><strong>Definition:</strong> CSS combinators describe the relationship between selectors:</p>
+    <ul>
+      <li><code> </code> (descendant selector)</li>
+      <li><code> > </code> (child selector)</li>
+      <li><code> + </code> (adjacent sibling selector)</li>
+      <li><code> ~ </code> (general sibling selector)</li>
+    </ul>
+    <p><strong>Example:</strong></p>
+    <pre>
+div p {
+  color: blue; /* all p inside div */
+}
+div > p {
+  color: red; /* direct child p of div */
+}
+h1 + p {
+  font-weight: bold; /* p immediately after h1 */
+}
+h1 ~ p {
+  font-style: italic; /* all p siblings after h1 */
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:1px solid #ccc; padding:10px;">
+      <p>This paragraph inside div is blue (descendant).</p>
+      <p>Another paragraph inside div is also blue.</p>
+      <p style="color:red;">But if it was direct child (use >), color would be red.</p>
+    </div>
+    <h1 class="h1'>Heading 1</h1>
+    <p style="font-weight:bold;">Paragraph immediately after h1 is bold.</p>
+    <p style="font-style:italic;">Paragraphs after h1 are italic.</p>
+  </section>
+
+  <!-- CSS Pseudo-classes -->
+  <section id="css-pseudoclasses">
+    <h2>CSS Pseudo-classes</h2>
+    <p><strong>Definition:</strong> Pseudo-classes define a special state of an element, such as hover, focus, visited, etc.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+a:hover {
+  color: red;
+}
+input:focus {
+  border-color: blue;
+}
+li:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+    </pre>
+    <h4>Output:</h4>
+    <a href="#" style="color:blue;">Hover over me</a><br><br>
+    <input type="text" placeholder="Focus to see border change" style="border:1px solid #ccc; padding:5px;">
+    <ul>
+      <li style="background:#f0f0f0;">Odd item</li>
+      <li>Even item</li>
+      <li style="background:#f0f0f0;">Odd item</li>
+    </ul>
+  </section>
+
+  <!-- CSS Pseudo-elements -->
+  <section id="css-pseudoelements">
+    <h2>CSS Pseudo-elements</h2>
+    <p><strong>Definition:</strong> Pseudo-elements style specified parts of an element, such as the first letter, first line, or before/after content.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+p::first-letter {
+  font-size: 200%;
+  color: red;
+}
+p::before {
+  content: "Note: ";
+  font-weight: bold;
+}
+    </pre>
+    <h4>Output:</h4>
+    <p style="font-size:16px;">
+      <span style="font-size:32px; color:red;">N</span>ormal paragraph with styled first letter.<br>
+      <span style="font-weight:bold;">Note: </span>This paragraph has a note added before text.
+    </p>
+  </section>
+
+  <!-- CSS Opacity -->
+  <section id="css-opacity">
+    <h2>CSS Opacity</h2>
+    <p><strong>Definition:</strong> The <code>opacity</code> property sets the transparency level of an element (from 0 to 1).</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  opacity: 0.5;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="width:200px; height:100px; background:#007bff; opacity:0.5; color:#fff; padding:10px;">
+      This div is 50% opaque.
+    </div>
+  </section>
+  <!-- CSS Navigation Bar -->
+  <section id="css-navbar">
+    <h2>CSS Navigation Bar</h2>
+    <p><strong>Definition:</strong> A navigation bar is a set of links used for website navigation, often styled horizontally or vertically.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+nav {
+  background-color: #333;
+  overflow: hidden;
+}
+nav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+    </pre>
+    <h4>Output:</h4>
+    <nav style="background:#333; overflow:hidden;">
+      <a href="#" style="float:left; display:block; color:#f2f2f2; padding:14px 16px; text-decoration:none;">Home</a>
+      <a href="#" style="float:left; display:block; color:#f2f2f2; padding:14px 16px; text-decoration:none;">About</a>
+      <a href="#" style="float:left; display:block; color:#f2f2f2; padding:14px 16px; text-decoration:none;">Services</a>
+      <a href="#" style="float:left; display:block; color:#f2f2f2; padding:14px 16px; text-decoration:none;">Contact</a>
+    </nav>
+  </section>
+
+  <!-- CSS Dropdowns -->
+  <section id="css-dropdowns">
+    <h2>CSS Dropdowns</h2>
+    <p><strong>Definition:</strong> Dropdown menus show/hide additional links or content when hovered or clicked.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div class="dropdown" style="position:relative; display:inline-block;">
+      <button style="padding:10px;">Dropdown</button>
+      <div class="dropdown-content" style="display:none; position:absolute; background:#f9f9f9; min-width:160px; box-shadow:0 8px 16px rgba(0,0,0,0.2); z-index:1;">
+        <a href="#" style="display:block; padding:10px; text-decoration:none; color:#000;">Link 1</a>
+        <a href="#" style="display:block; padding:10px; text-decoration:none; color:#000;">Link 2</a>
+        <a href="#" style="display:block; padding:10px; text-decoration:none; color:#000;">Link 3</a>
+      </div>
+    </div>
+    <script>
+      // Simple hover effect for demo
+      document.querySelector('.dropdown').addEventListener('mouseenter', function() {
+        this.querySelector('.dropdown-content').style.display = 'block';
+      });
+      document.querySelector('.dropdown').addEventListener('mouseleave', function() {
+        this.querySelector('.dropdown-content').style.display = 'none';
+      });
+    </script>
+  </section>
+
+  <!-- CSS Image Gallery -->
+  <section id="css-gallery">
+    <h2>CSS Image Gallery</h2>
+    <p><strong>Definition:</strong> Image galleries display multiple images in a grid or row with styling for spacing and layout.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.gallery {
+  display: flex;
+  gap: 10px;
+}
+.gallery img {
+  width: 100px;
+  border-radius: 8px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div class="gallery" style="display:flex; gap:10px;">
+      <img src="img for css1.jpg" alt="Image 1" style="width:100px; border-radius:8px;">
+      <img src="img_css2.png" alt="Image 2" style="width:100px; border-radius:8px;">
+      <img src="img_css3.png" alt="Image 3" style="width:100px; border-radius:8px;">
+    </div>
+  </section>
+
+  <!-- CSS Image Sprites -->
+  <section id="css-sprites">
+    <h2>CSS Image Sprites</h2>
+    <p><strong>Definition:</strong> Image sprites combine multiple images into one to reduce HTTP requests; CSS background-position is used to display parts.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.icon {
+  width: 32px;
+  height: 32px;
+  background-image: url('sprite.png');
+  background-position: -10px -20px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="width:32px; height:32px; background:#ccc; border:1px solid #999; text-align:center; line-height:32px;">
+      Sprite
+    </div>
+    <p><em>Note: Actual sprite image is not included here.</em></p>
+  </section>
+
+  <!-- CSS Attr Selectors -->
+  <section id="css-attrselectors">
+    <h2>CSS Attribute Selectors</h2>
+    <p><strong>Definition:</strong> Select elements based on their attributes and attribute values.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+a[href^="https"] {
+  color: green;
+}
+input[type="text"] {
+  border: 2px solid blue;
+}
+    </pre>
+    <h4>Output:</h4>
+    <a href="https://example.com">Secure Link (green)</a><br>
+    <a href="http://example.com">Non-secure Link</a><br><br>
+    <input type="text" placeholder="Text input" style="border:2px solid blue; padding:5px;">
+    <input type="password" placeholder="Password input">
+  </section>
+  <!-- CSS Forms -->
+  <section id="css-forms">
+    <h2>CSS Forms</h2>
+    <p><strong>Definition:</strong> Styling HTML form elements like inputs, buttons, selects for better appearance and usability.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+input[type="text"], input[type="email"], select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #45a049;
+}
+    </pre>
+    <h4>Output:</h4>
+    <form>
+      <input type="text" placeholder="Name" style="padding:10px; border:1px solid #ccc; border-radius:4px;"><br><br>
+      <input type="email" placeholder="Email" style="padding:10px; border:1px solid #ccc; border-radius:4px;"><br><br>
+      <select style="padding:10px; border:1px solid #ccc; border-radius:4px;">
+        <option>Select option</option>
+        <option>Option 1</option>
+        <option>Option 2</option>
+      </select><br><br>
+      <button type="submit" style="background:#4CAF50; color:#fff; padding:10px 20px; border:none; border-radius:4px; cursor:pointer;">Submit</button>
+    </form>
+  </section>
+
+  <!-- CSS Counters -->
+  <section id="css-counters">
+    <h2>CSS Counters</h2>
+    <p><strong>Definition:</strong> CSS counters are variables maintained by CSS to count occurrences, useful for numbering lists or sections.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+ol {
+  counter-reset: section;
+}
+ol li {
+  counter-increment: section;
+}
+ol li::before {
+  content: counter(section) ". ";
+  font-weight: bold;
+}
+    </pre>
+    <h4>Output:</h4>
+    <ol style="counter-reset: section;">
+      <li style="counter-increment: section;">First item</li>
+      <li style="counter-increment: section;">Second item</li>
+      <li style="counter-increment: section;">Third item</li>
+    </ol>
+  </section>
+
+  <!-- CSS Website Layout -->
+  <section id="css-layout">
+    <h2>CSS Website Layout</h2>
+    <p><strong>Definition:</strong> Structuring a website's main sections like header, sidebar, content, and footer using CSS positioning and display.</p>
+    <p><strong>Example:</strong></p>
+    
+    
+    <h4>Output:</h4>
+    <header style="background:#333; color:#fff; padding:10px; text-align:center;">Header</header>
+    <div class="clearfix" style="overflow:auto;">
+      <div class="sidebar" style="float:left; width:25%; background:#f4f4f4; padding:10px;">Sidebar</div>
+      <div class="content" style="float:left; width:70%; padding:10px;">Main Content</div>
+    </div>
+    <footer style="background:#333; color:#fff; padding:10px; text-align:center; clear:both;">Footer</footer>
+  </section>
+
+  <!-- CSS Units -->
+  <section id="css-units">
+    <h2>CSS Units</h2>
+    <p><strong>Definition:</strong> Units specify measurements for properties (length, size, spacing). Common units: px, em, rem, %, vw, vh.</p>
+    <p><strong>Example:</strong></p>
+    
+    <h4>Output:</h4>
+    <div style="width:50%; padding:1em; font-size:16px; background:#e2f0d9;">
+      This div is 50% wide, has 1em padding, and 16px font size.
+    </div>
+  </section>
+
+  <!-- CSS Specificity -->
+  <section id="css-specificity">
+    <h2>CSS Specificity</h2>
+    <p><strong>Definition:</strong> Specificity determines which CSS rule applies if multiple rules match the same element. Inline styles > IDs > Classes > Elements.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+p {
+  color: blue;
+}
+#special {
+  color: red;
+}
+    </pre>
+    <h4>Output:</h4>
+    <p>This paragraph is blue.</p>
+    <p id="special" style="color:red;">This paragraph with ID "special" is red due to higher specificity.</p>
+  </section>
+
+  <!-- CSS !important -->
+  <section id="css-important">
+    <h2>CSS !important</h2>
+    <p><strong>Definition:</strong> <code>!important</code> overrides all other declarations for a property.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+p {
+  color: blue !important;
+}
+p.special {
+  color: red;
+}
+    </pre>
+    <h4>Output:</h4>
+    <p style="color:blue !important;">This paragraph is blue due to !important.</p>
+    <p class="special" style="color:red;">Even though class says red, blue !important wins.</p>
+  </section>
+
+  <!-- CSS Math Functions -->
+  <section id="css-math">
+    <h2>CSS Math Functions</h2>
+    <p><strong>Definition:</strong> Functions like <code>calc()</code> allow calculations in CSS properties.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  width: calc(100% - 50px);
+  padding: 10px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="width:calc(100% - 50px); padding:10px; background:#ddd;">
+      This div is 100% width minus 50px padding.
+    </div>
+  </section>
+  <h1 class="h1"> CSS Advanced/h1>
+  <!-- CSS Rounded Corners -->
+   <h2>CSS Advanced</h2>
+  <section id="css-rounded">
+    <h2>CSS Rounded Corners</h2>
+    <p><strong>Definition:</strong> Use <code>border-radius</code> to round the corners of elements.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+  </pre>
+    <h4>Output:</h4>
+    <div style="border:2px solid #4CAF50; border-radius:15px; padding:20px;">
+      This box has rounded corners.
+    </div>
+  </section>
+
+  <!-- CSS Border Images -->
+  <section id="css-borderimages">
+    <h2>CSS Border Images</h2>
+    <p><strong>Definition:</strong> Use images as borders around elements using <code>border-image</code> property.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  border: 10px solid transparent;
+  border-image: url(border.png) 30 round;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="border:10px solid transparent; border-image: url('https://via.placeholder.com/30') 30 round; padding:20px;">
+      This box uses a border image.
+    </div>
+  </section>
+
+  <!-- CSS Backgrounds -->
+  <section id="css-backgrounds">
+    <h2>CSS Backgrounds</h2>
+    <p><strong>Definition:</strong> Backgrounds can be colors, images, gradients, etc.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color: white;
+  padding: 20px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="background: linear-gradient(to right, #ff7e5f, #feb47b); color: white; padding:20px;">
+      Gradient background example.
+    </div>
+  </section>
+
+  <!-- CSS Colors -->
+  <section id="css-colors">
+    <h2>CSS Colors</h2>
+    <p><strong>Definition:</strong> Colors in CSS can be specified by name, hex, rgb, rgba, hsl, hsla.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+p {
+  color: rgba(255, 0, 0, 0.6); /* semi-transparent red */
+}
+    </pre>
+    <h4>Output:</h4>
+    <p style="color: rgba(255,0,0,0.6);">
+      This paragraph is semi-transparent red using RGBA.
+    </p>
+  </section>
+
+  <!-- CSS Color Keywords -->
+  <section id="css-colorkeywords">
+    <h2>CSS Color Keywords</h2>
+    <p><strong>Definition:</strong> Named colors predefined by CSS, like <code>red</code>, <code>blue</code>, <code>yellow</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+span {
+  color: teal;
+}
+    </pre>
+    <h4>Output:</h4>
+    <span style="color: teal;">This text is teal using color keyword.</span>
+  </section>
+
+  <!-- CSS Gradients -->
+  <section id="css-gradients">
+    <h2>CSS Gradients</h2>
+    <p><strong>Definition:</strong> Gradients are smooth transitions between two or more colors.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  background: radial-gradient(circle, red, yellow, green);
+  height: 100px;
+  width: 300px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="background: radial-gradient(circle, red, yellow, green); height:100px; width:300px;"></div>
+  </section>
+
+  <!-- CSS Shadows -->
+  <section id="css-shadows">
+    <h2>CSS Shadows</h2>
+    <p><strong>Definition:</strong> Add shadow effects to elements using <code>box-shadow</code> and <code>text-shadow</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  box-shadow: 5px 5px 10px red;
+  padding: 20px;
+}
+h2 {
+  text-shadow: 2px 2px 5px #030f0b;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="box-shadow: 5px 5px 10px grey; padding:20px;">
+      This box has a shadow.
+    </div>
+    <h2 style="text-shadow: 2px 2px 5px #aaa;">This heading has text shadow.</h2>
+  </section>
+  <!-- CSS Text Effects -->
+  <section id="css-texteffects">
+    <h2>CSS Text Effects</h2>
+    <p><strong>Definition:</strong> CSS can style text with effects like shadows, transformations, and decorations.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+p {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  text-shadow: 1px 1px 2px #555;
+}
+    </pre>
+    <h4>Output:</h4>
+    <p style="text-transform: uppercase; letter-spacing: 3px; text-decoration: underline; text-shadow: 1px 1px 2px #555;">
+      Styled text with multiple effects.
+    </p>
+  </section>
+
+  <!-- CSS Web Fonts -->
+  <section id="css-webfonts">
+    <h2>CSS Web Fonts</h2>
+    <p><strong>Definition:</strong> Use fonts from web services like Google Fonts with <code>@import</code> or <code>&lt;link&gt;</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+    </pre>
+    <h4>Output:</h4>
+    <p style="font-family: 'Roboto', sans-serif;">
+      This paragraph uses the Roboto font loaded from Google Fonts.
+    </p>
+  </section>
+
+  <!-- CSS 2D Transforms -->
+  <section id="css-2d">
+    <h2>CSS 2D Transforms</h2>
+    <p><strong>Definition:</strong> Apply transformations like rotate, scale, skew, and translate in 2D space.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  transform: rotate(15deg) scale(1.2);
+  background-color: #ccc;
+  padding: 20px;
+  display: inline-block;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="transform: rotate(15deg) scale(1.2); background-color: #ccc; padding: 20px; display: inline-block;">
+      Rotated and scaled box.
+    </div>
+  </section>
+
+  <!-- CSS 3D Transforms -->
+  <section id="css-3d">
+    <h2>CSS 3D Transforms</h2>
+    <p><strong>Definition:</strong> Add depth and perspective with 3D transformations like rotateX, rotateY, and translateZ.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  transform: rotateY(45deg);
+  perspective: 500px;
+  background-color: #8fa;
+  padding: 20px;
+  display: inline-block;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="transform: rotateY(45deg); perspective: 500px; background-color: #8fa; padding: 20px; display: inline-block;">
+      3D rotated box.
+    </div>
+  </section>
+
+  <!-- CSS Transitions -->
+  <section id="css-transitions">
+    <h2>CSS Transitions</h2>
+    <p><strong>Definition:</strong> Smoothly animate property changes over time using <code>transition</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+button {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px 24px;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #005f73;
+}
+    </pre>
+    <h4>Output:</h4>
+    <button style="background-color: #008CBA; color: white; padding: 10px 24px; border: none; cursor:pointer; transition: background-color 0.3s ease;" 
+      onmouseover="this.style.backgroundColor='#005f73'" 
+      onmouseout="this.style.backgroundColor='#008CBA'">
+      Hover Me
+    </button>
+  </section>
+
+  <!-- CSS Animations -->
+  <section id="css-animations">
+    <h2>CSS Animations</h2>
+    <p><strong>Definition:</strong> Create keyframe animations to animate properties continuously or on events.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100px); }
+}
+div {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  animation: slide 2s infinite alternate;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="width: 100px; height: 100px; background: coral; animation: slide 2s infinite alternate;">
+    </div>
+    <style>
+      @keyframes slide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(100px); }
+      }
+    </style>
+  </section>
+  <!-- CSS Tooltips -->
+  <section id="css-tooltips">
+    <h2>CSS Tooltips</h2>
+    <p><strong>Definition:</strong> Display extra information when users hover over an element using CSS.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above */
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div class="tooltip" style="position: relative; display: inline-block; cursor: pointer; border-bottom: 1px dotted black;">
+      Hover over me
+      <span class="tooltiptext" style="visibility: hidden; width: 120px; background-color: black; color: #fff; text-align: center; border-radius: 5px; padding: 5px; position: absolute; z-index: 1; bottom: 125%; left: 50%; margin-left: -60px; opacity: 0; transition: opacity 0.3s;">
+        Tooltip text
+      </span>
+    </div>
+    <script>
+      const tooltip = document.querySelector('.tooltip');
+      tooltip.addEventListener('mouseenter', () => {
+        const tip = tooltip.querySelector('.tooltiptext');
+        tip.style.visibility = 'visible';
+        tip.style.opacity = '1';
+      });
+      tooltip.addEventListener('mouseleave', () => {
+        const tip = tooltip.querySelector('.tooltiptext');
+        tip.style.visibility = 'hidden';
+        tip.style.opacity = '0';
+      });
+    </script>
+  </section>
+
+  <!-- CSS Image Styling -->
+  <section id="css-imagestyling">
+    <h2>CSS Image Styling</h2>
+    <p><strong>Definition:</strong> Style images with borders, shadows, filters, and effects using CSS.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+img {
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+  filter: grayscale(50%);
+}
+    </pre>
+    <h4>Output:</h4>
+    <img src="img for css1.jpg" alt="Example Image" style="border-radius: 10px; box-shadow: 5px 5px 15px rgba(0,0,0,0.3); filter: grayscale(50%);">
+  </section>
+
+  <!-- CSS Image Centering -->
+<section id="css-imagecentering">
+  <h2>CSS Image Centering</h2>
+  <p><strong>Definition:</strong> Center images horizontally or vertically using CSS techniques like flexbox or margin auto.</p>
+  <p><strong>Example (using Flexbox):</strong></p>
+
+  <h4>Output:</h4>
+  <div style="display: flex; justify-content: center; align-items: center; height: 200px; border: 1px solid #ccc; background: #fff;">
+    <img src="img_css2.png" alt="Centered Image" style="width: 50%; height: 100%; object-fit: cover;">
+  </div>
+</section>
+
+<!-- CSS Image Filters -->
+<section id="css-imagefilters">
+  <h2>CSS Image Filters</h2>
+  <p><strong>Definition:</strong> CSS Filters allow you to apply visual effects to images such as blur, brightness, contrast, grayscale, and sepia.</p>
+  <p><strong>Syntax:</strong></p>
+  <pre><code>
+img {
+  filter: blur(3px) brightness(0.8) contrast(120%);
+}
+  </code></pre>
+  
+  <h4>Output:</h4>
+  <img src="img_css2.png" alt="Filtered Image" style="filter: blur(3px) brightness(0.8) contrast(120%); width: 50%; margin-top: 10px; border-radius: 4px;">
+</section>
+
+  <!-- CSS Image Shapes -->
+  <section id="css-imageshapes">
+    <h2>CSS Image Shapes</h2>
+    <p><strong>Definition:</strong> Use <code>clip-path</code> or border-radius to create custom shapes.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+img {
+  clip-path: circle(50%);
+}
+    </pre>
+    <h4>Output:</h4>
+    <img src="img_css3.png" alt="Circular Image" style="clip-path: circle(50%);">
+  </section>
+
+  <!-- CSS object-fit -->
+  <section id="css-objectfit">
+    <h2>CSS object-fit</h2>
+    <p><strong>Definition:</strong> Controls how an image or video fits within its container.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+}
+    </pre>
+    <h4>Output:</h4>
+    <img src="img_css2.png" alt="Object-fit example" style="width: 150px; height: 100px; object-fit: cover;">
+  </section>
+
+  <!-- CSS object-position -->
+  <section id="css-objectposition">
+    <h2>CSS object-position</h2>
+    <p><strong>Definition:</strong> Adjusts the position of an image or video within its container when using <code>object-fit</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  object-position: top right;
+}
+    </pre>
+    <h4>Output:</h4>
+    <img src="img_css3.png" alt="Object-position example" style="width: 150px; height: 100px; object-fit: cover; object-position: top right;">
+  </section>
+
+  <!-- CSS Masking -->
+  <section id="css-masking">
+    <h2>CSS Masking</h2>
+    <p><strong>Definition:</strong> Use a mask image to control the visibility of parts of an element.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+img {
+  -webkit-mask-image: radial-gradient(circle, white 60%, transparent 70%);
+  mask-image: radial-gradient(circle, white 60%, transparent 70%);
+}
+    </pre>
+    <h4>Output:</h4>
+    <img src="https://via.placeholder.com/150" alt="Masked Image" style="-webkit-mask-image: radial-gradient(circle, white 60%, transparent 70%); mask-image: radial-gradient(circle, white 60%, transparent 70%);">
+  </section>
+  <!-- CSS Buttons -->
+  <section id="css-buttons">
+    <h2>CSS Buttons</h2>
+    <p><strong>Definition:</strong> Style buttons with colors, padding, borders, hover effects, and animations.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #45a049;
+}
+    </pre>
+    <h4>Output:</h4>
+    <button style="background-color: #4CAF50; border: none; color: white; padding: 12px 24px; text-align: center; font-size: 16px; cursor: pointer; border-radius: 4px; transition: background-color 0.3s ease;">Click Me</button>
+  </section>
+
+  <section id="css-pagination">
+    <h2>CSS Pagination</h2>
+    <p><strong>Definition:</strong> Style page navigation links for multi-page content.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.pagination {
+  display: inline-block;
+}
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+  border-radius: 5px;
+}
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div class="pagination" style="display: inline-block;">
+      <a href="#" style="color: black; float: left; padding: 8px 16px; text-decoration: none; border: 1px solid #ddd; margin: 0 4px; border-radius: 5px;">1</a>
+      <a href="#" class="active" style="background-color: #4CAF50; color: white; border: 1px solid #4CAF50; padding: 8px 16px; margin: 0 4px; border-radius: 5px; text-decoration: none;">2</a>
+      <a href="#" style="color: black; float: left; padding: 8px 16px; text-decoration: none; border: 1px solid #ddd; margin: 0 4px; border-radius: 5px;">3</a>
+      <a href="#" style="color: black; float: left; padding: 8px 16px; text-decoration: none; border: 1px solid #ddd; margin: 0 4px; border-radius: 5px;">4</a>
+    </div>
+  </section>
+
+  <!-- CSS Multiple Columns -->
+  <section id="css-columns">
+    <h2>CSS Multiple Columns</h2>
+    <p><strong>Definition:</strong> Create multiple columns of text using CSS properties.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.multicol {
+  column-count: 3;
+  column-gap: 20px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div class="multicol" style="column-count: 3; column-gap: 20px; border: 1px solid #ccc; padding: 10px; width: 300px;">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet tristique metus, et tincidunt neque. Phasellus ut tellus efficitur, suscipit ex at, dapibus orci. Curabitur sit amet lacus vitae purus convallis fermentum.
+    </div>
+  </section>
+
+  <!-- CSS User Interface -->
+  <section id="css-ui">
+    <h2>CSS User Interface</h2>
+    <p><strong>Definition:</strong> Properties to control user interactions like cursor, pointer-events, resize, and outline.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  cursor: pointer;
+  user-select: none;
+  resize: both;
+  overflow: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 150px;
+  height: 100px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="cursor: pointer; user-select: none; resize: both; overflow: auto; border: 1px solid #ccc; padding: 10px; width: 150px; height: 100px;">
+      Try to select this text or resize this box.
+    </div>
+  </section>
+  <!-- CSS Variables -->
+  <section id="css-variables">
+    <h2>CSS Variables</h2>
+    <p><strong>Definition:</strong> Custom properties that store values for reuse throughout CSS.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+:root {
+  --main-color: #3498db;
+  --padding: 10px;
+}
+.box {
+  background-color: var(--main-color);
+  padding: var(--padding);
+  color: white;
+  width: 150px;
+  text-align: center;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div class="box" style="background-color: #3498db; padding: 10px; color: white; width: 150px; text-align: center;">
+      CSS Variables Example
+    </div>
+  </section>
+
+  <!-- CSS @property -->
+  <section id="css-property">
+    <h2>CSS @property</h2>
+    <p><strong>Definition:</strong> Define custom properties with syntax, inheritance, and initial value for CSS variables.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+@property --main-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #000000;
+}
+    </pre>
+    <p><em>Note:</em> This is an advanced feature and may require browser support.</p>
+  </section>
+
+  <!-- CSS Box Sizing -->
+  <section id="css-boxsizing">
+    <h2>CSS Box Sizing</h2>
+    <p><strong>Definition:</strong> Controls how width and height are calculated — including or excluding padding and borders.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+div {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div style="box-sizing: border-box; width: 200px; padding: 20px; border: 5px solid black; background-color: lightgray;">
+      Box Sizing Border-box
+    </div>
+  </section>
+
+  <!-- CSS Media Queries -->
+  <section id="css-mediaqueries">
+    <h2>CSS Media Queries</h2>
+    <p><strong>Definition:</strong> Apply CSS rules conditionally based on device characteristics like width, height, orientation.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+@media (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+    </pre>
+    <p><em>Resize your browser window to see the effect.</em></p>
+  </section>
+
+  <!-- CSS MQ Examples -->
+  <section id="css-mqexamples">
+    <h2>CSS MQ Examples</h2>
+    <p><strong>Example:</strong></p>
+    <pre>
+body {
+  background-color: white;
+}
+@media (max-width: 600px) {
+  body {
+    background-color: lightcoral;
+  }
+}
+    </pre>
+    <h4>Output:</h4>
+    <p style="background-color: white; padding: 10px;">Resize the window under 600px width to see background color change.</p>
+  </section>
+  <h1 class="h1">CSS Flexbox</h1>
+  <!-- CSS Flexbox Intro -->
+   <h2>CSS Flexbox</h2>
+  <section id="flexbox-intro">
+    <h2>CSS Flexbox Intro</h2>
+    <p><strong>Definition:</strong> A layout model that allows easy arrangement, alignment, and distribution of space among items in a container, even when their size is unknown.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.container {
+  display: flex;
+}
+.item {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  flex: 1;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div class="container" style="display: flex; border: 1px solid #ccc; padding: 10px;">
+      <div class="item" style="background-color:#4CAF50; color: white; padding: 10px; margin: 5px; flex:1;">Item 1</div>
+      <div class="item" style="background-color:#4CAF50; color: white; padding: 10px; margin: 5px; flex:1;">Item 2</div>
+      <div class="item" style="background-color:#4CAF50; color: white; padding: 10px; margin: 5px; flex:1;">Item 3</div>
+    </div>
+  </section>
+
+  <!-- CSS Flex Container -->
+  <section id="flex-container">
+    <h2>CSS Flex Container</h2>
+    <p><strong>Definition:</strong> The parent element with <code>display: flex;</code> or <code>display: inline-flex;</code> which controls the layout of its flex items.</p>
+    <p><strong>Key Properties:</strong> flex-direction, flex-wrap, justify-content, align-items, align-content</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+    </pre>
+  </section>
+
+  <!-- CSS Flex Items -->
+  <section id="flex-items">
+    <h2>CSS Flex Items</h2>
+    <p><strong>Definition:</strong> The child elements of a flex container, which can be individually controlled using flex properties.</p>
+    <p><strong>Key Properties:</strong> order, flex-grow, flex-shrink, flex-basis, align-self</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.item {
+  flex-grow: 2;
+  order: 1;
+}
+    </pre>
+  </section>
+  <!-- CSS Flex Responsive -->
+  <section id="flex-responsive">
+    <h2>CSS Flex Responsive</h2>
+    <p><strong>Definition:</strong> Flexbox helps create responsive layouts that adjust dynamically to screen size changes.</p>
+    <p><strong>Example:</strong> Use <code>flex-wrap: wrap;</code> to allow items to wrap on smaller screens.</p>
+    <pre>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  flex: 1 1 200px;
+  margin: 5px;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div class="container" style="display: flex; flex-wrap: wrap; border: 1px solid #ccc; padding: 10px;">
+      <div class="item" style="flex: 1 1 200px; background-color: #2196F3; color: white; margin: 5px; padding: 10px;">Responsive Item 1</div>
+      <div class="item" style="flex: 1 1 200px; background-color: #f44336; color: white; margin: 5px; padding: 10px;">Responsive Item 2</div>
+      <div class="item" style="flex: 1 1 200px; background-color: #ff9800; color: white; margin: 5px; padding: 10px;">Responsive Item 3</div>
+      <div class="item" style="flex: 1 1 200px; background-color: #4caf50; color: white; margin: 5px; padding: 10px;">Responsive Item 4</div>
+    </div>
+  </section>
+  <h1 class="h1">CSS  grid </h1>
+
+  <!-- CSS Grid Intro -->
+   <h2>CSS Grid</h2>
+  <section id="grid-intro">
+    <h2>CSS Grid Intro</h2>
+    <p><strong>Definition:</strong> A powerful two-dimensional layout system for the web that allows you to arrange items in rows and columns.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 10px;
+}
+.item {
+  background-color: #8e44ad;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+    </pre>
+    <h4>Output:</h4>
+    <div class="container" style="display: grid; grid-template-columns: 100px 100px 100px; grid-gap: 10px;">
+      <div class="item" style="background-color:#8e44ad; color: white; padding: 10px; text-align:center;">1</div>
+      <div class="item" style="background-color:#8e44ad; color: white; padding: 10px; text-align:center;">2</div>
+      <div class="item" style="background-color:#8e44ad; color: white; padding: 10px; text-align:center;">3</div>
+      <div class="item" style="background-color:#8e44ad; color: white; padding: 10px; text-align:center;">4</div>
+      <div class="item" style="background-color:#8e44ad; color: white; padding: 10px; text-align:center;">5</div>
+      <div class="item" style="background-color:#8e44ad; color: white; padding: 10px; text-align:center;">6</div>
+    </div>
+  </section>
+
+  <!-- CSS Grid Columns/Rows -->
+  <section id="grid-colsrows">
+    <h2>CSS Grid Columns/Rows</h2>
+    <p><strong>Definition:</strong> Define the number and size of columns and rows in a grid container.</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.container {
+  display: grid;
+  grid-template-columns: 150px 1fr 2fr;
+  grid-template-rows: 50px 100px;
+}
+    </pre>
+  </section>
+
+  <!-- CSS Grid Container -->
+  <section id="grid-container">
+    <h2>CSS Grid Container</h2>
+    <p><strong>Definition:</strong> The element with <code>display: grid;</code> which establishes a grid formatting context for its children.</p>
+    <p><strong>Key Properties:</strong> grid-template-columns, grid-template-rows, grid-gap, justify-items, align-items</p>
+  </section>
+
+  <!-- CSS Grid Item -->
+  <section id="grid-item">
+    <h2>CSS Grid Item</h2>
+    <p><strong>Definition:</strong> The direct children of a grid container which can be placed and sized within the grid using properties.</p>
+    <p><strong>Key Properties:</strong> grid-column-start, grid-column-end, grid-row-start, grid-row-end, justify-self, align-self</p>
+    <p><strong>Example:</strong></p>
+    <pre>
+.item1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+    </pre>
+  </section>
+
+<h1 class="h1">CSS  Responsive </h1>
+
+
+<!-- RWD Intro -->
+<section id="rwd-intro">
+  <h2>Responsive Web Design (RWD) - Introduction</h2>
+  <p>Responsive Web Design is an approach to web design that makes web pages render well on various devices and window or screen sizes. It uses flexible layouts, flexible images, and media queries.</p>
+</section>
+
+<!-- Viewport -->
+<section id="rwd-viewport">
+  <h2>RWD Viewport</h2>
+  <p>The viewport tag controls the layout on mobile browsers. It ensures proper scaling and rendering on different screen sizes.</p>
+  <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+</section>
+
+<!-- Grid View -->
+<section id="rwd-grid">
+  <h2>Responsive Grid View</h2>
+  <p>Grid layout allows content to be divided into columns and rows, adapting to screen sizes easily.</p>
+  <code>
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+  </code>
+  <div class="output">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
+      <div style="background:#ddd; padding:10px;">Box 1</div>
+      <div style="background:#ccc; padding:10px;">Box 2</div>
+      <div style="background:#bbb; padding:10px;">Box 3</div>
+    </div>
+  </div>
+</section>
+
+<!-- Media Queries -->
+<section id="rwd-mq">
+  <h2>Media Queries</h2>
+  <p>Media Queries apply different styles for different screen sizes and resolutions.</p>
+  <code>
+@media (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+  </code>
+</section>
+
+<!-- RWD Images -->
+<section id="rwd-images">
+  <h2>Responsive Images</h2>
+  <p>Images can be made responsive using CSS. This ensures images fit within their containers.</p>
+  <code>
+img {
+  max-width: 100%;
+  height: auto;
+}
+  </code>
+  <div class="output">
+    <img src="img_css3.png" alt="Example Image" style="max-width: 100%; height: auto;" />
+  </div>
+</section>
+
+<!-- Responsive Videos -->
+<section id="rwd-videos">
+  <h2>Responsive Videos</h2>
+  <p>To make videos responsive, use a container with a relative aspect ratio.</p>
+  <code>
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.video-container iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+  </code>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/dD2EISBDjWM" frameborder="0" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- Frameworks -->
+<section id="rwd-frameworks">
+  <h2>Responsive Frameworks</h2>
+  <p>Frameworks like Bootstrap use pre-defined classes to create responsive layouts quickly.</p>
+  <code>
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-sm-6"&gt;50% Column&lt;/div&gt;
+    &lt;div class="col-sm-6"&gt;50% Column&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+  </code>
+</section>
+
+<!-- Templates -->
+<section id="rwd-templates">
+  <h2>Responsive Templates</h2>
+  <p>You can use pre-built templates from websites like:</p>
+  <ul>
+    <li><a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+    <li><a href="https://startbootstrap.com" target="_blank">Start Bootstrap</a></li>
+  </ul>
+</section>
+<h1 class="h1">CSS  SAAS </h1>
+
+<!-- SASS -->
+<section id="sass">
+  <h2>What is SASS?</h2>
+  <p>SASS (Syntactically Awesome Stylesheets) is a CSS preprocessor that adds special features like variables, nesting, and functions.</p>
+</section>
+
+<!-- SASS Variables -->
+<section id="sass-variables">
+  <h2>SASS Variables</h2>
+  <p>Variables store reusable values.</p>
+  <code>
+$main-color: #3498db;
+body {
+  background-color: $main-color;
+}
+  </code>
+</section>
+
+<!-- SASS Nesting -->
+<section id="sass-nesting">
+  <h2>SASS Nesting</h2>
+  <p>You can nest selectors inside each other to show hierarchy.</p>
+  <code>
+nav {
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+}
+  </code>
+</section>
+
+<!-- SASS Mixins -->
+<section id="sass-mixins">
+  <h2>SASS Mixins</h2>
+  <p>Mixins are reusable blocks of code.</p>
+  <code>
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  @include center;
+}
+  </code>
+</section>
+
+<!-- SASS Compilation -->
+<section id="sass-compiling">
+  <h2>Compiling SASS</h2>
+  <p>SASS files must be compiled into regular CSS using tools like <code>sass</code> CLI or build tools.</p>
+  <code>
+// SCSS Input
+$color: red;
+h1 {
+  color: $color;
+}
+
+// Compiled CSS Output
+h1 {
+  color: red;
+}
+  </code>
+</section>
+<h1 class="h1"> CSS References</h1>
+
+<section id="css-ref">
+  <h2>CSS Reference</h2>
+  <p>The CSS Reference provides a comprehensive list of all CSS properties and their possible values. It's an essential resource for developers to understand how to style HTML elements effectively.</p>
+  <p>For a complete list, visit the <a href="https://www.w3schools.com/cssref/" target="_blank">W3Schools CSS Reference</a>.</p>
+</section>
+
+<section id="css-ref-selectors">
+  <h2>CSS Selectors</h2>
+  <p>CSS selectors are patterns used to select and style HTML elements. They can target elements based on name, id, class, attribute, and more.</p>
+  <code>
+/* Selects all &lt;p&gt; elements */
+p {
+  color: blue;
+}
+
+/* Selects element with id="header" */
+#header {
+  background-color: gray;
+}
+
+/* Selects all elements with class="intro" */
+.intro {
+  font-size: 1.2em;
+}
+  </code>
+  <p>Explore more at the <a href="https://www.w3schools.com/cssref/css_selectors.php" target="_blank">W3Schools CSS Selectors Reference</a>.</p>
+</section>
+
+<section id="css-ref-combinators">
+  <h2>CSS Combinators</h2>
+  <p>Combinators define the relationship between selectors, allowing for more precise targeting of elements.</p>
+  <code>
+/* Descendant combinator */
+div p {
+  color: red;
+}
+
+/* Child combinator */
+div > p {
+  color: green;
+}
+
+/* Adjacent sibling combinator */
+div + p {
+  color: blue;
+}
+
+/* General sibling combinator */
+div ~ p {
+  color: purple;
+}
+  </code>
+  <p>Learn more at the <a href="https://www.w3schools.com/CSSref/css_ref_combinators.php" target="_blank">W3Schools CSS Combinators Reference</a>.</p>
+</section>
+
+<section id="css-ref-pseudoclasses">
+  <h2>CSS Pseudo-classes</h2>
+  <p>Pseudo-classes allow you to define the special state of an element, such as when a user hovers over it or when it's the first child of its parent.</p>
+  <code>
+/* Hover state */
+a:hover {
+  color: red;
+}
+
+/* First child */
+p:first-child {
+  font-weight: bold;
+}
+  </code>
+  <p>Detailed information can be found at the <a href="https://www.w3schools.com/cssref/css_ref_pseudo_classes.php" target="_blank">W3Schools CSS Pseudo-classes Reference</a>.</p>
+</section>
+
+<section id="css-ref-pseudoelements">
+  <h2>CSS Pseudo-elements</h2>
+  <p>Pseudo-elements allow you to style specific parts of an element, such as the first letter or line.</p>
+  <code>
+/* First letter */
+p::first-letter {
+  font-size: 2em;
+  color: red;
+}
+
+/* Before content */
+p::before {
+  content: "Note: ";
+  font-weight: bold;
+}
+  </code>
+  <p>Explore more at the <a href="https://www.w3schools.com/CSSREF/css_ref_pseudo_elements.php" target="_blank">W3Schools CSS Pseudo-elements Reference</a>.</p>
+</section>
+
+<section id="css-at-rules">
+  <h2>CSS At-rules</h2>
+  <p>At-rules are special statements that provide CSS with instructions, such as importing stylesheets or defining media queries.</p>
+  <code>
+/* Importing a stylesheet */
+@import url("styles.css");
+
+/* Media query */
+@media (max-width: 600px) {
+  body {
+    background-color: lightgray;
+  }
+}
+  </code>
+  <p>Learn more at the <a href="https://www.w3schools.com/cssref/css_ref_atrules.php" target="_blank">W3Schools CSS At-rules Reference</a>.</p>
+</section>
+
+<section id="css-functions">
+  <h2>CSS Functions</h2>
+  <p>CSS functions are used to perform calculations or manipulate values within CSS properties.</p>
+  <code>
+/* Using calc() */
+div {
+  width: calc(100% - 50px);
+}
+
+/* Using var() */
+:root {
+  --main-color: #3498db;
+}
+p {
+  color: var(--main-color);
+}
+  </code>
+  <p>Explore more at the <a href="https://www.w3schools.com/CSSref/css_functions.php" target="_blank">W3Schools CSS Functions Reference</a>.</p>
+</section>
+
+<section id="css-aural">
+  <h2>CSS Aural</h2>
+  <p>CSS Aural properties are used to define how content should be presented using speech synthesis, enhancing accessibility for users with visual impairments.</p>
+  <code>
+/* Example of aural properties */
+p {
+  azimuth: center-left;
+  elevation: above;
+  pause-before: 20ms;
+  pitch: high;
+}
+  </code>
+  <p>Learn more at the <a href="https://www.w3schools.com/csSref/css_ref_aural.php" target="_blank">W3Schools CSS Aural Reference</a>.</p>
+</section>
+
+<section id="css-safe-fonts">
+  <h2>CSS Web Safe Fonts</h2>
+  <p>Web safe fonts are fonts that are universally installed across all devices and operating systems, ensuring consistent appearance.</p>
+  <ul>
+    <li>Arial</li>
+    <li>Verdana</li>
+    <li>Times New Roman</li>
+    <li>Courier New</li>
+    <li>Georgia</li>
+  </ul>
+  <code>
+body {
+  font-family: Arial, sans-serif;
+}
+  </code>
+</section>
+
+<section id="css-animatable">
+  <h2>CSS Animatable Properties</h2>
+  <p>Not all CSS properties can be animated. Animatable properties include those that can be interpolated over time, such as colors, positions, and sizes.</p>
+  <code>
+div {
+  transition: background-color 0.5s ease;
+}
+div:hover {
+  background-color: lightblue;
+}
+  </code>
+</section>
+
+  <section>
+    <h2 id="css-units-ref">CSS Units</h2>
+    <p>CSS units define the measurement values used in styling. Common units:</p>
+    <ul>
+      <li><strong>px</strong> – Pixels (absolute)</li>
+      <li><strong>em</strong> – Relative to parent font-size</li>
+      <li><strong>rem</strong> – Relative to root font-size</li>
+      <li><strong>%</strong> – Percentage (relative to parent)</li>
+      <li><strong>vh/vw</strong> – Viewport height/width</li>
+    </ul>
+    <div class="example" style="font-size: 16px;">
+      <p style="font-size: 1em;">This is 1em text (same as parent 16px).</p>
+      <p style="font-size: 2em;">This is 2em text (32px).</p>
+    </div></section>
+
+<section>
+    <h2 id="css-px-em">CSS PX to EM Converter</h2>
+    <p>Convert pixel values to <code>em</code> based on a given base size:</p>
+    <div class="example">
+      <label>Base Font Size (px): <input type="number" id="baseSize" value="16"></label><br>
+      <label>Pixel Value (px): <input type="number" id="pixelValue" value="32"></label><br>
+      <button onclick="convert()">Convert to em</button><br>
+      <p><strong>Result: </strong><span id="emResult">2em</span></p>
+    </div>
+
+    <script>
+      function convert() {
+        const base = parseFloat(document.getElementById("baseSize").value);
+        const px = parseFloat(document.getElementById("pixelValue").value);
+        const result = px / base;
+        document.getElementById("emResult").textContent = result + "em";
+      }
+    </script>
+    </section>
+<section>
+    <h2 id="css-color-values"> CSS Colors</h2>
+    <p>CSS supports named colors like <code>red</code>, <code>blue</code>, <code>green</code>, and more.</p>
+    <div class="example">
+      <div class="color-box" style="background: red;"></div> Red  
+      <div class="color-box" style="background: blue;"></div> Blue  
+      <div class="color-box" style="background: green;"></div> Green  
+    </div></section>
+<section>
+    <h2 id="css-color-values">CSS Color Values</h2>
+    <p>Color values can be defined in different formats:</p>
+    <ul>
+      <li><code>rgb(255, 0, 0)</code> – Red</li>
+      <li><code>rgba(255, 0, 0, 0.5)</code> – Transparent red</li>
+      <li><code>#FF0000</code> – Red in Hex</li>
+      <li><code>hsl(0, 100%, 50%)</code> – Red using HSL</li>
+    </ul>
+    <div class="example">
+      <div class="color-box" style="background: rgb(255,0,0);"></div> rgb(255,0,0)<br>
+      <div class="color-box" style="background: rgba(255,0,0,0.5);"></div> rgba(255,0,0,0.5)<br>
+      <div class="color-box" style="background: #FF0000;"></div> #FF0000<br>
+      <div class="color-box" style="background: hsl(0,100%,50%);"></div> hsl(0,100%,50%)<br>
+    </div>
+</section>
+<section>
+    <h2 id="css-default-values">CSS Default Values</h2>
+    <p>Each CSS property has a default (initial) value. Examples:</p>
+    <table>
+      <tr><th>Property</th><th>Default Value</th></tr>
+      <tr><td><code>display</code></td><td><code>inline</code></td></tr>
+      <tr><td><code>position</code></td><td><code>static</code></td></tr>
+      <tr><td><code>color</code></td><td><code>depends on browser</code></td></tr>
+      <tr><td><code>margin</code></td><td><code>0</code></td></tr>
+    </table>
+</section>
+<section>
+    <h2 id="css-browser-support">CSS Browser Support</h2>
+    <p>Modern browsers support most CSS features, but always check for compatibility using sites like <a href="https://caniuse.com" target="_blank">Can I Use</a>.</p>
+    <ul>
+      <li><strong>Well-supported:</strong> Flexbox, Grid, Variables, Media Queries</li>
+      <li><strong>Less-supported:</strong> Some newer pseudo-classes or functions like <code>:has()</code></li>
+    </ul>
+  </div>
+  </section>
+        <hr>
+<section >
+  <h1 class="h1">🎉 Congratulations on Completing the CSS Tutorial!</h1>
+  <p>You’ve learned how to style webpages with colors, layouts, animations, and responsive design.</p>
+  <p>With CSS knowledge, you can create beautiful, user-friendly websites that look great on any device.</p>
+  <p>Keep experimenting with advanced CSS techniques, preprocessors like SASS, and modern frameworks to enhance your design skills!</p>
+  <p><strong>Happy Styling! 🎨</strong></p>
+</section>
+    </div>
+
+  <footer class="footer">
+    <p>© 2025 Aryan's Web Tutorial. All rights reserved.</p>
+    <p>Created by Aryan kumar ojha</p>
+  </footer>
+</main>
+</body>
+</html>
