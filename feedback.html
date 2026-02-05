@@ -1,221 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Feedback - LearnX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnX | Admin Panel</title>
+  <link rel="icon" href="assets/img/LOGO.jpeg" type="image/jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    /* Background with smooth gradient and subtle animated shapes */
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #59d8bd 0%, #06333b 50%, #1b1575 100%);
-      overflow: hidden;
-      color: #fff;
-      position: relative;
+      min-height: 100vh;
+      margin: 0;
     }
 
-    /* Animated circles floating in background */
-    .circle {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
-      animation: float 15s ease-in-out infinite;
-      filter: blur(30px);
-    }
-
-    .circle.small {
-      width: 100px;
-      height: 100px;
-      top: 20%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .circle.medium {
-      width: 160px;
-      height: 160px;
-      top: 65%;
-      left: 75%;
-      animation-delay: 5s;
-    }
-
-    .circle.large {
-      width: 250px;
-      height: 250px;
-      top: 40%;
-      left: 40%;
-      animation-delay: 10s;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0) translateX(0);
-      }
-      50% {
-        transform: translateY(-30px) translateX(20px);
-      }
-    }
-
-    /* Main feedback box */
     .feedback-container {
-      position: relative;
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(14px);
-      border-radius: 25px;
-      padding: 40px 45px;
-      max-width: 450px;
       width: 100%;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      border: 2px solid rgba(255, 255, 255, 0.25);
-      z-index: 10;
+      max-width: 500px;
+      padding: 40px;
+      margin: 20px;
     }
 
     h2 {
-      margin: 0 0 25px 0;
-      font-weight: 700;
-      font-size: 34px;
-      letter-spacing: 1.1px;
       text-align: center;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-      user-select: none;
+      margin-bottom: 30px;
+      color: #00d2ff;
+      font-size: 32px;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+    .input-group {
+      margin-bottom: 20px;
     }
 
     label {
-      font-weight: 600;
-      font-size: 16px;
-      margin-bottom: 6px;
-      color: #d0f0fc;
-      user-select: none;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      padding: 14px 18px;
-      border-radius: 15px;
-      border: none;
-      font-size: 17px;
-      outline: none;
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-      box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.25);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      resize: vertical;
+      display: block;
+      margin-bottom: 8px;
       font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
     }
 
-    input[type="text"]:focus,
-    input[type="email"]:focus,
+    input,
+    textarea {
+      width: 100%;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: white;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    input:focus,
     textarea:focus {
-      background: rgba(255, 255, 255, 0.35);
-      box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #00d2ff;
     }
 
     textarea {
-      min-height: 110px;
-      font-family: inherit;
+      height: 120px;
+      resize: none;
     }
 
     button {
-      margin-top: 10px;
-      padding: 16px 0;
-      background: linear-gradient(135deg, #00b4d8, #0077b6);
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
       border: none;
-      border-radius: 18px;
+      border-radius: 12px;
       color: white;
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 18px;
+      font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 6px 18px rgba(0, 180, 216, 0.65);
-      transition: background 0.4s ease, transform 0.3s ease;
-      user-select: none;
+      box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+      transition: 0.3s;
     }
 
     button:hover {
-      background: linear-gradient(135deg, #0077b6, #00b4d8);
-      transform: scale(1.07);
-      box-shadow: 0 8px 25px rgba(0, 119, 182, 0.8);
+      transform: scale(1.02);
+      filter: brightness(1.1);
     }
 
-    /* Placeholder styling */
-    ::placeholder {
-      color: rgba(255, 255, 255, 0.75);
-      font-weight: 500;
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
     }
 
-    /* Responsive */
-    @media (max-width: 480px) {
-      .feedback-container {
-        padding: 30px 25px;
-      }
-
-      h2 {
-        font-size: 28px;
-      }
-
-      button {
-        font-size: 18px;
-      }
+    .back-link:hover {
+      color: #00d2ff;
     }
   </style>
 </head>
+
 <body>
-  <!-- Animated background circles -->
-  <div class="circle small"></div>
-  <div class="circle medium"></div>
-  <div class="circle large"></div>
 
-  <div class="feedback-container">
-    <h2>💬 Share Your Feedback</h2>
-    <form id="feedbackForm" autocomplete="off">
-      <label for="name">Your Name</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Enter your name"
-        required
-      />
-
-      <label for="email">Your Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Enter your email"
-        required
-      />
-
-      <label for="message">Your Feedback</label>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Write your thoughts here..."
-        required
-      ></textarea>
-
-      <button type="submit">Send Feedback</button>
-    </form>
+  <!-- Animated Background -->
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
 
-  <script>
-    // Simple submit handler with confirmation and reset
-    document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+  <div class="feedback-container glass-card">
+    <h2>Share Feedback</h2>
+    <form id="feedback-form">
+      <div class="input-group">
+        <label>Name</label>
+        <input type="text" id="fb-name" required placeholder="Your Name">
+      </div>
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" id="fb-email" required placeholder="Your Email">
+      </div>
+      <div class="input-group">
+        <label>Message</label>
+        <textarea id="fb-message" required placeholder="How can we improve?"></textarea>
+      </div>
+      <button type="submit" id="submit-btn">Send Feedback</button>
+    </form>
+    <a href="index1.html" class="back-link">← Back to Dashboard</a>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const feedbackForm = document.getElementById("feedback-form");
+    const submitBtn = document.getElementById("submit-btn");
+
+    feedbackForm.onsubmit = async (e) => {
       e.preventDefault();
-      alert('Thanks for your feedback! 🙌');
-      this.reset();
-    });
+
+      const name = document.getElementById("fb-name").value;
+      const email = document.getElementById("fb-email").value;
+      const message = document.getElementById("fb-message").value;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+
+      try {
+        await addDoc(collection(db, "feedback"), {
+          name,
+          email,
+          message,
+          timestamp: serverTimestamp()
+        });
+        alert("Thank you for your feedback! ❤️");
+        feedbackForm.reset();
+      } catch (error) {
+        console.error("Error adding document: ", error);
+        alert("Error sending feedback. Please try again later.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Feedback";
+      }
+    };
   </script>
 </body>
+
 </html>

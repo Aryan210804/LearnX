@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | SQL Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fas fa-database" style="font-size: 3rem; color: #003B57;"></i>
+      <h2 style="margin-top: 10px; color: white;">SQL</h2>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <a href="#Intro">Intro to SQL</a>
+    <a href="#Select">Select Statement</a>
+    <a href="#Where">Where Clause</a>
+    <a href="#Insert">Insert Into</a>
+
+    <!-- Module 2: Manipulation -->
+    <a href="#Update">Update</a>
+    <a href="#Delete">Delete</a>
+    <a href="#Functions">SQL Functions</a>
+    <a href="#Wildcards">Wildcards</a>
+
+    <!-- Module 3: Relationships -->
+    <a href="#Joins">Joins (Inner, Left, Right)</a>
+    <a href="#Union">Union</a>
+    <a href="#GroupBy">Group By</a>
+
+    <!-- Module 4: Database Design -->
+    <a href="#CreateDB">Create DB/Table</a>
+    <a href="#Constraints">Constraints (PK, FK)</a>
+    <a href="#Normalization">Normalization</a>
+
+    <!-- Projects -->
+    <a href="#Projects">Real World Projects</a>
+    <a href="#MiniTask">Mini Task</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">SQL Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>Introduction to SQL</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is SQL?</h3>
+        <p>SQL (Structured Query Language) is the standard language for dealing with Relational Databases.</p>
+        <div class="mermaid">graph LR
+          User --> SQL_Query
+          SQL_Query --> Database
+          Database --> Result_Data
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="Select">
+      <div class="section-header">
+        <h2>Select Statement</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>SELECT</code> statement is used to select data from a database.</p>
+        <pre><code class="language-sql">SELECT * FROM Customers;</code></pre>
+        <pre><code class="language-sql">SELECT FirstName, LastName FROM Employees;</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Where">
+      <div class="section-header">
+        <h2>Where Clause</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Filter records.</p>
+        <pre><code class="language-sql">SELECT * FROM Customers
+WHERE Country = 'Mexico';</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Insert">
+      <div class="section-header">
+        <h2>Insert Into</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Adding new records.</p>
+        <pre><code class="language-sql">INSERT INTO Customers (CustomerName, City, Country)
+VALUES ('Cardinal', 'Stavanger', 'Norway');</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 2: Manipulation -->
+    <div class="section" id="Update">
+      <div class="section-header">
+        <h2>Update</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Modify existing records.</p>
+        <pre><code class="language-sql">UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City = 'Frankfurt'
+WHERE CustomerID = 1;</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Delete">
+      <div class="section-header">
+        <h2>Delete</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Remove records.</p>
+        <pre><code class="language-sql">DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Functions">
+      <div class="section-header">
+        <h2>SQL Functions</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><code>MIN()</code>, <code>MAX()</code>, <code>COUNT()</code>, <code>AVG()</code>, <code>SUM()</code>.</p>
+        <pre><code class="language-sql">SELECT COUNT(ProductID)
+FROM Products;</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Wildcards">
+      <div class="section-header">
+        <h2>Wildcards</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Pattern matching.</p>
+        <pre><code class="language-sql">SELECT * FROM Customers
+WHERE City LIKE 'ber%'; -- Starts with "ber"</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 3: Relationships -->
+    <div class="section" id="Joins">
+      <div class="section-header">
+        <h2>Joins</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Combine rows from two or more tables.</p>
+        <div class="mermaid">graph TD
+          Table1 --> Join
+          Table2 --> Join
+          Join --> Result
+        </div>
+        <pre><code class="language-sql">SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Union">
+      <div class="section-header">
+        <h2>Union</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Combine the result-set of two or more SELECT statements.</p>
+      </div>
+    </div>
+
+    <div class="section" id="GroupBy">
+      <div class="section-header">
+        <h2>Group By</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Group rows that have the same values into summary rows.</p>
+        <pre><code class="language-sql">SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country;</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 4: Database Design -->
+    <div class="section" id="CreateDB">
+      <div class="section-header">
+        <h2>Create DB/Table</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <pre><code class="language-sql">CREATE DATABASE testDB;
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Constraints">
+      <div class="section-header">
+        <h2>Constraints</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Rules for data.</p>
+        <ul>
+          <li><code>NOT NULL</code></li>
+          <li><code>UNIQUE</code></li>
+          <li><code>PRIMARY KEY</code></li>
+          <li><code>FOREIGN KEY</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="Normalization">
+      <div class="section-header">
+        <h2>Normalization</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Organizing data to reduce redundancy (1NF, 2NF, 3NF).</p>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section" id="Projects">
+      <div class="section-header">
+        <h2>🚀 Real World Projects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>🟢 Beginner: School System</h3>
+        <p><strong>Goal:</strong> Students, Teachers, Classes tables.</p>
+        <h3>🟡 Intermediate: E-Commerce</h3>
+        <p><strong>Goal:</strong> Users, Products, Orders, Cart schema.</p>
+        <h3>🔴 Advanced: Social Network</h3>
+        <p><strong>Goal:</strong> Users, Friends (Self-Join), Posts, Likes, Comments.</p>
+      </div>
+    </div>
+
+    <div class="section" id="MiniTask">
+      <div class="section-header">
+        <h2>🎯 SQL Mini Task</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Goal:</strong> Query Skills.</p>
+        <h4>📋 Requirements:</h4>
+        <ol>
+          <li> Assume a table <code>Employees</code> with columns <code>Name</code> and <code>Salary</code>.</li>
+          <li> Write a query to find all employees earning > 50000.</li>
+          <li> Order them by Name alphabetically.</li>
+        </ol>
+        <p><strong>Select Success!</strong> 💾</p>
+      </div>
+    </div>
+
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the SQL module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>

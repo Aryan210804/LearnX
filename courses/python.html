@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | Python Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fab fa-python" style="font-size: 3rem; color: #306998;"></i>
+      <h2 style="margin-top: 10px; color: white;">Python</h2>
+    </div>
+
+    <!-- Module 1: Python Basics -->
+    <a href="#Intro">Intro & Syntax</a>
+    <a href="#Variables">Variables & Data Types</a>
+
+    <!-- Module 2: Data Structures -->
+    <a href="#Lists">Lists & Tuples</a>
+    <a href="#Sets">Sets</a>
+    <a href="#Dictionaries">Dictionaries</a>
+
+    <!-- Module 3: Control Flow -->
+    <a href="#IfElse">Conditionals</a>
+    <a href="#Loops">Loops</a>
+
+    <!-- Module 4: Functions & Modules -->
+    <a href="#Functions">Functions</a>
+    <a href="#Modules">Modules & PIP</a>
+    <a href="#Dates">Dates & Math</a>
+
+    <!-- Module 5: OOP & Advanced -->
+    <a href="#Classes">Classes & OOP</a>
+    <a href="#Files">File Handling</a>
+    <a href="#TryExcept">Exception Handling</a>
+
+    <!-- Projects -->
+    <a href="#Projects">Real World Projects</a>
+    <a href="#MiniTask">Mini Task</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">Python Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>Introduction to Python</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Introduction</h3>
+        <p>Python is defined by its simplicity. It prioritizes readability, making it the perfect first language, yet it
+          powers NASA, Google, and OpenAI.</p>
+        <h3>🚀 Why Python?</h3>
+        <ul>
+          <li><strong>Readable:</strong> Syntax like English.</li>
+          <li><strong>Versatile:</strong> Web, AI, Data Science, Automation.</li>
+          <li><strong>Huge Community:</strong> Libraries for everything.</li>
+        </ul>
+        <h3>💻 Hello World</h3>
+        <pre><code class="language-python">print("Hello, World!")</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Variables">
+      <div class="section-header">
+        <h2>Variables & Data Types</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Variables</h3>
+        <p>No command for declaring a variable. A variable is created the moment you first assign a value to it.</p>
+        <pre><code class="language-python">x = 5
+y = "John"
+print(x)
+print(y)</code></pre>
+        <h3>📦 Core Data Types</h3>
+        <ul>
+          <li><strong>Text Type:</strong> <code>str</code></li>
+          <li><strong>Numeric Types:</strong> <code>int</code>, <code>float</code>, <code>complex</code></li>
+          <li><strong>Sequence Types:</strong> <code>list</code>, <code>tuple</code>, <code>range</code></li>
+          <li><strong>Mapping Type:</strong> <code>dict</code></li>
+          <li><strong>Set Types:</strong> <code>set</code>, <code>frozenset</code></li>
+          <li><strong>Boolean Type:</strong> <code>bool</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Module 2: Data Structures -->
+    <div class="section" id="Lists">
+      <div class="section-header">
+        <h2>Lists & Tuples</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Lists</h3>
+        <p>Lists are used to store multiple items in a single variable. Ordered, Changeable.</p>
+        <pre><code class="language-python">mylist = ["apple", "banana", "cherry"]
+mylist.append("orange")
+print(mylist[1]) # banana</code></pre>
+        <h3>📌 Tuples</h3>
+        <p>Ordered, Unchangeable.</p>
+        <pre><code class="language-python">mytuple = ("apple", "banana", "cherry")</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Sets">
+      <div class="section-header">
+        <h2>Sets</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Unordered, Unindexed, No Duplicates.</p>
+        <pre><code class="language-python">myset = {"apple", "banana", "cherry"}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Dictionaries">
+      <div class="section-header">
+        <h2>Dictionaries</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Key-Value Pairs</h3>
+        <p>Dictionaries are used to store data values in key:value pairs.</p>
+        <pre><code class="language-python">thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict["brand"])</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 3: Control Flow -->
+    <div class="section" id="IfElse">
+      <div class="section-header">
+        <h2>Conditionals</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Python relies on indentation (whitespace) to define scope.</p>
+        <pre><code class="language-python">a = 33
+b = 200
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+else:
+  print("a is greater than b")</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Loops">
+      <div class="section-header">
+        <h2>Loops</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>While Loop</h3>
+        <pre><code class="language-python">i = 1
+while i < 6:
+  print(i)
+  i += 1</code></pre>
+        <h3>For Loop</h3>
+        <pre><code class="language-python">fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  print(x)</code></pre>
+        <div class="mermaid">graph TD
+          Start --> Check{Item in List?}
+          Check -- Yes --> Execute_Block
+          Execute_Block --> Check
+          Check -- No --> End
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 4: Functions & Modules -->
+    <div class="section" id="Functions">
+      <div class="section-header">
+        <h2>Functions</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A function is a block of code which only runs when it is called.</p>
+        <pre><code class="language-python">def my_function(fname):
+  print(fname + " Refsnes")
+
+my_function("Emil")</code></pre>
+        <h3>Return Values</h3>
+        <pre><code class="language-python">def my_function(x):
+  return 5 * x</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Modules">
+      <div class="section-header">
+        <h2>Modules & PIP</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Modules</h3>
+        <p>Consider a module to be the same as a code library.</p>
+        <pre><code class="language-python">import platform
+x = platform.system()
+print(x)</code></pre>
+        <h3>📌 PIP</h3>
+        <p>PIP is a package manager for Python modules.</p>
+        <pre><code class="language-bash">pip install camelcase</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Dates">
+      <div class="section-header">
+        <h2>Dates & Math</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <pre><code class="language-python">import datetime
+x = datetime.datetime.now()
+print(x)</code></pre>
+        <pre><code class="language-python">min(5, 10, 25)
+max(5, 10, 25)
+abs(-7.25)
+pow(4, 3)</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 5: OOP & Advanced -->
+    <div class="section" id="Classes">
+      <div class="section-header">
+        <h2>Classes & OOP</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Classes/Objects</h3>
+        <p>Python is an object oriented programming language.</p>
+        <pre><code class="language-python">class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+p1 = Person("John", 36)
+print(p1.name)</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Files">
+      <div class="section-header">
+        <h2>File Handling</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The key function for working with files in Python is the <code>open()</code> function.</p>
+        <pre><code class="language-python">f = open("demofile.txt", "r")
+print(f.read())</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="TryExcept">
+      <div class="section-header">
+        <h2>Exception Handling</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>When an error occurs, or exception as we call it, Python will normally stop and generate an error message.
+        </p>
+        <pre><code class="language-python">try:
+  print(x)
+except:
+  print("An exception occurred")</code></pre>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section" id="Projects">
+      <div class="section-header">
+        <h2>🚀 Real World Projects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>🟢 Beginner Level: Unit Converter</h3>
+        <p><strong>Goal:</strong> CLI tool to convert KM to Miles.</p>
+        <p><strong>Key Skills:</strong> Input, Math, Functions</p>
+        <h3>🟡 Intermediate Level: Quiz Master</h3>
+        <p><strong>Goal:</strong> Multiple choice game with scoring system.</p>
+        <p><strong>Key Skills:</strong> Lists of Dicts, Loops, Conditionals</p>
+        <h3>🔴 Advanced Level: Web Scraper</h3>
+        <p><strong>Goal:</strong> Extract headlines from a news site and save to CSV.</p>
+        <p><strong>Key Skills:</strong> BeautifulSoup, File I/O, Requests</p>
+      </div>
+    </div>
+
+    <div class="section" id="MiniTask">
+      <div class="section-header">
+        <h2>🎯 Python Mini Task</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Goal:</strong> Temperature Converter.</p>
+        <h4>📋 Requirements:</h4>
+        <ol>
+          <li> Create a variable <code>celsius</code> = 25.</li>
+          <li> Convert it to Fahrenheit using formula: <code>(celsius * 9/5) + 32</code>.</li>
+          <li> Print the result: "25 degrees Celsius is XX degrees Fahrenheit".</li>
+        </ol>
+        <p><strong>Go for the heat!</strong> 🔥</p>
+      </div>
+    </div>
+
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Python module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>

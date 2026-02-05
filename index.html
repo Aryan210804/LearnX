@@ -1,138 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-   <link rel="icon" href="LOGO.png" type="image/jpeg">
-    <link rel="icon" type="image/jpeg" sizes="32x32" href="LOGO.png">
-    <link rel="icon" type="image/jpeg" sizes="16x16" href="LOGO.png">
-    <link rel="shortcut icon" href="LOGO.png" type="image/x-jpeg">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LearnX Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnX | Secure Login</title>
+  <link rel="icon" href="assets/img/LOGO.jpeg" type="image/jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #070303 url("background.png") center center/cover no-repeat;
+      display: flex;
+      min-height: 100vh;
       margin: 0;
-      padding: 0;
+      background: #0f0c29;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
     }
 
-    .container {
+    .split-screen {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+
+    /* Left Side: Animation & Branding */
+    .left-side {
+      flex: 1.2;
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    #code-rain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.15;
+    }
+
+    .brand-hero {
+      z-index: 10;
+      text-align: center;
+      animation: fadeInDown 1s ease-out;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      border-radius: 30px;
+      backdrop-filter: blur(5px);
+    }
+
+    .brand-hero h1 {
+      font-size: 90px;
+      font-weight: 800;
+      margin: 0;
+      background: linear-gradient(to right, #00d2ff, #3a7bd5, #ff007a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.6));
+      letter-spacing: -2px;
+    }
+
+    .brand-hero p {
+      font-size: 22px;
+      opacity: 0.9;
+      letter-spacing: 4px;
+      margin: 10px auto 0;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #00d2ff;
+      width: 0;
+      animation: typing 3.5s steps(30, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    /* Right Side: Form */
+    .right-side {
+      flex: 1;
+      background: #050510;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #particles-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .login-box {
       width: 100%;
       max-width: 400px;
-      margin: 80px auto;
-      padding: 30px;
-      background-color: rgb(103, 161, 199);
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 32px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      z-index: 10;
+    }
+
+    .login-box::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(45deg, #00d2ff, transparent, #ff007a);
+      border-radius: 34px;
+      z-index: -1;
+      animation: rotate-border 6s linear infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes rotate-border {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
+    }
+
+    @keyframes blink {
+
+      from,
+      to {
+        border-color: transparent
+      }
+
+      50% {
+        border-color: #00d2ff
+      }
+    }
+
+    .login-box h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 15px 45px 15px 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    }
-
-    h2 {
-      text-align: center;
-      color: #080505;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #0f0202;
-      border-radius: 6px;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #04AA6D;
-      border: none;
-      border-radius: 6px;
-      color: rgb(15, 2, 2);
+      color: white;
       font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .input-group input:focus {
+      border-color: #00d2ff;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+      outline: none;
+    }
+
+    .input-group i {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    button#auth-button {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
       cursor: pointer;
+      transition: all 0.3s;
       margin-top: 10px;
     }
 
-    button:hover {
-      background-color: #039e62;
+    button#auth-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4);
     }
 
-    .toggle {
+    .switch-text {
       text-align: center;
-      margin-top: 15px;
-      color: #4b3636;
+      margin-top: 25px;
+      color: rgba(255, 255, 255, 0.6);
     }
 
-    .toggle span {
-      color: #04AA6D;
+    .switch-text span {
+      color: #00d2ff;
       cursor: pointer;
+      font-weight: 600;
     }
 
-    .forgot {
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    #message {
+      margin-top: 20px;
       text-align: center;
-      margin-top: 10px;
-    }
-
-    .forgot a {
-      color: #0044cc;
       font-size: 14px;
-      text-decoration: none;
     }
 
-    .forgot a:hover {
-      text-decoration: underline;
-    }
+    @media (max-width: 900px) {
+      .left-side {
+        display: none;
+      }
 
-    .message {
-      text-align: center;
-      color: red;
-      margin-top: 10px;
+      .right-side {
+        flex: 1;
+        background: #0f0c29;
+      }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
-
-  <div class="container" id="auth-container">
-    <h2 id="form-title">Login</h2>
-
-    <!-- Name input (hidden by default) -->
-    <input type="text" id="name" placeholder="Full Name" style="display: none;" />
-
-    <input type="email" id="email" placeholder="Email" />
-    <div style="position: relative;">
-      <input type="password" id="password" placeholder="Password" />
-      <span id="toggle-password" style="
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
-        user-select:all;
-      ">👁️</span>
-    </div>
-    <button id="auth-button">Login</button>
-    
-    <div class="toggle">
-      <p id="toggle-text">Don't have an account? <span id="switch-mode">Sign Up</span></p>
+  <div class="split-screen">
+    <div class="left-side">
+      <canvas id="code-rain"></canvas>
+      <div class="brand-hero">
+        <h1>LearnX</h1>
+        <p>MASTER THE FUTURE OF CODE</p>
+      </div>
     </div>
 
-    <div class="forgot">
-      <a href="#" id="forgot-password">Forgot Password?</a>
-    </div>
+    <div class="right-side">
+      <canvas id="particles-bg"></canvas>
+      <div class="login-box">
+        <h2 id="form-title">Welcome Back</h2>
 
-    <div class="message" id="message"></div>
+        <div class="input-group" id="name-group" style="display: none;">
+          <input type="text" id="name" placeholder="Full Name" />
+          <i class="fas fa-user"></i>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email" placeholder="Email Address" />
+          <i class="fas fa-envelope"></i>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Password" />
+          <i class="fas fa-eye" id="toggle-password" style="cursor: pointer;"></i>
+        </div>
+
+        <button id="auth-button">Sign In</button>
+
+        <p class="switch-text" id="toggle-text">
+          New here? <span id="switch-mode">Create an account</span>
+        </p>
+
+        <div id="message"></div>
+      </div>
+    </div>
   </div>
 
-  <!-- Firebase SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-    import { 
-      getAuth, 
-      createUserWithEmailAndPassword, 
-      signInWithEmailAndPassword, 
-      sendPasswordResetEmail,
-      updateProfile
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      updateProfile,
+      onAuthStateChanged
     } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+    // Animations Logic
+    const rainCanvas = document.getElementById('code-rain');
+    const rainCtx = rainCanvas.getContext('2d');
+    const chars = '01{}[]<>;:+-/*%$#!?ABCDEF'.split('');
+    const fontSize = 16;
+    let columns, drops;
+
+    function initRain() {
+      rainCanvas.width = rainCanvas.parentElement.offsetWidth;
+      rainCanvas.height = rainCanvas.parentElement.offsetHeight;
+      columns = Math.floor(rainCanvas.width / fontSize);
+      drops = Array(columns).fill(1);
+    }
+
+    function drawRain() {
+      rainCtx.fillStyle = 'rgba(15, 12, 41, 0.05)';
+      rainCtx.fillRect(0, 0, rainCanvas.width, rainCanvas.height);
+      rainCtx.fillStyle = '#00d2ff';
+      rainCtx.font = fontSize + 'px monospace';
+      drops.forEach((y, i) => {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        rainCtx.fillText(text, i * fontSize, y * fontSize);
+        if (y * fontSize > rainCanvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      });
+    }
+
+    const partCanvas = document.getElementById('particles-bg');
+    const partCtx = partCanvas.getContext('2d');
+    let particles = [];
+
+    function initParticles() {
+      partCanvas.width = partCanvas.parentElement.offsetWidth;
+      partCanvas.height = partCanvas.parentElement.offsetHeight;
+      particles = Array(40).fill().map(() => ({
+        x: Math.random() * partCanvas.width,
+        y: Math.random() * partCanvas.height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        size: Math.random() * 2
+      }));
+    }
+
+    function drawParticles() {
+      partCtx.clearRect(0, 0, partCanvas.width, partCanvas.height);
+      partCtx.fillStyle = 'rgba(0, 210, 255, 0.3)';
+      particles.forEach((p, i) => {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > partCanvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > partCanvas.height) p.vy *= -1;
+        partCtx.beginPath();
+        partCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        partCtx.fill();
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = p.x - particles[j].x, dy = p.y - particles[j].y, dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 100) {
+            partCtx.strokeStyle = `rgba(0, 210, 255, ${0.2 * (1 - dist / 100)})`;
+            partCtx.beginPath(); partCtx.moveTo(p.x, p.y); partCtx.lineTo(particles[j].x, particles[j].y); partCtx.stroke();
+          }
+        }
+      });
+    }
+
+    function animate() {
+      drawRain(); drawParticles();
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', () => { initRain(); initParticles(); });
+    initRain(); initParticles(); animate();
 
     const firebaseConfig = {
       apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
@@ -145,39 +403,40 @@
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
+    const db = getFirestore(app);
 
+    const nameGroup = document.getElementById('name-group');
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const authButton = document.getElementById('auth-button');
     const switchMode = document.getElementById('switch-mode');
-    const toggleText = document.getElementById('toggle-text');
     const formTitle = document.getElementById('form-title');
     const messageDiv = document.getElementById('message');
-    const forgotPasswordLink = document.getElementById('forgot-password');
     const togglePassword = document.getElementById('toggle-password');
 
     let isLogin = true;
 
     function showMessage(msg, isError = true) {
       messageDiv.textContent = msg;
-      messageDiv.style.color = isError ? 'red' : 'green';
+      messageDiv.style.color = isError ? '#ff4d4d' : '#00ff88';
     }
 
     function updateForm() {
-      formTitle.textContent = isLogin ? "Login" : "Sign Up";
-      authButton.textContent = isLogin ? "Login" : "Sign Up";
-      nameInput.style.display = isLogin ? "none" : "block";
-      toggleText.innerHTML = isLogin
-        ? `Don't have an account? <span id="switch-mode">Sign Up</span>`
-        : `Already have an account? <span id="switch-mode">Login</span>`;
-      document.getElementById("switch-mode").addEventListener("click", () => {
+      formTitle.textContent = isLogin ? "Welcome Back" : "Start Learning";
+      authButton.textContent = isLogin ? "Sign In" : "Get Started";
+      nameGroup.style.display = isLogin ? "none" : "block";
+      document.getElementById('toggle-text').innerHTML = isLogin
+        ? `New here? <span id="switch-mode">Create an account</span>`
+        : `Already a member? <span id="switch-mode">Sign In</span>`;
+
+      document.getElementById("switch-mode").onclick = () => {
         isLogin = !isLogin;
         updateForm();
-      });
+      };
     }
 
-    authButton.addEventListener('click', () => {
+    authButton.onclick = async () => {
       const email = emailInput.value;
       const password = passwordInput.value;
       const name = nameInput.value;
@@ -187,48 +446,38 @@
         return;
       }
 
-      if (isLogin) {
-        signInWithEmailAndPassword(auth, email, password)
-          .then(() => {
-            showMessage("Login successful!", false);
-            window.location.href = "index1.html";
-          })
-          .catch(error => showMessage(error.message));
-      } else {
-        createUserWithEmailAndPassword(auth, email, password)
-          .then(userCredential => {
-            updateProfile(userCredential.user, {
-              displayName: name
-            }).then(() => {
-              showMessage("Signup successful! Please login.", false);
-              isLogin = true;
-              updateForm();
-            });
-          })
-          .catch(error => showMessage(error.message));
+      authButton.disabled = true;
+      authButton.textContent = "Processing...";
+
+      try {
+        if (isLogin) {
+          await signInWithEmailAndPassword(auth, email, password);
+          showMessage("Success! Taking you in...", false);
+        } else {
+          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+          await updateProfile(userCredential.user, { displayName: name });
+          await setDoc(doc(db, "users", userCredential.user.uid), {
+            name: name, email: email, createdAt: new Date().toISOString(), role: "user"
+          });
+          showMessage("Account ready!", false);
+        }
+        setTimeout(() => window.location.href = "index1.html", 1000);
+      } catch (error) {
+        showMessage(error.message);
+        authButton.disabled = false;
+        authButton.textContent = isLogin ? "Sign In" : "Get Started";
       }
-    });
+    };
 
-    forgotPasswordLink.addEventListener('click', () => {
-      const email = emailInput.value;
-      if (!email) {
-        showMessage("Enter your email to receive reset link.");
-        return;
-      }
+    togglePassword.onclick = () => {
+      const type = passwordInput.type === 'password' ? 'text' : 'password';
+      passwordInput.type = type;
+      togglePassword.className = type === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash';
+    };
 
-      sendPasswordResetEmail(auth, email)
-        .then(() => showMessage("Reset email sent. Check your inbox.", false))
-        .catch((error) => showMessage("Error: " + error.message));
-    });
-
-    togglePassword.addEventListener('click', () => {
-      const currentType = passwordInput.getAttribute('type');
-      const newType = currentType === 'password' ? 'text' : 'password';
-      passwordInput.setAttribute('type', newType);
-      togglePassword.textContent = newType === 'password' ? '👁️' : '🙈';
-    });
-
-    updateForm(); 
+    onAuthStateChanged(auth, (user) => { if (user) window.location.href = "index1.html"; });
+    updateForm();
   </script>
 </body>
+
 </html>

@@ -1,84 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About LearnX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | About</title>
+  <link rel="icon" href="assets/img/LOGO.jpeg" type="image/jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #2b4a69;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       margin: 0;
       padding: 20px;
-      color: #333;
     }
+
     .about-container {
-      max-width: 900px;
-      margin: auto;
-      background-color: #e6cbcb;
+      max-width: 800px;
       padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      margin: 20px;
     }
-    .about-container h1 {
+
+    h1 {
       text-align: center;
-      color: #005b99;
+      color: #00d2ff;
       margin-bottom: 25px;
-      text-decoration: underline;
+      font-size: 32px;
     }
-    .about-container p {
-      font-size: 17px;
-      line-height: 1.7;
+
+    p,
+    li {
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
       margin-bottom: 20px;
     }
-    .about-container ul {
-      padding-left: 25px;
-      margin-bottom: 20px;
-    }
-    .about-container li {
-      font-size: 16px;
-      margin-bottom: 10px;
+
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      color: #00d2ff;
+      text-decoration: none;
+      font-weight: 600;
     }
   </style>
 </head>
+
 <body>
-  <div class="about-container">
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="about-container glass-card">
     <h1>📘 About LearnX</h1>
-
-    <p><strong>LearnX</strong> is a personal project I developed as part of my learning journey in programming and web development. It’s designed to be a simple, user-friendly educational website that acts as a one-stop resource for beginners looking to understand core computer science and programming concepts. What started as a basic notes archive turned into a complete platform with neatly structured content, built entirely using <strong>HTML, CSS, and JavaScript</strong>.</p>
-
-    <p>The idea behind LearnX is to create a digital space where learners like me can explore and revise technical subjects without the need to jump between different books or websites. All the information is presented in an organized and readable way, with examples and real-world applications to make concepts easier to grasp.</p>
-
+    <p><strong>LearnX</strong> is a personal project developed as part of a learning journey in programming and web
+      development. It’s designed to be a simple, user-friendly educational platform built entirely using modern web
+      technologies.</p>
     <p>🌟 <strong>Topics Covered:</strong></p>
     <ul>
-      <li>💻 <strong>C Programming:</strong> Basic syntax, variables, control statements, loops, arrays, and functions.</li>
-      <li>🐍 <strong>Python:</strong> Introduction to Python, data types, control flow, functions, and basic projects.</li>
-      <li>☕ <strong>Java:</strong> Object-oriented programming, classes, methods, loops, arrays, and exceptions.</li>
-      <li>🌐 <strong>HTML & CSS:</strong> Web structure, semantic elements, forms, styling, layouts, and responsive design.</li>
-      <li>🧠 <strong>JavaScript:</strong> Basics of scripting, DOM manipulation, events, and interactive web behavior.</li>
-      <li>🗃️ <strong>SQL:</strong> Introduction to databases, basic queries, table creation, SELECT/INSERT operations.</li>
-      <li>📊 <strong>Microsoft Excel:</strong> Working with cells, formulas, basic charts, data filtering, and analysis.</li>
+      <li>💻 <strong>C Programming:</strong> Syntax, control flow, arrays, and functions.</li>
+      <li>🐍 <strong>Python:</strong> Data types, functions, and logic.</li>
+      <li>☕ <strong>Java:</strong> Object-oriented programming basics.</li>
+      <li>🌐 <strong>HTML & CSS:</strong> Web structure and styling.</li>
+      <li>🧠 <strong>JavaScript:</strong> Interactivity and DOM manipulation.</li>
+      <li>🗃️ <strong>SQL:</strong> Database queries and management.</li>
+      <li>📊 <strong>Excel:</strong> Data analysis and formulas.</li>
     </ul>
-
-    <p>Each section includes theory, examples, syntax, and a simplified explanation. Some topics also contain small tasks and code snippets for self-practice. The goal is to make learning **clear, practical, and self-paced**.</p>
-
-    <p>💡 <strong>Why I Built LearnX:</strong></p>
-    <p>As a student, I often found myself switching between multiple platforms and resources for different topics. So I decided to build something of my own—a platform that reflects my way of learning and helps me revise things faster. While building LearnX, I not only improved my web development skills but also deepened my understanding of the subjects I was presenting.</p>
-
-    <p>🎯 <strong>Key Features:</strong></p>
-    <ul>
-      <li>📝 Clean and structured layout for each topic</li>
-      <li>📚 Beginner-friendly language and examples</li>
-      <li>📱 Responsive design for use on any device</li>
-      <li>⚙️ Created entirely from scratch using web technologies</li>
-      <li>🔗 Easy navigation and topic-wise browsing</li>
-    </ul>
-
-    <p>LearnX is still a work in progress, and I’m continuously adding new topics and improving the content. It's my digital notebook, my learning portfolio, and a space where I apply what I learn while helping others do the same.</p>
-
-    <p>If you're someone who’s just starting out or needs a simple revision tool, LearnX can be a great place to begin. I hope to keep growing it with more content, features, and interactive elements in the future.</p>
-
-    <p><strong>Thank you for visiting LearnX – Learn Simply, Grow Continuously! 🌱</strong></p>
+    <p>The goal is to make learning <strong>clear, practical, and self-paced</strong>. LearnX acts as a digital notebook
+      and a space for applying knowledge to real-world concepts.</p>
+    <a href="index1.html" class="back-btn">← Back to Dashboard</a>
   </div>
 </body>
+
 </html>

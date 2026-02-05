@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | JavaScript Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fab fa-js" style="font-size: 3rem; color: #f7df1e;"></i>
+      <h2 style="margin-top: 10px; color: white;">JavaScript</h2>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <a href="#Intro">Intro & Output</a>
+    <a href="#Variables">Variables & Data Types</a>
+    <a href="#Operators">Operators</a>
+
+    <!-- Module 2: Control Flow -->
+    <a href="#LogicFlow">If/Else & Switch</a>
+    <a href="#Loops">Loops</a>
+
+    <!-- Module 3: Functions & Objects -->
+    <a href="#Functions">Functions</a>
+    <a href="#Objects">Objects</a>
+    <a href="#Arrays">Arrays & Methods</a>
+    <a href="#Strings">String Methods</a>
+
+    <!-- Module 4: The DOM -->
+    <a href="#DOM">DOM Manipulation</a>
+    <a href="#Events">Events</a>
+
+    <!-- Module 5: Advanced -->
+    <a href="#Async">Async & Fetch</a>
+    <a href="#ES6">ES6+ Features</a>
+    <a href="#MathAndDates">Math & Dates</a>
+
+    <!-- Projects -->
+    <a href="#Projects">Real World Projects</a>
+    <a href="#MiniTask">Mini Task</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">JavaScript Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+
+
+    <!-- Module 1: Basics -->
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>Intro to JavaScript</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is JavaScript?</h3>
+        <p>JavaScript (JS) is the <strong>programming language</strong> of the web. While HTML is the structure and CSS
+          is the style, JavaScript is the <strong>brain</strong> that makes things happen.</p>
+        <h3>🚀 Capabilities</h3>
+        <ul>
+          <li>Change HTML Content (<code>innerHTML</code>).</li>
+          <li>Change HTML Styles (<code>style.fontSize</code>).</li>
+          <li>Hide/Show Elements.</li>
+          <li>Fetch data from servers.</li>
+        </ul>
+        <h3>💻 Outputting Data</h3>
+        <p>There are 4 ways to output data in JS:</p>
+        <pre><code class="language-javascript">innerHTML = "Hello";      // Write to HTML element
+document.write("Hello");  // Write to HTML output
+window.alert("Hello");    // Popup alert box
+console.log("Hello");     // Write to browser console</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Variables">
+      <div class="section-header">
+        <h2>Variables & Data Types</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Variables</h3>
+        <p>Variables are containers for storing data.</p>
+        <ul>
+          <li><code>const</code>: Cannot be reassigned (Use this by default).</li>
+          <li><code>let</code>: Can be reassigned (Use for loops or changing values).</li>
+          <li><code>var</code>: Old school (Avoid using this).</li>
+        </ul>
+        <pre><code class="language-javascript">const pi = 3.14;
+let age = 25;
+age = 26; // Allowed</code></pre>
+        <h3>📦 Data Types</h3>
+        <ul>
+          <li><strong>String:</strong> <code>"Hello"</code></li>
+          <li><strong>Number:</strong> <code>42</code> or <code>3.14</code></li>
+          <li><strong>Boolean:</strong> <code>true</code> or <code>false</code></li>
+          <li><strong>Object:</strong> <code>{name:"John", age:30}</code></li>
+          <li><strong>Array:</strong> <code>["Apple", "Banana"]</code></li>
+          <li><strong>Null / Undefined:</strong> Empty or no value.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="Operators">
+      <div class="section-header">
+        <h2>Operators</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Operators perform operations on variables and values.</p>
+        <ul>
+          <li><strong>Arithmetic:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>,
+            <code>%</code> (Modulus)
+          </li>
+          <li><strong>Assignment:</strong> <code>=</code>, <code>+=</code>, <code>-=</code></li>
+          <li><strong>Comparison:</strong> <code>==</code> (value), <code>===</code> (value & type), <code>!=</code>,
+            <code>></code>, <code><</code>
+          </li>
+          <li><strong>Logical:</strong> <code>&&</code> (AND), <code>||</code> (OR), <code>!</code> (NOT)</li>
+        </ul>
+        <pre><code class="language-javascript">let sum = 10 + 5; // 15
+let isTrue = (10 > 5) && (5 < 10); // true</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 2: Control Flow -->
+    <div class="section" id="LogicFlow">
+      <div class="section-header">
+        <h2>Control Flow (If/Else)</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Conditional Logic</h3>
+        <p>Code that runs only if a condition is met.</p>
+        <h3>📊 Visual Concept</h3>
+        <div class="mermaid">graph TD
+          Start --> Condition{Is it Raining?}
+          Condition -- Yes --> Umbrella
+          Condition -- No --> Sunglasses
+          Umbrella --> Go
+          Sunglasses --> Go
+        </div>
+        <h3>💻 Code</h3>
+        <pre><code class="language-javascript">if (hour < 12) {
+  greeting = "Good Morning";
+} else if (hour < 18) {
+  greeting = "Good Afternoon";
+} else {
+  greeting = "Good Evening";
+}</code></pre>
+        <h3>🔀 Switch Statement</h3>
+        <p>Use <code>switch</code> to select one of many blocks to execute.</p>
+        <pre><code class="language-javascript">switch(day) {
+  case 0: day = "Sunday"; break;
+  case 1: day = "Monday"; break;
+  default: day = "Weekday";
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Loops">
+      <div class="section-header">
+        <h2>Loops</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Iteration</h3>
+        <p>Loops can execute a block of code a number of times.</p>
+        <h4>For Loop</h4>
+        <pre><code class="language-javascript">for (let i = 0; i < 5; i++) {
+  console.log("Count: " + i);
+}</code></pre>
+        <h4>While Loop</h4>
+        <pre><code class="language-javascript">while (condition) {
+  // code block
+}</code></pre>
+        <h4>For..Of (Arrays)</h4>
+        <pre><code class="language-javascript">const cars = ["BMW", "Volvo", "Mini"];
+for (let car of cars) {
+  console.log(car);
+}</code></pre>
+      </div>
+    </div>
+
+
+    <!-- Module 3: Functions & Objects -->
+    <div class="section" id="Functions">
+      <div class="section-header">
+        <h2>Functions</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Reusable Code</h3>
+        <p>Functions are blocks of code designed to perform a particular task.</p>
+        <h4>Function Declaration</h4>
+        <pre><code class="language-javascript">function greet(name) {
+  return "Hello " + name;
+}</code></pre>
+        <h4>Arrow Functions (ES6)</h4>
+        <pre><code class="language-javascript">const greet = (name) => "Hello " + name;</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Objects">
+      <div class="section-header">
+        <h2>Objects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Real Life Objects</h3>
+        <p>In real life, a car is an object. It has properties like weight and color, and methods like start and stop.
+        </p>
+        <pre><code class="language-javascript">const car = {
+  type: "Fiat",
+  model: "500",
+  color: "white",
+  start: function() {
+    console.log("Vroom!");
+  }
+};
+
+console.log(car.model); // Dot notation</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Arrays">
+      <div class="section-header">
+        <h2>Arrays & Methods</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Lists</h3>
+        <p>An array is a special variable, which can hold more than one value.</p>
+        <pre><code class="language-javascript">const fruits = ["Banana", "Orange", "Apple"];</code></pre>
+        <h3>Common Methods</h3>
+        <ul>
+          <li><code>push()</code>: Add new item to end.</li>
+          <li><code>pop()</code>: Remove last item.</li>
+          <li><code>map()</code>: Create new array by transforming every item.</li>
+          <li><code>filter()</code>: Create new array with items that pass a test.</li>
+        </ul>
+        <pre><code class="language-javascript">const nums = [1, 2, 3];
+const doubled = nums.map(n => n * 2); // [2, 4, 6]</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Strings">
+      <div class="section-header">
+        <h2>String Methods</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>JavaScript strings are for storing and manipulating text.</p>
+        <ul>
+          <li><code>length</code>: Returns length of string.</li>
+          <li><code>slice(start, end)</code>: Extracts a part of a string.</li>
+          <li><code>replace("old", "new")</code>: Replaces content.</li>
+          <li><code>toUpperCase()</code>: Converts to Upper Case.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="MathAndDates">
+      <div class="section-header">
+        <h2>Math & Dates</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>Math Object</h3>
+        <pre><code class="language-javascript">Math.round(4.6); // 5
+Math.random();   // 0.293..</code></pre>
+        <h3>Date Object</h3>
+        <pre><code class="language-javascript">const d = new Date();
+console.log(d.getFullYear());</code></pre>
+      </div>
+    </div>
+
+
+    <!-- Module 4: The DOM -->
+    <div class="section" id="DOM">
+      <div class="section-header">
+        <h2>DOM Manipulation</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 The Document Object Model</h3>
+        <p>The DOM is the tree structure of your HTML. JS can change the DOM to update the page.</p>
+        <h3>Selecting Elements</h3>
+        <pre><code class="language-javascript">document.getElementById("demo");
+document.querySelector(".myClass");</code></pre>
+        <h3>Changing Content</h3>
+        <pre><code class="language-javascript">document.getElementById("header").innerHTML = "New Title";
+document.getElementById("img").src = "new.jpg";
+document.getElementById("p1").style.color = "blue";</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Events">
+      <div class="section-header">
+        <h2>Events</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>HTML events are "things" that happen to HTML elements.</p>
+        <ul>
+          <li><code>onclick</code>: User clicks an element.</li>
+          <li><code>onmouseover</code>: Mouse is over an element.</li>
+          <li><code>onkeydown</code>: Key is pressed.</li>
+        </ul>
+        <pre><code class="language-javascript">btn.addEventListener("click", function() {
+  alert("Button Clicked!");
+});</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 5: Advanced -->
+    <div class="section" id="Async">
+      <div class="section-header">
+        <h2>Async JS & Fetch API</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Asynchronous JavaScript</h3>
+        <p>Functions running in parallel with other functions.</p>
+        <h3>Fetch API</h3>
+        <pre><code class="language-javascript">async function getData() {
+  const response = await fetch("https://api.example.com/data");
+  const data = await response.json();
+  console.log(data);
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="ES6">
+      <div class="section-header">
+        <h2>ES6+ Features</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>Destructuring</h3>
+        <pre><code class="language-javascript">const [a, b] = [1, 2];
+const {name, age} = person;</code></pre>
+        <h3>Spread Operator</h3>
+        <pre><code class="language-javascript">const arr1 = [1, 2];
+const arr2 = [...arr1, 3, 4]; // [1, 2, 3, 4]</code></pre>
+        <h3>Template Literals</h3>
+        <pre><code class="language-javascript">const msg = `Hello ${name}`;</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Projects">
+      <div class="section-header">
+        <h2>🚀 Real World Projects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>🟢 Beginner: Counter App</h3>
+        <p><strong>Goal:</strong> A button that increases a number on screen.</p>
+        <p><strong>Skills:</strong> DOM, Variables</p>
+        <h3>🟡 Intermediate: ToDo List</h3>
+        <p><strong>Goal:</strong> Add/Delete tasks, store in LocalStorage.</p>
+        <p><strong>Skills:</strong> Arrays, DOM, JSON, Events</p>
+        <h3>🔴 Advanced: Weather App</h3>
+        <p><strong>Goal:</strong> Fetch weather from an API and display it.</p>
+        <p><strong>Skills:</strong> Fetch API, Async/Await, Error Handling</p>
+      </div>
+    </div>
+
+
+
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the JavaScript module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>

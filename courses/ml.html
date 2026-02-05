@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | Machine Learning Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fas fa-brain" style="font-size: 3rem; color: #ff9900;"></i>
+      <h2 style="margin-top: 10px; color: white;">Machine Learning</h2>
+    </div>
+
+    <!-- Module 1: Foundations -->
+    <a href="#Intro">Intro to ML</a>
+    <a href="#Types">Types of ML</a>
+    <a href="#DataSplit">Train/Test Split</a>
+
+    <!-- Module 2: Supervised -->
+    <a href="#Regression">Regression</a>
+    <a href="#Classification">Classification</a>
+    <a href="#KNN">K-Nearest Neighbors</a>
+    <a href="#DecisionTrees">Decision Trees</a>
+
+    <!-- Module 3: Unsupervised -->
+    <a href="#Clustering">Clustering (K-Means)</a>
+    <a href="#Dimensionality">Dimensionality Reduction</a>
+
+    <!-- Module 4: Advanced -->
+    <a href="#NeuralNets">Neural Networks</a>
+    <a href="#DeepLearning">Deep Learning Intro</a>
+    <a href="#ModelEval">Model Evaluation</a>
+
+    <!-- Projects -->
+    <a href="#Projects">Real World Projects</a>
+    <a href="#MiniTask">Mini Task</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">Machine Learning Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+    <!-- Module 1: Foundations -->
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>Introduction to ML</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is Machine Learning?</h3>
+        <p>Machine Learning is making computers learn from data without being explicitly programmed.</p>
+        <div class="mermaid">graph LR
+          Data --> Model
+          Model --> Prediction
+          Correction --> Model
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="Types">
+      <div class="section-header">
+        <h2>Types of ML</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <ul>
+          <li><strong>Supervised:</strong> Labels are provided (e.g., Spam vs Not Spam).</li>
+          <li><strong>Unsupervised:</strong> No labels, finding patterns (e.g., Customer Groups).</li>
+          <li><strong>Reinforcement:</strong> Learning by trial and error (e.g., Chess AI).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="DataSplit">
+      <div class="section-header">
+        <h2>Train/Test Split</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>We split data to avoid "overfitting".</p>
+        <pre><code class="language-python">from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 2: Supervised -->
+    <div class="section" id="Regression">
+      <div class="section-header">
+        <h2>Linear Regression</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Predicting a continuous value (e.g., Price of a House).</p>
+        <pre><code class="language-python">from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.fit(X_train, y_train)
+prediction = model.predict([[2500]]) # Predict price for 2500 sqft</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Classification">
+      <div class="section-header">
+        <h2>Logistic Regression</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Predicting a category (e.g., Yes/No).</p>
+        <div class="mermaid">graph TD
+          Input --> Weights
+          Weights --> Activation_Function
+          Activation_Function --> Probability
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="KNN">
+      <div class="section-header">
+        <h2>K-Nearest Neighbors (KNN)</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Classify based on neighbors.</p>
+        <p>If your neighbors are mostly cats, you are probably a cat.</p>
+      </div>
+    </div>
+
+    <div class="section" id="DecisionTrees">
+      <div class="section-header">
+        <h2>Decision Trees</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Flowchart-like structure.</p>
+        <div class="mermaid">graph TD
+          Is_Raining? -- Yes --> Stay_Home
+          Is_Raining? -- No --> Go_Outside
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 3: Unsupervised -->
+    <div class="section" id="Clustering">
+      <div class="section-header">
+        <h2>K-Means Clustering</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Grouping data points into K clusters.</p>
+        <pre><code class="language-python">from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters=3)
+kmeans.fit(data)</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Dimensionality">
+      <div class="section-header">
+        <h2>PCA (Dimensionality Reduction)</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Reducing complexity while keeping information.</p>
+      </div>
+    </div>
+
+    <!-- Module 4: Advanced -->
+    <div class="section" id="NeuralNets">
+      <div class="section-header">
+        <h2>Neural Networks</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Mimicking the human brain.</p>
+        <div class="mermaid">graph LR
+          Input_Layer --> Hidden_Layer
+          Hidden_Layer --> Output_Layer
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="DeepLearning">
+      <div class="section-header">
+        <h2>Deep Learning Intro</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Using libraries like TensorFlow and PyTorch for complex tasks like Image Recognition.</p>
+      </div>
+    </div>
+
+    <div class="section" id="ModelEval">
+      <div class="section-header">
+        <h2>Model Evaluation</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Metrics</h3>
+        <ul>
+          <li><strong>Accuracy:</strong> Percentage of correct predictions.</li>
+          <li><strong>Precision/Recall:</strong> Use for imbalanced data.</li>
+          <li><strong>Confusion Matrix:</strong> Visual table of errors.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section" id="Projects">
+      <div class="section-header">
+        <h2>🚀 Real World Projects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>🟢 Beginner: House Price Predictor</h3>
+        <p><strong>Goal:</strong> Linear Regression on housing data.</p>
+        <h3>🟡 Intermediate: Spam Filter</h3>
+        <p><strong>Goal:</strong> Naive Bayes on email text.</p>
+        <h3>🔴 Advanced: Digit Recognizer</h3>
+        <p><strong>Goal:</strong> MNIST classification using Neural Networks.</p>
+      </div>
+    </div>
+
+    <div class="section" id="MiniTask">
+      <div class="section-header">
+        <h2>🎯 ML Mini Task</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Goal:</strong> Conceptualize a Model.</p>
+        <h4>📋 Requirements:</h4>
+        <ol>
+          <li> Pick a problem (e.g., Identifying fruit).</li>
+          <li> Choose features (Color, Size, Shape).</li>
+          <li> Choose a model (Decision Tree).</li>
+          <li> Draw the tree logic on paper.</li>
+        </ol>
+        <p><strong>Think like a machine!</strong> 🤖</p>
+      </div>
+    </div>
+
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Machine Learning module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>

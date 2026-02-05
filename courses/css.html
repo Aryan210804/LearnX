@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | CSS Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fab fa-css3-alt" style="font-size: 3rem; color: #264de4;"></i>
+      <h2 style="margin-top: 10px; color: white;">CSS</h2>
+    </div>
+
+    <!-- CSS Basics -->
+    <a href="#Intro">Introduction</a>
+    <a href="#Syntax">Syntax</a>
+    <a href="#Selectors">Selectors</a>
+    <a href="#Comments">Comments</a>
+    <a href="#Colors">Colors</a>
+    <a href="#Backgrounds">Backgrounds</a>
+    <a href="#Borders">Borders</a>
+    <a href="#Margins">Margins</a>
+    <a href="#Padding">Padding</a>
+    <a href="#HeightWidth">Height/Width</a>
+    <a href="#BoxModel">Box Model</a>
+    <a href="#Outline">Outline</a>
+    <a href="#Text">Text</a>
+    <a href="#Fonts">Fonts</a>
+    <a href="#Icons">Icons</a>
+    <a href="#Links">Links</a>
+    <a href="#Lists">Lists</a>
+    <a href="#Tables">Tables</a>
+    <a href="#Display">Display</a>
+    <a href="#MaxWidth">Max-width</a>
+    <a href="#Position">Position</a>
+    <a href="#Zindex">Z-index</a>
+    <a href="#Overflow">Overflow</a>
+    <a href="#Float">Float</a>
+    <a href="#InlineBlock">Inline-block</a>
+    <a href="#Align">Align</a>
+    <a href="#Combinators">Combinators</a>
+    <a href="#PseudoClasses">Pseudo-class</a>
+    <a href="#PseudoElements">Pseudo-element</a>
+    <a href="#Opacity">Opacity</a>
+    <a href="#NavBars">Nav Bars</a>
+    <a href="#Dropdowns">Dropdowns</a>
+    <a href="#Gallery">Image Gallery</a>
+    <a href="#Sprites">Image Sprites</a>
+    <a href="#AttrSelectors">Attr Selectors</a>
+    <a href="#Forms">Forms</a>
+    <a href="#Counters">Counters</a>
+    <a href="#Units">Units</a>
+    <a href="#Specificity">Specificity</a>
+    <a href="#Important">!important</a>
+    <a href="#Math">Math Funcs</a>
+
+    <!-- CSS Advanced -->
+    <a href="#RoundedCorners">Rounded Corners</a>
+    <a href="#BorderImages">Border Images</a>
+    <a href="#Gradients">Gradients</a>
+    <a href="#Shadows">Shadows</a>
+    <a href="#TextEffects">Text Effects</a>
+    <a href="#WebFonts">Web Fonts</a>
+    <a href="#Transforms2D">2D Transforms</a>
+    <a href="#Transforms3D">3D Transforms</a>
+    <a href="#Transitions">Transitions</a>
+    <a href="#Animations">Animations</a>
+    <a href="#Tooltips">Tooltips</a>
+    <a href="#ImgStyling">Image Styling</a>
+    <a href="#ObjectFit">Object-fit</a>
+    <a href="#Masking">Masking</a>
+    <a href="#Buttons">Buttons</a>
+    <a href="#Pagination">Pagination</a>
+    <a href="#MultiCol">Multiple Columns</a>
+    <a href="#UI">User Interface</a>
+    <a href="#Variables">Variables</a>
+    <a href="#BoxSizing">Box Sizing</a>
+    <a href="#MediaQueries">Media Queries</a>
+
+    <!-- Flexbox & Grid -->
+    <a href="#Flexbox">Flexbox</a>
+    <a href="#Grid">Grid</a>
+
+    <!-- Responsive -->
+    <a href="#RWDIntro">RWD Intro</a>
+    <a href="#RWDViewport">Viewport</a>
+    <a href="#RWDGrid">Grid View</a>
+    <a href="#RWDMedia">Media Queries</a>
+    <a href="#RWDImages">Images</a>
+    <a href="#RWDVideos">Videos</a>
+
+    <!-- SASS -->
+    <a href="#SASS">SASS</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">CSS Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+
+
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>CSS Introduction</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Introduction</h3>
+        <p>CSS (Cascading Style Sheets) is the language we use to style an HTML document. CSS describes how HTML
+          elements should be displayed.</p>
+        <h3>💻 Code Example</h3>
+        <pre><code class="language-css">body {
+  background-color: lightblue;
+}
+h1 {
+  color: white;
+  text-align: center;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Syntax">
+      <div class="section-header">
+        <h2>CSS Syntax</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A CSS rule-set consists of a selector and a declaration block.</p>
+        <pre><code class="language-css">h1 {color: blue; font-size: 12px;}</code></pre>
+        <ul>
+          <li><strong>Selector:</strong> Points to the HTML element you want to style.</li>
+          <li><strong>Declaration:</strong> Contains one or more declarations separated by semicolons.</li>
+          <li><strong>Property:</strong> The style attribute you want to change.</li>
+          <li><strong>Value:</strong> The value you want to give the property.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="Selectors">
+      <div class="section-header">
+        <h2>CSS Selectors</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>CSS selectors are used to "find" (or select) the HTML elements you want to style.</p>
+        <ul>
+          <li><strong>Element Selector:</strong> <code>p { ... }</code> (Selects all &lt;p&gt; elements)</li>
+          <li><strong>Id Selector:</strong> <code>#para1 { ... }</code> (Selects element with id="para1")</li>
+          <li><strong>Class Selector:</strong> <code>.center { ... }</code> (Selects elements with class="center")</li>
+          <li><strong>Universal Selector:</strong> <code>* { ... }</code> (Selects all elements)</li>
+          <li><strong>Grouping Selector:</strong> <code>h1, h2, p { ... }</code> (Selects multiple elements)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="Comments">
+      <div class="section-header">
+        <h2>CSS Comments</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Comments are used to explain the code, and may help when you edit the source code at a later date. Comments
+          are ignored by browsers.</p>
+        <pre><code class="language-css">/* This is a single-line comment */
+p {
+  color: red;
+}
+/* This is
+a multi-line
+comment */</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Colors">
+      <div class="section-header">
+        <h2>CSS Colors</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.</p>
+        <pre><code class="language-css">h1 {background-color: DodgerBlue;}
+p {color: Tomato;}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Backgrounds">
+      <div class="section-header">
+        <h2>CSS Backgrounds</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>CSS background properties are used to define the background effects for elements.</p>
+        <ul>
+          <li><code>background-color</code></li>
+          <li><code>background-image</code></li>
+          <li><code>background-repeat</code></li>
+          <li><code>background-attachment</code></li>
+          <li><code>background-position</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="Borders">
+      <div class="section-header">
+        <h2>CSS Borders</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The CSS border properties allow you to specify the style, width, and color of an element's border.</p>
+        <pre><code class="language-css">p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Margins">
+      <div class="section-header">
+        <h2>CSS Margins</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Margins are used to create space around elements, outside of any defined borders.</p>
+        <pre><code class="language-css">div {
+  margin: 70px;
+  border: 1px solid #4CAF50;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Padding">
+      <div class="section-header">
+        <h2>CSS Padding</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Padding is used to create space around an element's content, inside of any defined borders.</p>
+        <pre><code class="language-css">div {
+  padding: 70px;
+  border: 1px solid #4CAF50;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="HeightWidth">
+      <div class="section-header">
+        <h2>CSS Height and Width</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The height and width properties are used to set the height and width of an element.</p>
+        <pre><code class="language-css">div {
+  height: 200px;
+  width: 50%;
+  background-color: powderblue;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="BoxModel">
+      <div class="section-header">
+        <h2>The Box Model</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Introduction</h3>
+        <p>Every element is a rectangular box containing Content, Padding, Border, and Margin.</p>
+        <h3>📊 Visual Concept</h3>
+        <p>Compare the logic below:</p>
+        <div class="mermaid">graph TD
+          Content --> Padding
+          Padding --> Border
+          Border --> Margin
+        </div>
+        <h3>💻 Code Examples</h3>
+        <pre><code>div {
+  width: 100px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 10px;
+}
+</code></pre>
+        <h3>⚡ Best Practices</h3>
+        <ul>
+          <li>✅ Use <code>box-sizing: border-box</code> to make math easier.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="Outline">
+      <div class="section-header">
+        <h2>CSS Outline</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>An outline is a line drawn outside the element's border.</p>
+        <pre><code class="language-css">p {
+  border: 1px solid black;
+  outline: 5px dotted red;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Text">
+      <div class="section-header">
+        <h2>CSS Text</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Text properties: <code>text-align</code>, <code>text-decoration</code>, <code>text-transform</code>,
+          <code>letter-spacing</code>, <code>line-height</code>.
+        </p>
+      </div>
+    </div>
+
+    <div class="section" id="Fonts">
+      <div class="section-header">
+        <h2>CSS Fonts</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Font properties define the font family, boldness, size, and the style of a text.</p>
+        <pre><code class="language-css">p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Links">
+      <div class="section-header">
+        <h2>CSS Links</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Links can be styled depending on what state they are in. The four links states are: <code>a:link</code>,
+          <code>a:visited</code>, <code>a:hover</code>, <code>a:active</code>.
+        </p>
+      </div>
+    </div>
+
+    <div class="section" id="Lists">
+      <div class="section-header">
+        <h2>CSS Lists</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>In HTML, there are two main types of lists: unordered and ordered. CSS list properties allow you to change
+          diffrent list item markers, set an image as the list item marker, etc.</p>
+      </div>
+    </div>
+
+    <div class="section" id="Tables">
+      <div class="section-header">
+        <h2>CSS Tables</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>To specify table borders in CSS, use the border property.</p>
+        <pre><code class="language-css">table, th, td {
+  border: 1px solid black;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Display">
+      <div class="section-header">
+        <h2>CSS Display</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>display</code> property determines how an element is displayed.</p>
+        <ul>
+          <li><code>display: block;</code> (Takes full width)</li>
+          <li><code>display: inline;</code> (Takes necessary width)</li>
+          <li><code>display: none;</code> (Hidden)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="Position">
+      <div class="section-header">
+        <h2>CSS Position</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>position</code> property specifies the type of positioning method used for an element.</p>
+        <ul>
+          <li><code>static</code> (Default)</li>
+          <li><code>relative</code></li>
+          <li><code>absolute</code></li>
+          <li><code>fixed</code></li>
+          <li><code>sticky</code></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- CSS Advanced -->
+    <div class="section" id="RoundedCorners">
+      <div class="section-header">
+        <h2>CSS Rounded Corners</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>border-radius</code> property defines the radius of the element's corners.</p>
+        <pre><code class="language-css">#rcorners1 {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Gradients">
+      <div class="section-header">
+        <h2>CSS Gradients</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>CSS gradients let you display smooth transitions between two or more specified colors.</p>
+        <h3>Linear Gradient</h3>
+        <pre><code class="language-css">#grad {
+  background-image: linear-gradient(red, yellow);
+}</code></pre>
+        <h3>Radial Gradient</h3>
+        <pre><code class="language-css">#grad {
+  background-image: radial-gradient(red, yellow, green);
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Shadows">
+      <div class="section-header">
+        <h2>CSS Shadows</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>With CSS you can add shadow to text and to elements.</p>
+        <pre><code class="language-css">h1 {
+  text-shadow: 2px 2px 5px red;
+}
+div {
+  box-shadow: 10px 10px 5px grey;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Transforms2D">
+      <div class="section-header">
+        <h2>CSS 2D Transforms</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>CSS transforms allow you to move, rotate, scale, and skew elements.</p>
+        <pre><code class="language-css">div {
+  transform: translate(50px, 100px);
+  transform: rotate(20deg);
+  transform: scale(2, 3);
+  transform: skewX(20deg);
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Transforms3D">
+      <div class="section-header">
+        <h2>CSS 3D Transforms</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>CSS allows you to format your elements using 3D transforms.</p>
+        <pre><code class="language-css">div {
+  transform: rotateX(150deg);
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Transitions">
+      <div class="section-header">
+        <h2>CSS Transitions</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>CSS transitions allows you to change property values smoothly, over a given duration.</p>
+        <pre><code class="language-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+div:hover {
+  width: 300px;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Animations">
+      <div class="section-header">
+        <h2>CSS Animations</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>CSS allows animation of HTML elements without using JavaScript or Flash!</p>
+        <pre><code class="language-css">@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Tooltips">
+      <div class="section-header">
+        <h2>CSS Tooltips</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A tooltip is often used to specify extra information about something when the user moves the mouse pointer
+          over an element.</p>
+      </div>
+    </div>
+
+    <div class="section" id="ImgStyling">
+      <div class="section-header">
+        <h2>CSS Image Styling</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Learn to style images using CSS.</p>
+        <pre><code class="language-css">img {
+  border-radius: 8px;
+  opacity: 0.5;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Buttons">
+      <div class="section-header">
+        <h2>CSS Buttons</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Learn how to style buttons with CSS.</p>
+        <pre><code class="language-css">.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Pagination">
+      <div class="section-header">
+        <h2>CSS Pagination</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>If you have a web site with lots of pages, you may wish to add some sort of pagination to each page.</p>
+      </div>
+    </div>
+
+    <div class="section" id="MediaQueries">
+      <div class="section-header">
+        <h2>CSS Media Queries</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Media query is a CSS technique introduced in CSS3. It uses the <code>@media</code> rule to include a block of
+          CSS properties only if a certain condition is true.</p>
+        <pre><code class="language-css">@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}</code></pre>
+      </div>
+    </div>
+
+
+    <!-- CSS Flexbox -->
+    <div class="section" id="Flexbox">
+      <div class="section-header">
+        <h2>CSS Flexbox</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Introduction</h3>
+        <p>The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using
+          float or positioning.</p>
+        <pre><code class="language-css">.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}</code></pre>
+        <h3>Parent Properties (Container)</h3>
+        <ul>
+          <li><code>flex-direction</code> (row, column)</li>
+          <li><code>flex-wrap</code> (wrap, nowrap)</li>
+          <li><code>justify-content</code> (center, space-between)</li>
+          <li><code>align-items</code> (center, stretch)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CSS Grid -->
+    <div class="section" id="Grid">
+      <div class="section-header">
+        <h2>CSS Grid</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Introduction</h3>
+        <p>The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to
+          design web pages without having to use floats and positioning.</p>
+        <pre><code class="language-css">.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}</code></pre>
+        <h3>Grid Properties</h3>
+        <ul>
+          <li><code>grid-template-columns</code></li>
+          <li><code>grid-template-rows</code></li>
+          <li><code>grid-gap</code></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- CSS Responsive -->
+    <div class="section" id="RWDIntro">
+      <div class="section-header">
+        <h2>Responsive Web Design</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Responsive Web Design is about creating web pages that look good on all devices! It is about using HTML and
+          CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices
+          (desktops, tablets, and phones).</p>
+      </div>
+    </div>
+
+    <div class="section" id="RWDViewport">
+      <div class="section-header">
+        <h2>The Viewport</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The viewport is the user's visible area of a web page.</p>
+        <pre><code class="language-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="RWDMedia">
+      <div class="section-header">
+        <h2>Media Queries</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <pre><code class="language-css">/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: olive;
+  }
+}</code></pre>
+      </div>
+    </div>
+
+    <!-- SASS -->
+    <div class="section" id="SASS">
+      <div class="section-header">
+        <h2>SASS Tutorial</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is Sass?</h3>
+        <p>Sass (Syntactically Awesome Style Sheets) is a preprocessor scripting language that is interpreted or
+          compiled into Cascading Style Sheets (CSS).</p>
+        <h3>Variables</h3>
+        <pre><code class="language-scss">$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}</code></pre>
+        <h3>Nesting</h3>
+        <pre><code class="language-scss">nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li { display: inline-block; }
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}</code></pre>
+      </div>
+    </div>
+
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the CSS module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>

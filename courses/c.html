@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | C Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fas fa-code" style="font-size: 3rem; color: #A8B9CC;"></i>
+      <h2 style="margin-top: 10px; color: white;">C Programming</h2>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <a href="#Intro">Intro to C</a>
+    <a href="#Syntax">Syntax</a>
+    <a href="#Variables">Variables</a>
+    <a href="#DataTypes">Data Types</a>
+
+    <!-- Module 2: Control Flow -->
+    <a href="#IfElse">If...Else</a>
+    <a href="#Switch">Switch</a>
+    <a href="#Loops">Loops (For/While)</a>
+
+    <!-- Module 3: Functions & Memory -->
+    <a href="#Functions">Functions</a>
+    <a href="#Arrays">Arrays</a>
+    <a href="#Pointers">Pointers</a>
+    <a href="#Memory">Memory Management</a>
+
+    <!-- Projects -->
+    <a href="#Projects">Real World Projects</a>
+    <a href="#MiniTask">Mini Task</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">C Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>Introduction to C</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is C?</h3>
+        <p>C is a general-purpose programming language tailored for systems programming (like OS).</p>
+        <div class="mermaid">graph TD
+          Source_Code --> Compiler
+          Compiler --> Machine_Code
+          Machine_Code --> Execution
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="Syntax">
+      <div class="section-header">
+        <h2>Syntax</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+  printf("Hello World!");
+  return 0;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Variables">
+      <div class="section-header">
+        <h2>Variables</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Containers for storing data values.</p>
+        <pre><code class="language-c">int myNum = 15;
+float myFloatNum = 5.99;
+char myLetter = 'D';</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="DataTypes">
+      <div class="section-header">
+        <h2>Data Types</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <ul>
+          <li><code>int</code>: Integers</li>
+          <li><code>float</code>: Floating point numbers</li>
+          <li><code>char</code>: Single character</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Module 2: Control Flow -->
+    <div class="section" id="IfElse">
+      <div class="section-header">
+        <h2>If...Else</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <pre><code class="language-c">if (20 > 18) {
+  printf("20 is greater than 18");
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Switch">
+      <div class="section-header">
+        <h2>Switch</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Select one of many code blocks to be executed.</p>
+      </div>
+    </div>
+
+    <div class="section" id="Loops">
+      <div class="section-header">
+        <h2>Loops</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <pre><code class="language-c">int i;
+for (i = 0; i < 5; i++) {
+  printf("%d\n", i);
+}</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 3: Functions & Memory -->
+    <div class="section" id="Functions">
+      <div class="section-header">
+        <h2>Functions</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <pre><code class="language-c">void myFunction() {
+  printf("I just got executed!");
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Arrays">
+      <div class="section-header">
+        <h2>Arrays</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <pre><code class="language-c">int myNumbers[] = {25, 50, 75, 100};</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Pointers">
+      <div class="section-header">
+        <h2>Pointers</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A variable that stores the memory address of another variable.</p>
+        <pre><code class="language-c">int myAge = 43;
+int* ptr = &myAge;
+
+printf("%p", ptr); // Outputs memory address</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Memory">
+      <div class="section-header">
+        <h2>Memory Management</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><code>malloc()</code>, <code>calloc()</code>, <code>free()</code>.</p>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section" id="Projects">
+      <div class="section-header">
+        <h2>🚀 Real World Projects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>🟢 Beginner: Calculator</h3>
+        <p><strong>Goal:</strong> Add, Sub, Mul, Div.</p>
+        <h3>🟡 Intermediate: Login System</h3>
+        <p><strong>Goal:</strong> File based auth system.</p>
+        <h3>🔴 Advanced: Snake Game</h3>
+        <p><strong>Goal:</strong> Console based game.</p>
+      </div>
+    </div>
+
+    <div class="section" id="MiniTask">
+      <div class="section-header">
+        <h2>🎯 C Mini Task</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Goal:</strong> Address Hunter.</p>
+        <h4>📋 Requirements:</h4>
+        <ol>
+          <li> Create an integer variable <code>myNum</code> = 100.</li>
+          <li> Create a pointer <code>ptr</code> storing its address.</li>
+          <li> Print the value using the pointer.</li>
+        </ol>
+        <p><strong>Low level power!</strong> ⚡</p>
+      </div>
+    </div>
+
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the C module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>

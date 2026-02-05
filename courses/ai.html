@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | AI Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fas fa-robot" style="font-size: 3rem; color: #00d2ff;"></i>
+      <h2 style="margin-top: 10px; color: white;">Artificial Intelligence</h2>
+    </div>
+
+    <!-- Module 1: Concepts -->
+    <a href="#Intro">Intro to AI</a>
+    <a href="#History">History of AI</a>
+    <a href="#AIvsML">AI vs ML vs DL</a>
+
+    <!-- Module 2: Search & Logic -->
+    <a href="#SearchAlgo">Search Algorithms</a>
+    <a href="#Minimax">Game Theory (Minimax)</a>
+    <a href="#Knowledge">Knowledge Representation</a>
+
+    <!-- Module 3: Natural Language -->
+    <a href="#NLP">NLP Basics</a>
+    <a href="#Transformers">Transformers (GPT)</a>
+    <a href="#Chatbots">Chatbots</a>
+
+    <!-- Module 4: Computer Vision -->
+    <a href="#CV">Computer Vision</a>
+    <a href="#ObjectDetection">Object Detection</a>
+    <a href="#GenerativeAI">Generative AI</a>
+
+    <!-- Module 5: Ethics -->
+    <a href="#Ethics">Ethics & Bias</a>
+    <a href="#Future">Future of AI</a>
+
+    <!-- Projects -->
+    <a href="#Projects">Real World Projects</a>
+    <a href="#MiniTask">Mini Task</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">AI Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+    <!-- Module 1: Concepts -->
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>Introduction to AI</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is AI?</h3>
+        <p>Artificial Intelligence is the simulation of human intelligence processes by machines.</p>
+        <p><strong>Narrow AI:</strong> Good at one thing (Chess, Alexa).</p>
+        <p><strong>General AI (AGI):</strong> Human-level intelligence (Theoretical).</p>
+      </div>
+    </div>
+
+    <div class="section" id="History">
+      <div class="section-header">
+        <h2>History of AI</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <ul>
+          <li><strong>1950s:</strong> Turing Test.</li>
+          <li><strong>1997:</strong> Deep Blue beats Kasparov.</li>
+          <li><strong>2012:</strong> AlexNet (Deep Learning boom).</li>
+          <li><strong>2022:</strong> ChatGPT (Generative AI).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="AIvsML">
+      <div class="section-header">
+        <h2>AI vs ML vs DL</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <div class="mermaid">graph TD
+          AI[Artificial Intelligence] --> ML[Machine Learning]
+          ML --> DL[Deep Learning]
+          DL --> GenAI[Generative AI]
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 2: Search & Logic -->
+    <div class="section" id="SearchAlgo">
+      <div class="section-header">
+        <h2>Search Algorithms</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 A* Search</h3>
+        <p>Used in GPS navigators to find the shortest path.</p>
+      </div>
+    </div>
+
+    <div class="section" id="Minimax">
+      <div class="section-header">
+        <h2>Game Theory (Minimax)</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Algorithm used in two-player games like Chess and Tic-Tac-Toe to minimize possible loss.</p>
+      </div>
+    </div>
+
+    <!-- Module 3: Natural Language -->
+    <div class="section" id="NLP">
+      <div class="section-header">
+        <h2>NLP Basics</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Sentiment Analysis:</strong> Is this review positive or negative?</p>
+        <p><strong>Tokenization:</strong> Breaking text into words.</p>
+      </div>
+    </div>
+
+    <div class="section" id="Transformers">
+      <div class="section-header">
+        <h2>Transformers (GPT)</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The architecture behind ChatGPT. Uses "Attention mechanisms" to understand context better than ever before.
+        </p>
+      </div>
+    </div>
+
+    <!-- Module 4: Computer Vision -->
+    <div class="section" id="CV">
+      <div class="section-header">
+        <h2>Computer Vision</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Teaching computers to "see".</p>
+        <p>Pixels -> Edges -> Shapes -> Objects.</p>
+      </div>
+    </div>
+
+    <div class="section" id="GenerativeAI">
+      <div class="section-header">
+        <h2>Generative AI</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Creating new content (Images, Text, Audio) using models like GANs and Diffusion Models (MidJourney, DALL-E).
+        </p>
+      </div>
+    </div>
+
+    <!-- Module 5: Ethics -->
+    <div class="section" id="Ethics">
+      <div class="section-header">
+        <h2>Ethics & Bias</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Algorithmic Bias:</strong> If data is biased, the AI will be biased.</p>
+        <p><strong>Deepfakes:</strong> Misinformation.</p>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section" id="Projects">
+      <div class="section-header">
+        <h2>🚀 Real World Projects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>🟢 Beginner: Chatbot</h3>
+        <p><strong>Goal:</strong> Simple rule-based Python chatbot.</p>
+        <h3>🟡 Intermediate: Face Detection</h3>
+        <p><strong>Goal:</strong> Use OpenCV to detect faces in webcam feed.</p>
+        <h3>🔴 Advanced: RAG System</h3>
+        <p><strong>Goal:</strong> Build a "Chat with your PDF" tool using LangChain.</p>
+      </div>
+    </div>
+
+    <div class="section" id="MiniTask">
+      <div class="section-header">
+        <h2>🎯 AI Mini Task</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Goal:</strong> The Turing Test.</p>
+        <h4>📋 Requirements:</h4>
+        <ol>
+          <li> Write a script where the user asks a question.</li>
+          <li> If the question contains "weather", reply "It's sunny in the cloud".</li>
+          <li> If "name", reply "I am AI".</li>
+          <li> Else, reply "I am learning".</li>
+        </ol>
+        <p><strong>Hello, Hal!</strong> 🔴</p>
+      </div>
+    </div>
+
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the AI module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>

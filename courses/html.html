@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | HTML Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fab fa-html5" style="font-size: 3rem; color: #e34c26;"></i>
+      <h2 style="margin-top: 10px; color: white;">HTML</h2>
+    </div>
+
+    <!-- Basics -->
+    <a href="#Intro">Introduction</a>
+    <a href="#Editors">Editors</a>
+    <a href="#Basic">Basic</a>
+    <a href="#Elements">Elements</a>
+    <a href="#Attributes">Attributes</a>
+    <a href="#Headings">Headings</a>
+    <a href="#Paragraphs">Paragraphs</a>
+    <a href="#Styles">Styles</a>
+    <a href="#Formatting">Formatting</a>
+    <a href="#Quotations">Quotations</a>
+    <a href="#Comments">Comments</a>
+    <a href="#Colors">Colors</a>
+    <a href="#CSS">CSS</a>
+    <a href="#Links">Links</a>
+    <a href="#Images">Images</a>
+    <a href="#Favicon">Favicon</a>
+    <a href="#PageTitle">Page Title</a>
+
+    <!-- Structure & Layout -->
+    <a href="#Tables">Tables</a>
+    <a href="#Lists">Lists</a>
+    <a href="#BlockInline">Block & Inline</a>
+    <a href="#Div">Div</a>
+    <a href="#Classes">Classes</a>
+    <a href="#Id">Id</a>
+    <a href="#Buttons">Buttons</a>
+    <a href="#Iframes">Iframes</a>
+    <a href="#JavaScript">JavaScript</a>
+    <a href="#FilePaths">File Paths</a>
+    <a href="#Head">Head</a>
+    <a href="#Layout">Layout</a>
+    <a href="#Responsive">Responsive</a>
+    <a href="#Computercode">Computer Code</a>
+
+    <!-- Advanced -->
+    <a href="#Semantics">Semantics</a>
+    <a href="#StyleGuide">Style Guide</a>
+    <a href="#Entities">Entities</a>
+    <a href="#Symbols">Symbols</a>
+    <a href="#Emojis">Emojis</a>
+    <a href="#Charsets">Charsets</a>
+    <a href="#URLEncode">URL Encode</a>
+    <a href="#XHTML">HTML vs XHTML</a>
+
+    <!-- Forms -->
+    <a href="#Forms">Forms</a>
+    <a href="#FormAttributes">Form Attributes</a>
+    <a href="#FormElements">Form Elements</a>
+    <a href="#InputTypes">Input Types</a>
+    <a href="#InputAttributes">Input Attributes</a>
+
+    <!-- Graphics -->
+    <a href="#Canvas">Canvas</a>
+    <a href="#SVG">SVG</a>
+
+    <!-- Media -->
+    <a href="#Media">Media</a>
+    <a href="#Video">Video</a>
+    <a href="#Audio">Audio</a>
+    <a href="#Plugins">Plug-ins</a>
+    <a href="#YouTube">YouTube</a>
+
+    <!-- APIs -->
+    <a href="#WebAPIs">Web APIs</a>
+    <a href="#Geolocation">Geolocation</a>
+    <a href="#DragDrop">Drag & Drop</a>
+    <a href="#WebStorage">Web Storage</a>
+    <a href="#WebWorkers">Web Workers</a>
+    <a href="#SSE">SSE</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">HTML Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+
+
+    <!-- HTML Introduction -->
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>HTML Introduction</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is HTML?</h3>
+        <p>HTML stands for Hyper Text Markup Language. It is the standard markup language for creating Web pages. HTML
+          describes the structure of a Web page and consists of a series of elements. HTML elements tell the browser how
+          to display the content, for example, "this is a heading", "this is a paragraph", "this is a link", etc.</p>
+
+        <h3>📊 Visual Concept</h3>
+        <p>Think of HTML as the skeleton of a web page.</p>
+        <div class="mermaid">
+          graph TD
+          HTML --> HEAD
+          HTML --> BODY
+          HEAD --> TITLE
+          BODY --> H1
+          BODY --> P
+        </div>
+
+        <h3>💻 Code Example</h3>
+        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Editors -->
+    <div class="section" id="Editors">
+      <div class="section-header">
+        <h2>HTML Editors</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>To learn HTML, you don't need a fancy server or expensive software. A simple text editor is all you need to
+          learn HTML.</p>
+        <h3>Recommended Editors</h3>
+        <ul>
+          <li><strong>VS Code:</strong> The most popular and powerful free editor.</li>
+          <li><strong>Sublime Text:</strong> Lightweight and fast.</li>
+          <li><strong>Notepad++:</strong> Simple and good for beginners on Windows.</li>
+        </ul>
+        <h3>Step 1: Open Text Editor</h3>
+        <p>Open your preferred editor (VS Code is recommended).</p>
+        <h3>Step 2: Write Some HTML</h3>
+        <p>Type your HTML code into the editor.</p>
+        <h3>Step 3: Save the HTML Page</h3>
+        <p>Save the file on your computer. Select <strong>File > Save as</strong> in the editor menu. Name the file
+          <code>index.html</code>.
+        </p>
+        <h3>Step 4: View the HTML Page in Your Browser</h3>
+        <p>Open the saved HTML file in your favorite browser (Chrome, Firefox, Edge, etc.).</p>
+      </div>
+    </div>
+
+    <!-- HTML Basic -->
+    <div class="section" id="Basic">
+      <div class="section-header">
+        <h2>HTML Basic Examples</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>HTML Documents</h3>
+        <p>All HTML documents must start with a document type declaration: <code>&lt;!DOCTYPE html&gt;</code>.</p>
+        <p>The HTML document itself begins with <code>&lt;html&gt;</code> and ends with <code>&lt;/html&gt;</code>.</p>
+        <p>The visible part of the HTML document is between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>.
+        </p>
+
+        <h3>HTML Headings</h3>
+        <p>HTML headings are defined with the <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> tags.</p>
+        <pre><code class="language-html">&lt;h1&gt;This is heading 1&lt;/h1&gt;
+&lt;h2&gt;This is heading 2&lt;/h2&gt;
+&lt;h3&gt;This is heading 3&lt;/h3&gt;</code></pre>
+
+        <h3>HTML Paragraphs</h3>
+        <p>HTML paragraphs are defined with the <code>&lt;p&gt;</code> tag.</p>
+        <pre><code class="language-html">&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;</code></pre>
+
+        <h3>HTML Links</h3>
+        <p>HTML links are defined with the <code>&lt;a&gt;</code> tag.</p>
+        <pre><code class="language-html">&lt;a href="https://www.google.com"&gt;This is a link&lt;/a&gt;</code></pre>
+
+        <h3>HTML Images</h3>
+        <p>HTML images are defined with the <code>&lt;img&gt;</code> tag.</p>
+        <pre><code class="language-html">&lt;img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142"&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Elements -->
+    <div class="section" id="Elements">
+      <div class="section-header">
+        <h2>HTML Elements</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>An HTML element is defined by a start tag, some content, and an end tag.</p>
+        <p><strong>&lt;tagname&gt;</strong> Content goes here... <strong>&lt;/tagname&gt;</strong></p>
+        <p>The HTML <strong>element</strong> is everything from the start tag to the end tag.</p>
+        <pre><code class="language-html">&lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;p&gt;My first paragraph.&lt;/p&gt;</code></pre>
+        <h3>Nested Elements</h3>
+        <p>HTML elements can be nested (this means that elements can contain other elements). All HTML documents consist
+          of nested HTML elements.</p>
+      </div>
+    </div>
+
+    <!-- HTML Attributes -->
+    <div class="section" id="Attributes">
+      <div class="section-header">
+        <h2>HTML Attributes</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <ul>
+          <li>All HTML elements can have <strong>attributes</strong>.</li>
+          <li>Attributes provide <strong>additional information</strong> about elements.</li>
+          <li>Attributes are always specified in the <strong>start tag</strong>.</li>
+          <li>Attributes usually come in name/value pairs like: <strong>name="value"</strong>.</li>
+        </ul>
+        <h3>The href Attribute</h3>
+        <p>The <code>&lt;a&gt;</code> tag defines a hyperlink. The <code>href</code> attribute specifies the URL of the
+          page the link goes to.</p>
+        <pre><code class="language-html">&lt;a href="https://www.w3schools.com"&gt;Visit W3Schools&lt;/a&gt;</code></pre>
+        <h3>The src Attribute</h3>
+        <p>The <code>&lt;img&gt;</code> tag is used to embed an image in an HTML page. The <code>src</code> attribute
+          specifies the path to the image to be displayed.</p>
+        <pre><code class="language-html">&lt;img src="img_girl.jpg"&gt;</code></pre>
+        <h3>The width and height Attributes</h3>
+        <p>Images usually have <code>width</code> and <code>height</code> attributes, which specifies the width and
+          height of the image (in pixels).</p>
+        <pre><code class="language-html">&lt;img src="img_girl.jpg" width="500" height="600"&gt;</code></pre>
+        <h3>The alt Attribute</h3>
+        <p>The <code>alt</code> attribute for the <code>&lt;img&gt;</code> tag provides an alternate text for an image,
+          if the image for some reason cannot be displayed.</p>
+        <pre><code class="language-html">&lt;img src="img_girl.jpg" alt="Girl with a jacket"&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Headings -->
+    <div class="section" id="Headings">
+      <div class="section-header">
+        <h2>HTML Headings</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>HTML headings are titles or subtitles that you want to display on a webpage.</p>
+        <p>HTML headings are defined with the <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> tags.</p>
+        <p><code>&lt;h1&gt;</code> defines the most important heading. <code>&lt;h6&gt;</code> defines the least
+          important heading.</p>
+        <pre><code class="language-html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;</code></pre>
+        <h3>Importance of Headings</h3>
+        <p>Search engines use the headings to index the structure and content of your web pages. Users often skim a page
+          by its headings. It is important to use headings to show the document structure.</p>
+      </div>
+    </div>
+
+    <!-- HTML Paragraphs -->
+    <div class="section" id="Paragraphs">
+      <div class="section-header">
+        <h2>HTML Paragraphs</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The HTML <code>&lt;p&gt;</code> element defines a paragraph.</p>
+        <p>A paragraph always starts on a new line, and browsers automatically add some white space (a margin) before
+          and after a paragraph.</p>
+        <pre><code class="language-html">&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;</code></pre>
+        <h3>HTML Display</h3>
+        <p>You cannot be sure how HTML will be displayed. Large or small screens, and resized windows will create
+          different results. With HTML, you cannot change the display by adding extra spaces or extra lines in your HTML
+          code. The browser will automatically remove any extra spaces and lines when the page is displayed.</p>
+      </div>
+    </div>
+
+    <!-- HTML Styles -->
+    <div class="section" id="Styles">
+      <div class="section-header">
+        <h2>HTML Styles</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The HTML <code>style</code> attribute is used to add styles to an element, such as color, font, size, and
+          more.</p>
+        <pre><code class="language-html">&lt;tagname style="property:value;"&gt;</code></pre>
+        <h3>Examples</h3>
+        <pre><code class="language-html">&lt;body style="background-color:powderblue;"&gt;
+&lt;h1 style="color:blue;"&gt;This is a heading&lt;/h1&gt;
+&lt;p style="color:red;"&gt;This is a paragraph.&lt;/p&gt;
+&lt;p style="font-size:50px;"&gt;I am big&lt;/p&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Formatting -->
+    <div class="section" id="Formatting">
+      <div class="section-header">
+        <h2>HTML Formatting Elements</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Formatting elements were designed to display special types of text:</p>
+        <ul>
+          <li><code>&lt;b&gt;</code> - Bold text</li>
+          <li><code>&lt;strong&gt;</code> - Important text</li>
+          <li><code>&lt;i&gt;</code> - Italic text</li>
+          <li><code>&lt;em&gt;</code> - Emphasized text</li>
+          <li><code>&lt;mark&gt;</code> - Marked text</li>
+          <li><code>&lt;small&gt;</code> - Smaller text</li>
+          <li><code>&lt;del&gt;</code> - Deleted text</li>
+          <li><code>&lt;ins&gt;</code> - Inserted text</li>
+          <li><code>&lt;sub&gt;</code> - Subscript text</li>
+          <li><code>&lt;sup&gt;</code> - Superscript text</li>
+        </ul>
+        <pre><code class="language-html">&lt;p&gt;This text is &lt;b&gt;bold&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;This text is &lt;i&gt;italic&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;This is &lt;sub&gt;subscript&lt;/sub&gt; and &lt;sup&gt;superscript&lt;/sup&gt;&lt;/p&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Quotations -->
+    <div class="section" id="Quotations">
+      <div class="section-header">
+        <h2>HTML Quotations</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>&lt;blockquote&gt; for Quotations</h3>
+        <p>The HTML <code>&lt;blockquote&gt;</code> element defines a section that is quoted from another source.
+          Browsers usually indent <code>&lt;blockquote&gt;</code> elements.</p>
+        <pre><code class="language-html">&lt;blockquote cite="http://www.worldwildlife.org"&gt;
+For 50 years, WWF has been protecting the future of nature.
+&lt;/blockquote&gt;</code></pre>
+        <h3>&lt;q&gt; for Short Quotations</h3>
+        <p>The HTML <code>&lt;q&gt;</code> element defines a short quotation. Browsers normally insert quotation marks
+          around the quotation.</p>
+        <pre><code class="language-html">&lt;p&gt;WWF's goal is to: &lt;q&gt;Build a future where people live in harmony with nature.&lt;/q&gt;&lt;/p&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Comments -->
+    <div class="section" id="Comments">
+      <div class="section-header">
+        <h2>HTML Comments</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>HTML comments are not displayed in the browser, but they can help document your HTML source code.</p>
+        <pre><code class="language-html">&lt;!-- This is a comment --&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;!-- Remember to add more information here --&gt;</code></pre>
+        <p>With comments you can place notifications and reminders in your HTML code.</p>
+      </div>
+    </div>
+
+    <!-- HTML Colors -->
+    <div class="section" id="Colors">
+      <div class="section-header">
+        <h2>HTML Colors</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>HTML colors are specified with predefined color names, or with RGB, HEX, HSL, RGBA, or HSLA values.</p>
+        <h3>Color Names</h3>
+        <p>In HTML, a color can be specified by using a color name: Tomato, Orange, DodgerBlue, MediumSeaGreen, Gray,
+          SlateBlue, Violet, LightGray.</p>
+        <pre><code class="language-html">&lt;h1 style="background-color:Tomato;"&gt;Tomato&lt;/h1&gt;
+&lt;h1 style="background-color:Orange;"&gt;Orange&lt;/h1&gt;</code></pre>
+        <h3>HEX Colors</h3>
+        <p>A hexadecimal color is specified with: <code>#RRGGBB</code>. RR (red), GG (green) and BB (blue) are
+          hexadecimal integers between 00 and FF specifying the intensity of the color.</p>
+        <pre><code class="language-html">&lt;h1 style="background-color:#ff0000;"&gt;Red&lt;/h1&gt;
+&lt;h1 style="background-color:#0000ff;"&gt;Blue&lt;/h1&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML CSS -->
+    <div class="section" id="CSS">
+      <div class="section-header">
+        <h2>HTML and CSS</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>CSS stands for Cascading Style Sheets. CSS saves a lot of work. It can control the layout of multiple web
+          pages all at once.</p>
+        <h3>Ways to add CSS</h3>
+        <ul>
+          <li><strong>Inline:</strong> by using the <code>style</code> attribute inside HTML elements</li>
+          <li><strong>Internal:</strong> by using a <code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code>
+            section</li>
+          <li><strong>External:</strong> by using a <code>&lt;link&gt;</code> element to link to an external CSS file
+          </li>
+        </ul>
+        <pre><code class="language-html">&lt;head&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Links -->
+    <div class="section" id="Links">
+      <div class="section-header">
+        <h2>HTML Links</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>HTML links are hyperlinks. You can click on a link and jump to another document.</p>
+        <pre><code class="language-html">&lt;a href="url"&gt;link text&lt;/a&gt;</code></pre>
+        <h3>Target Attribute</h3>
+        <p>The <code>target</code> attribute specifies where to open the linked document.</p>
+        <ul>
+          <li><code>_self</code> - Default. Opens in the same window/tab.</li>
+          <li><code>_blank</code> - Opens in a new window or tab.</li>
+        </ul>
+        <pre><code class="language-html">&lt;a href="https://www.w3schools.com/" target="_blank"&gt;Visit W3Schools!&lt;/a&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Images -->
+    <div class="section" id="Images">
+      <div class="section-header">
+        <h2>HTML Images</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Images can improve the design and the appearance of a web page.</p>
+        <pre><code class="language-html">&lt;img src="pic_trulli.jpg" alt="Italian Trulli"&gt;</code></pre>
+        <h3>Image Map</h3>
+        <p>The <code>&lt;map&gt;</code> tag defines an image-map. An image-map is an image with clickable areas.</p>
+      </div>
+    </div>
+
+    <!-- HTML Favicon -->
+    <div class="section" id="Favicon">
+      <div class="section-header">
+        <h2>HTML Favicon</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A favicon is a small image displayed next to the page title in the browser tab.</p>
+        <pre><code class="language-html">&lt;head&gt;
+  &lt;link rel="icon" type="image/x-icon" href="/images/favicon.ico"&gt;
+&lt;/head&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Page Title -->
+    <div class="section" id="PageTitle">
+      <div class="section-header">
+        <h2>HTML Page Title</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>&lt;title&gt;</code> element defines the title of the document. The title must be text-only, and it
+          is shown in the browser's title bar or in the page's tab.</p>
+        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+...
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+    </div>
+
+
+    <!-- HTML Tables -->
+    <div class="section" id="Tables">
+      <div class="section-header">
+        <h2>HTML Tables</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A table is a structured set of data made up of rows and columns (tabular data).</p>
+        <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Company&lt;/th&gt;
+    &lt;th&gt;Contact&lt;/th&gt;
+    &lt;th&gt;Country&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alfreds Futterkiste&lt;/td&gt;
+    &lt;td&gt;Maria Anders&lt;/td&gt;
+    &lt;td&gt;Germany&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        <ul>
+          <li><code>&lt;table&gt;</code> - Defines a table</li>
+          <li><code>&lt;tr&gt;</code> - Defines a table row</li>
+          <li><code>&lt;th&gt;</code> - Defines a table header</li>
+          <li><code>&lt;td&gt;</code> - Defines a table cell (data)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HTML Lists -->
+    <div class="section" id="Lists">
+      <div class="section-header">
+        <h2>HTML Lists</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>Unordered Lists</h3>
+        <p>An unordered list starts with the <code>&lt;ul&gt;</code> tag. Each list item starts with the
+          <code>&lt;li&gt;</code> tag.
+        </p>
+        <pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+  &lt;li&gt;Tea&lt;/li&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        <h3>Ordered Lists</h3>
+        <p>An ordered list starts with the <code>&lt;ol&gt;</code> tag. Each list item starts with the
+          <code>&lt;li&gt;</code> tag.
+        </p>
+        <pre><code class="language-html">&lt;ol&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+  &lt;li&gt;Tea&lt;/li&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        <h3>Description Lists</h3>
+        <p>A description list is a list of terms, with a description of each term.</p>
+        <pre><code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;Coffee&lt;/dt&gt;
+  &lt;dd&gt;- black hot drink&lt;/dd&gt;
+  &lt;dt&gt;Milk&lt;/dt&gt;
+  &lt;dd&gt;- white cold drink&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Block & Inline -->
+    <div class="section" id="BlockInline">
+      <div class="section-header">
+        <h2>Block & Inline Elements</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>Block-level Elements</h3>
+        <p>A block-level element always starts on a new line and takes up the full width available.</p>
+        <p>Examples: <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>, <code>&lt;p&gt;</code>,
+          <code>&lt;form&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>,
+          <code>&lt;section&gt;</code>.
+        </p>
+        <h3>Inline Elements</h3>
+        <p>An inline element does not start on a new line and only takes up as much width as necessary.</p>
+        <p>Examples: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>,
+          <code>&lt;b&gt;</code>, <code>&lt;em&gt;</code>.
+        </p>
+      </div>
+    </div>
+
+    <!-- HTML Div -->
+    <div class="section" id="Div">
+      <div class="section-header">
+        <h2>HTML Div Element</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>&lt;div&gt;</code> tag defines a division or a section in an HTML document. It is often used as a
+          container for other HTML elements to style them with CSS or to perform certain tasks with JavaScript.</p>
+        <pre><code class="language-html">&lt;div style="background-color:black;color:white;padding:20px;"&gt;
+  &lt;h2&gt;London&lt;/h2&gt;
+  &lt;p&gt;London is the capital city of England...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Classes -->
+    <div class="section" id="Classes">
+      <div class="section-header">
+        <h2>HTML Classes</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>class</code> attribute specifies one or more class names for an element. Classes are used by CSS
+          and JavaScript to select and access specific elements.</p>
+        <pre><code class="language-html">&lt;style&gt;
+.city {
+  background-color: tomato;
+  color: white;
+  padding: 10px;
+}
+&lt;/style&gt;
+
+&lt;div class="city"&gt;
+  &lt;h2&gt;London&lt;/h2&gt;
+  &lt;p&gt;London is the capital of England.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Id -->
+    <div class="section" id="Id">
+      <div class="section-header">
+        <h2>HTML Id Attribute</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>id</code> attribute specifies a unique id for an HTML element. The value of the id attribute must
+          be unique within the HTML document.</p>
+        <pre><code class="language-html">&lt;h1 id="myHeader"&gt;My Header&lt;/h1&gt;</code></pre>
+        <p>In CSS, to select an element with a specific id, write a hash character (#) followed by the id of the
+          element.</p>
+      </div>
+    </div>
+
+    <!-- HTML Buttons -->
+    <div class="section" id="Buttons">
+      <div class="section-header">
+        <h2>HTML Buttons</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>&lt;button&gt;</code> tag defines a clickable button.</p>
+        <pre><code class="language-html">&lt;button type="button" onclick="alert('Hello World!')"&gt;Click Me!&lt;/button&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Iframes -->
+    <div class="section" id="Iframes">
+      <div class="section-header">
+        <h2>HTML Iframes</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>An HTML iframe is used to display a web page within a web page.</p>
+        <pre><code class="language-html">&lt;iframe src="demo_iframe.htm" height="200" width="300" title="Iframe Example"&gt;&lt;/iframe&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML JavaScript -->
+    <div class="section" id="JavaScript">
+      <div class="section-header">
+        <h2>HTML JavaScript</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>&lt;script&gt;</code> tag is used to define a client-side script (JavaScript). It can either
+          contain the script statements or point to an external script file through the <code>src</code> attribute.</p>
+        <pre><code class="language-html">&lt;script&gt;
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML File Paths -->
+    <div class="section" id="FilePaths">
+      <div class="section-header">
+        <h2>HTML File Paths</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A file path describes the location of a file in a web site's folder structure.</p>
+        <ul>
+          <li><code>&lt;img src="picture.jpg"&gt;</code> - File in same folder</li>
+          <li><code>&lt;img src="images/picture.jpg"&gt;</code> - File in images folder</li>
+          <li><code>&lt;img src="/images/picture.jpg"&gt;</code> - File in images folder at root</li>
+          <li><code>&lt;img src="../picture.jpg"&gt;</code> - File one level up</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HTML Head -->
+    <div class="section" id="Head">
+      <div class="section-header">
+        <h2>HTML Head</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>&lt;head&gt;</code> element is a container for metadata (data about data). It is placed between the
+          <code>&lt;html&gt;</code> tag and the <code>&lt;body&gt;</code> tag.
+        </p>
+        <p>Elements inside head: <code>&lt;title&gt;</code>, <code>&lt;style&gt;</code>, <code>&lt;meta&gt;</code>,
+          <code>&lt;link&gt;</code>, <code>&lt;script&gt;</code>, <code>&lt;base&gt;</code>.
+        </p>
+      </div>
+    </div>
+
+    <!-- HTML Layout -->
+    <div class="section" id="Layout">
+      <div class="section-header">
+        <h2>HTML Layout</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Websites often display content in multiple columns (like a magazine or newspaper).</p>
+        <p>Semantic Input: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>,
+          <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>.
+        </p>
+      </div>
+    </div>
+
+    <!-- HTML Responsive -->
+    <div class="section" id="Responsive">
+      <div class="section-header">
+        <h2>HTML Responsive</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Responsive Web Design is about creating web pages that look good on all devices! It is about using HTML and
+          CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices
+          (desktops, tablets, and phones).</p>
+        <pre><code class="language-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Computercode -->
+    <div class="section" id="Computercode">
+      <div class="section-header">
+        <h2>HTML Computer Code</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><code>&lt;kbd&gt;</code> for keyboard input, <code>&lt;samp&gt;</code> for sample output,
+          <code>&lt;code&gt;</code> for code snippets, <code>&lt;var&gt;</code> for variables, <code>&lt;pre&gt;</code>
+          for preformatted text.
+        </p>
+        <pre><code class="language-html">&lt;p&gt;Save the document by pressing &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;&lt;/p&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Semantics -->
+    <div class="section" id="Semantics">
+      <div class="section-header">
+        <h2>HTML Semantics</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A semantic element clearly describes its meaning to both the browser and the developer.</p>
+        <p>Non-semantic: <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>.</p>
+        <p>Semantic: <code>&lt;form&gt;</code>, <code>&lt;table&gt;</code>, <code>&lt;article&gt;</code>.</p>
+      </div>
+    </div>
+
+    <!-- HTML Style Guide -->
+    <div class="section" id="StyleGuide">
+      <div class="section-header">
+        <h2>HTML Style Guide</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Consistent coding style is important for maintainability.</p>
+        <ul>
+          <li>Always declare document type</li>
+          <li>Use specific lower-case element names</li>
+          <li>Close all HTML elements</li>
+          <li>Use lower-case attribute names</li>
+          <li>Always quote attribute values</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HTML Entities -->
+    <div class="section" id="Entities">
+      <div class="section-header">
+        <h2>HTML Entities</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Reserved characters in HTML must be replaced with character entities.</p>
+        <ul>
+          <li>Less than (<code>&lt;</code>): <code>&amp;lt;</code></li>
+          <li>Greater than (<code>&gt;</code>): <code>&amp;gt;</code></li>
+          <li>Ampersand (<code>&amp;</code>): <code>&amp;amp;</code></li>
+          <li>Double quote (<code>"</code>): <code>&amp;quot;</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HTML Symbols -->
+    <div class="section" id="Symbols">
+      <div class="section-header">
+        <h2>HTML Symbols</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>HTML symbols like mathematical operators, arrows, technical symbols and shapes.</p>
+        <p>Example: <code>&amp;euro;</code> displays €</p>
+      </div>
+    </div>
+
+    <!-- HTML Emojis -->
+    <div class="section" id="Emojis">
+      <div class="section-header">
+        <h2>HTML Emojis</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Emojis are characters from the UTF-8 alphabet.</p>
+        <p><code>&amp;#128512;</code> displays 😀</p>
+      </div>
+    </div>
+
+    <!-- HTML Charsets -->
+    <div class="section" id="Charsets">
+      <div class="section-header">
+        <h2>HTML Charsets</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>To display an HTML page correctly, a web browser must know the character set used in the page.</p>
+        <p>The standard character set for HTML5 is UTF-8.</p>
+        <pre><code class="language-html">&lt;meta charset="UTF-8"&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML URL Encode -->
+    <div class="section" id="URLEncode">
+      <div class="section-header">
+        <h2>HTML URL Encode</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>URLs can only be sent over the Internet using the ASCII character-set. Since URLs often contain characters
+          outside the ASCII set, the URL has to be converted into a valid ASCII format. URL encoding replaces unsafe
+          ASCII characters with a "%" followed by two hexadecimal digits.</p>
+        <p>Space -> <code>%20</code></p>
+      </div>
+    </div>
+
+    <!-- HTML vs XHTML -->
+    <div class="section" id="XHTML">
+      <div class="section-header">
+        <h2>HTML vs. XHTML</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>XHTML is a stricter, more XML-based version of HTML.</p>
+        <ul>
+          <li>XHTML elements must be properly nested</li>
+          <li>XHTML elements must always be closed</li>
+          <li>XHTML elements must be in lowercase</li>
+          <li>XHTML documents must have one root element</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- HTML Forms -->
+    <div class="section" id="Forms">
+      <div class="section-header">
+        <h2>HTML Forms</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>An HTML form is used to collect user input. The user input is most often sent to a server for processing.</p>
+        <pre><code class="language-html">&lt;form action="/action_page.php"&gt;
+  &lt;label for="fname"&gt;First name:&lt;/label&gt;&lt;br&gt;
+  &lt;input type="text" id="fname" name="fname" value="John"&gt;&lt;br&gt;
+  &lt;label for="lname"&gt;Last name:&lt;/label&gt;&lt;br&gt;
+  &lt;input type="text" id="lname" name="lname" value="Doe"&gt;&lt;br&gt;&lt;br&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Form Attributes -->
+    <div class="section" id="FormAttributes">
+      <div class="section-header">
+        <h2>HTML Form Attributes</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Attributes for the <code>&lt;form&gt;</code> element:</p>
+        <ul>
+          <li><code>action</code>: Specifies where to send the form-data when a form is submitted.</li>
+          <li><code>method</code>: Specifies the HTTP method to use when sending form-data (GET or POST).</li>
+          <li><code>target</code>: Specifies where to display the response that is received after submitting the form.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HTML Form Elements -->
+    <div class="section" id="FormElements">
+      <div class="section-header">
+        <h2>HTML Form Elements</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>&lt;form&gt;</code> element can contain various form elements:</p>
+        <ul>
+          <li><code>&lt;input&gt;</code></li>
+          <li><code>&lt;label&gt;</code></li>
+          <li><code>&lt;select&gt;</code> (Drop-down list)</li>
+          <li><code>&lt;textarea&gt;</code> (Multi-line input)</li>
+          <li><code>&lt;button&gt;</code></li>
+          <li><code>&lt;fieldset&gt;</code> (Group related data)</li>
+          <li><code>&lt;legend&gt;</code> (Caption for fieldset)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HTML Input Types -->
+    <div class="section" id="InputTypes">
+      <div class="section-header">
+        <h2>HTML Input Types</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>&lt;input&gt;</code> element is the most important form element. It behaves differently depending
+          on the <code>type</code> attribute.</p>
+        <ul>
+          <li><code>&lt;input type="text"&gt;</code></li>
+          <li><code>&lt;input type="password"&gt;</code></li>
+          <li><code>&lt;input type="submit"&gt;</code></li>
+          <li><code>&lt;input type="radio"&gt;</code></li>
+          <li><code>&lt;input type="checkbox"&gt;</code></li>
+          <li><code>&lt;input type="button"&gt;</code></li>
+          <li><code>&lt;input type="color"&gt;</code></li>
+          <li><code>&lt;input type="date"&gt;</code></li>
+          <li><code>&lt;input type="email"&gt;</code></li>
+          <li><code>&lt;input type="number"&gt;</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HTML Input Attributes -->
+    <div class="section" id="InputAttributes">
+      <div class="section-header">
+        <h2>HTML Input Attributes</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Common attributes for <code>&lt;input&gt;</code>:</p>
+        <ul>
+          <li><code>value</code>: Specifies the initial value.</li>
+          <li><code>readonly</code>: Input field is read-only.</li>
+          <li><code>disabled</code>: Input field is disabled.</li>
+          <li><code>size</code>: Specifies the visible width (in characters).</li>
+          <li><code>maxlength</code>: Specifies the maximum number of characters.</li>
+          <li><code>min</code> and <code>max</code>: Specifies minimum and maximum values (for number/date).</li>
+          <li><code>multiple</code>: Allows user to choose more than one value (for email/file).</li>
+          <li><code>pattern</code>: regex for validation.</li>
+          <li><code>placeholder</code>: A hint describing the expected value.</li>
+          <li><code>required</code>: Input field must be filled out using.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HTML Canvas -->
+    <div class="section" id="Canvas">
+      <div class="section-header">
+        <h2>HTML Canvas</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The HTML <code>&lt;canvas&gt;</code> element is used to draw graphics, on the fly, via JavaScript. The
+          <code>&lt;canvas&gt;</code> element is only a container for graphics. You must use a script to actually draw
+          the graphics.</p>
+        <pre><code class="language-html">&lt;canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"&gt;&lt;/canvas&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML SVG -->
+    <div class="section" id="SVG">
+      <div class="section-header">
+        <h2>HTML SVG</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>SVG defines vector-based graphics in XML format. SVG graphics do not lose any quality if they are zoomed or
+          resized.</p>
+        <pre><code class="language-html">&lt;svg width="100" height="100"&gt;
+  &lt;circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" /&gt;
+&lt;/svg&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Media -->
+    <div class="section" id="Media">
+      <div class="section-header">
+        <h2>HTML Media</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Multimedia comes in many different formats. It can be almost anything you can hear or see, like images,
+          music, sound, videos, records, films, animations, and more.</p>
+      </div>
+    </div>
+
+    <!-- HTML Video -->
+    <div class="section" id="Video">
+      <div class="section-header">
+        <h2>HTML Video</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The HTML <code>&lt;video&gt;</code> element shows a video.</p>
+        <pre><code class="language-html">&lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Audio -->
+    <div class="section" id="Audio">
+      <div class="section-header">
+        <h2>HTML Audio</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The HTML <code>&lt;audio&gt;</code> element is used to play an audio file on a web page.</p>
+        <pre><code class="language-html">&lt;audio controls&gt;
+  &lt;source src="horse.ogg" type="audio/ogg"&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Plug-ins -->
+    <div class="section" id="Plugins">
+      <div class="section-header">
+        <h2>HTML Plug-ins</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Plug-ins are computer programs that extend the standard functionality of the browser. They were often used to
+          verify Java applets and Flash movies. <code>&lt;object&gt;</code> and <code>&lt;embed&gt;</code> tags.</p>
+      </div>
+    </div>
+
+    <!-- HTML YouTube -->
+    <div class="section" id="YouTube">
+      <div class="section-header">
+        <h2>HTML YouTube</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The easiest way to play videos in HTML is to use YouTube. YouTube will display an id (like tgbNymZ7vqY), when
+          you save (or play) a video. You can use this id, and refer to your video in the HTML code.</p>
+        <pre><code class="language-html">&lt;iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY"&gt;
+&lt;/iframe&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Web APIs -->
+    <div class="section" id="WebAPIs">
+      <div class="section-header">
+        <h2>HTML Web APIs</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>An API (Application Programming Interface) is a set of definitions and protocols for building and integrating
+          application software.</p>
+      </div>
+    </div>
+
+    <!-- HTML Geolocation -->
+    <div class="section" id="Geolocation">
+      <div class="section-header">
+        <h2>HTML Geolocation API</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The HTML Geolocation API is used to locate a user's position.</p>
+        <pre><code class="language-html">&lt;script&gt;
+navigator.geolocation.getCurrentPosition(showPosition);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Drag and Drop -->
+    <div class="section" id="DragDrop">
+      <div class="section-header">
+        <h2>HTML Drag and Drop API</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>In HTML, any element can be dragged and dropped.</p>
+        <pre><code class="language-html">&lt;img draggable="true"&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- HTML Web Storage -->
+    <div class="section" id="WebStorage">
+      <div class="section-header">
+        <h2>HTML Web Storage API</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>With web storage, web applications can store data locally within the user's browser.</p>
+        <ul>
+          <li><code>localStorage</code> - stores data with no expiration date</li>
+          <li><code>sessionStorage</code> - stores data for one session (data is lost when the browser tab is closed)
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HTML Web Workers -->
+    <div class="section" id="WebWorkers">
+      <div class="section-header">
+        <h2>HTML Web Workers API</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A web worker is a JavaScript that runs in the background, independently of other scripts, without affecting
+          the performance of the page.</p>
+      </div>
+    </div>
+
+    <!-- HTML SSE -->
+    <div class="section" id="SSE">
+      <div class="section-header">
+        <h2>HTML SSE API</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Server-Sent Events (SSE) allow a web page to get updates from a server.</p>
+      </div>
+    </div>
+
+
+
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the HTML module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | Pandas Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fas fa-table" style="font-size: 3rem; color: #150458;"></i>
+      <h2 style="margin-top: 10px; color: white;">Pandas</h2>
+    </div>
+
+    <!-- Module 1: Intro -->
+    <a href="#Intro">Intro & Setup</a>
+    <a href="#Series">Series</a>
+    <a href="#DataFrames">DataFrames</a>
+
+    <!-- Module 2: Analysis -->
+    <a href="#ReadCSV">Reading Files (CSV/JSON)</a>
+    <a href="#Inspection">Inspecting Data</a>
+    <a href="#Selecting">Selecting & Filtering</a>
+
+    <!-- Module 3: Cleaning -->
+    <a href="#Cleaning">Cleaning Empty Cells</a>
+    <a href="#CleaningWrong">Cleaning Wrong Data</a>
+    <a href="#Duplicates">Removing Duplicates</a>
+
+    <!-- Module 4: Advanced -->
+    <a href="#Grouping">Grouping & Aggregation</a>
+    <a href="#Merging">Merging & Joins</a>
+    <a href="#Plotting">Plotting Integration</a>
+
+    <!-- Projects -->
+    <a href="#Projects">Real World Projects</a>
+    <a href="#MiniTask">Mini Task</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">Pandas Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>Introduction to Pandas</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is Pandas?</h3>
+        <p>Pandas is the core library for data manipulation in Python. It's like "Excel on steroids" for programmers.
+        </p>
+        <h3>🚀 Setup</h3>
+        <pre><code class="language-python">import pandas as pd
+print(pd.__version__)</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Series">
+      <div class="section-header">
+        <h2>Pandas Series</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A Series is like a column in a table. It is a one-dimensional array holding data of any type.</p>
+        <pre><code class="language-python">a = [1, 7, 2]
+myvar = pd.Series(a, index = ["x", "y", "z"])
+print(myvar["y"]) # Returns 7</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="DataFrames">
+      <div class="section-header">
+        <h2>DataFrames</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is a DataFrame?</h3>
+        <p>A DataFrame is a 2 dimensional data structure, like a 2 dimensional array, or a table with rows and columns.
+        </p>
+        <pre><code class="language-python">data = {
+  "calories": [420, 380, 390],
+  "duration": [50, 40, 45]
+}
+df = pd.DataFrame(data)
+print(df)</code></pre>
+        <div class="mermaid">graph TD
+          Dictionary --> DataFrame
+          List_of_Lists --> DataFrame
+          CSV_File --> DataFrame
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 2: Analysis -->
+    <div class="section" id="ReadCSV">
+      <div class="section-header">
+        <h2>Reading Files</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 CSV & JSON</h3>
+        <p>Data usually comes in files. Pandas makes loading them one-line magic.</p>
+        <pre><code class="language-python">df = pd.read_csv('data.csv')
+df_json = pd.read_json('data.json')</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Inspection">
+      <div class="section-header">
+        <h2>Inspecting Data</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <ul>
+          <li><code>df.head(10)</code>: First 10 rows.</li>
+          <li><code>df.tail()</code>: Last 5 rows.</li>
+          <li><code>df.info()</code>: Data types and memory usage.</li>
+          <li><code>df.describe()</code>: Statistical summary (mean, std, min, max).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="Selecting">
+      <div class="section-header">
+        <h2>Selecting & Filtering</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Filtering data is intuitive.</p>
+        <pre><code class="language-python"># Select column
+ages = df['Age']
+
+# Select Row (by index)
+row = df.loc[0]
+
+# Conditional Filtering
+adults = df[df['Age'] > 18]</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 3: Cleaning -->
+    <div class="section" id="Cleaning">
+      <div class="section-header">
+        <h2>Cleaning Empty Cells</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Bad data can ruin your analysis. Handle it!</p>
+        <pre><code class="language-python"># Remove rows with empty cells
+new_df = df.dropna()
+
+# Fill empty cells with a value
+df.fillna(130, inplace = True)
+
+# Fill with Mean
+x = df["Calories"].mean()
+df["Calories"].fillna(x, inplace = True)</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="CleaningWrong">
+      <div class="section-header">
+        <h2>Cleaning Wrong Data</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Correcting logical errors.</p>
+        <pre><code class="language-python"># Set a max limit for duration
+for x in df.index:
+  if df.loc[x, "Duration"] > 120:
+    df.loc[x, "Duration"] = 120</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Duplicates">
+      <div class="section-header">
+        <h2>Removing Duplicates</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <pre><code class="language-python"># Check for duplicates
+print(df.duplicated())
+
+# Remove duplicates
+df.drop_duplicates(inplace = True)</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 4: Advanced -->
+    <div class="section" id="Grouping">
+      <div class="section-header">
+        <h2>Grouping & Aggregation</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>groupby()</code> method helps group data into categories and apply functions.</p>
+        <pre><code class="language-python"># Average calories by Workout Type
+numeric_df = df[["Duration", "Pulse", "Maxpulse", "Calories"]]
+numeric_df.groupby(df["Type"]).mean()</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Merging">
+      <div class="section-header">
+        <h2>Merging & Joins</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Combining multiple DataFrames.</p>
+        <pre><code class="language-python">merged = pd.merge(df1, df2, on='ID', how='inner')</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Plotting">
+      <div class="section-header">
+        <h2>Plotting Integration</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Pandas hooks directly into Matplotlib.</p>
+        <pre><code class="language-python">import matplotlib.pyplot as plt
+df.plot(kind = 'scatter', x = 'Duration', y = 'Calories')
+plt.show()</code></pre>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section" id="Projects">
+      <div class="section-header">
+        <h2>🚀 Real World Projects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>🟢 Beginner: Dataset Explorer</h3>
+        <p><strong>Goal:</strong> Load a CSV, print stats, and fix missing values.</p>
+        <h3>🟡 Intermediate: Sales Analysis</h3>
+        <p><strong>Goal:</strong> Group sales by Month and Product Category to find top performers.</p>
+        <h3>🔴 Advanced: Stock Predictor (Prep)</h3>
+        <p><strong>Goal:</strong> Calculate moving averages and daily returns on historical finance data.</p>
+      </div>
+    </div>
+
+    <div class="section" id="MiniTask">
+      <div class="section-header">
+        <h2>🎯 Pandas Mini Task</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Goal:</strong> Create your own DataFrame.</p>
+        <h4>📋 Requirements:</h4>
+        <ol>
+          <li> Import pandas.</li>
+          <li> Create a DataFrame with columns: "Fruit" and "Color".</li>
+          <li> Add 3 rows (e.g., Apple-Red, Banana-Yellow).</li>
+          <li> Print the whole table.</li>
+        </ol>
+        <p><strong>Data Science starts here!</strong> 🧪</p>
+      </div>
+    </div>
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Pandas module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>

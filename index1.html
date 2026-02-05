@@ -4,296 +4,365 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LearnX</title>
-
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="LOGO.jpeg" type="image/jpeg" />
-
+  <title>LearnX | Dashboard</title>
+  <link rel="icon" href="assets/img/LOGO.jpeg" type="image/jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: url("background.png") center center/cover no-repeat;
-      height: 100vh;
+      padding-top: 80px;
     }
 
-    /* Sidebar */
-    #mySidenav a {
-      position: absolute;
-      left: -80px;
-      transition: 0.2s;
-      padding: 15px;
-      width: 100px;
-      text-decoration: none;
-      font-size: 20px;
-      color: white;
-      border-radius: 0 10px 10px 0;
+    /* Navbar */
+    .navbar {
+      background: rgba(15, 12, 41, 0.8);
+      backdrop-filter: blur(15px);
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    #mySidenav a:hover {
-      left: 0;
-    }
-
-    #HTML {
-      top: 120px;
-      background-color: #04AA6D;
-    }
-
-    #CSS {
-      top: 180px;
-      background-color: #2196F3;
-    }
-
-    #JAVASCRIPT {
-      top: 240px;
-      background-color: #e1f436;
-      color: #000;
-    }
-
-    #SQL {
-      top: 300px;
-      background-color: #4fe742;
-      color: #000;
-    }
-
-    #C {
-      top: 360px;
-      background-color: #d5da9c;
-      color: #000;
-    }
-
-    #JAVA {
-      top: 420px;
-      background-color: #1377b1;
-    }
-
-    #PYTHON {
-      top: 480px;
-      background-color: #036410;
-    }
-
-    #EXECL {
-      top: 540px;
-      background-color: #d60d0d;
-    }
-
-    /* Header */
-    .header {
-      position: relative;
-      background-color: #043044;
-      padding: 15px;
+    .nav-brand {
+      color: #00d2ff;
+      font-size: 28px;
+      font-weight: 700;
       display: flex;
       align-items: center;
-      justify-content: center;
-    }
-
-    .brand {
-      font-size: 30px;
-      font-weight: bold;
-      color: #ffffff;
-      text-shadow: 2px 2px 4px #e5ffe8;
+      gap: 10px;
       text-decoration: none;
-      display: flex;
-      align-items: center;
     }
 
-    .logo-img {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 35px;
-      height: 35px;
+    .nav-brand img {
+      width: 40px;
       border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgb(12, 7, 7);
     }
 
-    .menu-toggle {
-      position: absolute;
-      right: 20px;
-      font-size: 24px;
-      color: white;
-      cursor: pointer;
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
     }
 
-    #logout-button {
-      position: absolute;
-      right: 120px;
-      padding: 10px 16px;
-      background-color: #CD5656;
+    .nav-links a {
       color: white;
-      border: none;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00d2ff;
+    }
+
+    .admin-link {
+      display: none;
+      /* Hidden by default */
+      color: #ff007a !important;
+      font-weight: 700 !important;
+    }
+
+    .logout-btn {
+      background: rgba(255, 77, 77, 0.2);
+      color: #ff4d4d;
+      border: 1px solid #ff4d4d;
+      padding: 8px 15px;
       border-radius: 8px;
       cursor: pointer;
-      display: none;
+      transition: all 0.3s;
     }
 
-    marquee {
-      font-size: 18px;
-      color: #fff;
-      text-shadow: 2px 2px 4px #000;
-      background-color: rgba(0, 0, 0, 0.3);
-      padding: 5px;
+    .logout-btn:hover {
+      background: #ff4d4d;
+      color: white;
     }
 
-    /* Overlay Menu */
-    .overlay {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.95);
-      overflow-x: hidden;
-      transition: 0.5s;
+    /* Main Content */
+    .dashboard-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    .overlay-content {
-      position: relative;
-      top: 25%;
+    .welcome-section {
       text-align: center;
+      margin-bottom: 50px;
     }
 
-    .overlay a {
-      font-size: 30px;
-      padding: 8px;
+    .welcome-section h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .welcome-section p {
+      opacity: 0.8;
+      font-size: 18px;
+    }
+
+    /* Course Cards */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, min-minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .course-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 30px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
       text-decoration: none;
-      color: #fff;
-      display: block;
+      color: white;
+      cursor: pointer;
     }
 
-    .overlay .closebtn {
-      position: absolute;
-      top: 20px;
-      right: 45px;
+    .course-card:hover {
+      transform: translateY(-10px);
+      border-color: #00d2ff;
+      box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
+    }
+
+    .course-card i {
       font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    .course-card h3 {
+      font-size: 22px;
+    }
+
+    .course-card.html i {
+      color: #E34F26;
+    }
+
+    .course-card.css i {
+      color: #1572B6;
+    }
+
+    .course-card.js i {
+      color: #F7DF1E;
+    }
+
+    .course-card.sql i {
+      color: #003B57;
+    }
+
+    .course-card.python i {
+      color: #3776AB;
+    }
+
+    .course-card.java i {
+      color: #007396;
+    }
+
+    .course-card.excel i {
+      color: #217346;
+    }
+
+    .course-card.c i {
+      color: #A8B9CC;
     }
 
     /* Modal */
-    #confirmModal {
+    .modal {
       display: none;
       position: fixed;
-      z-index: 2;
-      left: 0;
       top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
     }
 
     .modal-content {
-      background-color: white;
-      margin: 15% auto;
-      padding: 20px;
-      width: 300px;
+      padding: 30px;
+      width: 320px;
       text-align: center;
-      border-radius: 10px;
     }
 
-    .modal-content button {
-      margin: 10px;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 6px;
+    .modal-btns {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+
+    .modal-btns button {
+      padding: 10px 20px;
+      border-radius: 8px;
       cursor: pointer;
+      border: none;
+      font-weight: 600;
     }
 
-    .confirm {
-      background-color: #CD5656;
+    .btn-confirm {
+      background: #ff4d4d;
       color: white;
     }
 
-    .cancel {
-      background-color: #ccc;
+    .btn-cancel {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .course-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+
+      .navbar {
+        padding: 0 20px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Side Navigation -->
-  <div id="mySidenav">
-    <a href="html.html" id="HTML">HTML</a>
-    <a href="css.html" id="CSS">CSS</a>
-    <a href="js.html" id="JAVASCRIPT">JS</a>
-    <a href="sql.html" id="SQL">SQL</a>
-    <a href="python.html" id="PYTHON">Python</a>
-    <a href="java.html" id="JAVA">Java</a>
-    <a href="excel.html" id="EXECL">Excel</a>
-    <a href="c.html" id="C">C</a>
+  <!-- Animated Background -->
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
 
-  <!-- Header -->
-  <div class="header">
-    <a href="index.html" class="brand">
-      <img src="LOGO.jpeg" class="logo-img" alt="logo" /> LearnX
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index1.html" class="nav-brand">
+      <img src="assets/img/LOGO.jpeg" alt="LearnX"> LearnX
     </a>
-    <span class="menu-toggle" onclick="openNav()">☰</span>
-    <button id="logout-button">Logout</button>
-  </div>
-
-  <!-- Marquee -->
-  <marquee>
-    Welcome to LearnX! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    Your Gateway to Tech Basics! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Happy
-    Learning! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aWelcome to LearnX!
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    Your Gateway to Tech Basics! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Happy
-    Learning! </marquee>
-
-  <!-- Overlay Nav -->
-  <div id="myNav" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="overlay-content">
-      <a href="profile.html">Profile</a>
+    <div class="nav-links">
       <a href="about.html">About</a>
       <a href="Contact.html">Contact</a>
       <a href="feedback.html">Feedback</a>
+      <a href="admin.html" class="admin-link" id="admin-link">Admin Panel</a>
+      <button class="logout-btn" id="logout-trigger">Logout</button>
+    </div>
+    <div style="font-size: 24px; cursor: pointer; display: none;" class="mobile-menu-icon">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <div class="dashboard-container">
+    <div class="welcome-section">
+      <h1>Welcome back, <span id="user-display-name">Learner</span>!</h1>
+      <p>Ready to master tech basics today?</p>
+    </div>
+
+    <div class="course-grid">
+      <a href="courses/html.html" class="course-card glass-card html">
+        <i class="fab fa-html5"></i>
+        <h3>HTML</h3>
+        <p>Master Web Structure</p>
+      </a>
+      <a href="courses/css.html" class="course-card glass-card css">
+        <i class="fab fa-css3-alt"></i>
+        <h3>CSS</h3>
+        <p>Style with Precision</p>
+      </a>
+      <a href="courses/js.html" class="course-card glass-card js">
+        <i class="fab fa-js"></i>
+        <h3>JavaScript</h3>
+        <p>Make it Interactive</p>
+      </a>
+      <a href="courses/sql.html" class="course-card glass-card sql">
+        <i class="fas fa-database"></i>
+        <h3>SQL</h3>
+        <p>Manage Databases</p>
+      </a>
+      <a href="courses/python.html" class="course-card glass-card python">
+        <i class="fab fa-python"></i>
+        <h3>Python</h3>
+        <p>Code the Future</p>
+      </a>
+      <a href="courses/java.html" class="course-card glass-card java">
+        <i class="fab fa-java"></i>
+        <h3>Java</h3>
+        <p>Object Oriented Guru</p>
+      </a>
+      <a href="courses/excel.html" class="course-card glass-card excel">
+        <i class="fas fa-file-excel"></i>
+        <h3>Excel</h3>
+        <p>Data Ninja</p>
+      </a>
+      <a href="courses/c.html" class="course-card glass-card c">
+        <i class="fas fa-code"></i>
+        <h3>C Programming</h3>
+        <p>The Foundation</p>
+      </a>
+      <a href="courses/r.html" class="course-card glass-card r">
+        <i class="fas fa-chart-line" style="color: #276dc3;"></i>
+        <h3>R</h3>
+        <p>Statistical Computing</p>
+      </a>
+      <a href="courses/pandas.html" class="course-card glass-card pandas">
+        <i class="fas fa-table" style="color: #150458;"></i>
+        <h3>Pandas</h3>
+        <p>Data Analysis</p>
+      </a>
+      <a href="courses/numpy.html" class="course-card glass-card numpy">
+        <i class="fas fa-cubes" style="color: #013243;"></i>
+        <h3>NumPy</h3>
+        <p>Numerical Python</p>
+      </a>
+      <a href="courses/matplotlib.html" class="course-card glass-card matplotlib">
+        <i class="fas fa-chart-bar" style="color: #ffffff;"></i>
+        <h3>Matplotlib</h3>
+        <p>Data Visualization</p>
+      </a>
+      <a href="courses/ml.html" class="course-card glass-card ml">
+        <i class="fas fa-brain" style="color: #ff9900;"></i>
+        <h3>Machine Learning</h3>
+        <p>Predict the Future</p>
+      </a>
+      <a href="courses/ai.html" class="course-card glass-card ai">
+        <i class="fas fa-robot" style="color: #00d2ff;"></i>
+        <h3>AI</h3>
+        <p>Artificial Intelligence</p>
+      </a>
     </div>
   </div>
 
-  <!-- Logout Confirmation Modal -->
-  <div id="confirmModal">
-    <div class="modal-content">
-      <p>Are you sure you want to logout?</p>
-      <button class="confirm" onclick="confirmLogout()">Yes</button>
-      <button class="cancel" onclick="cancelLogout()">Cancel</button>
+  <!-- Logout Modal -->
+  <div class="modal" id="logout-modal">
+    <div class="modal-content glass-card">
+      <i class="fas fa-sign-out-alt" style="font-size: 40px; color: #ff4d4d; margin-bottom: 15px;"></i>
+      <h3>Confirm Logout</h3>
+      <p>Are you sure you want to leave?</p>
+      <div class="modal-btns">
+        <button class="btn-confirm" id="confirm-logout">Yes, Logout</button>
+        <button class="btn-cancel" id="cancel-logout">Stay</button>
+      </div>
     </div>
   </div>
 
-  <!-- Scripts -->
-  <script>
-    function openNav() {
-      document.getElementById("myNav").style.width = "100%";
-    }
-    function closeNav() {
-      document.getElementById("myNav").style.width = "0%";
-    }
-  </script>
-
-  <!-- Firebase SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
     import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
@@ -310,33 +379,35 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    const logoutBtn = document.getElementById("logout-button");
-    const confirmModal = document.getElementById("confirmModal");
-
-    logoutBtn.addEventListener("click", () => {
-      confirmModal.style.display = "block";
-    });
-
-    window.confirmLogout = function () {
-      signOut(auth).then(() => {
-        window.location.href = "login.html";
-      }).catch(error => {
-        alert("Error logging out: " + error.message);
-      });
-    };
-
-    window.cancelLogout = function () {
-      confirmModal.style.display = "none";
-    };
+    const userNameDisplay = document.getElementById("user-display-name");
+    const adminLink = document.getElementById("admin-link");
+    const logoutTrigger = document.getElementById("logout-trigger");
+    const logoutModal = document.getElementById("logout-modal");
+    const confirmLogout = document.getElementById("confirm-logout");
+    const cancelLogout = document.getElementById("cancel-logout");
 
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        logoutBtn.style.display = "block";
+        userNameDisplay.textContent = user.displayName || user.email.split('@')[0];
+
+        // Admin visibility logic
+        if (user.email === "aryankumar735588@gmail.com") {
+          adminLink.style.display = "block";
+        }
       } else {
-        logoutBtn.style.display = "none";
         window.location.href = "index.html";
       }
     });
+
+    logoutTrigger.onclick = () => logoutModal.style.display = "flex";
+    cancelLogout.onclick = () => logoutModal.style.display = "none";
+    confirmLogout.onclick = () => {
+      signOut(auth).then(() => window.location.href = "index.html");
+    };
+
+    window.onclick = (event) => {
+      if (event.target == logoutModal) logoutModal.style.display = "none";
+    };
   </script>
 </body>
 

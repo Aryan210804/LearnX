@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | Excel Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fas fa-file-excel" style="font-size: 3rem; color: #217346;"></i>
+      <h2 style="margin-top: 10px; color: white;">Excel</h2>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <a href="#Intro">Intro to Excel</a>
+    <a href="#Cells">Cells & Ranges</a>
+    <a href="#Formatting">Formatting</a>
+
+    <!-- Module 2: Formulas -->
+    <a href="#Formulas">Formulas Intro</a>
+    <a href="#Functions">Functions (SUM, AVG)</a>
+    <a href="#Logic">Logic (IF, COUNTIF)</a>
+    <a href="#Lookup">VLOOKUP / XLOOKUP</a>
+
+    <!-- Module 3: Analysis -->
+    <a href="#PivotTables">Pivot Tables</a>
+    <a href="#Charts">Charts & Graphs</a>
+    <a href="#Sorting">Sorting & Filtering</a>
+
+    <!-- Module 4: Advanced -->
+    <a href="#DataValidation">Data Validation</a>
+    <a href="#Macros">Macros (VBA)</a>
+
+    <!-- Projects -->
+    <a href="#Projects">Real World Projects</a>
+    <a href="#MiniTask">Mini Task</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">Excel Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>Introduction to Excel</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is Excel?</h3>
+        <p>The world's most popular spreadsheet software. Used for storing, organizing, and analyzing data.</p>
+        <div class="mermaid">graph TD
+          Input_Data --> Spreadsheet
+          Spreadsheet --> Formulas
+          Spreadsheet --> Visualization
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="Cells">
+      <div class="section-header">
+        <h2>Cells & Ranges</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Cell:</strong> Intersection of a Row and Column (e.g., A1).</p>
+        <p><strong>Range:</strong> A group of cells (e.g., A1:B10).</p>
+      </div>
+    </div>
+
+    <div class="section" id="Formatting">
+      <div class="section-header">
+        <h2>Formatting</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Making data readable. Bold, Italic, Cell Color, Borders.</p>
+        <p><strong>Conditional Formatting:</strong> Highlight top 10% or values above average.</p>
+      </div>
+    </div>
+
+    <!-- Module 2: Formulas -->
+    <div class="section" id="Formulas">
+      <div class="section-header">
+        <h2>Formulas Intro</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>All formulas start with <code>=</code>.</p>
+        <pre><code>=A1 + A2</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Functions">
+      <div class="section-header">
+        <h2>Basic Functions</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <ul>
+          <li><code>=SUM(A1:A10)</code></li>
+          <li><code>=AVERAGE(A1:A10)</code></li>
+          <li><code>=MIN(A1:A10)</code></li>
+          <li><code>=MAX(A1:A10)</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="Logic">
+      <div class="section-header">
+        <h2>Logic Functions</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Making decisions.</p>
+        <pre><code>=IF(A1>10, "Pass", "Fail")
+=COUNTIF(A1:A10, ">50")</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Lookup">
+      <div class="section-header">
+        <h2>VLOOKUP / XLOOKUP</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Finding data across tables.</p>
+        <pre><code>=VLOOKUP(lookup_value, table_array, col_index, [range_lookup])</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 3: Analysis -->
+    <div class="section" id="PivotTables">
+      <div class="section-header">
+        <h2>Pivot Tables</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The most powerful tool in Excel. Summarize huge datasets with drag-and-drop.</p>
+        <p>Example: Total Sales per Region.</p>
+      </div>
+    </div>
+
+    <div class="section" id="Charts">
+      <div class="section-header">
+        <h2>Charts & Graphs</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Visualizing data.</p>
+        <ul>
+          <li><strong>Column Chart:</strong> Comparisons.</li>
+          <li><strong>Line Chart:</strong> Trends over time.</li>
+          <li><strong>Pie Chart:</strong> Parts of a whole.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="Sorting">
+      <div class="section-header">
+        <h2>Sorting & Filtering</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Sort A-Z, Z-A, or by Value. Filter to hide unwanted data.</p>
+      </div>
+    </div>
+
+    <!-- Module 4: Advanced -->
+    <div class="section" id="DataValidation">
+      <div class="section-header">
+        <h2>Data Validation</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Control what users can type into a cell (e.g., Dropdown Lists).</p>
+      </div>
+    </div>
+
+    <div class="section" id="Macros">
+      <div class="section-header">
+        <h2>Macros (VBA)</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Recording repetitive tasks to automate them.</p>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section" id="Projects">
+      <div class="section-header">
+        <h2>🚀 Real World Projects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>🟢 Beginner: Personal Budget</h3>
+        <p><strong>Goal:</strong> Track Income and Expenses.</p>
+        <h3>🟡 Intermediate: Sales Report</h3>
+        <p><strong>Goal:</strong> VLOOKUP inventory and Pivot Table analysis.</p>
+        <h3>🔴 Advanced: Financial Dashboard</h3>
+        <p><strong>Goal:</strong> Dynamic Charts and Slicers.</p>
+      </div>
+    </div>
+
+    <div class="section" id="MiniTask">
+      <div class="section-header">
+        <h2>🎯 Excel Mini Task</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Goal:</strong> Grade Calculator.</p>
+        <h4>📋 Requirements:</h4>
+        <ol>
+          <li> Column A: Names, Column B: Scores.</li>
+          <li> Cell C1: <code>=AVERAGE(B:B)</code>.</li>
+          <li> Column C: Use IF to show "Pass" if Score > 60.</li>
+        </ol>
+        <p><strong>Spreadsheet Guru!</strong> 📊</p>
+      </div>
+    </div>
+
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Excel module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>

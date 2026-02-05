@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | Matplotlib Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fas fa-chart-bar" style="font-size: 3rem; color: #ffffff;"></i>
+      <h2 style="margin-top: 10px; color: white;">Matplotlib</h2>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <a href="#Intro">Intro & Pyplot</a>
+    <a href="#Plotting">Plotting</a>
+    <a href="#Markers">Markers & Lines</a>
+
+    <!-- Module 2: Styling -->
+    <a href="#Labels">Labels & Title</a>
+    <a href="#Grid">Grid</a>
+    <a href="#Subplot">Subplot</a>
+
+    <!-- Module 3: Chart Types -->
+    <a href="#Scatter">Scatter</a>
+    <a href="#Bars">Bars</a>
+    <a href="#Histograms">Histograms</a>
+    <a href="#Pie">Pie Charts</a>
+
+    <!-- Projects -->
+    <a href="#Projects">Real World Projects</a>
+    <a href="#MiniTask">Mini Task</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">Matplotlib Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>Introduction to Matplotlib</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is Matplotlib?</h3>
+        <p>Matplotlib is a low-level graph plotting library in python that serves as a visualization utility.</p>
+        <h3>🚀 Setup</h3>
+        <pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Plotting">
+      <div class="section-header">
+        <h2>Plotting</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>plot()</code> function is used to draw points (markers) in a diagram.</p>
+        <pre><code class="language-python">xpoints = np.array([0, 6])
+ypoints = np.array([0, 250])
+
+plt.plot(xpoints, ypoints)
+plt.show()</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Markers">
+      <div class="section-header">
+        <h2>Markers & Lines</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Markers</h3>
+        <p>You can use the keyword argument <code>marker</code> to emphasize each point.</p>
+        <pre><code class="language-python">plt.plot(ypoints, marker = 'o')</code></pre>
+        <h3>📌 Line Styles</h3>
+        <p><code>linestyle</code> or <code>ls</code>.</p>
+        <pre><code class="language-python">plt.plot(ypoints, linestyle = 'dotted')</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 2: Styling -->
+    <div class="section" id="Labels">
+      <div class="section-header">
+        <h2>Labels & Title</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Add context to your graph.</p>
+        <pre><code class="language-python">plt.xlabel("Average Pulse")
+plt.ylabel("Calorie Burnage")
+plt.title("Sports Watch Data")</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Grid">
+      <div class="section-header">
+        <h2>Grid</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Add grid lines to the plot.</p>
+        <pre><code class="language-python">plt.grid()
+plt.grid(axis = 'x')</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Subplot">
+      <div class="section-header">
+        <h2>Subplots</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Display multiple plots in one figure.</p>
+        <pre><code class="language-python"># Plot 1
+plt.subplot(1, 2, 1) # 1 row, 2 cols, index 1
+plt.plot(x, y)
+
+# Plot 2
+plt.subplot(1, 2, 2)
+plt.plot(x, y)</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 3: Chart Types -->
+    <div class="section" id="Scatter">
+      <div class="section-header">
+        <h2>Scatter Plots</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Compare 2 variables.</p>
+        <pre><code class="language-python">plt.scatter(x, y)</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Bars">
+      <div class="section-header">
+        <h2>Bar Charts</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Categorical data.</p>
+        <pre><code class="language-python">x = ["Apples", "Bananas"]
+y = [400, 350]
+plt.bar(x, y)</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Histograms">
+      <div class="section-header">
+        <h2>Histograms</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Frequency distribution.</p>
+        <pre><code class="language-python">x = np.random.normal(170, 10, 250)
+plt.hist(x)</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Pie">
+      <div class="section-header">
+        <h2>Pie Charts</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Proportions.</p>
+        <pre><code class="language-python">y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+plt.pie(y, labels = mylabels)</code></pre>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section" id="Projects">
+      <div class="section-header">
+        <h2>🚀 Real World Projects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>🟢 Beginner: Sales Graph</h3>
+        <p><strong>Goal:</strong> Bar chart of monthly sales.</p>
+        <h3>🟡 Intermediate: Stock Trends</h3>
+        <p><strong>Goal:</strong> Line graph of stock prices with grid and labels.</p>
+        <h3>🔴 Advanced: Dashboard</h3>
+        <p><strong>Goal:</strong> 4 subplots showing different metrics (Sales, Traffic, Conversion, Bounce Rate).</p>
+      </div>
+    </div>
+
+    <div class="section" id="MiniTask">
+      <div class="section-header">
+        <h2>🎯 Matplotlib Mini Task</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Goal:</strong> Visualize Growth.</p>
+        <h4>📋 Requirements:</h4>
+        <ol>
+          <li> Create two arrays: Year (2020-2025) and Profit.</li>
+          <li> Plot a line graph.</li>
+          <li> Add a Title "Company Profit".</li>
+          <li> Show the grid.</li>
+        </ol>
+        <p><strong>Paint with data!</strong> 🎨</p>
+      </div>
+    </div>
+
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Matplotlib module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>

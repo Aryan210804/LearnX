@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | R Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fas fa-chart-line" style="font-size: 3rem; color: #276dc3;"></i>
+      <h2 style="margin-top: 10px; color: white;">R</h2>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <a href="#Intro">Intro to R</a>
+    <a href="#Syntax">Syntax</a>
+    <a href="#DataTypes">Data Types</a>
+
+    <!-- Module 2: Data Structures -->
+    <a href="#Vectors">Vectors</a>
+    <a href="#Lists">Lists</a>
+    <a href="#Matrices">Matrices</a>
+    <a href="#DataFrames">Data Frames</a>
+
+    <!-- Module 3: Stats & Graphics -->
+    <a href="#Statistics">Statistics (Mean, Median)</a>
+    <a href="#Plotting">Plotting</a>
+    <a href="#GGPlot2">GGPlot2</a>
+
+    <!-- Projects -->
+    <a href="#Projects">Real World Projects</a>
+    <a href="#MiniTask">Mini Task</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">R Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+    <!-- Module 1: Basics -->
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>Introduction to R</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is R?</h3>
+        <p>R is a language and environment for statistical computing and graphics.</p>
+        <div class="mermaid">graph TD
+          Data --> Statistics
+          Statistics --> Visualization
+          Visualization --> Insights
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="Syntax">
+      <div class="section-header">
+        <h2>Syntax</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Assignment uses <code><-</code>.</p>
+        <pre><code class="language-r">name <- "John"
+age <- 25
+print(name)</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="DataTypes">
+      <div class="section-header">
+        <h2>Data Types</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <ul>
+          <li><strong>Numeric:</strong> <code>10.5</code></li>
+          <li><strong>Integer:</strong> <code>10L</code></li>
+          <li><strong>Character:</strong> <code>"Hello"</code></li>
+          <li><strong>Logical:</strong> <code>TRUE</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Module 2: Data Structures -->
+    <div class="section" id="Vectors">
+      <div class="section-header">
+        <h2>Vectors</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A list of items of the same type.</p>
+        <pre><code class="language-r">fruits <- c("apple", "banana", "cherry")</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Lists">
+      <div class="section-header">
+        <h2>Lists</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A collection of data which is ordered and changeable.</p>
+        <pre><code class="language-r">thislist <- list("apple", "banana", "cherry")</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Matrices">
+      <div class="section-header">
+        <h2>Matrices</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A 2D data set with columns and rows.</p>
+        <pre><code class="language-r">thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="DataFrames">
+      <div class="section-header">
+        <h2>Data Frames</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Data tables. similar to Pandas DataFrames.</p>
+        <pre><code class="language-r">Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)</code></pre>
+      </div>
+    </div>
+
+    <!-- Module 3: Stats & Graphics -->
+    <div class="section" id="Statistics">
+      <div class="section-header">
+        <h2>Statistics</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>R is built for stats.</p>
+        <pre><code class="language-r">mean(Data_Frame$Pulse)
+median(Data_Frame$Pulse)
+min(Data_Frame$Pulse)</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Plotting">
+      <div class="section-header">
+        <h2>Plotting</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Simple plotting.</p>
+        <pre><code class="language-r">plot(1:10)</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="GGPlot2">
+      <div class="section-header">
+        <h2>GGPlot2</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Advanced visualization.</p>
+        <pre><code class="language-r">library(ggplot2)
+ggplot(df, aes(x=dose, y=len)) + geom_point()</code></pre>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section" id="Projects">
+      <div class="section-header">
+        <h2>🚀 Real World Projects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>🟢 Beginner: Dice Roller</h3>
+        <p><strong>Goal:</strong> Simulate dice rolls and plot distribution.</p>
+        <h3>🟡 Intermediate: Pokemon Analysis</h3>
+        <p><strong>Goal:</strong> Analyze stats of Pokemon from a CSV.</p>
+        <h3>🔴 Advanced: COVID-19 Tracker</h3>
+        <p><strong>Goal:</strong> Visualize spread over time.</p>
+      </div>
+    </div>
+
+    <div class="section" id="MiniTask">
+      <div class="section-header">
+        <h2>🎯 R Mini Task</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Goal:</strong> Vector Math.</p>
+        <h4>📋 Requirements:</h4>
+        <ol>
+          <li> Create a vector <code>x</code> with numbers 1 to 5.</li>
+          <li> Multiply it by 2.</li>
+          <li> Plot the result.</li>
+        </ol>
+        <p><strong>Statistically significant!</strong> 📈</p>
+      </div>
+    </div>
+
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the R module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>

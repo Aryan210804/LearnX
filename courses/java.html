@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnX | Java Masterclass</title>
+  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </div>
+
+  <div class="sidebar">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <i class="fab fa-java" style="font-size: 3rem; color: #5382a1;"></i>
+      <h2 style="margin-top: 10px; color: white;">Java</h2>
+    </div>
+    <!-- Module 1: Java Basics -->
+    <a href="#Intro">Intro & Syntax</a>
+    <a href="#Variables">Variables & Data Types</a>
+    <a href="#Operators">Operators & Casting</a>
+
+    <!-- Module 2: Control Flow -->
+    <a href="#IfElse">Conditionals (If/Else)</a>
+    <a href="#Switch">Switch Statements</a>
+    <a href="#Loops">Loops (For/While)</a>
+
+    <!-- Module 3: Methods & Arrays -->
+    <a href="#Methods">Methods</a>
+    <a href="#Arrays">Arrays</a>
+
+    <!-- Module 4: OOP (Core) -->
+    <a href="#OOPBasics">Classes & Objects</a>
+    <a href="#Encapsulation">Encapsulation</a>
+    <a href="#Inheritance">Inheritance</a>
+    <a href="#Polymorphism">Polymorphism</a>
+    <a href="#Abstraction">Abstraction & Interfaces</a>
+
+    <!-- Module 5: Advanced -->
+    <a href="#Files">File Handling</a>
+    <a href="#Exceptions">Exception Handling</a>
+
+    <!-- Projects -->
+    <a href="#Projects">Real World Projects</a>
+    <a href="#MiniTask">Mini Task</a>
+
+    <div style="margin-top: 50px;">
+      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    </div>
+  </div>
+
+  <div class="course-content">
+    <h1 class="h1">Java Masterclass</h1>
+
+    <div class="course-controls">
+      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
+      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    </div>
+
+    <!-- content starts -->
+    <div class="section" id="Intro">
+      <div class="section-header">
+        <h2>Java Introduction</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 What is Java?</h3>
+        <p>Java is a popular programming language, created in 1995. It is owned by Oracle, and more than 3 billion
+          devices run Java.</p>
+        <h3>🚀 Main Features</h3>
+        <ul>
+          <li><strong>Object-Oriented:</strong> Everything is an Object.</li>
+          <li><strong>Platform Independent:</strong> "Write Once, Run Anywhere".</li>
+          <li><strong>Secure:</strong> Robust security features.</li>
+        </ul>
+        <h3>💻 Syntax</h3>
+        <pre><code class="language-java">public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Variables">
+      <div class="section-header">
+        <h2>Variables & Data Types</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 Variables</h3>
+        <p>Containers for storing data values.</p>
+        <pre><code class="language-java">String name = "John";
+int myNum = 15;
+final int myNum = 15; // Final (constant)</code></pre>
+        <h3>📦 Data Types</h3>
+        <ul>
+          <li><code>int</code>: Integers (whole numbers).</li>
+          <li><code>float</code> / <code>double</code>: Floating point numbers.</li>
+          <li><code>char</code>: Single characters ('a').</li>
+          <li><code>boolean</code>: true or false.</li>
+          <li><code>String</code>: Text.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="Operators">
+      <div class="section-header">
+        <h2>Operators & Casting</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>Operators</h3>
+        <p><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (Arithmetic)</p>
+        <p><code>==</code>, <code>!=</code>, <code>></code>, <code><</code> (Comparison)</p>
+        <h3>Type Casting</h3>
+        <p><strong>Widening:</strong> <code>int</code> -> <code>double</code> (Automatic)</p>
+        <p><strong>Narrowing:</strong> <code>double</code> -> <code>int</code> (Manual)</p>
+        <pre><code class="language-java">double myDouble = 9.78d;
+int myInt = (int) myDouble; // 9</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="IfElse">
+      <div class="section-header">
+        <h2>Conditionals</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Java supports logical conditions from mathematics.</p>
+        <pre><code class="language-java">if (time < 18) {
+  System.out.println("Good day.");
+} else {
+  System.out.println("Good evening.");
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Switch">
+      <div class="section-header">
+        <h2>Switch Statement</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Use the switch statement to select one of many code blocks to be executed.</p>
+        <pre><code class="language-java">switch(day) {
+  case 1:
+    System.out.println("Monday");
+    break;
+  case 2:
+    System.out.println("Tuesday");
+    break;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Loops">
+      <div class="section-header">
+        <h2>Loops</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>While Loop</h3>
+        <pre><code class="language-java">while (i < 5) {
+  System.out.println(i);
+  i++;
+}</code></pre>
+        <h3>For Loop</h3>
+        <pre><code class="language-java">for (int i = 0; i < 5; i++) {
+  System.out.println(i);
+}</code></pre>
+        <h3>For-Each Loop</h3>
+        <pre><code class="language-java">for (String i : cars) {
+  System.out.println(i);
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Methods">
+      <div class="section-header">
+        <h2>Methods</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>A method is a block of code which only runs when it is called.</p>
+        <pre><code class="language-java">static void myMethod(String fname) {
+  System.out.println(fname + " Refsnes");
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Arrays">
+      <div class="section-header">
+        <h2>Arrays</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Arrays are used to store multiple values in a single variable.</p>
+        <pre><code class="language-java">String[] cars = {"Volvo", "BMW", "Ford"};
+System.out.println(cars[0]); // Outputs Volvo</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="OOPBasics">
+      <div class="section-header">
+        <h2>OOP Basics: Classes & Objects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>📌 OOP</h3>
+        <p>Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects".</p>
+        <div class="mermaid">classDiagram
+          class Car {
+          +String color
+          +int speed
+          +drive()
+          }
+        </div>
+        <pre><code class="language-java">public class Main {
+  int x = 5;
+  public static void main(String[] args) {
+    Main myObj = new Main();
+    System.out.println(myObj.x);
+  }
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Encapsulation">
+      <div class="section-header">
+        <h2>Encapsulation</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The meaning of <strong>Encapsulation</strong>, is to make sure that "sensitive" data is hidden from users.
+        </p>
+        <p>Declare class variables/attributes as <code>private</code> and provide public <code>get</code> and
+          <code>set</code> methods to access and update the value of a private variable.</p>
+      </div>
+    </div>
+
+    <div class="section" id="Inheritance">
+      <div class="section-header">
+        <h2>Inheritance</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>In Java, it is possible to inherit attributes and methods from one class to another.</p>
+        <pre><code class="language-java">class Vehicle {
+  protected String brand = "Ford";
+  public void honk() {
+    System.out.println("Tuut, tuut!");
+  }
+}
+
+class Car extends Vehicle {
+  private String modelName = "Mustang";
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Polymorphism">
+      <div class="section-header">
+        <h2>Polymorphism</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by
+          inheritance.</p>
+      </div>
+    </div>
+
+    <div class="section" id="Abstraction">
+      <div class="section-header">
+        <h2>Abstraction</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>Data abstraction is the process of hiding certain details and showing only essential information to the user.
+        </p>
+        <ul>
+          <li><strong>Abstract Class:</strong> Cannot be used to create objects.</li>
+          <li><strong>Interface:</strong> A completely "abstract class" that finds grouping with unrelated classes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="Files">
+      <div class="section-header">
+        <h2>Java Files</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The File class from the <code>java.io</code> package, allows us to work with files.</p>
+        <pre><code class="language-java">import java.io.File; 
+File myObj = new File("filename.txt");</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Exceptions">
+      <div class="section-header">
+        <h2>Exception Handling</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p>The <code>try</code> statement allows you to define a block of code to be tested for errors.</p>
+        <p>The <code>catch</code> statement allows you to define a block of code to be executed, if an error occurs in
+          the try block.</p>
+        <pre><code class="language-java">try {
+  int[] myNumbers = {1, 2, 3};
+  System.out.println(myNumbers[10]);
+} catch (Exception e) {
+  System.out.println("Something went wrong.");
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="section" id="Projects">
+      <div class="section-header">
+        <h2>🚀 Real World Projects</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <h3>🟢 Beginner Level: Console Calculator</h3>
+        <p><strong>Goal:</strong> Perform + - * / operations.</p>
+        <p><strong>Key Skills:</strong> Scanner, Switch Case</p>
+        <h3>🟡 Intermediate Level: Student DB</h3>
+        <p><strong>Goal:</strong> Manage students, assign grades, calculate GPA.</p>
+        <p><strong>Key Skills:</strong> ArrayList, Classes, Loops</p>
+        <h3>🔴 Advanced Level: ATM System</h3>
+        <p><strong>Goal:</strong> Login with PIN, Check Balance, Withdraw, persistent storage.</p>
+        <p><strong>Key Skills:</strong> File I/O, HashMap, Auth Logic</p>
+      </div>
+    </div>
+
+    <div class="section" id="MiniTask">
+      <div class="section-header">
+        <h2>🎯 Java Mini Task</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="section-content">
+        <p><strong>Goal:</strong> Even or Odd Checker.</p>
+        <h4>📋 Requirements:</h4>
+        <ol>
+          <li> Create an integer variable <code>number</code> with any value (e.g., 8).</li>
+          <li> Use an <code>if/else</code> statement.</li>
+          <li> If the number is divisible by 2, print "Even".</li>
+          <li> Otherwise, print "Odd".</li>
+        </ol>
+        <p><strong>Hint:</strong> Use the modulo operator <code>%</code>. <code>8 % 2 == 0</code>.</p>
+      </div>
+    </div>
+
+
+    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Java module.</p>
+      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+        onclick="location.href='../index1.html'">Return to Dashboard</button>
+    </div>
+
+  </div> <!-- End content -->
+
+  <script src="../assets/js/course.js"></script>
+  <!-- Mermaid JS for Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+</body>
+
+</html>
