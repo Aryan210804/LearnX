@@ -94,4 +94,7 @@ Feel free to open an issue, submit a pull request, or connect with me:
 - **Instagram:** [@ak__ojha](https://www.instagram.com/ak__ojha/)
 
 ---
-<p align="center"><i>Built with ❤️ for passionate learners around the world.</i></p>
+<p align="center">
+  <i>Built with ❤️ by <strong>Aryan Kumar Ojha</strong>.</i><br>
+  <small>&copy; 2024 Aryan Kumar Ojha. All rights reserved.</small>
+</p>
