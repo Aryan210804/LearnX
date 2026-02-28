@@ -4,308 +4,367 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LearnX | Secure Login</title>
+  <title>LearnX | Login</title>
   <link rel="icon" href="assets/img/LOGO.jpeg" type="image/jpeg">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     body {
+      background: var(--bg);
       display: flex;
+      flex-direction: column;
       min-height: 100vh;
-      margin: 0;
-      background: #0f0c29;
-      overflow: hidden;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-main);
+      overflow-x: hidden;
     }
 
-    .split-screen {
+    /* Top Nav specific for login */
+    .login-nav {
+      height: var(--topnav-height);
+      background: var(--secondary);
       display: flex;
-      width: 100%;
-      height: 100vh;
+      align-items: center;
+      padding: 0 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      justify-content: space-between;
     }
 
-    /* Left Side: Animation & Branding */
-    .left-side {
-      flex: 1.2;
-      background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%);
+    .login-nav .brand {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Main Grid Layout */
+    .split-layout {
+      display: flex;
+      flex: 1;
+      width: 100%;
+    }
+
+    /* Left Side: Branding / Info */
+    .brand-side {
+      flex: 1;
+      background: linear-gradient(135deg, var(--secondary) 0%, #1a1d2e 100%);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 60px 40px;
+      text-align: center;
       position: relative;
       overflow: hidden;
-      color: white;
     }
 
-    #code-rain {
+    .brand-side::before {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.15;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(4, 170, 109, 0.05) 0%, transparent 50%);
+      animation: rotate-bg 30s linear infinite;
     }
 
-    .brand-hero {
-      z-index: 10;
-      text-align: center;
-      animation: fadeInDown 1s ease-out;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 40px;
-      border-radius: 30px;
-      backdrop-filter: blur(5px);
+    @keyframes rotate-bg {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
-    .brand-hero h1 {
-      font-size: 90px;
-      font-weight: 800;
-      margin: 0;
-      background: linear-gradient(to right, #00d2ff, #3a7bd5, #ff007a);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.6));
-      letter-spacing: -2px;
+    .brand-content {
+      position: relative;
+      z-index: 2;
+      max-width: 450px;
     }
 
-    .brand-hero p {
-      font-size: 22px;
-      opacity: 0.9;
-      letter-spacing: 4px;
-      margin: 10px auto 0;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 3px solid #00d2ff;
-      width: 0;
-      animation: typing 3.5s steps(30, end) forwards, blink 0.75s step-end infinite;
+    .brand-content h1 {
+      font-size: 50px;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .brand-content h1 span {
+      color: var(--primary);
+    }
+
+    .brand-content p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: grid;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .feature-item i {
+      font-size: 24px;
+      color: var(--primary);
+    }
+
+    .feature-item div {
+      font-size: 15px;
+      color: #fff;
+      font-weight: 600;
     }
 
     /* Right Side: Form */
-    .right-side {
+    .form-side {
       flex: 1;
-      background: #050510;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 40px;
-      position: relative;
-      overflow: hidden;
+      background: var(--bg);
     }
 
-    #particles-bg {
-      position: absolute;
+    .form-container {
       width: 100%;
-      height: 100%;
-      z-index: 1;
+      max-width: 420px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 50px 40px;
+      box-shadow: var(--shadow);
     }
 
-    .login-box {
-      width: 100%;
-      max-width: 400px;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(25px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 32px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
-      animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      z-index: 10;
+    .form-container h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 8px;
     }
 
-    .login-box::before {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      background: linear-gradient(45deg, #00d2ff, transparent, #ff007a);
-      border-radius: 34px;
-      z-index: -1;
-      animation: rotate-border 6s linear infinite;
-      opacity: 0.5;
-    }
-
-    @keyframes rotate-border {
-      0% {
-        filter: hue-rotate(0deg);
-      }
-
-      100% {
-        filter: hue-rotate(360deg);
-      }
-    }
-
-    @keyframes typing {
-      from {
-        width: 0
-      }
-
-      to {
-        width: 100%
-      }
-    }
-
-    @keyframes blink {
-
-      from,
-      to {
-        border-color: transparent
-      }
-
-      50% {
-        border-color: #00d2ff
-      }
-    }
-
-    .login-box h2 {
-      font-size: 32px;
+    .form-container p.subtitle {
+      color: var(--text-muted);
       margin-bottom: 30px;
-      font-weight: 600;
-      color: #fff;
+      font-size: 14px;
     }
 
     .input-group {
       margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .input-field {
       position: relative;
     }
 
-    .input-group input {
-      width: 100%;
-      padding: 15px 45px 15px 15px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      color: white;
-      font-size: 16px;
-      transition: all 0.3s;
-    }
-
-    .input-group input:focus {
-      border-color: #00d2ff;
-      background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
-      outline: none;
-    }
-
-    .input-group i {
+    .input-field i.icon {
       position: absolute;
-      right: 15px;
+      left: 16px;
       top: 50%;
       transform: translateY(-50%);
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    button#auth-button {
-      width: 100%;
-      padding: 15px;
-      background: linear-gradient(90deg, #00d2ff, #3a7bd5);
-      border: none;
-      border-radius: 12px;
-      color: white;
-      font-size: 18px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      margin-top: 10px;
-    }
-
-    button#auth-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4);
-    }
-
-    .switch-text {
-      text-align: center;
-      margin-top: 25px;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .switch-text span {
-      color: #00d2ff;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(50px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    #message {
-      margin-top: 20px;
-      text-align: center;
+      color: #888;
       font-size: 14px;
     }
 
+    .input-field input {
+      width: 100%;
+      padding: 14px 40px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 15px;
+      font-family: var(--font-main);
+      transition: all 0.2s;
+    }
+
+    .input-field input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(4, 170, 109, 0.1);
+    }
+
+    .input-field i.toggle-pwd {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+      cursor: pointer;
+    }
+
+    .input-field i.toggle-pwd:hover {
+      color: var(--primary);
+    }
+
+    .auth-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.2s;
+    }
+
+    .auth-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .auth-btn:disabled {
+      background: var(--border);
+      color: var(--text-muted);
+      cursor: not-allowed;
+    }
+
+    .switch-mode {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .switch-mode span {
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    .switch-mode span:hover {
+      text-decoration: underline;
+    }
+
+    #message {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px;
+      border-radius: 6px;
+      display: none;
+    }
+
     @media (max-width: 900px) {
-      .left-side {
-        display: none;
+      .split-layout {
+        flex-direction: column;
       }
 
-      .right-side {
-        flex: 1;
-        background: #0f0c29;
+      .brand-side {
+        padding: 40px 20px;
+        flex: none;
+      }
+
+      .brand-content h1 {
+        font-size: 36px;
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-  <div class="split-screen">
-    <div class="left-side">
-      <canvas id="code-rain"></canvas>
-      <div class="brand-hero">
-        <h1>LearnX</h1>
-        <p>MASTER THE FUTURE OF CODE</p>
+
+  <!-- Top Navigation (Login specific) -->
+  <nav class="login-nav">
+    <a href="home.html" class="brand">LearnX</a>
+    <button id="theme-toggle" class="nav-btn"
+      style="background:transparent; border:1px solid rgba(255,255,255,0.2); color:#fff; display:inline-flex; align-items:center; cursor:pointer; padding:6px 12px; border-radius:6px;">
+      <i class="fas fa-sun" style="font-size:14px;"></i><span class="theme-text"
+        style="margin-left:6px; font-size:13px; font-weight:600;">Light</span>
+    </button>
+  </nav>
+
+  <div class="split-layout">
+    <!-- Branding Side -->
+    <div class="brand-side">
+      <div class="brand-content">
+        <h1>Learn to Code.<br><span>Build the Future.</span></h1>
+        <p>Join the world's largest open-source platform for developers. Free tutorials, live editors, and comprehensive
+          curriculums.</p>
+
+        <div class="features">
+          <div class="feature-item">
+            <i class="fas fa-code"></i>
+            <div>Interactive "Try it Yourself" Editors</div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-layer-group"></i>
+            <div>14+ Masterclasses (HTML to Python)</div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-moon"></i>
+            <div>Global Dual-Theme UI System</div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="right-side">
-      <canvas id="particles-bg"></canvas>
-      <div class="login-box">
+    <!-- Form Side -->
+    <div class="form-side">
+      <div class="form-container">
         <h2 id="form-title">Welcome Back</h2>
-
-        <div class="input-group" id="name-group" style="display: none;">
-          <input type="text" id="name" placeholder="Full Name" />
-          <i class="fas fa-user"></i>
-        </div>
-
-        <div class="input-group">
-          <input type="email" id="email" placeholder="Email Address" />
-          <i class="fas fa-envelope"></i>
-        </div>
-
-        <div class="input-group">
-          <input type="password" id="password" placeholder="Password" />
-          <i class="fas fa-eye" id="toggle-password" style="cursor: pointer;"></i>
-        </div>
-
-        <button id="auth-button">Sign In</button>
-
-        <p class="switch-text" id="toggle-text">
-          New here? <span id="switch-mode">Create an account</span>
-        </p>
+        <p class="subtitle" id="form-subtitle">Enter your credentials to access the dashboard.</p>
 
         <div id="message"></div>
+
+        <div class="input-group" id="name-group" style="display: none;">
+          <label>Full Name</label>
+          <div class="input-field">
+            <i class="fas fa-user icon"></i>
+            <input type="text" id="name" placeholder="John Doe" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Email Address</label>
+          <div class="input-field">
+            <i class="fas fa-envelope icon"></i>
+            <input type="email" id="email" placeholder="name@example.com" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <div class="input-field">
+            <i class="fas fa-lock icon"></i>
+            <input type="password" id="password" placeholder="••••••••" />
+            <i class="fas fa-eye toggle-pwd" id="toggle-password"></i>
+          </div>
+        </div>
+
+        <button id="auth-button" class="auth-btn">Sign In</button>
+
+        <div class="switch-mode" id="toggle-text">
+          New here? <span id="switch-mode">Create an account</span>
+        </div>
       </div>
     </div>
   </div>
@@ -320,77 +379,6 @@
       onAuthStateChanged
     } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
     import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
-
-    // Animations Logic
-    const rainCanvas = document.getElementById('code-rain');
-    const rainCtx = rainCanvas.getContext('2d');
-    const chars = '01{}[]<>;:+-/*%$#!?ABCDEF'.split('');
-    const fontSize = 16;
-    let columns, drops;
-
-    function initRain() {
-      rainCanvas.width = rainCanvas.parentElement.offsetWidth;
-      rainCanvas.height = rainCanvas.parentElement.offsetHeight;
-      columns = Math.floor(rainCanvas.width / fontSize);
-      drops = Array(columns).fill(1);
-    }
-
-    function drawRain() {
-      rainCtx.fillStyle = 'rgba(15, 12, 41, 0.05)';
-      rainCtx.fillRect(0, 0, rainCanvas.width, rainCanvas.height);
-      rainCtx.fillStyle = '#00d2ff';
-      rainCtx.font = fontSize + 'px monospace';
-      drops.forEach((y, i) => {
-        const text = chars[Math.floor(Math.random() * chars.length)];
-        rainCtx.fillText(text, i * fontSize, y * fontSize);
-        if (y * fontSize > rainCanvas.height && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
-      });
-    }
-
-    const partCanvas = document.getElementById('particles-bg');
-    const partCtx = partCanvas.getContext('2d');
-    let particles = [];
-
-    function initParticles() {
-      partCanvas.width = partCanvas.parentElement.offsetWidth;
-      partCanvas.height = partCanvas.parentElement.offsetHeight;
-      particles = Array(40).fill().map(() => ({
-        x: Math.random() * partCanvas.width,
-        y: Math.random() * partCanvas.height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        size: Math.random() * 2
-      }));
-    }
-
-    function drawParticles() {
-      partCtx.clearRect(0, 0, partCanvas.width, partCanvas.height);
-      partCtx.fillStyle = 'rgba(0, 210, 255, 0.3)';
-      particles.forEach((p, i) => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > partCanvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > partCanvas.height) p.vy *= -1;
-        partCtx.beginPath();
-        partCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        partCtx.fill();
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = p.x - particles[j].x, dy = p.y - particles[j].y, dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 100) {
-            partCtx.strokeStyle = `rgba(0, 210, 255, ${0.2 * (1 - dist / 100)})`;
-            partCtx.beginPath(); partCtx.moveTo(p.x, p.y); partCtx.lineTo(particles[j].x, particles[j].y); partCtx.stroke();
-          }
-        }
-      });
-    }
-
-    function animate() {
-      drawRain(); drawParticles();
-      requestAnimationFrame(animate);
-    }
-
-    window.addEventListener('resize', () => { initRain(); initParticles(); });
-    initRain(); initParticles(); animate();
 
     const firebaseConfig = {
       apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
@@ -412,60 +400,68 @@
     const authButton = document.getElementById('auth-button');
     const switchMode = document.getElementById('switch-mode');
     const formTitle = document.getElementById('form-title');
+    const formSubtitle = document.getElementById('form-subtitle');
     const messageDiv = document.getElementById('message');
     const togglePassword = document.getElementById('toggle-password');
+    const toggleTextContainer = document.getElementById('toggle-text');
 
     let isLogin = true;
 
     function showMessage(msg, isError = true) {
       messageDiv.textContent = msg;
-      messageDiv.style.color = isError ? '#ff4d4d' : '#00ff88';
+      messageDiv.style.display = 'block';
+      messageDiv.style.backgroundColor = isError ? 'rgba(229, 57, 53, 0.1)' : 'rgba(4, 170, 109, 0.1)';
+      messageDiv.style.color = isError ? '#e53935' : 'var(--primary)';
+      messageDiv.style.border = isError ? '1px solid rgba(229, 57, 53, 0.2)' : '1px solid rgba(4, 170, 109, 0.2)';
     }
 
     function updateForm() {
       formTitle.textContent = isLogin ? "Welcome Back" : "Start Learning";
-      authButton.textContent = isLogin ? "Sign In" : "Get Started";
+      formSubtitle.textContent = isLogin ? "Enter your credentials to access the dashboard." : "Create a free account to unlock all masterclasses.";
+      authButton.textContent = isLogin ? "Sign In" : "Create Account";
       nameGroup.style.display = isLogin ? "none" : "block";
-      document.getElementById('toggle-text').innerHTML = isLogin
-        ? `New here? <span id="switch-mode">Create an account</span>`
-        : `Already a member? <span id="switch-mode">Sign In</span>`;
 
-      document.getElementById("switch-mode").onclick = () => {
+      toggleTextContainer.innerHTML = isLogin
+        ? `New here? <span id="switch-action">Create an account</span>`
+        : `Already a member? <span id="switch-action">Sign In</span>`;
+
+      document.getElementById("switch-action").onclick = () => {
         isLogin = !isLogin;
+        messageDiv.style.display = 'none';
         updateForm();
       };
     }
 
     authButton.onclick = async () => {
-      const email = emailInput.value;
+      const email = emailInput.value.trim();
       const password = passwordInput.value;
-      const name = nameInput.value;
+      const name = nameInput.value.trim();
 
       if (!email || !password || (!isLogin && !name)) {
-        showMessage('Please fill in all fields.');
+        showMessage('Please fill in all required fields.');
         return;
       }
 
       authButton.disabled = true;
-      authButton.textContent = "Processing...";
+      authButton.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Processing...';
 
       try {
         if (isLogin) {
           await signInWithEmailAndPassword(auth, email, password);
-          showMessage("Success! Taking you in...", false);
+          showMessage("Login successful! Redirecting...", false);
         } else {
           const userCredential = await createUserWithEmailAndPassword(auth, email, password);
           await updateProfile(userCredential.user, { displayName: name });
           await setDoc(doc(db, "users", userCredential.user.uid), {
             name: name, email: email, createdAt: new Date().toISOString(), role: "user"
           });
-          showMessage("Account ready!", false);
+          showMessage("Account created! Redirecting...", false);
         }
         setTimeout(() => window.location.href = "index1.html", 1000);
       } catch (error) {
-        showMessage(error.message);
+        showMessage(error.message.replace('Firebase: ', ''));
         authButton.disabled = false;
-        authButton.textContent = isLogin ? "Sign In" : "Get Started";
+        authButton.textContent = isLogin ? "Sign In" : "Create Account";
       }
     };
 
@@ -475,35 +471,40 @@
       togglePassword.className = type === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash';
     };
 
-    onAuthStateChanged(auth, (user) => { if (user) window.location.href = "index1.html"; });
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        window.location.href = "index1.html";
+      }
+    });
+
     updateForm();
   </script>
 
-
-
   <script>
     // Theme logic
-    const toggleBtn = document.getElementById('theme-toggle');
-    const updateThemeIcon = (isDark) => {
-      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const updateThemeIconUI = (isDark) => {
+      if (themeToggleBtn) {
+        themeToggleBtn.innerHTML = isDark
+          ? '<i class="fas fa-sun" style="font-size:14px;"></i><span class="theme-text" style="margin-left:6px; font-size:13px; font-weight:600;">Light</span>'
+          : '<i class="fas fa-moon" style="font-size:14px;"></i><span class="theme-text" style="margin-left:6px; font-size:13px; font-weight:600;">Dark</span>';
+      }
     };
-    
-    // Check saved theme
-    let currentTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
 
-    if(toggleBtn) {
-      toggleBtn.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme');
-        let newTheme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme === 'dark');
+    let curTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', curTheme);
+    window.addEventListener('DOMContentLoaded', () => updateThemeIconUI(curTheme === 'dark'));
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        let t = document.documentElement.getAttribute('data-theme');
+        let newT = t === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newT);
+        localStorage.setItem('theme', newT);
+        updateThemeIconUI(newT === 'dark');
       });
     }
   </script>
 </body>
-
 
 </html>
