@@ -1,81 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | NumPy Masterclass</title>
-  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+<body class="learnx-page">
 
-<body>
-
-  <div class="circles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </div>
-
-  <div class="sidebar">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <i class="fas fa-cubes" style="font-size: 3rem; color: #013243;"></i>
-      <h2 style="margin-top: 10px; color: white;">NumPy</h2>
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <a href="../index1.html" class="brand">LearnX</a>
+        <div class="top-nav-links">
+      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="js.html">JavaScript</a>
+      <a href="python.html">Python</a>
+      <a href="sql.html">SQL</a>
+      <a href="java.html">Java</a>
+      <a href="c.html">C</a>
+      <a href="excel.html">Excel</a>
+      <a href="numpy.html" class="active">NumPy</a>
+      <a href="pandas.html">Pandas</a>
+      <a href="matplotlib.html">Matplotlib</a>
+      <a href="ml.html">ML</a>
+      <a href="ai.html">AI</a>
+      <a href="r.html">R</a>
     </div>
 
-    <!-- Module 1: Basics -->
-    <a href="#Intro">Intro & Setup</a>
-    <a href="#Arrays">Creating Arrays</a>
-    <a href="#Indexing">Indexing & Slicing</a>
-
-    <!-- Module 2: Manipulation -->
-    <a href="#DataTypes">Data Types</a>
-    <a href="#CopyView">Copy vs View</a>
-    <a href="#ShapeReshape">Shape & Reshape</a>
-    <a href="#Iterating">Iterating</a>
-
-    <!-- Module 3: Operations -->
-    <a href="#JoinSplit">Joining & Splitting</a>
-    <a href="#SearchSort">Searching & Sorting</a>
-    <a href="#Filter">Filtering</a>
-
-    <!-- Module 4: Math & Random -->
-    <a href="#Random">Random Numbers</a>
-    <a href="#Ufuncs">Ufuncs (Math)</a>
-    <a href="#Distributions">Distributions</a>
-
-    <!-- Projects -->
-    <a href="#Projects">Real World Projects</a>
-    <a href="#MiniTask">Mini Task</a>
-
-    <div style="margin-top: 50px;">
-      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    <div class="top-nav-search">
+      <input type="text" placeholder="Search..."/>
+      <button><i class="fas fa-search"></i></button>
     </div>
-  </div>
-
-  <div class="course-content">
-    <h1 class="h1">NumPy Masterclass</h1>
-
-    <div class="course-controls">
-      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
-      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    
+    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
+      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
+       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
     </div>
+  </nav>
 
-    <!-- Module 1: Basics -->
-    <div class="section" id="Intro">
-      <div class="section-header">
-        <h2>Introduction to NumPy</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
+  <!-- CONTENT WRAPPER -->
+  <div class="course-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-cubes" style="color:#013243"></i> NumPy Tutorial
       </div>
-      <div class="section-content">
+
+      <div class="sidebar-section-label">NumPy Basic</div>
+      <a href="#Intro" class="active">Introduction to NumPy</a>
+      <a href="#Arrays">Creating Arrays</a>
+      <a href="#Indexing">Indexing & Slicing</a>
+      <a href="#DataTypes">Data Types</a>
+      <a href="#CopyView">Copy vs View</a>
+      <a href="#ShapeReshape">Shape & Reshape</a>
+      <a href="#Iterating">Iterating</a>
+      <a href="#JoinSplit">Joining & Splitting</a>
+      <a href="#SearchSort">Searching & Sorting</a>
+      <a href="#Filter">Filtering</a>
+      <a href="#Random">Random Numbers</a>
+      <a href="#Ufuncs">Ufuncs (Math)</a>
+      <a href="#Distributions">Data Distributions</a>
+      <a href="#Projects">🚀 Real World Projects</a>
+      <a href="#MiniTask">🎯 NumPy Mini Task</a>
+
+      <div class="sidebar-footer">
+        <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="course-main">
+      <div class="course-content-area">
+        
+        <div class="breadcrumb">
+          <a href="../index1.html">Home</a> <span>/</span> <span>NumPy</span>
+        </div>
+        
+        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">NumPy Masterclass</h1>
+
+        <section class="topic-section" id="Intro">
+          <h1>Introduction to NumPy</h1>
+          <div class="chapter-badge">Chapter 1</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Arrays" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 What is NumPy?</h3>
         <p>NumPy stands for "Numerical Python". It provides support for large, multi-dimensional arrays and matrices.
         </p>
@@ -86,20 +104,35 @@
           <li><strong>Data Science Base:</strong> Pandas and Matplotlib are built ON TOP of NumPy.</li>
         </ul>
         <h3>🛠️ Setup</h3>
-        <pre><code class="language-python">import numpy as np
+        <div class="example-box"><pre class="example-code"><code class="language-python">import numpy as np
 arr = np.array([1, 2, 3])
 print(arr)</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">import numpy as np
+arr = np.array([1, 2, 3])
+print(arr)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Arrays">
-      <div class="section-header">
-        <h2>Creating Arrays</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Arrays">
+          <h1>Creating Arrays</h1>
+          <div class="chapter-badge">Chapter 2</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Indexing" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 0-D to N-D Arrays</h3>
-        <pre><code class="language-python"># 0-D
+        <div class="example-box"><pre class="example-code"><code class="language-python"># 0-D
 arr0 = np.array(42)
 
 # 1-D
@@ -111,194 +144,370 @@ arr2 = np.array([[1, 2, 3], [4, 5, 6]])
 # 3-D
 arr3 = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
 </code></pre>
-        <p>Check dimensions with <code>arr.ndim</code>.</p>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false"># 0-D
+arr0 = np.array(42)
 
-    <div class="section" id="Indexing">
-      <div class="section-header">
-        <h2>Indexing & Slicing</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+# 1-D
+arr1 = np.array([1, 2, 3])
+
+# 2-D (Matrix)
+arr2 = np.array([[1, 2, 3], [4, 5, 6]])
+
+# 3-D
+arr3 = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+        <p>Check dimensions with <code>arr.ndim</code>.</p>
+      </section>
+
+        <section class="topic-section" id="Indexing">
+          <h1>Indexing & Slicing</h1>
+          <div class="chapter-badge">Chapter 3</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Arrays" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#DataTypes" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 Indexing</h3>
-        <pre><code class="language-python">arr = np.array([1, 2, 3, 4])
+        <div class="example-box"><pre class="example-code"><code class="language-python">arr = np.array([1, 2, 3, 4])
 print(arr[0]) # 1
 print(arr[2] + arr[3]) # 7</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">arr = np.array([1, 2, 3, 4])
+print(arr[0]) # 1
+print(arr[2] + arr[3]) # 7</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
         <h3>📌 Slicing</h3>
         <p><code>[start:end:step]</code></p>
-        <pre><code class="language-python">print(arr[1:5]) # Slice from index 1 to 5 (not included)
-print(arr[::2]) # Return every other element</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code class="language-python">print(arr[1:5]) # Slice from index 1 to 5 (not included)
+print(arr[::2]) # Return every other element</code></pre></section>
 
-    <!-- Module 2: Manipulation -->
-    <div class="section" id="DataTypes">
-      <div class="section-header">
-        <h2>Data Types</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="DataTypes">
+          <h1>Data Types</h1>
+          <div class="chapter-badge">Chapter 4</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Indexing" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#CopyView" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Common types: <code>i</code> (integer), <code>b</code> (boolean), <code>u</code> (unsigned integer),
           <code>f</code> (float).</p>
-        <pre><code class="language-python">arr = np.array([1.1, 2.2, 3.3])
+        <div class="example-box"><pre class="example-code"><code class="language-python">arr = np.array([1.1, 2.2, 3.3])
 newarr = arr.astype('i') # Converts to integer
 print(newarr) # [1 2 3]</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">arr = np.array([1.1, 2.2, 3.3])
+newarr = arr.astype('i') # Converts to integer
+print(newarr) # [1 2 3]</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="CopyView">
-      <div class="section-header">
-        <h2>Copy vs View</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="CopyView">
+          <h1>Copy vs View</h1>
+          <div class="chapter-badge">Chapter 5</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#DataTypes" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#ShapeReshape" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <ul>
           <li><strong>Copy:</strong> New array, owns the data. Changes don't affect original.</li>
           <li><strong>View:</strong> Just a view of original array. Changes affect original.</li>
         </ul>
-        <pre><code class="language-python">x = arr.copy()
+        <div class="example-box"><pre class="example-code"><code class="language-python">x = arr.copy()
 y = arr.view()</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">x = arr.copy()
+y = arr.view()</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="ShapeReshape">
-      <div class="section-header">
-        <h2>Shape & Reshape</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="ShapeReshape">
+          <h1>Shape & Reshape</h1>
+          <div class="chapter-badge">Chapter 6</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#CopyView" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Iterating" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 Shape</h3>
         <p>Get the shape of an array.</p>
-        <pre><code class="language-python">arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+        <div class="example-box"><pre class="example-code"><code class="language-python">arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
 print(arr.shape) # (2, 4)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+print(arr.shape) # (2, 4)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
         <h3>📌 Reshape</h3>
         <p>Change from 1-D to 2-D.</p>
-        <pre><code class="language-python">arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+        <div class="example-box"><pre class="example-code"><code class="language-python">arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 newarr = arr.reshape(4, 3)</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+newarr = arr.reshape(4, 3)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Iterating">
-      <div class="section-header">
-        <h2>Iterating</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Iterating">
+          <h1>Iterating</h1>
+          <div class="chapter-badge">Chapter 7</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#ShapeReshape" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#JoinSplit" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Looping through arrays.</p>
-        <pre><code class="language-python">for x in np.nditer(arr):
-  print(x)</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code class="language-python">for x in np.nditer(arr):
+  print(x)</code></pre></section>
 
-    <!-- Module 3: Operations -->
-    <div class="section" id="JoinSplit">
-      <div class="section-header">
-        <h2>Joining & Splitting</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="JoinSplit">
+          <h1>Joining & Splitting</h1>
+          <div class="chapter-badge">Chapter 8</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Iterating" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#SearchSort" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 Join</h3>
-        <pre><code class="language-python">arr = np.concatenate((arr1, arr2))
+        <div class="example-box"><pre class="example-code"><code class="language-python">arr = np.concatenate((arr1, arr2))
 arr = np.stack((arr1, arr2), axis=1)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">arr = np.concatenate((arr1, arr2))
+arr = np.stack((arr1, arr2), axis=1)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
         <h3>📌 Split</h3>
-        <pre><code class="language-python">newarr = np.array_split(arr, 3)</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code class="language-python">newarr = np.array_split(arr, 3)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">newarr = np.array_split(arr, 3)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="SearchSort">
-      <div class="section-header">
-        <h2>Searching & Sorting</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="SearchSort">
+          <h1>Searching & Sorting</h1>
+          <div class="chapter-badge">Chapter 9</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#JoinSplit" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Filter" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 Search</h3>
-        <pre><code class="language-python">x = np.where(arr == 4)</code></pre>
+        <div class="example-box"><pre class="example-code"><code class="language-python">x = np.where(arr == 4)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">x = np.where(arr == 4)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
         <h3>📌 Sort</h3>
-        <pre><code class="language-python">print(np.sort(arr))</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code class="language-python">print(np.sort(arr))</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">print(np.sort(arr))</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Filter">
-      <div class="section-header">
-        <h2>Filtering</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Filter">
+          <h1>Filtering</h1>
+          <div class="chapter-badge">Chapter 10</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#SearchSort" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Random" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Getting some elements out of an existing array and creating a new array out of them.</p>
-        <pre><code class="language-python">arr = np.array([41, 42, 43, 44])
+        <div class="example-box"><pre class="example-code"><code class="language-python">arr = np.array([41, 42, 43, 44])
 x = [True, False, True, False]
-newarr = arr[x] # [41, 43]</code></pre>
-      </div>
-    </div>
+newarr = arr[x] # [41, 43]</code></pre></section>
 
-    <!-- Module 4: Math & Random -->
-    <div class="section" id="Random">
-      <div class="section-header">
-        <h2>Random Numbers</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Random">
+          <h1>Random Numbers</h1>
+          <div class="chapter-badge">Chapter 11</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Filter" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Ufuncs" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>NumPy offers the <code>random</code> module to work with random numbers.</p>
-        <pre><code class="language-python">from numpy import random
+        <div class="example-box"><pre class="example-code"><code class="language-python">from numpy import random
 x = random.randint(100)
 y = random.rand() # Float 0 to 1</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">from numpy import random
+x = random.randint(100)
+y = random.rand() # Float 0 to 1</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Ufuncs">
-      <div class="section-header">
-        <h2>Ufuncs (Math)</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Ufuncs">
+          <h1>Ufuncs (Math)</h1>
+          <div class="chapter-badge">Chapter 12</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Random" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Distributions" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Universal Functions.</p>
-        <pre><code class="language-python"># Vector Addition
+        <div class="example-box"><pre class="example-code"><code class="language-python"># Vector Addition
 x = [1, 2, 3]
 y = [4, 5, 6]
 z = np.add(x, y) # [5 7 9]</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false"># Vector Addition
+x = [1, 2, 3]
+y = [4, 5, 6]
+z = np.add(x, y) # [5 7 9]</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
         <p>Also: <code>subtract</code>, <code>multiply</code>, <code>divide</code>, <code>power</code>,
           <code>mod</code>.</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="Distributions">
-      <div class="section-header">
-        <h2>Data Distributions</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Distributions">
+          <h1>Data Distributions</h1>
+          <div class="chapter-badge">Chapter 13</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Ufuncs" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Generate arrays with specific probability distributions.</p>
         <ul>
           <li><strong>Normal (Gaussian):</strong> <code>random.normal()</code></li>
           <li><strong>Binomial:</strong> <code>random.binomial()</code></li>
           <li><strong>Poisson:</strong> <code>random.poisson()</code></li>
         </ul>
-      </div>
-    </div>
+      
+        </section>
 
-    <!-- Projects -->
-    <div class="section" id="Projects">
-      <div class="section-header">
-        <h2>🚀 Real World Projects</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Projects">
+          <h1>🚀 Real World Projects</h1>
+          <div class="chapter-badge">Chapter 14</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Distributions" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>🟢 Beginner: Matrix Calculator</h3>
         <p><strong>Goal:</strong> Add, Subtract, Multiply 3x3 Matrices.</p>
         <h3>🟡 Intermediate: Image Manipulator</h3>
         <p><strong>Goal:</strong> Load an image as a NumPy array and flip/rotate it.</p>
         <h3>🔴 Advanced: Neural Network from Scratch</h3>
         <p><strong>Goal:</strong> Build a simple perceptron using dot products.</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="MiniTask">
-      <div class="section-header">
-        <h2>🎯 NumPy Mini Task</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="MiniTask">
+          <h1>🎯 NumPy Mini Task</h1>
+          <div class="chapter-badge">Chapter 15</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p><strong>Goal:</strong> Array Operations.</p>
         <h4>📋 Requirements:</h4>
         <ol>
@@ -317,15 +526,115 @@ z = np.add(x, y) # [5 7 9]</code></pre>
       <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the NumPy module.</p>
       <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
         onclick="location.href='../index1.html'">Return to Dashboard</button>
-    </div>
+    
+        </section>
 
-  </div> <!-- End content -->
+      </div>
+    </main>
+  </div>
 
-  <script src="../assets/js/course.js"></script>
-  <!-- Mermaid JS for Diagrams -->
   <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        document.getElementById('user-display').textContent = user.displayName || user.email.split('@')[0];
+      } else {
+        window.location.href = "../index.html";
+      }
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      signOut(auth).then(() => {
+        window.location.href = "../index.html";
+      });
+    });
+  </script>
+
+  <script>
+    // Sidebar active state syncing
+    const sections = document.querySelectorAll('.topic-section');
+    const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <script>
+
+
+    // Try It Editor functions (applied globally to all courses)
+    window.openTryIt = function(btn) {
+      const panel = btn.nextElementSibling;
+      panel.classList.add('open');
+      btn.style.display = 'none';
+      runTryIt(panel.querySelector('.tryit-run'));
+    };
+    window.closeTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      panel.classList.remove('open');
+      panel.previousElementSibling.style.display = 'inline-flex';
+    };
+    window.runTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      const code = panel.querySelector('.tryit-editor').value;
+      const iframe = panel.querySelector('iframe');
+      // basic wrapping for output display
+      iframe.srcdoc = `
+        <style>body{font-family:sans-serif; color:#333; background:#fff;}</style>
+        ${code}
+      `;
+    };
+  </script>
+
+  <script>
+    // Theme logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const updateThemeIcon = (isDark) => {
+      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+    };
+    
+    // Check saved theme
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+
+    if(toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme === 'dark');
+      });
+    }
   </script>
 </body>
 

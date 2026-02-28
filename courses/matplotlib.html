@@ -1,229 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | Matplotlib Masterclass</title>
-  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+<body class="learnx-page">
 
-<body>
-
-  <div class="circles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </div>
-
-  <div class="sidebar">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <i class="fas fa-chart-bar" style="font-size: 3rem; color: #ffffff;"></i>
-      <h2 style="margin-top: 10px; color: white;">Matplotlib</h2>
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <a href="../index1.html" class="brand">LearnX</a>
+        <div class="top-nav-links">
+      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="js.html">JavaScript</a>
+      <a href="python.html">Python</a>
+      <a href="sql.html">SQL</a>
+      <a href="java.html">Java</a>
+      <a href="c.html">C</a>
+      <a href="excel.html">Excel</a>
+      <a href="numpy.html">NumPy</a>
+      <a href="pandas.html">Pandas</a>
+      <a href="matplotlib.html" class="active">Matplotlib</a>
+      <a href="ml.html">ML</a>
+      <a href="ai.html">AI</a>
+      <a href="r.html">R</a>
     </div>
 
-    <!-- Module 1: Basics -->
-    <a href="#Intro">Intro & Pyplot</a>
-    <a href="#Plotting">Plotting</a>
-    <a href="#Markers">Markers & Lines</a>
-
-    <!-- Module 2: Styling -->
-    <a href="#Labels">Labels & Title</a>
-    <a href="#Grid">Grid</a>
-    <a href="#Subplot">Subplot</a>
-
-    <!-- Module 3: Chart Types -->
-    <a href="#Scatter">Scatter</a>
-    <a href="#Bars">Bars</a>
-    <a href="#Histograms">Histograms</a>
-    <a href="#Pie">Pie Charts</a>
-
-    <!-- Projects -->
-    <a href="#Projects">Real World Projects</a>
-    <a href="#MiniTask">Mini Task</a>
-
-    <div style="margin-top: 50px;">
-      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    <div class="top-nav-search">
+      <input type="text" placeholder="Search..."/>
+      <button><i class="fas fa-search"></i></button>
     </div>
-  </div>
-
-  <div class="course-content">
-    <h1 class="h1">Matplotlib Masterclass</h1>
-
-    <div class="course-controls">
-      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
-      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    
+    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
+      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
+       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
     </div>
+  </nav>
 
-    <!-- Module 1: Basics -->
-    <div class="section" id="Intro">
-      <div class="section-header">
-        <h2>Introduction to Matplotlib</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
+  <!-- CONTENT WRAPPER -->
+  <div class="course-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-chart-bar" style="color:#11557c"></i> Matplotlib Tutorial
       </div>
-      <div class="section-content">
+
+      <div class="sidebar-section-label">Matplotlib Basic</div>
+      <a href="#Intro" class="active">Introduction to Matplotlib</a>
+      <a href="#Plotting">Plotting</a>
+      <a href="#Markers">Markers & Lines</a>
+      <a href="#Labels">Labels & Title</a>
+      <a href="#Grid">Grid</a>
+      <a href="#Subplot">Subplots</a>
+      <a href="#Scatter">Scatter Plots</a>
+      <a href="#Bars">Bar Charts</a>
+      <a href="#Histograms">Histograms</a>
+      <a href="#Pie">Pie Charts</a>
+      <a href="#Projects">🚀 Real World Projects</a>
+      <a href="#MiniTask">🎯 Matplotlib Mini Task</a>
+
+      <div class="sidebar-footer">
+        <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="course-main">
+      <div class="course-content-area">
+        
+        <div class="breadcrumb">
+          <a href="../index1.html">Home</a> <span>/</span> <span>Matplotlib</span>
+        </div>
+        
+        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">Matplotlib Masterclass</h1>
+
+        <section class="topic-section" id="Intro">
+          <h1>Introduction to Matplotlib</h1>
+          <div class="chapter-badge">Chapter 1</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Plotting" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 What is Matplotlib?</h3>
         <p>Matplotlib is a low-level graph plotting library in python that serves as a visualization utility.</p>
         <h3>🚀 Setup</h3>
-        <pre><code class="language-python">import matplotlib.pyplot as plt
+        <div class="example-box"><pre class="example-code"><code class="language-python">import matplotlib.pyplot as plt
 import numpy as np</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">import matplotlib.pyplot as plt
+import numpy as np</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Plotting">
-      <div class="section-header">
-        <h2>Plotting</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Plotting">
+          <h1>Plotting</h1>
+          <div class="chapter-badge">Chapter 2</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Markers" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>The <code>plot()</code> function is used to draw points (markers) in a diagram.</p>
-        <pre><code class="language-python">xpoints = np.array([0, 6])
+        <div class="example-box"><pre class="example-code"><code class="language-python">xpoints = np.array([0, 6])
 ypoints = np.array([0, 250])
 
 plt.plot(xpoints, ypoints)
 plt.show()</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">xpoints = np.array([0, 6])
+ypoints = np.array([0, 250])
 
-    <div class="section" id="Markers">
-      <div class="section-header">
-        <h2>Markers & Lines</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+plt.plot(xpoints, ypoints)
+plt.show()</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
+
+        <section class="topic-section" id="Markers">
+          <h1>Markers & Lines</h1>
+          <div class="chapter-badge">Chapter 3</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Plotting" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Labels" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 Markers</h3>
         <p>You can use the keyword argument <code>marker</code> to emphasize each point.</p>
-        <pre><code class="language-python">plt.plot(ypoints, marker = 'o')</code></pre>
+        <div class="example-box"><pre class="example-code"><code class="language-python">plt.plot(ypoints, marker = 'o')</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">plt.plot(ypoints, marker = 'o')</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
         <h3>📌 Line Styles</h3>
         <p><code>linestyle</code> or <code>ls</code>.</p>
-        <pre><code class="language-python">plt.plot(ypoints, linestyle = 'dotted')</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code class="language-python">plt.plot(ypoints, linestyle = 'dotted')</code></pre></section>
 
-    <!-- Module 2: Styling -->
-    <div class="section" id="Labels">
-      <div class="section-header">
-        <h2>Labels & Title</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Labels">
+          <h1>Labels & Title</h1>
+          <div class="chapter-badge">Chapter 4</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Markers" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Grid" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Add context to your graph.</p>
-        <pre><code class="language-python">plt.xlabel("Average Pulse")
+        <div class="example-box"><pre class="example-code"><code class="language-python">plt.xlabel("Average Pulse")
 plt.ylabel("Calorie Burnage")
 plt.title("Sports Watch Data")</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">plt.xlabel("Average Pulse")
+plt.ylabel("Calorie Burnage")
+plt.title("Sports Watch Data")</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Grid">
-      <div class="section-header">
-        <h2>Grid</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Grid">
+          <h1>Grid</h1>
+          <div class="chapter-badge">Chapter 5</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Labels" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Subplot" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Add grid lines to the plot.</p>
-        <pre><code class="language-python">plt.grid()
+        <div class="example-box"><pre class="example-code"><code class="language-python">plt.grid()
 plt.grid(axis = 'x')</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">plt.grid()
+plt.grid(axis = 'x')</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Subplot">
-      <div class="section-header">
-        <h2>Subplots</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Subplot">
+          <h1>Subplots</h1>
+          <div class="chapter-badge">Chapter 6</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Grid" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Scatter" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Display multiple plots in one figure.</p>
-        <pre><code class="language-python"># Plot 1
+        <div class="example-box"><pre class="example-code"><code class="language-python"># Plot 1
 plt.subplot(1, 2, 1) # 1 row, 2 cols, index 1
 plt.plot(x, y)
 
 # Plot 2
 plt.subplot(1, 2, 2)
-plt.plot(x, y)</code></pre>
-      </div>
-    </div>
+plt.plot(x, y)</code></pre></section>
 
-    <!-- Module 3: Chart Types -->
-    <div class="section" id="Scatter">
-      <div class="section-header">
-        <h2>Scatter Plots</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Scatter">
+          <h1>Scatter Plots</h1>
+          <div class="chapter-badge">Chapter 7</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Subplot" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Bars" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Compare 2 variables.</p>
-        <pre><code class="language-python">plt.scatter(x, y)</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code class="language-python">plt.scatter(x, y)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">plt.scatter(x, y)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Bars">
-      <div class="section-header">
-        <h2>Bar Charts</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Bars">
+          <h1>Bar Charts</h1>
+          <div class="chapter-badge">Chapter 8</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Scatter" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Histograms" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Categorical data.</p>
-        <pre><code class="language-python">x = ["Apples", "Bananas"]
+        <div class="example-box"><pre class="example-code"><code class="language-python">x = ["Apples", "Bananas"]
 y = [400, 350]
 plt.bar(x, y)</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">x = ["Apples", "Bananas"]
+y = [400, 350]
+plt.bar(x, y)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Histograms">
-      <div class="section-header">
-        <h2>Histograms</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Histograms">
+          <h1>Histograms</h1>
+          <div class="chapter-badge">Chapter 9</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Bars" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Pie" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Frequency distribution.</p>
-        <pre><code class="language-python">x = np.random.normal(170, 10, 250)
+        <div class="example-box"><pre class="example-code"><code class="language-python">x = np.random.normal(170, 10, 250)
 plt.hist(x)</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">x = np.random.normal(170, 10, 250)
+plt.hist(x)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Pie">
-      <div class="section-header">
-        <h2>Pie Charts</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Pie">
+          <h1>Pie Charts</h1>
+          <div class="chapter-badge">Chapter 10</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Histograms" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Proportions.</p>
-        <pre><code class="language-python">y = np.array([35, 25, 25, 15])
+        <div class="example-box"><pre class="example-code"><code class="language-python">y = np.array([35, 25, 25, 15])
 mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
-plt.pie(y, labels = mylabels)</code></pre>
-      </div>
-    </div>
+plt.pie(y, labels = mylabels)</code></pre></section>
 
-    <!-- Projects -->
-    <div class="section" id="Projects">
-      <div class="section-header">
-        <h2>🚀 Real World Projects</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Projects">
+          <h1>🚀 Real World Projects</h1>
+          <div class="chapter-badge">Chapter 11</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Pie" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>🟢 Beginner: Sales Graph</h3>
         <p><strong>Goal:</strong> Bar chart of monthly sales.</p>
         <h3>🟡 Intermediate: Stock Trends</h3>
         <p><strong>Goal:</strong> Line graph of stock prices with grid and labels.</p>
         <h3>🔴 Advanced: Dashboard</h3>
         <p><strong>Goal:</strong> 4 subplots showing different metrics (Sales, Traffic, Conversion, Bounce Rate).</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="MiniTask">
-      <div class="section-header">
-        <h2>🎯 Matplotlib Mini Task</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="MiniTask">
+          <h1>🎯 Matplotlib Mini Task</h1>
+          <div class="chapter-badge">Chapter 12</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p><strong>Goal:</strong> Visualize Growth.</p>
         <h4>📋 Requirements:</h4>
         <ol>
@@ -242,15 +377,115 @@ plt.pie(y, labels = mylabels)</code></pre>
       <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Matplotlib module.</p>
       <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
         onclick="location.href='../index1.html'">Return to Dashboard</button>
-    </div>
+    
+        </section>
 
-  </div> <!-- End content -->
+      </div>
+    </main>
+  </div>
 
-  <script src="../assets/js/course.js"></script>
-  <!-- Mermaid JS for Diagrams -->
   <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        document.getElementById('user-display').textContent = user.displayName || user.email.split('@')[0];
+      } else {
+        window.location.href = "../index.html";
+      }
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      signOut(auth).then(() => {
+        window.location.href = "../index.html";
+      });
+    });
+  </script>
+
+  <script>
+    // Sidebar active state syncing
+    const sections = document.querySelectorAll('.topic-section');
+    const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <script>
+
+
+    // Try It Editor functions (applied globally to all courses)
+    window.openTryIt = function(btn) {
+      const panel = btn.nextElementSibling;
+      panel.classList.add('open');
+      btn.style.display = 'none';
+      runTryIt(panel.querySelector('.tryit-run'));
+    };
+    window.closeTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      panel.classList.remove('open');
+      panel.previousElementSibling.style.display = 'inline-flex';
+    };
+    window.runTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      const code = panel.querySelector('.tryit-editor').value;
+      const iframe = panel.querySelector('iframe');
+      // basic wrapping for output display
+      iframe.srcdoc = `
+        <style>body{font-family:sans-serif; color:#333; background:#fff;}</style>
+        ${code}
+      `;
+    };
+  </script>
+
+  <script>
+    // Theme logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const updateThemeIcon = (isDark) => {
+      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+    };
+    
+    // Check saved theme
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+
+    if(toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme === 'dark');
+      });
+    }
   </script>
 </body>
 

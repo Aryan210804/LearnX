@@ -478,6 +478,32 @@
     onAuthStateChanged(auth, (user) => { if (user) window.location.href = "index1.html"; });
     updateForm();
   </script>
+
+
+
+  <script>
+    // Theme logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const updateThemeIcon = (isDark) => {
+      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+    };
+    
+    // Check saved theme
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+
+    if(toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme === 'dark');
+      });
+    }
+  </script>
 </body>
+
 
 </html>

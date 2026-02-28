@@ -1,83 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | Python Masterclass</title>
-  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+<body class="learnx-page">
 
-<body>
-
-  <div class="circles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </div>
-
-  <div class="sidebar">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <i class="fab fa-python" style="font-size: 3rem; color: #306998;"></i>
-      <h2 style="margin-top: 10px; color: white;">Python</h2>
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <a href="../index1.html" class="brand">LearnX</a>
+        <div class="top-nav-links">
+      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="js.html">JavaScript</a>
+      <a href="python.html" class="active">Python</a>
+      <a href="sql.html">SQL</a>
+      <a href="java.html">Java</a>
+      <a href="c.html">C</a>
+      <a href="excel.html">Excel</a>
+      <a href="numpy.html">NumPy</a>
+      <a href="pandas.html">Pandas</a>
+      <a href="matplotlib.html">Matplotlib</a>
+      <a href="ml.html">ML</a>
+      <a href="ai.html">AI</a>
+      <a href="r.html">R</a>
     </div>
 
-    <!-- Module 1: Python Basics -->
-    <a href="#Intro">Intro & Syntax</a>
-    <a href="#Variables">Variables & Data Types</a>
-
-    <!-- Module 2: Data Structures -->
-    <a href="#Lists">Lists & Tuples</a>
-    <a href="#Sets">Sets</a>
-    <a href="#Dictionaries">Dictionaries</a>
-
-    <!-- Module 3: Control Flow -->
-    <a href="#IfElse">Conditionals</a>
-    <a href="#Loops">Loops</a>
-
-    <!-- Module 4: Functions & Modules -->
-    <a href="#Functions">Functions</a>
-    <a href="#Modules">Modules & PIP</a>
-    <a href="#Dates">Dates & Math</a>
-
-    <!-- Module 5: OOP & Advanced -->
-    <a href="#Classes">Classes & OOP</a>
-    <a href="#Files">File Handling</a>
-    <a href="#TryExcept">Exception Handling</a>
-
-    <!-- Projects -->
-    <a href="#Projects">Real World Projects</a>
-    <a href="#MiniTask">Mini Task</a>
-
-    <div style="margin-top: 50px;">
-      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    <div class="top-nav-search">
+      <input type="text" placeholder="Search..."/>
+      <button><i class="fas fa-search"></i></button>
     </div>
-  </div>
-
-  <div class="course-content">
-    <h1 class="h1">Python Masterclass</h1>
-
-    <div class="course-controls">
-      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
-      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    
+    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
+      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
+       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
     </div>
+  </nav>
 
-    <!-- Module 1: Basics -->
-    <div class="section" id="Intro">
-      <div class="section-header">
-        <h2>Introduction to Python</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
+  <!-- CONTENT WRAPPER -->
+  <div class="course-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <i class="fab fa-python" style="color:#306998"></i> Python Tutorial
       </div>
-      <div class="section-content">
+
+      <div class="sidebar-section-label">Python Basic</div>
+      <a href="#Intro" class="active">Introduction to Python</a>
+      <a href="#Variables">Variables & Data Types</a>
+      <a href="#Lists">Lists & Tuples</a>
+      <a href="#Sets">Sets</a>
+      <a href="#Dictionaries">Dictionaries</a>
+      <a href="#IfElse">Conditionals</a>
+      <a href="#Loops">Loops</a>
+      <a href="#Functions">Functions</a>
+      <a href="#Modules">Modules & PIP</a>
+      <a href="#Dates">Dates & Math</a>
+      <a href="#Classes">Classes & OOP</a>
+      <a href="#Files">File Handling</a>
+      <a href="#TryExcept">Exception Handling</a>
+      <a href="#Projects">🚀 Real World Projects</a>
+      <a href="#MiniTask">🎯 Python Mini Task</a>
+
+      <div class="sidebar-footer">
+        <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="course-main">
+      <div class="course-content-area">
+        
+        <div class="breadcrumb">
+          <a href="../index1.html">Home</a> <span>/</span> <span>Python</span>
+        </div>
+        
+        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">Python Masterclass</h1>
+
+        <section class="topic-section" id="Intro">
+          <h1>Introduction to Python</h1>
+          <div class="chapter-badge">Chapter 1</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Variables" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 Introduction</h3>
         <p>Python is defined by its simplicity. It prioritizes readability, making it the perfect first language, yet it
           powers NASA, Google, and OpenAI.</p>
@@ -88,22 +104,49 @@
           <li><strong>Huge Community:</strong> Libraries for everything.</li>
         </ul>
         <h3>💻 Hello World</h3>
-        <pre><code class="language-python">print("Hello, World!")</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code class="language-python">print("Hello, World!")</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">print("Hello, World!")</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Variables">
-      <div class="section-header">
-        <h2>Variables & Data Types</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Variables">
+          <h1>Variables & Data Types</h1>
+          <div class="chapter-badge">Chapter 2</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Lists" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 Variables</h3>
         <p>No command for declaring a variable. A variable is created the moment you first assign a value to it.</p>
-        <pre><code class="language-python">x = 5
+        <div class="example-box"><pre class="example-code"><code class="language-python">x = 5
 y = "John"
 print(x)
 print(y)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">x = 5
+y = "John"
+print(x)
+print(y)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
         <h3>📦 Core Data Types</h3>
         <ul>
           <li><strong>Text Type:</strong> <code>str</code></li>
@@ -113,64 +156,105 @@ print(y)</code></pre>
           <li><strong>Set Types:</strong> <code>set</code>, <code>frozenset</code></li>
           <li><strong>Boolean Type:</strong> <code>bool</code></li>
         </ul>
-      </div>
-    </div>
+      
+        </section>
 
-    <!-- Module 2: Data Structures -->
-    <div class="section" id="Lists">
-      <div class="section-header">
-        <h2>Lists & Tuples</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Lists">
+          <h1>Lists & Tuples</h1>
+          <div class="chapter-badge">Chapter 3</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Variables" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Sets" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 Lists</h3>
         <p>Lists are used to store multiple items in a single variable. Ordered, Changeable.</p>
-        <pre><code class="language-python">mylist = ["apple", "banana", "cherry"]
+        <div class="example-box"><pre class="example-code"><code class="language-python">mylist = ["apple", "banana", "cherry"]
 mylist.append("orange")
 print(mylist[1]) # banana</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">mylist = ["apple", "banana", "cherry"]
+mylist.append("orange")
+print(mylist[1]) # banana</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
         <h3>📌 Tuples</h3>
         <p>Ordered, Unchangeable.</p>
-        <pre><code class="language-python">mytuple = ("apple", "banana", "cherry")</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code class="language-python">mytuple = ("apple", "banana", "cherry")</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">mytuple = ("apple", "banana", "cherry")</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Sets">
-      <div class="section-header">
-        <h2>Sets</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Sets">
+          <h1>Sets</h1>
+          <div class="chapter-badge">Chapter 4</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Lists" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Dictionaries" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Unordered, Unindexed, No Duplicates.</p>
-        <pre><code class="language-python">myset = {"apple", "banana", "cherry"}</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code class="language-python">myset = {"apple", "banana", "cherry"}</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">myset = {"apple", "banana", "cherry"}</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Dictionaries">
-      <div class="section-header">
-        <h2>Dictionaries</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Dictionaries">
+          <h1>Dictionaries</h1>
+          <div class="chapter-badge">Chapter 5</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Sets" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#IfElse" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 Key-Value Pairs</h3>
         <p>Dictionaries are used to store data values in key:value pairs.</p>
-        <pre><code class="language-python">thisdict = {
+        <div class="example-box"><pre class="example-code"><code class="language-python">thisdict = {
   "brand": "Ford",
   "model": "Mustang",
   "year": 1964
 }
-print(thisdict["brand"])</code></pre>
-      </div>
-    </div>
+print(thisdict["brand"])</code></pre></section>
 
-    <!-- Module 3: Control Flow -->
-    <div class="section" id="IfElse">
-      <div class="section-header">
-        <h2>Conditionals</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="IfElse">
+          <h1>Conditionals</h1>
+          <div class="chapter-badge">Chapter 6</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Dictionaries" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Loops" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Python relies on indentation (whitespace) to define scope.</p>
-        <pre><code class="language-python">a = 33
+        <div class="example-box"><pre class="example-code"><code class="language-python">a = 33
 b = 200
 if b > a:
   print("b is greater than a")
@@ -178,137 +262,285 @@ elif a == b:
   print("a and b are equal")
 else:
   print("a is greater than b")</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">a = 33
+b = 200
+if b &gt; a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+else:
+  print("a is greater than b")</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Loops">
-      <div class="section-header">
-        <h2>Loops</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Loops">
+          <h1>Loops</h1>
+          <div class="chapter-badge">Chapter 7</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#IfElse" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Functions" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>While Loop</h3>
-        <pre><code class="language-python">i = 1
+        <div class="example-box"><pre class="example-code"><code class="language-python">i = 1
 while i < 6:
   print(i)
   i += 1</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">i = 1
+while i &lt; 6:
+  print(i)
+  i += 1</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
         <h3>For Loop</h3>
-        <pre><code class="language-python">fruits = ["apple", "banana", "cherry"]
+        <div class="example-box"><pre class="example-code"><code class="language-python">fruits = ["apple", "banana", "cherry"]
 for x in fruits:
   print(x)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  print(x)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
         <div class="mermaid">graph TD
           Start --> Check{Item in List?}
           Check -- Yes --> Execute_Block
           Execute_Block --> Check
           Check -- No --> End
-        </div>
-      </div>
-    </div>
+        
+        </section>
 
-    <!-- Module 4: Functions & Modules -->
-    <div class="section" id="Functions">
-      <div class="section-header">
-        <h2>Functions</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Functions">
+          <h1>Functions</h1>
+          <div class="chapter-badge">Chapter 8</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Loops" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Modules" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>A function is a block of code which only runs when it is called.</p>
-        <pre><code class="language-python">def my_function(fname):
+        <div class="example-box"><pre class="example-code"><code class="language-python">def my_function(fname):
   print(fname + " Refsnes")
 
 my_function("Emil")</code></pre>
-        <h3>Return Values</h3>
-        <pre><code class="language-python">def my_function(x):
-  return 5 * x</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">def my_function(fname):
+  print(fname + " Refsnes")
 
-    <div class="section" id="Modules">
-      <div class="section-header">
-        <h2>Modules & PIP</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+my_function("Emil")</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+        <h3>Return Values</h3>
+        <div class="example-box"><pre class="example-code"><code class="language-python">def my_function(x):
+  return 5 * x</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">def my_function(x):
+  return 5 * x</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
+
+        <section class="topic-section" id="Modules">
+          <h1>Modules & PIP</h1>
+          <div class="chapter-badge">Chapter 9</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Functions" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Dates" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 Modules</h3>
         <p>Consider a module to be the same as a code library.</p>
-        <pre><code class="language-python">import platform
+        <div class="example-box"><pre class="example-code"><code class="language-python">import platform
 x = platform.system()
 print(x)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">import platform
+x = platform.system()
+print(x)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
         <h3>📌 PIP</h3>
         <p>PIP is a package manager for Python modules.</p>
-        <pre><code class="language-bash">pip install camelcase</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code class="language-bash">pip install camelcase</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">pip install camelcase</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Dates">
-      <div class="section-header">
-        <h2>Dates & Math</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
-        <pre><code class="language-python">import datetime
+        <section class="topic-section" id="Dates">
+          <h1>Dates & Math</h1>
+          <div class="chapter-badge">Chapter 10</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Modules" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Classes" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
+        <div class="example-box"><pre class="example-code"><code class="language-python">import datetime
 x = datetime.datetime.now()
 print(x)</code></pre>
-        <pre><code class="language-python">min(5, 10, 25)
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">import datetime
+x = datetime.datetime.now()
+print(x)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+        <div class="example-box"><pre class="example-code"><code class="language-python">min(5, 10, 25)
 max(5, 10, 25)
 abs(-7.25)
-pow(4, 3)</code></pre>
-      </div>
-    </div>
+pow(4, 3)</code></pre></section>
 
-    <!-- Module 5: OOP & Advanced -->
-    <div class="section" id="Classes">
-      <div class="section-header">
-        <h2>Classes & OOP</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Classes">
+          <h1>Classes & OOP</h1>
+          <div class="chapter-badge">Chapter 11</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Dates" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Files" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 Classes/Objects</h3>
         <p>Python is an object oriented programming language.</p>
-        <pre><code class="language-python">class Person:
+        <div class="example-box"><pre class="example-code"><code class="language-python">class Person:
   def __init__(self, name, age):
     self.name = name
     self.age = age
 
 p1 = Person("John", 36)
 print(p1.name)</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
 
-    <div class="section" id="Files">
-      <div class="section-header">
-        <h2>File Handling</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+p1 = Person("John", 36)
+print(p1.name)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
+
+        <section class="topic-section" id="Files">
+          <h1>File Handling</h1>
+          <div class="chapter-badge">Chapter 12</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Classes" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#TryExcept" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>The key function for working with files in Python is the <code>open()</code> function.</p>
-        <pre><code class="language-python">f = open("demofile.txt", "r")
+        <div class="example-box"><pre class="example-code"><code class="language-python">f = open("demofile.txt", "r")
 print(f.read())</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">f = open("demofile.txt", "r")
+print(f.read())</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="TryExcept">
-      <div class="section-header">
-        <h2>Exception Handling</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="TryExcept">
+          <h1>Exception Handling</h1>
+          <div class="chapter-badge">Chapter 13</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Files" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>When an error occurs, or exception as we call it, Python will normally stop and generate an error message.
         </p>
-        <pre><code class="language-python">try:
+        <div class="example-box"><pre class="example-code"><code class="language-python">try:
   print(x)
 except:
-  print("An exception occurred")</code></pre>
-      </div>
-    </div>
+  print("An exception occurred")</code></pre></section>
 
-    <!-- Projects -->
-    <div class="section" id="Projects">
-      <div class="section-header">
-        <h2>🚀 Real World Projects</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Projects">
+          <h1>🚀 Real World Projects</h1>
+          <div class="chapter-badge">Chapter 14</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#TryExcept" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>🟢 Beginner Level: Unit Converter</h3>
         <p><strong>Goal:</strong> CLI tool to convert KM to Miles.</p>
         <p><strong>Key Skills:</strong> Input, Math, Functions</p>
@@ -318,15 +550,17 @@ except:
         <h3>🔴 Advanced Level: Web Scraper</h3>
         <p><strong>Goal:</strong> Extract headlines from a news site and save to CSV.</p>
         <p><strong>Key Skills:</strong> BeautifulSoup, File I/O, Requests</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="MiniTask">
-      <div class="section-header">
-        <h2>🎯 Python Mini Task</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="MiniTask">
+          <h1>🎯 Python Mini Task</h1>
+          <div class="chapter-badge">Chapter 15</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p><strong>Goal:</strong> Temperature Converter.</p>
         <h4>📋 Requirements:</h4>
         <ol>
@@ -344,15 +578,115 @@ except:
       <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Python module.</p>
       <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
         onclick="location.href='../index1.html'">Return to Dashboard</button>
-    </div>
+    
+        </section>
 
-  </div> <!-- End content -->
+      </div>
+    </main>
+  </div>
 
-  <script src="../assets/js/course.js"></script>
-  <!-- Mermaid JS for Diagrams -->
   <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        document.getElementById('user-display').textContent = user.displayName || user.email.split('@')[0];
+      } else {
+        window.location.href = "../index.html";
+      }
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      signOut(auth).then(() => {
+        window.location.href = "../index.html";
+      });
+    });
+  </script>
+
+  <script>
+    // Sidebar active state syncing
+    const sections = document.querySelectorAll('.topic-section');
+    const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <script>
+
+
+    // Try It Editor functions (applied globally to all courses)
+    window.openTryIt = function(btn) {
+      const panel = btn.nextElementSibling;
+      panel.classList.add('open');
+      btn.style.display = 'none';
+      runTryIt(panel.querySelector('.tryit-run'));
+    };
+    window.closeTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      panel.classList.remove('open');
+      panel.previousElementSibling.style.display = 'inline-flex';
+    };
+    window.runTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      const code = panel.querySelector('.tryit-editor').value;
+      const iframe = panel.querySelector('iframe');
+      // basic wrapping for output display
+      iframe.srcdoc = `
+        <style>body{font-family:sans-serif; color:#333; background:#fff;}</style>
+        ${code}
+      `;
+    };
+  </script>
+
+  <script>
+    // Theme logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const updateThemeIcon = (isDark) => {
+      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+    };
+    
+    // Check saved theme
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+
+    if(toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme === 'dark');
+      });
+    }
   </script>
 </body>
 

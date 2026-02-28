@@ -1,80 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | Excel Masterclass</title>
-  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+<body class="learnx-page">
 
-<body>
-
-  <div class="circles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </div>
-
-  <div class="sidebar">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <i class="fas fa-file-excel" style="font-size: 3rem; color: #217346;"></i>
-      <h2 style="margin-top: 10px; color: white;">Excel</h2>
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <a href="../index1.html" class="brand">LearnX</a>
+        <div class="top-nav-links">
+      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="js.html">JavaScript</a>
+      <a href="python.html">Python</a>
+      <a href="sql.html">SQL</a>
+      <a href="java.html">Java</a>
+      <a href="c.html">C</a>
+      <a href="excel.html" class="active">Excel</a>
+      <a href="numpy.html">NumPy</a>
+      <a href="pandas.html">Pandas</a>
+      <a href="matplotlib.html">Matplotlib</a>
+      <a href="ml.html">ML</a>
+      <a href="ai.html">AI</a>
+      <a href="r.html">R</a>
     </div>
 
-    <!-- Module 1: Basics -->
-    <a href="#Intro">Intro to Excel</a>
-    <a href="#Cells">Cells & Ranges</a>
-    <a href="#Formatting">Formatting</a>
-
-    <!-- Module 2: Formulas -->
-    <a href="#Formulas">Formulas Intro</a>
-    <a href="#Functions">Functions (SUM, AVG)</a>
-    <a href="#Logic">Logic (IF, COUNTIF)</a>
-    <a href="#Lookup">VLOOKUP / XLOOKUP</a>
-
-    <!-- Module 3: Analysis -->
-    <a href="#PivotTables">Pivot Tables</a>
-    <a href="#Charts">Charts & Graphs</a>
-    <a href="#Sorting">Sorting & Filtering</a>
-
-    <!-- Module 4: Advanced -->
-    <a href="#DataValidation">Data Validation</a>
-    <a href="#Macros">Macros (VBA)</a>
-
-    <!-- Projects -->
-    <a href="#Projects">Real World Projects</a>
-    <a href="#MiniTask">Mini Task</a>
-
-    <div style="margin-top: 50px;">
-      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    <div class="top-nav-search">
+      <input type="text" placeholder="Search..."/>
+      <button><i class="fas fa-search"></i></button>
     </div>
-  </div>
-
-  <div class="course-content">
-    <h1 class="h1">Excel Masterclass</h1>
-
-    <div class="course-controls">
-      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
-      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    
+    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
+      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
+       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
     </div>
+  </nav>
 
-    <!-- Module 1: Basics -->
-    <div class="section" id="Intro">
-      <div class="section-header">
-        <h2>Introduction to Excel</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
+  <!-- CONTENT WRAPPER -->
+  <div class="course-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-file-excel" style="color:#217346"></i> Excel Tutorial
       </div>
-      <div class="section-content">
+
+      <div class="sidebar-section-label">Excel Basic</div>
+      <a href="#Intro" class="active">Introduction to Excel</a>
+      <a href="#Cells">Cells & Ranges</a>
+      <a href="#Formatting">Formatting</a>
+      <a href="#Formulas">Formulas Intro</a>
+      <a href="#Functions">Basic Functions</a>
+      <a href="#Logic">Logic Functions</a>
+      <a href="#Lookup">VLOOKUP / XLOOKUP</a>
+      <a href="#PivotTables">Pivot Tables</a>
+      <a href="#Charts">Charts & Graphs</a>
+      <a href="#Sorting">Sorting & Filtering</a>
+      <a href="#DataValidation">Data Validation</a>
+      <a href="#Macros">Macros (VBA)</a>
+      <a href="#Projects">🚀 Real World Projects</a>
+      <a href="#MiniTask">🎯 Excel Mini Task</a>
+
+      <div class="sidebar-footer">
+        <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="course-main">
+      <div class="course-content-area">
+        
+        <div class="breadcrumb">
+          <a href="../index1.html">Home</a> <span>/</span> <span>Excel</span>
+        </div>
+        
+        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">Excel Masterclass</h1>
+
+        <section class="topic-section" id="Intro">
+          <h1>Introduction to Excel</h1>
+          <div class="chapter-badge">Chapter 1</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Cells" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 What is Excel?</h3>
         <p>The world's most popular spreadsheet software. Used for storing, organizing, and analyzing data.</p>
         <div class="mermaid">graph TD
@@ -82,161 +100,208 @@
           Spreadsheet --> Formulas
           Spreadsheet --> Visualization
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="Cells">
-      <div class="section-header">
-        <h2>Cells & Ranges</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Cells">
+          <h1>Cells & Ranges</h1>
+          <div class="chapter-badge">Chapter 2</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Formatting" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p><strong>Cell:</strong> Intersection of a Row and Column (e.g., A1).</p>
         <p><strong>Range:</strong> A group of cells (e.g., A1:B10).</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="Formatting">
-      <div class="section-header">
-        <h2>Formatting</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Formatting">
+          <h1>Formatting</h1>
+          <div class="chapter-badge">Chapter 3</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Cells" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Formulas" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Making data readable. Bold, Italic, Cell Color, Borders.</p>
         <p><strong>Conditional Formatting:</strong> Highlight top 10% or values above average.</p>
-      </div>
-    </div>
+      
+        </section>
 
-    <!-- Module 2: Formulas -->
-    <div class="section" id="Formulas">
-      <div class="section-header">
-        <h2>Formulas Intro</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Formulas">
+          <h1>Formulas Intro</h1>
+          <div class="chapter-badge">Chapter 4</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Formatting" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Functions" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>All formulas start with <code>=</code>.</p>
-        <pre><code>=A1 + A2</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code>=A1 + A2</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">=A1 + A2</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Functions">
-      <div class="section-header">
-        <h2>Basic Functions</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Functions">
+          <h1>Basic Functions</h1>
+          <div class="chapter-badge">Chapter 5</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Formulas" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Logic" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <ul>
           <li><code>=SUM(A1:A10)</code></li>
           <li><code>=AVERAGE(A1:A10)</code></li>
           <li><code>=MIN(A1:A10)</code></li>
           <li><code>=MAX(A1:A10)</code></li>
         </ul>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="Logic">
-      <div class="section-header">
-        <h2>Logic Functions</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Logic">
+          <h1>Logic Functions</h1>
+          <div class="chapter-badge">Chapter 6</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Functions" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Lookup" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Making decisions.</p>
-        <pre><code>=IF(A1>10, "Pass", "Fail")
+        <div class="example-box"><pre class="example-code"><code>=IF(A1>10, "Pass", "Fail")
 =COUNTIF(A1:A10, ">50")</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">=IF(A1&gt;10, "Pass", "Fail")
+=COUNTIF(A1:A10, "&gt;50")</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Lookup">
-      <div class="section-header">
-        <h2>VLOOKUP / XLOOKUP</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Lookup">
+          <h1>VLOOKUP / XLOOKUP</h1>
+          <div class="chapter-badge">Chapter 7</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Logic" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#PivotTables" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Finding data across tables.</p>
-        <pre><code>=VLOOKUP(lookup_value, table_array, col_index, [range_lookup])</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code>=VLOOKUP(lookup_value, table_array, col_index, [range_lookup])</code></pre></section>
 
-    <!-- Module 3: Analysis -->
-    <div class="section" id="PivotTables">
-      <div class="section-header">
-        <h2>Pivot Tables</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="PivotTables">
+          <h1>Pivot Tables</h1>
+          <div class="chapter-badge">Chapter 8</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Lookup" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Charts" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>The most powerful tool in Excel. Summarize huge datasets with drag-and-drop.</p>
         <p>Example: Total Sales per Region.</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="Charts">
-      <div class="section-header">
-        <h2>Charts & Graphs</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Charts">
+          <h1>Charts & Graphs</h1>
+          <div class="chapter-badge">Chapter 9</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#PivotTables" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Sorting" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Visualizing data.</p>
         <ul>
           <li><strong>Column Chart:</strong> Comparisons.</li>
           <li><strong>Line Chart:</strong> Trends over time.</li>
           <li><strong>Pie Chart:</strong> Parts of a whole.</li>
         </ul>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="Sorting">
-      <div class="section-header">
-        <h2>Sorting & Filtering</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Sorting">
+          <h1>Sorting & Filtering</h1>
+          <div class="chapter-badge">Chapter 10</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Charts" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#DataValidation" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Sort A-Z, Z-A, or by Value. Filter to hide unwanted data.</p>
-      </div>
-    </div>
+      
+        </section>
 
-    <!-- Module 4: Advanced -->
-    <div class="section" id="DataValidation">
-      <div class="section-header">
-        <h2>Data Validation</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="DataValidation">
+          <h1>Data Validation</h1>
+          <div class="chapter-badge">Chapter 11</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Sorting" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Macros" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Control what users can type into a cell (e.g., Dropdown Lists).</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="Macros">
-      <div class="section-header">
-        <h2>Macros (VBA)</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Macros">
+          <h1>Macros (VBA)</h1>
+          <div class="chapter-badge">Chapter 12</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#DataValidation" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Recording repetitive tasks to automate them.</p>
-      </div>
-    </div>
+      
+        </section>
 
-    <!-- Projects -->
-    <div class="section" id="Projects">
-      <div class="section-header">
-        <h2>🚀 Real World Projects</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Projects">
+          <h1>🚀 Real World Projects</h1>
+          <div class="chapter-badge">Chapter 13</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Macros" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>🟢 Beginner: Personal Budget</h3>
         <p><strong>Goal:</strong> Track Income and Expenses.</p>
         <h3>🟡 Intermediate: Sales Report</h3>
         <p><strong>Goal:</strong> VLOOKUP inventory and Pivot Table analysis.</p>
         <h3>🔴 Advanced: Financial Dashboard</h3>
         <p><strong>Goal:</strong> Dynamic Charts and Slicers.</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="MiniTask">
-      <div class="section-header">
-        <h2>🎯 Excel Mini Task</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="MiniTask">
+          <h1>🎯 Excel Mini Task</h1>
+          <div class="chapter-badge">Chapter 14</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p><strong>Goal:</strong> Grade Calculator.</p>
         <h4>📋 Requirements:</h4>
         <ol>
@@ -254,15 +319,115 @@
       <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Excel module.</p>
       <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
         onclick="location.href='../index1.html'">Return to Dashboard</button>
-    </div>
+    
+        </section>
 
-  </div> <!-- End content -->
+      </div>
+    </main>
+  </div>
 
-  <script src="../assets/js/course.js"></script>
-  <!-- Mermaid JS for Diagrams -->
   <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        document.getElementById('user-display').textContent = user.displayName || user.email.split('@')[0];
+      } else {
+        window.location.href = "../index.html";
+      }
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      signOut(auth).then(() => {
+        window.location.href = "../index.html";
+      });
+    });
+  </script>
+
+  <script>
+    // Sidebar active state syncing
+    const sections = document.querySelectorAll('.topic-section');
+    const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <script>
+
+
+    // Try It Editor functions (applied globally to all courses)
+    window.openTryIt = function(btn) {
+      const panel = btn.nextElementSibling;
+      panel.classList.add('open');
+      btn.style.display = 'none';
+      runTryIt(panel.querySelector('.tryit-run'));
+    };
+    window.closeTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      panel.classList.remove('open');
+      panel.previousElementSibling.style.display = 'inline-flex';
+    };
+    window.runTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      const code = panel.querySelector('.tryit-editor').value;
+      const iframe = panel.querySelector('iframe');
+      // basic wrapping for output display
+      iframe.srcdoc = `
+        <style>body{font-family:sans-serif; color:#333; background:#fff;}</style>
+        ${code}
+      `;
+    };
+  </script>
+
+  <script>
+    // Theme logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const updateThemeIcon = (isDark) => {
+      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+    };
+    
+    // Check saved theme
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+
+    if(toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme === 'dark');
+      });
+    }
   </script>
 </body>
 

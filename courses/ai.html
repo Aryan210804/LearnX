@@ -1,222 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | AI Masterclass</title>
-  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+<body class="learnx-page">
 
-<body>
-
-  <div class="circles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </div>
-
-  <div class="sidebar">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <i class="fas fa-robot" style="font-size: 3rem; color: #00d2ff;"></i>
-      <h2 style="margin-top: 10px; color: white;">Artificial Intelligence</h2>
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <a href="../index1.html" class="brand">LearnX</a>
+        <div class="top-nav-links">
+      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="js.html">JavaScript</a>
+      <a href="python.html">Python</a>
+      <a href="sql.html">SQL</a>
+      <a href="java.html">Java</a>
+      <a href="c.html">C</a>
+      <a href="excel.html">Excel</a>
+      <a href="numpy.html">NumPy</a>
+      <a href="pandas.html">Pandas</a>
+      <a href="matplotlib.html">Matplotlib</a>
+      <a href="ml.html">ML</a>
+      <a href="ai.html" class="active">AI</a>
+      <a href="r.html">R</a>
     </div>
 
-    <!-- Module 1: Concepts -->
-    <a href="#Intro">Intro to AI</a>
-    <a href="#History">History of AI</a>
-    <a href="#AIvsML">AI vs ML vs DL</a>
-
-    <!-- Module 2: Search & Logic -->
-    <a href="#SearchAlgo">Search Algorithms</a>
-    <a href="#Minimax">Game Theory (Minimax)</a>
-    <a href="#Knowledge">Knowledge Representation</a>
-
-    <!-- Module 3: Natural Language -->
-    <a href="#NLP">NLP Basics</a>
-    <a href="#Transformers">Transformers (GPT)</a>
-    <a href="#Chatbots">Chatbots</a>
-
-    <!-- Module 4: Computer Vision -->
-    <a href="#CV">Computer Vision</a>
-    <a href="#ObjectDetection">Object Detection</a>
-    <a href="#GenerativeAI">Generative AI</a>
-
-    <!-- Module 5: Ethics -->
-    <a href="#Ethics">Ethics & Bias</a>
-    <a href="#Future">Future of AI</a>
-
-    <!-- Projects -->
-    <a href="#Projects">Real World Projects</a>
-    <a href="#MiniTask">Mini Task</a>
-
-    <div style="margin-top: 50px;">
-      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    <div class="top-nav-search">
+      <input type="text" placeholder="Search..."/>
+      <button><i class="fas fa-search"></i></button>
     </div>
-  </div>
-
-  <div class="course-content">
-    <h1 class="h1">AI Masterclass</h1>
-
-    <div class="course-controls">
-      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
-      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    
+    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
+      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
+       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
     </div>
+  </nav>
 
-    <!-- Module 1: Concepts -->
-    <div class="section" id="Intro">
-      <div class="section-header">
-        <h2>Introduction to AI</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
+  <!-- CONTENT WRAPPER -->
+  <div class="course-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-robot" style="color:#00d2ff"></i> Artificial Intelligence Tutorial
       </div>
-      <div class="section-content">
+
+      <div class="sidebar-section-label">Artificial Intelligence Basic</div>
+      <a href="#Intro" class="active">Introduction to AI</a>
+      <a href="#History">History of AI</a>
+      <a href="#AIvsML">AI vs ML vs DL</a>
+      <a href="#SearchAlgo">Search Algorithms</a>
+      <a href="#Minimax">Game Theory (Minimax)</a>
+      <a href="#NLP">NLP Basics</a>
+      <a href="#Transformers">Transformers (GPT)</a>
+      <a href="#CV">Computer Vision</a>
+      <a href="#GenerativeAI">Generative AI</a>
+      <a href="#Ethics">Ethics & Bias</a>
+      <a href="#Projects">🚀 Real World Projects</a>
+      <a href="#MiniTask">🎯 AI Mini Task</a>
+
+      <div class="sidebar-footer">
+        <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="course-main">
+      <div class="course-content-area">
+        
+        <div class="breadcrumb">
+          <a href="../index1.html">Home</a> <span>/</span> <span>AI</span>
+        </div>
+        
+        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">AI Masterclass</h1>
+
+        <section class="topic-section" id="Intro">
+          <h1>Introduction to AI</h1>
+          <div class="chapter-badge">Chapter 1</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#History" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 What is AI?</h3>
         <p>Artificial Intelligence is the simulation of human intelligence processes by machines.</p>
         <p><strong>Narrow AI:</strong> Good at one thing (Chess, Alexa).</p>
         <p><strong>General AI (AGI):</strong> Human-level intelligence (Theoretical).</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="History">
-      <div class="section-header">
-        <h2>History of AI</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="History">
+          <h1>History of AI</h1>
+          <div class="chapter-badge">Chapter 2</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#AIvsML" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <ul>
           <li><strong>1950s:</strong> Turing Test.</li>
           <li><strong>1997:</strong> Deep Blue beats Kasparov.</li>
           <li><strong>2012:</strong> AlexNet (Deep Learning boom).</li>
           <li><strong>2022:</strong> ChatGPT (Generative AI).</li>
         </ul>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="AIvsML">
-      <div class="section-header">
-        <h2>AI vs ML vs DL</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="AIvsML">
+          <h1>AI vs ML vs DL</h1>
+          <div class="chapter-badge">Chapter 3</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#History" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#SearchAlgo" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <div class="mermaid">graph TD
           AI[Artificial Intelligence] --> ML[Machine Learning]
           ML --> DL[Deep Learning]
           DL --> GenAI[Generative AI]
-        </div>
-      </div>
-    </div>
+        
+        </section>
 
-    <!-- Module 2: Search & Logic -->
-    <div class="section" id="SearchAlgo">
-      <div class="section-header">
-        <h2>Search Algorithms</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="SearchAlgo">
+          <h1>Search Algorithms</h1>
+          <div class="chapter-badge">Chapter 4</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#AIvsML" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Minimax" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 A* Search</h3>
         <p>Used in GPS navigators to find the shortest path.</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="Minimax">
-      <div class="section-header">
-        <h2>Game Theory (Minimax)</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Minimax">
+          <h1>Game Theory (Minimax)</h1>
+          <div class="chapter-badge">Chapter 5</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#SearchAlgo" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#NLP" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Algorithm used in two-player games like Chess and Tic-Tac-Toe to minimize possible loss.</p>
-      </div>
-    </div>
+      
+        </section>
 
-    <!-- Module 3: Natural Language -->
-    <div class="section" id="NLP">
-      <div class="section-header">
-        <h2>NLP Basics</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="NLP">
+          <h1>NLP Basics</h1>
+          <div class="chapter-badge">Chapter 6</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Minimax" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Transformers" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p><strong>Sentiment Analysis:</strong> Is this review positive or negative?</p>
         <p><strong>Tokenization:</strong> Breaking text into words.</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="Transformers">
-      <div class="section-header">
-        <h2>Transformers (GPT)</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Transformers">
+          <h1>Transformers (GPT)</h1>
+          <div class="chapter-badge">Chapter 7</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#NLP" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#CV" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>The architecture behind ChatGPT. Uses "Attention mechanisms" to understand context better than ever before.
         </p>
-      </div>
-    </div>
+      
+        </section>
 
-    <!-- Module 4: Computer Vision -->
-    <div class="section" id="CV">
-      <div class="section-header">
-        <h2>Computer Vision</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="CV">
+          <h1>Computer Vision</h1>
+          <div class="chapter-badge">Chapter 8</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Transformers" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#GenerativeAI" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Teaching computers to "see".</p>
         <p>Pixels -> Edges -> Shapes -> Objects.</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="GenerativeAI">
-      <div class="section-header">
-        <h2>Generative AI</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="GenerativeAI">
+          <h1>Generative AI</h1>
+          <div class="chapter-badge">Chapter 9</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#CV" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Ethics" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Creating new content (Images, Text, Audio) using models like GANs and Diffusion Models (MidJourney, DALL-E).
         </p>
-      </div>
-    </div>
+      
+        </section>
 
-    <!-- Module 5: Ethics -->
-    <div class="section" id="Ethics">
-      <div class="section-header">
-        <h2>Ethics & Bias</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Ethics">
+          <h1>Ethics & Bias</h1>
+          <div class="chapter-badge">Chapter 10</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#GenerativeAI" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p><strong>Algorithmic Bias:</strong> If data is biased, the AI will be biased.</p>
         <p><strong>Deepfakes:</strong> Misinformation.</p>
-      </div>
-    </div>
+      
+        </section>
 
-    <!-- Projects -->
-    <div class="section" id="Projects">
-      <div class="section-header">
-        <h2>🚀 Real World Projects</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Projects">
+          <h1>🚀 Real World Projects</h1>
+          <div class="chapter-badge">Chapter 11</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Ethics" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>🟢 Beginner: Chatbot</h3>
         <p><strong>Goal:</strong> Simple rule-based Python chatbot.</p>
         <h3>🟡 Intermediate: Face Detection</h3>
         <p><strong>Goal:</strong> Use OpenCV to detect faces in webcam feed.</p>
         <h3>🔴 Advanced: RAG System</h3>
         <p><strong>Goal:</strong> Build a "Chat with your PDF" tool using LangChain.</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="MiniTask">
-      <div class="section-header">
-        <h2>🎯 AI Mini Task</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="MiniTask">
+          <h1>🎯 AI Mini Task</h1>
+          <div class="chapter-badge">Chapter 12</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p><strong>Goal:</strong> The Turing Test.</p>
         <h4>📋 Requirements:</h4>
         <ol>
@@ -235,15 +268,115 @@
       <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the AI module.</p>
       <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
         onclick="location.href='../index1.html'">Return to Dashboard</button>
-    </div>
+    
+        </section>
 
-  </div> <!-- End content -->
+      </div>
+    </main>
+  </div>
 
-  <script src="../assets/js/course.js"></script>
-  <!-- Mermaid JS for Diagrams -->
   <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        document.getElementById('user-display').textContent = user.displayName || user.email.split('@')[0];
+      } else {
+        window.location.href = "../index.html";
+      }
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      signOut(auth).then(() => {
+        window.location.href = "../index.html";
+      });
+    });
+  </script>
+
+  <script>
+    // Sidebar active state syncing
+    const sections = document.querySelectorAll('.topic-section');
+    const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <script>
+
+
+    // Try It Editor functions (applied globally to all courses)
+    window.openTryIt = function(btn) {
+      const panel = btn.nextElementSibling;
+      panel.classList.add('open');
+      btn.style.display = 'none';
+      runTryIt(panel.querySelector('.tryit-run'));
+    };
+    window.closeTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      panel.classList.remove('open');
+      panel.previousElementSibling.style.display = 'inline-flex';
+    };
+    window.runTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      const code = panel.querySelector('.tryit-editor').value;
+      const iframe = panel.querySelector('iframe');
+      // basic wrapping for output display
+      iframe.srcdoc = `
+        <style>body{font-family:sans-serif; color:#333; background:#fff;}</style>
+        ${code}
+      `;
+    };
+  </script>
+
+  <script>
+    // Theme logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const updateThemeIcon = (isDark) => {
+      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+    };
+    
+    // Check saved theme
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+
+    if(toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme === 'dark');
+      });
+    }
   </script>
 </body>
 

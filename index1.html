@@ -5,359 +5,193 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LearnX | Dashboard</title>
+  <meta name="description" content="Your LearnX learning dashboard. Browse all courses and start learning." />
   <link rel="icon" href="assets/img/LOGO.jpeg" type="image/jpeg">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    body {
-      padding-top: 80px;
-    }
-
-    /* Navbar */
-    .navbar {
-      background: rgba(15, 12, 41, 0.8);
-      backdrop-filter: blur(15px);
-      height: 70px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 5%;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-brand {
-      color: #00d2ff;
-      font-size: 28px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    .nav-brand img {
-      width: 40px;
-      border-radius: 50%;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #00d2ff;
-    }
-
-    .admin-link {
-      display: none;
-      /* Hidden by default */
-      color: #ff007a !important;
-      font-weight: 700 !important;
-    }
-
-    .logout-btn {
-      background: rgba(255, 77, 77, 0.2);
-      color: #ff4d4d;
-      border: 1px solid #ff4d4d;
-      padding: 8px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .logout-btn:hover {
-      background: #ff4d4d;
-      color: white;
-    }
-
-    /* Main Content */
-    .dashboard-container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .welcome-section {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .welcome-section h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    .welcome-section p {
-      opacity: 0.8;
-      font-size: 18px;
-    }
-
-    /* Course Cards */
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, min-minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .course-card {
-      transition: transform 0.3s, box-shadow 0.3s;
-      padding: 30px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      text-decoration: none;
-      color: white;
-      cursor: pointer;
-    }
-
-    .course-card:hover {
-      transform: translateY(-10px);
-      border-color: #00d2ff;
-      box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
-    }
-
-    .course-card i {
-      font-size: 50px;
-      margin-bottom: 10px;
-    }
-
-    .course-card h3 {
-      font-size: 22px;
-    }
-
-    .course-card.html i {
-      color: #E34F26;
-    }
-
-    .course-card.css i {
-      color: #1572B6;
-    }
-
-    .course-card.js i {
-      color: #F7DF1E;
-    }
-
-    .course-card.sql i {
-      color: #003B57;
-    }
-
-    .course-card.python i {
-      color: #3776AB;
-    }
-
-    .course-card.java i {
-      color: #007396;
-    }
-
-    .course-card.excel i {
-      color: #217346;
-    }
-
-    .course-card.c i {
-      color: #A8B9CC;
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
-
-    .modal-content {
-      padding: 30px;
-      width: 320px;
-      text-align: center;
-    }
-
-    .modal-btns {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-      justify-content: center;
-    }
-
-    .modal-btns button {
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      border: none;
-      font-weight: 600;
-    }
-
-    .btn-confirm {
-      background: #ff4d4d;
-      color: white;
-    }
-
-    .btn-cancel {
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .course-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      }
-
-      .navbar {
-        padding: 0 20px;
-      }
-    }
-  </style>
 </head>
 
-<body>
+<body class="dashboard-body">
 
-  <!-- Animated Background -->
-  <div class="area">
-    <ul class="circles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-
-  <!-- Navbar -->
-  <nav class="navbar">
-    <a href="index1.html" class="nav-brand">
-      <img src="assets/img/LOGO.jpeg" alt="LearnX"> LearnX
-    </a>
-    <div class="nav-links">
+  <!-- Top Nav -->
+  <nav class="top-nav dashboard-topnav">
+    <a class="brand" href="home.html">LearnX</a>
+    <div class="top-nav-links">
+      <a href="home.html">Home</a>
+      <a href="index1.html" class="active">Dashboard</a>
       <a href="about.html">About</a>
       <a href="Contact.html">Contact</a>
       <a href="feedback.html">Feedback</a>
-      <a href="admin.html" class="admin-link" id="admin-link">Admin Panel</a>
-      <button class="logout-btn" id="logout-trigger">Logout</button>
+      <a href="admin.html" class="admin-link" id="admin-link" style="display:none;color:#ff4d4d;">Admin</a>
     </div>
-    <div style="font-size: 24px; cursor: pointer; display: none;" class="mobile-menu-icon">
-      <i class="fas fa-bars"></i>
+    <div class="top-nav-search">
+      <input type="text" placeholder="Search courses..." />
+      <button><i class="fas fa-search"></i></button>
     </div>
+     <button id="theme-toggle" class="nav-btn" style="background:transparent; color:var(--text); border:1px solid var(--border); margin-right:15px; display:inline-flex; align-items:center; justify-content:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
+    <button class="hamburger" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+    <button class="nav-btn logout-trigger" id="logout-trigger" style="background:#e53935;">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
   </nav>
 
-  <div class="dashboard-container">
-    <div class="welcome-section">
-      <h1>Welcome back, <span id="user-display-name">Learner</span>!</h1>
-      <p>Ready to master tech basics today?</p>
-    </div>
-
-    <div class="course-grid">
-      <a href="courses/html.html" class="course-card glass-card html">
-        <i class="fab fa-html5"></i>
-        <h3>HTML</h3>
-        <p>Master Web Structure</p>
-      </a>
-      <a href="courses/css.html" class="course-card glass-card css">
-        <i class="fab fa-css3-alt"></i>
-        <h3>CSS</h3>
-        <p>Style with Precision</p>
-      </a>
-      <a href="courses/js.html" class="course-card glass-card js">
-        <i class="fab fa-js"></i>
-        <h3>JavaScript</h3>
-        <p>Make it Interactive</p>
-      </a>
-      <a href="courses/sql.html" class="course-card glass-card sql">
-        <i class="fas fa-database"></i>
-        <h3>SQL</h3>
-        <p>Manage Databases</p>
-      </a>
-      <a href="courses/python.html" class="course-card glass-card python">
-        <i class="fab fa-python"></i>
-        <h3>Python</h3>
-        <p>Code the Future</p>
-      </a>
-      <a href="courses/java.html" class="course-card glass-card java">
-        <i class="fab fa-java"></i>
-        <h3>Java</h3>
-        <p>Object Oriented Guru</p>
-      </a>
-      <a href="courses/excel.html" class="course-card glass-card excel">
-        <i class="fas fa-file-excel"></i>
-        <h3>Excel</h3>
-        <p>Data Ninja</p>
-      </a>
-      <a href="courses/c.html" class="course-card glass-card c">
-        <i class="fas fa-code"></i>
-        <h3>C Programming</h3>
-        <p>The Foundation</p>
-      </a>
-      <a href="courses/r.html" class="course-card glass-card r">
-        <i class="fas fa-chart-line" style="color: #276dc3;"></i>
-        <h3>R</h3>
-        <p>Statistical Computing</p>
-      </a>
-      <a href="courses/pandas.html" class="course-card glass-card pandas">
-        <i class="fas fa-table" style="color: #150458;"></i>
-        <h3>Pandas</h3>
-        <p>Data Analysis</p>
-      </a>
-      <a href="courses/numpy.html" class="course-card glass-card numpy">
-        <i class="fas fa-cubes" style="color: #013243;"></i>
-        <h3>NumPy</h3>
-        <p>Numerical Python</p>
-      </a>
-      <a href="courses/matplotlib.html" class="course-card glass-card matplotlib">
-        <i class="fas fa-chart-bar" style="color: #ffffff;"></i>
-        <h3>Matplotlib</h3>
-        <p>Data Visualization</p>
-      </a>
-      <a href="courses/ml.html" class="course-card glass-card ml">
-        <i class="fas fa-brain" style="color: #ff9900;"></i>
-        <h3>Machine Learning</h3>
-        <p>Predict the Future</p>
-      </a>
-      <a href="courses/ai.html" class="course-card glass-card ai">
-        <i class="fas fa-robot" style="color: #00d2ff;"></i>
-        <h3>AI</h3>
-        <p>Artificial Intelligence</p>
-      </a>
-    </div>
+  <!-- Hero Banner -->
+  <div class="dashboard-hero">
+    <h1>Welcome back, <span id="user-display-name">Learner</span>! 👋</h1>
+    <p>Pick up where you left off, or explore something new today.</p>
   </div>
 
+  <div class="dashboard-container">
+
+    <!-- Stats -->
+    <div class="dash-stats">
+      <div class="dash-stat">
+        <div class="dash-stat-icon"><i class="fas fa-book-open"></i></div>
+        <div>
+          <div class="dash-stat-num">14</div>
+          <div class="dash-stat-label">Courses Available</div>
+        </div>
+      </div>
+      <div class="dash-stat">
+        <div class="dash-stat-icon" style="background:rgba(58,123,213,0.1);color:#3a7bd5"><i class="fas fa-code"></i>
+        </div>
+        <div>
+          <div class="dash-stat-num">500+</div>
+          <div class="dash-stat-label">Code Examples</div>
+        </div>
+      </div>
+      <div class="dash-stat">
+        <div class="dash-stat-icon" style="background:rgba(255,153,0,0.1);color:#ff9900"><i class="fas fa-bolt"></i>
+        </div>
+        <div>
+          <div class="dash-stat-num">Free</div>
+          <div class="dash-stat-label">Always &amp; Forever</div>
+        </div>
+      </div>
+      <div class="dash-stat">
+        <div class="dash-stat-icon" style="background:rgba(229,57,53,0.1);color:#e53935"><i class="fas fa-tasks"></i>
+        </div>
+        <div>
+          <div class="dash-stat-num">150+</div>
+          <div class="dash-stat-label">Exercises</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Web Technologies -->
+    <p class="dash-section-title">🌐 Web Technologies</p>
+    <h2 class="dash-section-heading">Start with the Basics</h2>
+    <div class="course-grid">
+      <a href="courses/html.html" class="course-card" style="--card-accent:#e34c26">
+        <i class="fab fa-html5 card-icon"></i>
+        <h3>HTML</h3>
+        <p>Web Structure</p>
+        <span class="card-tag">Beginner</span>
+      </a>
+      <a href="courses/css.html" class="course-card" style="--card-accent:#2196f3">
+        <i class="fab fa-css3-alt card-icon"></i>
+        <h3>CSS</h3>
+        <p>Web Styling</p>
+        <span class="card-tag">Beginner</span>
+      </a>
+      <a href="courses/js.html" class="course-card" style="--card-accent:#f7df1e">
+        <i class="fab fa-js card-icon"></i>
+        <h3>JavaScript</h3>
+        <p>Interactivity</p>
+        <span class="card-tag">Intermediate</span>
+      </a>
+    </div>
+
+    <!-- Backend & Languages -->
+    <p class="dash-section-title">⚙️ Backend & Languages</p>
+    <h2 class="dash-section-heading">Server-Side Programming</h2>
+    <div class="course-grid">
+      <a href="courses/python.html" class="course-card" style="--card-accent:#3776ab">
+        <i class="fab fa-python card-icon"></i>
+        <h3>Python</h3>
+        <p>General Purpose</p>
+        <span class="card-tag">Beginner</span>
+      </a>
+      <a href="courses/java.html" class="course-card" style="--card-accent:#007396">
+        <i class="fab fa-java card-icon"></i>
+        <h3>Java</h3>
+        <p>OOP Language</p>
+        <span class="card-tag">Intermediate</span>
+      </a>
+      <a href="courses/c.html" class="course-card" style="--card-accent:#a8b9cc">
+        <i class="fas fa-code card-icon"></i>
+        <h3>C</h3>
+        <p>Systems Language</p>
+        <span class="card-tag">Intermediate</span>
+      </a>
+      <a href="courses/sql.html" class="course-card" style="--card-accent:#04AA6D">
+        <i class="fas fa-database card-icon"></i>
+        <h3>SQL</h3>
+        <p>Databases</p>
+        <span class="card-tag">Beginner</span>
+      </a>
+      <a href="courses/r.html" class="course-card" style="--card-accent:#276dc3">
+        <i class="fas fa-chart-line card-icon"></i>
+        <h3>R</h3>
+        <p>Statistics</p>
+        <span class="card-tag">Intermediate</span>
+      </a>
+      <a href="courses/excel.html" class="course-card" style="--card-accent:#217346">
+        <i class="fas fa-file-excel card-icon"></i>
+        <h3>Excel</h3>
+        <p>Spreadsheets</p>
+        <span class="card-tag">Beginner</span>
+      </a>
+    </div>
+
+    <!-- Data & AI -->
+    <p class="dash-section-title">🤖 Data Science & AI</p>
+    <h2 class="dash-section-heading">Machine Learning & Analytics</h2>
+    <div class="course-grid">
+      <a href="courses/numpy.html" class="course-card" style="--card-accent:#00a8cc">
+        <i class="fas fa-cubes card-icon"></i>
+        <h3>NumPy</h3>
+        <p>Numerical Python</p>
+        <span class="card-tag">Intermediate</span>
+      </a>
+      <a href="courses/pandas.html" class="course-card" style="--card-accent:#7e57c2">
+        <i class="fas fa-table card-icon"></i>
+        <h3>Pandas</h3>
+        <p>Data Analysis</p>
+        <span class="card-tag">Intermediate</span>
+      </a>
+      <a href="courses/matplotlib.html" class="course-card" style="--card-accent:#29b6f6">
+        <i class="fas fa-chart-bar card-icon"></i>
+        <h3>Matplotlib</h3>
+        <p>Visualisation</p>
+        <span class="card-tag">Intermediate</span>
+      </a>
+      <a href="courses/ml.html" class="course-card" style="--card-accent:#ff9900">
+        <i class="fas fa-brain card-icon"></i>
+        <h3>Machine Learning</h3>
+        <p>ML Algorithms</p>
+        <span class="card-tag">Advanced</span>
+      </a>
+      <a href="courses/ai.html" class="course-card" style="--card-accent:#00d2ff">
+        <i class="fas fa-robot card-icon"></i>
+        <h3>AI</h3>
+        <p>Artificial Intelligence</p>
+        <span class="card-tag">Advanced</span>
+      </a>
+    </div>
+
+  </div><!-- /dashboard-container -->
+
   <!-- Logout Modal -->
-  <div class="modal" id="logout-modal">
-    <div class="modal-content glass-card">
-      <i class="fas fa-sign-out-alt" style="font-size: 40px; color: #ff4d4d; margin-bottom: 15px;"></i>
+  <div class="modal-overlay" id="logout-modal">
+    <div class="modal-box">
+      <div class="modal-icon">🚪</div>
       <h3>Confirm Logout</h3>
-      <p>Are you sure you want to leave?</p>
+      <p>Are you sure you want to sign out of LearnX?</p>
       <div class="modal-btns">
-        <button class="btn-confirm" id="confirm-logout">Yes, Logout</button>
+        <button class="btn-danger" id="confirm-logout">Yes, Logout</button>
         <button class="btn-cancel" id="cancel-logout">Stay</button>
       </div>
     </div>
@@ -379,36 +213,59 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    const userNameDisplay = document.getElementById("user-display-name");
-    const adminLink = document.getElementById("admin-link");
-    const logoutTrigger = document.getElementById("logout-trigger");
-    const logoutModal = document.getElementById("logout-modal");
-    const confirmLogout = document.getElementById("confirm-logout");
-    const cancelLogout = document.getElementById("cancel-logout");
-
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        userNameDisplay.textContent = user.displayName || user.email.split('@')[0];
-
-        // Admin visibility logic
+        document.getElementById("user-display-name").textContent = user.displayName || user.email.split('@')[0];
         if (user.email === "aryankumar735588@gmail.com") {
-          adminLink.style.display = "block";
+          document.getElementById("admin-link").style.display = "flex";
         }
       } else {
         window.location.href = "index.html";
       }
     });
 
-    logoutTrigger.onclick = () => logoutModal.style.display = "flex";
-    cancelLogout.onclick = () => logoutModal.style.display = "none";
-    confirmLogout.onclick = () => {
+    document.getElementById("logout-trigger").onclick = () =>
+      document.getElementById("logout-modal").classList.add("open");
+    document.getElementById("cancel-logout").onclick = () =>
+      document.getElementById("logout-modal").classList.remove("open");
+    document.getElementById("confirm-logout").onclick = () =>
       signOut(auth).then(() => window.location.href = "index.html");
-    };
+    document.getElementById("logout-modal").addEventListener("click", e => {
+      if (e.target === document.getElementById("logout-modal"))
+        document.getElementById("logout-modal").classList.remove("open");
+    });
+  </script>
+  <script>
+    function toggleNav() {
+      document.querySelector('.top-nav-links').classList.toggle('open');
+    }
+  </script>
 
-    window.onclick = (event) => {
-      if (event.target == logoutModal) logoutModal.style.display = "none";
+
+
+  <script>
+    // Theme logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const updateThemeIcon = (isDark) => {
+      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
     };
+    
+    // Check saved theme
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+
+    if(toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme === 'dark');
+      });
+    }
   </script>
 </body>
+
 
 </html>

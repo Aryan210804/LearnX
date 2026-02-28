@@ -1,77 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | C Masterclass</title>
-  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+<body class="learnx-page">
 
-<body>
-
-  <div class="circles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </div>
-
-  <div class="sidebar">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <i class="fas fa-code" style="font-size: 3rem; color: #A8B9CC;"></i>
-      <h2 style="margin-top: 10px; color: white;">C Programming</h2>
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <a href="../index1.html" class="brand">LearnX</a>
+        <div class="top-nav-links">
+      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="js.html">JavaScript</a>
+      <a href="python.html">Python</a>
+      <a href="sql.html">SQL</a>
+      <a href="java.html">Java</a>
+      <a href="c.html" class="active">C</a>
+      <a href="excel.html">Excel</a>
+      <a href="numpy.html">NumPy</a>
+      <a href="pandas.html">Pandas</a>
+      <a href="matplotlib.html">Matplotlib</a>
+      <a href="ml.html">ML</a>
+      <a href="ai.html">AI</a>
+      <a href="r.html">R</a>
     </div>
 
-    <!-- Module 1: Basics -->
-    <a href="#Intro">Intro to C</a>
-    <a href="#Syntax">Syntax</a>
-    <a href="#Variables">Variables</a>
-    <a href="#DataTypes">Data Types</a>
-
-    <!-- Module 2: Control Flow -->
-    <a href="#IfElse">If...Else</a>
-    <a href="#Switch">Switch</a>
-    <a href="#Loops">Loops (For/While)</a>
-
-    <!-- Module 3: Functions & Memory -->
-    <a href="#Functions">Functions</a>
-    <a href="#Arrays">Arrays</a>
-    <a href="#Pointers">Pointers</a>
-    <a href="#Memory">Memory Management</a>
-
-    <!-- Projects -->
-    <a href="#Projects">Real World Projects</a>
-    <a href="#MiniTask">Mini Task</a>
-
-    <div style="margin-top: 50px;">
-      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    <div class="top-nav-search">
+      <input type="text" placeholder="Search..."/>
+      <button><i class="fas fa-search"></i></button>
     </div>
-  </div>
-
-  <div class="course-content">
-    <h1 class="h1">C Masterclass</h1>
-
-    <div class="course-controls">
-      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
-      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    
+    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
+      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
+       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
     </div>
+  </nav>
 
-    <!-- Module 1: Basics -->
-    <div class="section" id="Intro">
-      <div class="section-header">
-        <h2>Introduction to C</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
+  <!-- CONTENT WRAPPER -->
+  <div class="course-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-c" style="color:#00599C"></i> C Programming Tutorial
       </div>
-      <div class="section-content">
+
+      <div class="sidebar-section-label">C Programming Basic</div>
+      <a href="#Intro" class="active">Introduction to C</a>
+      <a href="#Syntax">Syntax</a>
+      <a href="#Variables">Variables</a>
+      <a href="#DataTypes">Data Types</a>
+      <a href="#IfElse">If...Else</a>
+      <a href="#Switch">Switch</a>
+      <a href="#Loops">Loops</a>
+      <a href="#Functions">Functions</a>
+      <a href="#Arrays">Arrays</a>
+      <a href="#Pointers">Pointers</a>
+      <a href="#Memory">Memory Management</a>
+      <a href="#Projects">🚀 Real World Projects</a>
+      <a href="#MiniTask">🎯 C Mini Task</a>
+
+      <div class="sidebar-footer">
+        <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="course-main">
+      <div class="course-content-area">
+        
+        <div class="breadcrumb">
+          <a href="../index1.html">Home</a> <span>/</span> <span>C</span>
+        </div>
+        
+        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">C Masterclass</h1>
+
+        <section class="topic-section" id="Intro">
+          <h1>Introduction to C</h1>
+          <div class="chapter-badge">Chapter 1</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Syntax" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 What is C?</h3>
         <p>C is a general-purpose programming language tailored for systems programming (like OS).</p>
         <div class="mermaid">graph TD
@@ -79,156 +99,258 @@
           Compiler --> Machine_Code
           Machine_Code --> Execution
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="Syntax">
-      <div class="section-header">
-        <h2>Syntax</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
-        <pre><code class="language-c">#include &lt;stdio.h&gt;
+        <section class="topic-section" id="Syntax">
+          <h1>Syntax</h1>
+          <div class="chapter-badge">Chapter 2</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Variables" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
+        <div class="example-box"><pre class="example-code"><code class="language-c">#include &lt;stdio.h&gt;
 
 int main() {
   printf("Hello World!");
   return 0;
 }</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">#include &lt;stdio.h&gt;
 
-    <div class="section" id="Variables">
-      <div class="section-header">
-        <h2>Variables</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+int main() {
+  printf("Hello World!");
+  return 0;
+}</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
+
+        <section class="topic-section" id="Variables">
+          <h1>Variables</h1>
+          <div class="chapter-badge">Chapter 3</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Syntax" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#DataTypes" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Containers for storing data values.</p>
-        <pre><code class="language-c">int myNum = 15;
+        <div class="example-box"><pre class="example-code"><code class="language-c">int myNum = 15;
 float myFloatNum = 5.99;
 char myLetter = 'D';</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">int myNum = 15;
+float myFloatNum = 5.99;
+char myLetter = 'D';</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="DataTypes">
-      <div class="section-header">
-        <h2>Data Types</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="DataTypes">
+          <h1>Data Types</h1>
+          <div class="chapter-badge">Chapter 4</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Variables" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#IfElse" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <ul>
           <li><code>int</code>: Integers</li>
           <li><code>float</code>: Floating point numbers</li>
           <li><code>char</code>: Single character</li>
         </ul>
-      </div>
-    </div>
+      
+        </section>
 
-    <!-- Module 2: Control Flow -->
-    <div class="section" id="IfElse">
-      <div class="section-header">
-        <h2>If...Else</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
-        <pre><code class="language-c">if (20 > 18) {
+        <section class="topic-section" id="IfElse">
+          <h1>If...Else</h1>
+          <div class="chapter-badge">Chapter 5</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#DataTypes" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Switch" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
+        <div class="example-box"><pre class="example-code"><code class="language-c">if (20 > 18) {
   printf("20 is greater than 18");
 }</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">if (20 &gt; 18) {
+  printf("20 is greater than 18");
+}</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Switch">
-      <div class="section-header">
-        <h2>Switch</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Switch">
+          <h1>Switch</h1>
+          <div class="chapter-badge">Chapter 6</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#IfElse" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Loops" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Select one of many code blocks to be executed.</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="Loops">
-      <div class="section-header">
-        <h2>Loops</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
-        <pre><code class="language-c">int i;
+        <section class="topic-section" id="Loops">
+          <h1>Loops</h1>
+          <div class="chapter-badge">Chapter 7</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Switch" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Functions" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
+        <div class="example-box"><pre class="example-code"><code class="language-c">int i;
 for (i = 0; i < 5; i++) {
   printf("%d\n", i);
-}</code></pre>
-      </div>
-    </div>
+}</code></pre></section>
 
-    <!-- Module 3: Functions & Memory -->
-    <div class="section" id="Functions">
-      <div class="section-header">
-        <h2>Functions</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
-        <pre><code class="language-c">void myFunction() {
+        <section class="topic-section" id="Functions">
+          <h1>Functions</h1>
+          <div class="chapter-badge">Chapter 8</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Loops" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Arrays" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
+        <div class="example-box"><pre class="example-code"><code class="language-c">void myFunction() {
   printf("I just got executed!");
 }</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">void myFunction() {
+  printf("I just got executed!");
+}</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Arrays">
-      <div class="section-header">
-        <h2>Arrays</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
-        <pre><code class="language-c">int myNumbers[] = {25, 50, 75, 100};</code></pre>
-      </div>
-    </div>
+        <section class="topic-section" id="Arrays">
+          <h1>Arrays</h1>
+          <div class="chapter-badge">Chapter 9</div>
 
-    <div class="section" id="Pointers">
-      <div class="section-header">
-        <h2>Pointers</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Functions" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Pointers" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
+        <div class="example-box"><pre class="example-code"><code class="language-c">int myNumbers[] = {25, 50, 75, 100};</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">int myNumbers[] = {25, 50, 75, 100};</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
+
+        <section class="topic-section" id="Pointers">
+          <h1>Pointers</h1>
+          <div class="chapter-badge">Chapter 10</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Arrays" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Memory" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>A variable that stores the memory address of another variable.</p>
-        <pre><code class="language-c">int myAge = 43;
+        <div class="example-box"><pre class="example-code"><code class="language-c">int myAge = 43;
 int* ptr = &myAge;
 
 printf("%p", ptr); // Outputs memory address</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">int myAge = 43;
+int* ptr = &myAge;
 
-    <div class="section" id="Memory">
-      <div class="section-header">
-        <h2>Memory Management</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+printf("%p", ptr); // Outputs memory address</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
+
+        <section class="topic-section" id="Memory">
+          <h1>Memory Management</h1>
+          <div class="chapter-badge">Chapter 11</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Pointers" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p><code>malloc()</code>, <code>calloc()</code>, <code>free()</code>.</p>
-      </div>
-    </div>
+      
+        </section>
 
-    <!-- Projects -->
-    <div class="section" id="Projects">
-      <div class="section-header">
-        <h2>🚀 Real World Projects</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Projects">
+          <h1>🚀 Real World Projects</h1>
+          <div class="chapter-badge">Chapter 12</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Memory" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>🟢 Beginner: Calculator</h3>
         <p><strong>Goal:</strong> Add, Sub, Mul, Div.</p>
         <h3>🟡 Intermediate: Login System</h3>
         <p><strong>Goal:</strong> File based auth system.</p>
         <h3>🔴 Advanced: Snake Game</h3>
         <p><strong>Goal:</strong> Console based game.</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="MiniTask">
-      <div class="section-header">
-        <h2>🎯 C Mini Task</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="MiniTask">
+          <h1>🎯 C Mini Task</h1>
+          <div class="chapter-badge">Chapter 13</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p><strong>Goal:</strong> Address Hunter.</p>
         <h4>📋 Requirements:</h4>
         <ol>
@@ -246,15 +368,115 @@ printf("%p", ptr); // Outputs memory address</code></pre>
       <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the C module.</p>
       <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
         onclick="location.href='../index1.html'">Return to Dashboard</button>
-    </div>
+    
+        </section>
 
-  </div> <!-- End content -->
+      </div>
+    </main>
+  </div>
 
-  <script src="../assets/js/course.js"></script>
-  <!-- Mermaid JS for Diagrams -->
   <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        document.getElementById('user-display').textContent = user.displayName || user.email.split('@')[0];
+      } else {
+        window.location.href = "../index.html";
+      }
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      signOut(auth).then(() => {
+        window.location.href = "../index.html";
+      });
+    });
+  </script>
+
+  <script>
+    // Sidebar active state syncing
+    const sections = document.querySelectorAll('.topic-section');
+    const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <script>
+
+
+    // Try It Editor functions (applied globally to all courses)
+    window.openTryIt = function(btn) {
+      const panel = btn.nextElementSibling;
+      panel.classList.add('open');
+      btn.style.display = 'none';
+      runTryIt(panel.querySelector('.tryit-run'));
+    };
+    window.closeTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      panel.classList.remove('open');
+      panel.previousElementSibling.style.display = 'inline-flex';
+    };
+    window.runTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      const code = panel.querySelector('.tryit-editor').value;
+      const iframe = panel.querySelector('iframe');
+      // basic wrapping for output display
+      iframe.srcdoc = `
+        <style>body{font-family:sans-serif; color:#333; background:#fff;}</style>
+        ${code}
+      `;
+    };
+  </script>
+
+  <script>
+    // Theme logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const updateThemeIcon = (isDark) => {
+      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+    };
+    
+    // Check saved theme
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+
+    if(toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme === 'dark');
+      });
+    }
   </script>
 </body>
 

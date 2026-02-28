@@ -1,181 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | Pandas Masterclass</title>
-  <link rel="icon" href="../assets/img/logohtml.png" type="image/jpeg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+<body class="learnx-page">
 
-<body>
-
-  <div class="circles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </div>
-
-  <div class="sidebar">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <i class="fas fa-table" style="font-size: 3rem; color: #150458;"></i>
-      <h2 style="margin-top: 10px; color: white;">Pandas</h2>
+  <!-- TOP NAV -->
+  <nav class="top-nav">
+    <a href="../index1.html" class="brand">LearnX</a>
+        <div class="top-nav-links">
+      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="js.html">JavaScript</a>
+      <a href="python.html">Python</a>
+      <a href="sql.html">SQL</a>
+      <a href="java.html">Java</a>
+      <a href="c.html">C</a>
+      <a href="excel.html">Excel</a>
+      <a href="numpy.html">NumPy</a>
+      <a href="pandas.html" class="active">Pandas</a>
+      <a href="matplotlib.html">Matplotlib</a>
+      <a href="ml.html">ML</a>
+      <a href="ai.html">AI</a>
+      <a href="r.html">R</a>
     </div>
 
-    <!-- Module 1: Intro -->
-    <a href="#Intro">Intro & Setup</a>
-    <a href="#Series">Series</a>
-    <a href="#DataFrames">DataFrames</a>
-
-    <!-- Module 2: Analysis -->
-    <a href="#ReadCSV">Reading Files (CSV/JSON)</a>
-    <a href="#Inspection">Inspecting Data</a>
-    <a href="#Selecting">Selecting & Filtering</a>
-
-    <!-- Module 3: Cleaning -->
-    <a href="#Cleaning">Cleaning Empty Cells</a>
-    <a href="#CleaningWrong">Cleaning Wrong Data</a>
-    <a href="#Duplicates">Removing Duplicates</a>
-
-    <!-- Module 4: Advanced -->
-    <a href="#Grouping">Grouping & Aggregation</a>
-    <a href="#Merging">Merging & Joins</a>
-    <a href="#Plotting">Plotting Integration</a>
-
-    <!-- Projects -->
-    <a href="#Projects">Real World Projects</a>
-    <a href="#MiniTask">Mini Task</a>
-
-    <div style="margin-top: 50px;">
-      <a href="../index1.html" style="color: #00d2ff;"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    <div class="top-nav-search">
+      <input type="text" placeholder="Search..."/>
+      <button><i class="fas fa-search"></i></button>
     </div>
-  </div>
-
-  <div class="course-content">
-    <h1 class="h1">Pandas Masterclass</h1>
-
-    <div class="course-controls">
-      <button class="btn-control" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Expand All</button>
-      <button class="btn-control" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Collapse All</button>
+    
+    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
+      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
+       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
     </div>
+  </nav>
 
-    <!-- Module 1: Basics -->
-    <div class="section" id="Intro">
-      <div class="section-header">
-        <h2>Introduction to Pandas</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
+  <!-- CONTENT WRAPPER -->
+  <div class="course-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-table" style="color:#150458"></i> Pandas Tutorial
       </div>
-      <div class="section-content">
+
+      <div class="sidebar-section-label">Pandas Basic</div>
+      <a href="#Intro" class="active">Introduction to Pandas</a>
+      <a href="#Series">Pandas Series</a>
+      <a href="#DataFrames">DataFrames</a>
+      <a href="#ReadCSV">Reading Files</a>
+      <a href="#Inspection">Inspecting Data</a>
+      <a href="#Selecting">Selecting & Filtering</a>
+      <a href="#Cleaning">Cleaning Empty Cells</a>
+      <a href="#CleaningWrong">Cleaning Wrong Data</a>
+      <a href="#Duplicates">Removing Duplicates</a>
+      <a href="#Grouping">Grouping & Aggregation</a>
+      <a href="#Merging">Merging & Joins</a>
+      <a href="#Plotting">Plotting Integration</a>
+      <a href="#Projects">🚀 Real World Projects</a>
+      <a href="#MiniTask">🎯 Pandas Mini Task</a>
+
+      <div class="sidebar-footer">
+        <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="course-main">
+      <div class="course-content-area">
+        
+        <div class="breadcrumb">
+          <a href="../index1.html">Home</a> <span>/</span> <span>Pandas</span>
+        </div>
+        
+        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">Pandas Masterclass</h1>
+
+        <section class="topic-section" id="Intro">
+          <h1>Introduction to Pandas</h1>
+          <div class="chapter-badge">Chapter 1</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Series" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 What is Pandas?</h3>
         <p>Pandas is the core library for data manipulation in Python. It's like "Excel on steroids" for programmers.
         </p>
         <h3>🚀 Setup</h3>
-        <pre><code class="language-python">import pandas as pd
+        <div class="example-box"><pre class="example-code"><code class="language-python">import pandas as pd
 print(pd.__version__)</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">import pandas as pd
+print(pd.__version__)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Series">
-      <div class="section-header">
-        <h2>Pandas Series</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Series">
+          <h1>Pandas Series</h1>
+          <div class="chapter-badge">Chapter 2</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#DataFrames" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>A Series is like a column in a table. It is a one-dimensional array holding data of any type.</p>
-        <pre><code class="language-python">a = [1, 7, 2]
+        <div class="example-box"><pre class="example-code"><code class="language-python">a = [1, 7, 2]
 myvar = pd.Series(a, index = ["x", "y", "z"])
 print(myvar["y"]) # Returns 7</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">a = [1, 7, 2]
+myvar = pd.Series(a, index = ["x", "y", "z"])
+print(myvar["y"]) # Returns 7</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="DataFrames">
-      <div class="section-header">
-        <h2>DataFrames</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="DataFrames">
+          <h1>DataFrames</h1>
+          <div class="chapter-badge">Chapter 3</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Series" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#ReadCSV" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 What is a DataFrame?</h3>
         <p>A DataFrame is a 2 dimensional data structure, like a 2 dimensional array, or a table with rows and columns.
         </p>
-        <pre><code class="language-python">data = {
+        <div class="example-box"><pre class="example-code"><code class="language-python">data = {
   "calories": [420, 380, 390],
   "duration": [50, 40, 45]
 }
 df = pd.DataFrame(data)
 print(df)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">data = {
+  "calories": [420, 380, 390],
+  "duration": [50, 40, 45]
+}
+df = pd.DataFrame(data)
+print(df)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
         <div class="mermaid">graph TD
           Dictionary --> DataFrame
           List_of_Lists --> DataFrame
           CSV_File --> DataFrame
-        </div>
-      </div>
-    </div>
+        
+        </section>
 
-    <!-- Module 2: Analysis -->
-    <div class="section" id="ReadCSV">
-      <div class="section-header">
-        <h2>Reading Files</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="ReadCSV">
+          <h1>Reading Files</h1>
+          <div class="chapter-badge">Chapter 4</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#DataFrames" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Inspection" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>📌 CSV & JSON</h3>
         <p>Data usually comes in files. Pandas makes loading them one-line magic.</p>
-        <pre><code class="language-python">df = pd.read_csv('data.csv')
+        <div class="example-box"><pre class="example-code"><code class="language-python">df = pd.read_csv('data.csv')
 df_json = pd.read_json('data.json')</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">df = pd.read_csv('data.csv')
+df_json = pd.read_json('data.json')</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Inspection">
-      <div class="section-header">
-        <h2>Inspecting Data</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Inspection">
+          <h1>Inspecting Data</h1>
+          <div class="chapter-badge">Chapter 5</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#ReadCSV" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Selecting" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <ul>
           <li><code>df.head(10)</code>: First 10 rows.</li>
           <li><code>df.tail()</code>: Last 5 rows.</li>
           <li><code>df.info()</code>: Data types and memory usage.</li>
           <li><code>df.describe()</code>: Statistical summary (mean, std, min, max).</li>
         </ul>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="Selecting">
-      <div class="section-header">
-        <h2>Selecting & Filtering</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Selecting">
+          <h1>Selecting & Filtering</h1>
+          <div class="chapter-badge">Chapter 6</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Inspection" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Cleaning" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Filtering data is intuitive.</p>
-        <pre><code class="language-python"># Select column
+        <div class="example-box"><pre class="example-code"><code class="language-python"># Select column
 ages = df['Age']
 
 # Select Row (by index)
 row = df.loc[0]
 
 # Conditional Filtering
-adults = df[df['Age'] > 18]</code></pre>
-      </div>
-    </div>
+adults = df[df['Age'] > 18]</code></pre></section>
 
-    <!-- Module 3: Cleaning -->
-    <div class="section" id="Cleaning">
-      <div class="section-header">
-        <h2>Cleaning Empty Cells</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Cleaning">
+          <h1>Cleaning Empty Cells</h1>
+          <div class="chapter-badge">Chapter 7</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Selecting" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#CleaningWrong" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Bad data can ruin your analysis. Handle it!</p>
-        <pre><code class="language-python"># Remove rows with empty cells
+        <div class="example-box"><pre class="example-code"><code class="language-python"># Remove rows with empty cells
 new_df = df.dropna()
 
 # Fill empty cells with a value
@@ -184,97 +264,164 @@ df.fillna(130, inplace = True)
 # Fill with Mean
 x = df["Calories"].mean()
 df["Calories"].fillna(x, inplace = True)</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false"># Remove rows with empty cells
+new_df = df.dropna()
 
-    <div class="section" id="CleaningWrong">
-      <div class="section-header">
-        <h2>Cleaning Wrong Data</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+# Fill empty cells with a value
+df.fillna(130, inplace = True)
+
+# Fill with Mean
+x = df["Calories"].mean()
+df["Calories"].fillna(x, inplace = True)</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
+
+        <section class="topic-section" id="CleaningWrong">
+          <h1>Cleaning Wrong Data</h1>
+          <div class="chapter-badge">Chapter 8</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Cleaning" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Duplicates" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Correcting logical errors.</p>
-        <pre><code class="language-python"># Set a max limit for duration
+        <div class="example-box"><pre class="example-code"><code class="language-python"># Set a max limit for duration
 for x in df.index:
   if df.loc[x, "Duration"] > 120:
     df.loc[x, "Duration"] = 120</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false"># Set a max limit for duration
+for x in df.index:
+  if df.loc[x, "Duration"] &gt; 120:
+    df.loc[x, "Duration"] = 120</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Duplicates">
-      <div class="section-header">
-        <h2>Removing Duplicates</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
-        <pre><code class="language-python"># Check for duplicates
+        <section class="topic-section" id="Duplicates">
+          <h1>Removing Duplicates</h1>
+          <div class="chapter-badge">Chapter 9</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#CleaningWrong" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Grouping" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
+        <div class="example-box"><pre class="example-code"><code class="language-python"># Check for duplicates
 print(df.duplicated())
 
 # Remove duplicates
-df.drop_duplicates(inplace = True)</code></pre>
-      </div>
-    </div>
+df.drop_duplicates(inplace = True)</code></pre></section>
 
-    <!-- Module 4: Advanced -->
-    <div class="section" id="Grouping">
-      <div class="section-header">
-        <h2>Grouping & Aggregation</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Grouping">
+          <h1>Grouping & Aggregation</h1>
+          <div class="chapter-badge">Chapter 10</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Duplicates" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Merging" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>The <code>groupby()</code> method helps group data into categories and apply functions.</p>
-        <pre><code class="language-python"># Average calories by Workout Type
+        <div class="example-box"><pre class="example-code"><code class="language-python"># Average calories by Workout Type
 numeric_df = df[["Duration", "Pulse", "Maxpulse", "Calories"]]
 numeric_df.groupby(df["Type"]).mean()</code></pre>
-      </div>
-    </div>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false"># Average calories by Workout Type
+numeric_df = df[["Duration", "Pulse", "Maxpulse", "Calories"]]
+numeric_df.groupby(df["Type"]).mean()</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Merging">
-      <div class="section-header">
-        <h2>Merging & Joins</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Merging">
+          <h1>Merging & Joins</h1>
+          <div class="chapter-badge">Chapter 11</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Grouping" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Plotting" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Combining multiple DataFrames.</p>
-        <pre><code class="language-python">merged = pd.merge(df1, df2, on='ID', how='inner')</code></pre>
-      </div>
-    </div>
+        <div class="example-box"><pre class="example-code"><code class="language-python">merged = pd.merge(df1, df2, on='ID', how='inner')</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">merged = pd.merge(df1, df2, on='ID', how='inner')</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+            </div>
+      </section>
 
-    <div class="section" id="Plotting">
-      <div class="section-header">
-        <h2>Plotting Integration</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Plotting">
+          <h1>Plotting Integration</h1>
+          <div class="chapter-badge">Chapter 12</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Merging" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p>Pandas hooks directly into Matplotlib.</p>
-        <pre><code class="language-python">import matplotlib.pyplot as plt
+        <div class="example-box"><pre class="example-code"><code class="language-python">import matplotlib.pyplot as plt
 df.plot(kind = 'scatter', x = 'Duration', y = 'Calories')
-plt.show()</code></pre>
-      </div>
-    </div>
+plt.show()</code></pre></section>
 
-    <!-- Projects -->
-    <div class="section" id="Projects">
-      <div class="section-header">
-        <h2>🚀 Real World Projects</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="Projects">
+          <h1>🚀 Real World Projects</h1>
+          <div class="chapter-badge">Chapter 13</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Plotting" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <h3>🟢 Beginner: Dataset Explorer</h3>
         <p><strong>Goal:</strong> Load a CSV, print stats, and fix missing values.</p>
         <h3>🟡 Intermediate: Sales Analysis</h3>
         <p><strong>Goal:</strong> Group sales by Month and Product Category to find top performers.</p>
         <h3>🔴 Advanced: Stock Predictor (Prep)</h3>
         <p><strong>Goal:</strong> Calculate moving averages and daily returns on historical finance data.</p>
-      </div>
-    </div>
+      </section>
 
-    <div class="section" id="MiniTask">
-      <div class="section-header">
-        <h2>🎯 Pandas Mini Task</h2>
-        <i class="fas fa-chevron-down toggle-icon"></i>
-      </div>
-      <div class="section-content">
+        <section class="topic-section" id="MiniTask">
+          <h1>🎯 Pandas Mini Task</h1>
+          <div class="chapter-badge">Chapter 14</div>
+
+          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
+            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
+          </div>
+          
         <p><strong>Goal:</strong> Create your own DataFrame.</p>
         <h4>📋 Requirements:</h4>
         <ol>
@@ -292,15 +439,115 @@ plt.show()</code></pre>
       <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Pandas module.</p>
       <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
         onclick="location.href='../index1.html'">Return to Dashboard</button>
-    </div>
+    
+        </section>
 
-  </div> <!-- End content -->
+      </div>
+    </main>
+  </div>
 
-  <script src="../assets/js/course.js"></script>
-  <!-- Mermaid JS for Diagrams -->
   <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        document.getElementById('user-display').textContent = user.displayName || user.email.split('@')[0];
+      } else {
+        window.location.href = "../index.html";
+      }
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      signOut(auth).then(() => {
+        window.location.href = "../index.html";
+      });
+    });
+  </script>
+
+  <script>
+    // Sidebar active state syncing
+    const sections = document.querySelectorAll('.topic-section');
+    const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <script>
+
+
+    // Try It Editor functions (applied globally to all courses)
+    window.openTryIt = function(btn) {
+      const panel = btn.nextElementSibling;
+      panel.classList.add('open');
+      btn.style.display = 'none';
+      runTryIt(panel.querySelector('.tryit-run'));
+    };
+    window.closeTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      panel.classList.remove('open');
+      panel.previousElementSibling.style.display = 'inline-flex';
+    };
+    window.runTryIt = function(btn) {
+      const panel = btn.closest('.tryit-panel');
+      const code = panel.querySelector('.tryit-editor').value;
+      const iframe = panel.querySelector('iframe');
+      // basic wrapping for output display
+      iframe.srcdoc = `
+        <style>body{font-family:sans-serif; color:#333; background:#fff;}</style>
+        ${code}
+      `;
+    };
+  </script>
+
+  <script>
+    // Theme logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const updateThemeIcon = (isDark) => {
+      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+    };
+    
+    // Check saved theme
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+
+    if(toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme === 'dark');
+      });
+    }
   </script>
 </body>
 

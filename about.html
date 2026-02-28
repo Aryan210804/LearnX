@@ -6,88 +6,158 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | About</title>
   <link rel="icon" href="assets/img/LOGO.jpeg" type="image/jpeg">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 20px;
-    }
-
-    .about-container {
+    .page-container {
       max-width: 800px;
+      margin: 60px auto;
       padding: 40px;
-      margin: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
     }
 
-    h1 {
-      text-align: center;
-      color: #00d2ff;
-      margin-bottom: 25px;
+    .page-title {
       font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 24px;
+      text-align: center;
     }
 
-    p,
-    li {
-      color: rgba(255, 255, 255, 0.9);
-      line-height: 1.6;
-      margin-bottom: 15px;
+    .page-content p {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-size: 16px;
     }
 
-    ul {
-      margin-left: 20px;
-      margin-bottom: 20px;
+    .topic-list {
+      list-style: none;
+      margin: 24px 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .topic-list li {
+      background: var(--bg);
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+    }
+
+    .topic-list i {
+      color: var(--primary);
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
     }
 
     .back-btn {
-      display: block;
-      text-align: center;
-      margin-top: 30px;
-      color: #00d2ff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--primary);
+      color: #fff;
       text-decoration: none;
+      border-radius: 8px;
       font-weight: 600;
+      margin-top: 24px;
+      transition: background 0.2s;
+    }
+
+    .back-btn:hover {
+      background: var(--primary-dark);
+      color: #fff;
     }
   </style>
 </head>
 
-<body>
-  <div class="area">
-    <ul class="circles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+<body class="dashboard-body">
+
+  <!-- Top Nav -->
+  <nav class="top-nav dashboard-topnav">
+    <a class="brand" href="home.html">LearnX</a>
+    <div class="top-nav-links">
+      <a href="home.html">Home</a>
+      <a href="index1.html">Dashboard</a>
+      <a href="about.html" class="active">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+    
+      <button id="theme-toggle" class="nav-btn" style="background:transparent; color:var(--text); border:1px solid var(--border); margin-left:auto; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; padding: 6px 12px;"><i class="fas fa-sun"></i></button>
+    </div>
+  </nav>
+
+  <div class="dashboard-container">
+    <div class="page-container">
+      <h1 class="page-title"><i class="fas fa-book-reader" style="margin-right:8px;"></i> About LearnX</h1>
+
+      <div class="page-content">
+        <p><strong>LearnX</strong> is a premium, open-source educational platform developed as part of a mission to make
+          learning programming simple, accessible, and structured.</p>
+        <p>Our platform mimics the clean, straightforward methodology of top-tier coding bootcamps, removing the noise
+          and presenting you with purely practical, immediately usable knowledge.</p>
+
+        <h3 style="color:var(--text); margin-top:32px; margin-bottom:16px;">🌟 What We Build</h3>
+        <ul class="topic-list">
+          <li><i class="fab fa-html5"></i>
+            <div><strong>Web Basics:</strong> HTML, CSS, Javascript</div>
+          </li>
+          <li><i class="fab fa-python"></i>
+            <div><strong>Backend:</strong> Python, Java, C</div>
+          </li>
+          <li><i class="fas fa-database"></i>
+            <div><strong>Data & Analytics:</strong> SQL, NumPy, Pandas, Excel, R</div>
+          </li>
+          <li><i class="fas fa-robot"></i>
+            <div><strong>Machine Learning:</strong> AI & Predictive models</div>
+          </li>
+        </ul>
+
+        <p>The goal is to provide a comprehensive, structured digital notebook that anyone can reference while building
+          real-world projects. No arbitrary paywalls, no confusing navigation — just pure code.</p>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="index1.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+      </div>
+    </div>
   </div>
-  <div class="about-container glass-card">
-    <h1>📘 About LearnX</h1>
-    <p><strong>LearnX</strong> is a personal project developed as part of a learning journey in programming and web
-      development. It’s designed to be a simple, user-friendly educational platform built entirely using modern web
-      technologies.</p>
-    <p>🌟 <strong>Topics Covered:</strong></p>
-    <ul>
-      <li>💻 <strong>C Programming:</strong> Syntax, control flow, arrays, and functions.</li>
-      <li>🐍 <strong>Python:</strong> Data types, functions, and logic.</li>
-      <li>☕ <strong>Java:</strong> Object-oriented programming basics.</li>
-      <li>🌐 <strong>HTML & CSS:</strong> Web structure and styling.</li>
-      <li>🧠 <strong>JavaScript:</strong> Interactivity and DOM manipulation.</li>
-      <li>🗃️ <strong>SQL:</strong> Database queries and management.</li>
-      <li>📊 <strong>Excel:</strong> Data analysis and formulas.</li>
-    </ul>
-    <p>The goal is to make learning <strong>clear, practical, and self-paced</strong>. LearnX acts as a digital notebook
-      and a space for applying knowledge to real-world concepts.</p>
-    <a href="index1.html" class="back-btn">← Back to Dashboard</a>
-  </div>
+
+
+  <script>
+    // Theme logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const updateThemeIcon = (isDark) => {
+      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+    };
+    
+    // Check saved theme
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+
+    if(toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme === 'dark');
+      });
+    }
+  </script>
 </body>
 
 </html>
