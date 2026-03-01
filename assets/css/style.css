@@ -9,6 +9,8 @@
   --secondary: #282A35;
   --sidebar-width: 270px;
   --topnav-height: 56px;
+  --subnav-height: 40px;
+  --total-nav-height: 96px;
   --radius: 8px;
   --font-main: 'Inter', 'Segoe UI', sans-serif;
   --font-mono: 'Fira Code', 'Courier New', monospace;
@@ -108,39 +110,51 @@ img {
   white-space: nowrap;
 }
 
-.top-nav-links {
+/* ─── SUB NAV (Row 2: Course Links Bar) ─── */
+.sub-nav {
+  position: fixed;
+  top: var(--topnav-height);
+  left: 0;
+  right: 0;
+  height: var(--subnav-height);
+  background: #333846;
   display: flex;
   align-items: center;
-  gap: 0;
   overflow-x: auto;
   scrollbar-width: none;
-  /* Hide scrollbar for Firefox */
   -ms-overflow-style: none;
-  /* Hide scrollbar for IE/Edge */
-  max-width: 60vw;
+  z-index: 1999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0 10px;
 }
 
-.top-nav-links::-webkit-scrollbar {
+.sub-nav::-webkit-scrollbar {
   display: none;
-  /* Hide scrollbar for Chrome/Safari */
 }
 
-.top-nav-links a {
-  color: #ccc;
-  font-size: 13px;
-  font-weight: 500;
+.sub-nav a {
+  color: #ddd;
+  font-size: 12.5px;
+  font-weight: 600;
   padding: 0 14px;
-  height: var(--topnav-height);
+  height: var(--subnav-height);
   display: flex;
   align-items: center;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.15s, color 0.15s;
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.top-nav-links a:hover,
-.top-nav-links a.active {
+.sub-nav a:hover {
   background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-decoration: none;
+}
+
+.sub-nav a.active {
+  background: var(--primary);
   color: #fff;
   text-decoration: none;
 }
@@ -214,14 +228,14 @@ img {
 /* ─── COURSE LAYOUT CONTAINER ─── */
 .course-layout {
   display: flex;
-  padding-top: var(--topnav-height);
+  padding-top: var(--total-nav-height);
   min-height: 100vh;
 }
 
 /* ─── SIDEBAR ─── */
 .sidebar {
   position: fixed;
-  top: var(--topnav-height);
+  top: var(--total-nav-height);
   left: 0;
   bottom: 0;
   width: var(--sidebar-width);
@@ -1023,26 +1037,8 @@ code {
     display: block;
   }
 
-  .top-nav-links {
-    display: none;
-  }
-
-  .top-nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
+  .sub-nav {
     top: var(--topnav-height);
-    left: 0;
-    right: 0;
-    background: var(--secondary);
-    padding: 10px 0;
-    z-index: 1900;
-  }
-
-  .top-nav-links.open a {
-    height: auto;
-    padding: 12px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .course-grid {

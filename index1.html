@@ -30,7 +30,9 @@
       <input type="text" placeholder="Search courses..." />
       <button><i class="fas fa-search"></i></button>
     </div>
-     <button id="theme-toggle" class="nav-btn" style="background:transparent; color:var(--text); border:1px solid var(--border); margin-right:15px; display:inline-flex; align-items:center; justify-content:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
+    <button id="theme-toggle" class="nav-btn"
+      style="background:transparent; color:var(--text); border:1px solid var(--border); margin-right:15px; display:inline-flex; align-items:center; justify-content:center; cursor:pointer;"><i
+        class="fas fa-sun"></i></button>
     <button class="hamburger" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
     <button class="nav-btn logout-trigger" id="logout-trigger" style="background:#e53935;">
       <i class="fas fa-sign-out-alt"></i> Logout
@@ -168,16 +170,10 @@
         <p>Visualisation</p>
         <span class="card-tag">Intermediate</span>
       </a>
-      <a href="courses/ml.html" class="course-card" style="--card-accent:#ff9900">
-        <i class="fas fa-brain card-icon"></i>
-        <h3>Machine Learning</h3>
-        <p>ML Algorithms</p>
-        <span class="card-tag">Advanced</span>
-      </a>
       <a href="courses/ai.html" class="course-card" style="--card-accent:#00d2ff">
         <i class="fas fa-robot card-icon"></i>
-        <h3>AI</h3>
-        <p>Artificial Intelligence</p>
+        <h3>AI & ML</h3>
+        <p>Masterclass</p>
         <span class="card-tag">Advanced</span>
       </a>
     </div>
@@ -247,15 +243,15 @@
     // Theme logic
     const toggleBtn = document.getElementById('theme-toggle');
     const updateThemeIcon = (isDark) => {
-      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+      if (toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
     };
-    
+
     // Check saved theme
     let currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
     window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
 
-    if(toggleBtn) {
+    if (toggleBtn) {
       toggleBtn.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme');
         let newTheme = theme === 'dark' ? 'light' : 'dark';

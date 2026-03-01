@@ -1,329 +1,3978 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | Excel Masterclass</title>
   <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #217346 0%, #1a5c38 100%);
+      --accent-color: #2da44e;
+      --sidebar-bg-modern: #1b1e23;
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      --card-radius: 16px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #217346;
+      border-radius: 4px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Modernized sub-nav */
+    .sub-nav {
+      background: #1b1e23 !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      gap: 5px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      z-index: 1999;
+      position: fixed;
+      top: var(--topnav-height);
+      left: 0;
+      right: 0;
+      height: var(--subnav-height);
+    }
+
+    .sub-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .sub-nav a {
+      color: #999;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 0 15px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .sub-nav a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .sub-nav a.active {
+      background: #217346 !important;
+      color: #fff !important;
+    }
+
+    /* Premium Sidebar */
+    .sidebar {
+      background: var(--sidebar-bg-modern) !important;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 10px;
+    }
+
+    .sidebar-header {
+      padding: 25px 20px;
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      border-radius: 8px;
+      margin: 2px 12px;
+      padding: 10px 15px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #999;
+      font-size: 13.5px;
+      text-decoration: none !important;
+      border-left: none !important;
+    }
+
+    .sidebar a:hover {
+      background: rgba(33, 115, 70, 0.15);
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    .sidebar a.active {
+      background: var(--primary-gradient) !important;
+      color: #fff !important;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(33, 115, 70, 0.3);
+    }
+
+    /* Content Cards */
+    .lesson-section {
+      background: var(--bg-card);
+      padding: 50px;
+      border-radius: var(--card-radius);
+      margin-bottom: 60px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      color: var(--text);
+    }
+
+    .lesson-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--primary-gradient);
+    }
+
+    .section-content-card {
+      background: rgba(33, 115, 70, 0.03);
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 30px;
+      border: 1px solid rgba(33, 115, 70, 0.1);
+    }
+
+    [data-theme="dark"] .section-content-card {
+      background: rgba(33, 115, 70, 0.05);
+      border-color: rgba(33, 115, 70, 0.2);
+    }
+
+    .section-content-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #217346;
+      border: none;
+      padding: 0;
+    }
+
+    [data-theme="dark"] .section-content-card h3 {
+      color: #2da44e;
+    }
+
+    .lesson-section h1 {
+      font-size: 38px;
+      font-weight: 900;
+      margin-bottom: 25px;
+      letter-spacing: -1px;
+    }
+
+    .lesson-section p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    /* Breadcrumb styling */
+    .breadcrumb {
+      display: inline-flex;
+      background: rgba(33, 115, 70, 0.08);
+      padding: 10px 25px;
+      border-radius: 50px;
+      margin-bottom: 40px;
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    .top-nav {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      justify-content: space-between;
+    }
+  </style>
 </head>
+
 <body class="learnx-page">
 
   <!-- TOP NAV -->
+  <!-- TOP NAV -->
   <nav class="top-nav">
+    <button class="hamburger" id="mobile-toggle"><i class="fas fa-bars"></i></button>
     <a href="../index1.html" class="brand">LearnX</a>
-        <div class="top-nav-links">
-      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
-      <a href="html.html">HTML</a>
-      <a href="css.html">CSS</a>
-      <a href="js.html">JavaScript</a>
-      <a href="python.html">Python</a>
-      <a href="sql.html">SQL</a>
-      <a href="java.html">Java</a>
-      <a href="c.html">C</a>
-      <a href="excel.html" class="active">Excel</a>
-      <a href="numpy.html">NumPy</a>
-      <a href="pandas.html">Pandas</a>
-      <a href="matplotlib.html">Matplotlib</a>
-      <a href="ml.html">ML</a>
-      <a href="ai.html">AI</a>
-      <a href="r.html">R</a>
-    </div>
 
     <div class="top-nav-search">
-      <input type="text" placeholder="Search..."/>
+      <input type="text" placeholder="Search course content..." />
       <button><i class="fas fa-search"></i></button>
     </div>
-    
-    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
-      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
-       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
-      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
+
+    <div class="nav-profile-links">
+      <span id="user-display"></span>
+      <button id="theme-toggle" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn">Logout</button>
     </div>
+  </nav>
+
+  <!-- SUB NAV -->
+  <!-- SUB NAV (Course Links) -->
+  <nav class="sub-nav">
+    <a href="../index1.html"><i class="fas fa-th-large"></i> DASHBOARD</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JAVASCRIPT</a>
+    <a href="python.html">PYTHON</a>
+    <a href="sql.html">SQL</a>
+    <a href="java.html">JAVA</a>
+    <a href="c.html">C++</a>
+    <a href="excel.html" class="active">EXCEL</a>
+    <a href="numpy.html">NUMPY</a>
+    <a href="pandas.html">PANDAS</a>
+    <a href="matplotlib.html">MATPLOTLIB</a>
+    <a href="ai.html">AI & ML</a>
+    <a href="r.html">R</a>
   </nav>
 
   <!-- CONTENT WRAPPER -->
   <div class="course-layout">
-    
-    <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
-        <i class="fas fa-file-excel" style="color:#217346"></i> Excel Tutorial
+        <i class="fas fa-file-excel" style="color:#217346"></i> Excel Masterclass
       </div>
-
-      <div class="sidebar-section-label">Excel Basic</div>
-      <a href="#Intro" class="active">Introduction to Excel</a>
-      <a href="#Cells">Cells & Ranges</a>
-      <a href="#Formatting">Formatting</a>
-      <a href="#Formulas">Formulas Intro</a>
-      <a href="#Functions">Basic Functions</a>
-      <a href="#Logic">Logic Functions</a>
-      <a href="#Lookup">VLOOKUP / XLOOKUP</a>
-      <a href="#PivotTables">Pivot Tables</a>
-      <a href="#Charts">Charts & Graphs</a>
-      <a href="#Sorting">Sorting & Filtering</a>
-      <a href="#DataValidation">Data Validation</a>
-      <a href="#Macros">Macros (VBA)</a>
-      <a href="#Projects">🚀 Real World Projects</a>
-      <a href="#MiniTask">🎯 Excel Mini Task</a>
-
+      <div class="sidebar-section-label">Getting Started</div>
+      <a href="#excel-home" class="active"><i class="fas fa-house"></i> Home Tab</a>
+      <a href="#excel-introduction"><i class="fas fa-book"></i> Introduction</a>
+      <a href="#excel-get-started"><i class="fas fa-rocket"></i> Get Started</a>
+      <a href="#excel-overview"><i class="fas fa-desktop"></i> Interface</a>
+      <div class="sidebar-section-label">Basics & Editing</div>
+      <a href="#excel-syntax"><i class="fas fa-code"></i> Syntax</a>
+      <a href="#excel-ranges"><i class="fas fa-th"></i> Ranges</a>
+      <a href="#excel-fill"><i class="fas fa-fill-drip"></i> Fill & Series</a>
+      <a href="#excel-move-cells"><i class="fas fa-arrows-alt"></i> Move Cells</a>
+      <a href="#excel-add-cells"><i class="fas fa-plus-square"></i> Add Cells</a>
+      <a href="#excel-delete-cells"><i class="fas fa-minus-square"></i> Delete Cells</a>
+      <a href="#excel-undo-redo"><i class="fas fa-undo-alt"></i> Undo / Redo</a>
+      <div class="sidebar-section-label">Formulas & Logic</div>
+      <a href="#excel-formulas"><i class="fas fa-calculator"></i> All Formulas</a>
+      <a href="#excel-relative-reference"><i class="fas fa-link"></i> Relative Ref</a>
+      <a href="#excel-absolute-reference"><i class="fas fa-lock"></i> Absolute Ref</a>
+      <a href="#excel-arithmetic-operators"><i class="fas fa-percent"></i> Operators</a>
+      <a href="#excel-parentheses"><i class="fas fa-brackets-curly"></i> Parentheses</a>
+      <a href="#excel-functions"><i class="fas fa-function"></i> Basic Functions</a>
+      <div class="sidebar-section-label">Formatting</div>
+      <a href="#excel-formatting"><i class="fas fa-paint-brush"></i> Main Formatting</a>
+      <a href="#excel-format-painter"><i class="fas fa-copy"></i> Format Painter</a>
+      <a href="#excel-format-colors"><i class="fas fa-palette"></i> Colors</a>
+      <a href="#excel-format-fonts"><i class="fas fa-font"></i> Fonts</a>
+      <a href="#excel-format-borders"><i class="fas fa-border-all"></i> Borders</a>
+      <a href="#excel-format-numbers"><i class="fas fa-hashtag"></i> Numbers</a>
+      <div class="sidebar-section-label">Data Analysis</div>
+      <a href="#excel-sort"><i class="fas fa-sort-amount-down"></i> Sort</a>
+      <a href="#excel-filter"><i class="fas fa-filter"></i> Filter</a>
+      <a href="#excel-tables"><i class="fas fa-table"></i> Tables</a>
+      <a href="#excel-conditional-format"><i class="fas fa-highlighter"></i> Conditional Format</a>
+      <a href="#excel-charts"><i class="fas fa-chart-line"></i> Charts</a>
+      <a href="#table-pivot-intro"><i class="fas fa-columns"></i> Pivot Tables</a>
+      <div class="sidebar-section-label">Function Reference</div>
+      <a href="#excel-if-function"><i class="fas fa-question"></i> IF & IFS</a>
+      <a href="#excel-vlookup-function"><i class="fas fa-search"></i> VLOOKUP</a>
+      <a href="#excel-sumif-function"><i class="fas fa-plus"></i> SUMIF / COUNTIF</a>
+      <a href="#excel-left-function"><i class="fas fa-align-left"></i> Text Functions</a>
+      <a href="#excel-stdevs-function"><i class="fas fa-square-root-alt"></i> Statistics</a>
+      <a href="#excel-convert-time-seconds"><i class="fas fa-clock"></i> Time & Date</a>
       <div class="sidebar-footer">
         <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
       </div>
     </aside>
-
-    <!-- MAIN CONTENT -->
     <main class="course-main">
       <div class="course-content-area">
-        
         <div class="breadcrumb">
-          <a href="../index1.html">Home</a> <span>/</span> <span>Excel</span>
+          <a href="../index1.html">Home</a> <span>/</span> <span>Excel Masterclass</span>
         </div>
-        
-        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">Excel Masterclass</h1>
 
-        <section class="topic-section" id="Intro">
-          <h1>Introduction to Excel</h1>
-          <div class="chapter-badge">Chapter 1</div>
+        <section id="excel-home" class="lesson-section">
+          <h1>Excel Home Tab</h1>
+          <p>Welcome to the Excel Home tab! This is the central hub of Microsoft Excel, where you can access key
+            commands
+            for formatting, clipboard operations, fonts, alignment, and styles.</p>
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Cells" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul style="list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+                <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+                <span>Clipboard operations: Cut, Copy, Paste, Format Painter</span>
+              </li>
+              <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+                <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+                <span>Font settings: Type, size, color, bold, italic</span>
+              </li>
+              <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+                <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+                <span>Cell alignment: Left, right, center, merge, wrap text</span>
+              </li>
+              <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+                <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+                <span>Number formatting: Currency, percentage, decimals</span>
+              </li>
+            </ul>
           </div>
-          
-        <h3>📌 What is Excel?</h3>
-        <p>The world's most popular spreadsheet software. Used for storing, organizing, and analyzing data.</p>
-        <div class="mermaid">graph TD
-          Input_Data --> Spreadsheet
-          Spreadsheet --> Formulas
-          Spreadsheet --> Visualization
-        </div>
-      </section>
 
-        <section class="topic-section" id="Cells">
-          <h1>Cells & Ranges</h1>
-          <div class="chapter-badge">Chapter 2</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Formatting" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="section-content-card">
           </div>
-          
-        <p><strong>Cell:</strong> Intersection of a Row and Column (e.g., A1).</p>
-        <p><strong>Range:</strong> A group of cells (e.g., A1:B10).</p>
-      </section>
-
-        <section class="topic-section" id="Formatting">
-          <h1>Formatting</h1>
-          <div class="chapter-badge">Chapter 3</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Cells" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Formulas" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="section-content-card">
+            <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+            <p>The Home tab contains the most frequently used Excel commands organized into sections:</p>
+            <ul style="list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 12px;"><strong style="color:var(--accent-color)">Clipboard:</strong> Cut,
+                Copy,
+                Paste, and Format Painter allow you to move and replicate data efficiently.</li>
+              <li style="margin-bottom: 12px;"><strong style="color:var(--accent-color)">Font:</strong> Adjust type,
+                size, color, and style to make data readable and visually appealing.</li>
+              <li style="margin-bottom: 12px;"><strong style="color:var(--accent-color)">Alignment:</strong> Position
+                your text in the cell for clarity, including vertical and horizontal options.</li>
+              <li style="margin-bottom: 12px;"><strong style="color:var(--accent-color)">Number:</strong> Format
+                numeric
+                data for business and financial clarity.</li>
+            </ul>
           </div>
-          
-        <p>Making data readable. Bold, Italic, Cell Color, Borders.</p>
-        <p><strong>Conditional Formatting:</strong> Highlight top 10% or values above average.</p>
-      
-        </section>
 
-        <section class="topic-section" id="Formulas">
-          <h1>Formulas Intro</h1>
-          <div class="chapter-badge">Chapter 4</div>
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Formatting" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Functions" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="section-content-card">
+            <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+            <p>The Home tab itself doesn’t use formulas, but many of its features affect how formulas appear. For
+              instance:
+            </p>
+            <ul>
+              <li>Formatting numbers: <code>Currency</code>, <code>Percentage</code>, <code>Decimal places</code></li>
+              <li>Font styling: <code>BOLD()</code> or <code>ITALIC()</code> are applied via the ribbon rather than
+                formula
+                syntax</li>
+              <li>Conditional formatting: Uses formula-based rules like <code>=A1>1000</code></li>
+            </ul>
           </div>
-          
-        <p>All formulas start with <code>=</code>.</p>
-        <div class="example-box"><pre class="example-code"><code>=A1 + A2</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">=A1 + A2</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Functions">
-          <h1>Basic Functions</h1>
-          <div class="chapter-badge">Chapter 5</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Formulas" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Logic" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <ul>
-          <li><code>=SUM(A1:A10)</code></li>
-          <li><code>=AVERAGE(A1:A10)</code></li>
-          <li><code>=MIN(A1:A10)</code></li>
-          <li><code>=MAX(A1:A10)</code></li>
-        </ul>
-      </section>
-
-        <section class="topic-section" id="Logic">
-          <h1>Logic Functions</h1>
-          <div class="chapter-badge">Chapter 6</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Functions" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Lookup" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Making decisions.</p>
-        <div class="example-box"><pre class="example-code"><code>=IF(A1>10, "Pass", "Fail")
-=COUNTIF(A1:A10, ">50")</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">=IF(A1&gt;10, "Pass", "Fail")
-=COUNTIF(A1:A10, "&gt;50")</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Lookup">
-          <h1>VLOOKUP / XLOOKUP</h1>
-          <div class="chapter-badge">Chapter 7</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Logic" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#PivotTables" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Finding data across tables.</p>
-        <div class="example-box"><pre class="example-code"><code>=VLOOKUP(lookup_value, table_array, col_index, [range_lookup])</code></pre></section>
-
-        <section class="topic-section" id="PivotTables">
-          <h1>Pivot Tables</h1>
-          <div class="chapter-badge">Chapter 8</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Lookup" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Charts" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>The most powerful tool in Excel. Summarize huge datasets with drag-and-drop.</p>
-        <p>Example: Total Sales per Region.</p>
-      </section>
-
-        <section class="topic-section" id="Charts">
-          <h1>Charts & Graphs</h1>
-          <div class="chapter-badge">Chapter 9</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#PivotTables" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Sorting" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Visualizing data.</p>
-        <ul>
-          <li><strong>Column Chart:</strong> Comparisons.</li>
-          <li><strong>Line Chart:</strong> Trends over time.</li>
-          <li><strong>Pie Chart:</strong> Parts of a whole.</li>
-        </ul>
-      </section>
-
-        <section class="topic-section" id="Sorting">
-          <h1>Sorting & Filtering</h1>
-          <div class="chapter-badge">Chapter 10</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Charts" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#DataValidation" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Sort A-Z, Z-A, or by Value. Filter to hide unwanted data.</p>
-      
-        </section>
-
-        <section class="topic-section" id="DataValidation">
-          <h1>Data Validation</h1>
-          <div class="chapter-badge">Chapter 11</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Sorting" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Macros" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Control what users can type into a cell (e.g., Dropdown Lists).</p>
-      </section>
-
-        <section class="topic-section" id="Macros">
-          <h1>Macros (VBA)</h1>
-          <div class="chapter-badge">Chapter 12</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#DataValidation" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Recording repetitive tasks to automate them.</p>
-      
-        </section>
-
-        <section class="topic-section" id="Projects">
-          <h1>🚀 Real World Projects</h1>
-          <div class="chapter-badge">Chapter 13</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Macros" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <h3>🟢 Beginner: Personal Budget</h3>
-        <p><strong>Goal:</strong> Track Income and Expenses.</p>
-        <h3>🟡 Intermediate: Sales Report</h3>
-        <p><strong>Goal:</strong> VLOOKUP inventory and Pivot Table analysis.</p>
-        <h3>🔴 Advanced: Financial Dashboard</h3>
-        <p><strong>Goal:</strong> Dynamic Charts and Slicers.</p>
-      </section>
-
-        <section class="topic-section" id="MiniTask">
-          <h1>🎯 Excel Mini Task</h1>
-          <div class="chapter-badge">Chapter 14</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p><strong>Goal:</strong> Grade Calculator.</p>
-        <h4>📋 Requirements:</h4>
-        <ol>
-          <li> Column A: Names, Column B: Scores.</li>
-          <li> Cell C1: <code>=AVERAGE(B:B)</code>.</li>
-          <li> Column C: Use IF to show "Pass" if Score > 60.</li>
-        </ol>
-        <p><strong>Spreadsheet Guru!</strong> 📊</p>
-      </div>
-    </div>
-
-
-    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
-      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
-      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Excel module.</p>
-      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
-        onclick="location.href='../index1.html'">Return to Dashboard</button>
-    
-        </section>
 
       </div>
-    </main>
+      <div class="example-box">
+        <div class="example-header">
+          <i class="fas fa-code"></i> Example
+        </div>
+
+        <pre class="example-code"><code>
+<!-- Example: Highlight all sales over $500 -->
+1. Select your sales column (B2:B20)
+2. Home → Conditional Formatting → Highlight Cell Rules → Greater Than
+3. Enter 500 and select a color
+    </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">
+          Try it Yourself
+        </button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!-- Editable Example -->
+Select column B and apply conditional formatting for values greater than 500
+      </textarea>
+
+          <div class="tryit-output">
+            <iframe sandbox="allow-scripts"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-content-card">
+        <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+        <p>In a sales report, you can quickly identify top-performing products using conditional formatting from
+          the
+          Home tab. This allows managers to make fast decisions on inventory and promotions.</p>
+      </div>
+
+
+      <div class="section-content-card">
+        <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+        <ul>
+          <li>Formatting numbers as text and causing formula errors</li>
+          <li>Overusing colors and styles, making the sheet hard to read</li>
+          <li>Not clearing old formatting when updating data</li>
+        </ul>
+      </div>
+
+
+      <div class="section-content-card">
+        <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+        <ul>
+          <li>Keep formatting consistent for readability</li>
+          <li>Use styles instead of manually formatting every cell</li>
+          <li>Apply conditional formatting to highlight key trends, not every value</li>
+        </ul>
+      </div>
+      </section>
+      <section id="excel-introduction" class="lesson-section">
+        <h1>Excel Introduction</h1>
+        <p>Microsoft Excel is a powerful spreadsheet application used for data organization, analysis, and
+          visualization.
+          It is widely used in business, finance, research, and personal productivity to handle numbers, text,
+          formulas,
+          and charts efficiently.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Spreadsheets consist of rows, columns, and cells</li>
+            <li>Cells store data: numbers, text, dates, or formulas</li>
+            <li>Worksheets and Workbooks organize data into tabs and files</li>
+            <li>Excel supports calculations, charts, and data analysis tools</li>
+            <li>Formulas and functions automate repetitive calculations</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>An Excel workbook is a file containing one or more worksheets. Each worksheet has:</p>
+          <ul>
+            <li><strong>Rows:</strong> Horizontal lines labeled with numbers (1, 2, 3…)</li>
+            <li><strong>Columns:</strong> Vertical lines labeled with letters (A, B, C…)</li>
+            <li><strong>Cells:</strong> Intersection of a row and column (e.g., A1, B2)</li>
+          </ul>
+          <p>Data can be entered manually or imported. Excel also allows formatting, formulas, charts, tables, and
+            pivot
+            tables to analyze and visualize data effectively.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <p>Basic Excel formulas always start with an equals sign <code>=</code>. For example:</p>
+          <ul>
+            <li><code>=A1+B1</code> → Adds values in cells A1 and B1</li>
+            <li><code>=SUM(A1:A5)</code> → Sums values in range A1 to A5</li>
+            <li><code>=AVERAGE(B1:B10)</code> → Computes average of values in B1 to B10</li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Basic Addition -->
+A1: 100
+B1: 50
+C1: =A1+B1  // Result: 150
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Enter numbers in A1 and B1, then type =A1+B1 in C1
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>A financial analyst can use Excel to track monthly expenses, calculate totals, and create charts to
+            visualize
+            trends over time. Excel makes it easy to update values and see real-time calculations.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Not starting formulas with <code>=</code>, causing Excel to treat input as text</li>
+            <li>Mixing text and numbers in calculations</li>
+            <li>Using wrong cell references, e.g., typing numbers directly instead of referencing cells</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Always reference cells instead of hardcoding numbers in formulas</li>
+            <li>Use descriptive headers for columns to make data readable</li>
+            <li>Save your workbook frequently to prevent data loss</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-get-started" class="lesson-section">
+        <h1>Excel Get Started</h1>
+        <p>Getting started with Excel involves understanding the interface, creating a new workbook, entering data,
+          and
+          saving your work. This foundation is critical for working efficiently in all Excel projects.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Workbook vs Worksheet</li>
+            <li>Ribbon interface and tabs</li>
+            <li>Quick Access Toolbar</li>
+            <li>Data entry basics</li>
+            <li>Saving and opening workbooks</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Excel interface includes:</p>
+          <ul>
+            <li><strong>Ribbon:</strong> Tabs containing commands for formatting, formulas, data analysis, and more.
+            </li>
+            <li><strong>Quick Access Toolbar:</strong> Customizable toolbar for frequently used commands like Save,
+              Undo,
+              and Redo.</li>
+            <li><strong>Worksheet:</strong> Individual tab within a workbook. Each worksheet contains rows, columns,
+              and
+              cells.</li>
+            <li><strong>Status Bar:</strong> Displays sum, average, and count for selected cells.</li>
+          </ul>
+          <p>Steps to start:</p>
+          <ol>
+            <li>Open Excel → New Workbook → Blank Workbook</li>
+            <li>Click any cell to enter data</li>
+            <li>Use Tab/Enter to move between cells</li>
+            <li>Save workbook: File → Save As → Choose location and file type (.xlsx)</li>
+          </ol>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <p>At this stage, you can start using basic formulas. Example syntax:</p>
+          <ul>
+            <li><code>=A1+B1</code> – Adds numbers from two cells</li>
+            <li><code>=SUM(A1:A5)</code> – Sum of range A1 to A5</li>
+            <li><code>=AVERAGE(B1:B5)</code> – Average of values in B1 to B5</li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Entering Data and Simple Formula -->
+A1: 200
+B1: 150
+C1: =A1+B1  // Result: 350
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Enter numbers in A1 and B1, then type =A1+B1 in C1
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>A small business owner can start tracking monthly sales by creating a workbook with columns for
+            Product,
+            Quantity, and Revenue. This allows real-time updates and calculations.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Not saving work regularly</li>
+            <li>Entering numbers as text accidentally</li>
+            <li>Using hard-coded numbers instead of cell references in formulas</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Use descriptive headers for each column</li>
+            <li>Save your workbook in a structured folder for easy access</li>
+            <li>Use cell references instead of typing numbers directly into formulas</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-overview" class="lesson-section">
+        <h1>Excel Overview</h1>
+        <p>The Excel interface provides tools for entering, formatting, analyzing, and visualizing data. Understanding
+          the
+          layout helps you work efficiently and navigate the software like a professional.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Workbook vs Worksheet</li>
+            <li>Ribbon tabs and groups</li>
+            <li>Quick Access Toolbar (QAT)</li>
+            <li>Formula Bar for editing cell contents</li>
+            <li>Status Bar showing calculations and modes</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Excel interface elements include:</p>
+          <ul>
+            <li><strong>Ribbon Tabs:</strong> Home, Insert, Page Layout, Formulas, Data, Review, View</li>
+            <li><strong>Groups:</strong> Each tab has groups like Font, Alignment, Number</li>
+            <li><strong>Quick Access Toolbar:</strong> Customizable for frequently used commands like Save, Undo,
+              Redo
+            </li>
+            <li><strong>Formula Bar:</strong> Displays and allows editing of the active cell’s content</li>
+            <li><strong>Worksheet Tabs:</strong> Switch between multiple sheets in the workbook</li>
+            <li><strong>Status Bar:</strong> Shows sum, average, count of selected cells, zoom, and view options
+            </li>
+          </ul>
+          <p>Familiarity with these elements allows you to efficiently enter data, apply formulas, and format your
+            worksheets.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <p>Formula basics covered in this section include:</p>
+          <ul>
+            <li><code>=A1+B1</code> – Adds values from two cells</li>
+            <li><code>=SUM(A1:A5)</code> – Adds a range of cells</li>
+            <li><code>=AVERAGE(B1:B10)</code> – Computes the average</li>
+            <li><code>=IF(A1>100, "High", "Low")</code> – Conditional logic example</li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Using Formula Bar -->
+1. Click cell C1
+2. Type =A1+B1 in the formula bar
+3. Press Enter to see the result
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Click a cell and type =A1+B1 in the formula bar
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>Professionals can quickly navigate between worksheets to compare sales, expenses, or budgets while
+            using
+            the
+            Ribbon and Formula Bar to apply calculations and formatting consistently.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Not using the Formula Bar and typing directly in cells, which can cause errors</li>
+            <li>Ignoring the Quick Access Toolbar for efficiency</li>
+            <li>Overlooking worksheet tabs, causing confusion between multiple sheets</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Familiarize yourself with Ribbon tabs and groups for faster access</li>
+            <li>Use the Formula Bar for long formulas or editing complex data</li>
+            <li>Customize the Quick Access Toolbar with commands you use often</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-syntax" class="lesson-section">
+        <h1>Excel Syntax</h1>
+        <p>Excel syntax refers to the correct way of writing formulas and functions. Understanding syntax ensures your
+          formulas work correctly and prevent errors when performing calculations or data analysis.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>All formulas begin with an equals sign <code>=</code></li>
+            <li>Cell references identify the location of data (A1, B2, etc.)</li>
+            <li>Operators perform calculations (+, -, *, /, ^)</li>
+            <li>Functions are predefined formulas (SUM, AVERAGE, IF, etc.)</li>
+            <li>Arguments are values or cell references provided to functions</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Excel formulas combine operators, cell references, and functions. Key points:</p>
+          <ul>
+            <li><strong>Formulas:</strong> Start with <code>=</code>, e.g., <code>=A1+B1</code></li>
+            <li><strong>Cell References:</strong>
+              <ul>
+                <li>Relative (A1) – changes when copied to another cell</li>
+                <li>Absolute ($A$1) – remains fixed when copied</li>
+                <li>Mixed (A$1 or $A1) – part fixed, part relative</li>
+              </ul>
+            </li>
+            <li><strong>Operators:</strong> + (add), - (subtract), * (multiply), / (divide), ^ (exponent)</li>
+            <li><strong>Functions:</strong> Predefined calculations with syntax
+              <code>=FUNCTION(argument1, argument2,...)</code>
+            </li>
+            <li><strong>Arguments:</strong> Can be numbers, text, cell references, or ranges</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <p>Example formulas and their syntax:</p>
+          <ul>
+            <li>Add two cells: <code>=A1+B1</code></li>
+            <li>Sum a range: <code>=SUM(A1:A10)</code></li>
+            <li>Average a range: <code>=AVERAGE(B1:B10)</code></li>
+            <li>Conditional: <code>=IF(A1>100, "High", "Low")</code></li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Using SUM and IF -->
+A1: 120
+A2: 80
+A3: 150
+B1: =SUM(A1:A3)           // Result: 350
+B2: =IF(B1>300,"Pass","Fail") // Result: Pass
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Enter numbers in A1:A3, then type =SUM(A1:A3) in B1 and =IF(B1>300,"Pass","Fail") in B2
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>A finance team can calculate total monthly expenses using <code>=SUM(B2:B20)</code> and determine if
+            the
+            budget exceeds limits with <code>=IF(SUM(B2:B20)>5000,"Over Budget","Within Budget")</code>.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Forgetting the <code>=</code> sign at the start of a formula</li>
+            <li>Using incorrect cell references</li>
+            <li>Omitting commas or parentheses in function arguments</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Always start formulas with <code>=</code></li>
+            <li>Check cell references before copying formulas</li>
+            <li>Use functions instead of manually calculating totals for accuracy and efficiency</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-ranges" class="lesson-section">
+        <h1>Excel Ranges</h1>
+        <p>Ranges in Excel refer to a group of two or more cells. Using ranges allows you to perform calculations
+          across
+          multiple cells, create charts, and apply formatting efficiently.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Range: Continuous or non-continuous group of cells</li>
+            <li>Reference by start and end cells (e.g., A1:A5)</li>
+            <li>Using ranges in formulas like SUM, AVERAGE, COUNT</li>
+            <li>Absolute vs relative range references</li>
+            <li>Named ranges for clarity</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Ranges can be selected and used in several ways:</p>
+          <ul>
+            <li><strong>Continuous Range:</strong> A block of adjacent cells, e.g., <code>A1:A5</code></li>
+            <li><strong>Multiple Ranges:</strong> Non-contiguous cells separated by commas, e.g.,
+              <code>A1:A5,C1:C5</code>
+            </li>
+            <li><strong>Using in Formulas:</strong> Many functions operate on ranges, like <code>=SUM(A1:A10)</code>
+              or
+              <code>=AVERAGE(B1:B5)</code>
+            </li>
+            <li><strong>Named Ranges:</strong> Assign a name to a range (Formulas → Name Manager) to simplify
+              formulas,
+              e.g., <code>=SUM(Sales)</code></li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <ul>
+            <li>Sum of a range: <code>=SUM(A1:A10)</code></li>
+            <li>Average of a range: <code>=AVERAGE(B1:B10)</code></li>
+            <li>Count numeric cells in a range: <code>=COUNT(C1:C20)</code></li>
+            <li>Refer to named range: <code>=SUM(Sales)</code></li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Sum and Average using ranges -->
+A1: 100
+A2: 200
+A3: 150
+B1: =SUM(A1:A3)        // Result: 450
+B2: =AVERAGE(A1:A3)    // Result: 150
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Enter numbers in A1:A3, then type =SUM(A1:A3) in B1 and =AVERAGE(A1:A3) in B2
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>In a sales report, a range of monthly sales values (e.g., B2:B13) can be summed to calculate total
+            sales,
+            or
+            averaged to find the monthly average revenue.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Selecting incorrect cells in a range</li>
+            <li>Mixing relative and absolute references incorrectly</li>
+            <li>Forgetting to include all relevant cells in a formula</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Use named ranges for clarity in complex formulas</li>
+            <li>Always double-check the range in formulas before pressing Enter</li>
+            <li>Keep ranges contiguous where possible for simpler calculations</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-fill" class="lesson-section">
+        <h1>Excel Fill</h1>
+        <p>The Fill feature in Excel allows you to quickly copy cell content, create data series, and replicate
+          formulas.
+          It is one of the most powerful time-saving tools for data entry and analysis.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>AutoFill: Drag a cell’s fill handle to copy content or create a series</li>
+            <li>Fill Series: Create sequential numbers, dates, or custom lists</li>
+            <li>Copying formulas with relative or absolute references</li>
+            <li>Using Fill options for formatting and calculations</li>
+            <li>Flash Fill: Automatically detect patterns in data entry</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Key methods for filling cells:</p>
+          <ul>
+            <li><strong>AutoFill:</strong> Drag the small square at the bottom-right corner of a cell to copy or
+              extend
+              data.</li>
+            <li><strong>Fill Series:</strong> Home → Fill → Series → Choose type (Linear, Growth, Date, AutoFill).
+            </li>
+            <li><strong>Flash Fill:</strong> Automatically fills values based on patterns, e.g., extracting first
+              names
+              from full names.</li>
+            <li><strong>Formulas:</strong> Copying formulas with AutoFill maintains relative or absolute references
+              as
+              needed.</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <p>No direct formula is required for Fill, but it works with formulas and text patterns:</p>
+          <ul>
+            <li>Formula AutoFill: <code>=A1+B1</code> dragged down adjusts references automatically</li>
+            <li>Flash Fill pattern: e.g., Type “John” in C1 from “John Doe” in B1 → Flash Fill fills remaining first
+              names
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: AutoFill Numbers -->
+A1: 1
+A2: 2
+Select A1:A2 and drag fill handle down to A10
+Result: Numbers 1 to 10 filled automatically
+
+<!-- Example: AutoFill Formula -->
+B1: 100
+B2: 200
+C1: =B1*0.1
+Drag C1 down to apply formula to all rows
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Type 1 in A1 and 2 in A2, then drag fill handle down to create series.
+Enter formula =B1*0.1 in C1 and drag down
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>In a payroll sheet, you can quickly calculate 10% bonuses for all employees by writing one formula and
+            using
+            AutoFill to replicate it across the column.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Dragging without selecting the correct range</li>
+            <li>Copying formulas without using absolute references when needed</li>
+            <li>Expecting Flash Fill to work with inconsistent patterns</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Use AutoFill for sequential data and formula replication</li>
+            <li>Use Flash Fill for text pattern extraction</li>
+            <li>Check filled data for accuracy before using it in reports</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-move-cells" class="lesson-section">
+        <h1>Excel Move Cells</h1>
+        <p>Moving cells in Excel allows you to reposition data without retyping it. You can cut, copy, insert, and
+          shift cells to maintain the structure and accuracy of your worksheet.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Cut, Copy, Paste commands</li>
+            <li>Inserting cells, rows, or columns</li>
+            <li>Shifting cells left or down when inserting</li>
+            <li>Using drag-and-drop to move cells</li>
+            <li>Preserving formulas and formatting when moving data</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Moving cells can be done in several ways:</p>
+          <ul>
+            <li><strong>Cut & Paste:</strong> Select a cell or range → Right-click → Cut (or Ctrl+X) → Select
+              destination → Paste (Ctrl+V)</li>
+            <li><strong>Drag and Drop:</strong> Select cell(s), hover over the border until cursor changes → Drag to
+              new location</li>
+            <li><strong>Insert Cells:</strong> Right-click → Insert → Shift cells down or right to create space</li>
+            <li><strong>Copy:</strong> Use Ctrl+C to duplicate cells without removing original content</li>
+          </ul>
+          <p>These methods allow you to reorganize data efficiently without breaking formulas or formatting.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <p>Moving cells does not require formulas, but preserving references is important:</p>
+          <ul>
+            <li>Relative references adjust automatically when moved</li>
+            <li>Absolute references ($A$1) remain fixed even when moved</li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Moving Data -->
+1. Select A1:A3 containing values
+2. Right-click → Cut (Ctrl+X)
+3. Select C1 → Right-click → Paste (Ctrl+V)
+Result: Data moved from column A to C
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Select A1:A3, cut (Ctrl+X), then paste into C1
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>A project manager can reorganize task lists by moving priority tasks to the top of the worksheet using
+            Cut & Paste or drag-and-drop, keeping formulas intact for calculations like total hours.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Overwriting existing data when pasting without checking</li>
+            <li>Breaking formulas that use relative references</li>
+            <li>Not shifting cells correctly when inserting new data</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Check for dependent formulas before moving cells</li>
+            <li>Use absolute references if you want formulas to remain fixed</li>
+            <li>Always preview the destination to avoid overwriting important data</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-add-cells" class="lesson-section">
+        <h1>Excel Add Cells</h1>
+        <p>Adding cells in Excel allows you to insert new rows, columns, or individual cells without overwriting
+          existing data. This helps maintain the structure of your worksheet while expanding it.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Insert individual cells, rows, or columns</li>
+            <li>Shift existing cells down or right when inserting</li>
+            <li>Maintain formulas and formatting when adding cells</li>
+            <li>Use the Ribbon or right-click menu to insert cells</li>
+            <li>Combining Add Cells with Fill and Move for efficient data management</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Ways to add cells in Excel:</p>
+          <ul>
+            <li><strong>Insert Row:</strong> Right-click row number → Insert → New row is added above</li>
+            <li><strong>Insert Column:</strong> Right-click column letter → Insert → New column is added to the left
+            </li>
+            <li><strong>Insert Cells:</strong> Select cell(s) → Right-click → Insert → Choose "Shift cells down" or
+              "Shift cells right"</li>
+            <li><strong>Keyboard Shortcuts:</strong> Ctrl+Shift+"+" inserts a new row or column depending on
+              selection
+            </li>
+          </ul>
+          <p>Adding cells ensures data integrity and avoids overwriting existing content.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <p>No formulas are required to add cells, but added cells can contain formulas, which adjust automatically
+            if using relative references.</p>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Adding a Row -->
+1. Select row 3
+2. Right-click → Insert
+Result: New row added above row 3, shifting existing rows down
+
+<!-- Example: Adding a Column -->
+1. Select column B
+2. Right-click → Insert
+Result: New column added to the left of column B
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Select a row or column, right-click → Insert to add new cells
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>When a new employee joins a department, HR can insert a new row in the employee tracker without
+            disturbing existing data. Similarly, adding a column allows tracking new metrics like performance
+            scores.
+          </p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Overwriting existing cells by inserting in the wrong location</li>
+            <li>Breaking formulas if absolute/relative references are not considered</li>
+            <li>Not shifting cells properly when inserting</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Preview the destination to ensure no important data is overwritten</li>
+            <li>Use Insert Row/Column rather than manually moving cells</li>
+            <li>Check dependent formulas after inserting new cells</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-delete-cells" class="lesson-section">
+        <h1>Excel Delete Cells</h1>
+        <p>Deleting cells in Excel allows you to remove unwanted data, rows, or columns while maintaining the
+          integrity of your worksheet. You can choose whether to shift remaining cells or remove entire rows/columns.
+        </p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Delete individual cells, rows, or columns</li>
+            <li>Shift remaining cells left or up when deleting</li>
+            <li>Remove entire rows or columns without leaving empty cells</li>
+            <li>Maintaining formulas and formatting when deleting</li>
+            <li>Using right-click menu, Ribbon, or keyboard shortcuts</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Methods to delete cells:</p>
+          <ul>
+            <li><strong>Delete Cells:</strong> Select cell(s) → Right-click → Delete → Choose "Shift cells left" or
+              "Shift cells up"</li>
+            <li><strong>Delete Row:</strong> Right-click row number → Delete → Entire row removed</li>
+            <li><strong>Delete Column:</strong> Right-click column letter → Delete → Entire column removed</li>
+            <li><strong>Keyboard Shortcut:</strong> Ctrl + "-" (minus) deletes selected cells, row, or column</li>
+          </ul>
+          <p>Deleting cells properly avoids leaving gaps that can cause calculation errors or misaligned data.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <p>Deleting cells is a worksheet operation and does not involve formulas. However, formulas that reference
+            deleted cells may return errors (#REF!).</p>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Delete a Row -->
+1. Select row 4
+2. Right-click → Delete
+Result: Row 4 removed, rows below shift up
+
+<!-- Example: Delete a Cell -->
+1. Select cell B2
+2. Right-click → Delete → Shift cells left
+Result: B2 removed, cells in the row shift left
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Select a cell, row, or column, right-click → Delete → choose appropriate shift option
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>A finance team can delete outdated monthly reports from a workbook while shifting remaining data up,
+            ensuring calculations like totals and averages remain accurate.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Accidentally deleting entire rows or columns instead of specific cells</li>
+            <li>Deleting cells without shifting, leaving empty gaps</li>
+            <li>Breaking formulas that reference deleted cells</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Double-check what you are deleting to avoid removing important data</li>
+            <li>Use the shift option to maintain worksheet structure</li>
+            <li>Review formulas after deleting cells to fix any #REF! errors</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-undo-redo" class="lesson-section">
+        <h1>Excel Undo & Redo</h1>
+        <p>The Undo and Redo features in Excel allow you to quickly reverse mistakes or reapply actions. Mastering
+          these features increases productivity and prevents data errors during editing and analysis.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Undo reverses the last action(s)</li>
+            <li>Redo reapplies the action(s) that were undone</li>
+            <li>Multiple levels of undo and redo</li>
+            <li>Shortcut keys for quick access</li>
+            <li>Using Undo/Redo for formulas, formatting, and data entry</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Key points about Undo & Redo:</p>
+          <ul>
+            <li><strong>Undo:</strong> Reverses the last change. Can undo multiple steps sequentially.</li>
+            <li><strong>Redo:</strong> Reapplies an action that was undone.</li>
+            <li><strong>Accessing Undo/Redo:</strong> Toolbar buttons at the top-left of Excel or via keyboard
+              shortcuts.</li>
+            <li><strong>Keyboard Shortcuts:</strong> <code>Ctrl + Z</code> for Undo, <code>Ctrl + Y</code> for Redo
+            </li>
+            <li><strong>Limits:</strong> Excel supports multiple undo levels, typically up to 100 actions depending
+              on
+              memory and version.</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <p>Undo and Redo are command actions and do not require formulas.</p>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Undo & Redo Actions -->
+1. Enter 100 in A1
+2. Enter 200 in B1
+3. Accidentally type 300 in A1
+4. Press Ctrl+Z → A1 reverts to 100 (Undo)
+5. Press Ctrl+Y → A1 changes back to 300 (Redo)
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Type values in cells, use Ctrl+Z to undo, Ctrl+Y to redo
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>A data analyst can quickly revert accidental changes to financial tables or reports without manually
+            re-entering data, saving time and reducing errors.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Not using Undo after a mistake, leading to manual corrections</li>
+            <li>Assuming Undo can revert changes after saving and closing the workbook (it cannot)</li>
+            <li>Overusing Undo without knowing the number of steps being reversed</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Use Ctrl+Z frequently during editing to prevent errors</li>
+            <li>Use Ctrl+Y to reapply actions efficiently</li>
+            <li>Be aware of the workbook save state, as Undo history clears after closing</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-formulas" class="lesson-section">
+        <h1>Excel Formulas</h1>
+        <p>Formulas in Excel allow you to perform calculations, manipulate data, and automate repetitive tasks.
+          Understanding how to write and apply formulas is essential for productivity and data analysis.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>All formulas begin with an equals sign <code>=</code></li>
+            <li>Use cell references to include values in calculations</li>
+            <li>Operators: +, -, *, /, ^ for arithmetic operations</li>
+            <li>Combine formulas with functions for complex calculations</li>
+            <li>Relative, absolute, and mixed references affect how formulas behave when copied</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Formulas can range from simple arithmetic to complex multi-function calculations:</p>
+          <ul>
+            <li><strong>Simple Arithmetic:</strong> <code>=A1+B1</code> adds two cells</li>
+            <li><strong>Combining Functions:</strong> Nest functions like <code>=SUM(A1:A5)*AVERAGE(B1:B5)</code>
+            </li>
+            <li><strong>Relative vs Absolute References:</strong> Copying formulas changes relative references, but
+              absolute references (<code>$A$1</code>) stay fixed</li>
+            <li><strong>Order of Operations:</strong> Excel follows PEMDAS (Parentheses, Exponents,
+              Multiplication/Division, Addition/Subtraction)</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <ul>
+            <li>Add: <code>=A1+B1</code></li>
+            <li>Subtract: <code>=A1-B1</code></li>
+            <li>Multiply: <code>=A1*B1</code></li>
+            <li>Divide: <code>=A1/B1</code></li>
+            <li>Exponent: <code>=A1^2</code></li>
+            <li>Sum Range: <code>=SUM(A1:A10)</code></li>
+            <li>Average Range: <code>=AVERAGE(B1:B10)</code></li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Basic Formulas -->
+A1: 10
+A2: 20
+B1: =A1+A2        // Result: 30
+B2: =A2-A1        // Result: 10
+B3: =A1*A2        // Result: 200
+B4: =A2/A1        // Result: 2
+B5: =SUM(A1:A2)   // Result: 30
+B6: =AVERAGE(A1:A2)// Result: 15
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Enter numbers in A1:A2, then try formulas like =A1+A2, =SUM(A1:A2), =AVERAGE(A1:A2)
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>Accountants can calculate monthly expenses, profits, and tax using formulas like
+            <code>=SUM(B2:B20)</code> and <code>=B21*0.05</code> without manual calculations.
+          </p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Forgetting the <code>=</code> sign at the start</li>
+            <li>Using incorrect cell references</li>
+            <li>Not accounting for relative vs absolute references when copying formulas</li>
+            <li>Ignoring order of operations, leading to incorrect results</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Always start formulas with <code>=</code></li>
+            <li>Use parentheses to control order of operations</li>
+            <li>Use absolute references when necessary to avoid errors</li>
+            <li>Test formulas with small data sets before applying to large ranges</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-relative-reference" class="lesson-section">
+        <h1>Excel Relative Reference</h1>
+        <p>Relative references in Excel adjust automatically when a formula is copied to another cell. This allows
+          formulas to be reused efficiently across rows or columns without manual changes.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Relative references change based on the position where the formula is copied</li>
+            <li>Default reference type in Excel (e.g., A1, B2)</li>
+            <li>Used for calculations that follow a pattern across multiple rows or columns</li>
+            <li>Different from absolute references ($A$1) which stay fixed</li>
+            <li>Can combine with functions for dynamic calculations</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>When using relative references:</p>
+          <ul>
+            <li>Copying <code>=A1+B1</code> from row 1 to row 2 changes it to <code>=A2+B2</code></li>
+            <li>Copying across columns behaves similarly, e.g., <code>=A1+B1</code> copied from column B to column C
+              becomes <code>=B1+C1</code></li>
+            <li>Relative references save time for repeated calculations in tables and data ranges</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <ul>
+            <li>Basic relative reference: <code>=A1+B1</code></li>
+            <li>Used in SUM function: <code>=SUM(A1:A5)</code> copied down adjusts automatically to next rows</li>
+            <li>Mixed usage example: <code>=A1+$B$1</code> (A1 is relative, B1 is absolute)</li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Relative Reference -->
+A1: 10
+B1: 20
+C1: =A1+B1       // Result: 30
+Copy C1 to C2
+C2: =A2+B2       // Adjusts automatically
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Enter numbers in A1:B2, then type =A1+B1 in C1 and copy it down
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>In a sales spreadsheet, relative references allow you to calculate total sales for each product row by
+            copying the formula across the column without manually adjusting cell references.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Expecting the reference to stay fixed (should use absolute reference)</li>
+            <li>Copying formulas across mismatched rows or columns</li>
+            <li>Confusing relative and absolute references in complex formulas</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Use relative references for repeated calculations across rows or columns</li>
+            <li>Combine with absolute references for constants or fixed values</li>
+            <li>Test formulas with a small dataset before applying to large tables</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-absolute-reference" class="lesson-section">
+        <h1>Excel Absolute Reference</h1>
+        <p>Absolute references in Excel keep a cell reference fixed when a formula is copied to another location. This
+          is critical when you want to reference constants, tax rates, or fixed values across multiple formulas.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Absolute references use the dollar sign: <code>$A$1</code></li>
+            <li>References do not change when copying formulas</li>
+            <li>Can be applied to rows, columns, or both</li>
+            <li>Useful for constants, fixed percentages, or lookup tables</li>
+            <li>Contrast with relative references which adjust automatically</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Types of absolute references:</p>
+          <ul>
+            <li><strong>Fully Absolute:</strong> <code>$A$1</code> → Both column and row fixed</li>
+            <li><strong>Column Absolute:</strong> <code>$A1</code> → Column fixed, row changes</li>
+            <li><strong>Row Absolute:</strong> <code>A$1</code> → Row fixed, column changes</li>
+            <li><strong>Usage:</strong> Often used in formulas involving constants or lookup values</li>
+          </ul>
+          <p>Absolute references prevent formulas from changing undesirably when copied across rows or columns.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <ul>
+            <li>Fully absolute: <code>=A1*$B$1</code> → B1 remains fixed when copied</li>
+            <li>Column absolute: <code>=A1*$B1</code> → Column B fixed, row adjusts</li>
+            <li>Row absolute: <code>=A1*B$1</code> → Row 1 fixed, column adjusts</li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Absolute Reference -->
+A1: 100
+B1: 10%   // Tax rate
+
+C1: =A1*$B$1  // Result: 10
+Copy C1 down to C5
+Result: Formula always multiplies each value in column A by B1 (10%)
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Enter values in column A, tax rate in B1, then use =A1*$B$1 and copy down
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>In finance, absolute references are used to calculate VAT, discounts, or commission rates by keeping
+            the
+            percentage fixed while applying it to multiple product prices.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Using relative references when absolute references are needed</li>
+            <li>Incorrect placement of dollar signs, causing unexpected results</li>
+            <li>Copying formulas without testing to confirm correct reference locking</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Use absolute references for constants and fixed values</li>
+            <li>Combine relative and absolute references carefully for mixed scenarios</li>
+            <li>Check formulas after copying to ensure references behave as expected</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-arithmetic-operators" class="lesson-section">
+        <h1>Excel Arithmetic Operators</h1>
+        <p>Arithmetic operators in Excel allow you to perform mathematical calculations such as addition, subtraction,
+          multiplication, division, and exponentiation. Mastering these operators is essential for building formulas
+          and analyzing data efficiently.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Operators perform basic mathematical calculations</li>
+            <li>Each operator has a specific symbol and priority in calculations</li>
+            <li>Use parentheses to control calculation order</li>
+            <li>Combine operators with cell references for dynamic calculations</li>
+            <li>Operators can be used inside functions for advanced formulas</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Excel supports the following arithmetic operators:</p>
+          <ul>
+            <li><strong>Addition (+):</strong> Adds two or more numbers, e.g., <code>=A1+B1</code></li>
+            <li><strong>Subtraction (-):</strong> Subtracts one number from another, e.g., <code>=A1-B1</code></li>
+            <li><strong>Multiplication (*):</strong> Multiplies numbers, e.g., <code>=A1*B1</code></li>
+            <li><strong>Division (/):</strong> Divides numbers, e.g., <code>=A1/B1</code></li>
+            <li><strong>Exponentiation (^):</strong> Raises a number to a power, e.g., <code>=A1^2</code></li>
+            <li><strong>Parentheses:</strong> Used to control the order of operations, e.g.,
+              <code>=(A1+B1)*C1</code>
+            </li>
+          </ul>
+          <p>Excel follows the standard mathematical order of operations (PEMDAS): Parentheses → Exponents →
+            Multiplication/Division → Addition/Subtraction.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <ul>
+            <li>Add: <code>=A1+B1</code></li>
+            <li>Subtract: <code>=A1-B1</code></li>
+            <li>Multiply: <code>=A1*B1</code></li>
+            <li>Divide: <code>=A1/B1</code></li>
+            <li>Exponent: <code>=A1^B1</code></li>
+            <li>Combined operations: <code>=A1+B1*C1</code> or <code>=(A1+B1)*C1</code></li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Arithmetic Operators -->
+A1: 10
+B1: 5
+C1: =A1+B1       // Result: 15
+C2: =A1-B1       // Result: 5
+C3: =A1*B1       // Result: 50
+C4: =A1/B1       // Result: 2
+C5: =A1^2        // Result: 100
+C6: =(A1+B1)*2   // Result: 30
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Enter numbers in A1 and B1, then try formulas like =A1+B1, =A1-B1, =A1*B1, =A1/B1, =A1^2
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>Finance professionals use arithmetic operators to calculate totals, discounts, interest, and
+            projections,
+            e.g., multiplying quantities by unit price or applying percentage growth formulas.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Ignoring the order of operations without parentheses</li>
+            <li>Dividing by zero, which results in an error</li>
+            <li>Confusing the exponent operator (^) with multiplication (*)</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Use parentheses to clarify calculation order</li>
+            <li>Double-check division operations to avoid dividing by zero</li>
+            <li>Combine arithmetic operators with functions for advanced formulas</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-parentheses" class="lesson-section">
+        <h1>Excel Parentheses</h1>
+        <p>Parentheses in Excel formulas are used to control the order of operations. They allow you to ensure that
+          calculations are performed in the intended sequence, overriding the default precedence of arithmetic
+          operators.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Excel follows standard mathematical order of operations (PEMDAS)</li>
+            <li>Parentheses override default operator precedence</li>
+            <li>Multiple levels of parentheses can be nested for complex formulas</li>
+            <li>Essential for combining arithmetic operators and functions correctly</li>
+            <li>Improves formula readability and accuracy</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Parentheses determine which part of a formula is calculated first:</p>
+          <ul>
+            <li>Without parentheses: <code>=A1+B1*C1</code> → Multiplication happens first</li>
+            <li>With parentheses: <code>=(A1+B1)*C1</code> → Addition happens first, then multiplication</li>
+            <li>Nested parentheses: <code>=((A1+B1)*C1)/D1</code> → Inner parentheses calculated first</li>
+            <li>Using parentheses inside functions: <code>=SUM((A1:A5)+(B1:B5))</code></li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <ul>
+            <li>Basic arithmetic with parentheses: <code>=(A1+B1)*C1</code></li>
+            <li>Nested operations: <code>=((A1+B1)*C1)-D1</code></li>
+            <li>Inside functions: <code>=SUM((A1:A3)+(B1:B3))</code></li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Parentheses -->
+A1: 10
+B1: 5
+C1: 2
+
+D1: =A1+B1*C1      // Result: 20 (B1*C1 calculated first)
+D2: =(A1+B1)*C1    // Result: 30 (A1+B1 calculated first)
+D3: =((A1+B1)*C1)/B1 // Result: 6
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Enter numbers in A1:C1, then try formulas like =A1+B1*C1, =(A1+B1)*C1, =((A1+B1)*C1)/B1
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>When calculating total project costs including overhead and taxes, parentheses ensure components are
+            summed and multiplied correctly to avoid miscalculations.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Omitting parentheses and getting incorrect results</li>
+            <li>Misplacing parentheses in nested calculations</li>
+            <li>Overcomplicating simple formulas with unnecessary parentheses</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Use parentheses to clearly define calculation order</li>
+            <li>Keep formulas readable by formatting nested parentheses properly</li>
+            <li>Test complex formulas step by step to ensure correct results</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-functions" class="lesson-section">
+        <h1>Excel Functions</h1>
+        <p>Functions in Excel are predefined formulas designed to perform specific calculations or operations. They
+          save time, reduce errors, and allow complex tasks such as statistical analysis, text manipulation, and
+          logical evaluation.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Functions simplify repetitive or complex calculations</li>
+            <li>All functions begin with an equals sign <code>=</code> followed by the function name</li>
+            <li>Functions can take arguments (values or cell references) inside parentheses</li>
+            <li>Functions can be nested inside each other for advanced calculations</li>
+            <li>Excel provides categories: Math, Statistical, Text, Logical, Lookup, and more</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>Excel functions are grouped by purpose:</p>
+          <ul>
+            <li><strong>Mathematical Functions:</strong> SUM, AVERAGE, MIN, MAX, ROUND</li>
+            <li><strong>Logical Functions:</strong> IF, AND, OR, IFS, XOR</li>
+            <li><strong>Text Functions:</strong> CONCAT, LEFT, RIGHT, TRIM, LOWER</li>
+            <li><strong>Statistical Functions:</strong> MEDIAN, MODE, STDEV.S, STDEV.P</li>
+            <li><strong>Financial Functions:</strong> NPV, PV, IRR</li>
+            <li><strong>Lookup & Reference Functions:</strong> VLOOKUP, HLOOKUP, INDEX, MATCH</li>
+            <li><strong>Random & Utility Functions:</strong> RAND, RANDBETWEEN, TODAY, NOW</li>
+          </ul>
+          <p>Functions can be combined in a single formula, e.g., <code>=SUM(A1:A10)/COUNT(A1:A10)</code> calculates
+            the average without using the AVERAGE function.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <ul>
+            <li>SUM: <code>=SUM(A1:A10)</code></li>
+            <li>AVERAGE: <code>=AVERAGE(B1:B10)</code></li>
+            <li>IF: <code>=IF(C1>50, "Pass", "Fail")</code></li>
+            <li>VLOOKUP: <code>=VLOOKUP(1001, A2:C10, 3, FALSE)</code></li>
+            <li>CONCAT: <code>=CONCAT(A1, " ", B1)</code></li>
+            <li>STDEV.S: <code>=STDEV.S(A1:A10)</code></li>
+            <li>NPV: <code>=NPV(0.1, B2:B12)</code></li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: Functions -->
+A1: 10
+A2: 20
+A3: 30
+
+B1: =SUM(A1:A3)       // Result: 60
+B2: =AVERAGE(A1:A3)   // Result: 20
+B3: =IF(B2>15,"Yes","No") // Result: Yes
+B4: =CONCAT("Total: ", B1) // Result: Total: 60
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Enter numbers in A1:A3, then try formulas like =SUM(A1:A3), =AVERAGE(A1:A3), =IF(B2>15,"Yes","No")
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>Excel functions are used in business to calculate payroll totals, determine pass/fail results,
+            summarize
+            sales, analyze trends, and automate reports without manual effort.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Forgetting parentheses after function names</li>
+            <li>Providing incorrect arguments or ranges</li>
+            <li>Nesting functions incorrectly</li>
+            <li>Mixing relative and absolute references improperly inside functions</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Learn function categories to choose the right function quickly</li>
+            <li>Combine functions to reduce manual work</li>
+            <li>Test complex formulas step by step to avoid errors</li>
+            <li>Use absolute references for constants in functions</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-and-function" class="lesson-section">
+        <h1>Excel AND Function</h1>
+        <p>The AND function in Excel is a logical function that returns <code>TRUE</code> if all given conditions are
+          met, and <code>FALSE</code> if any condition is not met. It is often used with the IF function for
+          decision-making in formulas.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Used to test multiple conditions simultaneously</li>
+            <li>Returns TRUE only if all conditions are TRUE</li>
+            <li>Commonly combined with IF for conditional logic</li>
+            <li>Supports logical operators: =, >, <,>=, <=, <>
+            </li>
+            <li>Can test ranges, cell values, or expressions</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>The AND function evaluates multiple logical conditions:</p>
+          <ul>
+            <li>Syntax: <code>=AND(logical1, [logical2], ...)</code></li>
+            <li>All conditions must be TRUE for AND to return TRUE</li>
+            <li>Used inside IF statements: <code>=IF(AND(A1>10,B1<20),"Pass","Fail")</code></li>
+            <li>Can combine numbers, text comparisons, and boolean values</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <pre><code>=AND(logical1, [logical2], ...)</code></pre>
+          <ul>
+            <li><strong>logical1:</strong> First condition to test (required)</li>
+            <li><strong>logical2:</strong> Additional conditions (optional, up to 255)</li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: AND Function -->
+A1: 15
+B1: 18
+
+C1: =AND(A1>10, B1<20)         // Result: TRUE
+C2: =IF(AND(A1>10, B1>20),"Yes","No") // Result: No
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Enter numbers in A1 and B1, then try =AND(A1>10, B1<20) or combine with IF
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>In HR, AND can check if an employee meets multiple criteria, e.g., age > 18 AND years of experience >
+            2,
+            to determine eligibility for a training program.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Confusing AND with OR (AND requires all TRUE, OR requires any TRUE)</li>
+            <li>Forgetting that AND alone doesn’t return “Yes/No”—needs IF to produce readable outputs</li>
+            <li>Incorrect logical operators in conditions</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Use AND with IF for clear decision-making</li>
+            <li>Test each logical condition separately before combining</li>
+            <li>Keep formulas simple for readability and troubleshooting</li>
+          </ul>
+        </div>
+      </section>
+      <section id="excel-average-function" class="lesson-section">
+        <h1>Excel AVERAGE Function</h1>
+        <p>The AVERAGE function calculates the arithmetic mean of a range of numbers. It is widely used in business,
+          finance, and data analysis to determine typical values and summarize datasets.</p>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul>
+            <li>Calculates the mean of numbers or cell ranges</li>
+            <li>Ignores empty cells automatically</li>
+            <li>Works with both positive and negative numbers</li>
+            <li>Can be combined with other functions for advanced calculations</li>
+            <li>Useful for reporting, scoring, and trend analysis</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-info-circle"></i> Detailed Explanation</h3>
+          <p>The AVERAGE function sums all numeric values in a range and divides by the count of numbers:</p>
+          <ul>
+            <li>Syntax: <code>=AVERAGE(number1, [number2], ...)</code></li>
+            <li>Can reference individual cells, ranges, or a combination: <code>=AVERAGE(A1:A10, C1:C5)</code></li>
+            <li>Non-numeric cells and blanks are ignored</li>
+            <li>Can be combined with IF to calculate conditional averages, e.g.,
+              <code>=AVERAGEIF(A1:A10, ">50")</code>
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula / Function Section</h3>
+          <pre><code>=AVERAGE(number1, [number2], ...)</code></pre>
+          <ul>
+            <li><strong>number1:</strong> First numeric value or range (required)</li>
+            <li><strong>number2:</strong> Additional numeric values or ranges (optional, up to 255)</li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header">
+            <i class="fas fa-code"></i> Example
+          </div>
+
+          <pre class="example-code"><code>
+<!-- Example: AVERAGE Function -->
+A1: 10
+A2: 20
+A3: 30
+A4: 40
+
+B1: =AVERAGE(A1:A4)       // Result: 25
+B2: =AVERAGE(A1, A3, A4)  // Result: 26.6667
+B3: =AVERAGE(A1:A4, 50)   // Result: 30
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">
+            Try it Yourself
+          </button>
+
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+
+            <textarea class="tryit-editor">
+<!-- Editable Example -->
+Enter numbers in A1:A4, then try formulas like =AVERAGE(A1:A4), =AVERAGE(A1,A3,A4), =AVERAGE(A1:A4,50)
+      </textarea>
+
+            <div class="tryit-output">
+              <iframe sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-briefcase"></i> Real-World Use Case</h3>
+          <p>In finance, AVERAGE is used to calculate average monthly sales, average employee scores, or average
+            expenses over a period for reporting and analysis.</p>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-times-circle"></i> Common Mistakes</h3>
+          <ul>
+            <li>Including non-numeric data unintentionally</li>
+            <li>Forgetting that blank cells are ignored in calculations</li>
+            <li>Using AVERAGE when a weighted average is needed</li>
+          </ul>
+        </div>
+
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-dot-circle"></i> Best Practices</h3>
+          <ul>
+            <li>Double-check ranges to ensure correct cells are included</li>
+            <li>Use AVERAGEIF or AVERAGEIFS for conditional averages</li>
+            <li>Combine with ROUND if a fixed number of decimal places is required</li>
+          </ul>
+        </div>
+      </section><!-- File: excel-averageif.html -->
+      <section id="excel-averageif-function" class="lesson-section">
+        <h1>Excel AVERAGEIF Function</h1>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Condition-based averaging</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Works with ranges, criteria, and optional average range</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Combines with logical operators</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=AVERAGEIF(range, criteria, [average_range])</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10,20,30,40,50
+B1: =AVERAGEIF(A1:A5, ">25")   // Result: 40
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-averageifs.html -->
+      <section id="excel-averageifs-function" class="lesson-section">
+        <h1>Excel AVERAGEIFS Function</h1>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Multiple condition-based averaging</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Supports multiple criteria ranges</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=AVERAGEIFS(average_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10,20,30,40,50
+B1:B5: "Yes","No","Yes","No","Yes"
+C1: =AVERAGEIFS(A1:A5, B1:B5, "Yes")  // Result: 30
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-concat.html -->
+      <section id="excel-concat-function" class="lesson-section">
+        <h1>Excel CONCAT Function</h1>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Replaces CONCATENATE in modern Excel</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Supports multiple cell references or text strings</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=CONCAT(text1, [text2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1: John
+B1: Doe
+C1: =CONCAT(A1," ",B1)  // Result: John Doe
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-count.html -->
+      <section id="excel-count-function" class="lesson-section">
+        <h1>Excel COUNT Function</h1>
+        <p>COUNT counts numeric cells in a range. Non-numeric cells are ignored.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Counts only numbers</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Useful for analyzing datasets with mixed data types</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=COUNT(value1, [value2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, "text", 20, "", 30
+B1: =COUNT(A1:A5)  // Result: 3
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-counta.html -->
+      <section id="excel-counta-function" class="lesson-section">
+        <h1>Excel COUNTA Function</h1>
+        <p>COUNTA counts all non-empty cells, including text, numbers, and symbols.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Counts all non-empty cells</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Useful for checking filled entries in a dataset</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=COUNTA(value1, [value2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, "text", 20, "", 30
+B1: =COUNTA(A1:A5)  // Result: 4
+    </code></pre>
+        </div>
+      </section><!-- File: excel-countblank.html -->
+      <section id="excel-countblank-function" class="lesson-section">
+        <h1>Excel COUNTBLANK Function</h1>
+        <p>COUNTBLANK counts the number of empty cells in a range. Useful for identifying missing data.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Counts only blank cells</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Helps detect missing entries in datasets</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=COUNTBLANK(range)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, "", 20, "", 30
+B1: =COUNTBLANK(A1:A5)  // Result: 2
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-countif.html -->
+      <section id="excel-countif-function" class="lesson-section">
+        <h1>Excel COUNTIF Function</h1>
+        <p>COUNTIF counts the number of cells that meet a specific condition.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Used for conditional counting</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Supports comparison operators and text conditions</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=COUNTIF(range, criteria)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, 20, 30, 20, 10
+B1: =COUNTIF(A1:A5, 20)  // Result: 2
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-countifs.html -->
+      <section id="excel-countifs-function" class="lesson-section">
+        <h1>Excel COUNTIFS Function</h1>
+        <p>COUNTIFS counts the number of cells that meet multiple conditions simultaneously.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Supports multiple criteria ranges</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Useful for advanced data filtering</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=COUNTIFS(criteria_range1, criteria1, [criteria_range2, criteria2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, 20, 30, 20, 10
+B1:B5: "Yes","No","Yes","No","Yes"
+C1: =COUNTIFS(A1:A5, ">15", B1:B5, "No")  // Result: 1
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-if.html -->
+      <section id="excel-if-function" class="lesson-section">
+        <h1>Excel IF Function</h1>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Conditional logic for formulas</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Can be nested for multiple conditions</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Commonly combined with AND/OR functions</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=IF(logical_test, value_if_true, value_if_false)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1: 75
+B1: =IF(A1>=50, "Pass", "Fail")  // Result: Pass
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-ifs.html -->
+      <section id="excel-ifs-function" class="lesson-section">
+        <h1>Excel IFS Function</h1>
+        <p>IFS allows multiple conditions to be tested without nesting multiple IF functions.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Tests conditions in order</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Returns value for the first TRUE condition</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Improves readability over nested IFs</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=IFS(condition1, value1, condition2, value2, ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1: 85
+B1: =IFS(A1>=90,"A", A1>=80,"B", A1>=70,"C")  // Result: B
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-left.html -->
+      <section id="excel-left-function" class="lesson-section">
+        <h1>Excel LEFT Function</h1>
+        <p>LEFT extracts a specific number of characters from the start (left) of a text string.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Used for text parsing and data cleaning</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Can extract fixed number of characters</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=LEFT(text, num_chars)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1: ExcelCourse
+B1: =LEFT(A1,5)  // Result: Excel
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-lower.html -->
+      <section id="excel-lower-function" class="lesson-section">
+        <h1>Excel LOWER Function</h1>
+        <p>LOWER converts all letters in a text string to lowercase.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Useful for standardizing text</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Does not affect numbers or symbols</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=LOWER(text)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1: EXCEL
+B1: =LOWER(A1)  // Result: excel
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-max.html -->
+      <section id="excel-max-function" class="lesson-section">
+        <h1>Excel MAX Function</h1>
+        <p>MAX returns the largest numeric value in a range of cells.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Ignores blank and non-numeric cells</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Useful for finding maximum values in datasets</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=MAX(number1, [number2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, 20, 30, 40, 50
+B1: =MAX(A1:A5)  // Result: 50
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-median.html -->
+      <section id="excel-median-function" class="lesson-section">
+        <h1>Excel MEDIAN Function</h1>
+        <p>MEDIAN returns the middle value in a range of numbers.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Ignores blank and non-numeric cells</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Useful for understanding data distribution</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=MEDIAN(number1, [number2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, 20, 30, 40, 50
+B1: =MEDIAN(A1:A5)  // Result: 30
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-min.html -->
+      <section id="excel-min-function" class="lesson-section">
+        <h1>Excel MIN Function</h1>
+        <p>MIN returns the smallest numeric value in a range of cells.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Ignores blank and non-numeric cells</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Useful for finding minimum values in datasets</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=MIN(number1, [number2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, 20, 30, 40, 50
+B1: =MIN(A1:A5)  // Result: 10
+    </code></pre>
+        </div>
+      </section><!-- File: excel-mode.html -->
+      <section id="excel-mode-function" class="lesson-section">
+        <h1>Excel MODE Function</h1>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Finds the most repeated value</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Ignores blanks and text</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Multiple modes can exist; Excel returns the first found</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=MODE.SNGL(number1, [number2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, 20, 10, 30, 10
+B1: =MODE.SNGL(A1:A5)  // Result: 10
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-npv.html -->
+      <section id="excel-npv-function" class="lesson-section">
+        <h1>Excel NPV Function</h1>
+        <p>NPV calculates the Net Present Value of a series of cash flows based on a discount rate.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Used in financial analysis</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Discounts future cash flows to present value</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Requires consistent period cash flows</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=NPV(rate, value1, [value2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+Rate: 10%
+Cash flows: B1:B5 = 100, 200, 300, 400, 500
+C1: =NPV(0.1, B1:B5)  // Result: 1052.33
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-or.html -->
+      <section id="excel-or-function" class="lesson-section">
+        <h1>Excel OR Function</h1>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Logical function</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Returns TRUE if at least one condition is TRUE</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Supports multiple logical tests</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=OR(logical1, [logical2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1: 10
+B1: 20
+C1: =OR(A1>15, B1>15)  // Result: TRUE
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-rand.html -->
+      <section id="excel-rand-function" class="lesson-section">
+        <h1>Excel RAND Function</h1>
+        <p>RAND returns a random number between 0 and 1. Useful for simulations, sampling, and random testing.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Generates random decimal numbers</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Recalculates every time the worksheet changes</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=RAND()</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1: =RAND()  // Result: 0.427 (example, varies each time)
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-right.html -->
+      <section id="excel-right-function" class="lesson-section">
+        <h1>Excel RIGHT Function</h1>
+        <p>RIGHT extracts a specified number of characters from the end (right) of a text string.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Used for text parsing and data extraction</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Works with numbers stored as text too</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=RIGHT(text, num_chars)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1: ExcelCourse
+B1: =RIGHT(A1, 6)  // Result: Course
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-stdevp.html -->
+      <section id="excel-stdevp-function" class="lesson-section">
+        <h1>Excel STDEV.P Function</h1>
+        <p>STDEV.P calculates the standard deviation of an entire population.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Measures data variability</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Population standard deviation (all data points considered)</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=STDEV.P(number1, [number2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, 20, 30, 40, 50
+B1: =STDEV.P(A1:A5)  // Result: 14.1421
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-stdevs.html -->
+      <section id="excel-stdevs-function" class="lesson-section">
+        <h1>Excel STDEV.S Function</h1>
+        <p>STDEV.S calculates the standard deviation of a sample from the population.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Sample standard deviation (subset of data)</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Useful for statistical sampling</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=STDEV.S(number1, [number2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, 20, 30, 40, 50
+B1: =STDEV.S(A1:A5)  // Result: 15.8114
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-sum.html -->
+      <section id="excel-sum-function" class="lesson-section">
+        <h1>Excel SUM Function</h1>
+        <p>SUM adds all numbers in a range or list of values.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Basic arithmetic function</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Can sum individual cells, ranges, or multiple ranges</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=SUM(number1, [number2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, 20, 30, 40, 50
+B1: =SUM(A1:A5)  // Result: 150
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-sumif.html -->
+      <section id="excel-sumif-function" class="lesson-section">
+        <h1>Excel SUMIF Function</h1>
+        <p>SUMIF sums the values in a range that meet a specific condition.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Conditional summing</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Supports comparison operators and text conditions</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=SUMIF(range, criteria, [sum_range])</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, 20, 30, 20, 10
+B1: =SUMIF(A1:A5, ">15")  // Result: 70
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-sumifs.html -->
+      <section id="excel-sumifs-function" class="lesson-section">
+        <h1>Excel SUMIFS Function</h1>
+        <p>SUMIFS sums the values that meet multiple conditions.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Multiple criteria summing</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Supports ranges and logical tests</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=SUMIFS(sum_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:A5: 10, 20, 30, 20, 10
+B1:B5: "Yes","No","Yes","No","Yes"
+C1: =SUMIFS(A1:A5, B1:B5, "Yes", A1:A5, ">15")  // Result: 30
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-trim.html -->
+      <section id="excel-trim-function" class="lesson-section">
+        <h1>Excel TRIM Function</h1>
+        <p>TRIM removes all extra spaces from text, leaving only single spaces between words.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Useful for cleaning data</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Removes leading, trailing, and multiple spaces</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=TRIM(text)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1: "  Excel   Course  "
+B1: =TRIM(A1)  // Result: "Excel Course"
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-vlookup.html -->
+      <section id="excel-vlookup-function" class="lesson-section">
+        <h1>Excel VLOOKUP Function</h1>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Vertical lookup function</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Requires lookup value, table array, column index, and range lookup</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1:B5:
+101, John
+102, Alice
+103, Bob
+
+C1: =VLOOKUP(102, A1:B5, 2, FALSE)  // Result: Alice
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-xor.html -->
+      <section id="excel-xor-function" class="lesson-section">
+        <h1>Excel XOR Function</h1>
+        <p>XOR returns TRUE if an odd number of arguments are TRUE, otherwise FALSE.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Logical exclusive OR function</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Used for multiple condition checks where only one should be TRUE</span>
+            </li>
+          </ul>
+        </div>
+        <div class="section-content-card">
+          <h3><i class="fas fa-code"></i> Syntax / Formula</h3>
+          <pre><code>=XOR(logical1, [logical2], ...)</code></pre>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre><code>
+A1: TRUE
+B1: FALSE
+C1: =XOR(A1,B1)  // Result: TRUE
+C2: =XOR(A1,TRUE) // Result: FALSE
+    </code></pre>
+        </div>
+      </section><!-- File: excel-convert-time-seconds.html -->
+      <section id="excel-convert-time-seconds" class="lesson-section">
+        <h1>Convert Time to Seconds in Excel</h1>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Time in Excel is stored as a decimal (1 = 1 day)</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>1 hour = 3600 seconds, 1 minute = 60 seconds</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Useful for time calculations and analytics</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre class="example-code"><code>
+A1: 01:30:15   // 1 hour 30 minutes 15 seconds
+B1: =A1*86400  // Result: 5415 seconds
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+      </div></div></section>
+
+      <!-- File: excel-difference-between-times.html -->
+      <section id="excel-difference-between-times" class="lesson-section">
+        <h1>Difference Between Times in Excel</h1>
+        <p>Calculate the difference between two times by subtracting the earlier time from the later time.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Result is a time value</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Use TEXT or multiplication to get hours/minutes/seconds</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre class="example-code"><code>
+A1: 08:30:00
+B1: 14:45:30
+C1: =B1-A1           // Result: 6:15:30
+C2: =(B1-A1)*24      // Result: 6.2583 hours
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+      </div></div></section>
+
+      <!-- File: excel-npv-calculation.html -->
+      <section id="excel-npv-calculation" class="lesson-section">
+        <h1>NPV (Net Present Value) in Excel</h1>
+        <p>Calculate the present value of future cash flows using a discount rate.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Discount future cash flows to present value</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Helps evaluate investment profitability</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Use with consistent cash flow periods</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre class="example-code"><code>
+Discount Rate: 10%
+Cash flows in B1:B5: 100, 200, 300, 400, 500
+C1: =NPV(0.1, B1:B5)   // Result: 1052.33
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+      </div></div></section>
+
+      <!-- File: excel-remove-duplicates.html -->
+      <section id="excel-remove-duplicates" class="lesson-section">
+        <h1>Remove Duplicates in Excel</h1>
+        <p>Remove duplicate rows from a dataset using Excel’s built-in feature or formulas.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Excel’s “Remove Duplicates” tool is under Data tab</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Can remove duplicates based on one or multiple columns</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Formula method: =UNIQUE(range) (Excel 365/2021)</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre class="example-code"><code>
+A1:A7: 10, 20, 10, 30, 20, 40, 10
+B1: =UNIQUE(A1:A7)   // Result: 10, 20, 30, 40
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+      </div></div></section><!-- File: excel-examples.html -->
+      <section id="excel-examples" class="lesson-section">
+        <h1>Excel Examples</h1>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Hands-on Excel practice</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Includes beginner to advanced examples</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Focus on real business scenarios</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre class="example-code"><code>
+Example: Calculate total sales and average per salesperson
+A1:A5: Salesperson Names
+B1:B5: Sales Amounts
+C1: =SUM(B1:B5)
+D1: =AVERAGE(B1:B5)
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+      </div></div></section>
+
+      <!-- File: excel-exercises.html -->
+      <section id="excel-exercises" class="lesson-section">
+        <h1>Excel Exercises</h1>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Step-by-step exercises</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Practice real-world business tasks</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Reinforce learning from course topics</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre class="example-code"><code>
+Exercise: Create a monthly budget tracker
+Columns: Item, Planned, Actual
+Calculate total planned and actual expenses, and variance
+Formulas:
+Total Planned =SUM(B2:B10)
+Total Actual =SUM(C2:C10)
+Variance =C2-B2
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+      </div></div></section>
+
+      <!-- File: excel-syllabus.html -->
+      <section id="excel-syllabus" class="lesson-section">
+        <h1>Excel Syllabus</h1>
+        <p>A structured syllabus to guide learners through Excel from beginner to advanced levels.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Organized learning path</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Covers all major Excel topics</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Includes formulas, functions, formatting, charts, data analysis</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre class="example-code"><code>
+Syllabus:
+1. Excel Basics: Interface, Navigation, Shortcuts
+2. Formulas & Functions: SUM, AVERAGE, IF, VLOOKUP
+3. Formatting: Fonts, Colors, Borders, Conditional Formatting
+4. Data Analysis: Sorting, Filtering, Tables, Pivot Tables
+5. Charts: Column, Bar, Line, Pie
+6. Practice Exercises & Real-World Case Studies
+7. Advanced Functions & Tips
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-study-plan.html -->
+      <section id="excel-study-plan" class="lesson-section">
+        <h1>Excel Study Plan</h1>
+        <p>Follow this study plan to gradually build your Excel skills and apply them in real-world scenarios.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Daily and weekly learning goals</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Practical exercises included</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Progress from beginner → intermediate → advanced</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre class="example-code"><code>
+Week 1: Excel Interface, Navigation, Basic Formulas
+Week 2: Formatting, Conditional Formatting, Charts
+Week 3: Functions: IF, VLOOKUP, COUNTIF, SUMIF
+Week 4: Pivot Tables, Data Analysis, Advanced Functions
+Week 5: Case Studies, Practice Exercises
+Week 6: Review & Consolidation
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- File: excel-training.html -->
+      <section id="excel-training" class="lesson-section">
+        <h1>Excel Training</h1>
+        <p>Hands-on training exercises to reinforce learning and prepare for professional Excel usage.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Interactive exercises</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Simulates real business data scenarios</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Focus on efficiency, accuracy, and best practices</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre class="example-code"><code>
+Example Training:
+1. Build a Sales Dashboard with charts and pivot tables
+2. Analyze employee attendance with conditional formatting
+3. Track project expenses with SUMIFS and IF functions
+4. Clean and standardize data using TRIM, LOWER, LEFT, RIGHT
+    </code></pre>
+        </div>
+      </section><!-- File: excel-references.html -->
+      <section id="excel-references" class="lesson-section">
+        <h1>Excel References & Keyboard Shortcuts</h1>
+
+        <div class="section-content-card">
+          <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Navigation shortcuts for moving efficiently</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Formatting shortcuts for faster styling</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Formula editing and data selection shortcuts</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Tips for referencing cells, ranges, and tables</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <div class="example-header"><i class="fas fa-code"></i> Example</div>
+          <pre class="example-code"><code>
+Navigation:
+- Ctrl + Arrow Keys: Jump to edge of data region
+- Ctrl + Home: Go to A1
+- Ctrl + End: Go to last used cell
+
+Formatting:
+- Ctrl + B: Bold
+- Ctrl + I: Italic
+- Ctrl + U: Underline
+- Ctrl + 1: Format Cells dialog
+
+Formulas:
+- F2: Edit active cell
+- Ctrl + Shift + Enter: Array formulas
+- Ctrl + ` : Show formulas
+- Alt + = : AutoSum
+
+References Tips:
+- Use $ for absolute references (e.g., $A$1)
+- Use named ranges for clarity
+- Structured references for tables (e.g., Table1[Column])
+    </code></pre>
+
+          <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          <div class="tryit-panel">
+            <div class="tryit-toolbar">
+              <span>Live Editor</span>
+              <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+              <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+            </div>
+            <textarea class="tryit-editor">Type your Excel formula here...</textarea>
+            <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+          </div>
+      </div></section>
+
+
+
+      <!-- Excel Main Formatting -->
+      <section id="excel-formatting-main" class="lesson-section">
+        <h1>Excel Main Formatting</h1>
+        <p>Learn the essential Excel formatting tools to make your spreadsheets clear, professional, and visually</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-paint-brush"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Change fonts, colors, and borders</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Apply number formatting and alignment</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Use Format Painter to quickly copy formatting</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <pre class="example-code"><code>
+A1: Sales
+B1: Revenue
+Select cells → Apply Bold, Italic, or Number format
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- Format Painter -->
+      <section id="excel-format-painter" class="lesson-section">
+        <h1>Excel Format Painter</h1>
+        <p>Quickly copy formatting from one cell or range to another.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-copy"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Copies font, color, border, and number formats</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Double-click to apply multiple times</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <pre class="example-code"><code>
+Select cell with formatting → Click Format Painter → Apply to other cells
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- Colors -->
+      <section id="excel-format-colors" class="lesson-section">
+        <h1>Excel Colors</h1>
+        <p>Change cell background and font colors to highlight data effectively.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-palette"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Use Fill Color for background</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Use Font Color for text</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Conditional Formatting for automatic color changes</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <pre class="example-code"><code>
+Select A1:A5 → Fill Color → Yellow
+Select B1:B5 → Font Color → Red
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- Fonts -->
+      <section id="excel-format-fonts" class="lesson-section">
+        <h1>Excel Fonts</h1>
+        <p>Modify font style, size, and emphasis to make your data readable and professional.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-font"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Bold, Italic, Underline</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Font size, font type, and color</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <pre class="example-code"><code>
+Select A1 → Change font to Arial → Set size 12 → Bold
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- Borders -->
+      <section id="excel-format-borders" class="lesson-section">
+        <h1>Excel Borders</h1>
+        <p>Apply borders to cells and ranges to separate data clearly.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-border-all"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Thin, thick, dashed, or custom borders</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Apply to all sides, outside, or inside</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <pre class="example-code"><code>
+Select range A1:C5 → Home → Borders → All Borders
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- Numbers -->
+      <section id="excel-format-numbers" class="lesson-section">
+        <h1>Excel Numbers</h1>
+        <p>Format numbers for currency, percentage, date, or custom formats.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-hashtag"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Currency, Accounting, Percentage</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Custom decimal places and date formats</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <pre class="example-code"><code>
+Select B1:B10 → Format Cells → Currency → 2 Decimal Places
+Select C1:C10 → Format Cells → Percentage → 0 Decimal Places
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- Data Analysis -->
+      <section id="excel-data-analysis" class="lesson-section">
+        <h1>Excel Data Analysis</h1>
+        <p>Sort, filter, and summarize your data efficiently using Excel’s built-in tools.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-chart-pie"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Sort data ascending/descending</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Filter data based on criteria</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Create tables for structured data</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Sort -->
+      <section id="excel-sort" class="lesson-section">
+        <h1>Excel Sort</h1>
+        <p>Sort your data to organize it by values, text, or dates.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-sort-amount-down"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Ascending/Descending sort</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Sort by multiple columns</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <pre class="example-code"><code>
+Select A1:C10 → Data → Sort → Sort by Revenue Descending
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- Filter -->
+      <section id="excel-filter" class="lesson-section">
+        <h1>Excel Filter</h1>
+        <p>Filter data to display only the rows that meet specific criteria.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-filter"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>AutoFilter using dropdowns</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Filter by text, number, or date</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Custom filter for advanced conditions</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <pre class="example-code"><code>
+Select A1:C10 → Data → Filter → Filter Revenue > 1000
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- Tables -->
+      <section id="excel-tables" class="lesson-section">
+        <h1>Excel Tables</h1>
+        <p>Create structured tables for easier data analysis and formatting.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-table"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Automatic filtering and formatting</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Structured references in formulas</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Table styles and banded rows</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <pre class="example-code"><code>
+Select A1:C10 → Insert → Table → My Table has headers
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- Conditional Format -->
+      <section id="excel-conditional-format" class="lesson-section">
+        <h1>Excel Conditional Formatting</h1>
+        <p>Highlight cells automatically based on their values.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-highlighter"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Highlight cell rules (greater than, less than)</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Top/Bottom rules, data bars, color scales</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Custom formulas for formatting</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <pre class="example-code"><code>
+Select B1:B10 → Home → Conditional Formatting → Highlight Cells > Greater Than 1000
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- Charts -->
+      <section id="excel-charts" class="lesson-section">
+        <h1>Excel Charts</h1>
+        <p>Visualize your data using Excel charts for better insights.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-chart-line"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Column, Bar, Line, Pie charts</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Combo charts for multiple data series</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Customize chart titles, labels, and legends</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <pre class="example-code"><code>
+Select A1:B10 → Insert → Charts → Column Chart
+Customize title and labels as needed
+    </code></pre>
+        </div>
+      </section>
+
+      <!-- Pivot Tables -->
+      <section id="excel-pivot-tables" class="lesson-section">
+        <h1>Excel Pivot Tables</h1>
+        <p>Summarize and analyze large datasets quickly with Pivot Tables.</p>
+        <div class="section-content-card">
+          <h3><i class="fas fa-columns"></i> Key Concepts</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Drag fields into Rows, Columns, Values, Filters</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Summarize data using SUM, COUNT, AVERAGE</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--accent-color); margin-top: 4px;"></i>
+              <span>Create Pivot Charts from Pivot Tables</span>
+            </li>
+          </ul>
+        </div>
+        <div class="example-box">
+          <pre class="example-code"><code>
+Select A1:C100 → Insert → Pivot Table → New Worksheet
+Drag 'Salesperson' to Rows, 'Revenue' to Values → SUM of Revenue
+    </code></pre>
+        </div>
+      </section>
+
+
+
+
+
+      <section class="lesson-section"
+        style="text-align: center; background: var(--primary-gradient); color: white; border: none;">
+        <h1 style="color: white;">🎉 Excel Masterclass Complete!</h1>
+        <p>You've mastered the essentials of Microsoft Excel. From basic data entry to move operations and formulas,
+          you're ready to build professional spreadsheets.</p>
+        <button onclick="location.href='../index1.html'"
+          style="margin-top: 20px; padding: 12px 30px; border-radius: 50px; border: none; background: white; color: var(--primary); font-weight: 800; cursor: pointer;">Return
+          to Dashboard</button>
+      </section>
+
+
+  </div>
+  </main>
   </div>
 
   <script type="module">
@@ -359,7 +4008,7 @@
 
   <script>
     // Sidebar active state syncing
-    const sections = document.querySelectorAll('.topic-section');
+    const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
 
     window.addEventListener('scroll', () => {
@@ -378,48 +4027,42 @@
         }
       });
     });
-  </script>
 
-  <script>
-
-
-    // Try It Editor functions (applied globally to all courses)
-    window.openTryIt = function(btn) {
+    // Try It Editor functions
+    window.openTryIt = function (btn) {
       const panel = btn.nextElementSibling;
       panel.classList.add('open');
       btn.style.display = 'none';
       runTryIt(panel.querySelector('.tryit-run'));
     };
-    window.closeTryIt = function(btn) {
+    window.closeTryIt = function (btn) {
       const panel = btn.closest('.tryit-panel');
       panel.classList.remove('open');
       panel.previousElementSibling.style.display = 'inline-flex';
     };
-    window.runTryIt = function(btn) {
+    window.runTryIt = function (btn) {
       const panel = btn.closest('.tryit-panel');
       const code = panel.querySelector('.tryit-editor').value;
       const iframe = panel.querySelector('iframe');
-      // basic wrapping for output display
       iframe.srcdoc = `
-        <style>body{font-family:sans-serif; color:#333; background:#fff;}</style>
-        ${code}
+        <style>body{font-family:sans-serif; padding:20px; color:#333; background:#f4f7f6;}</style>
+        <div style="background:white; padding:20px; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+          ${code}
+        </div>
       `;
     };
-  </script>
 
-  <script>
     // Theme logic
     const toggleBtn = document.getElementById('theme-toggle');
     const updateThemeIcon = (isDark) => {
-      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+      if (toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     };
-    
-    // Check saved theme
+
     let currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
-    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+    updateThemeIcon(currentTheme === 'dark');
 
-    if(toggleBtn) {
+    if (toggleBtn) {
       toggleBtn.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme');
         let newTheme = theme === 'dark' ? 'light' : 'dark';

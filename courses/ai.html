@@ -1,71 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | AI Masterclass</title>
   <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #04AA6D 0%, #028a58 100%);
+      --accent-color: #06cc84;
+      --sidebar-bg-modern: #1e212a;
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      --card-radius: 16px;
+    }
+
+    /* Smooth scroll and selection */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::selection {
+      background: rgba(4, 170, 109, 0.2);
+      color: var(--primary);
+    }
+
+    /* Modernized sidebar */
+    .sidebar {
+      background: var(--sidebar-bg-modern);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      border-radius: 8px;
+      margin: 4px 15px;
+      padding: 12px 18px;
+      border-left: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sidebar a:hover {
+      background: rgba(4, 170, 109, 0.1);
+      color: var(--accent-color);
+      transform: translateX(5px);
+    }
+
+    .sidebar a.active {
+      background: var(--primary-gradient);
+      box-shadow: 0 4px 15px rgba(4, 170, 109, 0.3);
+      color: #fff;
+    }
+
+    /* Main Content Area */
+    .course-content-area {
+      max-width: 1000px;
+      padding: 60px 40px;
+    }
+
+    /* Card-style sections */
+    .lesson-section,
+    .media-api-section {
+      background: var(--bg-card);
+      padding: 45px;
+      border-radius: var(--card-radius);
+      margin-bottom: 50px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .lesson-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--primary-gradient);
+      opacity: 0.8;
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 25px;
+      color: var(--text);
+    }
+
+    .lesson-section h1 {
+      background: linear-gradient(to right, var(--text), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 35px 0 15px;
+      border-bottom: 2px solid rgba(4, 170, 109, 0.1);
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    /* Example Box Enhancements */
+    .example-box {
+      border: 2px solid rgba(4, 170, 109, 0.1);
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .example-header {
+      background: #fdfdfd;
+      padding: 12px 20px;
+      border-bottom: 2px solid rgba(4, 170, 109, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .copy-btn {
+      background: rgba(4, 170, 109, 0.1);
+      color: var(--primary);
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .try-btn {
+      background: var(--primary-gradient) !important;
+      padding: 12px 24px !important;
+      border-radius: 10px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 20px !important;
+      box-shadow: 0 4px 12px rgba(4, 170, 109, 0.2);
+    }
+
+    .try-btn:hover {
+      box-shadow: 0 6px 20px rgba(4, 170, 109, 0.4) !important;
+      transform: translateY(-2px);
+    }
+
+    /* Key points & Tips */
+    .key-points,
+    .tips-box,
+    .tips,
+    .key-concepts {
+      background: rgba(4, 170, 109, 0.04);
+      border: 1px solid rgba(4, 170, 109, 0.1);
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin: 20px 0;
+    }
+
+    .key-points ul li,
+    .key-concepts ul li {
+      list-style: none;
+      margin-bottom: 12px;
+    }
+
+    .key-points ul li::before,
+    .key-concepts ul li::before {
+      content: '✔';
+      color: var(--primary);
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    /* Breadcrumb polish */
+    .breadcrumb {
+      background: rgba(4, 170, 109, 0.05);
+      padding: 12px 24px;
+      border-radius: 50px;
+      display: inline-flex;
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #ced4da;
+      border-radius: 10px;
+      border: 2px solid var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #adb5bd;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Dark Mode nuances */
+    [data-theme="dark"] .lesson-section,
+    [data-theme="dark"] .media-api-section {
+      background: #161b22;
+      border-color: #30363d;
+    }
+
+    [data-theme="dark"] .example-header {
+      background: #0d1117;
+      color: #8b949e;
+    }
+
+    /* Navbar specific refinements */
+    .top-nav {
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-profile-links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-profile-links #user-display {
+      color: #999;
+      font-size: 13px;
+      font-weight: 600;
+      margin-right: 5px;
+    }
+
+    #theme-toggle {
+      background: transparent;
+      border: 1px solid #444;
+      color: #ccc;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    #theme-toggle:hover {
+      border-color: var(--primary);
+      color: white;
+    }
+
+    .hamburger {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 10px;
+      display: none;
+      /* Shown in media query */
+    }
+
+    @media (max-width: 900px) {
+      .hamburger {
+        display: block;
+      }
+
+      .top-nav-search {
+        display: none;
+      }
+
+      .nav-profile-links #user-display {
+        display: none;
+      }
+
+      .sidebar {
+        z-index: 3000;
+      }
+    }
+  </style>
 </head>
+
 <body class="learnx-page">
 
   <!-- TOP NAV -->
   <nav class="top-nav">
+    <button class="hamburger" id="mobile-toggle"><i class="fas fa-bars"></i></button>
     <a href="../index1.html" class="brand">LearnX</a>
-        <div class="top-nav-links">
-      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
-      <a href="html.html">HTML</a>
-      <a href="css.html">CSS</a>
-      <a href="js.html">JavaScript</a>
-      <a href="python.html">Python</a>
-      <a href="sql.html">SQL</a>
-      <a href="java.html">Java</a>
-      <a href="c.html">C</a>
-      <a href="excel.html">Excel</a>
-      <a href="numpy.html">NumPy</a>
-      <a href="pandas.html">Pandas</a>
-      <a href="matplotlib.html">Matplotlib</a>
-      <a href="ml.html">ML</a>
-      <a href="ai.html" class="active">AI</a>
-      <a href="r.html">R</a>
-    </div>
 
     <div class="top-nav-search">
-      <input type="text" placeholder="Search..."/>
+      <input type="text" placeholder="Search course content..." />
       <button><i class="fas fa-search"></i></button>
     </div>
-    
-    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
-      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
-       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
-      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
+
+    <div class="nav-profile-links">
+      <span id="user-display"></span>
+      <button id="theme-toggle" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn">Logout</button>
     </div>
+  </nav>
+
+  <!-- SUB NAV (Course Links) -->
+  <nav class="sub-nav">
+    <a href="../index1.html"><i class="fas fa-th-large"></i> DASHBOARD</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JAVASCRIPT</a>
+    <a href="python.html">PYTHON</a>
+    <a href="sql.html">SQL</a>
+    <a href="java.html">JAVA</a>
+    <a href="c.html">C++</a>
+    <a href="excel.html">EXCEL</a>
+    <a href="numpy.html">NUMPY</a>
+    <a href="pandas.html">PANDAS</a>
+    <a href="matplotlib.html">MATPLOTLIB</a>
+    <a href="ai.html" class="active">AI & ML</a>
+    <a href="r.html">R</a>
   </nav>
 
   <!-- CONTENT WRAPPER -->
   <div class="course-layout">
-    
+
     <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
-        <i class="fas fa-robot" style="color:#00d2ff"></i> Artificial Intelligence Tutorial
+        <i class="fas fa-robot" style="color:#00d2ff"></i> AI Tutorial
       </div>
 
-      <div class="sidebar-section-label">Artificial Intelligence Basic</div>
-      <a href="#Intro" class="active">Introduction to AI</a>
-      <a href="#History">History of AI</a>
-      <a href="#AIvsML">AI vs ML vs DL</a>
-      <a href="#SearchAlgo">Search Algorithms</a>
-      <a href="#Minimax">Game Theory (Minimax)</a>
-      <a href="#NLP">NLP Basics</a>
-      <a href="#Transformers">Transformers (GPT)</a>
-      <a href="#CV">Computer Vision</a>
-      <a href="#GenerativeAI">Generative AI</a>
-      <a href="#Ethics">Ethics & Bias</a>
-      <a href="#Projects">🚀 Real World Projects</a>
-      <a href="#MiniTask">🎯 AI Mini Task</a>
+      <div class="sidebar-section-label">Core Fundamentals</div>
+      <a href="#ai-overview" class="active"><i class="fas fa-brain"></i> AI & ML Overview</a>
+      <a href="#ml-types"><i class="fas fa-layer-group"></i> Types of Learning</a>
+      <a href="#ml-lifecycle"><i class="fas fa-sync"></i> The ML Lifecycle</a>
+
+      <div class="sidebar-section-label">Algorithms & Models</div>
+      <a href="#ml-regression"><i class="fas fa-chart-line"></i> Regression Models</a>
+      <a href="#ml-classification"><i class="fas fa-list-check"></i> Classification Models</a>
+      <a href="#ml-clustering"><i class="fas fa-object-group"></i> Clustering & PCA</a>
+
+      <div class="sidebar-section-label">Neural Networks</div>
+      <a href="#ml-perceptrons"><i class="fas fa-circle-nodes"></i> Perceptrons & MLPs</a>
+      <a href="#ml-deep-learning"><i class="fas fa-network-wired"></i> Deep Learning Intro</a>
+
+      <div class="sidebar-section-label">Web-Based ML (JS)</div>
+      <a href="#ml-brainjs"><i class="fas fa-microchip"></i> Brain.js Mastery</a>
+      <a href="#tfjs-mastery"><i class="fas fa-vial"></i> TensorFlow.js Pro</a>
+      <a href="#tfjs-visuals"><i class="fas fa-chart-bar"></i> TFJS Visor</a>
+
+      <div class="sidebar-section-label">Project Labs</div>
+      <a href="#ex1-house-project"><i class="fas fa-house-chimney"></i> Proj: House Prices</a>
+      <a href="#ml-ethics"><i class="fas fa-scale-balanced"></i> AI Ethics & Future</a>
 
       <div class="sidebar-footer">
         <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
@@ -75,247 +391,526 @@
     <!-- MAIN CONTENT -->
     <main class="course-main">
       <div class="course-content-area">
-        
         <div class="breadcrumb">
-          <a href="../index1.html">Home</a> <span>/</span> <span>AI</span>
+          <a href="../index1.html">Home</a> <span>/</span> <span>AI & Machine Learning Masterclass</span>
         </div>
-        
-        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">AI Masterclass</h1>
 
-        <section class="topic-section" id="Intro">
-          <h1>Introduction to AI</h1>
-          <div class="chapter-badge">Chapter 1</div>
+        <section id="ai-overview" class="lesson-section">
+          <h1>Introduction to Artificial Intelligence</h1>
+          <p>
+            AI is the simulation of human intelligence by machines. It encompasses everything from simple rule-based
+            algorithms to complex neural networks that can generate art, diagnose diseases, or drive cars.
+          </p>
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#History" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="key-concepts">
+            <strong>The Core Hierarchy:</strong>
+            <ul>
+              <li><strong>Artificial Intelligence (AI):</strong> The broad goal of creating systems capable of
+                human-like tasks.</li>
+              <li><strong>Machine Learning (ML):</strong> A subset of AI focused on algorithms that learn from data.
+              </li>
+              <li><strong>Deep Learning (DL):</strong> A specific ML technique using multi-layered neural networks.</li>
+            </ul>
           </div>
-          
-        <h3>📌 What is AI?</h3>
-        <p>Artificial Intelligence is the simulation of human intelligence processes by machines.</p>
-        <p><strong>Narrow AI:</strong> Good at one thing (Chess, Alexa).</p>
-        <p><strong>General AI (AGI):</strong> Human-level intelligence (Theoretical).</p>
-      </section>
 
-        <section class="topic-section" id="History">
-          <h1>History of AI</h1>
-          <div class="chapter-badge">Chapter 2</div>
+          <h2>How Machines "Learn"</h2>
+          <p>
+            In traditional software engineering, we define <strong>Rules + Data = Output</strong>. In Machine Learning,
+            we flip the script:
+            <strong>Data + Output = Rules (the Model)</strong>. The computer finds the mathematical patterns itself.
+          </p>
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#AIvsML" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="example-box">
+            <div class="example-header">
+              <i class="fas fa-lightbulb"></i> Fun Fact
+            </div>
+            <p style="padding: 20px;">
+              The term "Machine Learning" was coined in 1959 by Arthur Samuel. He created a program that learned to play
+              checkers better than he could, proving machines aren't just limited to what we specifically tell them to
+              do.
+            </p>
           </div>
-          
-        <ul>
-          <li><strong>1950s:</strong> Turing Test.</li>
-          <li><strong>1997:</strong> Deep Blue beats Kasparov.</li>
-          <li><strong>2012:</strong> AlexNet (Deep Learning boom).</li>
-          <li><strong>2022:</strong> ChatGPT (Generative AI).</li>
-        </ul>
-      </section>
-
-        <section class="topic-section" id="AIvsML">
-          <h1>AI vs ML vs DL</h1>
-          <div class="chapter-badge">Chapter 3</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#History" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#SearchAlgo" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <div class="mermaid">graph TD
-          AI[Artificial Intelligence] --> ML[Machine Learning]
-          ML --> DL[Deep Learning]
-          DL --> GenAI[Generative AI]
-        
         </section>
 
-        <section class="topic-section" id="SearchAlgo">
-          <h1>Search Algorithms</h1>
-          <div class="chapter-badge">Chapter 4</div>
+        <section id="ml-types" class="lesson-section">
+          <h1>Types of Learning</h1>
+          <p>
+            Not all ML is trained the same way. We categorize algorithms based on their training style and data
+            feedback.
+          </p>
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#AIvsML" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Minimax" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="learning-grid"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+            <div class="card"
+              style="background: rgba(4, 170, 109, 0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(4, 170, 109, 0.1);">
+              <h3 style="color: var(--primary);"><i class="fas fa-check-circle"></i> Supervised Learning</h3>
+              <p>Learning with labeled data. You provide inputs and the "correct answers."</p>
+              <ul style="font-size: 0.9rem; margin-top: 10px; color: #666;">
+                <li><strong>Classification:</strong> Is this email spam? (Yes/No)</li>
+                <li><strong>Regression:</strong> How much is this house worth? ($)</li>
+              </ul>
+            </div>
+            <div class="card"
+              style="background: rgba(0, 210, 255, 0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(0, 210, 255, 0.1);">
+              <h3 style="color: #00d2ff;"><i class="fas fa-magnifying-glass"></i> Unsupervised Learning</h3>
+              <p>Finding patterns in unlabeled data. The machine groups data based on similarities.</p>
+              <ul style="font-size: 0.9rem; margin-top: 10px; color: #666;">
+                <li><strong>Clustering:</strong> Grouping customers by shopping habits.</li>
+                <li><strong>Association:</strong> People who buy milk also buy bread.</li>
+              </ul>
+            </div>
           </div>
-          
-        <h3>📌 A* Search</h3>
-        <p>Used in GPS navigators to find the shortest path.</p>
-      </section>
 
-        <section class="topic-section" id="Minimax">
-          <h1>Game Theory (Minimax)</h1>
-          <div class="chapter-badge">Chapter 5</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#SearchAlgo" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#NLP" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Algorithm used in two-player games like Chess and Tic-Tac-Toe to minimize possible loss.</p>
-      
+          <h2 style="margin-top: 35px;">Reinforcement Learning (RL)</h2>
+          <p>
+            Learning by interaction—like training a dog. The agent receives "rewards" for correct actions and
+            "penalties"
+            for mistakes. This is how AlphaGo and OpenAI Five mastered complex strategy games.
+          </p>
         </section>
 
-        <section class="topic-section" id="NLP">
-          <h1>NLP Basics</h1>
-          <div class="chapter-badge">Chapter 6</div>
+        <section id="ml-lifecycle" class="lesson-section">
+          <h1>The Machine Learning Workflow</h1>
+          <p>
+            Building AI is a scientific process. Skipping steps like data cleaning often results in poor model
+            performance.
+          </p>
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Minimax" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Transformers" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="workflow-steps"
+            style="border-left: 2px solid var(--primary); padding-left: 25px; margin: 30px 0;">
+            <div style="margin-bottom: 25px;">
+              <h4 style="color: var(--primary);">1. Problem Definition & Data Collection</h4>
+              <p>Identify what you want to predict and gather raw data (CSV, SQL, API).</p>
+            </div>
+            <div style="margin-bottom: 25px;">
+              <h4 style="color: var(--primary);">2. Data Preprocessing & Cleaning</h4>
+              <p>Handling missing values, removing outliers, and normalizing data scales.</p>
+            </div>
+            <div style="margin-bottom: 25px;">
+              <h4 style="color: var(--primary);">3. Feature Engineering</h4>
+              <p>Selecting or creating the most relevant variables for prediction.</p>
+            </div>
+            <div style="margin-bottom: 0;">
+              <h4 style="color: var(--primary);">4. Model Training & Evaluation</h4>
+              <p>Fitting the algorithm to data and testing it on "hidden" test sets to verify accuracy.</p>
+            </div>
           </div>
-          
-        <p><strong>Sentiment Analysis:</strong> Is this review positive or negative?</p>
-        <p><strong>Tokenization:</strong> Breaking text into words.</p>
-      </section>
+        </section>
+        <section id="ml-regression" class="lesson-section">
+          <h1>Regression Models</h1>
+          <p>
+            Regression is used when we want to predict a <strong>continuous numerical value</strong>. It is the backbone
+            of financial forecasting, weather prediction, and scientific analysis.
+          </p>
 
-        <section class="topic-section" id="Transformers">
-          <h1>Transformers (GPT)</h1>
-          <div class="chapter-badge">Chapter 7</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#NLP" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#CV" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="algorithm-box" style="margin: 25px 0;">
+            <h3 style="color: var(--primary);"><i class="fas fa-chart-line"></i> Linear Regression</h3>
+            <p>Predicts a dependent variable based on one or more independent variables. The goal is to find the "Line
+              of Best Fit."</p>
+            <p style="background: rgba(4, 170, 109, 0.05); padding: 10px; border-radius: 8px; font-family: monospace;">
+              Formula: Y = mX + b</p>
           </div>
-          
-        <p>The architecture behind ChatGPT. Uses "Attention mechanisms" to understand context better than ever before.
-        </p>
-      
+
+          <div class="algorithm-box" style="margin: 25px 0;">
+            <h3 style="color: var(--primary);"><i class="fas fa-filter"></i> Logistic Regression</h3>
+            <p>Despite the name, this is used for <strong>Classification</strong>. It predicts the probability of an
+              input belonging to a certain class using a Sigmoid function.</p>
+          </div>
+
+          <div class="example-box">
+            <div class="example-header">
+              <i class="fas fa-code"></i> Python: Linear Regression
+            </div>
+            <pre class="example-code"><code>from sklearn.linear_model import LinearRegression
+import numpy as np
+
+# Training Data (X = SqFt, y = Price)
+X = np.array([[1000], [1500], [2000], [2500]])
+y = np.array([300000, 450000, 600000, 750000])
+
+model = LinearRegression()
+model.fit(X, y)
+print(f"Price for 1800 sqft: ${model.predict([[1800]])[0]}")</code></pre>
+          </div>
         </section>
 
-        <section class="topic-section" id="CV">
-          <h1>Computer Vision</h1>
-          <div class="chapter-badge">Chapter 8</div>
+        <section id="ml-classification" class="lesson-section">
+          <h1>Classification Models</h1>
+          <p>
+            Classification is used when the output variable is a category (e.g., "Red" or "Blue", "Spam" or "Not Spam").
+          </p>
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Transformers" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#GenerativeAI" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="grid-card-container"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+            <div class="card"
+              style="background: rgba(255, 255, 255, 0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <h4 style="color: #ff9d00;"><i class="fas fa-users"></i> K-Nearest Neighbors (KNN)</h4>
+              <p style="font-size: 0.9rem;">Classifies a data point based on how its neighbors are classified. If K=3,
+                it looks at the 3 closest points.</p>
+            </div>
+            <div class="card"
+              style="background: rgba(255, 255, 255, 0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <h4 style="color: #00ff88;"><i class="fas fa-sitemap"></i> Decision Trees</h4>
+              <p style="font-size: 0.9rem;">A flowchart-like structure where each internal node represents a "test" on
+                an attribute.</p>
+            </div>
           </div>
-          
-        <p>Teaching computers to "see".</p>
-        <p>Pixels -> Edges -> Shapes -> Objects.</p>
-      </section>
 
-        <section class="topic-section" id="GenerativeAI">
-          <h1>Generative AI</h1>
-          <div class="chapter-badge">Chapter 9</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#CV" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Ethics" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Creating new content (Images, Text, Audio) using models like GANs and Diffusion Models (MidJourney, DALL-E).
-        </p>
-      
+          <h2 style="margin-top: 30px;">Naive Bayes & SVM</h2>
+          <p>
+            <strong>Naive Bayes</strong> is based on Bayes' Theorem and is popular for text classification (like spam
+            detection).
+            <strong>Support Vector Machines (SVM)</strong> find the "hyperplane" that best separates different classes
+            in high-dimensional space.
+          </p>
         </section>
 
-        <section class="topic-section" id="Ethics">
-          <h1>Ethics & Bias</h1>
-          <div class="chapter-badge">Chapter 10</div>
+        <section id="ml-clustering" class="lesson-section">
+          <h1>Clustering & Dimensionality Reduction</h1>
+          <p>
+            When we don't have labels, we use **Unsupervised Learning** to find hidden structures in the data.
+          </p>
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#GenerativeAI" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="topic-detail" style="margin: 25px 0;">
+            <h3><i class="fas fa-object-group"></i> K-Means Clustering</h3>
+            <p>Divides data into 'K' number of clusters. Each point is assigned to the cluster with the nearest mean
+              (centroid).</p>
+            <div class="example-box">
+              <pre class="example-code"><code>from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters=3)
+kmeans.fit(data)</code></pre>
+            </div>
           </div>
-          
-        <p><strong>Algorithmic Bias:</strong> If data is biased, the AI will be biased.</p>
-        <p><strong>Deepfakes:</strong> Misinformation.</p>
-      
+
+          <div class="topic-detail" style="margin: 25px 0;">
+            <h3><i class="fas fa-compress"></i> Dimensionality Reduction (PCA)</h3>
+            <p>
+              Principal Component Analysis (PCA) reduces the number of variables in a dataset while preserving as much
+              info
+              as possible. This is vital for visualizing complex data and speeding up model training.
+            </p>
+          </div>
         </section>
 
-        <section class="topic-section" id="Projects">
-          <h1>🚀 Real World Projects</h1>
-          <div class="chapter-badge">Chapter 11</div>
+        <section id="ml-perceptrons" class="lesson-section">
+          <h1>Perceptrons & Neural Network Basics</h1>
+          <p>
+            A <strong>Perceptron</strong> is the simplest form of a neural network—it simulates a single biological
+            neuron. It takes multiple inputs, applies weights to them, and passes them through an activation function.
+          </p>
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Ethics" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="mermaid">graph LR
+            I1(Input 1) -- W1 --> S(Sum)
+            I2(Input 2) -- W2 --> S
+            S -- Activation --> O(Output)
           </div>
-          
-        <h3>🟢 Beginner: Chatbot</h3>
-        <p><strong>Goal:</strong> Simple rule-based Python chatbot.</p>
-        <h3>🟡 Intermediate: Face Detection</h3>
-        <p><strong>Goal:</strong> Use OpenCV to detect faces in webcam feed.</p>
-        <h3>🔴 Advanced: RAG System</h3>
-        <p><strong>Goal:</strong> Build a "Chat with your PDF" tool using LangChain.</p>
-      </section>
 
-        <section class="topic-section" id="MiniTask">
-          <h1>🎯 AI Mini Task</h1>
-          <div class="chapter-badge">Chapter 12</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
+          <div class="key-concepts">
+            <strong>Key Terminologies:</strong>
+            <ul>
+              <li><strong>Weights:</strong> How much importance we give to an input.</li>
+              <li><strong>Bias:</strong> An extra parameter to shift the activation function.</li>
+              <li><strong>Activation Function:</strong> Determines if the neuron should "fire" (e.g., Sigmoid, ReLU).
+              </li>
+            </ul>
           </div>
-          
-        <p><strong>Goal:</strong> The Turing Test.</p>
-        <h4>📋 Requirements:</h4>
-        <ol>
-          <li> Write a script where the user asks a question.</li>
-          <li> If the question contains "weather", reply "It's sunny in the cloud".</li>
-          <li> If "name", reply "I am AI".</li>
-          <li> Else, reply "I am learning".</li>
-        </ol>
-        <p><strong>Hello, Hal!</strong> 🔴</p>
-      </div>
-    </div>
-
-
-    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
-      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
-      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the AI module.</p>
-      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
-        onclick="location.href='../index1.html'">Return to Dashboard</button>
-    
         </section>
 
-      </div>
-    </main>
-  </div>
+        <section id="ml-deep-learning" class="lesson-section">
+          <h1>Deep Learning Intro</h1>
+          <p>
+            Deep Learning is a specialized field of Machine Learning that uses <strong>Multi-Layered Neural
+              Networks</strong> (Deep Neural Networks) to learn from vast amounts of data.
+          </p>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+          <div class="algorithm-box" style="margin: 25px 0;">
+            <h3 style="color: #00d2ff;"><i class="fas fa-network-wired"></i> Why "Deep"?</h3>
+            <p>The "Deep" refers to the number of layers. While a basic Perceptron has one layer, Deep Learning models
+              can
+              have hundreds of hidden layers, allowing them to learn incredibly complex patterns.</p>
+          </div>
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
-      authDomain: "learnx-d823d.firebaseapp.com",
-      projectId: "learnx-d823d",
-      storageBucket: "learnx-d823d.appspot.com",
-      messagingSenderId: "1036419202232",
-      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
-    };
+          <div class="key-concepts">
+            <strong>Modern Applications:</strong>
+            <ul>
+              <li><strong>Computer Vision:</strong> Facial recognition, medical imaging.</li>
+              <li><strong>Natural Language Processing:</strong> Large Language Models (LLMs) like GPT.</li>
+              <li><strong>Generative AI:</strong> Creating images, videos, and music from prompts.</li>
+            </ul>
+          </div>
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+          <h2>Example: Simple ANN (Python/Keras)</h2>
+          <div class="example-box">
+            <pre class="example-code"><code>from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        document.getElementById('user-display').textContent = user.displayName || user.email.split('@')[0];
-      } else {
-        window.location.href = "../index.html";
+model = Sequential([
+    Dense(16, activation='relu', input_shape=(10,)),
+    Dense(8, activation='relu'),
+    Dense(1, activation='sigmoid')
+])
+
+model.compile(optimizer='adam', loss='binary_crossentropy')</code></pre>
+          </div>
+        </section>
+        <section id="ml-brainjs" class="lesson-section">
+          <h1>Brain.js Mastery</h1>
+          <p>
+            Brain.js is a GPU-accelerated library for Neural Networks in JavaScript. It’s perfect for developers who
+            want
+            to add high-level intelligence to their apps without learning complex math.
+          </p>
+
+          <div class="key-concepts">
+            <strong>Key Features:</strong>
+            <ul>
+              <li>Easy to use: Train a network in under 10 lines of code.</li>
+              <li>Nueron-to-Neuron: Great for simple pattern recognition.</li>
+              <li>Browser & Node: Works anywhere JS runs.</li>
+            </ul>
+          </div>
+
+          <div class="example-box">
+            <div class="example-header">
+              <i class="fas fa-code"></i> Brain.js Training
+            </div>
+            <pre class="example-code"><code>const net = new brain.NeuralNetwork();
+
+// Input: RGB Colors, Output: Brightness
+net.train([
+  { input: { r: 0.03, g: 0.7, b: 0.5 }, output: { black: 1 } },
+  { input: { r: 0.16, g: 0.09, b: 0.2 }, output: { white: 1 } }
+]);
+
+const output = net.run({ r: 1, g: 0.4, b: 0 }); // { white: 0.99, black: 0.002 }</code></pre>
+          </div>
+        </section>
+
+        <section id="tfjs-mastery" class="lesson-section">
+          <h1>TensorFlow.js Pro</h1>
+          <p>
+            Developed by Google, TensorFlow.js is the heavyweight champion of Web ML. It allows you to run
+            production-grade
+            Deep Learning models in the browser using WebGL/WebGPU.
+          </p>
+
+          <div class="grid-card-container"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+            <div class="card"
+              style="background: rgba(4, 170, 109, 0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(4, 170, 109, 0.1);">
+              <h4 style="color: var(--primary);">Pre-trained Models</h4>
+              <p style="font-size: 0.85rem;">Use powerful models for face detection, pose estimation, and speech
+                recognition with zero training required.</p>
+            </div>
+            <div class="card"
+              style="background: rgba(4, 170, 109, 0.02); padding: 20px; border-radius: 12px; border: 1px solid rgba(4, 170, 109, 0.1);">
+              <h4 style="color: var(--primary);">Transfer Learning</h4>
+              <p style="font-size: 0.85rem;">Take a massive model (like MobileNet) and retrain just the last layer to
+                recognize your custom data.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="tfjs-visuals" class="lesson-section">
+          <h1>TensorFlow.js Visor</h1>
+          <p>
+            Visualizing the learning process is critical. The TFJS Visor provides a built-in UI to see loss curves,
+            histograms, and accuracy in real-time.
+          </p>
+          <div class="example-box">
+            <pre class="example-code"><code>// Show the visor tab
+tfvis.visor().open();
+
+// Plot training metrics
+const surface = { name: 'Loss', tab: 'Training' };
+tfvis.show.history(surface, history, ['loss', 'acc']);</code></pre>
+          </div>
+        </section>
+
+        <section id="ex1-house-project" class="lesson-section">
+          <h1>Project Lab: House Price Predictor</h1>
+          <p>Let's build a real Regression model to predict house prices based on Square Footage and Bedrooms.</p>
+
+          <div class="example-box">
+            <div class="example-header">
+              <i class="fas fa-laptop-code"></i> Python Lab
+            </div>
+            <pre class="example-code"><code>import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+# 1. Dataset
+data = {'SqFt': [1000, 1500, 2000, 2500, 3000],
+        'Beds': [1, 2, 3, 3, 4],
+        'Price': [250000, 375000, 500000, 550000, 700000]}
+df = pd.DataFrame(data)
+
+# 2. Train Model
+X = df[['SqFt', 'Beds']]
+y = df['Price']
+model = LinearRegression().fit(X, y)
+
+# 3. Predict
+print(f"Prediction: ${model.predict([[1600, 2]])[0]:,.2f}")</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try Project Lab</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Code Lab</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Execute</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false"># Predictive Analysis Lab
+# Run this to see the Linear Regression in action!
+import numpy as np
+from sklearn.linear_model import LinearRegression
+
+X = np.array([[1000, 1], [2000, 2], [3000, 3]])
+y = np.array([250000, 500000, 750000])
+
+model = LinearRegression().fit(X, y)
+print("Predicted Price for 1500 sqft, 2 beds:")
+print(f"${model.predict([[1500, 2]])[0]}")</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="ml-ethics" class="lesson-section">
+          <h1>AI Ethics & The Future</h1>
+          <p>
+            With great power comes great responsibility. As AI becomes more integrated into society, we must address
+            critical ethical concerns.
+          </p>
+
+          <div class="key-concepts"
+            style="background: rgba(255, 100, 100, 0.05); border-color: rgba(255, 100, 100, 0.2);">
+            <strong style="color: #ff6e6e;">Ethics Checklist:</strong>
+            <ul>
+              <li><strong>Bias:</strong> Does the training data reflect diversity or reinforce stereotypes?</li>
+              <li><strong>Privacy:</strong> Are we respecting users' data rights?</li>
+              <li><strong>Safety:</strong> Can the model be manipulated by "Adversarial Attacks"?</li>
+              <li><strong>Job Displacement:</strong> How can we reskill the workforce for an AI-driven economy?</li>
+            </ul>
+          </div>
+
+          <div class="congratulations"
+            style="text-align: center; padding: 40px 20px; background: var(--primary-gradient); color: white; border-radius: 12px; margin-top: 50px;">
+            <h2 style="color: white; border: none; margin-bottom: 5px;">🎉 Masterclass Complete!</h2>
+            <p>You've navigated the vast world of AI and ML. The future is yours to build.</p>
+            <button onclick="location.href='../index1.html'"
+              style="margin-top: 20px; padding: 12px 30px; border-radius: 50px; border: none; background: white; color: var(--primary); font-weight: 800; cursor: pointer;">Back
+              to Dashboard</button>
+          </div>
+        </section>
+      </div> <!-- course-content-area -->
+    </main> <!-- course-main -->
+  </div> <!-- course-layout -->
+
+  <!-- THEME & LOGOUT SCRIPTS -->
+  <script>
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const themeIcon = themeToggle.querySelector('i');
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      themeIcon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    // Logout Logic
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      window.location.href = '../index.html';
+    });
+
+    // Sidebar & Hamburger Logic
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        const isOpen = sidebar.classList.contains('open');
+        mobileToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      });
+    }
+
+    // Close sidebar when clicking links on mobile
+    sidebar.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          sidebar.classList.remove('open');
+          if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      });
+    });
+
+    // Try It Yourself Logic 
+    window.openTryIt = function (btn) {
+      const panel = btn.nextElementSibling;
+      panel.classList.toggle('open');
+    }
+
+    window.closeTryIt = function (btn) {
+      const panel = btn.closest('.tryit-panel');
+      panel.classList.remove('open');
+    }
+
+    window.runTryIt = function (btn) {
+      const panel = btn.closest('.tryit-panel');
+      const editor = panel.querySelector('.tryit-editor');
+      const iframe = panel.querySelector('.tryit-output iframe');
+      const code = editor.value;
+      const out = iframe.contentDocument || iframe.contentWindow.document;
+      out.open();
+      out.write(`
+        <style>body{font-family:sans-serif; color:#333; background:#fff; padding:15px;}</style>
+        ${code}
+      `);
+      out.close();
+    }
+
+    // Copy Code Logic
+    document.querySelectorAll('.example-box').forEach(box => {
+      const header = box.querySelector('.example-header');
+      const code = box.querySelector('.example-code code') || box.querySelector('pre code');
+
+      if (header && code) {
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-btn';
+        copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
+        header.appendChild(copyBtn);
+
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(code.innerText).then(() => {
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => {
+              copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
+            }, 2000);
+          });
+        });
       }
     });
 
-    document.getElementById('logout-btn').addEventListener('click', () => {
-      signOut(auth).then(() => {
-        window.location.href = "../index.html";
-      });
-    });
-  </script>
-
-  <script>
-    // Sidebar active state syncing
-    const sections = document.querySelectorAll('.topic-section');
-    const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+    // Sidebar Active State on Scroll
+    const sections = document.querySelectorAll('.lesson-section');
+    const navLinks = document.querySelectorAll('.sidebar a');
 
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 150) {
+        if (pageYOffset >= (sectionTop - 200)) {
           current = section.getAttribute('id');
         }
       });
@@ -327,56 +922,6 @@
         }
       });
     });
-  </script>
-
-  <script>
-
-
-    // Try It Editor functions (applied globally to all courses)
-    window.openTryIt = function(btn) {
-      const panel = btn.nextElementSibling;
-      panel.classList.add('open');
-      btn.style.display = 'none';
-      runTryIt(panel.querySelector('.tryit-run'));
-    };
-    window.closeTryIt = function(btn) {
-      const panel = btn.closest('.tryit-panel');
-      panel.classList.remove('open');
-      panel.previousElementSibling.style.display = 'inline-flex';
-    };
-    window.runTryIt = function(btn) {
-      const panel = btn.closest('.tryit-panel');
-      const code = panel.querySelector('.tryit-editor').value;
-      const iframe = panel.querySelector('iframe');
-      // basic wrapping for output display
-      iframe.srcdoc = `
-        <style>body{font-family:sans-serif; color:#333; background:#fff;}</style>
-        ${code}
-      `;
-    };
-  </script>
-
-  <script>
-    // Theme logic
-    const toggleBtn = document.getElementById('theme-toggle');
-    const updateThemeIcon = (isDark) => {
-      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
-    };
-    
-    // Check saved theme
-    let currentTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
-
-    if(toggleBtn) {
-      toggleBtn.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme');
-        let newTheme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme === 'dark');
-      });
-    }
   </script>
 </body>
 

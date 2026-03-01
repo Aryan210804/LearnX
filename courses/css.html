@@ -1,96 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | CSS Masterclass</title>
   <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #04AA6D 0%, #028a58 100%);
+      --accent-color: #06cc84;
+      --sidebar-bg-modern: #1e212a;
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      --card-radius: 16px;
+    }
+
+    /* Smooth scroll and selection */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::selection {
+      background: rgba(4, 170, 109, 0.2);
+      color: var(--primary);
+    }
+
+    /* Modernized sidebar */
+    .sidebar {
+      background: var(--sidebar-bg-modern);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      border-radius: 8px;
+      margin: 4px 15px;
+      padding: 12px 18px;
+      border-left: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sidebar a:hover {
+      background: rgba(4, 170, 109, 0.1);
+      color: var(--accent-color);
+      transform: translateX(5px);
+    }
+
+    .sidebar a.active {
+      background: var(--primary-gradient);
+      box-shadow: 0 4px 15px rgba(4, 170, 109, 0.3);
+      color: #fff;
+    }
+
+    /* Main Content Area */
+    .course-content-area {
+      max-width: 1000px;
+      padding: 60px 40px;
+    }
+
+    /* Card-style sections */
+    .lesson-section,
+    .media-api-section {
+      background: var(--bg-card);
+      padding: 45px;
+      border-radius: var(--card-radius);
+      margin-bottom: 50px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .lesson-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--primary-gradient);
+      opacity: 0.8;
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 25px;
+      color: var(--text);
+    }
+
+    .lesson-section h1 {
+      background: linear-gradient(to right, var(--text), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 35px 0 15px;
+      border-bottom: 2px solid rgba(4, 170, 109, 0.1);
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    /* Example Box Enhancements */
+    .example-box {
+      border: 2px solid rgba(4, 170, 109, 0.1);
+      border-radius: 12px;
+      margin: 30px 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .example-header {
+      background: #fdfdfd;
+      padding: 12px 20px;
+      border-bottom: 2px solid rgba(4, 170, 109, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .copy-btn {
+      background: rgba(4, 170, 109, 0.1);
+      color: var(--primary);
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .try-btn {
+      background: var(--primary-gradient) !important;
+      padding: 12px 24px !important;
+      border-radius: 10px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 20px !important;
+      box-shadow: 0 4px 12px rgba(4, 170, 109, 0.2);
+    }
+
+    .try-btn:hover {
+      box-shadow: 0 6px 20px rgba(4, 170, 109, 0.4) !important;
+      transform: translateY(-2px);
+    }
+
+    /* Key points & Tips */
+    .key-points,
+    .tips-box,
+    .tips {
+      background: rgba(4, 170, 109, 0.04);
+      border: 1px solid rgba(4, 170, 109, 0.1);
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin: 20px 0;
+    }
+
+    .key-points ul li {
+      list-style: none;
+      margin-bottom: 12px;
+    }
+
+    .key-points ul li::before {
+      content: '✔';
+      color: var(--primary);
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    /* Breadcrumb polish */
+    .breadcrumb {
+      background: rgba(4, 170, 109, 0.05);
+      padding: 12px 24px;
+      border-radius: 50px;
+      display: inline-flex;
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #ced4da;
+      border-radius: 10px;
+      border: 2px solid var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #adb5bd;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Dark Mode nuances */
+    [data-theme="dark"] .lesson-section,
+    [data-theme="dark"] .media-api-section {
+      background: #161b22;
+      border-color: #30363d;
+    }
+
+    [data-theme="dark"] .example-header {
+      background: #0d1117;
+      color: #8b949e;
+    }
+
+    /* Navbar specific refinements */
+    .top-nav {
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-profile-links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-profile-links #user-display {
+      color: #999;
+      font-size: 13px;
+      font-weight: 600;
+      margin-right: 5px;
+    }
+
+    #theme-toggle {
+      background: transparent;
+      border: 1px solid #444;
+      color: #ccc;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    #theme-toggle:hover {
+      border-color: var(--primary);
+      color: white;
+    }
+
+    .hamburger {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 10px;
+      display: none;
+      /* Shown in media query */
+    }
+
+    @media (max-width: 900px) {
+      .hamburger {
+        display: block;
+      }
+
+      .top-nav-search {
+        display: none;
+      }
+
+      .nav-profile-links #user-display {
+        display: none;
+      }
+
+      .sidebar {
+        z-index: 3000;
+      }
+    }
+  </style>
 </head>
+
 <body class="learnx-page">
 
   <!-- TOP NAV -->
   <nav class="top-nav">
+    <button class="hamburger" id="mobile-toggle"><i class="fas fa-bars"></i></button>
     <a href="../index1.html" class="brand">LearnX</a>
-        <div class="top-nav-links">
-      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
-      <a href="html.html">HTML</a>
-      <a href="css.html" class="active">CSS</a>
-      <a href="js.html">JavaScript</a>
-      <a href="python.html">Python</a>
-      <a href="sql.html">SQL</a>
-      <a href="java.html">Java</a>
-      <a href="c.html">C</a>
-      <a href="excel.html">Excel</a>
-      <a href="numpy.html">NumPy</a>
-      <a href="pandas.html">Pandas</a>
-      <a href="matplotlib.html">Matplotlib</a>
-      <a href="ml.html">ML</a>
-      <a href="ai.html">AI</a>
-      <a href="r.html">R</a>
-    </div>
 
     <div class="top-nav-search">
-      <input type="text" placeholder="Search..."/>
+      <input type="text" placeholder="Search course content..." />
       <button><i class="fas fa-search"></i></button>
     </div>
-    
-    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
-      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
-       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
-      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
+
+    <div class="nav-profile-links">
+      <span id="user-display"></span>
+      <button id="theme-toggle" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn">Logout</button>
     </div>
+  </nav>
+
+  <!-- SUB NAV (Course Links) -->
+  <nav class="sub-nav">
+    <a href="../index1.html"><i class="fas fa-th-large"></i> DASHBOARD</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html" class="active">CSS</a>
+    <a href="js.html">JAVASCRIPT</a>
+    <a href="python.html">PYTHON</a>
+    <a href="sql.html">SQL</a>
+    <a href="java.html">JAVA</a>
+    <a href="c.html">C++</a>
+    <a href="excel.html">EXCEL</a>
+    <a href="numpy.html">NUMPY</a>
+    <a href="pandas.html">PANDAS</a>
+    <a href="matplotlib.html">MATPLOTLIB</a>
+    
+    <a href="ai.html">AI & ML</a>
+    <a href="r.html">R</a>
   </nav>
 
   <!-- CONTENT WRAPPER -->
   <div class="course-layout">
-    
+
+    <!-- SIDEBAR -->
+    <!-- ========================= -->
+    <!-- CSS COURSE SIDEBAR -->
+    <!-- ========================= -->
     <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
-        <i class="fab fa-css3-alt" style="color:#1572b6"></i> CSS Tutorial
+        <i class="fab fa-css3-alt" style="color:#264de4"></i> CSS Tutorial
       </div>
 
-      <div class="sidebar-section-label">CSS Basic</div>
-      <a href="#Intro" class="active">CSS Introduction</a>
-      <a href="#Syntax">CSS Syntax</a>
-      <a href="#Selectors">CSS Selectors</a>
-      <a href="#Comments">CSS Comments</a>
-      <a href="#Colors">CSS Colors</a>
-      <a href="#Backgrounds">CSS Backgrounds</a>
-      <a href="#Borders">CSS Borders</a>
-      <a href="#Margins">CSS Margins</a>
-      <a href="#Padding">CSS Padding</a>
-      <a href="#HeightWidth">CSS Height and Width</a>
-      <a href="#BoxModel">The Box Model</a>
-      <a href="#Outline">CSS Outline</a>
-      <a href="#Text">CSS Text</a>
-      <a href="#Fonts">CSS Fonts</a>
-      <a href="#Links">CSS Links</a>
-      <a href="#Lists">CSS Lists</a>
-      <a href="#Tables">CSS Tables</a>
-      <a href="#Display">CSS Display</a>
-      <a href="#Position">CSS Position</a>
-      <a href="#RoundedCorners">CSS Rounded Corners</a>
-      <a href="#Gradients">CSS Gradients</a>
-      <a href="#Shadows">CSS Shadows</a>
-      <a href="#Transforms2D">CSS 2D Transforms</a>
-      <a href="#Transforms3D">CSS 3D Transforms</a>
-      <a href="#Transitions">CSS Transitions</a>
-      <a href="#Animations">CSS Animations</a>
-      <a href="#Tooltips">CSS Tooltips</a>
-      <a href="#ImgStyling">CSS Image Styling</a>
-      <a href="#Buttons">CSS Buttons</a>
-      <a href="#Pagination">CSS Pagination</a>
-      <a href="#MediaQueries">CSS Media Queries</a>
-      <a href="#Flexbox">CSS Flexbox</a>
-      <a href="#Grid">CSS Grid</a>
-      <a href="#RWDIntro">Responsive Web Design</a>
-      <a href="#RWDViewport">The Viewport</a>
-      <a href="#RWDMedia">Media Queries</a>
-      <a href="#SASS">SASS Tutorial</a>
+      <div class="sidebar-section-label">CSS Tutorial</div>
+      <a href="#css-home" class="active">CSS HOME</a>
+      <a href="#css-introduction">CSS Introduction</a>
+      <a href="#css-syntax">CSS Syntax</a>
+      <a href="#css-selectors">CSS Selectors</a>
+      <a href="#css-how-to">CSS How To</a>
+      <a href="#css-comments">CSS Comments</a>
+      <a href="#css-errors">CSS Errors</a>
+      <a href="#css-colors">CSS Colors</a>
+      <a href="#css-backgrounds">CSS Backgrounds</a>
+      <a href="#css-borders">CSS Borders</a>
+      <a href="#css-margins">CSS Margins</a>
+      <a href="#css-padding">CSS Padding</a>
+      <a href="#css-height-width">CSS Height / Width</a>
+      <a href="#css-box-model">CSS Box Model</a>
+      <a href="#css-outline">CSS Outline</a>
+      <a href="#css-text">CSS Text</a>
+      <a href="#css-fonts">CSS Fonts</a>
+      <a href="#css-icons">CSS Icons</a>
+      <a href="#css-links">CSS Links</a>
+      <a href="#css-lists">CSS Lists</a>
+      <a href="#css-tables">CSS Tables</a>
+      <a href="#css-display">CSS Display</a>
+      <a href="#css-max-width">CSS Max-width</a>
+      <a href="#css-position">CSS Position</a>
+      <a href="#css-position-offsets">CSS Position Offsets</a>
+      <a href="#css-z-index">CSS Z-index</a>
+      <a href="#css-overflow">CSS Overflow</a>
+      <a href="#css-float">CSS Float</a>
+      <a href="#css-inline-block">CSS Inline-block</a>
+      <a href="#css-align">CSS Align</a>
+      <a href="#css-combinators">CSS Combinators</a>
+      <a href="#css-pseudo-classes">CSS Pseudo-classes</a>
+      <a href="#css-pseudo-elements">CSS Pseudo-elements</a>
+      <a href="#css-attribute-selectors">CSS Attribute Selectors</a>
+      <a href="#css-opacity">CSS Opacity</a>
+      <a href="#css-navigation-bars">CSS Navigation Bars</a>
+      <a href="#css-dropdowns">CSS Dropdowns</a>
+      <a href="#css-image-gallery">CSS Image Gallery</a>
+      <a href="#css-image-sprites">CSS Image Sprites</a>
+      <a href="#css-forms">CSS Forms</a>
+      <a href="#css-counters">CSS Counters</a>
+      <a href="#css-units">CSS Units</a>
+      <a href="#css-inheritance">CSS Inheritance</a>
+      <a href="#css-specificity">CSS Specificity</a>
+      <a href="#css-important">CSS !important</a>
+      <a href="#css-math-functions">CSS Math Functions</a>
+      <a href="#css-optimization">CSS Optimization</a>
+      <a href="#css-accessibility">CSS Accessibility</a>
+      <a href="#css-website-layout">CSS Website Layout</a>
+
+      <div class="sidebar-section-label">CSS Advanced</div>
+      <a href="#css-home">CSS HOME</a>
+      <a href="#css-introduction">CSS Introduction</a>
+      <a href="#css-syntax">CSS Syntax</a>
+      <a href="#css-selectors">CSS Selectors</a>
+      <a href="#css-how-to">CSS How To</a>
+      <a href="#css-comments">CSS Comments</a>
+      <a href="#css-errors">CSS Errors</a>
+      <a href="#css-colors">CSS Colors</a>
+      <a href="#css-backgrounds">CSS Backgrounds</a>
+      <a href="#css-borders">CSS Borders</a>
+      <a href="#css-margins">CSS Margins</a>
+      <a href="#css-padding">CSS Padding</a>
+      <a href="#css-height-width">CSS Height / Width</a>
+      <a href="#css-box-model">CSS Box Model</a>
+      <a href="#css-rounded-corners">CSS Rounded Corners</a>
+      <a href="#css-border-images">CSS Border Images</a>
+      <a href="#css-backgrounds-advanced">CSS Backgrounds (Advanced)</a>
+      <a href="#css-colors-advanced">CSS Colors (Advanced)</a>
+      <a href="#css-gradients">CSS Gradients</a>
+      <a href="#css-shadows">CSS Shadows</a>
+      <a href="#css-text-effects">CSS Text Effects</a>
+      <a href="#css-custom-fonts">CSS Custom Fonts</a>
+      <a href="#css-2d-transforms">CSS 2D Transforms</a>
+      <a href="#css-3d-transforms">CSS 3D Transforms</a>
+      <a href="#css-transitions">CSS Transitions</a>
+      <a href="#css-animations">CSS Animations</a>
+      <a href="#css-tooltips">CSS Tooltips</a>
+      <a href="#css-image-styling">CSS Image Styling</a>
+      <a href="#css-image-modal">CSS Image Modal</a>
+      <a href="#css-image-centering">CSS Image Centering</a>
+      <a href="#css-image-filters">CSS Image Filters</a>
+      <a href="#css-image-shapes">CSS Image Shapes</a>
+      <a href="#css-object-fit">CSS object-fit</a>
+      <a href="#css-object-position">CSS object-position</a>
+      <a href="#css-masking">CSS Masking</a>
+      <a href="#css-buttons">CSS Buttons</a>
+      <a href="#css-pagination">CSS Pagination</a>
+      <a href="#css-multiple-columns">CSS Multiple Columns</a>
+      <a href="#css-user-interface">CSS User Interface</a>
+      <a href="#css-variables">CSS Variables</a>
+      <a href="#css-property">CSS @property</a>
+      <a href="#css-box-sizing">CSS Box Sizing</a>
+      <a href="#css-media-queries">CSS Media Queries</a>
+
+      <div class="sidebar-section-label">CSS Flexbox</div>
+      <a href="#flexbox-intro">Flexbox Intro</a>
+      <a href="#flex-container">Flex Container</a>
+      <a href="#flex-items">Flex Items</a>
+      <a href="#flex-responsive">Flex Responsive</a>
+
+      <div class="sidebar-section-label">CSS Grid</div>
+      <a href="#grid-intro">Grid Intro</a>
+      <a href="#grid-container">Grid Container</a>
+      <a href="#grid-items">Grid Items</a>
+      <a href="#grid-12-column">Grid 12-column Layout</a>
+      <a href="#css-supports">CSS @supports</a>
+
+      <div class="sidebar-section-label">CSS Responsive</div>
+      <a href="#rwd-intro">RWD Intro</a>
+      <a href="#rwd-viewport">RWD Viewport</a>
+      <a href="#rwd-grid-view">RWD Grid View</a>
+      <a href="#rwd-media-queries">RWD Media Queries</a>
+      <a href="#rwd-images">RWD Images</a>
+      <a href="#rwd-videos">RWD Videos</a>
+      <a href="#rwd-frameworks">RWD Frameworks</a>
+      <a href="#rwd-templates">RWD Templates</a>
+
+      <div class="sidebar-section-label">CSS SASS</div>
+      <a href="#sass-tutorial">SASS Tutorial</a>
+
+      <div class="sidebar-section-label">Practice & Career</div>
+      <a href="#css-templates">CSS Templates</a>
+      <a href="#css-examples">CSS Examples</a>
+      <a href="#css-editor">CSS Editor</a>
+      <a href="#css-snippets">CSS Snippets</a>
+      <a href="#css-quiz">CSS Quiz</a>
+      <a href="#css-exercises">CSS Exercises</a>
+      <a href="#css-challenges">CSS Code Challenges</a>
+      <a href="#css-project">CSS Website Project</a>
+      <a href="#css-syllabus">CSS Syllabus</a>
+      <a href="#css-study-plan">CSS Study Plan</a>
+      <a href="#css-interview">CSS Interview Prep</a>
+      <a href="#css-bootcamp">CSS Bootcamp</a>
+
+      <div class="sidebar-section-label">CSS References</div>
+      <a href="#css-reference">CSS Reference</a>
 
       <div class="sidebar-footer">
         <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
@@ -100,1253 +509,3963 @@
     <!-- MAIN CONTENT -->
     <main class="course-main">
       <div class="course-content-area">
-        
+
         <div class="breadcrumb">
-          <a href="../index1.html">Home</a> <span>/</span> <span>CSS</span>
+          <a href="../index1.html">Home</a> <span>/</span> <span>CSS</span> <span>/</span> <span>Introduction</span>
         </div>
-        
-        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">CSS Masterclass</h1>
 
-        <section class="topic-section" id="Intro">
-          <h1>CSS Introduction</h1>
-          <div class="chapter-badge">Chapter 1</div>
+    <section id="css-home" class="lesson-section">
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Syntax" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <h3>📌 Introduction</h3>
-        <p>CSS (Cascading Style Sheets) is the language we use to style an HTML document. CSS describes how HTML
-          elements should be displayed.</p>
-        <h3>💻 Code Example</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-css">body {
-  background-color: lightblue;
-}
-h1 {
-  color: white;
-  text-align: center;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">body {
-  background-color: lightblue;
-}
-h1 {
-  color: white;
-  text-align: center;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
+      <h1>CSS HOME</h1>
 
-        <section class="topic-section" id="Syntax">
-          <h1>CSS Syntax</h1>
-          <div class="chapter-badge">Chapter 2</div>
+      <p>Welcome to the LearnX CSS course — a modern, practical path to mastering styling for real-world web
+        applications.</p>
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Selectors" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>A CSS rule-set consists of a selector and a declaration block.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">h1 {color: blue; font-size: 12px;}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">h1 {color: blue; font-size: 12px;}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
+      <div class="key-concepts">
         <ul>
-          <li><strong>Selector:</strong> Points to the HTML element you want to style.</li>
-          <li><strong>Declaration:</strong> Contains one or more declarations separated by semicolons.</li>
-          <li><strong>Property:</strong> The style attribute you want to change.</li>
-          <li><strong>Value:</strong> The value you want to give the property.</li>
+          <li>What CSS is and why it matters</li>
+          <li>How browsers render styles</li>
+          <li>CSS in modern development workflows</li>
+          <li>Course roadmap</li>
         </ul>
-      </section>
-
-        <section class="topic-section" id="Selectors">
-          <h1>CSS Selectors</h1>
-          <div class="chapter-badge">Chapter 3</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Syntax" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Comments" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>CSS selectors are used to "find" (or select) the HTML elements you want to style.</p>
-        <ul>
-          <li><strong>Element Selector:</strong> <code>p { ... }</code> (Selects all &lt;p&gt; elements)</li>
-          <li><strong>Id Selector:</strong> <code>#para1 { ... }</code> (Selects element with id="para1")</li>
-          <li><strong>Class Selector:</strong> <code>.center { ... }</code> (Selects elements with class="center")</li>
-          <li><strong>Universal Selector:</strong> <code>* { ... }</code> (Selects all elements)</li>
-          <li><strong>Grouping Selector:</strong> <code>h1, h2, p { ... }</code> (Selects multiple elements)</li>
-        </ul>
-      </section>
-
-        <section class="topic-section" id="Comments">
-          <h1>CSS Comments</h1>
-          <div class="chapter-badge">Chapter 4</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Selectors" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Colors" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Comments are used to explain the code, and may help when you edit the source code at a later date. Comments
-          are ignored by browsers.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">/* This is a single-line comment */
-p {
-  color: red;
-}
-/* This is
-a multi-line
-comment */</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">/* This is a single-line comment */
-p {
-  color: red;
-}
-/* This is
-a multi-line
-comment */</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Colors">
-          <h1>CSS Colors</h1>
-          <div class="chapter-badge">Chapter 5</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Comments" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Backgrounds" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">h1 {background-color: DodgerBlue;}
-p {color: Tomato;}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">h1 {background-color: DodgerBlue;}
-p {color: Tomato;}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Backgrounds">
-          <h1>CSS Backgrounds</h1>
-          <div class="chapter-badge">Chapter 6</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Colors" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Borders" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>CSS background properties are used to define the background effects for elements.</p>
-        <ul>
-          <li><code>background-color</code></li>
-          <li><code>background-image</code></li>
-          <li><code>background-repeat</code></li>
-          <li><code>background-attachment</code></li>
-          <li><code>background-position</code></li>
-        </ul>
-      </section>
-
-        <section class="topic-section" id="Borders">
-          <h1>CSS Borders</h1>
-          <div class="chapter-badge">Chapter 7</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Backgrounds" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Margins" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>The CSS border properties allow you to specify the style, width, and color of an element's border.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">p.dotted {border-style: dotted;}
-p.dashed {border-style: dashed;}
-p.solid {border-style: solid;}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">p.dotted {border-style: dotted;}
-p.dashed {border-style: dashed;}
-p.solid {border-style: solid;}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Margins">
-          <h1>CSS Margins</h1>
-          <div class="chapter-badge">Chapter 8</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Borders" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Padding" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Margins are used to create space around elements, outside of any defined borders.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">div {
-  margin: 70px;
-  border: 1px solid #4CAF50;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">div {
-  margin: 70px;
-  border: 1px solid #4CAF50;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Padding">
-          <h1>CSS Padding</h1>
-          <div class="chapter-badge">Chapter 9</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Margins" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#HeightWidth" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Padding is used to create space around an element's content, inside of any defined borders.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">div {
-  padding: 70px;
-  border: 1px solid #4CAF50;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">div {
-  padding: 70px;
-  border: 1px solid #4CAF50;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="HeightWidth">
-          <h1>CSS Height and Width</h1>
-          <div class="chapter-badge">Chapter 10</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Padding" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#BoxModel" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>The height and width properties are used to set the height and width of an element.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">div {
-  height: 200px;
-  width: 50%;
-  background-color: powderblue;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">div {
-  height: 200px;
-  width: 50%;
-  background-color: powderblue;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="BoxModel">
-          <h1>The Box Model</h1>
-          <div class="chapter-badge">Chapter 11</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#HeightWidth" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Outline" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <h3>📌 Introduction</h3>
-        <p>Every element is a rectangular box containing Content, Padding, Border, and Margin.</p>
-        <h3>📊 Visual Concept</h3>
-        <p>Compare the logic below:</p>
-        <div class="mermaid">graph TD
-          Content --> Padding
-          Padding --> Border
-          Border --> Margin
-        </div>
-        <h3>💻 Code Examples</h3>
-        <div class="example-box"><pre class="example-code"><code>div {
-  width: 100px;
-  padding: 20px;
-  border: 5px solid black;
-  margin: 10px;
-}
-</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">div {
-  width: 100px;
-  padding: 20px;
-  border: 5px solid black;
-  margin: 10px;
-}
-</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-        <h3>⚡ Best Practices</h3>
-        <ul>
-          <li>✅ Use <code>box-sizing: border-box</code> to make math easier.</li>
-        </ul>
-      </section>
-
-        <section class="topic-section" id="Outline">
-          <h1>CSS Outline</h1>
-          <div class="chapter-badge">Chapter 12</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#BoxModel" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Text" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>An outline is a line drawn outside the element's border.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">p {
-  border: 1px solid black;
-  outline: 5px dotted red;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">p {
-  border: 1px solid black;
-  outline: 5px dotted red;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Text">
-          <h1>CSS Text</h1>
-          <div class="chapter-badge">Chapter 13</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Outline" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Fonts" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Text properties: <code>text-align</code>, <code>text-decoration</code>, <code>text-transform</code>,
-          <code>letter-spacing</code>, <code>line-height</code>.
-        </p>
-      </section>
-
-        <section class="topic-section" id="Fonts">
-          <h1>CSS Fonts</h1>
-          <div class="chapter-badge">Chapter 14</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Text" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Links" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Font properties define the font family, boldness, size, and the style of a text.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">p {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 30px;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">p {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 30px;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Links">
-          <h1>CSS Links</h1>
-          <div class="chapter-badge">Chapter 15</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Fonts" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Lists" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Links can be styled depending on what state they are in. The four links states are: <code>a:link</code>,
-          <code>a:visited</code>, <code>a:hover</code>, <code>a:active</code>.
-        </p>
-      </section>
-
-        <section class="topic-section" id="Lists">
-          <h1>CSS Lists</h1>
-          <div class="chapter-badge">Chapter 16</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Links" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Tables" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>In HTML, there are two main types of lists: unordered and ordered. CSS list properties allow you to change
-          diffrent list item markers, set an image as the list item marker, etc.</p>
-      </section>
-
-        <section class="topic-section" id="Tables">
-          <h1>CSS Tables</h1>
-          <div class="chapter-badge">Chapter 17</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Lists" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Display" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>To specify table borders in CSS, use the border property.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">table, th, td {
-  border: 1px solid black;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">table, th, td {
-  border: 1px solid black;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Display">
-          <h1>CSS Display</h1>
-          <div class="chapter-badge">Chapter 18</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Tables" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Position" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>The <code>display</code> property determines how an element is displayed.</p>
-        <ul>
-          <li><code>display: block;</code> (Takes full width)</li>
-          <li><code>display: inline;</code> (Takes necessary width)</li>
-          <li><code>display: none;</code> (Hidden)</li>
-        </ul>
-      </section>
-
-        <section class="topic-section" id="Position">
-          <h1>CSS Position</h1>
-          <div class="chapter-badge">Chapter 19</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Display" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#RoundedCorners" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>The <code>position</code> property specifies the type of positioning method used for an element.</p>
-        <ul>
-          <li><code>static</code> (Default)</li>
-          <li><code>relative</code></li>
-          <li><code>absolute</code></li>
-          <li><code>fixed</code></li>
-          <li><code>sticky</code></li>
-        </ul>
-      
-        </section>
-
-        <section class="topic-section" id="RoundedCorners">
-          <h1>CSS Rounded Corners</h1>
-          <div class="chapter-badge">Chapter 20</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Position" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Gradients" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>The <code>border-radius</code> property defines the radius of the element's corners.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">#rcorners1 {
-  border-radius: 25px;
-  background: #73AD21;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">#rcorners1 {
-  border-radius: 25px;
-  background: #73AD21;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Gradients">
-          <h1>CSS Gradients</h1>
-          <div class="chapter-badge">Chapter 21</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#RoundedCorners" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Shadows" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>CSS gradients let you display smooth transitions between two or more specified colors.</p>
-        <h3>Linear Gradient</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-css">#grad {
-  background-image: linear-gradient(red, yellow);
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">#grad {
-  background-image: linear-gradient(red, yellow);
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-        <h3>Radial Gradient</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-css">#grad {
-  background-image: radial-gradient(red, yellow, green);
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">#grad {
-  background-image: radial-gradient(red, yellow, green);
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Shadows">
-          <h1>CSS Shadows</h1>
-          <div class="chapter-badge">Chapter 22</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Gradients" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Transforms2D" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>With CSS you can add shadow to text and to elements.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">h1 {
-  text-shadow: 2px 2px 5px red;
-}
-div {
-  box-shadow: 10px 10px 5px grey;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">h1 {
-  text-shadow: 2px 2px 5px red;
-}
-div {
-  box-shadow: 10px 10px 5px grey;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Transforms2D">
-          <h1>CSS 2D Transforms</h1>
-          <div class="chapter-badge">Chapter 23</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Shadows" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Transforms3D" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>CSS transforms allow you to move, rotate, scale, and skew elements.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">div {
-  transform: translate(50px, 100px);
-  transform: rotate(20deg);
-  transform: scale(2, 3);
-  transform: skewX(20deg);
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">div {
-  transform: translate(50px, 100px);
-  transform: rotate(20deg);
-  transform: scale(2, 3);
-  transform: skewX(20deg);
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Transforms3D">
-          <h1>CSS 3D Transforms</h1>
-          <div class="chapter-badge">Chapter 24</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Transforms2D" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Transitions" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>CSS allows you to format your elements using 3D transforms.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">div {
-  transform: rotateX(150deg);
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">div {
-  transform: rotateX(150deg);
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Transitions">
-          <h1>CSS Transitions</h1>
-          <div class="chapter-badge">Chapter 25</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Transforms3D" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Animations" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>CSS transitions allows you to change property values smoothly, over a given duration.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">div {
-  width: 100px;
-  height: 100px;
-  background: red;
-  transition: width 2s;
-}
-div:hover {
-  width: 300px;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">div {
-  width: 100px;
-  height: 100px;
-  background: red;
-  transition: width 2s;
-}
-div:hover {
-  width: 300px;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Animations">
-          <h1>CSS Animations</h1>
-          <div class="chapter-badge">Chapter 26</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Transitions" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Tooltips" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>CSS allows animation of HTML elements without using JavaScript or Flash!</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">@keyframes example {
-  from {background-color: red;}
-  to {background-color: yellow;}
-}
-
-div {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  animation-name: example;
-  animation-duration: 4s;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">@keyframes example {
-  from {background-color: red;}
-  to {background-color: yellow;}
-}
-
-div {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  animation-name: example;
-  animation-duration: 4s;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Tooltips">
-          <h1>CSS Tooltips</h1>
-          <div class="chapter-badge">Chapter 27</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Animations" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#ImgStyling" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>A tooltip is often used to specify extra information about something when the user moves the mouse pointer
-          over an element.</p>
-      </section>
-
-        <section class="topic-section" id="ImgStyling">
-          <h1>CSS Image Styling</h1>
-          <div class="chapter-badge">Chapter 28</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Tooltips" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Buttons" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Learn to style images using CSS.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">img {
-  border-radius: 8px;
-  opacity: 0.5;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">img {
-  border-radius: 8px;
-  opacity: 0.5;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Buttons">
-          <h1>CSS Buttons</h1>
-          <div class="chapter-badge">Chapter 29</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#ImgStyling" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Pagination" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Learn how to style buttons with CSS.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Pagination">
-          <h1>CSS Pagination</h1>
-          <div class="chapter-badge">Chapter 30</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Buttons" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#MediaQueries" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>If you have a web site with lots of pages, you may wish to add some sort of pagination to each page.</p>
-      </section>
-
-        <section class="topic-section" id="MediaQueries">
-          <h1>CSS Media Queries</h1>
-          <div class="chapter-badge">Chapter 31</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Pagination" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Flexbox" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Media query is a CSS technique introduced in CSS3. It uses the <code>@media</code> rule to include a block of
-          CSS properties only if a certain condition is true.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-}</code></pre></section>
-
-        <section class="topic-section" id="Flexbox">
-          <h1>CSS Flexbox</h1>
-          <div class="chapter-badge">Chapter 32</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#MediaQueries" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Grid" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <h3>📌 Introduction</h3>
-        <p>The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using
-          float or positioning.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">.flex-container {
-  display: flex;
-  background-color: DodgerBlue;
-}
-
-.flex-container > div {
-  background-color: #f1f1f1;
-  margin: 10px;
-  padding: 20px;
-  font-size: 30px;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">.flex-container {
-  display: flex;
-  background-color: DodgerBlue;
-}
-
-.flex-container &gt; div {
-  background-color: #f1f1f1;
-  margin: 10px;
-  padding: 20px;
-  font-size: 30px;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-        <h3>Parent Properties (Container)</h3>
-        <ul>
-          <li><code>flex-direction</code> (row, column)</li>
-          <li><code>flex-wrap</code> (wrap, nowrap)</li>
-          <li><code>justify-content</code> (center, space-between)</li>
-          <li><code>align-items</code> (center, stretch)</li>
-        </ul>
-      
-        </section>
-
-        <section class="topic-section" id="Grid">
-          <h1>CSS Grid</h1>
-          <div class="chapter-badge">Chapter 33</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Flexbox" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#RWDIntro" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <h3>📌 Introduction</h3>
-        <p>The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to
-          design web pages without having to use floats and positioning.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-css">.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
-}
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
-}
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-        <h3>Grid Properties</h3>
-        <ul>
-          <li><code>grid-template-columns</code></li>
-          <li><code>grid-template-rows</code></li>
-          <li><code>grid-gap</code></li>
-        </ul>
-      
-        </section>
-
-        <section class="topic-section" id="RWDIntro">
-          <h1>Responsive Web Design</h1>
-          <div class="chapter-badge">Chapter 34</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Grid" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#RWDViewport" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Responsive Web Design is about creating web pages that look good on all devices! It is about using HTML and
-          CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices
-          (desktops, tablets, and phones).</p>
-      </section>
-
-        <section class="topic-section" id="RWDViewport">
-          <h1>The Viewport</h1>
-          <div class="chapter-badge">Chapter 35</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#RWDIntro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#RWDMedia" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>The viewport is the user's visible area of a web page.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="RWDMedia">
-          <h1>Media Queries</h1>
-          <div class="chapter-badge">Chapter 36</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#RWDViewport" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#SASS" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <div class="example-box"><pre class="example-code"><code class="language-css">/* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 600px) {
-  body {
-    background-color: olive;
-  }
-}</code></pre></section>
-
-        <section class="topic-section" id="SASS">
-          <h1>SASS Tutorial</h1>
-          <div class="chapter-badge">Chapter 37</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#RWDMedia" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <h3>📌 What is Sass?</h3>
-        <p>Sass (Syntactically Awesome Style Sheets) is a preprocessor scripting language that is interpreted or
-          compiled into Cascading Style Sheets (CSS).</p>
-        <h3>Variables</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-scss">$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
-
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
-
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-        <h3>Nesting</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-scss">nav {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  li { display: inline-block; }
-  a {
-    display: block;
-    padding: 6px 12px;
-    text-decoration: none;
-  }
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">nav {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  li { display: inline-block; }
-  a {
-    display: block;
-    padding: 6px 12px;
-    text-decoration: none;
-  }
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
       </div>
-    </div>
 
+      <h2>What You’ll Learn</h2>
+      <p>This course takes you from basic styling to production-ready layout systems using modern CSS features.</p>
 
-    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
-      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
-      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the CSS module.</p>
-      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
-        onclick="location.href='../index1.html'">Return to Dashboard</button>
-    
-        </section>
+      <h2>Syntax</h2>
+      <pre><code>selector {
+  property: value;
+}</code></pre>
 
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+h1 {
+  color: #2563eb;
+}
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  color:#2563eb;
+}
+</style>
+</head>
+<body>
+<h1>Hello LearnX</h1>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>Every modern UI — from dashboards to mobile apps — relies on CSS for layout, theming, and responsiveness.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Thinking CSS is only about colors</li>
+        <li>Ignoring layout systems early</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Write semantic HTML first</li>
+        <li>Use modern layout methods</li>
+        <li>Keep styles modular</li>
+      </ul>
+
+    </section>
+    <section id="css-introduction" class="lesson-section">
+
+      <h1>CSS Introduction</h1>
+
+      <p>CSS (Cascading Style Sheets) controls presentation — layout, colors, spacing, and visual behavior.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Separation of structure and style</li>
+          <li>Cascade and inheritance</li>
+          <li>Browser rendering pipeline</li>
+        </ul>
+      </div>
+
+      <h2>How CSS Works</h2>
+      <p>The browser matches selectors to DOM nodes and applies rules based on specificity and order.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>p {
+  font-size: 16px;
+}</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+p {
+  line-height:1.6;
+}
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {
+  line-height:1.6;
+}
+</style>
+</head>
+<body>
+<p>Readable paragraph spacing.</p>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>Used in design systems to maintain consistent UI across products.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Overusing inline styles</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Keep styles reusable</li>
+        <li>Use classes instead of element selectors</li>
+      </ul>
+
+    </section>
+    <section id="css-syntax" class="lesson-section">
+
+      <h1>CSS Syntax</h1>
+
+      <p>Understanding syntax ensures predictable and maintainable styles.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Selectors</li>
+          <li>Declarations</li>
+          <li>Properties and values</li>
+        </ul>
+      </div>
+
+      <h2>Detailed Explanation</h2>
+      <p>A rule consists of a selector and declaration block.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>selector {
+  property: value;
+}</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+.card {
+  padding:20px;
+  border-radius:8px;
+}
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card{
+  padding:20px;
+  border-radius:8px;
+  background:#f3f4f6;
+}
+</style>
+</head>
+<body>
+<div class="card">Card UI</div>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>Reusable UI components rely on consistent syntax.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Missing semicolons</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use formatting tools like Prettier</li>
+      </ul>
+
+    </section>
+    <section id="css-selectors" class="lesson-section">
+
+      <h1>CSS Selectors</h1>
+
+      <p>Selectors target elements in the DOM to apply styles.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Class selectors</li>
+          <li>ID selectors</li>
+          <li>Descendant selectors</li>
+        </ul>
+      </div>
+
+      <h2>Types of Selectors</h2>
+      <p>Classes are preferred for reusable styling.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.btn { }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+.btn {
+  background:#2563eb;
+  color:white;
+}
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.btn{
+  background:#2563eb;
+  color:white;
+  padding:10px 16px;
+}
+</style>
+</head>
+<body>
+<button class="btn">Button</button>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>Component libraries rely heavily on class selectors.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Using IDs for styling</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Follow BEM or utility naming</li>
+      </ul>
+
+    </section>
+    <section id="css-how-to" class="lesson-section">
+
+      <h1>CSS How To</h1>
+
+      <p>This lesson explains the three primary ways to apply CSS to a webpage and when to use each method in real
+        projects.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Inline CSS</li>
+          <li>Internal stylesheet</li>
+          <li>External stylesheet</li>
+          <li>Performance considerations</li>
+        </ul>
+      </div>
+
+      <h2>Ways to Add CSS</h2>
+      <h3>Inline</h3>
+      <p>Applied directly to an element. Useful for quick testing but not scalable.</p>
+
+      <h3>Internal</h3>
+      <p>Defined inside a &lt;style&gt; tag. Useful for small pages.</p>
+
+      <h3>External</h3>
+      <p>Stored in a .css file. Best for production and reusable styling.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+p { color: #1f2937; }
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p { color:#1f2937; }
+</style>
+</head>
+<body>
+<p>Styled paragraph</p>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>External stylesheets enable caching and faster load times across pages.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Using inline styles in production</li>
+        <li>Loading CSS at the bottom of the page</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use external stylesheets</li>
+        <li>Organize CSS by components</li>
+      </ul>
+
+    </section>
+    <section id="css-comments" class="lesson-section">
+
+      <h1>CSS Comments</h1>
+
+      <p>Comments help document styles and improve collaboration in team environments.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Syntax for comments</li>
+          <li>Documentation strategies</li>
+          <li>Temporary debugging</li>
+        </ul>
+      </div>
+
+      <h2>How Comments Work</h2>
+      <p>Comments are ignored by browsers but useful for developers.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>/* comment here */</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+/* Primary button */
+.btn { background:#2563eb; }
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Card style */
+.card {
+  padding:20px;
+  background:#f3f4f6;
+}
+</style>
+</head>
+<body>
+<div class="card">Commented CSS</div>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>Used in design systems to label components and states.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Leaving large blocks of unused code</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Keep comments concise</li>
+        <li>Document complex logic only</li>
+      </ul>
+
+    </section>
+    <section id="css-errors" class="lesson-section">
+
+      <h1>CSS Errors</h1>
+
+      <p>Understanding common CSS mistakes helps debug layout and styling issues quickly.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Syntax errors</li>
+          <li>Invalid properties</li>
+          <li>Browser fallbacks</li>
+        </ul>
+      </div>
+
+      <h2>Common Issues</h2>
+      <p>Browsers ignore invalid rules, which can cause unexpected layouts.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>color: red</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+.box { width:200px; height:200px; }
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box { width:200px; height:200px; background:#60a5fa; }
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>DevTools help identify overridden or ignored styles.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Missing units</li>
+        <li>Typos in property names</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use linters</li>
+        <li>Test across browsers</li>
+      </ul>
+
+    </section>
+    <section id="css-colors" class="lesson-section">
+
+      <h1>CSS Colors</h1>
+
+      <p>Colors define visual hierarchy and brand identity in UI design.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>HEX, RGB, HSL formats</li>
+          <li>Opacity</li>
+          <li>Accessible contrast</li>
+        </ul>
+      </div>
+
+      <h2>Color Formats</h2>
+      <p>Modern CSS supports multiple formats including HSL for easier theming.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>color: hsl(220, 80%, 50%);</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+h1 { color:#2563eb; }
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 { color:#2563eb; }
+</style>
+</head>
+<body>
+<h1>Color Example</h1>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>Design systems define color tokens for consistency.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Poor contrast ratios</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use HSL for theme control</li>
+        <li>Check accessibility contrast</li>
+      </ul>
+
+    </section>
+    <section id="css-backgrounds" class="lesson-section">
+
+      <h1>CSS Backgrounds</h1>
+
+      <p>Background properties control images, gradients, and colors behind elements.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Background color</li>
+          <li>Background image</li>
+          <li>Position and size</li>
+        </ul>
+      </div>
+
+      <h2>Background Layers</h2>
+      <p>Multiple backgrounds can be stacked for complex UI effects.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>background: url(image.jpg) center/cover;</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+.hero {
+  background:#2563eb;
+  color:white;
+}
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.hero{
+  background:#2563eb;
+  color:white;
+  padding:40px;
+}
+</style>
+</head>
+<body>
+<div class="hero">Hero Section</div>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>Used for hero banners, cards, and overlays.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Using large images without optimization</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use background-size: cover</li>
+        <li>Optimize images</li>
+      </ul>
+
+    </section>
+    <section id="css-borders" class="lesson-section">
+
+      <h1>CSS Borders</h1>
+
+      <p>Borders define the edges of elements and are commonly used to separate UI components and highlight interactive
+        areas.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Border width, style, and color</li>
+          <li>Individual side borders</li>
+          <li>Rounded corners basics</li>
+        </ul>
+      </div>
+
+      <h2>Understanding Borders</h2>
+      <p>A border is drawn between the margin and padding. It can be styled individually for each side.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>border: 2px solid #2563eb;</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+.card {
+  border:2px solid #2563eb;
+  padding:16px;
+}
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card{
+  border:2px solid #2563eb;
+  padding:16px;
+}
+</style>
+</head>
+<body>
+<div class="card">Border Example</div>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>Borders are widely used for cards, form inputs, and layout debugging.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Forgetting border-box sizing when calculating layouts</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use subtle border colors for modern UI</li>
+        <li>Keep border widths consistent</li>
+      </ul>
+
+    </section>
+    <section id="css-margins" class="lesson-section">
+
+      <h1>CSS Margins</h1>
+
+      <p>Margins control the space outside an element, helping create separation between components.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Spacing outside elements</li>
+          <li>Margin collapse behavior</li>
+          <li>Auto margins for centering</li>
+        </ul>
+      </div>
+
+      <h2>How Margins Work</h2>
+      <p>Margins push elements away from each other and can be set per side.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>margin: 20px;</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+.box {
+  margin:20px;
+  background:#e5e7eb;
+}
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box{
+  margin:20px;
+  padding:20px;
+  background:#e5e7eb;
+}
+</style>
+</head>
+<body>
+<div class="box">Margin Example</div>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>Used to maintain consistent spacing between layout sections.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Using margins instead of gap in flex/grid</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use spacing scales (8px, 16px, etc.)</li>
+        <li>Prefer layout gap where possible</li>
+      </ul>
+
+    </section>
+    <section id="css-padding" class="lesson-section">
+
+      <h1>CSS Padding</h1>
+
+      <p>Padding controls space inside an element between the content and border.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Internal spacing</li>
+          <li>Shorthand padding values</li>
+          <li>Impact on element size</li>
+        </ul>
+      </div>
+
+      <h2>Padding Behavior</h2>
+      <p>Padding increases the clickable and visual area of UI elements.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>padding: 16px;</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+.btn {
+  padding:12px 20px;
+}
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+button{
+  padding:12px 20px;
+  background:#2563eb;
+  color:white;
+  border:none;
+}
+</style>
+</head>
+<body>
+<button>Padding Example</button>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>Padding improves touch targets for accessibility.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Using padding instead of margin for layout spacing</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Maintain consistent padding in components</li>
+      </ul>
+
+    </section>
+    <section id="css-size" class="lesson-section">
+
+      <h1>CSS Height / Width</h1>
+
+      <p>Height and width define the dimensions of elements and play a key role in layout behavior.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Fixed vs fluid sizing</li>
+          <li>Max and min constraints</li>
+          <li>Responsive sizing</li>
+        </ul>
+      </div>
+
+      <h2>Sizing Elements</h2>
+      <p>Modern layouts prefer flexible sizing like percentages and viewport units.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>width: 300px;</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+.box {
+  width:300px;
+  height:150px;
+}
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box{
+  width:300px;
+  height:150px;
+  background:#93c5fd;
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>Cards and media containers rely on controlled dimensions.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Using fixed heights for dynamic content</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use max-width for responsive layouts</li>
+      </ul>
+
+    </section>
+    <section id="css-box-model" class="lesson-section">
+
+      <h1>CSS Box Model</h1>
+
+      <p>The box model explains how width and height are calculated including padding, borders, and margins.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Content box vs border box</li>
+          <li>Total element size</li>
+          <li>Layout calculations</li>
+        </ul>
+      </div>
+
+      <h2>How It Works</h2>
+      <p>Every element is a rectangular box consisting of content, padding, border, and margin.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>box-sizing: border-box;</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+* {
+  box-sizing:border-box;
+}
+  </code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+  box-sizing:border-box;
+}
+.card{
+  width:300px;
+  padding:20px;
+  border:4px solid #2563eb;
+}
+</style>
+</head>
+<body>
+<div class="card">Box Model</div>
+</body>
+</html>
+    </textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-World Use Case</h2>
+      <p>Using border-box simplifies layout math in modern design systems.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Forgetting padding increases element size</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Apply border-box globally</li>
+      </ul>
+
+    </section>
+    <section id="css-outline" class="lesson-section">
+      <h1>CSS Outline</h1>
+
+      <p>Outlines draw a line around elements without affecting layout. They are commonly used for focus states and
+        accessibility.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Does not take space in layout</li>
+          <li>Useful for accessibility focus</li>
+          <li>Controlled with outline properties</li>
+        </ul>
+      </div>
+
+      <h2>How Outline Works</h2>
+      <p>Unlike borders, outlines sit outside the element and do not change its size.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>outline: width style color;</code></pre>
+
+      <div class="example-box">
+        <div class="example-header">
+          <i class="fas fa-code"></i> Example
+        </div>
+
+        <pre class="example-code"><code>button:focus {
+  outline: 3px solid #2563eb;
+}</code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+button:focus{
+  outline:3px solid blue;
+}
+</style>
+</head>
+<body>
+<button>Click Me</button>
+</body>
+</html>
+</textarea>
+
+          <div class="tryit-output">
+            <iframe sandbox="allow-scripts"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2>Real-world use case</h2>
+      <p>Keyboard navigation focus styling.</p>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Removing outlines without replacement</li>
+      </ul>
+
+      <h2>Best practices</h2>
+      <ul>
+        <li>Always keep visible focus styles</li>
+      </ul>
+    </section>
+    <section id="css-text" class="lesson-section">
+      <h1>CSS Text</h1>
+
+      <p>CSS text properties control alignment, spacing, decoration, and transformation.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Alignment</li>
+          <li>Spacing</li>
+          <li>Decoration</li>
+          <li>Transform</li>
+        </ul>
+      </div>
+
+      <h2>Text Alignment</h2>
+      <p>Controls horizontal positioning of text.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>text-align: center;</code></pre>
+
+      <div class="example-box">
+        <div class="example-header">
+          <i class="fas fa-code"></i> Example
+        </div>
+
+        <pre class="example-code"><code>h1{
+  text-align:center;
+}</code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1{text-align:center;}
+</style>
+</head>
+<body>
+<h1>Hello LearnX</h1>
+</body>
+</html>
+</textarea>
+
+          <div class="tryit-output">
+            <iframe sandbox="allow-scripts"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2>Real-world use case</h2>
+      <p>Hero section headings.</p>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Using center alignment for long paragraphs</li>
+      </ul>
+
+      <h2>Best practices</h2>
+      <ul>
+        <li>Keep body text left-aligned for readability</li>
+      </ul>
+    </section>
+    <section id="css-fonts" class="lesson-section">
+      <h1>CSS Fonts</h1>
+
+      <p>Fonts define typography style, readability, and branding.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>font-family</li>
+          <li>font-size</li>
+          <li>font-weight</li>
+          <li>line-height</li>
+        </ul>
+      </div>
+
+      <h2>Web Safe vs Custom Fonts</h2>
+      <p>Use fallback stacks for reliability.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>body{ font-family: 'Inter', sans-serif; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+
+        <pre class="example-code"><code>p{
+  font-size:18px;
+  line-height:1.6;
+}</code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p{
+  font-size:18px;
+  line-height:1.6;
+}
+</style>
+</head>
+<body>
+<p>Readable typography improves UX.</p>
+</body>
+</html>
+</textarea>
+
+          <div class="tryit-output">
+            <iframe sandbox="allow-scripts"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2>Real-world use case</h2>
+      <p>Design systems typography scales.</p>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Using too many font families</li>
+      </ul>
+
+      <h2>Best practices</h2>
+      <ul>
+        <li>Use 2-3 fonts maximum</li>
+      </ul>
+    </section>
+    <section id="css-display" class="lesson-section">
+      <h1>CSS Display</h1>
+
+      <p>The display property defines how elements render and participate in layout.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>block</li>
+          <li>inline</li>
+          <li>flex</li>
+          <li>grid</li>
+        </ul>
+      </div>
+
+      <h2>Layout Behavior</h2>
+      <p>Changing display alters how elements flow and align.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.container{ display:flex; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+
+        <pre class="example-code"><code>.box{
+  display:inline-block;
+}</code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div{
+ display:inline-block;
+ width:100px;
+ height:100px;
+ background:steelblue;
+ margin:5px;
+}
+</style>
+</head>
+<body>
+<div></div><div></div><div></div>
+</body>
+</html>
+</textarea>
+
+          <div class="tryit-output">
+            <iframe sandbox="allow-scripts"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <h2>Real-world use case</h2>
+      <p>Flexbox and Grid layouts.</p>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Using float instead of flex/grid</li>
+      </ul>
+
+      <h2>Best practices</h2>
+      <ul>
+        <li>Prefer flexbox for components and grid for page layout</li>
+      </ul>
+    </section>
+    <section id="css-position" class="lesson-section">
+      <h1>CSS Position</h1>
+
+      <p>The position property defines how an element is placed in the document flow.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>static</li>
+          <li>relative</li>
+          <li>absolute</li>
+          <li>fixed</li>
+          <li>sticky</li>
+        </ul>
+      </div>
+
+      <h2>Understanding Positioning</h2>
+      <p>Relative keeps element in flow, absolute removes it and positions relative to ancestor.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.box{ position:relative; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>.box{ position:relative; top:20px; }</code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box{
+  position:relative;
+  top:20px;
+  background:#2563eb;
+  color:white;
+  padding:20px;
+}
+</style>
+</head>
+<body>
+<div class="box">Moved down</div>
+</body>
+</html>
+</textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world use case</h2>
+      <p>Badges, modals, floating UI elements.</p>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Using absolute without positioned parent</li>
+      </ul>
+
+      <h2>Best practices</h2>
+      <ul>
+        <li>Use relative for containers</li>
+      </ul>
+    </section>
+    <section id="css-position-offsets" class="lesson-section">
+      <h1>CSS Position Offsets</h1>
+
+      <p>Offsets control distance from top, right, bottom, and left.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>top</li>
+          <li>right</li>
+          <li>bottom</li>
+          <li>left</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>.box{ top:10px; left:20px; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>.badge{ position:absolute; top:0; right:0; }</code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card{
+ position:relative;
+ width:200px;
+ height:120px;
+ background:#ddd;
+}
+.badge{
+ position:absolute;
+ top:5px;
+ right:5px;
+ background:red;
+ color:white;
+ padding:4px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+ <div class="badge">NEW</div>
+</div>
+</body>
+</html>
+</textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world use case</h2>
+      <p>Notification badges.</p>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Offsets without position property</li>
+      </ul>
+
+      <h2>Best practices</h2>
+      <ul>
+        <li>Use logical properties for RTL support</li>
+      </ul>
+    </section>
+    <section id="css-zindex" class="lesson-section">
+      <h1>CSS Z-index</h1>
+
+      <p>Z-index controls stacking order of positioned elements.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Higher value = on top</li>
+          <li>Works only on positioned elements</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>.modal{ z-index:1000; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>.top{ z-index:2; }</code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box1{position:absolute; background:red; width:100px;height:100px;}
+.box2{position:absolute; background:blue;width:100px;height:100px; left:40px; top:40px; z-index:2;}
+</style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+</body>
+</html>
+</textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world use case</h2>
+      <p>Dropdowns and modals layering.</p>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Using huge arbitrary values</li>
+      </ul>
+
+      <h2>Best practices</h2>
+      <ul>
+        <li>Maintain a z-index scale system</li>
+      </ul>
+    </section>
+    <section id="css-overflow" class="lesson-section">
+      <h1>CSS Overflow</h1>
+
+      <p>Overflow controls how extra content is handled.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>hidden</li>
+          <li>scroll</li>
+          <li>auto</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>.box{ overflow:auto; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>.container{ overflow:auto; }</code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box{
+  width:200px;
+  height:100px;
+  overflow:auto;
+  border:1px solid;
+}
+</style>
+</head>
+<body>
+<div class="box">Lots of content Lots of content Lots of content Lots of content</div>
+</body>
+</html>
+</textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world use case</h2>
+      <p>Scrollable panels.</p>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Forgetting overflow hidden for rounded corners</li>
+      </ul>
+
+      <h2>Best practices</h2>
+      <ul>
+        <li>Use auto for responsive containers</li>
+      </ul>
+    </section>
+    <section id="css-float" class="lesson-section">
+      <h1>CSS Float</h1>
+
+      <p>Float was used for layouts but now mainly for text wrapping.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>left</li>
+          <li>right</li>
+          <li>clear</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>img{ float:left; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>img{ float:left; margin:10px; }</code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img{float:left;margin:10px;}
+</style>
+</head>
+<body>
+<img src="https://via.placeholder.com/100">
+<p>Text wraps around image.</p>
+</body>
+</html>
+</textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Best practices</h2>
+      <ul>
+        <li>Prefer Flexbox/Grid for layout</li>
+      </ul>
+    </section>
+    <section id="css-inlineblock" class="lesson-section">
+      <h1>CSS Inline-block</h1>
+
+      <p>Inline-block allows elements to sit inline but keep width/height.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Hybrid layout behavior</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>.item{ display:inline-block; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>.card{ display:inline-block; }</code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card{
+ display:inline-block;
+ width:100px;height:100px;
+ background:orange;
+ margin:5px;
+}
+</style>
+</head>
+<body>
+<div class="card"></div><div class="card"></div>
+</body>
+</html>
+</textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+    </section>
+    <section id="css-align" class="lesson-section">
+      <h1>CSS Align</h1>
+
+      <p>Modern alignment uses Flexbox and Grid.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>justify-content</li>
+          <li>align-items</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>.container{ display:flex; align-items:center; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>.container{ display:flex; justify-content:center; }</code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ height:150px;
+ border:1px solid;
+}
+</style>
+</head>
+<body>
+<div class="container">Centered</div>
+</body>
+</html>
+</textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+    </section>
+    <section id="css-navbar" class="lesson-section">
+      <h1>CSS Navigation Bars</h1>
+
+      <p>Navigation bars organize site structure and improve UX.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Horizontal layout</li>
+          <li>Sticky headers</li>
+          <li>Accessibility</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>nav{ display:flex; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>nav{display:flex; gap:20px;}</code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+nav{
+ display:flex;
+ gap:20px;
+ background:#111;
+ color:white;
+ padding:10px;
+}
+</style>
+</head>
+<body>
+<nav>
+<span>Home</span><span>Docs</span><span>Contact</span>
+</nav>
+</body>
+</html>
+</textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+    </section>
+    <section id="css-dropdowns" class="lesson-section">
+      <h1>CSS Dropdowns</h1>
+
+      <p>Dropdowns reveal additional navigation options.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Hover interaction</li>
+          <li>Absolute positioning</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>.menu:hover .dropdown{ display:block; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>.dropdown{ display:none; }</code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.menu{position:relative;display:inline-block;}
+.dropdown{
+ display:none;
+ position:absolute;
+ background:white;
+ border:1px solid #ccc;
+}
+.menu:hover .dropdown{display:block;}
+</style>
+</head>
+<body>
+<div class="menu">
+Hover me
+<div class="dropdown">Item 1</div>
+</div>
+</body>
+</html>
+</textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+    </section>
+    <section id="css-combinators" class="lesson-section">
+      <h1>CSS Combinators</h1>
+
+      <p>Combinators define relationships between selectors, enabling precise targeting of elements.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Descendant (space)</li>
+          <li>Child (>)</li>
+          <li>Adjacent (+)</li>
+          <li>General sibling (~)</li>
+        </ul>
+      </div>
+
+      <h2>How They Work</h2>
+      <p>Combinators help style elements based on structure rather than classes.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>div > p { color: blue; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>.card > p { font-weight: bold; }</code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card > p { font-weight:bold; }
+</style>
+</head>
+<body>
+<div class="card">
+<p>Direct child</p>
+<span><p>Not styled</p></span>
+</div>
+</body>
+</html>
+</textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world use case</h2>
+      <p>Styling nested UI components.</p>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Overly complex selectors</li>
+      </ul>
+
+      <h2>Best practices</h2>
+      <ul>
+        <li>Keep selectors shallow</li>
+      </ul>
+    </section>
+    <section id="css-pseudoclasses" class="lesson-section">
+      <h1>CSS Pseudo-classes</h1>
+
+      <p>Pseudo-classes style elements based on state or interaction.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>:hover</li>
+          <li>:focus</li>
+          <li>:active</li>
+          <li>:nth-child()</li>
+        </ul>
+      </div>
+
+      <h2>Interaction Styling</h2>
+      <p>Used heavily for buttons, forms, and navigation.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>button:hover { background:black; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>a:hover{ color:red; }</code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+button:hover{background:black;color:white;}
+</style>
+</head>
+<body>
+<button>Hover me</button>
+</body>
+</html>
+</textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world use case</h2>
+      <p>Interactive UI feedback.</p>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Ignoring focus states</li>
+      </ul>
+
+      <h2>Best practices</h2>
+      <ul>
+        <li>Design accessible interaction states</li>
+      </ul>
+    </section>
+    <section id="css-pseudoelements" class="lesson-section">
+      <h1>CSS Pseudo-elements</h1>
+
+      <p>Pseudo-elements style specific parts of elements.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>::before</li>
+          <li>::after</li>
+          <li>::first-letter</li>
+          <li>::selection</li>
+        </ul>
+      </div>
+
+      <h2>Decorative Styling</h2>
+      <p>Often used for icons, overlays, and UI decorations.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>p::first-letter { font-size:2em; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>.btn::after{ content:"→"; }</code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.btn::after{content:" →";}
+</style>
+</head>
+<body>
+<button class="btn">Continue</button>
+</body>
+</html>
+</textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world use case</h2>
+      <p>Decorative UI elements.</p>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Using for essential content</li>
+      </ul>
+
+      <h2>Best practices</h2>
+      <ul>
+        <li>Keep semantic HTML intact</li>
+      </ul>
+    </section>
+    <section id="css-attribute-selectors" class="lesson-section">
+      <h1>CSS Attribute Selectors</h1>
+
+      <p>Attribute selectors target elements based on attributes or values.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>[attr]</li>
+          <li>[attr=value]</li>
+          <li>[attr*=value]</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>input[type="text"]{ border:1px solid; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>a[target]{ color:purple; }</code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a[target]{color:purple;}
+</style>
+</head>
+<body>
+<a href="#">Normal</a>
+<a href="#" target="_blank">Styled</a>
+</body>
+</html>
+</textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+    </section>
+    <section id="css-opacity" class="lesson-section">
+      <h1>CSS Opacity</h1>
+
+      <p>Opacity controls transparency of elements.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Range 0–1</li>
+          <li>Affects entire element</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>.card{ opacity:0.8; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>.box:hover{ opacity:0.6; }</code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img:hover{opacity:0.5;}
+</style>
+</head>
+<body>
+<img src="https://via.placeholder.com/150">
+</body>
+</html>
+</textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+    </section>
+    <section id="css-image-gallery" class="lesson-section">
+      <h1>CSS Image Gallery</h1>
+
+      <p>Create responsive image grids using modern layout techniques.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Grid layout</li>
+          <li>Hover effects</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>.gallery{ display:grid; grid-template-columns:repeat(3,1fr); }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>.gallery img{ width:100%; }</code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:10px;
+}
+.gallery img{width:100%;}
+</style>
+</head>
+<body>
+<div class="gallery">
+<img src="https://via.placeholder.com/150">
+<img src="https://via.placeholder.com/150">
+<img src="https://via.placeholder.com/150">
+</div>
+</body>
+</html>
+</textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="css-forms" class="lesson-section">
+      <h1>CSS Forms</h1>
+
+      <p>Form styling improves usability and accessibility.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Input styling</li>
+          <li>Focus states</li>
+          <li>Layout</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>input{ padding:10px; }</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>input:focus{ border-color:blue; }</code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input{padding:10px;border:1px solid #ccc;}
+input:focus{border-color:blue;}
+</style>
+</head>
+<body>
+<input placeholder="Your name">
+</body>
+</html>
+</textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+    </section>
+    <section id="css-counters" class="lesson-section">
+      <h1>CSS Counters</h1>
+
+      <p>Counters automatically number elements.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>counter-reset</li>
+          <li>counter-increment</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>counter-reset: section;</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>li::before{ content:counter(item) ". "; }</code></pre>
+
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ol{counter-reset:item;}
+li{counter-increment:item;}
+li::before{content:counter(item) ". ";}
+</style>
+</head>
+<body>
+<ol>
+<li>One</li>
+<li>Two</li>
+</ol>
+</body>
+</html>
+</textarea>
+
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+    </section>
+    <section id="flexbox-intro" class="lesson-section">
+      <h1>Flexbox Introduction</h1>
+      <p>Flexbox is a one-dimensional layout system designed for aligning and distributing space among items
+        efficiently.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Main axis vs cross axis</li>
+          <li>Flexible alignment</li>
+          <li>Space distribution</li>
+          <li>Content reordering</li>
+        </ul>
+      </div>
+
+      <h2>How Flexbox Works</h2>
+      <p>A parent container becomes a flex container using <code>display: flex</code>. Its children automatically become
+        flex items.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.container { display: flex; }</code></pre>
+
+      <pre><code>
+.container {
+  display: flex;
+  gap: 1rem;
+}
+.item {
+  background: #6366f1;
+  color: white;
+  padding: 1rem;
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="container">
+  <div class="item">One</div>
+  <div class="item">Two</div>
+</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container { display:flex; gap:10px; }
+.item { background:#6366f1; color:white; padding:20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="item">One</div>
+<div class="item">Two</div>
+</div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world Use Case</h2>
+      <p>Navigation bars, toolbars, and card layouts.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Confusing axes</li>
+        <li>Forgetting flex-wrap</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use gap instead of margins</li>
+        <li>Combine with media queries</li>
+      </ul>
+    </section>
+    <section id="flex-container" class="lesson-section">
+      <h1>Flex Container Properties</h1>
+      <p>Flex container controls layout behavior of items.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>justify-content</li>
+          <li>align-items</li>
+          <li>flex-wrap</li>
+          <li>flex-direction</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>These properties control alignment along main and cross axes.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.container { justify-content: center; }</code></pre>
+
+      <pre><code>
+.container {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="container">
+  <div>1</div><div>2</div><div>3</div>
+</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container { display:flex; justify-content:space-around; }
+.container div { background:#22c55e; padding:20px; color:white; }
+</style>
+</head>
+<body>
+<div class="container">
+<div>1</div><div>2</div><div>3</div>
+</div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Evenly spaced navigation items.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Mixing align-items with align-content</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Prefer center alignment for accessibility</li>
+      </ul>
+    </section>
+    <section id="flex-items" class="lesson-section">
+      <h1>Flex Item Properties</h1>
+      <p>Flex item properties define how individual items behave.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>flex-grow</li>
+          <li>flex-shrink</li>
+          <li>flex-basis</li>
+          <li>order</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>These properties allow dynamic resizing and ordering.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.item { flex: 1; }</code></pre>
+
+      <pre><code>
+.item { flex-grow:1; }
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="container">
+  <div class="item">Flexible</div>
+</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container { display:flex; }
+.item { flex:1; background:#f97316; padding:20px; color:white; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="item">Grow</div>
+<div class="item">Grow</div>
+</div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Responsive card widths.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Using fixed widths unnecessarily</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use shorthand <code>flex</code></li>
+      </ul>
+    </section>
+    <section id="flex-responsive" class="lesson-section">
+      <h1>Flexbox Responsive Design</h1>
+      <p>Flexbox works seamlessly with media queries.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>flex-wrap</li>
+          <li>breakpoints</li>
+          <li>column layouts</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Items wrap automatically on smaller screens.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>@media (max-width:768px){ .container{flex-direction:column;} }</code></pre>
+
+      <pre><code>
+.container { flex-wrap:wrap; }
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="container">
+  <div class="box">1</div>
+  <div class="box">2</div>
+</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container { display:flex; flex-wrap:wrap; }
+.box { flex:1 1 200px; background:#0ea5e9; padding:20px; margin:5px; color:white; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+</div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Responsive product grids.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Ignoring min-width</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Design mobile-first</li>
+      </ul>
+    </section>
+    <section id="grid-intro" class="lesson-section">
+      <h1>CSS Grid Introduction</h1>
+      <p>Grid is a two-dimensional layout system for complex page structures.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Rows and columns</li>
+          <li>Grid tracks</li>
+          <li>Explicit vs implicit grid</li>
+          <li>Layout control</li>
+        </ul>
+      </div>
+
+      <h2>Flexbox vs Grid</h2>
+      <p>Use Flexbox for one-direction layouts and Grid for full page structures.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.grid { display:grid; grid-template-columns:repeat(3,1fr); }</code></pre>
+
+      <pre><code>
+.grid {
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:1rem;
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="grid">
+  <div>1</div><div>2</div><div>3</div>
+</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.grid div { background:#a855f7; color:white; padding:20px; }
+</style>
+</head>
+<body>
+<div class="grid">
+<div>1</div><div>2</div><div>3</div>
+</div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Full website layouts and dashboards.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Overusing nested grids</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Combine Grid with Flexbox</li>
+      </ul>
+    </section>
+    <section id="grid-container" class="lesson-section">
+      <h1>Grid Container</h1>
+      <p>The grid container defines the overall structure using rows, columns, and gaps.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>grid-template-columns</li>
+          <li>grid-template-rows</li>
+          <li>gap</li>
+          <li>auto-fit vs auto-fill</li>
+        </ul>
+      </div>
+
+      <h2>How It Works</h2>
+      <p>Grid tracks define layout structure, while gaps control spacing between items.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.grid { display:grid; grid-template-columns:repeat(3,1fr); }</code></pre>
+
+      <pre><code>
+.grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap:1rem;
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="grid">
+  <div>Card</div><div>Card</div><div>Card</div>
+</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.grid div{background:#14b8a6;color:white;padding:20px}
+</style>
+</head>
+<body>
+<div class="grid">
+<div>1</div><div>2</div><div>3</div><div>4</div>
+</div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Responsive card layouts and dashboards.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Using fixed columns instead of flexible units</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Prefer auto-fit for responsive grids</li>
+      </ul>
+    </section>
+    <section id="grid-items" class="lesson-section">
+      <h1>Grid Items</h1>
+      <p>Grid items can span multiple rows or columns for complex layouts.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>grid-column</li>
+          <li>grid-row</li>
+          <li>grid-area</li>
+          <li>Alignment properties</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Spanning allows elements to occupy larger layout areas.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.item { grid-column: span 2; }</code></pre>
+
+      <pre><code>
+.item-large { grid-column: span 2; }
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="grid">
+  <div class="large">Wide</div>
+  <div>Normal</div>
+</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.large{grid-column:span 2;background:#f43f5e;color:white;padding:20px}
+.grid div{background:#64748b;color:white;padding:20px}
+</style>
+</head>
+<body>
+<div class="grid">
+<div class="large">Wide</div>
+<div>Normal</div>
+<div>Normal</div>
+</div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Hero sections or featured cards.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Overlapping unintentionally</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use named grid areas for readability</li>
+      </ul>
+    </section>
+    <section id="grid-12" class="lesson-section">
+      <h1>12-Column Layout</h1>
+      <p>A 12-column grid is a standard system used in modern UI frameworks.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Flexible layout</li>
+          <li>Consistent spacing</li>
+          <li>Responsive scaling</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Columns can be combined to create any layout proportion.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.grid { grid-template-columns:repeat(12,1fr); }</code></pre>
+
+      <pre><code>
+.col-6 { grid-column: span 6; }
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="grid">
+  <div class="col-6">Half</div>
+  <div class="col-6">Half</div>
+</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
+.col-6{grid-column:span 6;background:#22c55e;color:white;padding:20px}
+</style>
+</head>
+<body>
+<div class="grid">
+<div class="col-6">Left</div>
+<div class="col-6">Right</div>
+</div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Page layouts and dashboards.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Ignoring responsive stacking</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Combine with media queries</li>
+      </ul>
+    </section>
+    <section id="css-supports" class="lesson-section">
+      <h1>CSS @supports</h1>
+      <p>@supports allows feature detection for progressive enhancement.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Feature queries</li>
+          <li>Fallback styles</li>
+          <li>Progressive enhancement</li>
+        </ul>
+      </div>
+
+      <h2>Syntax</h2>
+      <pre><code>@supports(display:grid){}</code></pre>
+
+      <pre><code>
+@supports (display:grid){
+  .layout{display:grid;}
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="layout">Feature Query</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.layout{padding:20px;background:#334155;color:white}
+@supports(display:grid){
+.layout{background:#2563eb}
+}
+</style>
+</head>
+<body>
+<div class="layout">Check support</div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Providing fallbacks for older browsers.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Overusing feature queries</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Always provide fallback styles</li>
+      </ul>
+    </section>
+    <section id="rwd-intro" class="lesson-section">
+      <h1>Responsive Web Design Introduction</h1>
+      <p>Responsive design ensures layouts adapt seamlessly across devices.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Fluid layouts</li>
+          <li>Flexible images</li>
+          <li>Media queries</li>
+          <li>Mobile-first design</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Modern websites use flexible units and breakpoints to ensure usability on all screens.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>@media (max-width:768px){ }</code></pre>
+
+      <pre><code>
+img{max-width:100%;height:auto}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<img src="https://via.placeholder.com/600">
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img{max-width:100%;height:auto}
+</style>
+</head>
+<body>
+<img src="https://via.placeholder.com/600">
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Mobile-friendly websites and apps.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Designing desktop-first without testing mobile</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Adopt mobile-first workflow</li>
+      </ul>
+    </section>
+    <section id="rwd-images" class="lesson-section">
+      <h1>Responsive Images</h1>
+      <p>Responsive images scale within their containers to prevent overflow and improve performance.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>max-width: 100%</li>
+          <li>height: auto</li>
+          <li>picture element</li>
+          <li>Art direction</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Images should adapt to different screen sizes while maintaining aspect ratio.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>img { max-width:100%; height:auto; }</code></pre>
+
+      <pre><code>
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<img src="https://via.placeholder.com/800">
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img{max-width:100%;height:auto;border-radius:12px}
+</style>
+</head>
+<body>
+<img src="https://via.placeholder.com/800">
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world Use Case</h2>
+      <p>Blog images, product photos, and hero banners.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Using fixed width images</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Serve optimized image sizes</li>
+      </ul>
+    </section>
+    <section id="rwd-videos" class="lesson-section">
+      <h1>Responsive Videos</h1>
+      <p>Videos must scale proportionally to maintain usability across devices.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Aspect ratio</li>
+          <li>Container scaling</li>
+          <li>object-fit</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Using an aspect-ratio container ensures videos maintain proportions.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.video { aspect-ratio:16/9; }</code></pre>
+
+      <pre><code>
+.video {
+  width:100%;
+  aspect-ratio:16/9;
+}
+video {
+  width:100%;
+  height:100%;
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="video">
+  <video controls></video>
+</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.video{width:100%;aspect-ratio:16/9}
+video{width:100%;height:100%;background:#000}
+</style>
+</head>
+<body>
+<div class="video"><video controls></video></div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world Use Case</h2>
+      <p>Course lessons, media players.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Hardcoding video height</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use lazy loading where possible</li>
+      </ul>
+    </section>
+    <section id="rwd-frameworks" class="lesson-section">
+      <h1>Responsive Frameworks</h1>
+      <p>Frameworks provide prebuilt responsive grids and components.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Utility classes</li>
+          <li>Grid systems</li>
+          <li>Design consistency</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Using frameworks speeds up development and ensures consistent responsiveness.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>&lt;div class="grid"&gt;&lt;/div&gt;</code></pre>
+
+      <pre><code>
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="container">Responsive Container</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container{max-width:1200px;margin:auto;background:#e2e8f0;padding:20px}
+</style>
+</head>
+<body>
+<div class="container">Framework style container</div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world Use Case</h2>
+      <p>Rapid prototyping and large-scale apps.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Overriding framework styles excessively</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Customize with design tokens</li>
+      </ul>
+    </section>
+    <section id="rwd-templates" class="lesson-section">
+      <h1>Responsive Templates</h1>
+      <p>Templates provide complete layouts optimized for different screen sizes.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Reusable layouts</li>
+          <li>Mobile-first design</li>
+          <li>Component structure</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Templates help maintain design consistency across pages.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.layout { display:grid; }</code></pre>
+
+      <pre><code>
+.layout {
+  display:grid;
+  grid-template-columns:1fr 3fr;
+  gap:1rem;
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="layout">
+  <aside>Sidebar</aside>
+  <main>Main</main>
+</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.layout{display:grid;grid-template-columns:1fr 3fr;gap:10px}
+aside{background:#0ea5e9;color:white;padding:20px}
+main{background:#6366f1;color:white;padding:20px}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>Sidebar</aside>
+<main>Main</main>
+</div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world Use Case</h2>
+      <p>Admin dashboards and documentation sites.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Not testing on small screens</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Design with reusable components</li>
+      </ul>
+    </section>
+    <section id="css-transitions" class="lesson-section">
+      <h1>CSS Transitions</h1>
+      <p>Transitions create smooth animations between property changes, improving UI feedback.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>transition-property</li>
+          <li>transition-duration</li>
+          <li>transition-timing-function</li>
+          <li>transition-delay</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Transitions are triggered when a property changes, such as hover states.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>transition: all 0.3s ease;</code></pre>
+
+      <pre><code>
+.button {
+  transition: background 0.3s ease;
+}
+.button:hover {
+  background:#2563eb;
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<button class="btn">Hover me</button>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.btn{padding:12px 20px;background:#0ea5e9;color:white;border:none;transition:0.3s}
+.btn:hover{background:#2563eb}
+</style>
+</head>
+<body>
+<button class="btn">Hover me</button>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Interactive buttons and navigation menus.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Animating non-performant properties like width</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Prefer transform and opacity for smooth animations</li>
+      </ul>
+    </section>
+    <section id="css-animations" class="lesson-section">
+      <h1>CSS Animations</h1>
+      <p>Animations allow complex motion using keyframes.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>@keyframes</li>
+          <li>animation-duration</li>
+          <li>animation-iteration-count</li>
+          <li>animation-fill-mode</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Animations run independently from user interaction and can loop.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>@keyframes slide {}</code></pre>
+
+      <pre><code>
+@keyframes fadeIn {
+  from {opacity:0}
+  to {opacity:1}
+}
+.box {
+  animation: fadeIn 1s ease;
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="box"></div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.box{width:100px;height:100px;background:#f43f5e;animation:fadeIn 1s}
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Loading states and onboarding UI.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Overusing animations causing distraction</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Respect prefers-reduced-motion</li>
+      </ul>
+    </section>
+    <section id="css-variables" class="lesson-section">
+      <h1>CSS Variables</h1>
+      <p>CSS variables enable reusable design tokens and theme support.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>:root scope</li>
+          <li>Fallback values</li>
+          <li>Dynamic theming</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Variables store values that can be reused across stylesheets.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>--primary: #2563eb;</code></pre>
+
+      <pre><code>
+:root {
+  --primary:#2563eb;
+}
+button {
+  background:var(--primary);
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<button class="btn">Primary</button>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root{--primary:#2563eb}
+button{background:var(--primary);color:white;padding:10px;border:none}
+</style>
+</head>
+<body>
+<button>Primary</button>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Dark/light theme systems.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Over-nesting variables</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use semantic naming like --color-primary</li>
+      </ul>
+    </section>
+    <section id="css-buttons" class="lesson-section">
+      <h1>CSS Buttons</h1>
+      <p>Buttons are core UI components and must be accessible and interactive.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Hover states</li>
+          <li>Focus styles</li>
+          <li>Active states</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Buttons combine styling, spacing, and interaction states.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>.btn { padding:10px 20px; }</code></pre>
+
+      <pre><code>
+.btn{
+  padding:12px 20px;
+  border-radius:8px;
+  background:#0ea5e9;
+  color:white;
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<button class="btn">Click</button>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.btn{padding:12px 20px;border-radius:8px;background:#0ea5e9;color:white;border:none}
+.btn:hover{background:#0284c7}
+</style>
+</head>
+<body>
+<button class="btn">Click</button>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Forms and CTAs.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Low contrast colors</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Ensure keyboard accessibility</li>
+      </ul>
+    </section>
+    <section id="css-ui" class="lesson-section">
+      <h1>User Interface Styling</h1>
+      <p>UI properties improve usability and interaction feedback.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>cursor</li>
+          <li>resize</li>
+          <li>scroll behavior</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>UI properties control how users interact with elements.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>cursor:pointer;</code></pre>
+
+      <pre><code>
+.box {
+  resize:both;
+  overflow:auto;
+}
+  </code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<div class="box">Resize me</div>
+    </code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box{width:200px;height:100px;border:2px solid #64748b;resize:both;overflow:auto;padding:10px}
+</style>
+</head>
+<body>
+<div class="box">Resize me</div>
+</body>
+</html>
+      </textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Use Case</h2>
+      <p>Text editors and dashboards.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Disabling user interactions unnecessarily</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use UI properties to enhance usability</li>
+      </ul>
+    </section>
+    <section id="css-templates" class="lesson-section">
+      <h1>CSS Templates</h1>
+      <p>Prebuilt CSS templates save time and ensure consistent layouts across projects.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Reusable CSS files</li>
+          <li>Consistent typography & color</li>
+          <li>Grid & layout systems</li>
+          <li>Mobile-first design</li>
+        </ul>
+      </div>
+
+      <h2>Explanation</h2>
+      <p>Templates include ready-to-use layouts, components, and style conventions for rapid development.</p>
+
+      <h2>Syntax</h2>
+      <pre><code>&lt;link rel="stylesheet" href="template.css"&gt;</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<link rel="stylesheet" href="modern-template.css">
+</code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container p-4 bg-light">
+<h2>Template Container</h2>
+<p>This is a prebuilt template layout.</p>
+</div>
+</body>
+</html>
+</textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+
+      <h2>Real-world Use Case</h2>
+      <p>Landing pages, dashboards, and e-commerce sites.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Editing template CSS without structure</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Use templates as a starting point, customize carefully</li>
+      </ul>
+    </section>
+    <section id="css-examples" class="lesson-section">
+      <h1>CSS Examples</h1>
+      <p>Examples demonstrate real-world usage of CSS properties, layouts, and components.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Interactive code snippets</li>
+          <li>Responsive patterns</li>
+          <li>Component-level styling</li>
+        </ul>
+      </div>
+
+      <h2>Example</h2>
+      <pre><code>button {
+  background-color: #6366f1;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+}</code></pre>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Example</div>
+        <pre class="example-code"><code>
+<button>Click Me</button>
+</code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+button{background-color:#6366f1;color:white;padding:10px 20px;border-radius:8px;border:none;cursor:pointer}
+button:hover{background-color:#4f46e5}
+</style>
+</head>
+<body>
+<button>Click Me</button>
+</body>
+</html>
+</textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+    </section>
+    <section id="css-quiz" class="lesson-section">
+      <h1>CSS Quiz & Exercises</h1>
+      <p>Assess understanding with quizzes and hands-on exercises.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Multiple-choice questions</li>
+          <li>Code exercises</li>
+          <li>Real-world challenges</li>
+        </ul>
+      </div>
+
+      <h2>Example Exercise</h2>
+      <p>Create a responsive button with hover effect and rounded corners.</p>
+
+      <div class="example-box">
+        <div class="example-header"><i class="fas fa-code"></i> Exercise</div>
+        <pre class="example-code"><code>
+<!-- HTML + CSS task -->
+</code></pre>
+        <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+        <div class="tryit-panel">
+          <div class="tryit-toolbar">
+            <span>Live CSS Editor</span>
+            <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+            <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+          </div>
+          <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Your CSS here */
+</style>
+</head>
+<body>
+<button>Hover Me</button>
+</body>
+</html>
+</textarea>
+          <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+        </div>
+      </div>
+    </section>
+    <section id="css-interview" class="lesson-section">
+      <h1>CSS Interview Prep & Bootcamp</h1>
+      <p>Prepare for professional CSS roles with practical projects, challenges, and mock interviews.</p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Portfolio-ready projects</li>
+          <li>Interview coding questions</li>
+          <li>UI/UX best practices</li>
+          <li>Performance & accessibility</li>
+        </ul>
+      </div>
+
+      <h2>Real-world Use Case</h2>
+      <p>Prepare for frontend developer roles and freelance CSS projects.</p>
+
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Focusing only on syntax, ignoring responsive design</li>
+      </ul>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Build real projects, contribute to open-source, maintain a portfolio</li>
+      </ul>
+    </section>
+    <section id="css-reference" class="lesson-section">
+      <h1>CSS Reference</h1>
+      <p>Complete CSS reference covering selectors, pseudo-classes, pseudo-elements, units, functions, and properties.
+      </p>
+
+      <div class="key-concepts">
+        <ul>
+          <li>Selector types</li>
+          <li>Pseudo-class and pseudo-element usage</li>
+          <li>Units (px, em, rem, %, vh, vw)</li>
+          <li>Common CSS functions (calc, min, max, clamp)</li>
+          <li>Animatable properties</li>
+        </ul>
+      </div>
+
+      <h2>Usage Example</h2>
+      <pre><code>p:first-child { color: red; }</code></pre>
+
+      <h2>Real-world Use Case</h2>
+      <p>Efficient styling of components, animations, and complex layouts.</p>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Refer to official documentation regularly</li>
+        <li>Use modern properties for responsiveness and accessibility</li>
+        <li>Keep specificity low for maintainable code</li>
+      </ul>
+    </section>
       </div>
     </main>
   </div>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+  <!-- THEME & LOGOUT SCRIPTS -->
+  <script>
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const themeIcon = themeToggle.querySelector('i');
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
-      authDomain: "learnx-d823d.firebaseapp.com",
-      projectId: "learnx-d823d",
-      storageBucket: "learnx-d823d.appspot.com",
-      messagingSenderId: "1036419202232",
-      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
-    };
+    // Check for saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        document.getElementById('user-display').textContent = user.displayName || user.email.split('@')[0];
-      } else {
-        window.location.href = "../index.html";
-      }
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
     });
 
+    function updateThemeIcon(theme) {
+      themeIcon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    // Logout Logic
     document.getElementById('logout-btn').addEventListener('click', () => {
-      signOut(auth).then(() => {
-        window.location.href = "../index.html";
-      });
+      window.location.href = '../index.html';
     });
-  </script>
 
-  <script>
-    // Sidebar active state syncing
-    const sections = document.querySelectorAll('.topic-section');
-    const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+    // Sidebar & Hamburger Logic
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const sidebar = document.getElementById('sidebar');
 
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 150) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
-
-  <script>
-
-
-    // Try It Editor functions (applied globally to all courses)
-    window.openTryIt = function(btn) {
-      const panel = btn.nextElementSibling;
-      panel.classList.add('open');
-      btn.style.display = 'none';
-      runTryIt(panel.querySelector('.tryit-run'));
-    };
-    window.closeTryIt = function(btn) {
-      const panel = btn.closest('.tryit-panel');
-      panel.classList.remove('open');
-      panel.previousElementSibling.style.display = 'inline-flex';
-    };
-    window.runTryIt = function(btn) {
-      const panel = btn.closest('.tryit-panel');
-      const code = panel.querySelector('.tryit-editor').value;
-      const iframe = panel.querySelector('iframe');
-      // basic wrapping for output display
-      iframe.srcdoc = `
-        <style>body{font-family:sans-serif; color:#333; background:#fff;}</style>
-        ${code}
-      `;
-    };
-  </script>
-
-  <script>
-    // Theme logic
-    const toggleBtn = document.getElementById('theme-toggle');
-    const updateThemeIcon = (isDark) => {
-      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
-    };
-    
-    // Check saved theme
-    let currentTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
-
-    if(toggleBtn) {
-      toggleBtn.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme');
-        let newTheme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme === 'dark');
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        const isOpen = sidebar.classList.contains('open');
+        mobileToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
       });
     }
+
+    // Close sidebar when clicking links on mobile
+    sidebar.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          sidebar.classList.remove('open');
+          if (mobileToggle) mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      });
+    });
+
+    // Try It Yourself Logic 
+    function openTryIt(btn) {
+      const panel = btn.nextElementSibling;
+      panel.classList.toggle('open');
+    }
+
+    function closeTryIt(btn) {
+      const panel = btn.closest('.tryit-panel');
+      panel.classList.remove('open');
+    }
+
+    function runTryIt(btn) {
+      const panel = btn.closest('.tryit-panel');
+      const editor = panel.querySelector('.tryit-editor');
+      const iframe = panel.querySelector('.tryit-output iframe');
+      const code = editor.value;
+      const out = iframe.contentDocument || iframe.contentWindow.document;
+      out.open();
+      out.write(code);
+      out.close();
+    }
+
+    // Copy Code Logic
+    document.querySelectorAll('.example-box').forEach(box => {
+      const header = box.querySelector('.example-header');
+      const code = box.querySelector('.example-code code');
+
+      if (header && code) {
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-btn';
+        copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
+        header.appendChild(copyBtn);
+
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(code.innerText).then(() => {
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => {
+              copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
+            }, 2000);
+          });
+        });
+      }
+    });
   </script>
 </body>
 
