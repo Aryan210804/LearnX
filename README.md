@@ -79,7 +79,8 @@ Ensure you have [Node.js](https://nodejs.org/) installed to run the local develo
 LearnX was rigorously refactored to prioritize *visual excellence* and *educational clarity*:
 - **No Distractions:** Information is organized into clean card layouts and grid systems.
 - **Consistent Hierarchy:** A standardized 8px spacing scale, carefully selected border radiuses, and dynamic hover states create micro-interactions across the board.
-- **W3Schools Style Layouts:** Sidebar navigation allows users to effortlessly jump between chapters (e.g., *Intro, Variables, Syntax, Loops*), combined perfectly with Chapter Badges and Next/Prev Pagination.
+- **W3Schools Style Navigation:** Sidebar navigation allows users to effortlessly jump between chapters (e.g., *Intro, Variables, Syntax, Loops*), combined perfectly with Chapter Badges and Next/Prev Pagination.
+- **🛠️ Recent Updates:** Modernized the JavaScript course page with premium design standards, including revamped sidebar, card‑based content layout, and enhanced interactive "Try it Yourself" editor.
 
 ---
 
