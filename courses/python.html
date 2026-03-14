@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | Python Masterclass</title>
   <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body class="learnx-page">
 
   <!-- TOP NAV -->
   <nav class="top-nav">
     <a href="../index1.html" class="brand">LearnX</a>
-        <div class="top-nav-links">
+    <div class="top-nav-links">
       <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
       <a href="html.html">HTML</a>
       <a href="css.html">CSS</a>
@@ -27,48 +30,95 @@
       <a href="numpy.html">NumPy</a>
       <a href="pandas.html">Pandas</a>
       <a href="matplotlib.html">Matplotlib</a>
-      
+
       <a href="ai.html">AI & ML</a>
       <a href="r.html">R</a>
     </div>
 
     <div class="top-nav-search">
-      <input type="text" placeholder="Search..."/>
+      <input type="text" placeholder="Search..." />
       <button><i class="fas fa-search"></i></button>
     </div>
-    
+
     <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
       <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
-       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
-      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
+      <button id="theme-toggle" class="nav-btn"
+        style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i
+          class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn"
+        style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
     </div>
   </nav>
 
   <!-- CONTENT WRAPPER -->
   <div class="course-layout">
-    
+
     <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <i class="fab fa-python" style="color:#306998"></i> Python Tutorial
       </div>
 
-      <div class="sidebar-section-label">Python Basic</div>
-      <a href="#Intro" class="active">Introduction to Python</a>
-      <a href="#Variables">Variables & Data Types</a>
-      <a href="#Lists">Lists & Tuples</a>
-      <a href="#Sets">Sets</a>
-      <a href="#Dictionaries">Dictionaries</a>
-      <a href="#IfElse">Conditionals</a>
-      <a href="#Loops">Loops</a>
-      <a href="#Functions">Functions</a>
-      <a href="#Modules">Modules & PIP</a>
-      <a href="#Dates">Dates & Math</a>
-      <a href="#Classes">Classes & OOP</a>
-      <a href="#Files">File Handling</a>
-      <a href="#TryExcept">Exception Handling</a>
-      <a href="#Projects">🚀 Real World Projects</a>
-      <a href="#MiniTask">🎯 Python Mini Task</a>
+      <div class="sidebar-section-label">Python Tutorial</div>
+      <a href="#python-home" class="active">Python HOME</a>
+      <a href="#python-intro">Python Intro</a>
+      <a href="#python-getstarted">Python Get Started</a>
+      <a href="#python-syntax">Python Syntax</a>
+      <a href="#python-comments">Python Comments</a>
+      <a href="#python-variables">Python Variables</a>
+      <a href="#python-datatypes">Python Data Types</a>
+      <a href="#python-numbers">Python Numbers</a>
+      <a href="#python-casting">Python Casting</a>
+      <a href="#python-strings">Python Strings</a>
+      <a href="#python-booleans">Python Booleans</a>
+      <a href="#python-operators">Python Operators</a>
+
+      <div class="sidebar-section-label">Python Lists</div>
+      <a href="#python-lists">Python Lists</a>
+      <a href="#python-tuples">Python Tuples</a>
+      <a href="#python-sets">Python Sets</a>
+      <a href="#python-dictionaries">Python Dictionaries</a>
+
+      <div class="sidebar-section-label">Python Flow Control</div>
+      <a href="#python-ifelse">Python If...Else</a>
+      <a href="#python-whileloops">Python While Loops</a>
+      <a href="#python-forloops">Python For Loops</a>
+
+      <div class="sidebar-section-label">Python Functions</div>
+      <a href="#python-functions">Python Functions</a>
+      <a href="#python-lambda">Python Lambda</a>
+      <a href="#python-arrays">Python Arrays</a>
+
+      <div class="sidebar-section-label">Python Classes</div>
+      <a href="#python-classes">Python Classes/Objects</a>
+      <a href="#python-inheritance">Python Inheritance</a>
+      <a href="#python-iterators">Python Iterators</a>
+      <a href="#python-polymorphism">Python Polymorphism</a>
+      <a href="#python-scope">Python Scope</a>
+
+      <div class="sidebar-section-label">Python Modules</div>
+      <a href="#python-modules">Python Modules</a>
+      <a href="#python-dates">Python Dates</a>
+      <a href="#python-math">Python Math</a>
+      <a href="#python-json">Python JSON</a>
+      <a href="#python-regex">Python RegEx</a>
+      <a href="#python-pip">Python PIP</a>
+
+      <div class="sidebar-section-label">Python Exception Handling</div>
+      <a href="#python-tryexcept">Python Try...Except</a>
+      <a href="#python-userinput">Python User Input</a>
+      <a href="#python-stringformatting">Python String Formatting</a>
+
+      <div class="sidebar-section-label">Python File Handling</div>
+      <a href="#python-filehandling">Python File Handling</a>
+      <a href="#python-fileread">Python Read Files</a>
+      <a href="#python-filewrite">Python Write/Create Files</a>
+      <a href="#python-filedelete">Python Delete Files</a>
+
+      <div class="sidebar-section-label">Python Learning & Ref</div>
+      <a href="#python-quiz">Python Quiz</a>
+      <a href="#python-exercises">Python Exercises</a>
+      <a href="#python-summary">Python Summary</a>
 
       <div class="sidebar-footer">
         <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
@@ -78,512 +128,961 @@
     <!-- MAIN CONTENT -->
     <main class="course-main">
       <div class="course-content-area">
-        
+
         <div class="breadcrumb">
-          <a href="../index1.html">Home</a> <span>/</span> <span>Python</span>
+          <a href="../index1.html">Home</a> <span>/</span> <span>Python</span> <span>/</span> <span>General</span>
         </div>
-        
-        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">Python Masterclass</h1>
 
-        <section class="topic-section" id="Intro">
-          <h1>Introduction to Python</h1>
-          <div class="chapter-badge">Chapter 1</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Variables" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== PYTHON HOME ===== -->
+        <section id="python-home" class="topic-section">
+          <h1>Python Tutorial</h1>
+          <p>Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.</p>
+          <div class="key-points">
+            <ul>
+              <li>Used for web development, software development, mathematics, system scripting.</li>
+              <li>Works on multiple platforms (Windows, Mac, Linux, Raspberry Pi, etc).</li>
+              <li>Syntax is clean and similar to the English language.</li>
+            </ul>
           </div>
-          
-        <h3>📌 Introduction</h3>
-        <p>Python is defined by its simplicity. It prioritizes readability, making it the perfect first language, yet it
-          powers NASA, Google, and OpenAI.</p>
-        <h3>🚀 Why Python?</h3>
-        <ul>
-          <li><strong>Readable:</strong> Syntax like English.</li>
-          <li><strong>Versatile:</strong> Web, AI, Data Science, Automation.</li>
-          <li><strong>Huge Community:</strong> Libraries for everything.</li>
-        </ul>
-        <h3>💻 Hello World</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-python">print("Hello, World!")</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Python Example</div>
+            <pre class="example-code"><code>print("Hello, World!")</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">print("Hello, World!")</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+              <textarea class="tryit-editor">print("Hello, World!")</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Variables">
-          <h1>Variables & Data Types</h1>
-          <div class="chapter-badge">Chapter 2</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Lists" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <h3>📌 Variables</h3>
-        <p>No command for declaring a variable. A variable is created the moment you first assign a value to it.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">x = 5
+        </section>
+
+        <!-- ===== PYTHON INTRO ===== -->
+        <section id="python-intro" class="topic-section">
+          <h1>What is Python?</h1>
+          <p>Python is an interpreted, high-level, general-purpose programming language.</p>
+          <div class="key-points">
+            <ul>
+              <li>Interpreted: Code is executed line by line.</li>
+              <li>High-level: Easy to read and write.</li>
+              <li>General-purpose: Can be used for almost anything.</li>
+            </ul>
+          </div>
+          <div class="tips-box">
+            <ul>
+              <li>Python was designed for readability.</li>
+              <li>It has a large standard library.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON GET STARTED ===== -->
+        <section id="python-getstarted" class="topic-section">
+          <h1>Python Get Started</h1>
+          <p>To start using Python, you need to install it on your computer or use an online editor.</p>
+          <div class="key-points">
+            <ul>
+              <li>Download from <a href="https://www.python.org/" target="_blank">python.org</a></li>
+              <li>Verify installation: <code>python --version</code></li>
+              <li>Execute scripts: <code>python helloworld.py</code></li>
+            </ul>
+          </div>
+        </section>
+
+
+        <!-- ===== PYTHON SYNTAX ===== -->
+        <section id="python-syntax" class="topic-section">
+          <h1>Python Syntax</h1>
+          <p>Python syntax can be executed by writing directly in the Command Line, or by creating a python file on the
+            server, using the .py file extension.</p>
+          <div class="key-points">
+            <ul>
+              <li><strong>Indentation:</strong> Python uses indentation to indicate a block of code.</li>
+              <li>A block of code starts with indentation and ends with the first unindented line.</li>
+              <li>The number of spaces is up to you as a programmer, but it has to be at least one.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Indentation Example</div>
+            <pre class="example-code"><code>if 5 > 2:
+  print("Five is greater than two!")</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">if 5 > 2:
+  print("Five is greater than two!")</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON COMMENTS ===== -->
+        <section id="python-comments" class="topic-section">
+          <h1>Python Comments</h1>
+          <p>Comments can be used to explain Python code and to make the code more readable.</p>
+          <div class="key-points">
+            <ul>
+              <li>Comments start with a <code>#</code>.</li>
+              <li>Python will ignore the rest of the line after the <code>#</code>.</li>
+              <li>Comments can also be used to prevent execution when testing code.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Comment Example</div>
+            <pre class="example-code"><code># This is a comment
+print("Hello, World!")</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON VARIABLES ===== -->
+        <section id="python-variables" class="topic-section">
+          <h1>Python Variables</h1>
+          <p>Variables are containers for storing data values.</p>
+          <div class="key-points">
+            <ul>
+              <li>Python has no command for declaring a variable.</li>
+              <li>A variable is created the moment you first assign a value to it.</li>
+              <li>Variables do not need to be declared with any particular type.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Variable Example</div>
+            <pre class="example-code"><code>x = 5
 y = "John"
 print(x)
 print(y)</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">x = 5
+              <textarea class="tryit-editor">x = 5
 y = "John"
 print(x)
 print(y)</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
-            </div>
-        <h3>📦 Core Data Types</h3>
-        <ul>
-          <li><strong>Text Type:</strong> <code>str</code></li>
-          <li><strong>Numeric Types:</strong> <code>int</code>, <code>float</code>, <code>complex</code></li>
-          <li><strong>Sequence Types:</strong> <code>list</code>, <code>tuple</code>, <code>range</code></li>
-          <li><strong>Mapping Type:</strong> <code>dict</code></li>
-          <li><strong>Set Types:</strong> <code>set</code>, <code>frozenset</code></li>
-          <li><strong>Boolean Type:</strong> <code>bool</code></li>
-        </ul>
-      
+          </div>
         </section>
 
-        <section class="topic-section" id="Lists">
-          <h1>Lists & Tuples</h1>
-          <div class="chapter-badge">Chapter 3</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Variables" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Sets" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== PYTHON DATA TYPES ===== -->
+        <section id="python-datatypes" class="topic-section">
+          <h1>Python Data Types</h1>
+          <p>In programming, data type is an important concept. Variables can store data of different types, and
+            different types can do different things.</p>
+          <div class="key-points">
+            <ul>
+              <li><strong>Text Type:</strong> <code>str</code></li>
+              <li><strong>Numeric Types:</strong> <code>int</code>, <code>float</code>, <code>complex</code></li>
+              <li><strong>Sequence Types:</strong> <code>list</code>, <code>tuple</code>, <code>range</code></li>
+              <li><strong>Mapping Type:</strong> <code>dict</code></li>
+              <li><strong>Set Types:</strong> <code>set</code>, <code>frozenset</code></li>
+              <li><strong>Boolean Type:</strong> <code>bool</code></li>
+              <li><strong>Binary Types:</strong> <code>bytes</code>, <code>bytearray</code>, <code>memoryview</code>
+              </li>
+              <li><strong>None Type:</strong> <code>NoneType</code></li>
+            </ul>
           </div>
-          
-        <h3>📌 Lists</h3>
-        <p>Lists are used to store multiple items in a single variable. Ordered, Changeable.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">mylist = ["apple", "banana", "cherry"]
-mylist.append("orange")
-print(mylist[1]) # banana</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Data Type Example</div>
+            <pre class="example-code"><code>x = 5
+print(type(x))</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON NUMBERS ===== -->
+        <section id="python-numbers" class="topic-section">
+          <h1>Python Numbers</h1>
+          <p>There are three numeric types in Python: <code>int</code>, <code>float</code>, <code>complex</code>.</p>
+          <div class="key-points">
+            <ul>
+              <li><strong>Int:</strong> Whole number, positive or negative, without decimals, of unlimited length.</li>
+              <li><strong>Float:</strong> Number, positive or negative, containing one or more decimals.</li>
+              <li><strong>Complex:</strong> Written with a "j" as the imaginary part.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Number Example</div>
+            <pre class="example-code"><code>x = 1    # int
+y = 2.8  # float
+z = 1j   # complex</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON CASTING ===== -->
+        <section id="python-casting" class="topic-section">
+          <h1>Python Casting</h1>
+          <p>Casting in python is therefore done using constructor functions:</p>
+          <div class="key-points">
+            <ul>
+              <li><code>int()</code> - constructs an integer number from an integer literal, a float literal (by
+                removing all decimals), or a string literal (providing the string represents a whole number).</li>
+              <li><code>float()</code> - constructs a float number from an integer literal, a float literal or a string
+                literal (providing the string represents a float or an integer).</li>
+              <li><code>str()</code> - constructs a string from a wide variety of data types, including strings, integer
+                literals and float literals.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Casting Example</div>
+            <pre class="example-code"><code>x = int(1)   # x will be 1
+y = int(2.8) # y will be 2
+z = int("3") # z will be 3</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON STRINGS ===== -->
+        <section id="python-strings" class="topic-section">
+          <h1>Python Strings</h1>
+          <p>Strings in python are surrounded by either single quotation marks, or double quotation marks.</p>
+          <div class="key-points">
+            <ul>
+              <li>'hello' is the same as "hello".</li>
+              <li>You can display a string literal with the <code>print()</code> function.</li>
+              <li>Quotes Inside Quotes: You can use quotes inside a string, as long as they don't match the quotes
+                surrounding the string.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> String Example</div>
+            <pre class="example-code"><code>a = "Hello"
+print(a)</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON BOOLEANS ===== -->
+        <section id="python-booleans" class="topic-section">
+          <h1>Python Booleans</h1>
+          <p>Booleans represent one of two values: <code>True</code> or <code>False</code>.</p>
+          <div class="key-points">
+            <ul>
+              <li>In programming you often need to know if an expression is <code>True</code> or <code>False</code>.
+              </li>
+              <li>You can evaluate any expression in Python, and get one of two answers, <code>True</code> or
+                <code>False</code>.
+              </li>
+              <li>When you compare two values, the expression is evaluated and Python returns the Boolean answer.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Boolean Example</div>
+            <pre class="example-code"><code>print(10 > 9)
+print(10 == 9)
+print(10 < 9)</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON OPERATORS ===== -->
+        <section id="python-operators" class="topic-section">
+          <h1>Python Operators</h1>
+          <p>Operators are used to perform operations on variables and values.</p>
+          <div class="key-points">
+            <ul>
+              <li><strong>Arithmetic operators:</strong> Used with numeric values to perform common mathematical
+                operations (+, -, *, /, %, **, //).</li>
+              <li><strong>Assignment operators:</strong> Used to assign values to variables (=, +=, -=, *=, /=, etc.).
+              </li>
+              <li><strong>Comparison operators:</strong> Used to compare two values (==, !=, >, <,>=, <=).< /li>
+              <li><strong>Logical operators:</strong> Used to combine conditional statements (and, or, not).</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Operator Example</div>
+            <pre class="example-code"><code>print(10 + 5)</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON LISTS ===== -->
+        <section id="python-lists" class="topic-section">
+          <h1>Python Lists</h1>
+          <p>Lists are used to store multiple items in a single variable.</p>
+          <div class="key-points">
+            <ul>
+              <li>Lists are created using square brackets: <code>[]</code>.</li>
+              <li>List items are ordered, changeable, and allow duplicate values.</li>
+              <li>List items are indexed, the first item has index <code>[0]</code>.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> List Example</div>
+            <pre class="example-code"><code>thislist = ["apple", "banana", "cherry"]
+print(thislist)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">mylist = ["apple", "banana", "cherry"]
-mylist.append("orange")
-print(mylist[1]) # banana</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+              <textarea class="tryit-editor">thislist = ["apple", "banana", "cherry"]
+print(thislist)</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
-            </div>
-        <h3>📌 Tuples</h3>
-        <p>Ordered, Unchangeable.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">mytuple = ("apple", "banana", "cherry")</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">mytuple = ("apple", "banana", "cherry")</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Sets">
-          <h1>Sets</h1>
-          <div class="chapter-badge">Chapter 4</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Lists" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Dictionaries" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Unordered, Unindexed, No Duplicates.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">myset = {"apple", "banana", "cherry"}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">myset = {"apple", "banana", "cherry"}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
+        </section>
 
-        <section class="topic-section" id="Dictionaries">
-          <h1>Dictionaries</h1>
-          <div class="chapter-badge">Chapter 5</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Sets" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#IfElse" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== PYTHON TUPLES ===== -->
+        <section id="python-tuples" class="topic-section">
+          <h1>Python Tuples</h1>
+          <p>Tuples are used to store multiple items in a single variable.</p>
+          <div class="key-points">
+            <ul>
+              <li>A tuple is a collection which is ordered and <strong>unchangeable</strong>.</li>
+              <li>Tuples are written with round brackets: <code>()</code>.</li>
+              <li>Tuple items are indexed, the first item has index <code>[0]</code>.</li>
+            </ul>
           </div>
-          
-        <h3>📌 Key-Value Pairs</h3>
-        <p>Dictionaries are used to store data values in key:value pairs.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">thisdict = {
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Tuple Example</div>
+            <pre class="example-code"><code>thistuple = ("apple", "banana", "cherry")
+print(thistuple)</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON SETS ===== -->
+        <section id="python-sets" class="topic-section">
+          <h1>Python Sets</h1>
+          <p>Sets are used to store multiple items in a single variable.</p>
+          <div class="key-points">
+            <ul>
+              <li>A set is a collection which is unordered, unchangeable*, and unindexed.</li>
+              <li>Sets are written with curly brackets: <code>{}</code>.</li>
+              <li>Set items are unordered, so you cannot be sure in which order the items will appear.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Set Example</div>
+            <pre class="example-code"><code>thisset = {"apple", "banana", "cherry"}
+print(thisset)</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON DICTIONARIES ===== -->
+        <section id="python-dictionaries" class="topic-section">
+          <h1>Python Dictionaries</h1>
+          <p>Dictionaries are used to store data values in key:value pairs.</p>
+          <div class="key-points">
+            <ul>
+              <li>A dictionary is a collection which is ordered**, changeable and does not allow duplicates.</li>
+              <li>Dictionaries are written with curly brackets, and have keys and values.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Dictionary Example</div>
+            <pre class="example-code"><code>thisdict = {
   "brand": "Ford",
   "model": "Mustang",
   "year": 1964
 }
-print(thisdict["brand"])</code></pre></section>
-
-        <section class="topic-section" id="IfElse">
-          <h1>Conditionals</h1>
-          <div class="chapter-badge">Chapter 6</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Dictionaries" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Loops" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+print(thisdict)</code></pre>
           </div>
-          
-        <p>Python relies on indentation (whitespace) to define scope.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">a = 33
+        </section>
+
+
+        <!-- ===== PYTHON IF...ELSE ===== -->
+        <section id="python-ifelse" class="topic-section">
+          <h1>Python If...Else</h1>
+          <p>Python supports the usual logical conditions from mathematics:</p>
+          <div class="key-points">
+            <ul>
+              <li>Equals: <code>a == b</code></li>
+              <li>Not Equals: <code>a != b</code></li>
+              <li>Less than: <code>a < b</code></li>
+              <li>Less than or equal to: <code>a <= b</code></li>
+              <li>Greater than: <code>a > b</code></li>
+              <li>Greater than or equal to: <code>a >= b</code></li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> If Example</div>
+            <pre class="example-code"><code>a = 33
 b = 200
 if b > a:
-  print("b is greater than a")
-elif a == b:
-  print("a and b are equal")
-else:
-  print("a is greater than b")</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+  print("b is greater than a")</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">a = 33
+              <textarea class="tryit-editor">a = 33
 b = 200
-if b &gt; a:
-  print("b is greater than a")
-elif a == b:
-  print("a and b are equal")
-else:
-  print("a is greater than b")</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+if b > a:
+  print("b is greater than a")</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Loops">
-          <h1>Loops</h1>
-          <div class="chapter-badge">Chapter 7</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#IfElse" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Functions" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <h3>While Loop</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-python">i = 1
+        </section>
+
+        <!-- ===== PYTHON WHILE LOOPS ===== -->
+        <section id="python-whileloops" class="topic-section">
+          <h1>Python While Loops</h1>
+          <p>With the <code>while</code> loop we can execute a set of statements as long as a condition is true.</p>
+          <div class="key-points">
+            <ul>
+              <li>The <code>while</code> loop requires relevant variables to be ready.</li>
+              <li>Remember to increment the iterator, or else the loop will continue forever.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> While Example</div>
+            <pre class="example-code"><code>i = 1
 while i < 6:
   print(i)
   i += 1</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">i = 1
-while i &lt; 6:
-  print(i)
-  i += 1</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-        <h3>For Loop</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-python">fruits = ["apple", "banana", "cherry"]
+          </div>
+        </section>
+
+        <!-- ===== PYTHON FOR LOOPS ===== -->
+        <section id="python-forloops" class="topic-section">
+          <h1>Python For Loops</h1>
+          <p>A <code>for</code> loop is used for iterating over a sequence (that is either a list, a tuple, a
+            dictionary, a set, or a string).</p>
+          <div class="key-points">
+            <ul>
+              <li>This is less like the <code>for</code> keyword in other programming languages, and works more like an
+                iterator method as found in other object-orientated programming languages.</li>
+              <li>Items in a sequence are processed one by one.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> For Example</div>
+            <pre class="example-code"><code>fruits = ["apple", "banana", "cherry"]
 for x in fruits:
   print(x)</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">fruits = ["apple", "banana", "cherry"]
-for x in fruits:
-  print(x)</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-        <div class="mermaid">graph TD
-          Start --> Check{Item in List?}
-          Check -- Yes --> Execute_Block
-          Execute_Block --> Check
-          Check -- No --> End
-        
+          </div>
         </section>
 
-        <section class="topic-section" id="Functions">
-          <h1>Functions</h1>
-          <div class="chapter-badge">Chapter 8</div>
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Loops" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Modules" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== PYTHON FUNCTIONS ===== -->
+        <section id="python-functions" class="topic-section">
+          <h1>Python Functions</h1>
+          <p>A function is a block of code which only runs when it is called.</p>
+          <div class="key-points">
+            <ul>
+              <li>You can pass data, known as parameters, into a function.</li>
+              <li>A function can return data as a result.</li>
+              <li>In Python, a function is defined using the <code>def</code> keyword.</li>
+            </ul>
           </div>
-          
-        <p>A function is a block of code which only runs when it is called.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">def my_function(fname):
-  print(fname + " Refsnes")
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Function Example</div>
+            <pre class="example-code"><code>def my_function():
+  print("Hello from a function")
 
-my_function("Emil")</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+my_function()</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">def my_function(fname):
-  print(fname + " Refsnes")
+              <textarea class="tryit-editor">def my_function():
+  print("Hello from a function")
 
-my_function("Emil")</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+my_function()</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
-            </div>
-        <h3>Return Values</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-python">def my_function(x):
-  return 5 * x</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">def my_function(x):
-  return 5 * x</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Modules">
-          <h1>Modules & PIP</h1>
-          <div class="chapter-badge">Chapter 9</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Functions" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Dates" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <h3>📌 Modules</h3>
-        <p>Consider a module to be the same as a code library.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">import platform
+        </section>
+
+        <!-- ===== PYTHON LAMBDA ===== -->
+        <section id="python-lambda" class="topic-section">
+          <h1>Python Lambda</h1>
+          <p>A lambda function is a small anonymous function.</p>
+          <div class="key-points">
+            <ul>
+              <li>A lambda function can take any number of arguments, but can only have one expression.</li>
+              <li>Syntax: <code>lambda arguments : expression</code></li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Lambda Example</div>
+            <pre class="example-code"><code>x = lambda a : a + 10
+print(x(5))</code></pre>
+          </div>
+        </section>
+
+
+        <!-- ===== PYTHON MODULES ===== -->
+        <section id="python-modules" class="topic-section">
+          <h1>Python Modules</h1>
+          <p>Consider a module to be the same as a code library. A file containing a set of functions you want to
+            include in your application.</p>
+          <div class="key-points">
+            <ul>
+              <li>To create a module just save the code you want in a file with the file extension <code>.py</code>.
+              </li>
+              <li>Now we can use the module we just created, by using the <code>import</code> statement.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Module Example</div>
+            <pre class="example-code"><code>import platform
 x = platform.system()
 print(x)</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">import platform
-x = platform.system()
-print(x)</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-        <h3>📌 PIP</h3>
-        <p>PIP is a package manager for Python modules.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-bash">pip install camelcase</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">pip install camelcase</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Dates">
-          <h1>Dates & Math</h1>
-          <div class="chapter-badge">Chapter 10</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Modules" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Classes" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <div class="example-box"><pre class="example-code"><code class="language-python">import datetime
+        </section>
+
+        <!-- ===== PYTHON PIP ===== -->
+        <section id="python-pip" class="topic-section">
+          <h1>Python PIP</h1>
+          <p>PIP is a package manager for Python packages, or modules if you like.</p>
+          <div class="key-points">
+            <ul>
+              <li>A package contains all the files you need for a module.</li>
+              <li>Modules are Python code libraries you can include in your project.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-terminal"></i> PIP Example</div>
+            <pre
+              class="example-code"><code>C:\Users\Your Name\AppData\Local\Programs\Python\Python36-32\Scripts>pip --version</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON DATES ===== -->
+        <section id="python-dates" class="topic-section">
+          <h1>Python Dates</h1>
+          <p>A date in Python is not a data type of its own, but we can import a module named <code>datetime</code> to
+            work with dates as date objects.</p>
+          <div class="key-points">
+            <ul>
+              <li>The <code>datetime</code> module has many methods to return information about the date object.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Date Example</div>
+            <pre class="example-code"><code>import datetime
 x = datetime.datetime.now()
 print(x)</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON MATH ===== -->
+        <section id="python-math" class="topic-section">
+          <h1>Python Math</h1>
+          <p>Python has a set of built-in math functions, including an extensive math module, that allows you to perform
+            mathematical tasks on numbers.</p>
+          <div class="key-points">
+            <ul>
+              <li>Built-in Math Functions: <code>min()</code> and <code>max()</code>, <code>abs()</code>,
+                <code>pow()</code>.
+              </li>
+              <li>The <code>math</code> module has a set of methods and constants.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Math Example</div>
+            <pre class="example-code"><code>x = min(5, 10, 25)
+y = max(5, 10, 25)
+print(x)
+print(y)</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON REGEX ===== -->
+        <section id="python-regex" class="topic-section">
+          <h1>Python RegEx</h1>
+          <p>A RegEx, or Regular Expression, is a sequence of characters that forms a search pattern.</p>
+          <div class="key-points">
+            <ul>
+              <li>RegEx can be used to check if a string contains the specified search pattern.</li>
+              <li>Python has a built-in package called <code>re</code>, which can be used to work with Regular
+                Expressions.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> RegEx Example</div>
+            <pre class="example-code"><code>import re
+txt = "The rain in Spain"
+x = re.search("^The.*Spain$", txt)</code></pre>
+          </div>
+        </section>
+
+
+        <!-- ===== PYTHON ARRAYS ===== -->
+        <section id="python-arrays" class="topic-section">
+          <h1>Python Arrays</h1>
+          <p>Python does not have built-in support for Arrays, but Python Lists can be used instead.</p>
+          <div class="key-points">
+            <ul>
+              <li>Arrays are used to store multiple values in one single variable.</li>
+              <li>To work with arrays in Python you will have to import a library, like the NumPy library.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Array Example</div>
+            <pre class="example-code"><code>cars = ["Ford", "Volvo", "BMW"]
+print(cars[0])</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON CLASSES ===== -->
+        <section id="python-classes" class="topic-section">
+          <h1>Python Classes and Objects</h1>
+          <p>Python is an object oriented programming language.</p>
+          <div class="key-points">
+            <ul>
+              <li>Almost everything in Python is an object, with its properties and methods.</li>
+              <li>A Class is like an object constructor, or a "blueprint" for creating objects.</li>
+              <li>The <code>__init__()</code> function is always executed when the class is being initiated.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Class Example</div>
+            <pre class="example-code"><code>class MyClass:
+  x = 5
+
+p1 = MyClass()
+print(p1.x)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">import datetime
-x = datetime.datetime.now()
-print(x)</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-        <div class="example-box"><pre class="example-code"><code class="language-python">min(5, 10, 25)
-max(5, 10, 25)
-abs(-7.25)
-pow(4, 3)</code></pre></section>
+              <textarea class="tryit-editor">class MyClass:
+  x = 5
 
-        <section class="topic-section" id="Classes">
-          <h1>Classes & OOP</h1>
-          <div class="chapter-badge">Chapter 11</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Dates" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Files" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+p1 = MyClass()
+print(p1.x)</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
           </div>
-          
-        <h3>📌 Classes/Objects</h3>
-        <p>Python is an object oriented programming language.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
+        </section>
 
-p1 = Person("John", 36)
-print(p1.name)</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-
-p1 = Person("John", 36)
-print(p1.name)</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Files">
-          <h1>File Handling</h1>
-          <div class="chapter-badge">Chapter 12</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Classes" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#TryExcept" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== PYTHON INHERITANCE ===== -->
+        <section id="python-inheritance" class="topic-section">
+          <h1>Python Inheritance</h1>
+          <p>Inheritance allows us to define a class that inherits all the methods and properties from another class.
+          </p>
+          <div class="key-points">
+            <ul>
+              <li><strong>Parent class:</strong> The class being inherited from, also called base class.</li>
+              <li><strong>Child class:</strong> The class that inherits from another class, also called derived class.
+              </li>
+            </ul>
           </div>
-          
-        <p>The key function for working with files in Python is the <code>open()</code> function.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">f = open("demofile.txt", "r")
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Inheritance Example</div>
+            <pre class="example-code"><code>class Person:
+  def __init__(self, fname, lname):
+    self.firstname = fname
+    self.lastname = lname
+
+class Student(Person):
+  pass</code></pre>
+          </div>
+        </section>
+
+
+        <!-- ===== PYTHON FILE HANDLING ===== -->
+        <section id="python-filehandling" class="topic-section">
+          <h1>Python File Handling</h1>
+          <p>File handling is an important part of any web application.</p>
+          <div class="key-points">
+            <ul>
+              <li>The key function for working with files in Python is the <code>open()</code> function.</li>
+              <li>The <code>open()</code> function takes two parameters; <strong>filename</strong>, and
+                <strong>mode</strong>.
+              </li>
+              <li>Modes: "r" (Read), "a" (Append), "w" (Write), "x" (Create).</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-file-code"></i> File Example</div>
+            <pre class="example-code"><code>f = open("demofile.txt", "r")
 print(f.read())</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">f = open("demofile.txt", "r")
-print(f.read())</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="TryExcept">
-          <h1>Exception Handling</h1>
-          <div class="chapter-badge">Chapter 13</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Files" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>When an error occurs, or exception as we call it, Python will normally stop and generate an error message.
-        </p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">try:
+        </section>
+
+        <!-- ===== PYTHON EXCEPTIONS ===== -->
+        <section id="python-exceptions" class="topic-section">
+          <h1>Python Try...Except</h1>
+          <p>When an error occurs, or exception as we call it, Python will normally stop and generate an error message.
+          </p>
+          <div class="key-points">
+            <ul>
+              <li>The <code>try</code> block lets you test a block of code for errors.</li>
+              <li>The <code>except</code> block lets you handle the error.</li>
+              <li>The <code>else</code> block lets you execute code when there is no error.</li>
+              <li>The <code>finally</code> block lets you execute code, regardless of the result of the try- and except
+                blocks.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Exception Example</div>
+            <pre class="example-code"><code>try:
   print(x)
 except:
-  print("An exception occurred")</code></pre></section>
-
-        <section class="topic-section" id="Projects">
-          <h1>🚀 Real World Projects</h1>
-          <div class="chapter-badge">Chapter 14</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#TryExcept" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+  print("An exception occurred")</code></pre>
           </div>
-          
-        <h3>🟢 Beginner Level: Unit Converter</h3>
-        <p><strong>Goal:</strong> CLI tool to convert KM to Miles.</p>
-        <p><strong>Key Skills:</strong> Input, Math, Functions</p>
-        <h3>🟡 Intermediate Level: Quiz Master</h3>
-        <p><strong>Goal:</strong> Multiple choice game with scoring system.</p>
-        <p><strong>Key Skills:</strong> Lists of Dicts, Loops, Conditionals</p>
-        <h3>🔴 Advanced Level: Web Scraper</h3>
-        <p><strong>Goal:</strong> Extract headlines from a news site and save to CSV.</p>
-        <p><strong>Key Skills:</strong> BeautifulSoup, File I/O, Requests</p>
-      </section>
-
-        <section class="topic-section" id="MiniTask">
-          <h1>🎯 Python Mini Task</h1>
-          <div class="chapter-badge">Chapter 15</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p><strong>Goal:</strong> Temperature Converter.</p>
-        <h4>📋 Requirements:</h4>
-        <ol>
-          <li> Create a variable <code>celsius</code> = 25.</li>
-          <li> Convert it to Fahrenheit using formula: <code>(celsius * 9/5) + 32</code>.</li>
-          <li> Print the result: "25 degrees Celsius is XX degrees Fahrenheit".</li>
-        </ol>
-        <p><strong>Go for the heat!</strong> 🔥</p>
-      </div>
-    </div>
-
-
-    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
-      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
-      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Python module.</p>
-      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
-        onclick="location.href='../index1.html'">Return to Dashboard</button>
-    
         </section>
 
-      </div>
+        <!-- ===== PYTHON USER INPUT ===== -->
+        <section id="python-user-input" class="topic-section">
+          <h1>Python User Input</h1>
+          <p>Python allows for user input. That means we are able to ask the user for input.</p>
+          <div class="key-points">
+            <ul>
+              <li>Python 3.6 uses the <code>input()</code> method.</li>
+              <li>Python 2.7 uses the <code>raw_input()</code> method.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-keyboard"></i> Input Example</div>
+            <pre class="example-code"><code>username = input("Enter username:")
+print("Username is: " + username)</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON STRING FORMATTING ===== -->
+        <section id="python-string-formatting" class="topic-section">
+          <h1>Python String Formatting</h1>
+          <p>To make sure a string will display as expected, we can format the result with the <code>format()</code>
+            method or using f-strings.</p>
+          <div class="key-points">
+            <ul>
+              <li>F-strings (Python 3.6+): <code>f"Hello {name}"</code></li>
+              <li>The <code>format()</code> method allows you to format selected parts of a string.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Formatting Example</div>
+            <pre class="example-code"><code>price = 49
+txt = f"The price is {price} dollars"
+print(txt)</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON PROJECTS ===== -->
+        <section id="python-projects" class="topic-section">
+          <h1>🚀 Python Real World Projects</h1>
+          <p>Apply your skills with these project ideas.</p>
+          <div class="key-points">
+            <ul>
+              <li><strong>Beginner:</strong> Unit Converter (KM to Miles).</li>
+              <li><strong>Intermediate:</strong> Quiz Master (Multiple choice game).</li>
+              <li><strong>Advanced:</strong> Web Scraper (Extract headlines from news sites).</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON MINI TASK ===== -->
+        <section id="python-minitask" class="topic-section">
+          <h1>🎯 Python Mini Task</h1>
+          <p><strong>Goal:</strong> Temperature Converter.</p>
+          <div class="key-points">
+            <ol>
+              <li>Create a variable <code>celsius</code> = 25.</li>
+              <li>Convert it to Fahrenheit using formula: <code>(celsius * 9/5) + 32</code>.</li>
+              <li>Print the result: "25 degrees Celsius is XX degrees Fahrenheit".</li>
+            </ol>
+          </div>
+        </section>
+        <!-- ===== PYTHON JSON ===== -->
+        <section id="python-json" class="topic-section">
+          <h1>Python JSON</h1>
+          <p>JSON is a syntax for storing and exchanging data. JSON is text, written with JavaScript object notation.
+          </p>
+          <div class="key-points">
+            <ul>
+              <li>Python has a built-in package called <code>json</code>, which can be used to work with JSON data.</li>
+              <li><code>json.loads()</code>: Parse JSON (convert from JSON to Python).</li>
+              <li><code>json.dumps()</code>: Convert from Python to JSON.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> JSON Example</div>
+            <pre class="example-code"><code>import json
+# some JSON:
+x = '{ "name":"John", "age":30, "city":"New York"}'
+# parse x:
+y = json.loads(x)
+print(y["age"])</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON ITERATORS ===== -->
+        <section id="python-iterators" class="topic-section">
+          <h1>Python Iterators</h1>
+          <p>An iterator is an object that contains a countable number of values.</p>
+          <div class="key-points">
+            <ul>
+              <li>An iterator is an object that can be iterated upon, meaning that you can traverse through all the
+                values.</li>
+              <li>Technically, in Python, an iterator is an object which implements the iterator protocol, which consist
+                of the methods <code>__iter__()</code> and <code>__next__()</code>.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Iterator Example</div>
+            <pre class="example-code"><code>mytuple = ("apple", "banana", "cherry")
+myit = iter(mytuple)
+print(next(myit))
+print(next(myit))</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON POLYMORPHISM ===== -->
+        <section id="python-polymorphism" class="topic-section">
+          <h1>Python Polymorphism</h1>
+          <p>The word "polymorphism" means "many forms", and in programming it refers to methods/functions/operators
+            with the same name that can be executed on many objects or types.</p>
+          <div class="key-points">
+            <ul>
+              <li>Function Polymorphism: An example is the <code>len()</code> function, which can be used on different
+                objects.</li>
+              <li>Class Polymorphism: Classes can have methods with the same name.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Polymorphism Example</div>
+            <pre class="example-code"><code>class Car:
+  def move(self):
+    print("Drive!")
+
+class Boat:
+  def move(self):
+    print("Sail!")
+
+car1 = Car()
+boat1 = Boat()
+for x in (car1, boat1):
+  x.move()</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON SCOPE ===== -->
+        <section id="python-scope" class="topic-section">
+          <h1>Python Scope</h1>
+          <p>A variable is only available from inside the region it is created. This is called scope.</p>
+          <div class="key-points">
+            <ul>
+              <li><strong>Local Scope:</strong> A variable created inside a function belongs to the local scope of that
+                function.</li>
+              <li><strong>Global Scope:</strong> A variable created in the main body of the Python code is a global
+                variable and belongs to the global scope.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Scope Example</div>
+            <pre class="example-code"><code>def myfunc():
+  x = 300 # Local scope
+  print(x)
+
+myfunc()</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON FILE READ ===== -->
+        <section id="python-fileread" class="topic-section">
+          <h1>Python Read Files</h1>
+          <p>To open a file for reading it is enough to specify the name of the file.</p>
+          <div class="key-points">
+            <ul>
+              <li>By default the <code>open()</code> function returns a file object.</li>
+              <li>Use the <code>read()</code> method to read the content of the file.</li>
+              <li>Use <code>readline()</code> to read one line of the file.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-file-alt"></i> Read Example</div>
+            <pre class="example-code"><code>f = open("demofile.txt", "r")
+print(f.read())</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON FILE WRITE ===== -->
+        <section id="python-filewrite" class="topic-section">
+          <h1>Python Write/Create Files</h1>
+          <p>To write to an existing file, you must add a parameter to the <code>open()</code> function.</p>
+          <div class="key-points">
+            <ul>
+              <li><code>"a"</code> - Append - will append to the end of the file.</li>
+              <li><code>"w"</code> - Write - will overwrite any existing content.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-pen"></i> Write Example</div>
+            <pre class="example-code"><code>f = open("demofile2.txt", "a")
+f.write("Now the file has more content!")
+f.close()</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON FILE DELETE ===== -->
+        <section id="python-filedelete" class="topic-section">
+          <h1>Python Delete Files</h1>
+          <p>To delete a file, you must import the OS module, and run its <code>os.remove()</code> function.</p>
+          <div class="key-points">
+            <ul>
+              <li>To delete an entire folder, use the <code>os.rmdir()</code> method.</li>
+              <li>It is a good practice to check if the file exists before you try to delete it.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-trash"></i> Delete Example</div>
+            <pre class="example-code"><code>import os
+if os.path.exists("demofile.txt"):
+  os.remove("demofile.txt")
+else:
+  print("The file does not exist")</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== PYTHON QUIZ, EXERCISES, SUMMARY ===== -->
+        <section id="python-quiz" class="topic-section">
+          <h1>Python Quiz</h1>
+          <p>Test your Python skills with our Quiz!</p>
+          <button class="btn-control" onclick="alert('Quiz system coming soon!')">Start Python Quiz</button>
+        </section>
+
+        <section id="python-exercises" class="topic-section">
+          <h1>Python Exercises</h1>
+          <p>We have gathered a variety of Python exercises (with answers) for each Python Chapter.</p>
+          <button class="btn-control" onclick="alert('Exercises system coming soon!')">View Exercises</button>
+        </section>
+
+        <section id="python-summary" class="topic-section">
+          <h1>Python Summary</h1>
+          <p>In this tutorial you have learned a lot about Python.</p>
+          <div class="key-points">
+            <ul>
+              <li>Basic Syntax & Variables</li>
+              <li>Looping & Conditionals</li>
+              <li>Functions & OOP</li>
+              <li>File Handling & RegEx</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+          <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+          <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Python module.</p>
+          <button class="btn-control"
+            style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+            onclick="location.href='../index1.html'">Return to Dashboard</button>
+        </div>
+
+      </div> <!-- end course-content-area -->
+
     </main>
-  </div>
+  </div> <!-- end course-layout -->
+
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
@@ -643,18 +1142,18 @@ except:
 
 
     // Try It Editor functions (applied globally to all courses)
-    window.openTryIt = function(btn) {
+    window.openTryIt = function (btn) {
       const panel = btn.nextElementSibling;
       panel.classList.add('open');
       btn.style.display = 'none';
       runTryIt(panel.querySelector('.tryit-run'));
     };
-    window.closeTryIt = function(btn) {
+    window.closeTryIt = function (btn) {
       const panel = btn.closest('.tryit-panel');
       panel.classList.remove('open');
       panel.previousElementSibling.style.display = 'inline-flex';
     };
-    window.runTryIt = function(btn) {
+    window.runTryIt = function (btn) {
       const panel = btn.closest('.tryit-panel');
       const code = panel.querySelector('.tryit-editor').value;
       const iframe = panel.querySelector('iframe');
@@ -670,15 +1169,15 @@ except:
     // Theme logic
     const toggleBtn = document.getElementById('theme-toggle');
     const updateThemeIcon = (isDark) => {
-      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+      if (toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
     };
-    
+
     // Check saved theme
     let currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
     window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
 
-    if(toggleBtn) {
+    if (toggleBtn) {
       toggleBtn.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme');
         let newTheme = theme === 'dark' ? 'light' : 'dark';
