@@ -169,7 +169,8 @@
             "Orders"). Tables contain records (rows) with data.</p>
           <div class="note-box">
             <p><strong>Note:</strong> SQL keywords are NOT case sensitive. <code>SELECT</code> is the same as
-              <code>select</code>.</p>
+              <code>select</code>.
+            </p>
           </div>
           <div class="example-box">
             <div class="example-header"><i class="fas fa-code"></i> Syntax Example</div>
@@ -283,31 +284,160 @@ WHERE CustomerID = 1;</code></pre>
           </div>
         </section>
 
-        <!-- ===== SQL DELETE ===== -->
-        <section id="sql-delete" class="topic-section">
-          <h1>SQL DELETE Statement</h1>
-          <p>The <code>DELETE</code> statement is used to delete existing records in a table.</p>
+        <!-- ===== SQL NULL VALUES ===== -->
+        <section id="sql-null" class="topic-section">
+          <h1>SQL NULL Values</h1>
+          <p>A field with a NULL value is a field with no value.</p>
+          <p>If a field in a table is optional, it is possible to insert a new record or update a record without adding
+            a value to this field. Then, the field will be saved with a NULL value.</p>
+          <div class="note-box">
+            <p><strong>Note:</strong> A NULL value is different from a zero value or a field that contains spaces. A
+              field with a NULL value is one that has been left blank during record creation!</p>
+          </div>
           <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> DELETE Example</div>
-            <pre class="example-code"><code>DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';</code></pre>
+            <div class="example-header"><i class="fas fa-code"></i> IS NULL Example</div>
+            <pre class="example-code"><code>SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address IS NULL;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> IS NOT NULL Example</div>
+            <pre class="example-code"><code>SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address IS NOT NULL;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
           </div>
         </section>
 
-        <!-- ===== SQL AGGREGATES ===== -->
+        <!-- ===== SQL MIN AND MAX ===== -->
         <section id="sql-min-max" class="topic-section">
           <h1>SQL MIN() and MAX() Functions</h1>
           <p>The <code>MIN()</code> function returns the smallest value of the selected column.</p>
           <p>The <code>MAX()</code> function returns the largest value of the selected column.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> MIN Example</div>
+            <pre class="example-code"><code>SELECT MIN(Price) AS SmallestPrice
+FROM Products;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> MAX Example</div>
+            <pre class="example-code"><code>SELECT MAX(Price) AS LargestPrice
+FROM Products;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
         </section>
 
+        <!-- ===== SQL COUNT, AVG, SUM ===== -->
         <section id="sql-count-avg-sum" class="topic-section">
           <h1>SQL COUNT(), AVG() and SUM()</h1>
           <p>The <code>COUNT()</code> function returns the number of rows that matches a specified criterion.</p>
           <p>The <code>AVG()</code> function returns the average value of a numeric column.</p>
           <p>The <code>SUM()</code> function returns the total sum of a numeric column.</p>
           <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Aggregate Example</div>
-            <pre class="example-code"><code>SELECT SUM(Quantity) FROM OrderDetails;</code></pre>
+            <div class="example-header"><i class="fas fa-code"></i> Aggregate Examples</div>
+            <pre class="example-code"><code>SELECT COUNT(ProductID) FROM Products;
+SELECT AVG(Price) FROM Products;
+SELECT SUM(Quantity) FROM OrderDetails;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+        </section>
+
+        <!-- ===== SQL LIKE ===== -->
+        <section id="sql-like" class="topic-section">
+          <h1>SQL LIKE Operator</h1>
+          <p>The <code>LIKE</code> operator is used in a <code>WHERE</code> clause to search for a specified pattern in
+            a column.</p>
+          <p>There are two wildcards often used in conjunction with the <code>LIKE</code> operator:</p>
+          <ul>
+            <li>The percent sign (%) represents zero, one, or multiple characters</li>
+            <li>The underscore sign (_) represents one, single, character</li>
+          </ul>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> LIKE Examples</div>
+            <pre class="example-code"><code>SELECT * FROM Customers WHERE CustomerName LIKE 'a%'; -- Starts with "a"
+SELECT * FROM Customers WHERE CustomerName LIKE '%a'; -- Ends with "a"
+SELECT * FROM Customers WHERE CustomerName LIKE '%or%'; -- "or" in any position</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+        </section>
+
+        <!-- ===== SQL WILDCARDS ===== -->
+        <section id="sql-wildcards" class="topic-section">
+          <h1>SQL Wildcards</h1>
+          <p>Wildcard characters are used to substitute one or more characters in a string.</p>
+          <table class="w3-table-all">
+            <tr>
+              <th>Wildcard</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>%</td>
+              <td>Represents zero or more characters</td>
+            </tr>
+            <tr>
+              <td>_</td>
+              <td>Represents a single character</td>
+            </tr>
+            <tr>
+              <td>[]</td>
+              <td>Represents any single character within the brackets</td>
+            </tr>
+            <tr>
+              <td>^</td>
+              <td>Represents any character not in the brackets</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>Represents a range of characters</td>
+            </tr>
+          </table>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Wildcard Example</div>
+            <pre class="example-code"><code>SELECT * FROM Customers
+WHERE City LIKE '[bsp]%'; -- Starts with "b", "s", or "p"</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== SQL IN ===== -->
+        <section id="sql-in" class="topic-section">
+          <h1>SQL IN Operator</h1>
+          <p>The <code>IN</code> operator allows you to specify multiple values in a <code>WHERE</code> clause.</p>
+          <p>The <code>IN</code> operator is a shorthand for multiple <code>OR</code> conditions.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> IN Example</div>
+            <pre class="example-code"><code>SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+        </section>
+
+        <!-- ===== SQL BETWEEN ===== -->
+        <section id="sql-between" class="topic-section">
+          <h1>SQL BETWEEN Operator</h1>
+          <p>The <code>BETWEEN</code> operator selects values within a given range. The values can be numbers, text, or
+            dates.</p>
+          <p>The <code>BETWEEN</code> operator is inclusive: begin and end values are included. </p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> BETWEEN Example</div>
+            <pre class="example-code"><code>SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+        </section>
+
+        <!-- ===== SQL ALIASES ===== -->
+        <section id="sql-aliases" class="topic-section">
+          <h1>SQL Aliases</h1>
+          <p>SQL aliases are used to give a table, or a column in a table, a temporary name.</p>
+          <p>Aliases are often used to make column names more readable. An alias only exists for the duration of that
+            query.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Alias Example</div>
+            <pre class="example-code"><code>SELECT CustomerID AS ID, CustomerName AS Customer
+FROM Customers;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
           </div>
         </section>
 
@@ -316,31 +446,259 @@ WHERE CustomerID = 1;</code></pre>
           <h1>SQL Joins</h1>
           <p>A <code>JOIN</code> clause is used to combine rows from two or more tables, based on a related column
             between them.</p>
-          <div class="key-points">
-            <ul>
-              <li><strong>INNER JOIN:</strong> Returns records that have matching values in both tables.</li>
-              <li><strong>LEFT JOIN:</strong> Returns all records from the left table, and the matched records from the
-                right table.</li>
-              <li><strong>RIGHT JOIN:</strong> Returns all records from the right table, and the matched records from
-                the left table.</li>
-              <li><strong>CROSS JOIN:</strong> Returns all records from both tables.</li>
-            </ul>
+          <p>Here are the different types of the Joins in SQL:</p>
+          <ul>
+            <li><strong>(INNER) JOIN:</strong> Returns records that have matching values in both tables</li>
+            <li><strong>LEFT (OUTER) JOIN:</strong> Returns all records from the left table, and the matched records
+              from the right table</li>
+            <li><strong>RIGHT (OUTER) JOIN:</strong> Returns all records from the right table, and the matched records
+              from the left table</li>
+            <li><strong>FULL (OUTER) JOIN:</strong> Returns all records when there is a match in either left or right
+              table</li>
+          </ul>
+        </section>
+
+        <!-- ===== SQL INNER JOIN ===== -->
+        <section id="sql-inner-join" class="topic-section">
+          <h1>SQL INNER JOIN Keyword</h1>
+          <p>The <code>INNER JOIN</code> keyword selects records that have matching values in both tables.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> INNER JOIN Example</div>
+            <pre class="example-code"><code>SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
           </div>
         </section>
 
+        <!-- ===== SQL LEFT JOIN ===== -->
+        <section id="sql-left-join" class="topic-section">
+          <h1>SQL LEFT JOIN Keyword</h1>
+          <p>The <code>LEFT JOIN</code> keyword returns all records from the left table (table1), and the matching
+            records from the right table (table2). The result is 0 records from the right side, if there is no match.
+          </p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> LEFT JOIN Example</div>
+            <pre class="example-code"><code>SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+ORDER BY Customers.CustomerName;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+        </section>
+
+        <!-- ===== SQL RIGHT JOIN ===== -->
+        <section id="sql-right-join" class="topic-section">
+          <h1>SQL RIGHT JOIN Keyword</h1>
+          <p>The <code>RIGHT JOIN</code> keyword returns all records from the right table (table2), and the matching
+            records from the left table (table1). The result is 0 records from the left side, if there is no match.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> RIGHT JOIN Example</div>
+            <pre class="example-code"><code>SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+FROM Orders
+RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+ORDER BY Orders.OrderID;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+        </section>
+
+        <!-- ===== SQL UNION ===== -->
+        <section id="sql-union" class="topic-section">
+          <h1>SQL UNION Operator</h1>
+          <p>The <code>UNION</code> operator is used to combine the result-set of two or more <code>SELECT</code>
+            statements.</p>
+          <ul>
+            <li>Every <code>SELECT</code> statement within <code>UNION</code> must have the same number of columns</li>
+            <li>The columns must also have similar data types</li>
+            <li>The columns in every <code>SELECT</code> statement must also be in the same order</li>
+          </ul>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> UNION Example</div>
+            <pre class="example-code"><code>SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers
+ORDER BY City;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+        </section>
+
+        <!-- ===== SQL GROUP BY ===== -->
+        <section id="sql-groupby" class="topic-section">
+          <h1>SQL GROUP BY Statement</h1>
+          <p>The <code>GROUP BY</code> statement groups rows that have the same values into summary rows, like "find the
+            number of customers in each country".</p>
+          <p>The <code>GROUP BY</code> statement is often used with aggregate functions (<code>COUNT()</code>,
+            <code>MAX()</code>, <code>MIN()</code>, <code>SUM()</code>, <code>AVG()</code>) to group the result-set by
+            one or more columns.
+          </p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> GROUP BY Example</div>
+            <pre class="example-code"><code>SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+ORDER BY COUNT(CustomerID) DESC;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+        </section>
+
+        <!-- ===== SQL HAVING ===== -->
+        <section id="sql-having" class="topic-section">
+          <h1>SQL HAVING Clause</h1>
+          <p>The <code>HAVING</code> clause was added to SQL because the <code>WHERE</code> keyword cannot be used with
+            aggregate functions.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> HAVING Example</div>
+            <pre class="example-code"><code>SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+        </section>
+
+        <!-- ===== SQL CREATE DB ===== -->
+        <section id="sql-createdb" class="topic-section">
+          <h1>SQL CREATE DATABASE Statement</h1>
+          <p>The <code>CREATE DATABASE</code> statement is used to create a new SQL database.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> CREATE DATABASE Example</div>
+            <pre class="example-code"><code>CREATE DATABASE myTestDB;</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== SQL CREATE TABLE ===== -->
         <section id="sql-createtable" class="topic-section">
-          <h1>SQL CREATE TABLE</h1>
+          <h1>SQL CREATE TABLE Statement</h1>
           <p>The <code>CREATE TABLE</code> statement is used to create a new table in a database.</p>
           <div class="example-box">
             <div class="example-header"><i class="fas fa-code"></i> CREATE TABLE Example</div>
             <pre class="example-code"><code>CREATE TABLE Persons (
     PersonID int,
     LastName varchar(255),
-    FirstNames varchar(255),
+    FirstName varchar(255),
     Address varchar(255),
     City varchar(255)
 );</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
           </div>
+        </section>
+
+        <!-- ===== SQL CONSTRAINTS ===== -->
+        <section id="sql-constraints" class="topic-section">
+          <h1>SQL Constraints</h1>
+          <p>SQL constraints are used to specify rules for the data in a table.</p>
+          <ul>
+            <li><strong>NOT NULL:</strong> Ensures that a column cannot have a NULL value</li>
+            <li><strong>UNIQUE:</strong> Ensures that all values in a column are different</li>
+            <li><strong>PRIMARY KEY:</strong> A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a
+              table</li>
+            <li><strong>FOREIGN KEY:</strong> Uniquely identifies a row/record in another table</li>
+            <li><strong>CHECK:</strong> Ensures that all values in a column satisfies a specific condition</li>
+            <li><strong>DEFAULT:</strong> Sets a default value for a column when no value is specified</li>
+          </ul>
+        </section>
+
+        <!-- ===== SQL PRIMARY KEY ===== -->
+        <section id="sql-primarykey" class="topic-section">
+          <h1>SQL PRIMARY KEY Constraint</h1>
+          <p>The <code>PRIMARY KEY</code> constraint uniquely identifies each record in a table.</p>
+          <p>Primary keys must contain UNIQUE values, and cannot contain NULL values.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> PRIMARY KEY Example</div>
+            <pre class="example-code"><code>CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (ID)
+);</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== SQL FOREIGN KEY ===== -->
+        <section id="sql-foreignkey" class="topic-section">
+          <h1>SQL FOREIGN KEY Constraint</h1>
+          <p>A <code>FOREIGN KEY</code> is a key used to link two tables together.</p>
+          <p>A <code>FOREIGN KEY</code> is a field (or collection of fields) in one table, that refers to the
+            <code>PRIMARY KEY</code> in another table.
+          </p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> FOREIGN KEY Example</div>
+            <pre class="example-code"><code>CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== SQL ALTER TABLE ===== -->
+        <section id="sql-alter" class="topic-section">
+          <h1>SQL ALTER TABLE Statement</h1>
+          <p>The <code>ALTER TABLE</code> statement is used to add, delete, or modify columns in an existing table.</p>
+          <p>It is also used to add and drop various constraints on an existing table.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> ALTER TABLE Example</div>
+            <pre class="example-code"><code>ALTER TABLE Customers
+ADD Email varchar(255);</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== SQL AUTO INCREMENT ===== -->
+        <section id="sql-autoincrement" class="topic-section">
+          <h1>SQL AUTO INCREMENT Field</h1>
+          <p>Auto-increment allows a unique number to be generated automatically when a new record is inserted into a
+            table.</p>
+          <p>Often this is the primary key field that we would like to be created automatically every time a new record
+            is inserted.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> AUTO INCREMENT (MySQL)</div>
+            <pre class="example-code"><code>CREATE TABLE Persons (
+    PersonID int NOT NULL AUTO_INCREMENT,
+    LastName varchar(255) NOT NULL,
+    PRIMARY KEY (PersonID)
+);</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== SQL VIEWS ===== -->
+        <section id="sql-views" class="topic-section">
+          <h1>SQL CREATE VIEW Statement</h1>
+          <p>In SQL, a view is a virtual table based on the result-set of an SQL statement.</p>
+          <p>A view contains rows and columns, just like a real table. The fields in a view are fields from one or more
+            real tables in the database.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> CREATE VIEW Example</div>
+            <pre class="example-code"><code>CREATE VIEW [Brazil Customers] AS
+SELECT CustomerName, ContactName
+FROM Customers
+WHERE Country = 'Brazil';</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== SQL INJECTION ===== -->
+        <section id="sql-injection" class="topic-section">
+          <h1>SQL Injection</h1>
+          <p>SQL injection is a code injection technique, used to attack data-driven applications, in which malicious
+            SQL statements are inserted into an entry field for execution.</p>
+          <div class="warning-box">
+            <p><strong>Warning:</strong> Always protect your application from SQL injection by using prepared statements
+              or parameterized queries!</p>
+          </div>
+        </section>
+
+        <!-- ===== SQL DATA TYPES ===== -->
+        <section id="sql-datatypes" class="topic-section">
+          <h1>SQL Data Types</h1>
+          <p>Each column in a database table is required to have a name and a data type.</p>
+          <p>SQL developers have to decide what type of data will be stored inside each and every table column.</p>
+          <ul>
+            <li><strong>String:</strong> CHAR, VARCHAR, BINARY, TEXT</li>
+            <li><strong>Numeric:</strong> INT, FLOAT, DECIMAL, BIT</li>
+            <li><strong>Date and Time:</strong> DATE, DATETIME, TIMESTAMP, YEAR</li>
+          </ul>
         </section>
 
         <section id="sql-quiz" class="topic-section">
