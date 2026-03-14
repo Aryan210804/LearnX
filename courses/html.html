@@ -11,302 +11,18 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css">
   <style>
+    /* HTML specific accent */
     :root {
-      --primary-gradient: linear-gradient(135deg, #04AA6D 0%, #028a58 100%);
-      --accent-color: #06cc84;
-      --sidebar-bg-modern: #1e212a;
-      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      --card-radius: 16px;
+      --accent: #04AA6D;
     }
 
-    /* Smooth scroll and selection */
-    html {
-      scroll-behavior: smooth;
+    .sidebar-header i {
+      color: var(--accent) !important;
     }
 
-    ::selection {
-      background: rgba(4, 170, 109, 0.2);
-      color: var(--primary);
-    }
-
-    /* Modernized sidebar */
-    .sidebar {
-      background: var(--sidebar-bg-modern);
-      border-right: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 20px;
-    }
-
-    .sidebar a {
-      border-radius: 8px;
-      margin: 4px 15px;
-      padding: 12px 18px;
-      border-left: none;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .sidebar a:hover {
-      background: rgba(4, 170, 109, 0.1);
-      color: var(--accent-color);
-      transform: translateX(5px);
-    }
-
-    .sidebar a.active {
-      background: var(--primary-gradient);
-      box-shadow: 0 4px 15px rgba(4, 170, 109, 0.3);
-      color: #fff;
-    }
-
-    /* Main Content Area */
-    .course-content-area {
-      max-width: 1000px;
-      padding: 60px 40px;
-    }
-
-    /* Card-style sections */
-    .topic-section,
-    .media-api-section {
-      background: var(--bg-card);
-      padding: 45px;
-      border-radius: var(--card-radius);
-      margin-bottom: 50px;
-      box-shadow: var(--card-shadow);
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-      animation: fadeIn 0.6s ease-out forwards;
-    }
-
-    .topic-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--primary-gradient);
-      opacity: 0.8;
-    }
-
-    /* Typography */
-    h1 {
-      font-size: 42px;
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 25px;
-      color: var(--text);
-    }
-
-    .topic-section h1 {
-      background: linear-gradient(to right, var(--text), var(--primary));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    h2 {
-      font-size: 26px;
-      font-weight: 700;
-      margin: 35px 0 15px;
-      border-bottom: 2px solid rgba(4, 170, 109, 0.1);
-      padding-bottom: 10px;
-      display: inline-block;
-    }
-
-    /* Example Box Enhancements */
-    .example-box {
-      border: 2px solid rgba(4, 170, 109, 0.1);
-      border-radius: 12px;
-      margin: 30px 0;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-    }
-
-    .example-header {
-      background: #fdfdfd;
-      padding: 12px 20px;
-      border-bottom: 2px solid rgba(4, 170, 109, 0.05);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .copy-btn {
-      background: rgba(4, 170, 109, 0.1);
-      color: var(--primary);
-      border: none;
-      padding: 5px 10px;
-      border-radius: 6px;
-      font-size: 11px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .copy-btn:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .try-btn {
-      background: var(--primary-gradient) !important;
-      padding: 12px 24px !important;
-      border-radius: 10px !important;
-      font-weight: 700 !important;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin: 20px !important;
-      box-shadow: 0 4px 12px rgba(4, 170, 109, 0.2);
-    }
-
-    .try-btn:hover {
-      box-shadow: 0 6px 20px rgba(4, 170, 109, 0.4) !important;
-      transform: translateY(-2px);
-    }
-
-    /* Key points & Tips */
-    .key-points,
-    .tips-box,
-    .tips {
-      background: rgba(4, 170, 109, 0.04);
-      border: 1px solid rgba(4, 170, 109, 0.1);
-      border-radius: 12px;
-      padding: 20px 25px;
-      margin: 20px 0;
-    }
-
-    .key-points ul li {
-      list-style: none;
-      margin-bottom: 12px;
-    }
-
-    .key-points ul li::before {
-      content: 'âœ”';
-      color: var(--primary);
-      margin-right: 10px;
-      font-weight: bold;
-    }
-
-    /* Breadcrumb polish */
-    .breadcrumb {
-      background: rgba(4, 170, 109, 0.05);
-      padding: 12px 24px;
-      border-radius: 50px;
-      display: inline-flex;
-      margin-bottom: 40px;
-      font-weight: 500;
-    }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--bg);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #ced4da;
-      border-radius: 10px;
-      border: 2px solid var(--bg);
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #adb5bd;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Dark Mode nuances */
-    [data-theme="dark"] .topic-section,
-    [data-theme="dark"] .media-api-section {
-      background: #161b22;
-      border-color: #30363d;
-    }
-
-    [data-theme="dark"] .example-header {
-      background: #0d1117;
-      color: #8b949e;
-    }
-
-    /* Navbar specific refinements */
-    .top-nav {
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .nav-profile-links {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .nav-profile-links #user-display {
-      color: #999;
-      font-size: 13px;
-      font-weight: 600;
-      margin-right: 5px;
-    }
-
-    #theme-toggle {
-      background: transparent;
-      border: 1px solid #444;
-      color: #ccc;
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-    }
-
-    #theme-toggle:hover {
-      border-color: var(--primary);
-      color: white;
-    }
-
-    .hamburger {
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 20px;
-      cursor: pointer;
-      padding: 10px;
-      display: none;
-      /* Shown in media query */
-    }
-
-    @media (max-width: 900px) {
-      .hamburger {
-        display: block;
-      }
-
-      .top-nav-search {
-        display: none;
-      }
-
-      .nav-profile-links #user-display {
-        display: none;
-      }
-
-      .sidebar {
-        z-index: 3000;
-      }
+    .sub-nav a.active {
+      background: var(--accent) !important;
+      color: #fff !important;
     }
   </style>
 </head>
@@ -314,26 +30,25 @@
 
 <body class="learnx-page">
 
-  <!-- TOP NAV -->
   <nav class="top-nav">
     <button class="hamburger" id="mobile-toggle"><i class="fas fa-bars"></i></button>
     <a href="../index1.html" class="brand">LearnX</a>
 
     <div class="top-nav-search">
-      <input type="text" placeholder="Search course content..." />
+      <input type="text" placeholder="Search HTML topics..." />
       <button><i class="fas fa-search"></i></button>
     </div>
 
-    <div class="nav-profile-links">
-      <span id="user-display"></span>
-      <button id="theme-toggle" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+    <div class="user-info-group">
+      <span id="user-display" class="user-display-name"></span>
+      <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
       <button id="logout-btn" class="nav-btn">Logout</button>
     </div>
   </nav>
 
-  <!-- SUB NAV (Course Links) -->
+  <!-- SUB NAV -->
   <nav class="sub-nav">
-    <a href="../index1.html"><i class="fas fa-th-large"></i> DASHBOARD</a>
+    <a href="../index1.html"><i class="fas fa-th-large" style="margin-right:5px"></i> Dashboard</a>
     <a href="html.html" class="active">HTML</a>
     <a href="css.html">CSS</a>
     <a href="js.html">JAVASCRIPT</a>
@@ -345,7 +60,6 @@
     <a href="numpy.html">NUMPY</a>
     <a href="pandas.html">PANDAS</a>
     <a href="matplotlib.html">MATPLOTLIB</a>
-
     <a href="ai.html">AI & ML</a>
     <a href="r.html">R</a>
   </nav>
@@ -3727,7 +3441,8 @@ function drop(ev) {
           <!-- ===== WEB STORAGE ===== -->
           <section id="html-web-storage" class="topic-section">
             <h1>HTML Web Storage</h1>
-            <p>Web Storage allows web applications to store data locally in the user's browser â€” more securely and with
+            <p>Web Storage allows web applications to store data locally in the user's browser â€” more securely and
+              with
               larger capacity than cookies.</p>
             <div class="key-points">
               <ul>
