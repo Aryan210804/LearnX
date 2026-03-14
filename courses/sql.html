@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | SQL Masterclass</title>
   <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body class="learnx-page">
 
   <!-- TOP NAV -->
   <nav class="top-nav">
+    <button class="hamburger" id="mobile-toggle"><i class="fas fa-bars"></i></button>
     <a href="../index1.html" class="brand">LearnX</a>
-        <div class="top-nav-links">
-      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
-      <a href="html.html">HTML</a>
-      <a href="css.html">CSS</a>
-      <a href="js.html">JavaScript</a>
-      <a href="python.html">Python</a>
-      <a href="sql.html" class="active">SQL</a>
-      <a href="java.html">Java</a>
-      <a href="c.html">C</a>
-      <a href="excel.html">Excel</a>
-      <a href="numpy.html">NumPy</a>
-      <a href="pandas.html">Pandas</a>
-      <a href="matplotlib.html">Matplotlib</a>
-      
-      <a href="ai.html">AI & ML</a>
-      <a href="r.html">R</a>
-    </div>
 
     <div class="top-nav-search">
-      <input type="text" placeholder="Search..."/>
+      <input type="text" placeholder="Search SQL topics..." />
       <button><i class="fas fa-search"></i></button>
     </div>
-    
-    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
-      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
-       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
-      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
+
+    <div class="user-info-group">
+      <span id="user-display" class="user-display-name"></span>
+      <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
+      <button id="logout-btn" class="nav-btn">Logout</button>
     </div>
+  </nav>
+
+  <!-- SUB NAV -->
+  <nav class="sub-nav">
+    <a href="../index1.html"><i class="fas fa-th-large" style="margin-right:5px"></i> Dashboard</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JAVASCRIPT</a>
+    <a href="python.html">PYTHON</a>
+    <a href="sql.html" class="active">SQL</a>
+    <a href="java.html">JAVA</a>
+    <a href="c.html">C</a>
+    <a href="excel.html">EXCEL</a>
+    <a href="numpy.html">NUMPY</a>
+    <a href="pandas.html">PANDAS</a>
+    <a href="matplotlib.html">MATPLOTLIB</a>
+    <a href="ai.html">AI & ML</a>
+    <a href="r.html">R</a>
   </nav>
 
   <!-- CONTENT WRAPPER -->
   <div class="course-layout">
-    
+
     <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
@@ -54,22 +59,54 @@
       </div>
 
       <div class="sidebar-section-label">SQL Basic</div>
-      <a href="#Intro" class="active">Introduction to SQL</a>
-      <a href="#Select">Select Statement</a>
-      <a href="#Where">Where Clause</a>
-      <a href="#Insert">Insert Into</a>
-      <a href="#Update">Update</a>
-      <a href="#Delete">Delete</a>
-      <a href="#Functions">SQL Functions</a>
-      <a href="#Wildcards">Wildcards</a>
-      <a href="#Joins">Joins</a>
-      <a href="#Union">Union</a>
-      <a href="#GroupBy">Group By</a>
-      <a href="#CreateDB">Create DB/Table</a>
-      <a href="#Constraints">Constraints</a>
-      <a href="#Normalization">Normalization</a>
-      <a href="#Projects">🚀 Real World Projects</a>
-      <a href="#MiniTask">🎯 SQL Mini Task</a>
+      <a href="#sql-home" class="active"><i class="fas fa-home"></i> SQL HOME</a>
+      <a href="#sql-intro"><i class="fas fa-info-circle"></i> SQL Intro</a>
+      <a href="#sql-syntax"><i class="fas fa-code"></i> SQL Syntax</a>
+      <a href="#sql-select"><i class="fas fa-mouse-pointer"></i> SQL Select</a>
+      <a href="#sql-distinct"><i class="fas fa-filter"></i> SQL Select Distinct</a>
+      <a href="#sql-where"><i class="fas fa-search"></i> SQL Where</a>
+      <a href="#sql-and-or-not"><i class="fas fa-project-diagram"></i> SQL And, Or, Not</a>
+      <a href="#sql-orderby"><i class="fas fa-sort-amount-down"></i> SQL Order By</a>
+      <a href="#sql-insert-into"><i class="fas fa-plus-square"></i> SQL Insert Into</a>
+      <a href="#sql-null"><i class="fas fa-eraser"></i> SQL Null Values</a>
+      <a href="#sql-update"><i class="fas fa-edit"></i> SQL Update</a>
+      <a href="#sql-delete"><i class="fas fa-trash"></i> SQL Delete</a>
+
+      <div class="sidebar-section-label">SQL Aggregates</div>
+      <a href="#sql-min-max"><i class="fas fa-arrows-alt-v"></i> SQL Min and Max</a>
+      <a href="#sql-count-avg-sum"><i class="fas fa-calculator"></i> SQL Count, Avg, Sum</a>
+      <a href="#sql-like"><i class="fas fa-percent"></i> SQL Like</a>
+      <a href="#sql-wildcards"><i class="fas fa-asterisk"></i> SQL Wildcards</a>
+      <a href="#sql-in"><i class="fas fa-sign-in-alt"></i> SQL In</a>
+      <a href="#sql-between"><i class="fas fa-arrows-alt-h"></i> SQL Between</a>
+      <a href="#sql-aliases"><i class="fas fa-tag"></i> SQL Aliases</a>
+
+      <div class="sidebar-section-label">SQL Joins</div>
+      <a href="#sql-joins"><i class="fas fa-link"></i> SQL Joins</a>
+      <a href="#sql-inner-join"><i class="fas fa-object-group"></i> SQL Inner Join</a>
+      <a href="#sql-left-join"><i class="fas fa-align-left"></i> SQL Left Join</a>
+      <a href="#sql-right-join"><i class="fas fa-align-right"></i> SQL Right Join</a>
+      <a href="#sql-union"><i class="fas fa-layer-group"></i> SQL Union</a>
+      <a href="#sql-groupby"><i class="fas fa-th-list"></i> SQL Group By</a>
+      <a href="#sql-having"><i class="fas fa-check-circle"></i> SQL Having</a>
+
+      <div class="sidebar-section-label">Database Admin</div>
+      <a href="#sql-createdb"><i class="fas fa-plus-circle"></i> SQL Create DB</a>
+      <a href="#sql-createtable"><i class="fas fa-table"></i> SQL Create Table</a>
+      <a href="#sql-constraints"><i class="fas fa-shield-alt"></i> SQL Constraints</a>
+      <a href="#sql-primarykey"><i class="fas fa-key"></i> SQL Primary Key</a>
+      <a href="#sql-foreignkey"><i class="fas fa-external-link-alt"></i> SQL Foreign Key</a>
+      <a href="#sql-alter"><i class="fas fa-hammer"></i> SQL Alter Table</a>
+      <a href="#sql-autoincrement"><i class="fas fa-step-forward"></i> SQL Auto Increment</a>
+
+      <div class="sidebar-section-label">Advanced</div>
+      <a href="#sql-views"><i class="fas fa-eye"></i> SQL Views</a>
+      <a href="#sql-injection"><i class="fas fa-user-ninja"></i> SQL Injection</a>
+      <a href="#sql-datatypes"><i class="fas fa-list"></i> SQL Data Types</a>
+
+      <div class="sidebar-section-label">Learning</div>
+      <a href="#sql-quiz"><i class="fas fa-question-circle"></i> SQL Quiz</a>
+      <a href="#sql-exercises"><i class="fas fa-tasks"></i> SQL Exercises</a>
 
       <div class="sidebar-footer">
         <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
@@ -79,371 +116,255 @@
     <!-- MAIN CONTENT -->
     <main class="course-main">
       <div class="course-content-area">
-        
         <div class="breadcrumb">
-          <a href="../index1.html">Home</a> <span>/</span> <span>SQL</span>
+          <a href="../index1.html">Home</a> <span>/</span> <span>SQL</span> <span>/</span> <span>Tutorial</span>
         </div>
-        
-        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">SQL Masterclass</h1>
 
-        <section class="topic-section" id="Intro">
-          <h1>Introduction to SQL</h1>
-          <div class="chapter-badge">Chapter 1</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Select" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== SQL HOME ===== -->
+        <section id="sql-home" class="topic-section">
+          <h1>SQL Tutorial</h1>
+          <p>SQL is a standard language for storing, manipulating and retrieving data in databases.</p>
+          <div class="key-points">
+            <ul>
+              <li>SQL stands for Structured Query Language.</li>
+              <li>SQL lets you access and manipulate databases.</li>
+              <li>SQL became a standard of the American National Standards Institute (ANSI) in 1986.</li>
+            </ul>
           </div>
-          
-        <h3>📌 What is SQL?</h3>
-        <p>SQL (Structured Query Language) is the standard language for dealing with Relational Databases.</p>
-        <div class="mermaid">graph LR
-          User --> SQL_Query
-          SQL_Query --> Database
-          Database --> Result_Data
-        </div>
-      </section>
-
-        <section class="topic-section" id="Select">
-          <h1>Select Statement</h1>
-          <div class="chapter-badge">Chapter 2</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Where" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>The <code>SELECT</code> statement is used to select data from a database.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-sql">SELECT * FROM Customers;</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> SQL Example</div>
+            <pre class="example-code"><code>SELECT * FROM Customers;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">SELECT * FROM Customers;</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+              <textarea class="tryit-editor">SELECT * FROM Customers;</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
-            </div>
-        <div class="example-box"><pre class="example-code"><code class="language-sql">SELECT FirstName, LastName FROM Employees;</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">SELECT FirstName, LastName FROM Employees;</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Where">
-          <h1>Where Clause</h1>
-          <div class="chapter-badge">Chapter 3</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Select" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Insert" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Filter records.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-sql">SELECT * FROM Customers
-WHERE Country = 'Mexico';</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">SELECT * FROM Customers
-WHERE Country = 'Mexico';</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
+        </section>
 
-        <section class="topic-section" id="Insert">
-          <h1>Insert Into</h1>
-          <div class="chapter-badge">Chapter 4</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Where" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Update" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== SQL INTRO ===== -->
+        <section id="sql-intro" class="topic-section">
+          <h1>SQL Introduction</h1>
+          <p>SQL is used to communicate with a database. According to ANSI (American National Standards Institute), it
+            is the standard language for relational database management systems.</p>
+          <div class="key-points">
+            <ul>
+              <li>SQL can execute queries against a database.</li>
+              <li>SQL can retrieve data from a database.</li>
+              <li>SQL can insert, update and delete records in a database.</li>
+              <li>SQL can create new databases and new tables.</li>
+            </ul>
           </div>
-          
-        <p>Adding new records.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-sql">INSERT INTO Customers (CustomerName, City, Country)
-VALUES ('Cardinal', 'Stavanger', 'Norway');</code></pre></section>
+        </section>
 
-        <section class="topic-section" id="Update">
-          <h1>Update</h1>
-          <div class="chapter-badge">Chapter 5</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Insert" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Delete" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== SQL SYNTAX ===== -->
+        <section id="sql-syntax" class="topic-section">
+          <h1>SQL Syntax</h1>
+          <p>A database most often contains one or more tables. Each table is identified by a name (e.g. "Customers" or
+            "Orders"). Tables contain records (rows) with data.</p>
+          <div class="note-box">
+            <p><strong>Note:</strong> SQL keywords are NOT case sensitive. <code>SELECT</code> is the same as
+              <code>select</code>.</p>
           </div>
-          
-        <p>Modify existing records.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-sql">UPDATE Customers
-SET ContactName = 'Alfred Schmidt', City = 'Frankfurt'
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Syntax Example</div>
+            <pre class="example-code"><code>SELECT column1, column2, ...
+FROM table_name;</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== SQL SELECT ===== -->
+        <section id="sql-select" class="topic-section">
+          <h1>SQL SELECT Statement</h1>
+          <p>The <code>SELECT</code> statement is used to select data from a database.</p>
+          <div class="key-points">
+            <ul>
+              <li>The data returned is stored in a result table, called the result-set.</li>
+              <li>You can select specific columns or all columns using <code>*</code>.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> SELECT Example</div>
+            <pre class="example-code"><code>SELECT CustomerName, City FROM Customers;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+        </section>
+
+        <!-- ===== SQL DISTINCT ===== -->
+        <section id="sql-distinct" class="topic-section">
+          <h1>SQL SELECT DISTINCT</h1>
+          <p>The <code>SELECT DISTINCT</code> statement is used to return only distinct (different) values.</p>
+          <p>Inside a table, a column often contains many duplicate values; and sometimes you only want to list the
+            different (distinct) values.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> DISTINCT Example</div>
+            <pre class="example-code"><code>SELECT DISTINCT Country FROM Customers;</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== SQL WHERE ===== -->
+        <section id="sql-where" class="topic-section">
+          <h1>SQL WHERE Clause</h1>
+          <p>The <code>WHERE</code> clause is used to filter records.</p>
+          <p>It is used to extract only those records that fulfill a specified condition.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> WHERE Example</div>
+            <pre class="example-code"><code>SELECT * FROM Customers
+WHERE Country='Mexico';</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+          </div>
+        </section>
+
+        <!-- ===== SQL AND, OR, NOT ===== -->
+        <section id="sql-and-or-not" class="topic-section">
+          <h1>SQL AND, OR and NOT Operators</h1>
+          <p>The <code>WHERE</code> clause can be combined with <code>AND</code>, <code>OR</code>, and <code>NOT</code>
+            operators.</p>
+          <div class="key-points">
+            <ul>
+              <li><code>AND</code>: Displays a record if all conditions are true.</li>
+              <li><code>OR</code>: Displays a record if any condition is true.</li>
+              <li><code>NOT</code>: Displays a record if the condition(s) is NOT true.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Combined Operators</div>
+            <pre class="example-code"><code>SELECT * FROM Customers
+WHERE Country='Germany' AND City='Berlin';</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== SQL ORDER BY ===== -->
+        <section id="sql-orderby" class="topic-section">
+          <h1>SQL ORDER BY Keyword</h1>
+          <p>The <code>ORDER BY</code> keyword is used to sort the result-set in ascending or descending order.</p>
+          <div class="key-points">
+            <ul>
+              <li>The <code>ORDER BY</code> keyword sorts the records in ascending order by default.</li>
+              <li>To sort the records in descending order, use the <code>DESC</code> keyword.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> ORDER BY Example</div>
+            <pre class="example-code"><code>SELECT * FROM Customers
+ORDER BY Country DESC;</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== SQL INSERT INTO ===== -->
+        <section id="sql-insert-into" class="topic-section">
+          <h1>SQL INSERT INTO Statement</h1>
+          <p>The <code>INSERT INTO</code> statement is used to insert new records in a table.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> INSERT Example</div>
+            <pre class="example-code"><code>INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== SQL UPDATE ===== -->
+        <section id="sql-update" class="topic-section">
+          <h1>SQL UPDATE Statement</h1>
+          <p>The <code>UPDATE</code> statement is used to modify the existing records in a table.</p>
+          <div class="warning-box">
+            <p><strong>Warning:</strong> Be careful when updating records. If you omit the <code>WHERE</code> clause,
+              ALL records will be updated!</p>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> UPDATE Example</div>
+            <pre class="example-code"><code>UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
 WHERE CustomerID = 1;</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">UPDATE Customers
-SET ContactName = 'Alfred Schmidt', City = 'Frankfurt'
-WHERE CustomerID = 1;</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Delete">
-          <h1>Delete</h1>
-          <div class="chapter-badge">Chapter 6</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Update" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Functions" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Remove records.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-sql">DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
+        </section>
 
-        <section class="topic-section" id="Functions">
-          <h1>SQL Functions</h1>
-          <div class="chapter-badge">Chapter 7</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Delete" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Wildcards" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== SQL DELETE ===== -->
+        <section id="sql-delete" class="topic-section">
+          <h1>SQL DELETE Statement</h1>
+          <p>The <code>DELETE</code> statement is used to delete existing records in a table.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> DELETE Example</div>
+            <pre class="example-code"><code>DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';</code></pre>
           </div>
-          
-        <p><code>MIN()</code>, <code>MAX()</code>, <code>COUNT()</code>, <code>AVG()</code>, <code>SUM()</code>.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-sql">SELECT COUNT(ProductID)
-FROM Products;</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">SELECT COUNT(ProductID)
-FROM Products;</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
+        </section>
 
-        <section class="topic-section" id="Wildcards">
-          <h1>Wildcards</h1>
-          <div class="chapter-badge">Chapter 8</div>
+        <!-- ===== SQL AGGREGATES ===== -->
+        <section id="sql-min-max" class="topic-section">
+          <h1>SQL MIN() and MAX() Functions</h1>
+          <p>The <code>MIN()</code> function returns the smallest value of the selected column.</p>
+          <p>The <code>MAX()</code> function returns the largest value of the selected column.</p>
+        </section>
 
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Functions" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Joins" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <section id="sql-count-avg-sum" class="topic-section">
+          <h1>SQL COUNT(), AVG() and SUM()</h1>
+          <p>The <code>COUNT()</code> function returns the number of rows that matches a specified criterion.</p>
+          <p>The <code>AVG()</code> function returns the average value of a numeric column.</p>
+          <p>The <code>SUM()</code> function returns the total sum of a numeric column.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Aggregate Example</div>
+            <pre class="example-code"><code>SELECT SUM(Quantity) FROM OrderDetails;</code></pre>
           </div>
-          
-        <p>Pattern matching.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-sql">SELECT * FROM Customers
-WHERE City LIKE 'ber%'; -- Starts with "ber"</code></pre></section>
+        </section>
 
-        <section class="topic-section" id="Joins">
-          <h1>Joins</h1>
-          <div class="chapter-badge">Chapter 9</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Wildcards" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Union" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== SQL JOINS ===== -->
+        <section id="sql-joins" class="topic-section">
+          <h1>SQL Joins</h1>
+          <p>A <code>JOIN</code> clause is used to combine rows from two or more tables, based on a related column
+            between them.</p>
+          <div class="key-points">
+            <ul>
+              <li><strong>INNER JOIN:</strong> Returns records that have matching values in both tables.</li>
+              <li><strong>LEFT JOIN:</strong> Returns all records from the left table, and the matched records from the
+                right table.</li>
+              <li><strong>RIGHT JOIN:</strong> Returns all records from the right table, and the matched records from
+                the left table.</li>
+              <li><strong>CROSS JOIN:</strong> Returns all records from both tables.</li>
+            </ul>
           </div>
-          
-        <p>Combine rows from two or more tables.</p>
-        <div class="mermaid">graph TD
-          Table1 --> Join
-          Table2 --> Join
-          Join --> Result
-        </div>
-        <div class="example-box"><pre class="example-code"><code class="language-sql">SELECT Orders.OrderID, Customers.CustomerName
-FROM Orders
-INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">SELECT Orders.OrderID, Customers.CustomerName
-FROM Orders
-INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
+        </section>
 
-        <section class="topic-section" id="Union">
-          <h1>Union</h1>
-          <div class="chapter-badge">Chapter 10</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Joins" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#GroupBy" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Combine the result-set of two or more SELECT statements.</p>
-      </section>
-
-        <section class="topic-section" id="GroupBy">
-          <h1>Group By</h1>
-          <div class="chapter-badge">Chapter 11</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Union" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#CreateDB" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Group rows that have the same values into summary rows.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-sql">SELECT COUNT(CustomerID), Country
-FROM Customers
-GROUP BY Country;</code></pre></section>
-
-        <section class="topic-section" id="CreateDB">
-          <h1>Create DB/Table</h1>
-          <div class="chapter-badge">Chapter 12</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#GroupBy" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Constraints" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <div class="example-box"><pre class="example-code"><code class="language-sql">CREATE DATABASE testDB;
-CREATE TABLE Persons (
+        <section id="sql-createtable" class="topic-section">
+          <h1>SQL CREATE TABLE</h1>
+          <p>The <code>CREATE TABLE</code> statement is used to create a new table in a database.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> CREATE TABLE Example</div>
+            <pre class="example-code"><code>CREATE TABLE Persons (
     PersonID int,
     LastName varchar(255),
-    FirstName varchar(255),
+    FirstNames varchar(255),
     Address varchar(255),
     City varchar(255)
 );</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">CREATE DATABASE testDB;
-CREATE TABLE Persons (
-    PersonID int,
-    LastName varchar(255),
-    FirstName varchar(255),
-    Address varchar(255),
-    City varchar(255)
-);</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Constraints">
-          <h1>Constraints</h1>
-          <div class="chapter-badge">Chapter 13</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#CreateDB" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Normalization" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Rules for data.</p>
-        <ul>
-          <li><code>NOT NULL</code></li>
-          <li><code>UNIQUE</code></li>
-          <li><code>PRIMARY KEY</code></li>
-          <li><code>FOREIGN KEY</code></li>
-        </ul>
-      </section>
-
-        <section class="topic-section" id="Normalization">
-          <h1>Normalization</h1>
-          <div class="chapter-badge">Chapter 14</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Constraints" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Organizing data to reduce redundancy (1NF, 2NF, 3NF).</p>
-      
         </section>
 
-        <section class="topic-section" id="Projects">
-          <h1>🚀 Real World Projects</h1>
-          <div class="chapter-badge">Chapter 15</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Normalization" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <h3>🟢 Beginner: School System</h3>
-        <p><strong>Goal:</strong> Students, Teachers, Classes tables.</p>
-        <h3>🟡 Intermediate: E-Commerce</h3>
-        <p><strong>Goal:</strong> Users, Products, Orders, Cart schema.</p>
-        <h3>🔴 Advanced: Social Network</h3>
-        <p><strong>Goal:</strong> Users, Friends (Self-Join), Posts, Likes, Comments.</p>
-      </section>
-
-        <section class="topic-section" id="MiniTask">
-          <h1>🎯 SQL Mini Task</h1>
-          <div class="chapter-badge">Chapter 16</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p><strong>Goal:</strong> Query Skills.</p>
-        <h4>📋 Requirements:</h4>
-        <ol>
-          <li> Assume a table <code>Employees</code> with columns <code>Name</code> and <code>Salary</code>.</li>
-          <li> Write a query to find all employees earning > 50000.</li>
-          <li> Order them by Name alphabetically.</li>
-        </ol>
-        <p><strong>Select Success!</strong> 💾</p>
-      </div>
-    </div>
-
-
-    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
-      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
-      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the SQL module.</p>
-      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
-        onclick="location.href='../index1.html'">Return to Dashboard</button>
-    
+        <section id="sql-quiz" class="topic-section">
+          <h1>SQL Quiz</h1>
+          <p>Test your SQL skills with our Quiz!</p>
+          <button class="btn-control" onclick="alert('Quiz system coming soon!')">Start SQL Quiz</button>
         </section>
 
+        <section id="sql-exercises" class="topic-section">
+          <h1>SQL Exercises</h1>
+          <p>We have gathered a variety of SQL exercises (with answers) for each SQL Chapter.</p>
+          <button class="btn-control" onclick="alert('Exercises system coming soon!')">View Exercises</button>
+        </section>
+
+        <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+          <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+          <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the SQL module.</p>
+          <button class="btn-control"
+            style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+            onclick="location.href='../index1.html'">Return to Dashboard</button>
+        </div>
+
       </div>
+
     </main>
   </div>
 
@@ -505,18 +426,18 @@ CREATE TABLE Persons (
 
 
     // Try It Editor functions (applied globally to all courses)
-    window.openTryIt = function(btn) {
+    window.openTryIt = function (btn) {
       const panel = btn.nextElementSibling;
       panel.classList.add('open');
       btn.style.display = 'none';
       runTryIt(panel.querySelector('.tryit-run'));
     };
-    window.closeTryIt = function(btn) {
+    window.closeTryIt = function (btn) {
       const panel = btn.closest('.tryit-panel');
       panel.classList.remove('open');
       panel.previousElementSibling.style.display = 'inline-flex';
     };
-    window.runTryIt = function(btn) {
+    window.runTryIt = function (btn) {
       const panel = btn.closest('.tryit-panel');
       const code = panel.querySelector('.tryit-editor').value;
       const iframe = panel.querySelector('iframe');
@@ -532,15 +453,15 @@ CREATE TABLE Persons (
     // Theme logic
     const toggleBtn = document.getElementById('theme-toggle');
     const updateThemeIcon = (isDark) => {
-      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+      if (toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
     };
-    
+
     // Check saved theme
     let currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
     window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
 
-    if(toggleBtn) {
+    if (toggleBtn) {
       toggleBtn.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme');
         let newTheme = theme === 'dark' ? 'light' : 'dark';
