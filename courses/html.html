@@ -340,12 +340,12 @@
     <a href="python.html">PYTHON</a>
     <a href="sql.html">SQL</a>
     <a href="java.html">JAVA</a>
-    <a href="c.html">C++</a>
+    <a href="c.html">C</a>
     <a href="excel.html">EXCEL</a>
     <a href="numpy.html">NUMPY</a>
     <a href="pandas.html">PANDAS</a>
     <a href="matplotlib.html">MATPLOTLIB</a>
-    
+
     <a href="ai.html">AI & ML</a>
     <a href="r.html">R</a>
   </nav>
@@ -360,26 +360,81 @@
       </div>
 
       <div class="sidebar-section-label">HTML Basic</div>
-      <a href="#intro" class="active">HTML Introduction</a>
-      <a href="#editors">HTML Editors</a>
-      <a href="#basic">HTML Basic</a>
-      <a href="#elements">HTML Elements</a>
-      <a href="#attributes">HTML Attributes</a>
-      <a href="#headings">HTML Headings</a>
-      <a href="#paragraphs">HTML Paragraphs</a>
-      <a href="#styles">HTML Styles</a>
-      <a href="#formatting">HTML Formatting</a>
-      <a href="#comments">HTML Comments</a>
-      <a href="#colors">HTML Colors</a>
-      <a href="#css">HTML CSS</a>
-      <a href="#links">HTML Links</a>
-      <a href="#images">HTML Images</a>
+      <a href="#html-home">HTML Home</a>
+      <a href="#html-introduction">HTML Introduction</a>
+      <a href="#html-editors">HTML Editors</a>
+      <a href="#html-basic">HTML Basic</a>
+      <a href="#html-elements">HTML Elements</a>
+      <a href="#html-attributes">HTML Attributes</a>
+      <a href="#html-headings">HTML Headings</a>
+      <a href="#html-paragraphs">HTML Paragraphs</a>
+      <a href="#html-styles">HTML Styles</a>
+      <a href="#html-formatting">HTML Formatting</a>
+      <a href="#html-quotations">HTML Quotations</a>
+      <a href="#html-comments">HTML Comments</a>
+      <a href="#html-colors">HTML Colors</a>
+      <a href="#html-css">HTML CSS</a>
+      <a href="#html-links">HTML Links</a>
+      <a href="#html-images">HTML Images</a>
+      <a href="#html-favicon">HTML Favicon</a>
+      <a href="#html-page-title">HTML Page Title</a>
+      <a href="#html-tables">HTML Tables</a>
+      <a href="#html-lists">HTML Lists</a>
+      <a href="#html-block-inline">HTML Block &amp; Inline</a>
+      <a href="#html-div">HTML Div</a>
+      <a href="#html-classes">HTML Classes</a>
+      <a href="#html-id">HTML Id</a>
+      <a href="#html-buttons">HTML Buttons</a>
+      <a href="#html-iframes">HTML Iframes</a>
+      <a href="#html-javascript">HTML JavaScript</a>
+      <a href="#html-file-paths">HTML File Paths</a>
+      <a href="#html-head">HTML Head</a>
+      <a href="#html-layout">HTML Layout</a>
+      <a href="#html-responsive">HTML Responsive</a>
+      <a href="#html-computercode">HTML Computercode</a>
+      <a href="#html-semantics">HTML Semantics</a>
+      <a href="#html-style-guide">HTML Style Guide</a>
+      <a href="#html-entities">HTML Entities</a>
+      <a href="#html-symbols">HTML Symbols</a>
+      <a href="#html-emojis">HTML Emojis</a>
+      <a href="#html-charsets">HTML Charsets</a>
+      <a href="#html-url-encode">HTML URL Encode</a>
+      <a href="#html-vs-xhtml">HTML vs XHTML</a>
 
       <div class="sidebar-section-label">HTML Forms</div>
-      <a href="#forms">HTML Forms</a>
-      <a href="#form-attributes">HTML Form Attributes</a>
-      <a href="#form-elements">HTML Form Elements</a>
-      <a href="#input-types">HTML Input Types</a>
+      <a href="#html-forms">HTML Forms</a>
+      <a href="#html-form-attributes">Form Attributes</a>
+      <a href="#html-form-elements">Form Elements</a>
+      <a href="#html-input-types">Input Types</a>
+      <a href="#html-input-attributes">Input Attributes</a>
+      <a href="#html-form-validation">Form Validation</a>
+
+      <div class="sidebar-section-label">HTML Graphics</div>
+      <a href="#html-graphics">HTML Graphics</a>
+      <a href="#html-canvas">HTML Canvas</a>
+      <a href="#html-svg">HTML SVG</a>
+
+      <div class="sidebar-section-label">HTML Media</div>
+      <a href="#html-media">HTML Media</a>
+      <a href="#html-video">HTML Video</a>
+      <a href="#html-audio">HTML Audio</a>
+      <a href="#html-plugins">HTML Plug-ins</a>
+      <a href="#html-youtube">HTML YouTube</a>
+
+      <div class="sidebar-section-label">HTML APIs</div>
+      <a href="#html-apis">HTML Web APIs</a>
+      <a href="#html-geolocation">HTML Geolocation</a>
+      <a href="#html-drag-drop">HTML Drag &amp; Drop</a>
+      <a href="#html-web-storage">HTML Web Storage</a>
+      <a href="#html-web-workers">HTML Web Workers</a>
+      <a href="#html-sse">HTML SSE</a>
+
+      <div class="sidebar-section-label">Learning &amp; Reference</div>
+      <a href="#html-quiz">HTML Quiz</a>
+      <a href="#html-exercises">HTML Exercises</a>
+      <a href="#html-accessibility">HTML Accessibility</a>
+      <a href="#html-summary">HTML Summary</a>
+      <a href="#html-tag-list">HTML Tag List</a>
 
       <div class="sidebar-footer">
         <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
@@ -1355,718 +1410,28 @@
         </section>
         <section id="html-page-title" class="lesson-section">
           <h1>HTML Page Title</h1>
-
-          <p>The title element defines the text shown in the browser tab and search engine results.</p>
+          <p>The <code>&lt;title&gt;</code> element defines the title of the document. The title must be text-only, and
+            it is shown in the browser's title bar or in the page's tab.</p>
 
           <div class="key-points">
             <ul>
-              <li>Placed inside head</li>
-              <li>Important for SEO</li>
-              <li>Should be concise and descriptive</li>
+              <li>Displayed in the browser tab</li>
+              <li>Crucial for SEO and bookmarks</li>
+              <li>Should be descriptive and concise</li>
             </ul>
           </div>
 
-          <p>A clear page title helps users understand what the page is about before opening it.</p>
+          <p>A good title helps users understand what the page is about before they even click on it.</p>
 
           <h2>Syntax</h2>
           <pre><code>&lt;title&gt;Page Title&lt;/title&gt;</code></pre>
 
           <div class="example-box">
             <div class="example-header"><i class="fas fa-code"></i> Example</div>
-
             <pre class="example-code"><code>
-<title>LearnX HTML Course</title>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<title>LearnX HTML Course</title>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips-box">
-            <ul>
-              <li>Keep titles under ~60 characters</li>
-              <li>Include primary keywords</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-tables" class="lesson-section">
-          <h1>HTML Tables</h1>
-
-          <p>Tables are used to display structured data in rows and columns.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Use table, tr, th, td elements</li>
-              <li>Best for tabular data</li>
-              <li>Can be styled with CSS</li>
-            </ul>
-          </div>
-
-          <p>Tables should not be used for layout; they are meant only for data representation.</p>
-
-          <h2>Syntax</h2>
-          <pre><code>&lt;table&gt;...&lt;/table&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-
-            <pre class="example-code"><code>
-<table border="1">
-<tr><th>Name</th><th>Age</th></tr>
-<tr><td>Ana</td><td>22</td></tr>
-</table>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<table border="1">
-<tr><th>Name</th><th>Age</th></tr>
-<tr><td>Ana</td><td>22</td></tr>
-</table>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips-box">
-            <ul>
-              <li>Use th for headers</li>
-              <li>Add captions for accessibility</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-lists" class="lesson-section">
-          <h1>HTML Lists</h1>
-
-          <p>Lists group related items together in an ordered or unordered format.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Use ul for unordered lists</li>
-              <li>Use ol for ordered lists</li>
-              <li>Use li for items</li>
-            </ul>
-          </div>
-
-          <p>Lists improve readability and structure content logically.</p>
-
-          <h2>Syntax</h2>
-          <pre><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-
-            <pre class="example-code"><code>
-<ul>
-  <li>HTML</li>
-  <li>CSS</li>
-</ul>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<ul>
-  <li>HTML</li>
-  <li>CSS</li>
-</ul>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips-box">
-            <ul>
-              <li>Choose list type based on meaning</li>
-              <li>Keep items concise</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-block-inline" class="lesson-section">
-          <h1>HTML Block & Inline</h1>
-
-          <p>HTML elements are categorized as block-level or inline based on how they appear in the layout.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Block elements take full width</li>
-              <li>Inline elements take only necessary space</li>
-              <li>Understanding this helps with layout design</li>
-            </ul>
-          </div>
-
-          <p>Block elements start on a new line and create structure, while inline elements flow within text content.
-          </p>
-
-          <h2>Syntax</h2>
-          <pre><code>&lt;div&gt;Block&lt;/div&gt; &lt;span&gt;Inline&lt;/span&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<div>Block element</div>
-<span>Inline element</span>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<div>Block element</div>
-<span>Inline element</span>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips-box">
-            <ul>
-              <li>Use block elements for layout</li>
-              <li>Use inline for small content pieces</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-div" class="lesson-section">
-          <h1>HTML Div</h1>
-
-          <p>The div element is a container used to group content and apply styles or layout.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Most commonly used layout container</li>
-              <li>Works with CSS for styling</li>
-              <li>Has no semantic meaning</li>
-            </ul>
-          </div>
-
-          <p>Divs are flexible and can hold any type of content, making them essential for page structure.</p>
-
-          <h2>Syntax</h2>
-          <pre><code>&lt;div&gt;Content&lt;/div&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<div style="background:#eee; padding:10px;">
-  Grouped content
-</div>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<div style="background:#eee; padding:10px;">
-  Grouped content
-</div>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips-box">
-            <ul>
-              <li>Prefer semantic elements when possible</li>
-              <li>Avoid unnecessary nesting</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-classes" class="lesson-section">
-          <h1>HTML Classes</h1>
-
-          <p>Classes allow you to apply styles or scripts to multiple elements at once.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Reusable styling hooks</li>
-              <li>Can be shared by many elements</li>
-              <li>Defined with class attribute</li>
-            </ul>
-          </div>
-
-          <p>Classes are essential for CSS styling and JavaScript targeting.</p>
-
-          <h2>Syntax</h2>
-          <pre><code>&lt;p class="note"&gt;Text&lt;/p&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<p class="highlight">Highlighted text</p>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<p class="highlight">Highlighted text</p>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips-box">
-            <ul>
-              <li>Use descriptive class names</li>
-              <li>Avoid overly generic names</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-id" class="lesson-section">
-          <h1>HTML Id</h1>
-
-          <p>The id attribute uniquely identifies an element on a page.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Must be unique</li>
-              <li>Used for anchors and scripting</li>
-              <li>Has higher CSS specificity</li>
-            </ul>
-          </div>
-
-          <p>Ids are useful for linking to specific sections or applying unique styles.</p>
-
-          <h2>Syntax</h2>
-          <pre><code>&lt;div id="header"&gt;&lt;/div&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<h2 id="section1">Section 1</h2>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<h2 id="section1">Section 1</h2>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips-box">
-            <ul>
-              <li>Use ids sparingly</li>
-              <li>Keep names meaningful</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-buttons" class="lesson-section">
-          <h1>HTML Buttons</h1>
-
-          <p>Buttons allow users to trigger actions such as submitting forms or running scripts.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Interactive element</li>
-              <li>Works with JavaScript</li>
-              <li>Supports different types</li>
-            </ul>
-          </div>
-
-          <p>Buttons can perform navigation, submit forms, or trigger events.</p>
-
-          <h2>Syntax</h2>
-          <pre><code>&lt;button&gt;Click&lt;/button&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<button onclick="alert('Hello!')">Click Me</button>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<button onclick="alert('Hello!')">Click Me</button>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips-box">
-            <ul>
-              <li>Always define button type in forms</li>
-              <li>Use clear action labels</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-iframes" class="lesson-section">
-          <h1>HTML Iframes</h1>
-
-          <p>Iframes embed another webpage or content within your page.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Useful for embedding external content</li>
-              <li>Can display videos, maps, or pages</li>
-              <li>Supports sandbox security</li>
-            </ul>
-          </div>
-
-          <p>Iframes are commonly used to embed third-party content safely.</p>
-
-          <h2>Syntax</h2>
-          <pre><code>&lt;iframe src="url"&gt;&lt;/iframe&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<iframe src="https://example.com" width="300" height="200"></iframe>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<iframe src="https://example.com" width="300" height="200"></iframe>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips-box">
-            <ul>
-              <li>Use sandbox for security</li>
-              <li>Avoid embedding untrusted sources</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-javascript" class="lesson-section">
-          <h1>HTML JavaScript</h1>
-
-          <p>JavaScript adds interactivity to HTML pages, enabling dynamic behavior.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Used for logic and interactivity</li>
-              <li>Can be inline or external</li>
-              <li>Runs in the browser</li>
-            </ul>
-          </div>
-
-          <p>Scripts can manipulate HTML content, respond to events, and communicate with servers.</p>
-
-          <h2>Syntax</h2>
-          <pre><code>&lt;script&gt;alert('Hi');&lt;/script&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<button onclick="document.body.style.background='lightblue'">
-Change Color
-</button>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<button onclick="document.body.style.background='lightblue'">
-Change Color
-</button>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips-box">
-            <ul>
-              <li>Keep scripts separate from HTML</li>
-              <li>Use event listeners for complex apps</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-file-paths" class="lesson-section">
-          <h1>HTML File Paths</h1>
-
-          <p>File paths specify the location of resources such as images, stylesheets, or scripts.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Absolute paths include full URL</li>
-              <li>Relative paths depend on folder structure</li>
-              <li>Important for project organization</li>
-            </ul>
-          </div>
-
-          <p>Using relative paths keeps projects portable and easier to maintain.</p>
-
-          <h2>Syntax</h2>
-          <pre><code>src="images/photo.jpg"</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<img src="images/photo.jpg" alt="Photo">
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<img src="images/photo.jpg" alt="Photo">
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips-box">
-            <ul>
-              <li>Keep folder structure organized</li>
-              <li>Avoid broken links</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-javascript">
-          <h1>HTML JavaScript</h1>
-          <p>JavaScript adds interactivity to web pages. With HTML, you can embed scripts to create dynamic behavior
-            like form validation, animations, and real-time updates.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Add scripts using the &lt;script&gt; tag</li>
-              <li>Can be inline or external</li>
-              <li>Manipulates HTML using the DOM</li>
-            </ul>
-          </div>
-
-          <p>JavaScript runs in the browser and can modify page content, respond to user actions, and communicate with
-            servers. Keeping scripts at the bottom of the page improves loading performance.</p>
-
-          <h3>Syntax</h3>
-          <pre><code>&lt;script&gt; JavaScript code &lt;/script&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<button onclick="showMessage()">Click Me</button>
-
-<script>
-  function showMessage() {
-    alert("Hello from JavaScript!");
-  }
-</script>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<button onclick="showMessage()">Click Me</button>
-
-<script>
-  function showMessage() {
-    alert("Hello from JavaScript!");
-  }
-</script>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips">
-            <ul>
-              <li>Use external JS files for larger projects</li>
-              <li>Avoid inline scripts for maintainability</li>
-              <li>Defer scripts for better performance</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-file-paths">
-          <h1>HTML File Paths</h1>
-          <p>File paths define the location of resources like images, CSS files, and scripts.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Absolute paths use full URLs</li>
-              <li>Relative paths depend on folder structure</li>
-              <li>Correct paths prevent broken resources</li>
-            </ul>
-          </div>
-
-          <p>Relative paths are preferred in most projects because they make websites portable across environments.</p>
-
-          <h3>Syntax</h3>
-          <pre><code>&lt;img src="images/photo.jpg"&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<img src="images/logo.png" alt="Logo">
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<img src="https://via.placeholder.com/150" alt="Placeholder">
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="tips">
-            <ul>
-              <li>Use relative paths for internal files</li>
-              <li>Check paths when deploying</li>
-              <li>Keep folder structure organized</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-head">
-          <h1>HTML Head</h1>
-          <p>The &lt;head&gt; element contains metadata and resources that define how a page behaves and appears.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Contains meta tags, title, styles, and scripts</li>
-              <li>Not visible on the page</li>
-              <li>Important for SEO and performance</li>
-            </ul>
-          </div>
-
-          <p>Proper use of the head improves search engine ranking, accessibility, and page loading speed.</p>
-
-          <h3>Syntax</h3>
-          <pre><code>&lt;head&gt; ... &lt;/head&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<head>
-  <title>My Page</title>
-  <meta charset="UTF-8">
-</head>
+&lt;head&gt;
+  &lt;title&gt;HTML Tutorial - LearnX&lt;/title&gt;
+&lt;/head&gt;
     </code></pre>
 
             <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
@@ -2082,10 +1447,10 @@ Change Color
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Head Example</title>
+  <title>Tutorial Title Example</title>
 </head>
 <body>
-  <p>Check the browser tab title.</p>
+  <p>The title of this page is shown in the browser tab.</p>
 </body>
 </html>
       </textarea>
@@ -2096,206 +1461,942 @@ Change Color
             </div>
           </div>
 
-          <div class="tips">
+          <div class="tips-box">
             <ul>
-              <li>Always include charset meta tag</li>
-              <li>Keep scripts deferred</li>
-              <li>Add meta description for SEO</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-layout">
-          <h1>HTML Layout</h1>
-          <p>Layout elements define the structure of a web page using semantic tags.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Use header, nav, main, section, footer</li>
-              <li>Improves accessibility</li>
-              <li>Helps search engines understand content</li>
+              <li>Keep titles between 50-60 characters</li>
+              <li>Use keywords relevant to the page content</li>
             </ul>
           </div>
 
-          <p>Modern layouts rely on semantic structure combined with CSS Flexbox or Grid for positioning.</p>
 
-          <h3>Syntax</h3>
-          <pre><code>&lt;header&gt;...&lt;/header&gt;</code></pre>
+          <section id="html-tables" class="lesson-section">
+            <h1>HTML Tables</h1>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
+            <p>Tables are used to display structured data in rows and columns.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Use table, tr, th, td elements</li>
+                <li>Best for tabular data</li>
+                <li>Can be styled with CSS</li>
+              </ul>
+            </div>
+
+            <p>Tables should not be used for layout; they are meant only for data representation.</p>
+
+            <h2>Syntax</h2>
+            <pre><code>&lt;table&gt;...&lt;/table&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+
+              <pre class="example-code"><code>
+<table border="1">
+<tr><th>Name</th><th>Age</th></tr>
+<tr><td>Ana</td><td>22</td></tr>
+</table>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<table border="1">
+<tr><th>Name</th><th>Age</th></tr>
+<tr><td>Ana</td><td>22</td></tr>
+</table>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips-box">
+              <ul>
+                <li>Use th for headers</li>
+                <li>Add captions for accessibility</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-lists" class="lesson-section">
+            <h1>HTML Lists</h1>
+
+            <p>Lists group related items together in an ordered or unordered format.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Use ul for unordered lists</li>
+                <li>Use ol for ordered lists</li>
+                <li>Use li for items</li>
+              </ul>
+            </div>
+
+            <p>Lists improve readability and structure content logically.</p>
+
+            <h2>Syntax</h2>
+            <pre><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+
+              <pre class="example-code"><code>
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+</ul>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+</ul>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips-box">
+              <ul>
+                <li>Choose list type based on meaning</li>
+                <li>Keep items concise</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-block-inline" class="lesson-section">
+            <h1>HTML Block & Inline</h1>
+
+            <p>HTML elements are categorized as block-level or inline based on how they appear in the layout.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Block elements take full width</li>
+                <li>Inline elements take only necessary space</li>
+                <li>Understanding this helps with layout design</li>
+              </ul>
+            </div>
+
+            <p>Block elements start on a new line and create structure, while inline elements flow within text content.
+            </p>
+
+            <h2>Syntax</h2>
+            <pre><code>&lt;div&gt;Block&lt;/div&gt; &lt;span&gt;Inline&lt;/span&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<div>Block element</div>
+<span>Inline element</span>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<div>Block element</div>
+<span>Inline element</span>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips-box">
+              <ul>
+                <li>Use block elements for layout</li>
+                <li>Use inline for small content pieces</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-div" class="lesson-section">
+            <h1>HTML Div</h1>
+
+            <p>The div element is a container used to group content and apply styles or layout.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Most commonly used layout container</li>
+                <li>Works with CSS for styling</li>
+                <li>Has no semantic meaning</li>
+              </ul>
+            </div>
+
+            <p>Divs are flexible and can hold any type of content, making them essential for page structure.</p>
+
+            <h2>Syntax</h2>
+            <pre><code>&lt;div&gt;Content&lt;/div&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<div style="background:#eee; padding:10px;">
+  Grouped content
+</div>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<div style="background:#eee; padding:10px;">
+  Grouped content
+</div>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips-box">
+              <ul>
+                <li>Prefer semantic elements when possible</li>
+                <li>Avoid unnecessary nesting</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-classes" class="lesson-section">
+            <h1>HTML Classes</h1>
+
+            <p>Classes allow you to apply styles or scripts to multiple elements at once.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Reusable styling hooks</li>
+                <li>Can be shared by many elements</li>
+                <li>Defined with class attribute</li>
+              </ul>
+            </div>
+
+            <p>Classes are essential for CSS styling and JavaScript targeting.</p>
+
+            <h2>Syntax</h2>
+            <pre><code>&lt;p class="note"&gt;Text&lt;/p&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<p class="highlight">Highlighted text</p>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<p class="highlight">Highlighted text</p>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips-box">
+              <ul>
+                <li>Use descriptive class names</li>
+                <li>Avoid overly generic names</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-id" class="lesson-section">
+            <h1>HTML Id</h1>
+
+            <p>The id attribute uniquely identifies an element on a page.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Must be unique</li>
+                <li>Used for anchors and scripting</li>
+                <li>Has higher CSS specificity</li>
+              </ul>
+            </div>
+
+            <p>Ids are useful for linking to specific sections or applying unique styles.</p>
+
+            <h2>Syntax</h2>
+            <pre><code>&lt;div id="header"&gt;&lt;/div&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<h2 id="section1">Section 1</h2>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<h2 id="section1">Section 1</h2>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips-box">
+              <ul>
+                <li>Use ids sparingly</li>
+                <li>Keep names meaningful</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-buttons" class="lesson-section">
+            <h1>HTML Buttons</h1>
+
+            <p>Buttons allow users to trigger actions such as submitting forms or running scripts.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Interactive element</li>
+                <li>Works with JavaScript</li>
+                <li>Supports different types</li>
+              </ul>
+            </div>
+
+            <p>Buttons can perform navigation, submit forms, or trigger events.</p>
+
+            <h2>Syntax</h2>
+            <pre><code>&lt;button&gt;Click&lt;/button&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<button onclick="alert('Hello!')">Click Me</button>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<button onclick="alert('Hello!')">Click Me</button>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips-box">
+              <ul>
+                <li>Always define button type in forms</li>
+                <li>Use clear action labels</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-iframes" class="lesson-section">
+            <h1>HTML Iframes</h1>
+
+            <p>Iframes embed another webpage or content within your page.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Useful for embedding external content</li>
+                <li>Can display videos, maps, or pages</li>
+                <li>Supports sandbox security</li>
+              </ul>
+            </div>
+
+            <p>Iframes are commonly used to embed third-party content safely.</p>
+
+            <h2>Syntax</h2>
+            <pre><code>&lt;iframe src="url"&gt;&lt;/iframe&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<iframe src="https://example.com" width="300" height="200"></iframe>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<iframe src="https://example.com" width="300" height="200"></iframe>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips-box">
+              <ul>
+                <li>Use sandbox for security</li>
+                <li>Avoid embedding untrusted sources</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-javascript" class="lesson-section">
+            <h1>HTML JavaScript</h1>
+
+            <p>JavaScript makes HTML pages dynamic and interactive. You can embed scripts directly in HTML using
+              the <code>&lt;script&gt;</code> tag, or link to an external JavaScript file.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Add scripts using the &lt;script&gt; tag</li>
+                <li>JavaScript can be inline or in an external file</li>
+                <li>Manipulates HTML using the DOM</li>
+                <li>Can respond to user events like clicks and input</li>
+              </ul>
+            </div>
+
+            <p>JavaScript runs in the browser and can modify page content, handle user actions, and communicate with
+              servers. Best practice is to place scripts at the bottom of the page or use the <code>defer</code>
+              attribute.</p>
+
+            <h2>Syntax</h2>
+            <pre><code>&lt;script&gt; // JavaScript code here &lt;/script&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+&lt;button onclick="showMessage()"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+  function showMessage() {
+    alert("Hello from JavaScript!");
+  }
+&lt;/script&gt;
+    </code></pre>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+                <textarea class="tryit-editor">
+<button onclick="showMessage()">Click Me</button>
+<script>
+  function showMessage() {
+    alert("Hello from JavaScript!");
+  }
+</script>
+      </textarea>
+                <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+              </div>
+            </div>
+
+            <h2>Example Explained</h2>
+            <ul>
+              <li><code>onclick</code> — Event attribute that runs JavaScript when the button is clicked</li>
+              <li><code>&lt;script&gt;</code> — Defines a block of JavaScript code</li>
+              <li><code>alert()</code> — Displays a message dialog in the browser</li>
+            </ul>
+
+            <div class="tips-box">
+              <ul>
+                <li>Use external JS files for larger projects</li>
+                <li>Avoid inline scripts for better maintainability</li>
+                <li>Use the <code>defer</code> attribute for better page load performance</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="html-file-paths" class="lesson-section">
+            <h1>HTML File Paths</h1>
+
+            <p>File paths specify the location of resources like images, stylesheets, scripts, and other files
+              relative to the current document or as absolute URLs.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Absolute paths use full URLs (start with https:// or /)</li>
+                <li>Relative paths are based on current file location</li>
+                <li>Correct paths prevent broken images and missing resources</li>
+              </ul>
+            </div>
+
+            <p>Using relative paths keeps projects portable across different environments and servers.</p>
+
+            <h2>Path Types</h2>
+            <table style="width:100%;border-collapse:collapse;margin:15px 0">
+              <tr style="background:rgba(4,170,109,0.1)">
+                <th style="padding:10px;text-align:left;border:1px solid var(--border)">Path</th>
+                <th style="padding:10px;text-align:left;border:1px solid var(--border)">Description</th>
+              </tr>
+              <tr>
+                <td style="padding:10px;border:1px solid var(--border)"><code>images/photo.jpg</code></td>
+                <td style="padding:10px;border:1px solid var(--border)">Relative — same folder</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border:1px solid var(--border)"><code>../images/photo.jpg</code></td>
+                <td style="padding:10px;border:1px solid var(--border)">Relative — one folder up</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border:1px solid var(--border)"><code>/images/photo.jpg</code></td>
+                <td style="padding:10px;border:1px solid var(--border)">Absolute from root</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;border:1px solid var(--border)"><code>https://example.com/img.jpg</code></td>
+                <td style="padding:10px;border:1px solid var(--border)">Full absolute URL</td>
+              </tr>
+            </table>
+
+            <h2>Syntax</h2>
+            <pre><code>&lt;img src="images/photo.jpg" alt="description"&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+&lt;img src="https://via.placeholder.com/150" alt="Sample"&gt;
+&lt;a href="../index.html"&gt;Go to Home&lt;/a&gt;
+    </code></pre>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+                <textarea class="tryit-editor">
+<img src="https://via.placeholder.com/150" alt="Sample Image">
+<p><a href="../index.html">Go to Home</a></p>
+      </textarea>
+                <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+              </div>
+            </div>
+
+            <div class="tips-box">
+              <ul>
+                <li>Use relative paths for internal files</li>
+                <li>Check all paths when deploying to a server</li>
+                <li>Keep your folder structure organized and consistent</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="html-head">
+            <h1>HTML Head</h1>
+            <p>The &lt;head&gt; element contains metadata and resources that define how a page behaves and appears.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Contains meta tags, title, styles, and scripts</li>
+                <li>Not visible on the page</li>
+                <li>Important for SEO and performance</li>
+              </ul>
+            </div>
+
+            <p>Proper use of the head improves search engine ranking, accessibility, and page loading speed.</p>
+
+            <h3>Syntax</h3>
+            <pre><code>&lt;head&gt; ... &lt;/head&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<head>
+  <title>My Page</title>
+  <meta charset="UTF-8">
+</head>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Head Example</title>
+</head>
+<body>
+  <p>Check the browser tab title.</p>
+</body>
+</html>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips">
+              <ul>
+                <li>Always include charset meta tag</li>
+                <li>Keep scripts deferred</li>
+                <li>Add meta description for SEO</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-layout">
+            <h1>HTML Layout</h1>
+            <p>Layout elements define the structure of a web page using semantic tags.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Use header, nav, main, section, footer</li>
+                <li>Improves accessibility</li>
+                <li>Helps search engines understand content</li>
+              </ul>
+            </div>
+
+            <p>Modern layouts rely on semantic structure combined with CSS Flexbox or Grid for positioning.</p>
+
+            <h3>Syntax</h3>
+            <pre><code>&lt;header&gt;...&lt;/header&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
 <header>Header</header>
 <nav>Navigation</nav>
 <main>Main Content</main>
 <footer>Footer</footer>
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <header>Header</header>
 <nav>Navigation</nav>
 <main>Main Content</main>
 <footer>Footer</footer>
       </textarea>
 
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tips">
-            <ul>
-              <li>Use semantic tags instead of generic divs</li>
-              <li>Keep layout consistent across pages</li>
-              <li>Combine with CSS Grid for responsiveness</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-responsive">
-          <h1>HTML Responsive</h1>
-          <p>Responsive design ensures your website looks good on all screen sizes.</p>
+            <div class="tips">
+              <ul>
+                <li>Use semantic tags instead of generic divs</li>
+                <li>Keep layout consistent across pages</li>
+                <li>Combine with CSS Grid for responsiveness</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-responsive">
+            <h1>HTML Responsive</h1>
+            <p>Responsive design ensures your website looks good on all screen sizes.</p>
 
-          <div class="key-points">
-            <ul>
-              <li>Use viewport meta tag</li>
-              <li>Flexible layouts with CSS</li>
-              <li>Responsive images</li>
-            </ul>
-          </div>
+            <div class="key-points">
+              <ul>
+                <li>Use viewport meta tag</li>
+                <li>Flexible layouts with CSS</li>
+                <li>Responsive images</li>
+              </ul>
+            </div>
 
-          <p>Modern websites must adapt to phones, tablets, and desktops. HTML works with CSS media queries to achieve
-            responsiveness.</p>
+            <p>Modern websites must adapt to phones, tablets, and desktops. HTML works with CSS media queries to achieve
+              responsiveness.</p>
 
-          <h3>Syntax</h3>
-          <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+            <h3>Syntax</h3>
+            <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <p>Resize the browser window to see responsiveness.</p>
       </textarea>
 
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tips">
-            <ul>
-              <li>Always include viewport meta tag</li>
-              <li>Use flexible units like % or rem</li>
-              <li>Test on multiple devices</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-semantics">
-          <h1>HTML Semantics</h1>
-          <p>Semantic HTML uses meaningful tags that clearly describe the purpose of content, improving accessibility,
-            SEO, and code readability.</p>
+            <div class="tips">
+              <ul>
+                <li>Always include viewport meta tag</li>
+                <li>Use flexible units like % or rem</li>
+                <li>Test on multiple devices</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-semantics">
+            <h1>HTML Semantics</h1>
+            <p>Semantic HTML uses meaningful tags that clearly describe the purpose of content, improving accessibility,
+              SEO, and code readability.</p>
 
-          <div class="key-points">
-            <ul>
-              <li>Semantic tags describe content meaning</li>
-              <li>Improves accessibility for screen readers</li>
-              <li>Helps search engines understand structure</li>
-            </ul>
-          </div>
+            <div class="key-points">
+              <ul>
+                <li>Semantic tags describe content meaning</li>
+                <li>Improves accessibility for screen readers</li>
+                <li>Helps search engines understand structure</li>
+              </ul>
+            </div>
 
-          <p>Instead of relying only on generic containers, semantic elements like &lt;article&gt;, &lt;section&gt;, and
-            &lt;nav&gt; provide context about what each part of the page represents.</p>
-          <p>Using semantic markup makes projects easier to maintain and aligns with modern HTML5 standards.</p>
+            <p>Instead of relying only on generic containers, semantic elements like &lt;article&gt;, &lt;section&gt;,
+              and
+              &lt;nav&gt; provide context about what each part of the page represents.</p>
+            <p>Using semantic markup makes projects easier to maintain and aligns with modern HTML5 standards.</p>
 
-          <h3>Syntax</h3>
-          <pre><code>&lt;article&gt;Content&lt;/article&gt;</code></pre>
+            <h3>Syntax</h3>
+            <pre><code>&lt;article&gt;Content&lt;/article&gt;</code></pre>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
 
-            <pre class="example-code"><code>
+              <pre class="example-code"><code>
 <article>
   <h2>Blog Post</h2>
   <p>This is a semantic article element.</p>
 </article>
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <article>
   <h2>Blog Post</h2>
   <p>This is a semantic article element.</p>
 </article>
       </textarea>
 
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tips">
-            <ul>
-              <li>Prefer semantic elements over generic divs</li>
-              <li>Use &lt;main&gt; only once per page</li>
-              <li>Structure content logically</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-style-guide">
-          <h1>HTML Style Guide</h1>
-          <p>A style guide ensures consistent and readable HTML across projects, making collaboration easier and
-            reducing errors.</p>
+            <div class="tips">
+              <ul>
+                <li>Prefer semantic elements over generic divs</li>
+                <li>Use &lt;main&gt; only once per page</li>
+                <li>Structure content logically</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-computercode" class="lesson-section">
+            <h1>HTML Computer Code</h1>
+            <p>HTML contains several elements for defining user input and computer code.</p>
 
-          <div class="key-points">
-            <ul>
-              <li>Use lowercase tag names</li>
-              <li>Indent nested elements</li>
-              <li>Close all elements properly</li>
-            </ul>
-          </div>
+            <div class="key-points">
+              <ul>
+                <li><code>&lt;code&gt;</code> for computer code</li>
+                <li><code>&lt;kbd&gt;</code> for keyboard input</li>
+                <li><code>&lt;samp&gt;</code> for computer output</li>
+                <li><code>&lt;var&gt;</code> for variables</li>
+                <li><code>&lt;pre&gt;</code> for preformatted text</li>
+              </ul>
+            </div>
 
-          <p>Consistent formatting helps developers quickly understand code. Teams often define their own style rules,
-            but following common conventions improves maintainability.</p>
-          <p>Modern best practices also emphasize semantic structure and accessibility.</p>
+            <p>These elements are used to display code snippets, keyboard shortcuts, and technical documentation
+              clearly.
+            </p>
 
-          <h3>Syntax</h3>
-          <pre><code>&lt;element attribute="value"&gt;</code></pre>
+            <h2>Syntax</h2>
+            <pre><code>&lt;code&gt;x = 5;&lt;/code&gt;</code></pre>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<code>x = 5; y = 6; z = x + y;</code>
+    </code></pre>
 
-            <pre class="example-code"><code>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<code>x = 5; y = 6; z = x + y;</code>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips-box">
+              <ul>
+                <li>Use <code>&lt;pre&gt;</code> to preserve whitespace</li>
+                <li>Combine <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> for multi-line blocks</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-semantics" class="lesson-section">
+            <h1>HTML Semantics</h1>
+            <p>Semantic HTML uses meaningful tags that clearly describe the purpose of content, improving accessibility,
+              SEO, and code readability.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Semantic tags describe content meaning</li>
+                <li>Improves accessibility for screen readers</li>
+                <li>Helps search engines understand structure</li>
+              </ul>
+            </div>
+
+            <p>Instead of relying only on generic containers, semantic elements like &lt;article&gt;, &lt;section&gt;,
+              and
+              &lt;nav&gt; provide context about what each part of the page represents.</p>
+
+            <h2>Syntax</h2>
+            <pre><code>&lt;article&gt;Content&lt;/article&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<article>
+  <h2>Blog Post</h2>
+  <p>This is a semantic article element.</p>
+</article>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<article>
+  <h2>Blog Post</h2>
+  <p>This is a semantic article element.</p>
+</article>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips-box">
+              <ul>
+                <li>Prefer semantic elements over generic divs</li>
+                <li>Use &lt;main&gt; only once per page</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="html-style-guide">
+            <h1>HTML Style Guide</h1>
+            <p>A style guide ensures consistent and readable HTML across projects, making collaboration easier and
+              reducing errors.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Use lowercase tag names</li>
+                <li>Indent nested elements</li>
+                <li>Close all elements properly</li>
+              </ul>
+            </div>
+
+            <p>Consistent formatting helps developers quickly understand code. Teams often define their own style rules,
+              but following common conventions improves maintainability.</p>
+            <p>Modern best practices also emphasize semantic structure and accessibility.</p>
+
+            <h3>Syntax</h3>
+            <pre><code>&lt;element attribute="value"&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+
+              <pre class="example-code"><code>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -2307,381 +2408,383 @@ Change Color
 </html>
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <h1>Clean Code</h1>
 <p>Consistent formatting improves readability.</p>
       </textarea>
 
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tips">
-            <ul>
-              <li>Keep lines short and readable</li>
-              <li>Use meaningful class names</li>
-              <li>Validate HTML regularly</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-entities">
-          <h1>HTML Entities</h1>
-          <p>Entities are used to display reserved characters or symbols that cannot be typed directly in HTML.</p>
+            <div class="tips">
+              <ul>
+                <li>Keep lines short and readable</li>
+                <li>Use meaningful class names</li>
+                <li>Validate HTML regularly</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-entities">
+            <h1>HTML Entities</h1>
+            <p>Entities are used to display reserved characters or symbols that cannot be typed directly in HTML.</p>
 
-          <div class="key-points">
-            <ul>
-              <li>Begin with &amp; and end with ;</li>
-              <li>Used for reserved characters</li>
-              <li>Ensure correct rendering</li>
-            </ul>
-          </div>
+            <div class="key-points">
+              <ul>
+                <li>Begin with &amp; and end with ;</li>
+                <li>Used for reserved characters</li>
+                <li>Ensure correct rendering</li>
+              </ul>
+            </div>
 
-          <p>For example, the less-than symbol cannot be written directly because it would be interpreted as a tag.
-            Entities solve this by encoding characters.</p>
+            <p>For example, the less-than symbol cannot be written directly because it would be interpreted as a tag.
+              Entities solve this by encoding characters.</p>
 
-          <h3>Syntax</h3>
-          <pre><code>&amp;entityName;</code></pre>
+            <h3>Syntax</h3>
+            <pre><code>&amp;entityName;</code></pre>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
 
-            <pre class="example-code"><code>
+              <pre class="example-code"><code>
 <p>5 &lt; 10</p>
 <p>Copyright &copy; 2026</p>
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <p>5 &lt; 10</p>
 <p>Copyright &copy; 2026</p>
       </textarea>
 
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tips">
-            <ul>
-              <li>Use entities for reserved characters</li>
-              <li>Prefer UTF-8 charset for wider support</li>
-              <li>Memorize common entities like &amp;nbsp;</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-symbols">
-          <h1>HTML Symbols</h1>
-          <p>HTML supports a wide range of mathematical, currency, and technical symbols using entities or Unicode.</p>
+            <div class="tips">
+              <ul>
+                <li>Use entities for reserved characters</li>
+                <li>Prefer UTF-8 charset for wider support</li>
+                <li>Memorize common entities like &amp;nbsp;</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-symbols">
+            <h1>HTML Symbols</h1>
+            <p>HTML supports a wide range of mathematical, currency, and technical symbols using entities or Unicode.
+            </p>
 
-          <div class="key-points">
-            <ul>
-              <li>Useful for technical content</li>
-              <li>Rendered using entity codes</li>
-              <li>Supported across modern browsers</li>
-            </ul>
-          </div>
+            <div class="key-points">
+              <ul>
+                <li>Useful for technical content</li>
+                <li>Rendered using entity codes</li>
+                <li>Supported across modern browsers</li>
+              </ul>
+            </div>
 
-          <p>Symbols are commonly used in finance, engineering, and documentation pages.</p>
+            <p>Symbols are commonly used in finance, engineering, and documentation pages.</p>
 
-          <h3>Syntax</h3>
-          <pre><code>&amp;#symbolCode;</code></pre>
+            <h3>Syntax</h3>
+            <pre><code>&amp;#symbolCode;</code></pre>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
 
-            <pre class="example-code"><code>
+              <pre class="example-code"><code>
 <p>&#8364; Euro</p>
 <p>&#9731; Snowman</p>
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <p>&#8364; Euro</p>
 <p>&#9731; Snowman</p>
       </textarea>
 
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tips">
-            <ul>
-              <li>Check symbol compatibility</li>
-              <li>Use UTF-8 charset</li>
-              <li>Test across devices</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-emojis">
-          <h1>HTML Emojis</h1>
-          <p>Emojis can be added using Unicode characters, making interfaces more expressive and user-friendly.</p>
+            <div class="tips">
+              <ul>
+                <li>Check symbol compatibility</li>
+                <li>Use UTF-8 charset</li>
+                <li>Test across devices</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-emojis">
+            <h1>HTML Emojis</h1>
+            <p>Emojis can be added using Unicode characters, making interfaces more expressive and user-friendly.</p>
 
-          <div class="key-points">
-            <ul>
-              <li>Use Unicode codes</li>
-              <li>Requires UTF-8 charset</li>
-              <li>Supported in modern browsers</li>
-            </ul>
-          </div>
+            <div class="key-points">
+              <ul>
+                <li>Use Unicode codes</li>
+                <li>Requires UTF-8 charset</li>
+                <li>Supported in modern browsers</li>
+              </ul>
+            </div>
 
-          <p>Emojis are widely used in messaging interfaces, notifications, and social platforms.</p>
+            <p>Emojis are widely used in messaging interfaces, notifications, and social platforms.</p>
 
-          <h3>Syntax</h3>
-          <pre><code>&amp;#128512;</code></pre>
+            <h3>Syntax</h3>
+            <pre><code>&amp;#128512;</code></pre>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
 
-            <pre class="example-code"><code>
+              <pre class="example-code"><code>
 <p>&#128512; Smile Emoji</p>
 <p>&#128640; Rocket Emoji</p>
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <p>&#128512; Smile Emoji</p>
 <p>&#128640; Rocket Emoji</p>
       </textarea>
 
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tips">
-            <ul>
-              <li>Use emojis sparingly in professional sites</li>
-              <li>Ensure accessibility with text labels</li>
-              <li>Test rendering across platforms</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-charsets">
-          <h1>HTML Charsets</h1>
-          <p>A character set defines how text is stored and displayed in a web page. UTF-8 is the standard charset
-            because it supports almost all characters and symbols.</p>
+            <div class="tips">
+              <ul>
+                <li>Use emojis sparingly in professional sites</li>
+                <li>Ensure accessibility with text labels</li>
+                <li>Test rendering across platforms</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-charsets">
+            <h1>HTML Charsets</h1>
+            <p>A character set defines how text is stored and displayed in a web page. UTF-8 is the standard charset
+              because it supports almost all characters and symbols.</p>
 
-          <div class="key-points">
-            <ul>
-              <li>UTF-8 is the recommended charset</li>
-              <li>Ensures correct display of international text</li>
-              <li>Must be declared in the head</li>
-            </ul>
-          </div>
+            <div class="key-points">
+              <ul>
+                <li>UTF-8 is the recommended charset</li>
+                <li>Ensures correct display of international text</li>
+                <li>Must be declared in the head</li>
+              </ul>
+            </div>
 
-          <p>Without a proper charset, browsers may display garbled text. UTF-8 allows you to safely include emojis,
-            symbols, and multilingual content.</p>
+            <p>Without a proper charset, browsers may display garbled text. UTF-8 allows you to safely include emojis,
+              symbols, and multilingual content.</p>
 
-          <h3>Syntax</h3>
-          <pre><code>&lt;meta charset="UTF-8"&gt;</code></pre>
+            <h3>Syntax</h3>
+            <pre><code>&lt;meta charset="UTF-8"&gt;</code></pre>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
 <head>
   <meta charset="UTF-8">
 </head>
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <meta charset="UTF-8">
 <p>Charset ensures correct text rendering.</p>
       </textarea>
 
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tips">
-            <ul>
-              <li>Always use UTF-8</li>
-              <li>Place charset early in the head</li>
-              <li>Avoid mixing encodings</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-url-encode">
-          <h1>HTML URL Encoding</h1>
-          <p>URL encoding converts characters into a format that can be safely transmitted over the internet.</p>
+            <div class="tips">
+              <ul>
+                <li>Always use UTF-8</li>
+                <li>Place charset early in the head</li>
+                <li>Avoid mixing encodings</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-url-encode">
+            <h1>HTML URL Encoding</h1>
+            <p>URL encoding converts characters into a format that can be safely transmitted over the internet.</p>
 
-          <div class="key-points">
-            <ul>
-              <li>Spaces become %20</li>
-              <li>Special characters are encoded</li>
-              <li>Ensures valid URLs</li>
-            </ul>
-          </div>
+            <div class="key-points">
+              <ul>
+                <li>Spaces become %20</li>
+                <li>Special characters are encoded</li>
+                <li>Ensures valid URLs</li>
+              </ul>
+            </div>
 
-          <p>Encoding prevents errors when URLs contain spaces, symbols, or non-ASCII text. Browsers often handle
-            encoding automatically, but developers should understand how it works.</p>
+            <p>Encoding prevents errors when URLs contain spaces, symbols, or non-ASCII text. Browsers often handle
+              encoding automatically, but developers should understand how it works.</p>
 
-          <h3>Syntax</h3>
-          <pre><code>https://example.com/search?q=web%20design</code></pre>
+            <h3>Syntax</h3>
+            <pre><code>https://example.com/search?q=web%20design</code></pre>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
 <a href="https://example.com/search?q=learn%20html">Search</a>
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <a href="https://example.com/search?q=learn%20html">Encoded Link</a>
       </textarea>
 
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tips">
-            <ul>
-              <li>Encode query parameters</li>
-              <li>Avoid spaces in URLs</li>
-              <li>Use built-in encoding functions in JS</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-vs-xhtml">
-          <h1>HTML vs XHTML</h1>
-          <p>XHTML is a stricter, XML-based version of HTML. Modern development mainly uses HTML5, but understanding
-            XHTML helps you write cleaner code.</p>
+            <div class="tips">
+              <ul>
+                <li>Encode query parameters</li>
+                <li>Avoid spaces in URLs</li>
+                <li>Use built-in encoding functions in JS</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-vs-xhtml">
+            <h1>HTML vs XHTML</h1>
+            <p>XHTML is a stricter, XML-based version of HTML. Modern development mainly uses HTML5, but understanding
+              XHTML helps you write cleaner code.</p>
 
-          <div class="key-points">
-            <ul>
-              <li>XHTML requires proper closing tags</li>
-              <li>HTML is more flexible</li>
-              <li>HTML5 is the current standard</li>
-            </ul>
-          </div>
+            <div class="key-points">
+              <ul>
+                <li>XHTML requires proper closing tags</li>
+                <li>HTML is more flexible</li>
+                <li>HTML5 is the current standard</li>
+              </ul>
+            </div>
 
-          <p>XHTML enforced strict syntax rules like lowercase tags and well-formed structure. HTML5 adopted many of
-            these best practices while remaining developer-friendly.</p>
+            <p>XHTML enforced strict syntax rules like lowercase tags and well-formed structure. HTML5 adopted many of
+              these best practices while remaining developer-friendly.</p>
 
-          <h3>Syntax</h3>
-          <pre><code>&lt;br /&gt; (XHTML) vs &lt;br&gt; (HTML)</code></pre>
+            <h3>Syntax</h3>
+            <pre><code>&lt;br /&gt; (XHTML) vs &lt;br&gt; (HTML)</code></pre>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
 <p>HTML allows flexible syntax.</p>
 <br>
 <p>XHTML requires self-closing tags.</p>
 <br />
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <p>HTML is flexible.</p>
 <br>
 <p>XHTML is strict.</p>
 <br />
       </textarea>
 
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tips">
-            <ul>
-              <li>Follow XHTML discipline for cleaner HTML</li>
-              <li>Always close elements</li>
-              <li>Use HTML5 for modern projects</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-forms">
-          <h1>HTML Forms</h1>
-          <p>Forms allow users to send data to a server. They are essential for login pages, registrations, searches,
-            and feedback systems.</p>
+            <div class="tips">
+              <ul>
+                <li>Follow XHTML discipline for cleaner HTML</li>
+                <li>Always close elements</li>
+                <li>Use HTML5 for modern projects</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-forms">
+            <h1>HTML Forms</h1>
+            <p>Forms allow users to send data to a server. They are essential for login pages, registrations, searches,
+              and feedback systems.</p>
 
-          <div class="key-points">
-            <ul>
-              <li>Collect user input</li>
-              <li>Use input, textarea, and select</li>
-              <li>Submit data using HTTP methods</li>
-            </ul>
-          </div>
+            <div class="key-points">
+              <ul>
+                <li>Collect user input</li>
+                <li>Use input, textarea, and select</li>
+                <li>Submit data using HTTP methods</li>
+              </ul>
+            </div>
 
-          <p>The form element acts as a container for different input controls. Each control collects specific data that
-            is sent to a server when the form is submitted.</p>
-          <p>Forms are a core part of interactive web applications.</p>
+            <p>The form element acts as a container for different input controls. Each control collects specific data
+              that
+              is sent to a server when the form is submitted.</p>
+            <p>Forms are a core part of interactive web applications.</p>
 
-          <h3>Syntax</h3>
-          <pre><code>&lt;form action="/submit" method="post"&gt;&lt;/form&gt;</code></pre>
+            <h3>Syntax</h3>
+            <pre><code>&lt;form action="/submit" method="post"&gt;&lt;/form&gt;</code></pre>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
 <form>
   <label>Name:</label>
   <input type="text">
@@ -2689,16 +2792,16 @@ Change Color
 </form>
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <form>
   <label>Name:</label>
   <input type="text">
@@ -2706,620 +2809,1404 @@ Change Color
 </form>
       </textarea>
 
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tips">
-            <ul>
-              <li>Always include labels</li>
-              <li>Validate inputs</li>
-              <li>Use appropriate input types</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-form-attributes">
-          <h1>HTML Form Attributes</h1>
-          <p>Form attributes control how and where form data is sent when a user submits a form.</p>
+            <div class="tips">
+              <ul>
+                <li>Always include labels</li>
+                <li>Validate inputs</li>
+                <li>Use appropriate input types</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-form-attributes">
+            <h1>HTML Form Attributes</h1>
+            <p>Form attributes control how and where form data is sent when a user submits a form.</p>
 
-          <div class="key-points">
-            <ul>
-              <li>action defines submission URL</li>
-              <li>method sets HTTP method</li>
-              <li>target controls response location</li>
-            </ul>
-          </div>
+            <div class="key-points">
+              <ul>
+                <li>action defines submission URL</li>
+                <li>method sets HTTP method</li>
+                <li>target controls response location</li>
+              </ul>
+            </div>
 
-          <p>Choosing the right attributes ensures data is handled securely and correctly. Most forms use the POST
-            method when sending sensitive data.</p>
+            <p>Choosing the right attributes ensures data is handled securely and correctly. Most forms use the POST
+              method when sending sensitive data.</p>
 
-          <h3>Syntax</h3>
-          <pre><code>&lt;form action="/submit" method="post"&gt;</code></pre>
+            <h3>Syntax</h3>
+            <pre><code>&lt;form action="/submit" method="post"&gt;</code></pre>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
 <form action="/submit" method="post">
   <input type="text" placeholder="Name">
   <button type="submit">Send</button>
 </form>
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <form action="#">
   <input type="text" placeholder="Your name">
   <button type="submit">Submit</button>
 </form>
       </textarea>
 
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tips">
-            <ul>
-              <li>Use POST for sensitive data</li>
-              <li>Validate on client and server</li>
-              <li>Always define an action</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-form-elements">
-          <h1>HTML Form Elements</h1>
-          <p>Form elements are controls that allow users to enter and select data.</p>
+            <div class="tips">
+              <ul>
+                <li>Use POST for sensitive data</li>
+                <li>Validate on client and server</li>
+                <li>Always define an action</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-form-elements">
+            <h1>HTML Form Elements</h1>
+            <p>Form elements are controls that allow users to enter and select data.</p>
 
-          <div class="key-points">
-            <ul>
-              <li>Common elements include input, textarea, select</li>
-              <li>Buttons trigger form actions</li>
-              <li>Labels improve accessibility</li>
-            </ul>
-          </div>
+            <div class="key-points">
+              <ul>
+                <li>Common elements include input, textarea, select</li>
+                <li>Buttons trigger form actions</li>
+                <li>Labels improve accessibility</li>
+              </ul>
+            </div>
 
-          <p>Each element serves a specific purpose. Combining them creates complete forms such as registration or
-            contact forms.</p>
+            <p>Each element serves a specific purpose. Combining them creates complete forms such as registration or
+              contact forms.</p>
 
-          <h3>Syntax</h3>
-          <pre><code>&lt;input&gt; &lt;textarea&gt; &lt;select&gt;</code></pre>
+            <h3>Syntax</h3>
+            <pre><code>&lt;input&gt; &lt;textarea&gt; &lt;select&gt;</code></pre>
 
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
 <form>
   <input type="text" placeholder="Name">
   <textarea placeholder="Message"></textarea>
 </form>
     </code></pre>
 
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
 
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
 
-              <textarea class="tryit-editor">
+                <textarea class="tryit-editor">
 <form>
   <input type="text" placeholder="Name">
   <textarea placeholder="Message"></textarea>
-              </form>
+                </form>
+                </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips">
+              <ul>
+                <li>Group related inputs</li>
+                <li>Use labels for usability</li>
+                <li>Keep forms simple</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-input-types">
+            <h1>HTML Input Types</h1>
+            <p>Input types define the kind of data users can enter, such as text, email, date, or password.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Different types provide built-in validation</li>
+                <li>Improve mobile user experience</li>
+                <li>Ensure accurate data entry</li>
+              </ul>
+            </div>
+
+            <p>Using appropriate input types helps browsers display the right keyboard on mobile devices and reduces
+              validation errors.</p>
+
+            <h3>Syntax</h3>
+            <pre><code>&lt;input type="email"&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<input type="date">
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<input type="date">
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips">
+              <ul>
+                <li>Use semantic input types</li>
+                <li>Avoid using text for everything</li>
+                <li>Combine with validation attributes</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-input-attributes">
+            <h1>HTML Input Attributes</h1>
+            <p>Input attributes provide additional control over form fields such as validation rules and default values.
+            </p>
+
+            <div class="key-points">
+              <ul>
+                <li>placeholder shows hint text</li>
+                <li>required enforces validation</li>
+                <li>value sets default content</li>
+              </ul>
+            </div>
+
+            <p>Attributes help guide users and ensure the correct data format is submitted.</p>
+
+            <h3>Syntax</h3>
+            <pre><code>&lt;input type="text" required&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<input type="text" placeholder="Name" required>
+<input type="number" min="1" max="10">
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<input type="text" placeholder="Name" required>
+<input type="number" min="1" max="10">
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips">
+              <ul>
+                <li>Use required for important fields</li>
+                <li>Provide helpful placeholders</li>
+                <li>Combine validation attributes</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-form-validation">
+            <h1>HTML Form Validation</h1>
+            <p>HTML provides built-in validation features that help ensure users enter the correct type of data before
+              submitting a form.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Reduces invalid submissions</li>
+                <li>Improves user experience</li>
+                <li>No JavaScript required for basic checks</li>
+              </ul>
+            </div>
+
+            <p>Validation attributes like <code>required</code>, <code>pattern</code>, and <code>minlength</code> allow
+              developers to enforce rules directly in HTML.</p>
+
+            <h3>Syntax</h3>
+            <pre><code>&lt;input type="email" required&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<form>
+  <input type="email" placeholder="Email" required>
+  <button>Submit</button>
+</form>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<form>
+  <input type="email" placeholder="Email" required>
+  <button>Submit</button>
+</form>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips">
+              <ul>
+                <li>Use validation alongside server checks</li>
+                <li>Provide clear error messages</li>
+                <li>Test validation on mobile devices</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-fieldset">
+            <h1>HTML Fieldset & Legend</h1>
+            <p>The fieldset element groups related form controls, while legend provides a caption for the group.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Improves accessibility</li>
+                <li>Organizes long forms</li>
+                <li>Provides context to users</li>
+              </ul>
+            </div>
+
+            <p>Using fieldsets makes forms easier to understand, especially when they contain multiple sections like
+              billing and shipping information.</p>
+
+            <h3>Syntax</h3>
+            <pre><code>&lt;fieldset&gt;&lt;legend&gt;Info&lt;/legend&gt;&lt;/fieldset&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<form>
+  <fieldset>
+    <legend>Contact Info</legend>
+    <input type="text" placeholder="Name">
+  </fieldset>
+</form>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<form>
+  <fieldset>
+    <legend>Contact Info</legend>
+    <input type="text" placeholder="Name">
+  </fieldset>
+</form>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips">
+              <ul>
+                <li>Use for multi-section forms</li>
+                <li>Keep legends descriptive</li>
+                <li>Avoid over-nesting fieldsets</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-datalist">
+            <h1>HTML Datalist</h1>
+            <p>The datalist element provides autocomplete suggestions for input fields.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Enhances usability</li>
+                <li>Allows custom suggestions</li>
+                <li>Works with input list attribute</li>
+              </ul>
+            </div>
+
+            <p>Datalists are useful for suggesting common values like cities or product names while still allowing
+              custom
+              input.</p>
+
+            <h3>Syntax</h3>
+            <pre><code>&lt;input list="items"&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<input list="browsers">
+<datalist id="browsers">
+  <option value="Chrome">
+  <option value="Firefox">
+</datalist>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<input list="browsers">
+<datalist id="browsers">
+  <option value="Chrome">
+  <option value="Firefox">
+</datalist>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips">
+              <ul>
+                <li>Use for suggestions, not restrictions</li>
+                <li>Provide common options</li>
+                <li>Ensure accessibility labels</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-canvas">
+            <h1>HTML Canvas</h1>
+            <p>The canvas element allows you to draw graphics dynamically using JavaScript.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Used for games and visualizations</li>
+                <li>Requires JavaScript</li>
+                <li>Pixel-based rendering</li>
+              </ul>
+            </div>
+
+            <p>Canvas is commonly used for charts, animations, and interactive graphics.</p>
+
+            <h3>Syntax</h3>
+            <pre><code>&lt;canvas id="myCanvas"&gt;&lt;/canvas&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<canvas id="c" width="200" height="100"></canvas>
+<script>
+  let ctx = document.getElementById("c").getContext("2d");
+  ctx.fillRect(20, 20, 100, 50);
+</script>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<canvas id="c" width="200" height="100"></canvas>
+<script>
+  let ctx = document.getElementById("c").getContext("2d");
+  ctx.fillRect(20, 20, 100, 50);
+</script>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips">
+              <ul>
+                <li>Always set canvas width and height</li>
+                <li>Use for dynamic visuals</li>
+                <li>Prefer SVG for scalable graphics</li>
+              </ul>
+            </div>
+          </section>
+          <section id="html-svg">
+            <h1>HTML SVG</h1>
+            <p>SVG (Scalable Vector Graphics) is used to create resolution-independent graphics directly in HTML.</p>
+
+            <div class="key-points">
+              <ul>
+                <li>Vector-based graphics</li>
+                <li>Scales without losing quality</li>
+                <li>Styled with CSS</li>
+              </ul>
+            </div>
+
+            <p>SVG is ideal for icons, charts, and illustrations because it remains sharp at any size.</p>
+
+            <h3>Syntax</h3>
+            <pre><code>&lt;svg&gt;&lt;circle /&gt;&lt;/svg&gt;</code></pre>
+
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" fill="blue"/>
+</svg>
+    </code></pre>
+
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+
+                <textarea class="tryit-editor">
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" fill="blue"/>
+</svg>
+      </textarea>
+
+                <div class="tryit-output">
+                  <iframe sandbox="allow-scripts"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="tips">
+              <ul>
+                <li>Use SVG for logos and icons</li>
+                <li>Inline SVG allows CSS styling</li>
+                <li>Optimize SVG for performance</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ===== HTML GRAPHICS ===== -->
+          <section id="html-graphics" class="lesson-section">
+            <h1>HTML Graphics</h1>
+            <p>HTML supports two powerful technologies for creating graphics on the web: <strong>Canvas</strong>
+              (pixel-based, JavaScript-driven) and <strong>SVG</strong> (vector-based, scalable).</p>
+            <div class="key-points">
+              <ul>
+                <li>Canvas is used for dynamic, pixel-level drawing</li>
+                <li>SVG uses XML-based shapes and scales without quality loss</li>
+                <li>Both are natively supported in all modern browsers</li>
+              </ul>
+            </div>
+            <p>Choose Canvas for animations and games; choose SVG for icons, logos, and illustrations that need to be
+              sharp at any size.</p>
+            <div class="tips-box">
+              <ul>
+                <li>Use SVG for static graphics and icons</li>
+                <li>Use Canvas for real-time animated visuals</li>
+                <li>Both can be styled with CSS and scripted with JavaScript</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ===== HTML MEDIA ===== -->
+          <section id="html-media" class="lesson-section">
+            <h1>HTML Media</h1>
+            <p>HTML5 introduced native support for embedding audio and video directly in web pages without needing
+              plugins
+              like Flash.</p>
+            <div class="key-points">
+              <ul>
+                <li>Use &lt;video&gt; for video content</li>
+                <li>Use &lt;audio&gt; for sound and music</li>
+                <li>Multiple &lt;source&gt; elements provide format fallbacks</li>
+                <li>Supports playback controls, autoplay, and loop</li>
+              </ul>
+            </div>
+            <p>Media elements are widely supported and provide a seamless, accessible way to include rich content in
+              your
+              pages.</p>
+            <div class="tips-box">
+              <ul>
+                <li>Always provide alternative text or fallback content</li>
+                <li>Compress media files for faster loading</li>
+                <li>Use <code>preload="metadata"</code> to improve performance</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ===== HTML VIDEO ===== -->
+          <section id="html-video" class="lesson-section">
+            <h1>HTML Video</h1>
+            <p>The <code>&lt;video&gt;</code> element embeds video content directly into a webpage with built-in browser
+              controls.</p>
+            <div class="key-points">
+              <ul>
+                <li>Supports MP4, WebM, and Ogg formats</li>
+                <li>Use <code>controls</code> to add play/pause UI</li>
+                <li>Supports <code>autoplay</code>, <code>loop</code>, and <code>muted</code></li>
+              </ul>
+            </div>
+            <h2>Syntax</h2>
+            <pre><code>&lt;video src="file.mp4" controls&gt;&lt;/video&gt;</code></pre>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+&lt;video width="400" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  &lt;source src="movie.ogg" type="video/ogg"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+            </code></pre>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+                <textarea class="tryit-editor">
+<video width="320" controls style="background:#000">
+  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
               </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+                <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
               </div>
             </div>
-          </div>
+            <div class="tips-box">
+              <ul>
+                <li>Always include a fallback message inside the tag</li>
+                <li>Use <code>muted</code> with <code>autoplay</code> for browser compatibility</li>
+              </ul>
+            </div>
+          </section>
 
-          <div class="tips">
-            <ul>
-              <li>Group related inputs</li>
-              <li>Use labels for usability</li>
-              <li>Keep forms simple</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-input-types">
-          <h1>HTML Input Types</h1>
-          <p>Input types define the kind of data users can enter, such as text, email, date, or password.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Different types provide built-in validation</li>
-              <li>Improve mobile user experience</li>
-              <li>Ensure accurate data entry</li>
-            </ul>
-          </div>
-
-          <p>Using appropriate input types helps browsers display the right keyboard on mobile devices and reduces
-            validation errors.</p>
-
-          <h3>Syntax</h3>
-          <pre><code>&lt;input type="email"&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<input type="text" placeholder="Name">
-<input type="email" placeholder="Email">
-<input type="date">
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<input type="text" placeholder="Name">
-<input type="email" placeholder="Email">
-<input type="date">
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+          <!-- ===== HTML AUDIO ===== -->
+          <section id="html-audio" class="lesson-section">
+            <h1>HTML Audio</h1>
+            <p>The <code>&lt;audio&gt;</code> element embeds sound content such as music or podcasts directly into
+              webpages.</p>
+            <div class="key-points">
+              <ul>
+                <li>Supports MP3, WAV, and Ogg formats</li>
+                <li>Use <code>controls</code> attribute for playback UI</li>
+                <li>Can loop, autoplay, and be muted</li>
+              </ul>
+            </div>
+            <h2>Syntax</h2>
+            <pre><code>&lt;audio controls&gt;&lt;source src="file.mp3"&gt;&lt;/audio&gt;</code></pre>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  &lt;source src="audio.ogg" type="audio/ogg"&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;
+            </code></pre>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+                <textarea class="tryit-editor">
+<audio controls>
+  <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+              </textarea>
+                <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
               </div>
             </div>
-          </div>
+            <div class="tips-box">
+              <ul>
+                <li>Always provide fallback text for old browsers</li>
+                <li>Use multiple <code>&lt;source&gt;</code> elements for browser compatibility</li>
+              </ul>
+            </div>
+          </section>
 
-          <div class="tips">
-            <ul>
-              <li>Use semantic input types</li>
-              <li>Avoid using text for everything</li>
-              <li>Combine with validation attributes</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-input-attributes">
-          <h1>HTML Input Attributes</h1>
-          <p>Input attributes provide additional control over form fields such as validation rules and default values.
-          </p>
-
-          <div class="key-points">
-            <ul>
-              <li>placeholder shows hint text</li>
-              <li>required enforces validation</li>
-              <li>value sets default content</li>
-            </ul>
-          </div>
-
-          <p>Attributes help guide users and ensure the correct data format is submitted.</p>
-
-          <h3>Syntax</h3>
-          <pre><code>&lt;input type="text" required&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<input type="text" placeholder="Name" required>
-<input type="number" min="1" max="10">
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<input type="text" placeholder="Name" required>
-<input type="number" min="1" max="10">
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+          <!-- ===== HTML PLUGINS ===== -->
+          <section id="html-plugins" class="lesson-section">
+            <h1>HTML Plug-ins</h1>
+            <p>The <code>&lt;object&gt;</code> and <code>&lt;embed&gt;</code> elements were historically used to embed
+              external content like PDFs, Flash, or Java applets. Today, native HTML5 elements are preferred.</p>
+            <div class="key-points">
+              <ul>
+                <li><code>&lt;object&gt;</code> embeds external resources</li>
+                <li><code>&lt;embed&gt;</code> is a self-closing void element</li>
+                <li>Flash is no longer supported — use HTML5 alternatives</li>
+              </ul>
+            </div>
+            <h2>Syntax</h2>
+            <pre><code>&lt;object data="file.pdf" type="application/pdf"&gt;&lt;/object&gt;</code></pre>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+&lt;object data="document.pdf" type="application/pdf" width="500" height="400"&gt;
+  &lt;p&gt;Your browser does not support PDFs. &lt;a href="document.pdf"&gt;Download the PDF&lt;/a&gt;&lt;/p&gt;
+&lt;/object&gt;
+            </code></pre>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+                <textarea class="tryit-editor">
+<object data="" width="300" height="200" style="background:#eee;display:flex;align-items:center;justify-content:center">
+  <p>Plugin placeholder. In real use, point to a PDF or media file.</p>
+</object>
+              </textarea>
+                <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
               </div>
             </div>
-          </div>
+            <div class="tips-box">
+              <ul>
+                <li>Prefer native HTML5 elements over <code>&lt;object&gt;</code></li>
+                <li>Always provide fallback content</li>
+              </ul>
+            </div>
+          </section>
 
-          <div class="tips">
-            <ul>
-              <li>Use required for important fields</li>
-              <li>Provide helpful placeholders</li>
-              <li>Combine validation attributes</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-form-validation">
-          <h1>HTML Form Validation</h1>
-          <p>HTML provides built-in validation features that help ensure users enter the correct type of data before
-            submitting a form.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Reduces invalid submissions</li>
-              <li>Improves user experience</li>
-              <li>No JavaScript required for basic checks</li>
-            </ul>
-          </div>
-
-          <p>Validation attributes like <code>required</code>, <code>pattern</code>, and <code>minlength</code> allow
-            developers to enforce rules directly in HTML.</p>
-
-          <h3>Syntax</h3>
-          <pre><code>&lt;input type="email" required&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<form>
-  <input type="email" placeholder="Email" required>
-  <button>Submit</button>
-</form>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<form>
-  <input type="email" placeholder="Email" required>
-  <button>Submit</button>
-</form>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+          <!-- ===== HTML YOUTUBE ===== -->
+          <section id="html-youtube" class="lesson-section">
+            <h1>HTML YouTube</h1>
+            <p>The easiest way to embed a YouTube video is using an <code>&lt;iframe&gt;</code> with the YouTube embed
+              URL.</p>
+            <div class="key-points">
+              <ul>
+                <li>Use YouTube's embed URL format</li>
+                <li>Control playback with URL parameters</li>
+                <li>Add <code>allowfullscreen</code> for fullscreen support</li>
+              </ul>
+            </div>
+            <h2>Syntax</h2>
+            <pre><code>&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID"&gt;&lt;/iframe&gt;</code></pre>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+&lt;iframe width="560" height="315"
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+  allowfullscreen&gt;
+&lt;/iframe&gt;
+            </code></pre>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+                <textarea class="tryit-editor">
+<iframe width="400" height="225"
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+  allowfullscreen>
+</iframe>
+              </textarea>
+                <div class="tryit-output"><iframe sandbox="allow-scripts allow-same-origin"></iframe></div>
               </div>
             </div>
-          </div>
-
-          <div class="tips">
-            <ul>
-              <li>Use validation alongside server checks</li>
-              <li>Provide clear error messages</li>
-              <li>Test validation on mobile devices</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-fieldset">
-          <h1>HTML Fieldset & Legend</h1>
-          <p>The fieldset element groups related form controls, while legend provides a caption for the group.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Improves accessibility</li>
-              <li>Organizes long forms</li>
-              <li>Provides context to users</li>
-            </ul>
-          </div>
-
-          <p>Using fieldsets makes forms easier to understand, especially when they contain multiple sections like
-            billing and shipping information.</p>
-
-          <h3>Syntax</h3>
-          <pre><code>&lt;fieldset&gt;&lt;legend&gt;Info&lt;/legend&gt;&lt;/fieldset&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<form>
-  <fieldset>
-    <legend>Contact Info</legend>
-    <input type="text" placeholder="Name">
-  </fieldset>
-</form>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<form>
-  <fieldset>
-    <legend>Contact Info</legend>
-    <input type="text" placeholder="Name">
-  </fieldset>
-</form>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
+            <div class="tips-box">
+              <ul>
+                <li>Add <code>?rel=0</code> to prevent showing unrelated videos</li>
+                <li>Use <code>?mute=1</code> for autoplay compliance</li>
+              </ul>
             </div>
-          </div>
+          </section>
 
-          <div class="tips">
-            <ul>
-              <li>Use for multi-section forms</li>
-              <li>Keep legends descriptive</li>
-              <li>Avoid over-nesting fieldsets</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-datalist">
-          <h1>HTML Datalist</h1>
-          <p>The datalist element provides autocomplete suggestions for input fields.</p>
-
-          <div class="key-points">
-            <ul>
-              <li>Enhances usability</li>
-              <li>Allows custom suggestions</li>
-              <li>Works with input list attribute</li>
-            </ul>
-          </div>
-
-          <p>Datalists are useful for suggesting common values like cities or product names while still allowing custom
-            input.</p>
-
-          <h3>Syntax</h3>
-          <pre><code>&lt;input list="items"&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<input list="browsers">
-<datalist id="browsers">
-  <option value="Chrome">
-  <option value="Firefox">
-</datalist>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<input list="browsers">
-<datalist id="browsers">
-  <option value="Chrome">
-  <option value="Firefox">
-</datalist>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
-              </div>
+          <!-- ===== HTML APIs ===== -->
+          <section id="html-apis" class="lesson-section">
+            <h1>HTML Web APIs</h1>
+            <p>HTML5 introduced several powerful browser APIs that allow JavaScript to access device features and
+              browser
+              capabilities directly.</p>
+            <div class="key-points">
+              <ul>
+                <li>Geolocation — access user's GPS coordinates</li>
+                <li>Drag &amp; Drop — move elements with the mouse</li>
+                <li>Web Storage — store data in the browser</li>
+                <li>Web Workers — run scripts in background threads</li>
+                <li>Server-Sent Events — receive real-time updates from server</li>
+              </ul>
             </div>
-          </div>
+            <p>These APIs make it possible to build rich, app-like experiences entirely in the browser without plugins.
+            </p>
+            <div class="tips-box">
+              <ul>
+                <li>Always check browser compatibility before using newer APIs</li>
+                <li>Request only permissions you need (e.g., Geolocation)</li>
+              </ul>
+            </div>
+          </section>
 
-          <div class="tips">
-            <ul>
-              <li>Use for suggestions, not restrictions</li>
-              <li>Provide common options</li>
-              <li>Ensure accessibility labels</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-canvas">
-          <h1>HTML Canvas</h1>
-          <p>The canvas element allows you to draw graphics dynamically using JavaScript.</p>
+          <!-- ===== HTML GEOLOCATION ===== -->
+          <section id="html-geolocation" class="lesson-section">
+            <h1>HTML Geolocation</h1>
+            <p>The Geolocation API allows you to get the user's current geographic location with their permission.</p>
+            <div class="key-points">
+              <ul>
+                <li>Uses <code>navigator.geolocation</code></li>
+                <li>Returns latitude and longitude coordinates</li>
+                <li>Requires HTTPS and user permission</li>
+              </ul>
+            </div>
+            <h2>Syntax</h2>
+            <pre><code>navigator.geolocation.getCurrentPosition(successFn);</code></pre>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+&lt;button onclick="getLocation()"&gt;Get My Location&lt;/button&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
 
-          <div class="key-points">
-            <ul>
-              <li>Used for games and visualizations</li>
-              <li>Requires JavaScript</li>
-              <li>Pixel-based rendering</li>
-            </ul>
-          </div>
-
-          <p>Canvas is commonly used for charts, animations, and interactive graphics.</p>
-
-          <h3>Syntax</h3>
-          <pre><code>&lt;canvas id="myCanvas"&gt;&lt;/canvas&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<canvas id="c" width="200" height="100"></canvas>
+&lt;script&gt;
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    document.getElementById("demo").innerHTML = "Geolocation not supported.";
+  }
+}
+function showPosition(position) {
+  document.getElementById("demo").innerHTML =
+    "Lat: " + position.coords.latitude +
+    "&lt;br&gt;Lon: " + position.coords.longitude;
+}
+&lt;/script&gt;
+            </code></pre>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+                <textarea class="tryit-editor">
+<button onclick="getLocation()">Get My Location</button>
+<p id="demo"></p>
 <script>
-  let ctx = document.getElementById("c").getContext("2d");
-  ctx.fillRect(20, 20, 100, 50);
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      document.getElementById("demo").innerHTML = "Geolocation not supported.";
+    }
+  }
+  function showPosition(pos) {
+    document.getElementById("demo").innerHTML =
+      "Lat: " + pos.coords.latitude + "<br>Lon: " + pos.coords.longitude;
+  }
 </script>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </textarea>
+                <div class="tryit-output"><iframe sandbox="allow-scripts allow-same-origin"></iframe></div>
               </div>
+            </div>
+            <div class="tips-box">
+              <ul>
+                <li>Only works over HTTPS in production</li>
+                <li>Always handle error cases gracefully</li>
+              </ul>
+            </div>
+          </section>
 
-              <textarea class="tryit-editor">
-<canvas id="c" width="200" height="100"></canvas>
+          <!-- ===== HTML DRAG & DROP ===== -->
+          <section id="html-drag-drop" class="lesson-section">
+            <h1>HTML Drag &amp; Drop</h1>
+            <p>The HTML Drag and Drop API enables elements to be dragged and dropped using mouse or touch events.</p>
+            <div class="key-points">
+              <ul>
+                <li>Use <code>draggable="true"</code> on source element</li>
+                <li>Handle <code>ondragstart</code>, <code>ondrop</code>, and <code>ondragover</code> events</li>
+                <li>Use <code>event.dataTransfer</code> to pass data</li>
+              </ul>
+            </div>
+            <h2>Syntax</h2>
+            <pre><code>&lt;div draggable="true" ondragstart="drag(event)"&gt;Drag me&lt;/div&gt;</code></pre>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+&lt;div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"&gt;&lt;/div&gt;
+&lt;img id="drag1" src="img.png" draggable="true" ondragstart="drag(event)"&gt;
+
+&lt;script&gt;
+function allowDrop(ev) { ev.preventDefault(); }
+function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+&lt;/script&gt;
+            </code></pre>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+                <textarea class="tryit-editor">
+<style>
+#drop-zone { width:120px;height:120px;border:2px dashed #04AA6D;padding:10px; }
+#drag-box { width:80px;height:80px;background:#04AA6D;color:#fff;display:flex;align-items:center;justify-content:center;cursor:grab; }
+</style>
+<div id="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">Drop here</div>
+<div id="drag-box" draggable="true" ondragstart="drag(event)">Drag me</div>
 <script>
-  let ctx = document.getElementById("c").getContext("2d");
-  ctx.fillRect(20, 20, 100, 50);
+  function allowDrop(ev) { ev.preventDefault(); }
+  function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+  function drop(ev) { ev.preventDefault(); var d = ev.dataTransfer.getData("text"); ev.target.appendChild(document.getElementById(d)); }
 </script>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+              </textarea>
+                <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
               </div>
             </div>
-          </div>
+            <div class="tips-box">
+              <ul>
+                <li>Call <code>event.preventDefault()</code> in ondragover to allow dropping</li>
+                <li>Use dataTransfer to pass data between drag source and drop target</li>
+              </ul>
+            </div>
+          </section>
 
-          <div class="tips">
-            <ul>
-              <li>Always set canvas width and height</li>
-              <li>Use for dynamic visuals</li>
-              <li>Prefer SVG for scalable graphics</li>
-            </ul>
-          </div>
-        </section>
-        <section id="html-svg">
-          <h1>HTML SVG</h1>
-          <p>SVG (Scalable Vector Graphics) is used to create resolution-independent graphics directly in HTML.</p>
+          <!-- ===== WEB STORAGE ===== -->
+          <section id="html-web-storage" class="lesson-section">
+            <h1>HTML Web Storage</h1>
+            <p>Web Storage allows web applications to store data locally in the user's browser — more securely and with
+              larger capacity than cookies.</p>
+            <div class="key-points">
+              <ul>
+                <li><code>localStorage</code> — persists even after browser close</li>
+                <li><code>sessionStorage</code> — cleared when tab closes</li>
+                <li>Both store key-value string pairs</li>
+                <li>Up to ~5-10MB storage per origin</li>
+              </ul>
+            </div>
+            <h2>Syntax</h2>
+            <pre><code>localStorage.setItem("key", "value");
+localStorage.getItem("key");</code></pre>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+&lt;button onclick="saveData()"&gt;Save&lt;/button&gt;
+&lt;button onclick="loadData()"&gt;Load&lt;/button&gt;
+&lt;p id="result"&gt;&lt;/p&gt;
 
-          <div class="key-points">
-            <ul>
-              <li>Vector-based graphics</li>
-              <li>Scales without losing quality</li>
-              <li>Styled with CSS</li>
-            </ul>
-          </div>
-
-          <p>SVG is ideal for icons, charts, and illustrations because it remains sharp at any size.</p>
-
-          <h3>Syntax</h3>
-          <pre><code>&lt;svg&gt;&lt;circle /&gt;&lt;/svg&gt;</code></pre>
-
-          <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Example</div>
-            <pre class="example-code"><code>
-<svg width="100" height="100">
-  <circle cx="50" cy="50" r="40" fill="blue"/>
-</svg>
-    </code></pre>
-
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
-
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
-              </div>
-
-              <textarea class="tryit-editor">
-<svg width="100" height="100">
-  <circle cx="50" cy="50" r="40" fill="blue"/>
-</svg>
-      </textarea>
-
-              <div class="tryit-output">
-                <iframe sandbox="allow-scripts"></iframe>
+&lt;script&gt;
+function saveData() {
+  localStorage.setItem("username", "LearnX User");
+  alert("Saved!");
+}
+function loadData() {
+  var name = localStorage.getItem("username") || "No data found";
+  document.getElementById("result").innerText = name;
+}
+&lt;/script&gt;
+            </code></pre>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+                <textarea class="tryit-editor">
+<button onclick="saveData()">Save Name</button>
+<button onclick="loadData()">Load Name</button>
+<p id="result"></p>
+<script>
+  function saveData() { localStorage.setItem("username", "LearnX User"); alert("Saved!"); }
+  function loadData() { document.getElementById("result").innerText = localStorage.getItem("username") || "Nothing saved"; }
+</script>
+              </textarea>
+                <div class="tryit-output"><iframe sandbox="allow-scripts allow-same-origin"></iframe></div>
               </div>
             </div>
-          </div>
-
-          <div class="tips">
-            <ul>
-              <li>Use SVG for logos and icons</li>
-              <li>Inline SVG allows CSS styling</li>
-              <li>Optimize SVG for performance</li>
-            </ul>
-          </div>
-        </section>
-        </section>
-
-        <!-- ================= MEDIA & APIS ================= -->
-        <section class="media-api-section" id="html-media-apis">
-
-
-          <header>
-            <h1>HTML Media & APIs — Complete Demo</h1>
-            <p>All sections in one file</p>
-          </header>
-
-          <!-- ================= MEDIA ================= -->
-          <section>
-            <h2>🎬 HTML Media</h2>
-
-            <h3>Video</h3>
-            <video width="400" controls>
-              <source src="movie.mp4" type="video/mp4">
-            </video>
-
-            <h3>Audio</h3>
-            <audio controls>
-              <source src="audio.mp3" type="audio/mpeg">
-            </audio>
-
-            <h3>YouTube Embed</h3>
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-
-            <h3>Plugin (Object)</h3>
-            <object data="" width="300" height="200">
-              Plugin content placeholder
-            </object>
-          </section>
-
-          <!-- ================= APIs ================= -->
-          <section>
-            <h2>⚙️ HTML APIs</h2>
-
-            <h3>Geolocation</h3>
-            <button onclick="getLocation()">Get Location</button>
-            <p id="location"></p>
-
-            <h3>Drag and Drop</h3>
-            <div id="drag" draggable="true" style="width:100px;height:100px;background:#93c5fd;"
-              ondragstart="drag(event)">Drag</div>
-
-            <div id="drop" style="width:120px;height:120px;border:2px dashed #333;margin-top:10px;" ondrop="drop(event)"
-              ondragover="allowDrop(event)">
+            <div class="tips-box">
+              <ul>
+                <li>Never store sensitive data (passwords, tokens) in localStorage</li>
+                <li>Use <code>JSON.stringify()</code> to store objects</li>
+              </ul>
             </div>
-
-            <h3>Web Storage</h3>
-            <button onclick="saveData()">Save Name</button>
-            <button onclick="loadData()">Load Name</button>
-            <p id="storage"></p>
-
-            <h3>Web Worker (Demo Info)</h3>
-            <p>Workers require separate JS file (not included in single-file demo).</p>
-
-            <h3>Server Sent Events (Info)</h3>
-            <p>SSE requires a backend endpoint.</p>
           </section>
 
-          <!-- ================= EXAMPLES ================= -->
-          <section>
-            <h2>🧪 HTML Examples</h2>
-            <ul>
-              <li>Basic Layout</li>
-              <li>Forms</li>
-              <li>Tables</li>
-              <li>Media Pages</li>
-              <li>Landing Page</li>
-            </ul>
+          <!-- ===== WEB WORKERS ===== -->
+          <section id="html-web-workers" class="lesson-section">
+            <h1>HTML Web Workers</h1>
+            <p>Web Workers let you run JavaScript in a background thread, keeping the main UI thread free and
+              responsive.
+            </p>
+            <div class="key-points">
+              <ul>
+                <li>Run scripts in the background</li>
+                <li>Cannot access the DOM directly</li>
+                <li>Communicate with main thread via <code>postMessage()</code></li>
+                <li>Ideal for CPU-heavy tasks</li>
+              </ul>
+            </div>
+            <h2>Syntax</h2>
+            <pre><code>const worker = new Worker("worker.js");
+worker.postMessage("start");
+worker.onmessage = (e) => console.log(e.data);</code></pre>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example — Concept</div>
+              <pre class="example-code"><code>
+&lt;!-- main.html --&gt;
+&lt;button onclick="startWorker()"&gt;Start Worker&lt;/button&gt;
+&lt;p id="result"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+let w;
+function startWorker() {
+  if (typeof(Worker) !== "undefined") {
+    w = new Worker("worker.js");
+    w.onmessage = (e) => {
+      document.getElementById("result").innerText = e.data;
+    };
+  }
+}
+&lt;/script&gt;
+
+&lt;!-- worker.js file --&gt;
+&lt;!-- postMessage("Worker is running!"); --&gt;
+            </code></pre>
+            </div>
+            <div class="tips-box">
+              <ul>
+                <li>Worker scripts must be in separate files</li>
+                <li>Great for sorting large arrays or processing data</li>
+                <li>Always terminate workers when done: <code>worker.terminate()</code></li>
+              </ul>
+            </div>
           </section>
 
-          <!-- ================= EDITOR ================= -->
-          <section>
-            <h2>🧑‍💻 HTML Editor</h2>
-            <p>You can write HTML using:</p>
-            <ul>
-              <li>VS Code</li>
-              <li>Notepad</li>
-              <li>Online editors</li>
-              <li>Browser DevTools</li>
-            </ul>
+          <!-- ===== SSE ===== -->
+          <section id="html-sse" class="lesson-section">
+            <h1>HTML Server-Sent Events (SSE)</h1>
+            <p>Server-Sent Events allow a server to push real-time updates to the browser over a persistent HTTP
+              connection.</p>
+            <div class="key-points">
+              <ul>
+                <li>One-way: server → client</li>
+                <li>Uses the <code>EventSource</code> API</li>
+                <li>Automatic reconnection on disconnect</li>
+                <li>Requires a server endpoint that sends <code>text/event-stream</code></li>
+              </ul>
+            </div>
+            <h2>Syntax</h2>
+            <pre><code>const source = new EventSource("/stream");
+source.onmessage = (e) => console.log(e.data);</code></pre>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example — Concept</div>
+              <pre class="example-code"><code>
+&lt;!-- Client-side --&gt;
+&lt;div id="updates"&gt;&lt;/div&gt;
+&lt;script&gt;
+const source = new EventSource("/sse-endpoint");
+source.onmessage = function(e) {
+  document.getElementById("updates").innerHTML += e.data + "&lt;br&gt;";
+};
+&lt;/script&gt;
+
+&lt;!-- Server-side (Node.js example) --&gt;
+&lt;!-- res.setHeader("Content-Type","text/event-stream"); --&gt;
+&lt;!-- res.write("data: Hello World\n\n"); --&gt;
+            </code></pre>
+            </div>
+            <div class="tips-box">
+              <ul>
+                <li>SSE is simpler than WebSockets for one-way updates</li>
+                <li>Ideal for notifications, live feeds, and dashboards</li>
+                <li>Not supported in Internet Explorer</li>
+              </ul>
+            </div>
           </section>
+
+          <!-- ===== HTML QUIZ ===== -->
+          <section id="html-quiz" class="lesson-section">
+            <h1>HTML Quiz</h1>
+            <p>Test your HTML knowledge with these questions! Try to answer each one before revealing the answer.</p>
+            <div class="key-points">
+              <ul>
+                <li>Q1: What does HTML stand for?</li>
+                <li>Q2: Which tag creates the largest heading?</li>
+                <li>Q3: Which attribute is used to specify alternate text for an image?</li>
+                <li>Q4: Which HTML element defines the document's body?</li>
+                <li>Q5: How do you create a hyperlink in HTML?</li>
+              </ul>
+            </div>
+            <div class="tips-box">
+              <ul>
+                <li>A1: HyperText Markup Language</li>
+                <li>A2: &lt;h1&gt;</li>
+                <li>A3: The <code>alt</code> attribute</li>
+                <li>A4: &lt;body&gt;</li>
+                <li>A5: <code>&lt;a href="url"&gt;Link text&lt;/a&gt;</code></li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ===== HTML EXERCISES ===== -->
+          <section id="html-exercises" class="lesson-section">
+            <h1>HTML Exercises</h1>
+            <p>Practice makes perfect! Try these hands-on exercises to reinforce your HTML skills.</p>
+            <div class="key-points">
+              <ul>
+                <li>Exercise 1: Create a page with a heading and 2 paragraphs</li>
+                <li>Exercise 2: Build an ordered list of your 5 favorite movies</li>
+                <li>Exercise 3: Create a table with 3 columns and 3 rows</li>
+                <li>Exercise 4: Build a contact form with name, email, and message</li>
+                <li>Exercise 5: Create a page that uses header, main, and footer</li>
+              </ul>
+            </div>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Exercise 1 — Starter</div>
+              <pre class="example-code"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Exercise Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;My Page Title&lt;/h1&gt;
+  &lt;p&gt;First paragraph goes here.&lt;/p&gt;
+  &lt;p&gt;Second paragraph goes here.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+                <textarea class="tryit-editor">
+<!DOCTYPE html>
+<html>
+<head><title>Exercise Page</title></head>
+<body>
+  <h1>My Page Title</h1>
+  <p>First paragraph goes here.</p>
+  <p>Second paragraph goes here.</p>
+</body>
+</html>
+              </textarea>
+                <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===== HTML ACCESSIBILITY ===== -->
+          <section id="html-accessibility" class="lesson-section">
+            <h1>HTML Accessibility</h1>
+            <p>Accessible HTML ensures that your website can be used by everyone, including people with visual,
+              auditory,
+              motor, or cognitive disabilities.</p>
+            <div class="key-points">
+              <ul>
+                <li>Use semantic HTML elements (header, nav, main, article, aside, footer)</li>
+                <li>Always add <code>alt</code> text to images</li>
+                <li>Use <code>&lt;label&gt;</code> for form inputs</li>
+                <li>Ensure keyboard navigation works</li>
+                <li>Use ARIA attributes where needed</li>
+                <li>Maintain good color contrast (WCAG guidelines)</li>
+              </ul>
+            </div>
+            <h2>ARIA Attributes</h2>
+            <p>ARIA (Accessible Rich Internet Applications) attributes add accessibility information to HTML elements:
+            </p>
+            <div class="example-box">
+              <div class="example-header"><i class="fas fa-code"></i> Example</div>
+              <pre class="example-code"><code>
+&lt;!-- Button with ARIA label --&gt;
+&lt;button aria-label="Close menu"&gt;&times;&lt;/button&gt;
+
+&lt;!-- Navigation with role --&gt;
+&lt;nav aria-label="Main navigation"&gt;
+  &lt;a href="#home"&gt;Home&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;!-- Image with descriptive alt --&gt;
+&lt;img src="chart.png" alt="Sales growth chart showing 40% increase in Q3 2025"&gt;
+
+&lt;!-- Accessible form --&gt;
+&lt;label for="email"&gt;Email Address:&lt;/label&gt;
+&lt;input type="email" id="email" name="email" required&gt;
+            </code></pre>
+              <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+              <div class="tryit-panel">
+                <div class="tryit-toolbar">
+                  <span>Live Editor</span>
+                  <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                  <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+                </div>
+                <textarea class="tryit-editor">
+<label for="name">Your Name:</label>
+<input type="text" id="name" name="name" placeholder="Enter your name" required>
+<br><br>
+<button aria-label="Submit the form">Submit</button>
+              </textarea>
+                <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+              </div>
+            </div>
+            <div class="tips-box">
+              <ul>
+                <li>Test with a screen reader (NVDA, VoiceOver)</li>
+                <li>Use the <a href="https://wave.webaim.org/" target="_blank">WAVE</a> accessibility tool</li>
+                <li>Follow WCAG 2.1 AA standards as a minimum</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ===== HTML SUMMARY ===== -->
+          <section id="html-summary" class="lesson-section">
+            <h1>HTML Summary</h1>
+            <p>You have now covered all the major HTML topics. Here's a quick recap of the most important concepts:</p>
+            <div class="key-points">
+              <ul>
+                <li>HTML is the standard markup language for creating web pages</li>
+                <li>HTML elements are represented by tags like &lt;p&gt;, &lt;h1&gt;, &lt;div&gt;</li>
+                <li>Always start with <code>&lt;!DOCTYPE html&gt;</code></li>
+                <li>Use semantic elements: header, nav, main, section, article, footer</li>
+                <li>Forms collect user input with various input types</li>
+                <li>Media elements embed video and audio natively</li>
+                <li>APIs like Geolocation and Web Storage extend browser capabilities</li>
+                <li>Accessibility ensures your site works for all users</li>
+              </ul>
+            </div>
+            <h2>What's Next?</h2>
+            <p>Now that you know HTML, the natural progression is:</p>
+            <ol style="padding-left:20px;line-height:2">
+              <li><strong>CSS</strong> — Style your HTML pages with colors, fonts, and layouts</li>
+              <li><strong>JavaScript</strong> — Add interactivity and dynamic behavior</li>
+              <li><strong>A Framework</strong> (React, Vue) — Build modern web applications</li>
+            </ol>
+            <div class="tips-box">
+              <ul>
+                <li>Practice by building real projects</li>
+                <li>Read the MDN Web Docs for detailed references</li>
+                <li>Validate your HTML at validator.w3.org</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- ===== HTML TAG LIST ===== -->
+          <section id="html-tag-list" class="lesson-section">
+            <h1>HTML Tag List</h1>
+            <p>A reference of the most commonly used HTML tags and their purpose:</p>
+            <table style="width:100%;border-collapse:collapse;font-size:14px">
+              <tr style="background:rgba(4,170,109,0.15)">
+                <th style="padding:10px;text-align:left;border:1px solid var(--border)">Tag</th>
+                <th style="padding:10px;text-align:left;border:1px solid var(--border)">Description</th>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;!DOCTYPE&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines the document type</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;html&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Root element of an HTML page</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;head&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Contains metadata/information for the
+                  document
+                </td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;title&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines the page title (shown in browser
+                  tab)
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;body&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines the document's body</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;h1&gt;–&lt;h6&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines HTML headings</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;p&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines a paragraph</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;a&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines a hyperlink</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;img&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines an image</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;ul&gt; / &lt;ol&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Unordered / Ordered list</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;li&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines a list item</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;table&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines a table</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;form&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines an HTML form</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;input&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines an input control</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;button&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines a clickable button</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;div&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines a section/container (block)</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;span&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines an inline container</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;header&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Semantic header element</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;nav&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines navigation links</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;main&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Specifies the main content</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;section&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines a section in a document</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;article&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines self-contained content</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;aside&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines content aside from main content</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;footer&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Semantic footer element</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;strong&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Bold text with semantic importance</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;em&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Italic text with semantic emphasis</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;br&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Inserts a single line break</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;hr&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines a thematic change/horizontal rule
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;canvas&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Used to draw graphics via JavaScript</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;video&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines video or movie content</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;audio&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines sound content</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;iframe&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines an inline frame</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;script&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines a client-side script</td>
+              </tr>
+              <tr style="background:rgba(0,0,0,0.02)">
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;link&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Links external resources (CSS, icons)</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;meta&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)">Defines metadata about the document</td>
+              </tr>
+            </table>
+          </section>
+
       </div>
     </main>
   </div>
+
 
   <!-- THEME & LOGOUT SCRIPTS -->
   <script>
@@ -3392,6 +4279,48 @@ Change Color
       out.open();
       out.write(code);
       out.close();
+    }
+
+    // Geolocation API Logic
+    function getLocation() {
+      const demo = document.getElementById("demo");
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            demo.innerHTML = "Lat: " + pos.coords.latitude + "<br>Lon: " + pos.coords.longitude;
+          },
+          (err) => {
+            demo.innerHTML = "Error: " + err.message;
+          }
+        );
+      } else {
+        demo.innerHTML = "Geolocation not supported.";
+      }
+    }
+
+    // Drag and Drop Logic
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+
+    // Web Storage Logic
+    function saveData() {
+      localStorage.setItem("username", "LearnX User");
+      alert("Data saved to Local Storage!");
+    }
+    function loadData() {
+      const storageResult = document.getElementById("result");
+      if (storageResult) {
+        storageResult.innerText = localStorage.getItem("username") || "No data saved.";
+      }
     }
 
     // Copy Code Logic
