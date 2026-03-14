@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -66,7 +66,7 @@
     }
 
     /* Card-style sections */
-    .lesson-section,
+    .topic-section,
     .media-api-section {
       background: var(--bg-card);
       padding: 45px;
@@ -79,7 +79,7 @@
       animation: fadeIn 0.6s ease-out forwards;
     }
 
-    .lesson-section::before {
+    .topic-section::before {
       content: '';
       position: absolute;
       top: 0;
@@ -99,7 +99,7 @@
       color: var(--text);
     }
 
-    .lesson-section h1 {
+    .topic-section h1 {
       background: linear-gradient(to right, var(--text), var(--primary));
       -webkit-background-clip: text;
       background-clip: text;
@@ -182,7 +182,7 @@
     }
 
     .key-points ul li::before {
-      content: '✔';
+      content: 'âœ”';
       color: var(--primary);
       margin-right: 10px;
       font-weight: bold;
@@ -231,7 +231,7 @@
     }
 
     /* Dark Mode nuances */
-    [data-theme="dark"] .lesson-section,
+    [data-theme="dark"] .topic-section,
     [data-theme="dark"] .media-api-section {
       background: #161b22;
       border-color: #30363d;
@@ -449,10 +449,10 @@
           <a href="../index1.html">Home</a> <span>/</span> <span>HTML</span> <span>/</span> <span>Introduction</span>
         </div>
 
-        <section id="html-home" class="lesson-section">
+        <section id="html-home" class="topic-section">
           <h1>HTML Home</h1>
 
-          <p>Welcome to the LearnX HTML course — your complete guide to building modern, semantic, and accessible web
+          <p>Welcome to the LearnX HTML course â€” your complete guide to building modern, semantic, and accessible web
             pages using HTML5.</p>
 
           <div class="key-points">
@@ -465,9 +465,9 @@
           </div>
 
           <p>HTML (HyperText Markup Language) provides the structure of web pages. It tells the browser what each piece
-            of content is — such as headings, paragraphs, images, or links.</p>
+            of content is â€” such as headings, paragraphs, images, or links.</p>
 
-          <p>In this course, you’ll progress from the basics to advanced topics like semantic layout, forms, and APIs,
+          <p>In this course, youâ€™ll progress from the basics to advanced topics like semantic layout, forms, and APIs,
             with practical examples along the way.</p>
 
           <h2>Syntax</h2>
@@ -529,7 +529,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-introduction" class="lesson-section">
+        <section id="html-introduction" class="topic-section">
           <h1>HTML Introduction</h1>
 
           <p>HTML is the standard language used to create web pages and applications. It describes the structure of
@@ -588,7 +588,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-editors" class="lesson-section">
+        <section id="html-editors" class="topic-section">
           <h1>HTML Editors</h1>
 
           <p>To write HTML, you need a text editor. Editors range from simple tools to advanced development environments
@@ -609,7 +609,7 @@
             strong plugin ecosystems.</p>
 
           <h2>Syntax</h2>
-          <pre><code>Open editor → Create .html file → Write code → Save → Open in browser</code></pre>
+          <pre><code>Open editor â†’ Create .html file â†’ Write code â†’ Save â†’ Open in browser</code></pre>
 
           <div class="example-box">
             <div class="example-header">
@@ -649,7 +649,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-basic" class="lesson-section">
+        <section id="html-basic" class="topic-section">
           <h1>HTML Basic</h1>
 
           <p>A basic HTML document includes essential elements that define the page structure such as the document type,
@@ -722,7 +722,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-elements" class="lesson-section">
+        <section id="html-elements" class="topic-section">
           <h1>HTML Elements</h1>
 
           <p>HTML elements are the building blocks of web pages. They define structure and meaning using opening and
@@ -775,7 +775,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-attributes" class="lesson-section">
+        <section id="html-attributes" class="topic-section">
           <h1>HTML Attributes</h1>
 
           <p>Attributes provide additional information about elements. They are always written inside the opening tag.
@@ -829,7 +829,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-headings" class="lesson-section">
+        <section id="html-headings" class="topic-section">
           <h1>HTML Headings</h1>
 
           <p>Headings define the structure and hierarchy of content on a page. They range from h1 (most important) to h6
@@ -886,7 +886,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-paragraphs" class="lesson-section">
+        <section id="html-paragraphs" class="topic-section">
           <h1>HTML Paragraphs</h1>
 
           <p>Paragraph elements are used to display blocks of text content on a webpage.</p>
@@ -939,7 +939,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-styles" class="lesson-section">
+        <section id="html-styles" class="topic-section">
           <h1>HTML Styles</h1>
 
           <p>Styles allow you to change the appearance of elements using CSS properties like color, font, and spacing.
@@ -992,7 +992,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-formatting" class="lesson-section">
+        <section id="html-formatting" class="topic-section">
           <h1>HTML Formatting</h1>
 
           <p>Formatting elements help emphasize text by making it bold, italic, highlighted, or marked as important.</p>
@@ -1005,7 +1005,7 @@
             </ul>
           </div>
 
-          <p>Formatting is not just visual — tags like strong and em provide meaning that assistive technologies can
+          <p>Formatting is not just visual â€” tags like strong and em provide meaning that assistive technologies can
             interpret.</p>
 
           <h2>Syntax</h2>
@@ -1046,7 +1046,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-quotations" class="lesson-section">
+        <section id="html-quotations" class="topic-section">
           <h1>HTML Quotations</h1>
 
           <p>Quotation elements are used to mark up quotes, citations, and references.</p>
@@ -1097,7 +1097,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-comments" class="lesson-section">
+        <section id="html-comments" class="topic-section">
           <h1>HTML Comments</h1>
 
           <p>Comments are notes in your code that are not displayed in the browser. They help explain and organize code.
@@ -1151,7 +1151,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-colors" class="lesson-section">
+        <section id="html-colors" class="topic-section">
           <h1>HTML Colors</h1>
 
           <p>Colors can be applied using names, HEX, RGB, or HSL values to style text, backgrounds, and borders.</p>
@@ -1202,7 +1202,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-css" class="lesson-section">
+        <section id="html-css" class="topic-section">
           <h1>HTML CSS</h1>
 
           <p>CSS (Cascading Style Sheets) controls the visual appearance of HTML elements, including layout, colors, and
@@ -1255,7 +1255,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-links" class="lesson-section">
+        <section id="html-links" class="topic-section">
           <h1>HTML Links</h1>
 
           <p>Links allow users to navigate between pages, sections, or external resources.</p>
@@ -1302,11 +1302,11 @@
           <div class="tips-box">
             <ul>
               <li>Use descriptive link text</li>
-              <li>Avoid “click here” wording</li>
+              <li>Avoid â€œclick hereâ€ wording</li>
             </ul>
           </div>
         </section>
-        <section id="html-images" class="lesson-section">
+        <section id="html-images" class="topic-section">
           <h1>HTML Images</h1>
 
           <p>Images enhance visual communication and engagement on web pages.</p>
@@ -1357,7 +1357,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-favicon" class="lesson-section">
+        <section id="html-favicon" class="topic-section">
           <h1>HTML Favicon</h1>
 
           <p>A favicon is a small icon displayed in the browser tab representing your website.</p>
@@ -1366,7 +1366,7 @@
             <ul>
               <li>Defined in the head section</li>
               <li>Improves branding</li>
-              <li>Usually 16×16 or 32×32 pixels</li>
+              <li>Usually 16Ã—16 or 32Ã—32 pixels</li>
             </ul>
           </div>
 
@@ -1408,7 +1408,7 @@
             </ul>
           </div>
         </section>
-        <section id="html-page-title" class="lesson-section">
+        <section id="html-page-title" class="topic-section">
           <h1>HTML Page Title</h1>
           <p>The <code>&lt;title&gt;</code> element defines the title of the document. The title must be text-only, and
             it is shown in the browser's title bar or in the page's tab.</p>
@@ -1469,7 +1469,7 @@
           </div>
 
 
-          <section id="html-tables" class="lesson-section">
+          <section id="html-tables" class="topic-section">
             <h1>HTML Tables</h1>
 
             <p>Tables are used to display structured data in rows and columns.</p>
@@ -1526,7 +1526,7 @@
               </ul>
             </div>
           </section>
-          <section id="html-lists" class="lesson-section">
+          <section id="html-lists" class="topic-section">
             <h1>HTML Lists</h1>
 
             <p>Lists group related items together in an ordered or unordered format.</p>
@@ -1583,7 +1583,7 @@
               </ul>
             </div>
           </section>
-          <section id="html-block-inline" class="lesson-section">
+          <section id="html-block-inline" class="topic-section">
             <h1>HTML Block & Inline</h1>
 
             <p>HTML elements are categorized as block-level or inline based on how they appear in the layout.</p>
@@ -1636,7 +1636,7 @@
               </ul>
             </div>
           </section>
-          <section id="html-div" class="lesson-section">
+          <section id="html-div" class="topic-section">
             <h1>HTML Div</h1>
 
             <p>The div element is a container used to group content and apply styles or layout.</p>
@@ -1690,7 +1690,7 @@
               </ul>
             </div>
           </section>
-          <section id="html-classes" class="lesson-section">
+          <section id="html-classes" class="topic-section">
             <h1>HTML Classes</h1>
 
             <p>Classes allow you to apply styles or scripts to multiple elements at once.</p>
@@ -1740,7 +1740,7 @@
               </ul>
             </div>
           </section>
-          <section id="html-id" class="lesson-section">
+          <section id="html-id" class="topic-section">
             <h1>HTML Id</h1>
 
             <p>The id attribute uniquely identifies an element on a page.</p>
@@ -1790,7 +1790,7 @@
               </ul>
             </div>
           </section>
-          <section id="html-buttons" class="lesson-section">
+          <section id="html-buttons" class="topic-section">
             <h1>HTML Buttons</h1>
 
             <p>Buttons allow users to trigger actions such as submitting forms or running scripts.</p>
@@ -1840,7 +1840,7 @@
               </ul>
             </div>
           </section>
-          <section id="html-iframes" class="lesson-section">
+          <section id="html-iframes" class="topic-section">
             <h1>HTML Iframes</h1>
 
             <p>Iframes embed another webpage or content within your page.</p>
@@ -1890,7 +1890,7 @@
               </ul>
             </div>
           </section>
-          <section id="html-javascript" class="lesson-section">
+          <section id="html-javascript" class="topic-section">
             <h1>HTML JavaScript</h1>
 
             <p>JavaScript makes HTML pages dynamic and interactive. You can embed scripts directly in HTML using
@@ -1944,9 +1944,9 @@
 
             <h2>Example Explained</h2>
             <ul>
-              <li><code>onclick</code> — Event attribute that runs JavaScript when the button is clicked</li>
-              <li><code>&lt;script&gt;</code> — Defines a block of JavaScript code</li>
-              <li><code>alert()</code> — Displays a message dialog in the browser</li>
+              <li><code>onclick</code> â€” Event attribute that runs JavaScript when the button is clicked</li>
+              <li><code>&lt;script&gt;</code> â€” Defines a block of JavaScript code</li>
+              <li><code>alert()</code> â€” Displays a message dialog in the browser</li>
             </ul>
 
             <div class="tips-box">
@@ -1958,7 +1958,7 @@
             </div>
           </section>
 
-          <section id="html-file-paths" class="lesson-section">
+          <section id="html-file-paths" class="topic-section">
             <h1>HTML File Paths</h1>
 
             <p>File paths specify the location of resources like images, stylesheets, scripts, and other files
@@ -1982,11 +1982,11 @@
               </tr>
               <tr>
                 <td style="padding:10px;border:1px solid var(--border)"><code>images/photo.jpg</code></td>
-                <td style="padding:10px;border:1px solid var(--border)">Relative — same folder</td>
+                <td style="padding:10px;border:1px solid var(--border)">Relative â€” same folder</td>
               </tr>
               <tr>
                 <td style="padding:10px;border:1px solid var(--border)"><code>../images/photo.jpg</code></td>
-                <td style="padding:10px;border:1px solid var(--border)">Relative — one folder up</td>
+                <td style="padding:10px;border:1px solid var(--border)">Relative â€” one folder up</td>
               </tr>
               <tr>
                 <td style="padding:10px;border:1px solid var(--border)"><code>/images/photo.jpg</code></td>
@@ -2261,7 +2261,7 @@
               </ul>
             </div>
           </section>
-          <section id="html-computercode" class="lesson-section">
+          <section id="html-computercode" class="topic-section">
             <h1>HTML Computer Code</h1>
             <p>HTML contains several elements for defining user input and computer code.</p>
 
@@ -2314,7 +2314,7 @@
               </ul>
             </div>
           </section>
-          <section id="html-semantics" class="lesson-section">
+          <section id="html-semantics" class="topic-section">
             <h1>HTML Semantics</h1>
             <p>Semantic HTML uses meaningful tags that clearly describe the purpose of content, improving accessibility,
               SEO, and code readability.</p>
@@ -3338,7 +3338,7 @@
           </section>
 
           <!-- ===== HTML GRAPHICS ===== -->
-          <section id="html-graphics" class="lesson-section">
+          <section id="html-graphics" class="topic-section">
             <h1>HTML Graphics</h1>
             <p>HTML supports two powerful technologies for creating graphics on the web: <strong>Canvas</strong>
               (pixel-based, JavaScript-driven) and <strong>SVG</strong> (vector-based, scalable).</p>
@@ -3361,7 +3361,7 @@
           </section>
 
           <!-- ===== HTML MEDIA ===== -->
-          <section id="html-media" class="lesson-section">
+          <section id="html-media" class="topic-section">
             <h1>HTML Media</h1>
             <p>HTML5 introduced native support for embedding audio and video directly in web pages without needing
               plugins
@@ -3387,7 +3387,7 @@
           </section>
 
           <!-- ===== HTML VIDEO ===== -->
-          <section id="html-video" class="lesson-section">
+          <section id="html-video" class="topic-section">
             <h1>HTML Video</h1>
             <p>The <code>&lt;video&gt;</code> element embeds video content directly into a webpage with built-in browser
               controls.</p>
@@ -3434,7 +3434,7 @@
           </section>
 
           <!-- ===== HTML AUDIO ===== -->
-          <section id="html-audio" class="lesson-section">
+          <section id="html-audio" class="topic-section">
             <h1>HTML Audio</h1>
             <p>The <code>&lt;audio&gt;</code> element embeds sound content such as music or podcasts directly into
               webpages.</p>
@@ -3481,7 +3481,7 @@
           </section>
 
           <!-- ===== HTML PLUGINS ===== -->
-          <section id="html-plugins" class="lesson-section">
+          <section id="html-plugins" class="topic-section">
             <h1>HTML Plug-ins</h1>
             <p>The <code>&lt;object&gt;</code> and <code>&lt;embed&gt;</code> elements were historically used to embed
               external content like PDFs, Flash, or Java applets. Today, native HTML5 elements are preferred.</p>
@@ -3489,7 +3489,7 @@
               <ul>
                 <li><code>&lt;object&gt;</code> embeds external resources</li>
                 <li><code>&lt;embed&gt;</code> is a self-closing void element</li>
-                <li>Flash is no longer supported — use HTML5 alternatives</li>
+                <li>Flash is no longer supported â€” use HTML5 alternatives</li>
               </ul>
             </div>
             <h2>Syntax</h2>
@@ -3525,7 +3525,7 @@
           </section>
 
           <!-- ===== HTML YOUTUBE ===== -->
-          <section id="html-youtube" class="lesson-section">
+          <section id="html-youtube" class="topic-section">
             <h1>HTML YouTube</h1>
             <p>The easiest way to embed a YouTube video is using an <code>&lt;iframe&gt;</code> with the YouTube embed
               URL.</p>
@@ -3571,18 +3571,18 @@
           </section>
 
           <!-- ===== HTML APIs ===== -->
-          <section id="html-apis" class="lesson-section">
+          <section id="html-apis" class="topic-section">
             <h1>HTML Web APIs</h1>
             <p>HTML5 introduced several powerful browser APIs that allow JavaScript to access device features and
               browser
               capabilities directly.</p>
             <div class="key-points">
               <ul>
-                <li>Geolocation — access user's GPS coordinates</li>
-                <li>Drag &amp; Drop — move elements with the mouse</li>
-                <li>Web Storage — store data in the browser</li>
-                <li>Web Workers — run scripts in background threads</li>
-                <li>Server-Sent Events — receive real-time updates from server</li>
+                <li>Geolocation â€” access user's GPS coordinates</li>
+                <li>Drag &amp; Drop â€” move elements with the mouse</li>
+                <li>Web Storage â€” store data in the browser</li>
+                <li>Web Workers â€” run scripts in background threads</li>
+                <li>Server-Sent Events â€” receive real-time updates from server</li>
               </ul>
             </div>
             <p>These APIs make it possible to build rich, app-like experiences entirely in the browser without plugins.
@@ -3596,7 +3596,7 @@
           </section>
 
           <!-- ===== HTML GEOLOCATION ===== -->
-          <section id="html-geolocation" class="lesson-section">
+          <section id="html-geolocation" class="topic-section">
             <h1>HTML Geolocation</h1>
             <p>The Geolocation API allows you to get the user's current geographic location with their permission.</p>
             <div class="key-points">
@@ -3665,7 +3665,7 @@ function showPosition(position) {
           </section>
 
           <!-- ===== HTML DRAG & DROP ===== -->
-          <section id="html-drag-drop" class="lesson-section">
+          <section id="html-drag-drop" class="topic-section">
             <h1>HTML Drag &amp; Drop</h1>
             <p>The HTML Drag and Drop API enables elements to be dragged and dropped using mouse or touch events.</p>
             <div class="key-points">
@@ -3725,14 +3725,14 @@ function drop(ev) {
           </section>
 
           <!-- ===== WEB STORAGE ===== -->
-          <section id="html-web-storage" class="lesson-section">
+          <section id="html-web-storage" class="topic-section">
             <h1>HTML Web Storage</h1>
-            <p>Web Storage allows web applications to store data locally in the user's browser — more securely and with
+            <p>Web Storage allows web applications to store data locally in the user's browser â€” more securely and with
               larger capacity than cookies.</p>
             <div class="key-points">
               <ul>
-                <li><code>localStorage</code> — persists even after browser close</li>
-                <li><code>sessionStorage</code> — cleared when tab closes</li>
+                <li><code>localStorage</code> â€” persists even after browser close</li>
+                <li><code>sessionStorage</code> â€” cleared when tab closes</li>
                 <li>Both store key-value string pairs</li>
                 <li>Up to ~5-10MB storage per origin</li>
               </ul>
@@ -3786,7 +3786,7 @@ function loadData() {
           </section>
 
           <!-- ===== WEB WORKERS ===== -->
-          <section id="html-web-workers" class="lesson-section">
+          <section id="html-web-workers" class="topic-section">
             <h1>HTML Web Workers</h1>
             <p>Web Workers let you run JavaScript in a background thread, keeping the main UI thread free and
               responsive.
@@ -3804,7 +3804,7 @@ function loadData() {
 worker.postMessage("start");
 worker.onmessage = (e) => console.log(e.data);</code></pre>
             <div class="example-box">
-              <div class="example-header"><i class="fas fa-code"></i> Example — Concept</div>
+              <div class="example-header"><i class="fas fa-code"></i> Example â€” Concept</div>
               <pre class="example-code"><code>
 &lt;!-- main.html --&gt;
 &lt;button onclick="startWorker()"&gt;Start Worker&lt;/button&gt;
@@ -3836,13 +3836,13 @@ function startWorker() {
           </section>
 
           <!-- ===== SSE ===== -->
-          <section id="html-sse" class="lesson-section">
+          <section id="html-sse" class="topic-section">
             <h1>HTML Server-Sent Events (SSE)</h1>
             <p>Server-Sent Events allow a server to push real-time updates to the browser over a persistent HTTP
               connection.</p>
             <div class="key-points">
               <ul>
-                <li>One-way: server → client</li>
+                <li>One-way: server â†’ client</li>
                 <li>Uses the <code>EventSource</code> API</li>
                 <li>Automatic reconnection on disconnect</li>
                 <li>Requires a server endpoint that sends <code>text/event-stream</code></li>
@@ -3852,7 +3852,7 @@ function startWorker() {
             <pre><code>const source = new EventSource("/stream");
 source.onmessage = (e) => console.log(e.data);</code></pre>
             <div class="example-box">
-              <div class="example-header"><i class="fas fa-code"></i> Example — Concept</div>
+              <div class="example-header"><i class="fas fa-code"></i> Example â€” Concept</div>
               <pre class="example-code"><code>
 &lt;!-- Client-side --&gt;
 &lt;div id="updates"&gt;&lt;/div&gt;
@@ -3878,7 +3878,7 @@ source.onmessage = function(e) {
           </section>
 
           <!-- ===== HTML QUIZ ===== -->
-          <section id="html-quiz" class="lesson-section">
+          <section id="html-quiz" class="topic-section">
             <h1>HTML Quiz</h1>
             <p>Test your HTML knowledge with these questions! Try to answer each one before revealing the answer.</p>
             <div class="key-points">
@@ -3902,7 +3902,7 @@ source.onmessage = function(e) {
           </section>
 
           <!-- ===== HTML EXERCISES ===== -->
-          <section id="html-exercises" class="lesson-section">
+          <section id="html-exercises" class="topic-section">
             <h1>HTML Exercises</h1>
             <p>Practice makes perfect! Try these hands-on exercises to reinforce your HTML skills.</p>
             <div class="key-points">
@@ -3915,7 +3915,7 @@ source.onmessage = function(e) {
               </ul>
             </div>
             <div class="example-box">
-              <div class="example-header"><i class="fas fa-code"></i> Exercise 1 — Starter</div>
+              <div class="example-header"><i class="fas fa-code"></i> Exercise 1 â€” Starter</div>
               <pre class="example-code"><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -3953,7 +3953,7 @@ source.onmessage = function(e) {
           </section>
 
           <!-- ===== HTML ACCESSIBILITY ===== -->
-          <section id="html-accessibility" class="lesson-section">
+          <section id="html-accessibility" class="topic-section">
             <h1>HTML Accessibility</h1>
             <p>Accessible HTML ensures that your website can be used by everyone, including people with visual,
               auditory,
@@ -4015,7 +4015,7 @@ source.onmessage = function(e) {
           </section>
 
           <!-- ===== HTML SUMMARY ===== -->
-          <section id="html-summary" class="lesson-section">
+          <section id="html-summary" class="topic-section">
             <h1>HTML Summary</h1>
             <p>You have now covered all the major HTML topics. Here's a quick recap of the most important concepts:</p>
             <div class="key-points">
@@ -4033,9 +4033,9 @@ source.onmessage = function(e) {
             <h2>What's Next?</h2>
             <p>Now that you know HTML, the natural progression is:</p>
             <ol style="padding-left:20px;line-height:2">
-              <li><strong>CSS</strong> — Style your HTML pages with colors, fonts, and layouts</li>
-              <li><strong>JavaScript</strong> — Add interactivity and dynamic behavior</li>
-              <li><strong>A Framework</strong> (React, Vue) — Build modern web applications</li>
+              <li><strong>CSS</strong> â€” Style your HTML pages with colors, fonts, and layouts</li>
+              <li><strong>JavaScript</strong> â€” Add interactivity and dynamic behavior</li>
+              <li><strong>A Framework</strong> (React, Vue) â€” Build modern web applications</li>
             </ol>
             <div class="tips-box">
               <ul>
@@ -4047,7 +4047,7 @@ source.onmessage = function(e) {
           </section>
 
           <!-- ===== HTML TAG LIST ===== -->
-          <section id="html-tag-list" class="lesson-section">
+          <section id="html-tag-list" class="topic-section">
             <h1>HTML Tag List</h1>
             <p>A reference of the most commonly used HTML tags and their purpose:</p>
             <table style="width:100%;border-collapse:collapse;font-size:14px">
@@ -4080,7 +4080,7 @@ source.onmessage = function(e) {
                 <td style="padding:8px 10px;border:1px solid var(--border)">Defines the document's body</td>
               </tr>
               <tr style="background:rgba(0,0,0,0.02)">
-                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;h1&gt;–&lt;h6&gt;</code></td>
+                <td style="padding:8px 10px;border:1px solid var(--border)"><code>&lt;h1&gt;â€“&lt;h6&gt;</code></td>
                 <td style="padding:8px 10px;border:1px solid var(--border)">Defines HTML headings</td>
               </tr>
               <tr>
