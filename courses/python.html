@@ -16,38 +16,37 @@
 
   <!-- TOP NAV -->
   <nav class="top-nav">
+    <button class="hamburger" id="mobile-toggle"><i class="fas fa-bars"></i></button>
     <a href="../index1.html" class="brand">LearnX</a>
-    <div class="top-nav-links">
-      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
-      <a href="html.html">HTML</a>
-      <a href="css.html">CSS</a>
-      <a href="js.html">JavaScript</a>
-      <a href="python.html" class="active">Python</a>
-      <a href="sql.html">SQL</a>
-      <a href="java.html">Java</a>
-      <a href="c.html">C</a>
-      <a href="excel.html">Excel</a>
-      <a href="numpy.html">NumPy</a>
-      <a href="pandas.html">Pandas</a>
-      <a href="matplotlib.html">Matplotlib</a>
-
-      <a href="ai.html">AI & ML</a>
-      <a href="r.html">R</a>
-    </div>
 
     <div class="top-nav-search">
-      <input type="text" placeholder="Search..." />
+      <input type="text" placeholder="Search course content..." />
       <button><i class="fas fa-search"></i></button>
     </div>
 
-    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
-      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
-      <button id="theme-toggle" class="nav-btn"
-        style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i
-          class="fas fa-sun"></i></button>
-      <button id="logout-btn" class="nav-btn"
-        style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
+    <div class="user-info-group">
+      <span id="user-display" class="user-display-name"></span>
+      <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
+      <button id="logout-btn" class="nav-btn">Logout</button>
     </div>
+  </nav>
+
+  <!-- SUB NAV -->
+  <nav class="sub-nav">
+    <a href="../index1.html"><i class="fas fa-th-large" style="margin-right:5px"></i> Dashboard</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JAVASCRIPT</a>
+    <a href="python.html" class="active">PYTHON</a>
+    <a href="sql.html">SQL</a>
+    <a href="java.html">JAVA</a>
+    <a href="c.html">C</a>
+    <a href="excel.html">EXCEL</a>
+    <a href="numpy.html">NUMPY</a>
+    <a href="pandas.html">PANDAS</a>
+    <a href="matplotlib.html">MATPLOTLIB</a>
+    <a href="ai.html">AI & ML</a>
+    <a href="r.html">R</a>
   </nav>
 
   <!-- CONTENT WRAPPER -->
@@ -59,66 +58,62 @@
         <i class="fab fa-python" style="color:#306998"></i> Python Tutorial
       </div>
 
-      <div class="sidebar-section-label">Python Tutorial</div>
-      <a href="#python-home" class="active">Python HOME</a>
-      <a href="#python-intro">Python Intro</a>
-      <a href="#python-getstarted">Python Get Started</a>
-      <a href="#python-syntax">Python Syntax</a>
-      <a href="#python-comments">Python Comments</a>
-      <a href="#python-variables">Python Variables</a>
-      <a href="#python-datatypes">Python Data Types</a>
-      <a href="#python-numbers">Python Numbers</a>
-      <a href="#python-casting">Python Casting</a>
-      <a href="#python-strings">Python Strings</a>
-      <a href="#python-booleans">Python Booleans</a>
-      <a href="#python-operators">Python Operators</a>
+      <div class="sidebar-section-label">Python Basic</div>
+      <a href="#python-home" class="active"><i class="fas fa-home"></i> Python HOME</a>
+      <a href="#python-intro"><i class="fas fa-info-circle"></i> Python Intro</a>
+      <a href="#python-getstarted"><i class="fas fa-rocket"></i> Python Get Started</a>
+      <a href="#python-syntax"><i class="fas fa-code"></i> Python Syntax</a>
+      <a href="#python-comments"><i class="fas fa-comment"></i> Python Comments</a>
+      <a href="#python-variables"><i class="fas fa-cube"></i> Python Variables</a>
+      <a href="#python-datatypes"><i class="fas fa-tags"></i> Python Data Types</a>
+      <a href="#python-numbers"><i class="fas fa-hashtag"></i> Python Numbers</a>
+      <a href="#python-casting"><i class="fas fa-sync-alt"></i> Python Casting</a>
+      <a href="#python-strings"><i class="fas fa-quote-left"></i> Python Strings</a>
+      <a href="#python-booleans"><i class="fas fa-check-square"></i> Python Booleans</a>
+      <a href="#python-operators"><i class="fas fa-calculator"></i> Python Operators</a>
 
-      <div class="sidebar-section-label">Python Lists</div>
-      <a href="#python-lists">Python Lists</a>
-      <a href="#python-tuples">Python Tuples</a>
-      <a href="#python-sets">Python Sets</a>
-      <a href="#python-dictionaries">Python Dictionaries</a>
+      <div class="sidebar-section-label">Python Collections</div>
+      <a href="#python-lists"><i class="fas fa-list-ul"></i> Python Lists</a>
+      <a href="#python-tuples"><i class="fas fa-list-ol"></i> Python Tuples</a>
+      <a href="#python-sets"><i class="fas fa-shapes"></i> Python Sets</a>
+      <a href="#python-dictionaries"><i class="fas fa-book"></i> Python Dictionaries</a>
 
-      <div class="sidebar-section-label">Python Flow Control</div>
-      <a href="#python-ifelse">Python If...Else</a>
-      <a href="#python-whileloops">Python While Loops</a>
-      <a href="#python-forloops">Python For Loops</a>
+      <div class="sidebar-section-label">Python Logic</div>
+      <a href="#python-ifelse"><i class="fas fa-code-branch"></i> Python If...Else</a>
+      <a href="#python-whileloops"><i class="fas fa-redo"></i> Python While Loops</a>
+      <a href="#python-forloops"><i class="fas fa-history"></i> Python For Loops</a>
 
-      <div class="sidebar-section-label">Python Functions</div>
-      <a href="#python-functions">Python Functions</a>
-      <a href="#python-lambda">Python Lambda</a>
-      <a href="#python-arrays">Python Arrays</a>
-
-      <div class="sidebar-section-label">Python Classes</div>
-      <a href="#python-classes">Python Classes/Objects</a>
-      <a href="#python-inheritance">Python Inheritance</a>
-      <a href="#python-iterators">Python Iterators</a>
-      <a href="#python-polymorphism">Python Polymorphism</a>
-      <a href="#python-scope">Python Scope</a>
+      <div class="sidebar-section-label">Python OOP</div>
+      <a href="#python-functions"><i class="fas fa-function"></i> Python Functions</a>
+      <a href="#python-lambda"><i class="fas fa-bolt"></i> Python Lambda</a>
+      <a href="#python-arrays"><i class="fas fa-layer-group"></i> Python Arrays</a>
+      <a href="#python-classes"><i class="fas fa-cubes"></i> Python Classes</a>
+      <a href="#python-inheritance"><i class="fas fa-sitemap"></i> Python Inheritance</a>
+      <a href="#python-iterators"><i class="fas fa-link"></i> Python Iterators</a>
+      <a href="#python-polymorphism"><i class="fas fa-clone"></i> Python Polymorphism</a>
+      <a href="#python-scope"><i class="fas fa-crosshairs"></i> Python Scope</a>
 
       <div class="sidebar-section-label">Python Modules</div>
-      <a href="#python-modules">Python Modules</a>
-      <a href="#python-dates">Python Dates</a>
-      <a href="#python-math">Python Math</a>
-      <a href="#python-json">Python JSON</a>
-      <a href="#python-regex">Python RegEx</a>
-      <a href="#python-pip">Python PIP</a>
+      <a href="#python-modules"><i class="fas fa-puzzle-piece"></i> Python Modules</a>
+      <a href="#python-dates"><i class="fas fa-calendar-alt"></i> Python Dates</a>
+      <a href="#python-math"><i class="fas fa-square-root-alt"></i> Python Math</a>
+      <a href="#python-json"><i class="fas fa-file-code"></i> Python JSON</a>
+      <a href="#python-regex"><i class="fas fa-search"></i> Python RegEx</a>
+      <a href="#python-pip"><i class="fas fa-download"></i> Python PIP</a>
+      <a href="#python-tryexcept"><i class="fas fa-exclamation-triangle"></i> Python Try...Except</a>
+      <a href="#python-userinput"><i class="fas fa-keyboard"></i> Python User Input</a>
+      <a href="#python-stringformatting"><i class="fas fa-font"></i> Python String Formatting</a>
 
-      <div class="sidebar-section-label">Python Exception Handling</div>
-      <a href="#python-tryexcept">Python Try...Except</a>
-      <a href="#python-userinput">Python User Input</a>
-      <a href="#python-stringformatting">Python String Formatting</a>
+      <div class="sidebar-section-label">Python Files</div>
+      <a href="#python-filehandling"><i class="fas fa-file-alt"></i> Python File Handling</a>
+      <a href="#python-fileread"><i class="fas fa-file-contract"></i> Python Read Files</a>
+      <a href="#python-filewrite"><i class="fas fa-file-signature"></i> Python Write Files</a>
+      <a href="#python-filedelete"><i class="fas fa-trash"></i> Python Delete Files</a>
 
-      <div class="sidebar-section-label">Python File Handling</div>
-      <a href="#python-filehandling">Python File Handling</a>
-      <a href="#python-fileread">Python Read Files</a>
-      <a href="#python-filewrite">Python Write/Create Files</a>
-      <a href="#python-filedelete">Python Delete Files</a>
-
-      <div class="sidebar-section-label">Python Learning & Ref</div>
-      <a href="#python-quiz">Python Quiz</a>
-      <a href="#python-exercises">Python Exercises</a>
-      <a href="#python-summary">Python Summary</a>
+      <div class="sidebar-section-label">Learning</div>
+      <a href="#python-quiz"><i class="fas fa-question-circle"></i> Python Quiz</a>
+      <a href="#python-exercises"><i class="fas fa-tasks"></i> Python Exercises</a>
+      <a href="#python-summary"><i class="fas fa-flag-checkered"></i> Python Summary</a>
 
       <div class="sidebar-footer">
         <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
@@ -1190,4 +1185,3 @@ else:
 </body>
 
 </html>
-

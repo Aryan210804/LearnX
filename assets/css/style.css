@@ -157,6 +157,7 @@ img {
   background: var(--primary);
   color: #fff;
   text-decoration: none;
+  font-weight: 700;
 }
 
 .top-nav-search {
@@ -213,6 +214,22 @@ img {
 .top-nav .nav-btn:hover {
   background: var(--primary-dark);
   text-decoration: none;
+}
+
+.user-info-group,
+.nav-profile-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.user-display-name,
+#user-display {
+  color: #aaa;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .top-nav .hamburger {
@@ -350,6 +367,8 @@ img {
   padding-bottom: 50px;
   border-bottom: 1px solid var(--border);
   margin-bottom: 50px;
+  scroll-margin-top: 110px;
+  /* Adjust for fixed headers */
 }
 
 .topic-section:last-child {
