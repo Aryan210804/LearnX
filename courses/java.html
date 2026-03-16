@@ -1,76 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LearnX | Java Masterclass</title>
   <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body class="learnx-page">
 
   <!-- TOP NAV -->
   <nav class="top-nav">
+    <button class="hamburger" id="mobile-toggle"><i class="fas fa-bars"></i></button>
     <a href="../index1.html" class="brand">LearnX</a>
-        <div class="top-nav-links">
-      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
-      <a href="html.html">HTML</a>
-      <a href="css.html">CSS</a>
-      <a href="js.html">JavaScript</a>
-      <a href="python.html">Python</a>
-      <a href="sql.html">SQL</a>
-      <a href="java.html" class="active">Java</a>
-      <a href="c.html">C</a>
-      <a href="excel.html">Excel</a>
-      <a href="numpy.html">NumPy</a>
-      <a href="pandas.html">Pandas</a>
-      <a href="matplotlib.html">Matplotlib</a>
-      
-      <a href="ai.html">AI & ML</a>
-      <a href="r.html">R</a>
-    </div>
 
     <div class="top-nav-search">
-      <input type="text" placeholder="Search..."/>
+      <input type="text" placeholder="Search Java topics..." />
       <button><i class="fas fa-search"></i></button>
     </div>
-    
-    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
-      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
-       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
-      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
+
+    <div class="user-info-group">
+      <span id="user-display" class="user-display-name"></span>
+      <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
+      <button id="logout-btn" class="nav-btn">Logout</button>
     </div>
+  </nav>
+
+  <!-- SUB NAV -->
+  <nav class="sub-nav">
+    <a href="../index1.html"><i class="fas fa-th-large" style="margin-right:5px"></i> Dashboard</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JAVASCRIPT</a>
+    <a href="python.html">PYTHON</a>
+    <a href="sql.html">SQL</a>
+    <a href="java.html" class="active">JAVA</a>
+    <a href="c.html">C</a>
+    <a href="excel.html">EXCEL</a>
+    <a href="numpy.html">NUMPY</a>
+    <a href="pandas.html">PANDAS</a>
+    <a href="matplotlib.html">MATPLOTLIB</a>
+    <a href="ai.html">AI & ML</a>
+    <a href="r.html">R</a>
   </nav>
 
   <!-- CONTENT WRAPPER -->
   <div class="course-layout">
-    
+
     <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <i class="fab fa-java" style="color:#f89820"></i> Java Tutorial
       </div>
 
-      <div class="sidebar-section-label">Java Basic</div>
-      <a href="#Intro" class="active">Java Introduction</a>
-      <a href="#Variables">Variables & Data Types</a>
-      <a href="#Operators">Operators & Casting</a>
-      <a href="#IfElse">Conditionals</a>
-      <a href="#Switch">Switch Statement</a>
-      <a href="#Loops">Loops</a>
-      <a href="#Methods">Methods</a>
-      <a href="#Arrays">Arrays</a>
-      <a href="#OOPBasics">OOP Basics: Classes & Objects</a>
-      <a href="#Encapsulation">Encapsulation</a>
-      <a href="#Inheritance">Inheritance</a>
-      <a href="#Polymorphism">Polymorphism</a>
-      <a href="#Abstraction">Abstraction</a>
-      <a href="#Files">Java Files</a>
-      <a href="#Exceptions">Exception Handling</a>
-      <a href="#Projects">🚀 Real World Projects</a>
-      <a href="#MiniTask">🎯 Java Mini Task</a>
+      <div class="sidebar-section-label">Java Basics</div>
+      <a href="#java-home" class="active"><i class="fas fa-home"></i> Java HOME</a>
+      <a href="#java-intro"><i class="fas fa-info-circle"></i> Java Intro</a>
+      <a href="#java-getstarted"><i class="fas fa-rocket"></i> Java Get Started</a>
+      <a href="#java-syntax"><i class="fas fa-code"></i> Java Syntax</a>
+      <a href="#java-output"><i class="fas fa-print"></i> Java Output</a>
+      <a href="#java-comments"><i class="fas fa-comment"></i> Java Comments</a>
+      <a href="#java-variables"><i class="fas fa-cube"></i> Java Variables</a>
+      <a href="#java-datatypes"><i class="fas fa-tags"></i> Java Data Types</a>
+      <a href="#java-typecasting"><i class="fas fa-sync-alt"></i> Java Type Casting</a>
+      <a href="#java-operators"><i class="fas fa-calculator"></i> Java Operators</a>
+      <a href="#java-strings"><i class="fas fa-quote-left"></i> Java Strings</a>
+
+      <div class="sidebar-section-label">Java Control Flow</div>
+      <a href="#java-ifelse"><i class="fas fa-code-branch"></i> Java If...Else</a>
+      <a href="#java-switch"><i class="fas fa-random"></i> Java Switch</a>
+      <a href="#java-whileloop"><i class="fas fa-redo"></i> Java While Loop</a>
+      <a href="#java-forloop"><i class="fas fa-history"></i> Java For Loop</a>
+      <a href="#java-arrays"><i class="fas fa-layer-group"></i> Java Arrays</a>
+
+      <div class="sidebar-section-label">Java OOP</div>
+      <a href="#java-methods"><i class="fas fa-cogs"></i> Java Methods</a>
+      <a href="#java-classes"><i class="fas fa-cubes"></i> Java Classes</a>
+      <a href="#java-inheritance"><i class="fas fa-sitemap"></i> Java Inheritance</a>
+      <a href="#java-polymorphism"><i class="fas fa-clone"></i> Java Polymorphism</a>
+      <a href="#java-abstraction"><i class="fas fa-eye-slash"></i> Java Abstraction</a>
+      <a href="#java-encapsulation"><i class="fas fa-lock"></i> Java Encapsulation</a>
+
+      <div class="sidebar-section-label">Java Advanced</div>
+      <a href="#java-exceptions"><i class="fas fa-exclamation-triangle"></i> Java Exceptions</a>
+      <a href="#java-filehandling"><i class="fas fa-file-alt"></i> Java File Handling</a>
+
+      <div class="sidebar-section-label">Learning</div>
+      <a href="#java-quiz"><i class="fas fa-question-circle"></i> Java Quiz</a>
+      <a href="#java-exercises"><i class="fas fa-tasks"></i> Java Exercises</a>
 
       <div class="sidebar-footer">
         <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
@@ -80,552 +102,756 @@
     <!-- MAIN CONTENT -->
     <main class="course-main">
       <div class="course-content-area">
-        
         <div class="breadcrumb">
-          <a href="../index1.html">Home</a> <span>/</span> <span>Java</span>
+          <a href="../index1.html">Home</a> <span>/</span> <span>Java</span> <span>/</span> <span>Tutorial</span>
         </div>
-        
-        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">Java Masterclass</h1>
 
-        <section class="topic-section" id="Intro">
-          <h1>Java Introduction</h1>
-          <div class="chapter-badge">Chapter 1</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Variables" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== JAVA HOME ===== -->
+        <section id="java-home" class="topic-section">
+          <h1>Java Tutorial</h1>
+          <p>Java is one of the most popular programming languages in the world. It is used to develop mobile apps, web apps, desktop apps, games, and much more.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li>Java was developed by Sun Microsystems (now owned by Oracle) in 1995.</li>
+              <li>Java is an object-oriented, class-based, concurrent programming language.</li>
+              <li>Java's motto: <strong>"Write Once, Run Anywhere" (WORA)</strong>.</li>
+              <li>More than 3 billion devices run Java worldwide.</li>
+            </ul>
           </div>
-          
-        <h3>📌 What is Java?</h3>
-        <p>Java is a popular programming language, created in 1995. It is owned by Oracle, and more than 3 billion
-          devices run Java.</p>
-        <h3>🚀 Main Features</h3>
-        <ul>
-          <li><strong>Object-Oriented:</strong> Everything is an Object.</li>
-          <li><strong>Platform Independent:</strong> "Write Once, Run Anywhere".</li>
-          <li><strong>Secure:</strong> Robust security features.</li>
-        </ul>
-        <h3>💻 Syntax</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-java">public class Main {
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Java Example</div>
+            <pre class="example-code"><code>public class Main {
   public static void main(String[] args) {
     System.out.println("Hello World");
   }
 }</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">public class Main {
+              <textarea class="tryit-editor">public class Main {
   public static void main(String[] args) {
     System.out.println("Hello World");
   }
 }</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Variables">
-          <h1>Variables & Data Types</h1>
-          <div class="chapter-badge">Chapter 2</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Operators" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <h3>📌 Variables</h3>
-        <p>Containers for storing data values.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-java">String name = "John";
-int myNum = 15;
-final int myNum = 15; // Final (constant)</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">String name = "John";
-int myNum = 15;
-final int myNum = 15; // Final (constant)</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-        <h3>📦 Data Types</h3>
-        <ul>
-          <li><code>int</code>: Integers (whole numbers).</li>
-          <li><code>float</code> / <code>double</code>: Floating point numbers.</li>
-          <li><code>char</code>: Single characters ('a').</li>
-          <li><code>boolean</code>: true or false.</li>
-          <li><code>String</code>: Text.</li>
-        </ul>
-      </section>
-
-        <section class="topic-section" id="Operators">
-          <h1>Operators & Casting</h1>
-          <div class="chapter-badge">Chapter 3</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Variables" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#IfElse" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <h3>Operators</h3>
-        <p><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (Arithmetic)</p>
-        <p><code>==</code>, <code>!=</code>, <code>></code>, <code><</code> (Comparison)</p>
-        <h3>Type Casting</h3>
-        <p><strong>Widening:</strong> <code>int</code> -> <code>double</code> (Automatic)</p>
-        <p><strong>Narrowing:</strong> <code>double</code> -> <code>int</code> (Manual)</p>
-        <div class="example-box"><pre class="example-code"><code class="language-java">double myDouble = 9.78d;
-int myInt = (int) myDouble; // 9</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">double myDouble = 9.78d;
-int myInt = (int) myDouble; // 9</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="IfElse">
-          <h1>Conditionals</h1>
-          <div class="chapter-badge">Chapter 4</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Operators" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Switch" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Java supports logical conditions from mathematics.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-java">if (time < 18) {
-  System.out.println("Good day.");
-} else {
-  System.out.println("Good evening.");
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">if (time &lt; 18) {
-  System.out.println("Good day.");
-} else {
-  System.out.println("Good evening.");
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Switch">
-          <h1>Switch Statement</h1>
-          <div class="chapter-badge">Chapter 5</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#IfElse" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Loops" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Use the switch statement to select one of many code blocks to be executed.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-java">switch(day) {
-  case 1:
-    System.out.println("Monday");
-    break;
-  case 2:
-    System.out.println("Tuesday");
-    break;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">switch(day) {
-  case 1:
-    System.out.println("Monday");
-    break;
-  case 2:
-    System.out.println("Tuesday");
-    break;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Loops">
-          <h1>Loops</h1>
-          <div class="chapter-badge">Chapter 6</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Switch" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Methods" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <h3>While Loop</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-java">while (i < 5) {
-  System.out.println(i);
-  i++;
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">while (i &lt; 5) {
-  System.out.println(i);
-  i++;
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-        <h3>For Loop</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-java">for (int i = 0; i < 5; i++) {
-  System.out.println(i);
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">for (int i = 0; i &lt; 5; i++) {
-  System.out.println(i);
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-        <h3>For-Each Loop</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-java">for (String i : cars) {
-  System.out.println(i);
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">for (String i : cars) {
-  System.out.println(i);
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Methods">
-          <h1>Methods</h1>
-          <div class="chapter-badge">Chapter 7</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Loops" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Arrays" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>A method is a block of code which only runs when it is called.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-java">static void myMethod(String fname) {
-  System.out.println(fname + " Refsnes");
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">static void myMethod(String fname) {
-  System.out.println(fname + " Refsnes");
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Arrays">
-          <h1>Arrays</h1>
-          <div class="chapter-badge">Chapter 8</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Methods" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#OOPBasics" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Arrays are used to store multiple values in a single variable.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-java">String[] cars = {"Volvo", "BMW", "Ford"};
-System.out.println(cars[0]); // Outputs Volvo</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">String[] cars = {"Volvo", "BMW", "Ford"};
-System.out.println(cars[0]); // Outputs Volvo</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="OOPBasics">
-          <h1>OOP Basics: Classes & Objects</h1>
-          <div class="chapter-badge">Chapter 9</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Arrays" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Encapsulation" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <h3>📌 OOP</h3>
-        <p>Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects".</p>
-        <div class="mermaid">classDiagram
-          class Car {
-          +String color
-          +int speed
-          +drive()
-          }
-        </div>
-        <div class="example-box"><pre class="example-code"><code class="language-java">public class Main {
-  int x = 5;
-  public static void main(String[] args) {
-    Main myObj = new Main();
-    System.out.println(myObj.x);
-  }
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">public class Main {
-  int x = 5;
-  public static void main(String[] args) {
-    Main myObj = new Main();
-    System.out.println(myObj.x);
-  }
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Encapsulation">
-          <h1>Encapsulation</h1>
-          <div class="chapter-badge">Chapter 10</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#OOPBasics" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Inheritance" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>The meaning of <strong>Encapsulation</strong>, is to make sure that "sensitive" data is hidden from users.
-        </p>
-        <p>Declare class variables/attributes as <code>private</code> and provide public <code>get</code> and
-          <code>set</code> methods to access and update the value of a private variable.</p>
-      </section>
-
-        <section class="topic-section" id="Inheritance">
-          <h1>Inheritance</h1>
-          <div class="chapter-badge">Chapter 11</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Encapsulation" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Polymorphism" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>In Java, it is possible to inherit attributes and methods from one class to another.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-java">class Vehicle {
-  protected String brand = "Ford";
-  public void honk() {
-    System.out.println("Tuut, tuut!");
-  }
-}
-
-class Car extends Vehicle {
-  private String modelName = "Mustang";
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">class Vehicle {
-  protected String brand = "Ford";
-  public void honk() {
-    System.out.println("Tuut, tuut!");
-  }
-}
-
-class Car extends Vehicle {
-  private String modelName = "Mustang";
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Polymorphism">
-          <h1>Polymorphism</h1>
-          <div class="chapter-badge">Chapter 12</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Inheritance" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Abstraction" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by
-          inheritance.</p>
-      </section>
-
-        <section class="topic-section" id="Abstraction">
-          <h1>Abstraction</h1>
-          <div class="chapter-badge">Chapter 13</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Polymorphism" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Files" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Data abstraction is the process of hiding certain details and showing only essential information to the user.
-        </p>
-        <ul>
-          <li><strong>Abstract Class:</strong> Cannot be used to create objects.</li>
-          <li><strong>Interface:</strong> A completely "abstract class" that finds grouping with unrelated classes.</li>
-        </ul>
-      </section>
-
-        <section class="topic-section" id="Files">
-          <h1>Java Files</h1>
-          <div class="chapter-badge">Chapter 14</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Abstraction" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Exceptions" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>The File class from the <code>java.io</code> package, allows us to work with files.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-java">import java.io.File; 
-File myObj = new File("filename.txt");</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">import java.io.File; 
-File myObj = new File("filename.txt");</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Exceptions">
-          <h1>Exception Handling</h1>
-          <div class="chapter-badge">Chapter 15</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Files" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>The <code>try</code> statement allows you to define a block of code to be tested for errors.</p>
-        <p>The <code>catch</code> statement allows you to define a block of code to be executed, if an error occurs in
-          the try block.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-java">try {
-  int[] myNumbers = {1, 2, 3};
-  System.out.println(myNumbers[10]);
-} catch (Exception e) {
-  System.out.println("Something went wrong.");
-}</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">try {
-  int[] myNumbers = {1, 2, 3};
-  System.out.println(myNumbers[10]);
-} catch (Exception e) {
-  System.out.println("Something went wrong.");
-}</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Projects">
-          <h1>🚀 Real World Projects</h1>
-          <div class="chapter-badge">Chapter 16</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Exceptions" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <h3>🟢 Beginner Level: Console Calculator</h3>
-        <p><strong>Goal:</strong> Perform + - * / operations.</p>
-        <p><strong>Key Skills:</strong> Scanner, Switch Case</p>
-        <h3>🟡 Intermediate Level: Student DB</h3>
-        <p><strong>Goal:</strong> Manage students, assign grades, calculate GPA.</p>
-        <p><strong>Key Skills:</strong> ArrayList, Classes, Loops</p>
-        <h3>🔴 Advanced Level: ATM System</h3>
-        <p><strong>Goal:</strong> Login with PIN, Check Balance, Withdraw, persistent storage.</p>
-        <p><strong>Key Skills:</strong> File I/O, HashMap, Auth Logic</p>
-      </section>
-
-        <section class="topic-section" id="MiniTask">
-          <h1>🎯 Java Mini Task</h1>
-          <div class="chapter-badge">Chapter 17</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p><strong>Goal:</strong> Even or Odd Checker.</p>
-        <h4>📋 Requirements:</h4>
-        <ol>
-          <li> Create an integer variable <code>number</code> with any value (e.g., 8).</li>
-          <li> Use an <code>if/else</code> statement.</li>
-          <li> If the number is divisible by 2, print "Even".</li>
-          <li> Otherwise, print "Odd".</li>
-        </ol>
-        <p><strong>Hint:</strong> Use the modulo operator <code>%</code>. <code>8 % 2 == 0</code>.</p>
-      </div>
-    </div>
-
-
-    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
-      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
-      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Java module.</p>
-      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
-        onclick="location.href='../index1.html'">Return to Dashboard</button>
-    
         </section>
+
+        <!-- ===== JAVA INTRO ===== -->
+        <section id="java-intro" class="topic-section">
+          <h1>Java Introduction</h1>
+          <p>Java is a general-purpose programming language that is class-based and object-oriented. It is designed to have as few implementation dependencies as possible.</p>
+
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Why Use Java?</h3>
+            <ul>
+              <li><strong>Platform Independent:</strong> Java code is compiled to bytecode that runs on the Java Virtual Machine (JVM), making it platform independent.</li>
+              <li><strong>Object-Oriented:</strong> Everything in Java is an object. OOP makes the full program simpler by breaking it into objects.</li>
+              <li><strong>Secure:</strong> Java has built-in security features like no explicit pointer usage and bytecode verification.</li>
+              <li><strong>Robust:</strong> Java has strong memory management, exception handling, and type checking.</li>
+              <li><strong>Multithreaded:</strong> Java supports multithreading at the language level.</li>
+            </ul>
+          </div>
+
+          <div class="detailed-explanation">
+            <p>Java applications are compiled to bytecode that can run on any JVM regardless of the underlying hardware or OS. This makes Java extremely portable. The JVM acts as an intermediary between the Java code and the machine, translating bytecode into machine-specific instructions at runtime.</p>
+            <p>Java is widely used in enterprise-level applications, Android mobile development, big data technologies (like Hadoop and Spark), and server-side web development using frameworks like Spring Boot.</p>
+          </div>
+
+          <div class="common-mistakes">
+            <h3>Common Mistakes and Pitfalls</h3>
+            <ul>
+              <li>Confusing Java with JavaScript — they are completely different languages.</li>
+              <li>Not understanding that Java is compiled to bytecode, NOT directly to machine code.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== JAVA GET STARTED ===== -->
+        <section id="java-getstarted" class="topic-section">
+          <h1>Java Get Started</h1>
+          <p>To start writing Java programs, you need to install the Java Development Kit (JDK) and set up your environment.</p>
+
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Steps</h3>
+            <ul>
+              <li>Download the JDK from <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">oracle.com</a>.</li>
+              <li>Set the <code>JAVA_HOME</code> environment variable.</li>
+              <li>Verify: Run <code>java -version</code> and <code>javac -version</code> in terminal.</li>
+              <li>Use an IDE like IntelliJ IDEA, Eclipse, or VS Code.</li>
+            </ul>
+          </div>
+
+          <div class="detailed-explanation">
+            <p>After installing the JDK, you write your code in a <code>.java</code> file. The Java compiler (<code>javac</code>) compiles it into a <code>.class</code> file (bytecode). You then run the bytecode using the <code>java</code> command.</p>
+          </div>
+
+          <div class="syntax-snippets">
+            <h3>Compile and Run</h3>
+            <pre><code>
+# Save code as Main.java
+javac Main.java    # Compile
+java Main          # Run
+            </code></pre>
+          </div>
+
+          <div class="best-practices">
+            <h3>Best Practices</h3>
+            <ul>
+              <li>Always name the file with the same name as the public class inside it.</li>
+              <li>Use an IDE for autocompletion, debugging, and project management.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== JAVA SYNTAX ===== -->
+        <section id="java-syntax" class="topic-section">
+          <h1>Java Syntax</h1>
+          <p>Every Java application must contain a <code>main</code> method. The main method is the entry point of any Java program.</p>
+
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li>Every line of code in Java must be inside a <strong>class</strong>.</li>
+              <li>The class name should always start with an uppercase letter and match the filename.</li>
+              <li>Java is <strong>case-sensitive</strong>.</li>
+              <li>Every statement ends with a <strong>semicolon</strong> <code>;</code>.</li>
+            </ul>
+          </div>
+
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Syntax Example</div>
+            <pre class="example-code"><code>public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+
+          <div class="common-mistakes">
+            <h3>Common Mistakes</h3>
+            <ul>
+              <li>Forgetting the semicolon at the end of a statement.</li>
+              <li>Not matching the filename to the public class name.</li>
+              <li>Using <code>system</code> instead of <code>System</code> (case sensitivity).</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== JAVA OUTPUT ===== -->
+        <section id="java-output" class="topic-section">
+          <h1>Java Output</h1>
+          <p>You can use <code>println()</code> to output values or print text in Java.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li><code>System.out.println()</code> — prints and adds a new line.</li>
+              <li><code>System.out.print()</code> — prints without adding a new line.</li>
+              <li>You can print numbers, text, and expressions.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Output Example</div>
+            <pre class="example-code"><code>System.out.println("Hello World!");
+System.out.println(3 + 3);
+System.out.print("I am learning ");
+System.out.print("Java!");</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== JAVA COMMENTS ===== -->
+        <section id="java-comments" class="topic-section">
+          <h1>Java Comments</h1>
+          <p>Comments can be used to explain Java code and to make it more readable. They can also be used to prevent execution when testing alternative code.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li><strong>Single-line comments</strong> start with <code>//</code>.</li>
+              <li><strong>Multi-line comments</strong> start with <code>/*</code> and end with <code>*/</code>.</li>
+              <li><strong>Javadoc comments</strong> start with <code>/**</code> and are used for documentation.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Comment Example</div>
+            <pre class="example-code"><code>// This is a single-line comment
+
+/* This is a
+multi-line comment */
+
+/** This is a Javadoc comment
+ * @param args command line arguments
+ */</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== JAVA VARIABLES ===== -->
+        <section id="java-variables" class="topic-section">
+          <h1>Java Variables</h1>
+          <p>Variables are containers for storing data values. In Java, there are different types of variables.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li><code>String</code> — stores text like <code>"Hello"</code>.</li>
+              <li><code>int</code> — stores integers like <code>123</code>.</li>
+              <li><code>float</code> — stores floating point numbers like <code>19.99f</code>.</li>
+              <li><code>char</code> — stores single characters like <code>'a'</code>.</li>
+              <li><code>boolean</code> — stores values with two states: <code>true</code> or <code>false</code>.</li>
+              <li>Use <code>final</code> keyword to declare a constant.</li>
+            </ul>
+          </div>
+          <div class="detailed-explanation">
+            <p>In Java, you must declare the variable type before using it. Java is a <strong>statically typed</strong> language, meaning the type of a variable is known at compile time. This is different from Python where types are inferred at runtime.</p>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Variable Example</div>
+            <pre class="example-code"><code>String name = "John";
+int myNum = 15;
+float myFloat = 5.99f;
+char myLetter = 'D';
+boolean myBool = true;
+final int CONSTANT = 100;</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">String name = "John";
+int myNum = 15;
+System.out.println(name);
+System.out.println(myNum);</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+          <div class="common-mistakes">
+            <h3>Common Mistakes</h3>
+            <ul>
+              <li>Using a variable before declaring it.</li>
+              <li>Trying to reassign a <code>final</code> constant variable.</li>
+              <li>Forgetting to add <code>f</code> suffix to float literals.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== JAVA DATA TYPES ===== -->
+        <section id="java-datatypes" class="topic-section">
+          <h1>Java Data Types</h1>
+          <p>Data types specify the different sizes and values that can be stored in a variable.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Primitive Data Types</h3>
+            <ul>
+              <li><code>byte</code> — 1 byte, stores whole numbers from -128 to 127.</li>
+              <li><code>short</code> — 2 bytes, stores whole numbers from -32,768 to 32,767.</li>
+              <li><code>int</code> — 4 bytes, stores whole numbers up to ~2.1 billion.</li>
+              <li><code>long</code> — 8 bytes, stores very large whole numbers.</li>
+              <li><code>float</code> — 4 bytes, stores fractional numbers (6-7 decimal digits).</li>
+              <li><code>double</code> — 8 bytes, stores fractional numbers (15 decimal digits).</li>
+              <li><code>boolean</code> — 1 bit, stores true or false.</li>
+              <li><code>char</code> — 2 bytes, stores a single character/ASCII value.</li>
+            </ul>
+          </div>
+          <div class="note-box">
+            <p><strong>Note:</strong> Non-primitive data types include <code>String</code>, <code>Arrays</code>, and <code>Classes</code>. They refer to objects and can be <code>null</code>.</p>
+          </div>
+        </section>
+
+        <!-- ===== JAVA TYPE CASTING ===== -->
+        <section id="java-typecasting" class="topic-section">
+          <h1>Java Type Casting</h1>
+          <p>Type casting is when you assign a value of one primitive data type to another type.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li><strong>Widening Casting (automatic):</strong> <code>byte → short → int → long → float → double</code></li>
+              <li><strong>Narrowing Casting (manual):</strong> <code>double → float → long → int → short → byte</code></li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Type Casting Example</div>
+            <pre class="example-code"><code>// Widening Casting (automatic)
+int myInt = 9;
+double myDouble = myInt;  // 9.0
+
+// Narrowing Casting (manual)
+double myDouble2 = 9.78d;
+int myInt2 = (int) myDouble2;  // 9</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">double myDouble = 9.78d;
+int myInt = (int) myDouble;
+System.out.println(myInt);</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== JAVA OPERATORS ===== -->
+        <section id="java-operators" class="topic-section">
+          <h1>Java Operators</h1>
+          <p>Operators are used to perform operations on variables and values.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Operator Types</h3>
+            <ul>
+              <li><strong>Arithmetic:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>++</code>, <code>--</code></li>
+              <li><strong>Assignment:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code></li>
+              <li><strong>Comparison:</strong> <code>==</code>, <code>!=</code>, <code>></code>, <code><</code>, <code>>=</code>, <code><=</code></li>
+              <li><strong>Logical:</strong> <code>&&</code>, <code>||</code>, <code>!</code></li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== JAVA STRINGS ===== -->
+        <section id="java-strings" class="topic-section">
+          <h1>Java Strings</h1>
+          <p>Strings are used for storing text. A String variable contains a collection of characters surrounded by double quotes.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> String Methods</h3>
+            <ul>
+              <li><code>length()</code> — returns the length of a string.</li>
+              <li><code>toUpperCase()</code> / <code>toLowerCase()</code> — case conversion.</li>
+              <li><code>indexOf()</code> — finds the position of a substring.</li>
+              <li><code>concat()</code> — concatenates two strings.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> String Example</div>
+            <pre class="example-code"><code>String greeting = "Hello";
+System.out.println(greeting.length());        // 5
+System.out.println(greeting.toUpperCase());   // HELLO
+System.out.println(greeting.indexOf("llo"));  // 2</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== JAVA IF...ELSE ===== -->
+        <section id="java-ifelse" class="topic-section">
+          <h1>Java If...Else</h1>
+          <p>Java supports the usual logical conditions from mathematics. Use these conditions to perform different actions for different decisions.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li><code>if</code> — specifies a block of code to be executed if a condition is true.</li>
+              <li><code>else</code> — specifies a block to execute if the condition is false.</li>
+              <li><code>else if</code> — specifies a new condition to test if the first condition is false.</li>
+              <li><strong>Ternary:</strong> <code>variable = (condition) ? expressionTrue : expressionFalse;</code></li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> If...Else Example</div>
+            <pre class="example-code"><code>int time = 20;
+if (time < 18) {
+  System.out.println("Good day.");
+} else {
+  System.out.println("Good evening.");
+}</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">int time = 20;
+if (time < 18) {
+  System.out.println("Good day.");
+} else {
+  System.out.println("Good evening.");
+}</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== JAVA SWITCH ===== -->
+        <section id="java-switch" class="topic-section">
+          <h1>Java Switch</h1>
+          <p>Use the <code>switch</code> statement to select one of many code blocks to be executed.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Switch Example</div>
+            <pre class="example-code"><code>int day = 4;
+switch (day) {
+  case 1: System.out.println("Monday"); break;
+  case 2: System.out.println("Tuesday"); break;
+  case 3: System.out.println("Wednesday"); break;
+  case 4: System.out.println("Thursday"); break;
+  default: System.out.println("Other day");
+}</code></pre>
+          </div>
+          <div class="warning-box">
+            <p><strong>Warning:</strong> Don't forget the <code>break</code> keyword! Without it, the code will "fall through" and execute the next case as well.</p>
+          </div>
+        </section>
+
+        <!-- ===== JAVA WHILE LOOP ===== -->
+        <section id="java-whileloop" class="topic-section">
+          <h1>Java While Loop</h1>
+          <p>The <code>while</code> loop loops through a block of code as long as a specified condition is true.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> While Loop Example</div>
+            <pre class="example-code"><code>int i = 0;
+while (i < 5) {
+  System.out.println(i);
+  i++;
+}</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">int i = 0;
+while (i < 5) {
+  System.out.println(i);
+  i++;
+}</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== JAVA FOR LOOP ===== -->
+        <section id="java-forloop" class="topic-section">
+          <h1>Java For Loop</h1>
+          <p>When you know exactly how many times you want to loop through a block of code, use the <code>for</code> loop.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Loop Types</h3>
+            <ul>
+              <li><code>for</code> — traditional counter-based loop.</li>
+              <li><code>for-each</code> — iterates over elements of arrays and collections.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> For Loop Example</div>
+            <pre class="example-code"><code>for (int i = 0; i < 5; i++) {
+  System.out.println(i);
+}
+
+// For-each loop
+String[] cars = {"Volvo", "BMW", "Ford"};
+for (String car : cars) {
+  System.out.println(car);
+}</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== JAVA ARRAYS ===== -->
+        <section id="java-arrays" class="topic-section">
+          <h1>Java Arrays</h1>
+          <p>Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li>Arrays are declared with square brackets: <code>String[] cars;</code></li>
+              <li>Array elements are accessed by their index (starting from 0).</li>
+              <li>Use <code>.length</code> to find the number of elements.</li>
+              <li>Multidimensional arrays are arrays of arrays.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Array Example</div>
+            <pre class="example-code"><code>String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+System.out.println(cars[0]);     // Volvo
+System.out.println(cars.length); // 4
+cars[0] = "Opel";                // Change element</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">String[] cars = {"Volvo", "BMW", "Ford"};
+System.out.println(cars[0]);</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== JAVA METHODS ===== -->
+        <section id="java-methods" class="topic-section">
+          <h1>Java Methods</h1>
+          <p>A method is a block of code which only runs when it is called. You can pass data, known as parameters, into a method.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li>Methods are defined with an access modifier, return type, name, and parameters.</li>
+              <li><code>void</code> means the method does not return a value.</li>
+              <li>Methods can have parameters and return values.</li>
+              <li><strong>Method Overloading:</strong> Multiple methods can have the same name but different parameters.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Method Example</div>
+            <pre class="example-code"><code>static void myMethod(String fname, int age) {
+  System.out.println(fname + " is " + age);
+}
+
+public static void main(String[] args) {
+  myMethod("Liam", 5);
+  myMethod("Jenny", 8);
+}</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">static void myMethod(String fname) {
+  System.out.println(fname + " Refsnes");
+}
+myMethod("Liam");</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== JAVA CLASSES ===== -->
+        <section id="java-classes" class="topic-section">
+          <h1>Java Classes & Objects</h1>
+          <p>Java is an object-oriented programming language. Everything in Java is associated with classes and objects, along with its attributes and methods.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li>A <strong>class</strong> is a blueprint for creating objects.</li>
+              <li>An <strong>object</strong> is an instance of a class.</li>
+              <li><strong>Attributes</strong> are variables within a class.</li>
+              <li><strong>Methods</strong> define behaviors of the class.</li>
+              <li>Use <code>new</code> keyword to create an object.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Class Example</div>
+            <pre class="example-code"><code>public class Main {
+  int x = 5;
+
+  public static void main(String[] args) {
+    Main myObj = new Main();
+    System.out.println(myObj.x);
+  }
+}</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== JAVA INHERITANCE ===== -->
+        <section id="java-inheritance" class="topic-section">
+          <h1>Java Inheritance</h1>
+          <p>In Java, it is possible to inherit attributes and methods from one class to another using the <code>extends</code> keyword.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li><strong>Subclass (child):</strong> The class that inherits from another class.</li>
+              <li><strong>Superclass (parent):</strong> The class being inherited from.</li>
+              <li>Use <code>extends</code> to inherit from a class.</li>
+              <li>Java does not support multiple inheritance (use interfaces instead).</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Inheritance Example</div>
+            <pre class="example-code"><code>class Vehicle {
+  protected String brand = "Ford";
+  public void honk() {
+    System.out.println("Tuut, tuut!");
+  }
+}
+
+class Car extends Vehicle {
+  private String modelName = "Mustang";
+  public static void main(String[] args) {
+    Car myCar = new Car();
+    myCar.honk();
+    System.out.println(myCar.brand + " " + myCar.modelName);
+  }
+}</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== JAVA POLYMORPHISM ===== -->
+        <section id="java-polymorphism" class="topic-section">
+          <h1>Java Polymorphism</h1>
+          <p>Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance. It lets us perform a single action in different ways.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li><strong>Method Overriding:</strong> A subclass provides a specific implementation of a method already provided by its parent class.</li>
+              <li><strong>Method Overloading:</strong> Multiple methods with the same name but different parameters.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Polymorphism Example</div>
+            <pre class="example-code"><code>class Animal {
+  public void animalSound() {
+    System.out.println("The animal makes a sound");
+  }
+}
+class Dog extends Animal {
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+  }
+}</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== JAVA ABSTRACTION ===== -->
+        <section id="java-abstraction" class="topic-section">
+          <h1>Java Abstraction</h1>
+          <p>Data abstraction is the process of hiding certain details and showing only essential information to the user. It can be achieved with either <strong>abstract classes</strong> or <strong>interfaces</strong>.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li><strong>Abstract Class:</strong> Cannot be used to create objects. Must be inherited from another class.</li>
+              <li><strong>Abstract Method:</strong> Can only be used in an abstract class, and has no body.</li>
+              <li><strong>Interface:</strong> A completely "abstract class" that groups related methods with empty bodies.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== JAVA ENCAPSULATION ===== -->
+        <section id="java-encapsulation" class="topic-section">
+          <h1>Java Encapsulation</h1>
+          <p>Encapsulation means making sure that "sensitive" data is hidden from users. To achieve this, declare class variables as <code>private</code> and provide <code>get</code> and <code>set</code> methods.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Encapsulation Example</div>
+            <pre class="example-code"><code>public class Person {
+  private String name;
+
+  // Getter
+  public String getName() { return name; }
+  // Setter
+  public void setName(String newName) {
+    this.name = newName;
+  }
+}</code></pre>
+          </div>
+          <div class="best-practices">
+            <h3>Best Practices</h3>
+            <ul>
+              <li>Always use <code>private</code> for class attributes.</li>
+              <li>Provide public getter and setter methods to access and update the value.</li>
+              <li>Add validation logic inside setters to protect data integrity.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== JAVA EXCEPTIONS ===== -->
+        <section id="java-exceptions" class="topic-section">
+          <h1>Java Exceptions</h1>
+          <p>When executing Java code, different errors can occur. Java provides a powerful mechanism to handle runtime errors using <code>try...catch</code>.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li><code>try</code> — defines a block of code to be tested for errors.</li>
+              <li><code>catch</code> — defines a block of code to handle the error.</li>
+              <li><code>finally</code> — executes code after try/catch, regardless of the result.</li>
+              <li><code>throw</code> — creates a custom error.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Try...Catch Example</div>
+            <pre class="example-code"><code>try {
+  int[] myNumbers = {1, 2, 3};
+  System.out.println(myNumbers[10]);
+} catch (Exception e) {
+  System.out.println("Something went wrong.");
+} finally {
+  System.out.println("The 'try catch' is finished.");
+}</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">try {
+  int[] myNumbers = {1, 2, 3};
+  System.out.println(myNumbers[10]);
+} catch (Exception e) {
+  System.out.println("Something went wrong.");
+}</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== JAVA FILE HANDLING ===== -->
+        <section id="java-filehandling" class="topic-section">
+          <h1>Java File Handling</h1>
+          <p>The <code>File</code> class from the <code>java.io</code> package allows us to work with files.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> File Operations</h3>
+            <ul>
+              <li><code>createNewFile()</code> — creates a new file.</li>
+              <li><code>write()</code> — writes to a file (using FileWriter).</li>
+              <li><code>read()</code> — reads a file (using Scanner).</li>
+              <li><code>delete()</code> — deletes a file.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> File Example</div>
+            <pre class="example-code"><code>import java.io.File;
+import java.io.IOException;
+
+public class CreateFile {
+  public static void main(String[] args) {
+    try {
+      File myObj = new File("filename.txt");
+      if (myObj.createNewFile()) {
+        System.out.println("File created: " + myObj.getName());
+      }
+    } catch (IOException e) {
+      System.out.println("An error occurred.");
+    }
+  }
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="java-quiz" class="topic-section">
+          <h1>Java Quiz</h1>
+          <p>Test your Java skills with our Quiz!</p>
+          <button class="btn-control" onclick="alert('Quiz system coming soon!')">Start Java Quiz</button>
+        </section>
+
+        <section id="java-exercises" class="topic-section">
+          <h1>Java Exercises</h1>
+          <p>We have gathered a variety of Java exercises (with answers) for each Java Chapter.</p>
+          <button class="btn-control" onclick="alert('Exercises system coming soon!')">View Exercises</button>
+        </section>
+
+        <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+          <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+          <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Java module.</p>
+          <button class="btn-control"
+            style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+            onclick="location.href='../index1.html'">Return to Dashboard</button>
+        </div>
 
       </div>
     </main>
@@ -663,7 +889,6 @@ File myObj = new File("filename.txt");</textarea>
   </script>
 
   <script>
-    // Sidebar active state syncing
     const sections = document.querySelectorAll('.topic-section');
     const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
 
@@ -675,7 +900,6 @@ File myObj = new File("filename.txt");</textarea>
           current = section.getAttribute('id');
         }
       });
-
       navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href').includes(current)) {
@@ -686,45 +910,34 @@ File myObj = new File("filename.txt");</textarea>
   </script>
 
   <script>
-
-
-    // Try It Editor functions (applied globally to all courses)
-    window.openTryIt = function(btn) {
+    window.openTryIt = function (btn) {
       const panel = btn.nextElementSibling;
       panel.classList.add('open');
       btn.style.display = 'none';
       runTryIt(panel.querySelector('.tryit-run'));
     };
-    window.closeTryIt = function(btn) {
+    window.closeTryIt = function (btn) {
       const panel = btn.closest('.tryit-panel');
       panel.classList.remove('open');
       panel.previousElementSibling.style.display = 'inline-flex';
     };
-    window.runTryIt = function(btn) {
+    window.runTryIt = function (btn) {
       const panel = btn.closest('.tryit-panel');
       const code = panel.querySelector('.tryit-editor').value;
       const iframe = panel.querySelector('iframe');
-      // basic wrapping for output display
-      iframe.srcdoc = `
-        <style>body{font-family:sans-serif; color:#333; background:#fff;}</style>
-        ${code}
-      `;
+      iframe.srcdoc = `<style>body{font-family:sans-serif;color:#333;background:#fff;padding:15px;}</style>${code}`;
     };
   </script>
 
   <script>
-    // Theme logic
     const toggleBtn = document.getElementById('theme-toggle');
     const updateThemeIcon = (isDark) => {
-      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+      if (toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     };
-    
-    // Check saved theme
     let currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
     window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
-
-    if(toggleBtn) {
+    if (toggleBtn) {
       toggleBtn.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme');
         let newTheme = theme === 'dark' ? 'light' : 'dark';

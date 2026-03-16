@@ -157,19 +157,73 @@
 
         <!-- ===== PYTHON INTRO ===== -->
         <section id="python-intro" class="topic-section">
-          <h1>What is Python?</h1>
-          <p>Python is an interpreted, high-level, general-purpose programming language.</p>
-          <div class="key-points">
+          <h1>Python Intro</h1>
+          <p>Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant indentation.</p>
+
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
             <ul>
-              <li>Interpreted: Code is executed line by line.</li>
-              <li>High-level: Easy to read and write.</li>
-              <li>General-purpose: Can be used for almost anything.</li>
+              <li>Interpreted Language: Python code is executed line by line, making debugging easier.</li>
+              <li>High-level: Abstracts away complex computer details, focusing on programming logic.</li>
+              <li>Dynamically Typed: You don't need to declare variable types explicitly.</li>
+              <li>Multi-paradigm: Supports object-oriented, imperative, and functional programming styles.</li>
             </ul>
           </div>
-          <div class="tips-box">
+
+          <div class="detailed-explanation">
+            <p>Python is often described as a "batteries included" language due to its comprehensive standard library. This means you can do a lot out-of-the-box without needing to install third-party packages. It is widely used in various domains, ranging from web development (using frameworks like Django and Flask) to data science, artificial intelligence, scientific computing, and simple task automation.</p>
+            <p>Unlike languages like C++ or Java, Python uses whitespace (indentation) to define code blocks (like functions or loops) instead of curly braces. This enforces a clean, consistent coding style across all Python codebases.</p>
+          </div>
+
+          <div class="syntax-snippets">
+            <h3>Syntax / Code Snippets</h3>
+            <pre><code>
+# Basic Python syntax
+print("Welcome to Python!") 
+# No semicolons required at the end of the line
+            </code></pre>
+          </div>
+
+          <div class="example-box">
+            <div class="example-header">
+              <i class="fas fa-code"></i> Example: A Simple Python Script
+            </div>
+            <pre class="example-code"><code>
+name = "LearnX Student"
+print(f"Hello, {name}! Let's learn Python.")
+            </code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">name = "LearnX Student"\nprint(f"Hello, {name}! Let's learn Python.")</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+
+          <div class="real-world-usecase">
+            <h3>Real-World Use Case</h3>
+            <p>A data analyst using Python to load a CSV file and calculate the average sales for a month without complex configuration or compilation steps.</p>
+          </div>
+
+          <div class="common-mistakes">
+            <h3>Common Mistakes and Pitfalls</h3>
             <ul>
-              <li>Python was designed for readability.</li>
-              <li>It has a large standard library.</li>
+              <li>Mixing tabs and spaces for indentation, which raises an `IndentationError`.</li>
+              <li>Trying to compile Python code like C or Java (Python is interpreted).</li>
+              <li>Forgetting that Python strings can use either single quotes or double quotes, but they must match.</li>
+            </ul>
+          </div>
+
+          <div class="best-practices">
+            <h3>Best Practices</h3>
+            <ul>
+              <li>Follow the PEP 8 style guide for formatting your Python code properly.</li>
+              <li>Keep your codebase readable and use informative variable names.</li>
+              <li>Leverage Python's built-in functions instead of writing custom logic for standard operations.</li>
             </ul>
           </div>
         </section>
@@ -177,12 +231,49 @@
         <!-- ===== PYTHON GET STARTED ===== -->
         <section id="python-getstarted" class="topic-section">
           <h1>Python Get Started</h1>
-          <p>To start using Python, you need to install it on your computer or use an online editor.</p>
-          <div class="key-points">
+          <p>Python can be easily installed on Windows, macOS, and Linux. Once installed, writing and running Python code is remarkably quick.</p>
+
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
             <ul>
-              <li>Download from <a href="https://www.python.org/" target="_blank">python.org</a></li>
-              <li>Verify installation: <code>python --version</code></li>
-              <li>Execute scripts: <code>python helloworld.py</code></li>
+              <li>Download Python from the official <a href="https://www.python.org/" target="_blank">python.org</a> website.</li>
+              <li>Checking the Python version via the command line.</li>
+              <li>Writing code in an IDE (like VS Code, PyCharm) or a text editor.</li>
+              <li>Executing `.py` scripts from the terminal.</li>
+            </ul>
+          </div>
+
+          <div class="detailed-explanation">
+            <p>Modern Python development usually requires Python 3 (Python 2 is officially deprecated). When you install Python on Windows, make sure to check the box that says <strong>"Add Python to PATH"</strong>. This step is crucial for running Python from any command prompt window.</p>
+            <p>After installation, you can interact with Python in two main ways: using the interactive shell (REPL) or by saving your code in a file with a <code>.py</code> extension and running it.</p>
+          </div>
+
+          <div class="syntax-snippets">
+            <h3>Commands to verify installation</h3>
+            <pre><code>
+# Check python version
+python --version
+
+# Run a python script
+python myscript.py
+            </code></pre>
+          </div>
+
+          <div class="common-mistakes">
+            <h3>Common Mistakes and Pitfalls</h3>
+            <ul>
+              <li>Forgetting to add Python to the system PATH during installation.</li>
+              <li>Having multiple versions of Python installed and using the wrong command (e.g., using `python` instead of `python3`).</li>
+              <li>Saving the python script with an extension like `.txt` instead of `.py`.</li>
+            </ul>
+          </div>
+
+          <div class="best-practices">
+            <h3>Best Practices</h3>
+            <ul>
+              <li>Always check your Python version before starting a new tutorial to avoid syntax mismatches.</li>
+              <li>Use Virtual Environments (venv) for projects to keep dependencies isolated.</li>
+              <li>Use a dedicated Integrated Development Environment (IDE) like VS Code equipped with Python extensions.</li>
             </ul>
           </div>
         </section>
@@ -191,19 +282,46 @@
         <!-- ===== PYTHON SYNTAX ===== -->
         <section id="python-syntax" class="topic-section">
           <h1>Python Syntax</h1>
-          <p>Python syntax can be executed by writing directly in the Command Line, or by creating a python file on the
-            server, using the .py file extension.</p>
-          <div class="key-points">
+          <p>Python's syntax was uniquely designed to be highly readable. It leverages English keywords where other languages use punctuation, and it uses indentation to define the structure of the code.</p>
+
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
             <ul>
-              <li><strong>Indentation:</strong> Python uses indentation to indicate a block of code.</li>
-              <li>A block of code starts with indentation and ends with the first unindented line.</li>
-              <li>The number of spaces is up to you as a programmer, but it has to be at least one.</li>
+              <li><strong>Indentation:</strong> Python uses whitespace at the beginning of a line to define code blocks (unlike curly brackets `{}` in C++ or Java).</li>
+              <li><strong>Variables:</strong> Created the moment you assign a value to it (no declaration commands).</li>
+              <li><strong>Line Endings:</strong> A new line indicates the end of a command (no semicolons required).</li>
             </ul>
           </div>
+
+          <div class="detailed-explanation">
+            <p>Indentation is the most critical aspect of Python syntax. Where other programming languages use indentation purely for readability, Python uses it to indicate a block of code (e.g., the body of a loop, function, or conditional statement). You must use the same number of spaces for every line within the same block, though the standard convention is <strong>4 spaces</strong>.</p>
+            <p>You can write multiple statements on one line by separating them with a semicolon, but this is highly discouraged in Python as it hurts readability.</p>
+          </div>
+
+          <div class="syntax-snippets">
+            <h3>Syntax / Code Snippets</h3>
+            <pre><code>
+# Correct indentation
+if 5 > 2:
+    print("Five is greater than two!")
+
+# Incorrect indentation (will cause an error)
+# if 5 > 2:
+# print("Five is greater than two!")
+            </code></pre>
+          </div>
+
           <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Indentation Example</div>
-            <pre class="example-code"><code>if 5 > 2:
-  print("Five is greater than two!")</code></pre>
+            <div class="example-header">
+              <i class="fas fa-code"></i> Example: Code Blocks
+            </div>
+            <pre class="example-code"><code>
+x = 10
+if x == 10:
+    print("x is 10")
+    print("This is inside the 'if' block")
+print("This is outside the block")
+            </code></pre>
             <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
@@ -211,42 +329,132 @@
                 <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
                 <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor">if 5 > 2:
-  print("Five is greater than two!")</textarea>
+              <textarea class="tryit-editor">x = 10\nif x == 10:\n    print("x is 10")\n    print("This is inside the 'if' block")\nprint("This is outside the block")</textarea>
               <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
+          </div>
+
+          <div class="common-mistakes">
+            <h3>Common Mistakes and Pitfalls</h3>
+            <ul>
+              <li><strong>IndentationError:</strong> Usually caused by an unexpected indent, or missing an indent after a colon `:`.</li>
+              <li><strong>TabError:</strong> Mixing tabs and spaces inside the same file. Always stick to spaces.</li>
+            </ul>
+          </div>
+
+          <div class="best-practices">
+            <h3>Best Practices</h3>
+            <ul>
+              <li>Use 4 spaces per indentation level. Avoid using tabs.</li>
+              <li>Configure your code editor to insert spaces when you press the Tab key.</li>
+              <li>Keep lines to a maximum of 79 characters as per PEP 8 guidelines.</li>
+            </ul>
           </div>
         </section>
 
         <!-- ===== PYTHON COMMENTS ===== -->
         <section id="python-comments" class="topic-section">
           <h1>Python Comments</h1>
-          <p>Comments can be used to explain Python code and to make the code more readable.</p>
-          <div class="key-points">
+          <p>Comments are an essential part of programming. They are used to explain Python code, make the code more readable, and can also be used to prevent execution when testing code blocks.</p>
+          
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
             <ul>
-              <li>Comments start with a <code>#</code>.</li>
-              <li>Python will ignore the rest of the line after the <code>#</code>.</li>
-              <li>Comments can also be used to prevent execution when testing code.</li>
+              <li><strong>Single-line Comments:</strong> Start with a <code>#</code> symbol.</li>
+              <li><strong>End-of-line Comments:</strong> Placed at the end of a line of code.</li>
+              <li><strong>Multi-line Comments:</strong> Python doesn't have a specific multi-line comment syntax, but you can insert a <code>#</code> on every line, or use an unassigned multi-line string.</li>
             </ul>
           </div>
+
+          <div class="detailed-explanation">
+            <p>When the Python interpreter encounters a <code>#</code>, it ignores the rest of the line. This means you can write whatever text you want after it, making it perfect for leaving notes for yourself or other developers.</p>
+            <p>For multi-line comments, you can add a <code>#</code> at the beginning of each line. Alternatively, you can use triple quotes <code>"""</code>. Since Python will ignore string literals that are not assigned to a variable, many developers use triple quotes to write extensive documentation or comment out large chunks of code.</p>
+          </div>
+
+          <div class="syntax-snippets">
+            <h3>Syntax / Code Snippets</h3>
+            <pre><code>
+# This is a single-line comment
+print("Hello, World!") # This is an end-of-line comment
+
+"""
+This is a comment
+written in
+more than just one line
+"""
+print("Multi-line comments are cool!")
+            </code></pre>
+          </div>
+
           <div class="example-box">
             <div class="example-header"><i class="fas fa-code"></i> Comment Example</div>
-            <pre class="example-code"><code># This is a comment
-print("Hello, World!")</code></pre>
+            <pre class="example-code"><code># This is an important calculation
+x = 5
+y = 10
+# print(x + y)  <-- This line is commented out and will not run
+print("End of program")</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor"># This is an important calculation\nx = 5\ny = 10\n# print(x + y)\nprint("End of program")</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+
+          <div class="common-mistakes">
+            <h3>Common Mistakes and Pitfalls</h3>
+            <ul>
+              <li>Forgetting that `#` inside a string literal like `print("# Hello")` does NOT start a comment.</li>
+              <li>Leaving commented-out code (dead code) in production files, leading to clutter.</li>
+            </ul>
+          </div>
+
+          <div class="best-practices">
+            <h3>Best Practices</h3>
+            <ul>
+              <li>Use comments to explain <strong>why</strong> you did something, not <strong>what</strong> the code does (the code itself should be readable enough to explain what it does).</li>
+              <li>Use docstrings (triple quotes) at the start of functions and classes to generate reliable documentation.</li>
+            </ul>
           </div>
         </section>
 
         <!-- ===== PYTHON VARIABLES ===== -->
         <section id="python-variables" class="topic-section">
           <h1>Python Variables</h1>
-          <p>Variables are containers for storing data values.</p>
-          <div class="key-points">
+          <p>Variables are containers for storing data values. Unlike other programming languages, Python has no command for declaring a variable.</p>
+
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
             <ul>
-              <li>Python has no command for declaring a variable.</li>
               <li>A variable is created the moment you first assign a value to it.</li>
-              <li>Variables do not need to be declared with any particular type.</li>
+              <li>Variables do not need to be declared with any particular type, and can even change type after they have been set (Dynamically Typed).</li>
+              <li>Case-Sensitive: `Age` and `age` are two different variables.</li>
+              <li>Naming Rules: Must start with a letter or underscore, cannot start with a number.</li>
             </ul>
           </div>
+
+          <div class="detailed-explanation">
+            <p>In Python, you simply assign a value to a variable name using the equals sign <code>=</code>. Under the hood, Python variables act as "labels" pointing to objects in memory rather than fixed buckets. This is why a variable can point to an integer on one line, and a string on the next.</p>
+            <p>You can also assign multiple variables in one line to keep your code concise (e.g., <code>x, y, z = "Orange", "Banana", "Cherry"</code>). If you want to assign the same value to multiple variables, you can do <code>x = y = z = "Orange"</code>.</p>
+          </div>
+
+          <div class="syntax-snippets">
+            <h3>Syntax / Code Snippets</h3>
+            <pre><code>
+# Variable assignment
+x = 5             # x is an integer
+name = "John"     # name is a string
+x = "Sally"       # x is now a string!
+
+# Multiple variables in one line
+a, b, c = 1, 2, 3
+            </code></pre>
+          </div>
+
           <div class="example-box">
             <div class="example-header"><i class="fas fa-code"></i> Variable Example</div>
             <pre class="example-code"><code>x = 5
@@ -260,21 +468,42 @@ print(y)</code></pre>
                 <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
                 <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor">x = 5
-y = "John"
-print(x)
-print(y)</textarea>
+              <textarea class="tryit-editor">x = 5\ny = "John"\nprint(x)\nprint(y)</textarea>
               <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
+          </div>
+
+          <div class="real-world-usecase">
+            <h3>Real-World Use Case</h3>
+            <p>Variables are used to hold the state of an application. For example, a variable `score` keeps track of a player's points in a game, while `player_name` holds their username.</p>
+          </div>
+
+          <div class="common-mistakes">
+            <h3>Common Mistakes and Pitfalls</h3>
+            <ul>
+              <li>Starting a variable name with a number (e.g., `2myvar = "John"`) which causes a SyntaxError.</li>
+              <li>Using reserved Python keywords (like `class`, `for`, `if`) as variable names.</li>
+              <li>Naming variables vaguely such as `a`, `b`, `c`, which makes code hard to maintain.</li>
+            </ul>
+          </div>
+
+          <div class="best-practices">
+            <h3>Best Practices</h3>
+            <ul>
+              <li>Use <strong>snake_case</strong> for variable names (e.g., `my_variable_name`).</li>
+              <li>Choose descriptive and meaningful names (`user_age` instead of `ua`).</li>
+              <li>Avoid overwriting built-in function names like `min`, `max`, or `list`.</li>
+            </ul>
           </div>
         </section>
 
         <!-- ===== PYTHON DATA TYPES ===== -->
         <section id="python-datatypes" class="topic-section">
           <h1>Python Data Types</h1>
-          <p>In programming, data type is an important concept. Variables can store data of different types, and
-            different types can do different things.</p>
-          <div class="key-points">
+          <p>In programming, data type is an important concept. Variables can store data of different types, and different types allow you to perform different operations.</p>
+          
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Built-in Data Types</h3>
             <ul>
               <li><strong>Text Type:</strong> <code>str</code></li>
               <li><strong>Numeric Types:</strong> <code>int</code>, <code>float</code>, <code>complex</code></li>
@@ -282,34 +511,119 @@ print(y)</textarea>
               <li><strong>Mapping Type:</strong> <code>dict</code></li>
               <li><strong>Set Types:</strong> <code>set</code>, <code>frozenset</code></li>
               <li><strong>Boolean Type:</strong> <code>bool</code></li>
-              <li><strong>Binary Types:</strong> <code>bytes</code>, <code>bytearray</code>, <code>memoryview</code>
-              </li>
+              <li><strong>Binary Types:</strong> <code>bytes</code>, <code>bytearray</code>, <code>memoryview</code></li>
               <li><strong>None Type:</strong> <code>NoneType</code></li>
             </ul>
           </div>
+
+          <div class="detailed-explanation">
+            <p>Python variables are strongly but dynamically typed. You don't need to specify the type when declaring the variable, but Python tracks the type of the underlying object. To check the data type of any object, you can use Python's built-in <code>type()</code> function.</p>
+            <p>If you want to enforce a specific data type, you can use constructor functions like <code>str()</code>, <code>int()</code>, or <code>list()</code>.</p>
+          </div>
+
+          <div class="syntax-snippets">
+            <h3>Syntax / Code Snippets</h3>
+            <pre><code>
+x = "Hello World"    # str
+x = 20               # int
+x = 20.5             # float
+x = ["apple", "ban"] # list
+x = {"name" : "Bob"} # dict
+x = True             # bool
+            </code></pre>
+          </div>
+
           <div class="example-box">
-            <div class="example-header"><i class="fas fa-code"></i> Data Type Example</div>
+            <div class="example-header"><i class="fas fa-code"></i> Getting the Data Type</div>
             <pre class="example-code"><code>x = 5
-print(type(x))</code></pre>
+y = [1, 2, 3]
+
+print(type(x))
+print(type(y))</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">x = 5\ny = [1, 2, 3]\n\nprint(type(x))\nprint(type(y))</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+
+          <div class="common-mistakes">
+            <h3>Common Mistakes and Pitfalls</h3>
+            <ul>
+              <li>Trying to concatenate strings and integers directly (e.g., `print("Age: " + 25)` throws a TypeError). You must cast the integer to a string first.</li>
+              <li>Confusing Lists `[]` and Tuples `()`. Lists are mutable, Tuples are immutable.</li>
+            </ul>
+          </div>
+
+          <div class="best-practices">
+            <h3>Best Practices</h3>
+            <ul>
+              <li>Use the `type()` function when debugging variables with unexpected behavior.</li>
+              <li>Use Python's Type Hinting (e.g., `def greet(name: str) -> str:`) to clarify data types in large applications.</li>
+            </ul>
           </div>
         </section>
 
         <!-- ===== PYTHON NUMBERS ===== -->
         <section id="python-numbers" class="topic-section">
           <h1>Python Numbers</h1>
-          <p>There are three numeric types in Python: <code>int</code>, <code>float</code>, <code>complex</code>.</p>
-          <div class="key-points">
+          <p>There are three distinct numeric types in Python: <code>int</code>, <code>float</code>, and <code>complex</code>. Variables of numeric types are created when you assign a value to them.</p>
+
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
             <ul>
-              <li><strong>Int:</strong> Whole number, positive or negative, without decimals, of unlimited length.</li>
-              <li><strong>Float:</strong> Number, positive or negative, containing one or more decimals.</li>
-              <li><strong>Complex:</strong> Written with a "j" as the imaginary part.</li>
+              <li><strong>Int (Integer):</strong> A whole number, positive or negative, without decimals, of unlimited length.</li>
+              <li><strong>Float (Floating Point Number):</strong> A number, positive or negative, containing one or more decimals. It can also be a scientific number with an "e" to indicate the power of 10.</li>
+              <li><strong>Complex:</strong> Complex numbers are written with a "j" as the imaginary part.</li>
             </ul>
           </div>
+
+          <div class="detailed-explanation">
+            <p>Python supports large numbers out of the box. Unlike C or Java where you have specific limits for `int` (like 32-bit limits), a Python `int` can be as large as your system's memory allows.</p>
+            <p>You can convert from one type to another with the <code>int()</code>, <code>float()</code>, and <code>complex()</code> methods. However, you cannot convert complex numbers into another number type.</p>
+          </div>
+
           <div class="example-box">
             <div class="example-header"><i class="fas fa-code"></i> Number Example</div>
             <pre class="example-code"><code>x = 1    # int
 y = 2.8  # float
-z = 1j   # complex</code></pre>
+z = 1j   # complex
+
+print(type(x))
+print(type(y))
+print(type(z))</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">x = 1\ny = 2.8\nz = 1j\n\nprint(type(x))\nprint(type(y))\nprint(type(z))</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+
+          <div class="syntax-snippets">
+            <h3>Random Number Module</h3>
+            <p>Python does not have a `random()` function built-in, but it has a built-in module called `random` that can be used to make random numbers:</p>
+            <pre><code>
+import random
+print(random.randrange(1, 10))
+            </code></pre>
+          </div>
+
+          <div class="common-mistakes">
+            <h3>Common Mistakes and Pitfalls</h3>
+            <ul>
+              <li>Using floating-point numbers expecting perfect precision (e.g., `0.1 + 0.2 == 0.3` is False in Python due to IEEE 754 precision issues). Use the `decimal` module for exact money logic.</li>
+              <li>Attempting to cast a complex number to an `int` or `float` raises a TypeError.</li>
+            </ul>
           </div>
         </section>
 

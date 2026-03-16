@@ -1,71 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LearnX | R Masterclass</title>
+  <title>LearnX | R Programming Masterclass</title>
   <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body class="learnx-page">
 
   <!-- TOP NAV -->
   <nav class="top-nav">
+    <button class="hamburger" id="mobile-toggle"><i class="fas fa-bars"></i></button>
     <a href="../index1.html" class="brand">LearnX</a>
-        <div class="top-nav-links">
-      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
-      <a href="html.html">HTML</a>
-      <a href="css.html">CSS</a>
-      <a href="js.html">JavaScript</a>
-      <a href="python.html">Python</a>
-      <a href="sql.html">SQL</a>
-      <a href="java.html">Java</a>
-      <a href="c.html">C</a>
-      <a href="excel.html">Excel</a>
-      <a href="numpy.html">NumPy</a>
-      <a href="pandas.html">Pandas</a>
-      <a href="matplotlib.html">Matplotlib</a>
-      
-      <a href="ai.html">AI & ML</a>
-      <a href="r.html" class="active">R</a>
-    </div>
-
     <div class="top-nav-search">
-      <input type="text" placeholder="Search..."/>
+      <input type="text" placeholder="Search R topics..." />
       <button><i class="fas fa-search"></i></button>
     </div>
-    
-    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
-      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
-       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
-      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
+    <div class="user-info-group">
+      <span id="user-display" class="user-display-name"></span>
+      <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
+      <button id="logout-btn" class="nav-btn">Logout</button>
     </div>
+  </nav>
+
+  <!-- SUB NAV -->
+  <nav class="sub-nav">
+    <a href="../index1.html"><i class="fas fa-th-large" style="margin-right:5px"></i> Dashboard</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JAVASCRIPT</a>
+    <a href="python.html">PYTHON</a>
+    <a href="sql.html">SQL</a>
+    <a href="java.html">JAVA</a>
+    <a href="c.html">C</a>
+    <a href="excel.html">EXCEL</a>
+    <a href="numpy.html">NUMPY</a>
+    <a href="pandas.html">PANDAS</a>
+    <a href="matplotlib.html">MATPLOTLIB</a>
+    <a href="ai.html">AI &amp; ML</a>
+    <a href="r.html" class="active">R</a>
   </nav>
 
   <!-- CONTENT WRAPPER -->
   <div class="course-layout">
-    
+
     <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
-        <i class="fas fa-registered" style="color:#276cb8"></i> R Programming Tutorial
+        <i class="fas fa-registered" style="color:#276cb8"></i> R Tutorial
       </div>
 
-      <div class="sidebar-section-label">R Programming Basic</div>
-      <a href="#Intro" class="active">Introduction to R</a>
-      <a href="#Syntax">Syntax</a>
-      <a href="#DataTypes">Data Types</a>
-      <a href="#Vectors">Vectors</a>
-      <a href="#Lists">Lists</a>
-      <a href="#Matrices">Matrices</a>
-      <a href="#DataFrames">Data Frames</a>
-      <a href="#Statistics">Statistics</a>
-      <a href="#Plotting">Plotting</a>
-      <a href="#GGPlot2">GGPlot2</a>
-      <a href="#Projects">🚀 Real World Projects</a>
-      <a href="#MiniTask">🎯 R Mini Task</a>
+      <div class="sidebar-section-label">R Basics</div>
+      <a href="#r-home" class="active"><i class="fas fa-home"></i> R HOME</a>
+      <a href="#r-intro"><i class="fas fa-info-circle"></i> R Intro</a>
+      <a href="#r-getstarted"><i class="fas fa-rocket"></i> R Get Started</a>
+      <a href="#r-syntax"><i class="fas fa-code"></i> R Syntax</a>
+      <a href="#r-comments"><i class="fas fa-comment"></i> R Comments</a>
+      <a href="#r-variables"><i class="fas fa-cube"></i> R Variables</a>
+      <a href="#r-datatypes"><i class="fas fa-tags"></i> R Data Types</a>
+      <a href="#r-operators"><i class="fas fa-calculator"></i> R Operators</a>
+      <a href="#r-strings"><i class="fas fa-quote-left"></i> R Strings</a>
+      <a href="#r-ifelse"><i class="fas fa-code-branch"></i> R If...Else</a>
+      <a href="#r-loops"><i class="fas fa-redo"></i> R Loops</a>
+      <a href="#r-functions"><i class="fas fa-cogs"></i> R Functions</a>
+
+      <div class="sidebar-section-label">R Data Structures</div>
+      <a href="#r-vectors"><i class="fas fa-list-ul"></i> R Vectors</a>
+      <a href="#r-lists"><i class="fas fa-list-ol"></i> R Lists</a>
+      <a href="#r-matrices"><i class="fas fa-th"></i> R Matrices</a>
+      <a href="#r-dataframes"><i class="fas fa-table"></i> R Data Frames</a>
+      <a href="#r-factors"><i class="fas fa-filter"></i> R Factors</a>
+
+      <div class="sidebar-section-label">R Statistics & Plots</div>
+      <a href="#r-statistics"><i class="fas fa-chart-bar"></i> R Statistics</a>
+      <a href="#r-plotting"><i class="fas fa-chart-line"></i> R Plotting</a>
+      <a href="#r-ggplot2"><i class="fas fa-chart-area"></i> R GGPlot2</a>
+
+      <div class="sidebar-section-label">Learning</div>
+      <a href="#r-quiz"><i class="fas fa-question-circle"></i> R Quiz</a>
+      <a href="#r-exercises"><i class="fas fa-tasks"></i> R Exercises</a>
 
       <div class="sidebar-footer">
         <a href="../index1.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
@@ -75,275 +93,597 @@
     <!-- MAIN CONTENT -->
     <main class="course-main">
       <div class="course-content-area">
-        
         <div class="breadcrumb">
-          <a href="../index1.html">Home</a> <span>/</span> <span>R</span>
+          <a href="../index1.html">Home</a> <span>/</span> <span>R</span> <span>/</span> <span>Tutorial</span>
         </div>
-        
-        <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">R Masterclass</h1>
 
-        <section class="topic-section" id="Intro">
-          <h1>Introduction to R</h1>
-          <div class="chapter-badge">Chapter 1</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Syntax" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== R HOME ===== -->
+        <section id="r-home" class="topic-section">
+          <h1>R Tutorial</h1>
+          <p>R is a programming language and environment for statistical computing and graphics. It is widely used among statisticians and data miners.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li>R was created by Ross Ihaka and Robert Gentleman in 1993.</li>
+              <li>R is open-source and free to use.</li>
+              <li>R is the gold standard for statistical analysis and data visualization.</li>
+              <li>It has a massive ecosystem of packages available via CRAN.</li>
+            </ul>
           </div>
-          
-        <h3>📌 What is R?</h3>
-        <p>R is a language and environment for statistical computing and graphics.</p>
-        <div class="mermaid">graph TD
-          Data --> Statistics
-          Statistics --> Visualization
-          Visualization --> Insights
-        </div>
-      </section>
-
-        <section class="topic-section" id="Syntax">
-          <h1>Syntax</h1>
-          <div class="chapter-badge">Chapter 2</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#DataTypes" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Assignment uses <code><-</code>.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-r">name <- "John"
-age <- 25
-print(name)</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> R Example</div>
+            <pre class="example-code"><code>"Hello World!"</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">name &lt;- "John"
-age &lt;- 25
-print(name)</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+              <textarea class="tryit-editor">"Hello World!"</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="DataTypes">
-          <h1>Data Types</h1>
-          <div class="chapter-badge">Chapter 3</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Syntax" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Vectors" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <ul>
-          <li><strong>Numeric:</strong> <code>10.5</code></li>
-          <li><strong>Integer:</strong> <code>10L</code></li>
-          <li><strong>Character:</strong> <code>"Hello"</code></li>
-          <li><strong>Logical:</strong> <code>TRUE</code></li>
-        </ul>
-      
         </section>
 
-        <section class="topic-section" id="Vectors">
-          <h1>Vectors</h1>
-          <div class="chapter-badge">Chapter 4</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#DataTypes" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Lists" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
+        <!-- ===== R INTRO ===== -->
+        <section id="r-intro" class="topic-section">
+          <h1>R Introduction</h1>
+          <p>R is a language and environment for statistical computing and graphics. It provides a wide variety of statistical and graphical techniques and is highly extensible.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Why Use R?</h3>
+            <ul>
+              <li><strong>Statistical Analysis:</strong> R has extensive support for statistical computing including linear and nonlinear modelling, time-series analysis, classification, and clustering.</li>
+              <li><strong>Data Visualization:</strong> R produces publication-quality plots with just a few lines of code, including mathematical symbols and formulae.</li>
+              <li><strong>Cross-Platform:</strong> R runs on Windows, macOS, and Linux.</li>
+              <li><strong>Huge Community:</strong> Thousands of contributed packages available on CRAN.</li>
+            </ul>
           </div>
-          
-        <p>A list of items of the same type.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-r">fruits <- c("apple", "banana", "cherry")</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+          <div class="detailed-explanation">
+            <p>R is particularly popular in academia and research. If you are working in data science, bioinformatics, or statistical research, learning R is essential. R's strength lies in its vectorized operations that make it fast for data analysis, and its unparalleled plotting capabilities through libraries like <code>ggplot2</code>.</p>
+          </div>
+        </section>
+
+        <!-- ===== R GET STARTED ===== -->
+        <section id="r-getstarted" class="topic-section">
+          <h1>R Get Started</h1>
+          <p>To start using R, you need to install R and optionally RStudio, a popular IDE for R.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Installation Steps</h3>
+            <ul>
+              <li>Download R from <a href="https://cran.r-project.org/" target="_blank">CRAN</a>.</li>
+              <li>Download RStudio (recommended IDE) from <a href="https://posit.co/download/rstudio-desktop/" target="_blank">posit.co</a>.</li>
+              <li>Verify installation by typing <code>R --version</code> in your terminal.</li>
+            </ul>
+          </div>
+          <div class="best-practices">
+            <h3>Best Practices</h3>
+            <ul>
+              <li>Use RStudio for a much better development experience with syntax highlighting, autocompletion, and built-in plot viewer.</li>
+              <li>Install packages using <code>install.packages("package_name")</code>.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== R SYNTAX ===== -->
+        <section id="r-syntax" class="topic-section">
+          <h1>R Syntax</h1>
+          <p>R uses <code>&lt;-</code> as the primary assignment operator. You can also use <code>=</code>, but <code>&lt;-</code> is the R convention.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li>R is case-sensitive.</li>
+              <li>The assignment operator is <code>&lt;-</code> (read as "gets").</li>
+              <li>Use <code>print()</code> or just type the variable name to output values.</li>
+              <li>R uses <code>#</code> for comments.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Syntax Example</div>
+            <pre class="example-code"><code>name <- "John"
+age <- 25
+print(name)
+print(paste("Age:", age))</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">fruits &lt;- c("apple", "banana", "cherry")</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+              <textarea class="tryit-editor">name <- "John"
+age <- 25
+print(name)</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Lists">
-          <h1>Lists</h1>
-          <div class="chapter-badge">Chapter 5</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Vectors" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Matrices" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>A collection of data which is ordered and changeable.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-r">thislist <- list("apple", "banana", "cherry")</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+          <div class="common-mistakes">
+            <h3>Common Mistakes</h3>
+            <ul>
+              <li>Using <code>=</code> instead of <code>&lt;-</code>. While <code>=</code> works, it's not idiomatic R and can cause unexpected behavior in some contexts.</li>
+              <li>Forgetting that R is 1-indexed (not 0-indexed like Python or C).</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== R COMMENTS ===== -->
+        <section id="r-comments" class="topic-section">
+          <h1>R Comments</h1>
+          <p>Comments in R start with the <code>#</code> symbol. R does not have multi-line comments, but you can place a <code>#</code> before each line.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Comment Example</div>
+            <pre class="example-code"><code># This is a comment
+"Hello World!" # This is also a comment
+
+# This is a multi-line comment
+# written across several lines</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== R VARIABLES ===== -->
+        <section id="r-variables" class="topic-section">
+          <h1>R Variables</h1>
+          <p>R does not have a command for declaring a variable. A variable is created the moment you first assign a value to it.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li>Use <code>&lt;-</code> to assign values.</li>
+              <li>Variable names must start with a letter and can contain letters, digits, periods, and underscores.</li>
+              <li>R is case-sensitive: <code>myVar</code> and <code>myvar</code> are different.</li>
+              <li>You can concatenate text using <code>paste()</code>.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Variable Example</div>
+            <pre class="example-code"><code>name <- "John"
+age <- 40
+
+# Concatenate
+paste("My name is", name, "and I am", age)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">thislist &lt;- list("apple", "banana", "cherry")</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+              <textarea class="tryit-editor">name <- "John"
+age <- 40
+paste("My name is", name)</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Matrices">
-          <h1>Matrices</h1>
-          <div class="chapter-badge">Chapter 6</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Lists" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#DataFrames" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>A 2D data set with columns and rows.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-r">thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+        </section>
+
+        <!-- ===== R DATA TYPES ===== -->
+        <section id="r-datatypes" class="topic-section">
+          <h1>R Data Types</h1>
+          <p>In R, variables do not need to be declared with a type. The type is inferred from the value assigned.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Basic Data Types</h3>
+            <ul>
+              <li><strong>Numeric:</strong> <code>10.5</code> — decimal values.</li>
+              <li><strong>Integer:</strong> <code>10L</code> — whole numbers (use <code>L</code> suffix).</li>
+              <li><strong>Character:</strong> <code>"Hello"</code> — text strings.</li>
+              <li><strong>Logical:</strong> <code>TRUE</code> / <code>FALSE</code> — boolean values.</li>
+              <li><strong>Complex:</strong> <code>3+5i</code> — complex numbers.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Data Type Example</div>
+            <pre class="example-code"><code>x <- 10.5    # numeric
+y <- 10L     # integer
+z <- "Hello" # character
+w <- TRUE    # logical
+
+class(x)
+class(y)
+class(z)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">thismatrix &lt;- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+              <textarea class="tryit-editor">x <- 10.5
+class(x)</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="DataFrames">
-          <h1>Data Frames</h1>
-          <div class="chapter-badge">Chapter 7</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Matrices" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Statistics" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Data tables. similar to Pandas DataFrames.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-r">Data_Frame <- data.frame (
+        </section>
+
+        <!-- ===== R OPERATORS ===== -->
+        <section id="r-operators" class="topic-section">
+          <h1>R Operators</h1>
+          <p>Operators are used to perform operations on variables and values.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Operator Types</h3>
+            <ul>
+              <li><strong>Arithmetic:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>^</code> (exponentiation), <code>%%</code> (modulus), <code>%/%</code> (integer division).</li>
+              <li><strong>Assignment:</strong> <code>&lt;-</code>, <code>=</code>, <code>&lt;&lt;-</code></li>
+              <li><strong>Comparison:</strong> <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+              <li><strong>Logical:</strong> <code>&amp;</code>, <code>|</code>, <code>!</code></li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== R STRINGS ===== -->
+        <section id="r-strings" class="topic-section">
+          <h1>R Strings</h1>
+          <p>Strings in R are defined with either single or double quotes. R provides several functions for string manipulation.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Useful String Functions</h3>
+            <ul>
+              <li><code>nchar()</code> — number of characters.</li>
+              <li><code>grepl()</code> — check if a pattern exists in a string.</li>
+              <li><code>paste()</code> — concatenate strings.</li>
+              <li><code>substr()</code> — extract a substring.</li>
+              <li><code>toupper()</code> / <code>tolower()</code> — case conversion.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> String Example</div>
+            <pre class="example-code"><code>str <- "Hello World!"
+nchar(str)           # 12
+toupper(str)         # "HELLO WORLD!"
+grepl("World", str)  # TRUE</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== R IF...ELSE ===== -->
+        <section id="r-ifelse" class="topic-section">
+          <h1>R If...Else</h1>
+          <p>R supports the usual conditional statements: <code>if</code>, <code>else if</code>, and <code>else</code>.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> If...Else Example</div>
+            <pre class="example-code"><code>a <- 200
+b <- 33
+
+if (b > a) {
+  print("b is greater than a")
+} else if (a == b) {
+  print("a and b are equal")
+} else {
+  print("a is greater than b")
+}</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">a <- 200
+b <- 33
+if (b > a) {
+  print("b is greater than a")
+} else {
+  print("a is greater than b")
+}</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== R LOOPS ===== -->
+        <section id="r-loops" class="topic-section">
+          <h1>R Loops</h1>
+          <p>Loops can execute a block of code as long as a specified condition is reached.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Loop Types</h3>
+            <ul>
+              <li><code>while</code> — loops while a condition is true.</li>
+              <li><code>for</code> — iterates over a sequence.</li>
+              <li><code>repeat</code> — loops until a <code>break</code> is hit.</li>
+              <li><code>next</code> — skips the current iteration (like <code>continue</code>).</li>
+              <li><code>break</code> — exits the loop.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Loop Examples</div>
+            <pre class="example-code"><code># While loop
+i <- 1
+while (i < 6) {
+  print(i)
+  i <- i + 1
+}
+
+# For loop
+fruits <- list("apple", "banana", "cherry")
+for (x in fruits) {
+  print(x)
+}</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">for (x in 1:5) {
+  print(x)
+}</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== R FUNCTIONS ===== -->
+        <section id="r-functions" class="topic-section">
+          <h1>R Functions</h1>
+          <p>A function is a block of code which only runs when it is called. You create a function using the <code>function()</code> keyword.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Function Example</div>
+            <pre class="example-code"><code>my_function <- function(fname) {
+  paste("Hello", fname)
+}
+
+my_function("Peter")  # "Hello Peter"
+my_function("Lois")   # "Hello Lois"</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">my_function <- function(x) {
+  return (5 * x)
+}
+print(my_function(3))</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== R VECTORS ===== -->
+        <section id="r-vectors" class="topic-section">
+          <h1>R Vectors</h1>
+          <p>A vector is the simplest data structure in R. It is a sequence of data elements of the same basic type, created using the <code>c()</code> function.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li>Vectors contain elements of the same type.</li>
+              <li>Created with the combine function: <code>c()</code>.</li>
+              <li>R is 1-indexed (first element is at position 1, not 0).</li>
+              <li>You can sort, access, and modify vector elements.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Vector Example</div>
+            <pre class="example-code"><code>fruits <- c("apple", "banana", "cherry")
+numbers <- c(1, 5, 3, 6, 2)
+
+fruits[1]          # "apple"
+sort(numbers)      # 1 2 3 5 6
+length(fruits)     # 3</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">fruits <- c("apple", "banana", "cherry")
+print(fruits)</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== R LISTS ===== -->
+        <section id="r-lists" class="topic-section">
+          <h1>R Lists</h1>
+          <p>A list in R can contain many different data types inside it — numbers, strings, vectors, and even another list.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> List Example</div>
+            <pre class="example-code"><code>thislist <- list("apple", "banana", "cherry")
+
+# Access elements
+thislist[[1]]   # "apple"
+
+# Change element
+thislist[[1]] <- "blackcurrant"
+
+# List length
+length(thislist)  # 3</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== R MATRICES ===== -->
+        <section id="r-matrices" class="topic-section">
+          <h1>R Matrices</h1>
+          <p>A matrix is a two-dimensional data set with columns and rows. It is created using the <code>matrix()</code> function.</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Matrix Example</div>
+            <pre class="example-code"><code>thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+thismatrix
+
+# Access element at row 1, column 2
+thismatrix[1, 2]  # 4</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+print(thismatrix)</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== R DATA FRAMES ===== -->
+        <section id="r-dataframes" class="topic-section">
+          <h1>R Data Frames</h1>
+          <p>Data Frames are data displayed in a table format, similar to a spreadsheet or SQL table. They are the most commonly used data structure in R for data analysis.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li>Columns can be of different types (numeric, character, logical, etc.).</li>
+              <li>Created using the <code>data.frame()</code> function.</li>
+              <li>Use <code>summary()</code> to get a statistical summary.</li>
+              <li>Access columns with <code>$</code> operator.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Data Frame Example</div>
+            <pre class="example-code"><code>Data_Frame <- data.frame(
   Training = c("Strength", "Stamina", "Other"),
   Pulse = c(100, 150, 120),
   Duration = c(60, 30, 45)
-)</code></pre></section>
+)
 
-        <section class="topic-section" id="Statistics">
-          <h1>Statistics</h1>
-          <div class="chapter-badge">Chapter 8</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#DataFrames" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Plotting" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>R is built for stats.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-r">mean(Data_Frame$Pulse)
-median(Data_Frame$Pulse)
-min(Data_Frame$Pulse)</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+Data_Frame
+summary(Data_Frame)</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
                 <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">mean(Data_Frame$Pulse)
-median(Data_Frame$Pulse)
-min(Data_Frame$Pulse)</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+              <textarea class="tryit-editor">df <- data.frame(Name=c("A","B"), Age=c(20,30))
+print(df)</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
             </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="Plotting">
-          <h1>Plotting</h1>
-          <div class="chapter-badge">Chapter 9</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Statistics" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#GGPlot2" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Simple plotting.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-r">plot(1:10)</code></pre>
-            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
-            <div class="tryit-panel">
-              <div class="tryit-toolbar">
-                <span>Live Editor</span>
-                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
-                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
-              </div>
-              <textarea class="tryit-editor" spellcheck="false">plot(1:10)</textarea>
-              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
-            </div>
-            </div>
-      </section>
-
-        <section class="topic-section" id="GGPlot2">
-          <h1>GGPlot2</h1>
-          <div class="chapter-badge">Chapter 10</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Plotting" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p>Advanced visualization.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-r">library(ggplot2)
-ggplot(df, aes(x=dose, y=len)) + geom_point()</code></pre></section>
-
-        <section class="topic-section" id="Projects">
-          <h1>🚀 Real World Projects</h1>
-          <div class="chapter-badge">Chapter 11</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#GGPlot2" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <h3>🟢 Beginner: Dice Roller</h3>
-        <p><strong>Goal:</strong> Simulate dice rolls and plot distribution.</p>
-        <h3>🟡 Intermediate: Pokemon Analysis</h3>
-        <p><strong>Goal:</strong> Analyze stats of Pokemon from a CSV.</p>
-        <h3>🔴 Advanced: COVID-19 Tracker</h3>
-        <p><strong>Goal:</strong> Visualize spread over time.</p>
-      </section>
-
-        <section class="topic-section" id="MiniTask">
-          <h1>🎯 R Mini Task</h1>
-          <div class="chapter-badge">Chapter 12</div>
-
-          <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
-            <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
-            <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
-          </div>
-          
-        <p><strong>Goal:</strong> Vector Math.</p>
-        <h4>📋 Requirements:</h4>
-        <ol>
-          <li> Create a vector <code>x</code> with numbers 1 to 5.</li>
-          <li> Multiply it by 2.</li>
-          <li> Plot the result.</li>
-        </ol>
-        <p><strong>Statistically significant!</strong> 📈</p>
-      </div>
-    </div>
-
-
-    <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
-      <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
-      <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the R module.</p>
-      <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
-        onclick="location.href='../index1.html'">Return to Dashboard</button>
-    
         </section>
+
+        <!-- ===== R FACTORS ===== -->
+        <section id="r-factors" class="topic-section">
+          <h1>R Factors</h1>
+          <p>Factors are used to categorize data. Examples of categories are Gender (Male/Female), Music genre (Rock, Pop, Jazz).</p>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Factor Example</div>
+            <pre class="example-code"><code>music <- c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz")
+music_factor <- factor(music)
+
+print(music_factor)
+print(levels(music_factor))</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== R STATISTICS ===== -->
+        <section id="r-statistics" class="topic-section">
+          <h1>R Statistics</h1>
+          <p>R is built for statistics. It has a comprehensive set of functions for performing statistical analysis right out of the box.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Statistical Functions</h3>
+            <ul>
+              <li><code>mean()</code> — average value.</li>
+              <li><code>median()</code> — middle value.</li>
+              <li><code>min()</code> / <code>max()</code> — smallest / largest value.</li>
+              <li><code>sd()</code> — standard deviation.</li>
+              <li><code>var()</code> — variance.</li>
+              <li><code>cor()</code> — correlation.</li>
+              <li><code>summary()</code> — comprehensive summary.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Statistics Example</div>
+            <pre class="example-code"><code>numbers <- c(10, 20, 30, 40, 50)
+
+mean(numbers)    # 30
+median(numbers)  # 30
+sd(numbers)      # 15.81
+max(numbers)     # 50</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself</button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)">Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)">Close</button>
+              </div>
+              <textarea class="tryit-editor">numbers <- c(10, 20, 30, 40, 50)
+print(mean(numbers))</textarea>
+              <div class="tryit-output"><iframe sandbox="allow-scripts"></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== R PLOTTING ===== -->
+        <section id="r-plotting" class="topic-section">
+          <h1>R Plotting</h1>
+          <p>The <code>plot()</code> function is used to draw points (markers) in a diagram. R's base graphics are powerful and flexible.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Plot Types</h3>
+            <ul>
+              <li><code>plot()</code> — scatter plots and line charts.</li>
+              <li><code>barplot()</code> — bar charts.</li>
+              <li><code>pie()</code> — pie charts.</li>
+              <li><code>hist()</code> — histograms.</li>
+              <li><code>boxplot()</code> — box plots.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> Plot Example</div>
+            <pre class="example-code"><code># Scatter plot
+plot(1, 3)
+
+# Multiple points
+plot(c(1,2,3,4,5), c(3,7,8,9,12))
+
+# Line plot
+plot(1:10, type="l")</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== R GGPLOT2 ===== -->
+        <section id="r-ggplot2" class="topic-section">
+          <h1>R GGPlot2</h1>
+          <p><code>ggplot2</code> is the most popular data visualization package in R. It is based on the Grammar of Graphics, which provides a systematic way to create any plot.</p>
+          <div class="section-content-card">
+            <h3><i class="fas fa-lightbulb"></i> Key Concepts</h3>
+            <ul>
+              <li><strong>Data:</strong> The dataset to visualize.</li>
+              <li><strong>Aesthetics (<code>aes()</code>):</strong> Mapping of variables to visual properties (x, y, color, size).</li>
+              <li><strong>Geometries (<code>geom_*()</code>):</strong> The type of plot — points, lines, bars, etc.</li>
+              <li><strong>Facets:</strong> Creating multi-panel plots.</li>
+            </ul>
+          </div>
+          <div class="example-box">
+            <div class="example-header"><i class="fas fa-code"></i> GGPlot2 Example</div>
+            <pre class="example-code"><code>library(ggplot2)
+
+# Create a scatter plot
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point() +
+  labs(title="Car Weight vs MPG",
+       x="Weight", y="Miles per Gallon")</code></pre>
+          </div>
+          <div class="best-practices">
+            <h3>Best Practices</h3>
+            <ul>
+              <li>Install ggplot2 with <code>install.packages("ggplot2")</code>.</li>
+              <li>Always label your axes and give your plot a title.</li>
+              <li>Use themes like <code>theme_minimal()</code> or <code>theme_bw()</code> for clean, professional plots.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="r-quiz" class="topic-section">
+          <h1>R Quiz</h1>
+          <p>Test your R skills with our Quiz!</p>
+          <button class="btn-control" onclick="alert('Quiz system coming soon!')">Start R Quiz</button>
+        </section>
+
+        <section id="r-exercises" class="topic-section">
+          <h1>R Exercises</h1>
+          <p>We have gathered a variety of R exercises (with answers) for each R Chapter.</p>
+          <button class="btn-control" onclick="alert('Exercises system coming soon!')">View Exercises</button>
+        </section>
+
+        <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
+          <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
+          <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the R module.</p>
+          <button class="btn-control"
+            style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
+            onclick="location.href='../index1.html'">Return to Dashboard</button>
+        </div>
 
       </div>
     </main>
@@ -352,7 +692,6 @@ ggplot(df, aes(x=dose, y=len)) + geom_point()</code></pre></section>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-
     const firebaseConfig = {
       apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
       authDomain: "learnx-d823d.firebaseapp.com",
@@ -361,10 +700,8 @@ ggplot(df, aes(x=dose, y=len)) + geom_point()</code></pre></section>
       messagingSenderId: "1036419202232",
       appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
     };
-
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
-
     onAuthStateChanged(auth, (user) => {
       if (user) {
         document.getElementById('user-display').textContent = user.displayName || user.email.split('@')[0];
@@ -372,77 +709,56 @@ ggplot(df, aes(x=dose, y=len)) + geom_point()</code></pre></section>
         window.location.href = "../index.html";
       }
     });
-
     document.getElementById('logout-btn').addEventListener('click', () => {
-      signOut(auth).then(() => {
-        window.location.href = "../index.html";
-      });
+      signOut(auth).then(() => { window.location.href = "../index.html"; });
     });
   </script>
 
   <script>
-    // Sidebar active state syncing
     const sections = document.querySelectorAll('.topic-section');
     const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
-
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 150) {
-          current = section.getAttribute('id');
-        }
+        if (pageYOffset >= sectionTop - 150) { current = section.getAttribute('id'); }
       });
-
       navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-          link.classList.add('active');
-        }
+        if (link.getAttribute('href').includes(current)) { link.classList.add('active'); }
       });
     });
   </script>
 
   <script>
-
-
-    // Try It Editor functions (applied globally to all courses)
-    window.openTryIt = function(btn) {
+    window.openTryIt = function (btn) {
       const panel = btn.nextElementSibling;
       panel.classList.add('open');
       btn.style.display = 'none';
       runTryIt(panel.querySelector('.tryit-run'));
     };
-    window.closeTryIt = function(btn) {
+    window.closeTryIt = function (btn) {
       const panel = btn.closest('.tryit-panel');
       panel.classList.remove('open');
       panel.previousElementSibling.style.display = 'inline-flex';
     };
-    window.runTryIt = function(btn) {
+    window.runTryIt = function (btn) {
       const panel = btn.closest('.tryit-panel');
       const code = panel.querySelector('.tryit-editor').value;
       const iframe = panel.querySelector('iframe');
-      // basic wrapping for output display
-      iframe.srcdoc = `
-        <style>body{font-family:sans-serif; color:#333; background:#fff;}</style>
-        ${code}
-      `;
+      iframe.srcdoc = `<style>body{font-family:sans-serif;color:#333;background:#fff;padding:15px;}</style>${code}`;
     };
   </script>
 
   <script>
-    // Theme logic
     const toggleBtn = document.getElementById('theme-toggle');
     const updateThemeIcon = (isDark) => {
-      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+      if (toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     };
-    
-    // Check saved theme
     let currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
     window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
-
-    if(toggleBtn) {
+    if (toggleBtn) {
       toggleBtn.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme');
         let newTheme = theme === 'dark' ? 'light' : 'dark';
