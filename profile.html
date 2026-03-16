@@ -2,174 +2,285 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Profile - LearnX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnX | My Profile</title>
+  <meta name="description" content="Manage your LearnX profile, update your name, bio, and preferences." />
+  <link rel="icon" href="assets/img/LOGO.jpeg" type="image/jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      color: #333;
-    }
-
-    .profile-card {
-      background: #fff;
-      padding: 40px 30px;
+    .profile-container {
+      max-width: 560px;
+      margin: 60px auto;
+      padding: 50px 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: 16px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-      max-width: 420px;
-      width: 100%;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-header {
       text-align: center;
+      margin-bottom: 36px;
     }
 
-    .profile-card h2 {
-      margin: 0;
-      font-size: 26px;
-      color: #2c5364;
+    .profile-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      font-size: 32px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
     }
 
-    .profile-card p {
-      margin: 5px 0 20px;
-      color: #555;
+    .profile-header h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 4px;
     }
 
-    input[type="text"],
-    input[type="number"] {
-      margin: 10px 0;
-      padding: 10px;
-      width: 90%;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+    .profile-header p {
+      color: var(--text-muted);
       font-size: 14px;
     }
 
-    button {
-      padding: 12px 24px;
-      margin: 12px 5px 0;
-      background: #2c5364;
-      color: white;
-      border: none;
+    .profile-form .input-group {
+      margin-bottom: 22px;
+    }
+
+    .profile-form .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .profile-form .input-group input {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
       border-radius: 8px;
+      color: var(--text);
+      font-size: 15px;
+      font-family: var(--font-main);
+      transition: all 0.2s;
+    }
+
+    .profile-form .input-group input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(4, 170, 109, 0.1);
+    }
+
+    .profile-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .profile-actions button {
+      flex: 1;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
       cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s ease, transform 0.2s;
+      border: none;
+      font-family: var(--font-main);
+      transition: all 0.2s;
     }
 
-    button:hover {
-      background: #1c394c;
-      transform: scale(1.03);
+    .btn-save {
+      background: var(--primary);
+      color: #fff;
     }
 
-    @media screen and (max-width: 480px) {
-      .profile-card {
-        padding: 30px 20px;
-      }
+    .btn-save:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
 
-      input[type="text"],
-      input[type="number"] {
-        width: 100%;
-      }
+    .btn-back {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border) !important;
+    }
+
+    .btn-back:hover {
+      background: var(--border);
+    }
+
+    #profile-message {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 16px;
+      display: none;
+      background: rgba(4, 170, 109, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(4, 170, 109, 0.2);
     }
   </style>
 </head>
-<body>
-  <div class="profile-card">
-    <h2>Welcome, <span id="username">User</span></h2>
-    <p>Email: <span id="email">your@email.com</span></p>
 
-    <!-- Removed Profile Image & Upload -->
+<body class="dashboard-body">
 
-    <input type="text" id="update-name" placeholder="Enter new name" />
-    <input type="text" id="bio" placeholder="Enter your bio" />
-    <input type="number" id="age" placeholder="Enter your age" />
-    <input type="text" id="location" placeholder="Enter your location" />
+  <!-- Top Nav -->
+  <nav class="top-nav dashboard-topnav">
+    <a class="brand" href="home.html">LearnX</a>
+    <div class="top-nav-links">
+      <a href="home.html">Home</a>
+      <a href="index1.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+    </div>
+    <div style="display:flex; gap:10px; margin-left:auto; align-items:center;">
+      <button id="theme-toggle" class="nav-btn"
+        style="background:transparent; color:var(--text); border:1px solid var(--border); display:inline-flex; align-items:center; justify-content:center; cursor:pointer; padding: 6px 12px;"><i
+          class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn" style="background:#e53935;">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </div>
+  </nav>
 
-    <button id="save-changes">Save Changes</button>
-    <button id="logout">Logout</button>
+  <div class="dashboard-container">
+    <div class="profile-container">
+      <div class="profile-header">
+        <div class="profile-avatar" id="profile-initial">U</div>
+        <h2 id="profile-name">Loading...</h2>
+        <p id="profile-email">loading@email.com</p>
+      </div>
+
+      <div class="profile-form">
+        <div class="input-group">
+          <label><i class="fas fa-user" style="margin-right:6px;"></i> Display Name</label>
+          <input type="text" id="update-name" placeholder="Enter your name" />
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-pen-nib" style="margin-right:6px;"></i> Bio</label>
+          <input type="text" id="bio" placeholder="Tell us about yourself" />
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-calendar" style="margin-right:6px;"></i> Age</label>
+          <input type="number" id="age" placeholder="Your age" />
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-map-marker-alt" style="margin-right:6px;"></i> Location</label>
+          <input type="text" id="location" placeholder="City, Country" />
+        </div>
+
+        <div class="profile-actions">
+          <button class="btn-save" id="save-changes"><i class="fas fa-check" style="margin-right:6px;"></i> Save
+            Changes</button>
+          <button class="btn-back" onclick="location.href='index1.html'"><i class="fas fa-arrow-left"
+              style="margin-right:6px;"></i> Dashboard</button>
+        </div>
+
+        <div id="profile-message"></div>
+      </div>
+    </div>
   </div>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-    import {
-      getAuth, onAuthStateChanged, signOut, updateProfile
-    } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-    import {
-      getFirestore, doc, getDoc, setDoc
-    } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+    import { auth, db } from './assets/js/firebase-init.js';
+    import { onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+    import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
-      authDomain: "learnx-d823d.firebaseapp.com",
-      projectId: "learnx-d823d",
-      storageBucket: "learnx-d823d.appspot.com",
-      messagingSenderId: "1036419202232",
-      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-
-    const username = document.getElementById("username");
-    const email = document.getElementById("email");
+    const nameEl = document.getElementById("profile-name");
+    const emailEl = document.getElementById("profile-email");
+    const initialEl = document.getElementById("profile-initial");
     const updateNameInput = document.getElementById("update-name");
     const bioInput = document.getElementById("bio");
     const ageInput = document.getElementById("age");
     const locationInput = document.getElementById("location");
-    const saveChangesBtn = document.getElementById("save-changes");
-    const logoutBtn = document.getElementById("logout");
+    const saveBtn = document.getElementById("save-changes");
+    const messageDiv = document.getElementById("profile-message");
 
     let currentUser;
 
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         currentUser = user;
-        username.textContent = user.displayName || "No Name";
-        email.textContent = user.email;
+        const displayName = user.displayName || user.email.split('@')[0];
+        nameEl.textContent = displayName;
+        emailEl.textContent = user.email;
+        initialEl.textContent = displayName.charAt(0).toUpperCase();
 
-        const docRef = doc(db, "users", user.uid);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          const data = docSnap.data();
-          bioInput.value = data.bio || "";
-          ageInput.value = data.age || "";
-          locationInput.value = data.location || "";
+        try {
+          const docSnap = await getDoc(doc(db, "users", user.uid));
+          if (docSnap.exists()) {
+            const data = docSnap.data();
+            bioInput.value = data.bio || "";
+            ageInput.value = data.age || "";
+            locationInput.value = data.location || "";
+            updateNameInput.value = displayName;
+          }
+        } catch (err) {
+          console.error("Error loading profile:", err);
         }
       } else {
         window.location.href = "index.html";
       }
     });
 
-    saveChangesBtn.addEventListener('click', async () => {
+    saveBtn.addEventListener('click', async () => {
       const newName = updateNameInput.value.trim();
       const bio = bioInput.value.trim();
       const age = ageInput.value.trim();
       const location = locationInput.value.trim();
 
-      if (newName) {
-        await updateProfile(currentUser, { displayName: newName });
-        username.textContent = newName;
+      saveBtn.disabled = true;
+      saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+
+      try {
+        if (newName && currentUser.displayName !== newName) {
+          await updateProfile(currentUser, { displayName: newName });
+          nameEl.textContent = newName;
+          initialEl.textContent = newName.charAt(0).toUpperCase();
+        }
+
+        await setDoc(doc(db, "users", currentUser.uid), {
+          name: newName || currentUser.displayName,
+          email: currentUser.email,
+          bio, age, location
+        }, { merge: true });
+
+        messageDiv.textContent = "✅ Profile updated successfully!";
+        messageDiv.style.display = "block";
+        setTimeout(() => { messageDiv.style.display = "none"; }, 3000);
+      } catch (err) {
+        messageDiv.textContent = "Error: " + err.message;
+        messageDiv.style.background = "rgba(229,57,53,0.1)";
+        messageDiv.style.color = "#e53935";
+        messageDiv.style.borderColor = "rgba(229,57,53,0.2)";
+        messageDiv.style.display = "block";
+      } finally {
+        saveBtn.disabled = false;
+        saveBtn.innerHTML = '<i class="fas fa-check" style="margin-right:6px;"></i> Save Changes';
       }
-
-      await setDoc(doc(db, "users", currentUser.uid), {
-        bio,
-        age,
-        location
-      });
-
-      alert("✅ Profile updated successfully!");
     });
 
-    logoutBtn.addEventListener('click', () => {
-      signOut(auth).then(() => {
-        window.location.href = "index.html";
-      });
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      signOut(auth).then(() => { window.location.href = "index.html"; });
     });
   </script>
+
+  <!-- Shared theme toggle -->
+  <script src="assets/js/theme.js"></script>
 </body>
+
 </html>

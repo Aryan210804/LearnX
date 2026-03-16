@@ -199,6 +199,47 @@ img {
   background: var(--primary-dark);
 }
 
+/* ─── TOP NAV LINKS (Inline Course Bar) ─── */
+.top-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex: 1;
+  min-width: 0;
+}
+
+.top-nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.top-nav-links a {
+  color: #ccc;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 0 12px;
+  height: var(--topnav-height);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.top-nav-links a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-decoration: none;
+}
+
+.top-nav-links a.active {
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+}
+
 .top-nav .nav-btn {
   padding: 7px 14px;
   background: var(--primary);
@@ -1054,6 +1095,31 @@ code {
 
   .top-nav .hamburger {
     display: block;
+  }
+
+  .top-nav-links {
+    display: none;
+  }
+
+  .top-nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: var(--topnav-height);
+    left: 0;
+    right: 0;
+    background: var(--secondary);
+    z-index: 2500;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .top-nav-links.open a {
+    height: auto;
+    padding: 12px 24px;
   }
 
   .sub-nav {
