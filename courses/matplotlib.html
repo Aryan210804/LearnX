@@ -6,7 +6,8 @@
   <title>LearnX | Matplotlib Masterclass</title>
   <link rel="icon" href="../assets/img/LOGO.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="learnx-page">
@@ -14,7 +15,7 @@
   <!-- TOP NAV -->
   <nav class="top-nav">
     <a href="../index1.html" class="brand">LearnX</a>
-        <div class="top-nav-links">
+    <div class="top-nav-links">
       <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
       <a href="html.html">HTML</a>
       <a href="css.html">CSS</a>
@@ -27,26 +28,29 @@
       <a href="numpy.html">NumPy</a>
       <a href="pandas.html">Pandas</a>
       <a href="matplotlib.html" class="active">Matplotlib</a>
-      
+
       <a href="ai.html">AI & ML</a>
       <a href="r.html">R</a>
     </div>
 
     <div class="top-nav-search">
-      <input type="text" placeholder="Search..."/>
+      <input type="text" placeholder="Search..." />
       <button><i class="fas fa-search"></i></button>
     </div>
-    
+
     <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
       <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
-       <button id="theme-toggle" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i class="fas fa-sun"></i></button>
-      <button id="logout-btn" class="nav-btn" style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
+      <button id="theme-toggle" class="nav-btn"
+        style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i
+          class="fas fa-sun"></i></button>
+      <button id="logout-btn" class="nav-btn"
+        style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
     </div>
   </nav>
 
   <!-- CONTENT WRAPPER -->
   <div class="course-layout">
-    
+
     <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
@@ -55,7 +59,7 @@
 
       <div class="sidebar-section-label">Matplotlib Basic</div>
       <a href="#Intro" class="active">Introduction to Matplotlib</a>
-      <a href="#Plotting">Plotting</a>
+      <a href="#Plotting">Plotting Basics</a>
       <a href="#Markers">Markers & Lines</a>
       <a href="#Labels">Labels & Title</a>
       <a href="#Grid">Grid</a>
@@ -75,13 +79,14 @@
     <!-- MAIN CONTENT -->
     <main class="course-main">
       <div class="course-content-area">
-        
+
         <div class="breadcrumb">
           <a href="../index1.html">Home</a> <span>/</span> <span>Matplotlib</span>
         </div>
-        
+
         <h1 style="font-size:38px; margin-bottom: 40px; color:var(--text);">Matplotlib Masterclass</h1>
 
+        <!-- ===== CH1: INTRO ===== -->
         <section class="topic-section" id="Intro">
           <h1>Introduction to Matplotlib</h1>
           <div class="chapter-badge">Chapter 1</div>
@@ -90,12 +95,27 @@
             <a href="#" class="nav-prev" style="visibility:hidden;"><i class="fas fa-chevron-left"></i> Previous</a>
             <a href="#Plotting" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <h3>📌 What is Matplotlib?</h3>
-        <p>Matplotlib is a low-level graph plotting library in python that serves as a visualization utility.</p>
-        <h3>🚀 Setup</h3>
-        <div class="example-box"><pre class="example-code"><code class="language-python">import matplotlib.pyplot as plt
-import numpy as np</code></pre>
+
+          <h3>📌 What is Matplotlib?</h3>
+          <p>Matplotlib is the most popular data visualization library in Python. It was created by John D. Hunter in 2003 and is now maintained by a large community. It produces publication-quality figures in a variety of formats.</p>
+
+          <h3>🚀 Why Matplotlib?</h3>
+          <ul>
+            <li><strong>Versatile:</strong> Line plots, bar charts, scatter plots, histograms, pie charts, and more.</li>
+            <li><strong>Customizable:</strong> Full control over every element — colors, labels, fonts, axes, legends.</li>
+            <li><strong>Foundation:</strong> Seaborn, Pandas plotting, and other libraries are built on top of Matplotlib.</li>
+            <li><strong>Export:</strong> Save charts as PNG, JPG, SVG, PDF — perfect for reports and papers.</li>
+          </ul>
+
+          <h3>🛠️ Setup</h3>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python"># Install (if not already installed)
+# pip install matplotlib
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+print("Matplotlib ready! ✅")</code></pre>
             <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
@@ -104,23 +124,33 @@ import numpy as np</code></pre>
                 <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
               </div>
               <textarea class="tryit-editor" spellcheck="false">import matplotlib.pyplot as plt
-import numpy as np</textarea>
+import numpy as np
+print("Matplotlib ready! ✅")</textarea>
               <div class="tryit-output"><iframe srcdoc=""></iframe></div>
             </div>
-            </div>
-      </section>
+          </div>
 
+          <p><strong>Convention:</strong> We always import <code>matplotlib.pyplot</code> as <code>plt</code>. This shorthand is the universal standard.</p>
+        </section>
+
+        <!-- ===== CH2: PLOTTING ===== -->
         <section class="topic-section" id="Plotting">
-          <h1>Plotting</h1>
+          <h1>Plotting Basics</h1>
           <div class="chapter-badge">Chapter 2</div>
 
           <div class="topic-nav" style="margin-top:10px; margin-bottom:30px;">
             <a href="#Intro" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
             <a href="#Markers" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>The <code>plot()</code> function is used to draw points (markers) in a diagram.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">xpoints = np.array([0, 6])
+
+          <h3>📌 The plot() Function</h3>
+          <p>The <code>plot()</code> function draws points (markers) in a diagram. By default, it connects them with a line. It takes two arrays: <strong>x-points</strong> and <strong>y-points</strong>.</p>
+
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0, 6])
 ypoints = np.array([0, 250])
 
 plt.plot(xpoints, ypoints)
@@ -132,16 +162,56 @@ plt.show()</code></pre>
                 <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
                 <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">xpoints = np.array([0, 6])
+              <textarea class="tryit-editor" spellcheck="false">import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0, 6])
 ypoints = np.array([0, 250])
 
 plt.plot(xpoints, ypoints)
 plt.show()</textarea>
               <div class="tryit-output"><iframe srcdoc=""></iframe></div>
             </div>
-            </div>
-      </section>
+          </div>
 
+          <h3>📌 Plotting Without X-Points</h3>
+          <p>If you only supply one array, Matplotlib uses the index (0, 1, 2, 3...) as the x-axis.</p>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">ypoints = np.array([3, 8, 1, 10, 5, 7])
+plt.plot(ypoints)
+plt.show()</code></pre>
+          </div>
+
+          <h3>📌 Multiple Lines</h3>
+          <p>Call <code>plt.plot()</code> multiple times before <code>plt.show()</code> to draw multiple lines on the same figure.</p>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">x = np.array([0, 1, 2, 3])
+y1 = np.array([3, 8, 1, 10])
+y2 = np.array([6, 2, 7, 11])
+
+plt.plot(x, y1)
+plt.plot(x, y2)
+plt.show()</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">x = np.array([0, 1, 2, 3])
+y1 = np.array([3, 8, 1, 10])
+y2 = np.array([6, 2, 7, 11])
+
+plt.plot(x, y1)
+plt.plot(x, y2)
+plt.show()</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== CH3: MARKERS & LINES ===== -->
         <section class="topic-section" id="Markers">
           <h1>Markers & Lines</h1>
           <div class="chapter-badge">Chapter 3</div>
@@ -150,10 +220,13 @@ plt.show()</textarea>
             <a href="#Plotting" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
             <a href="#Labels" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <h3>📌 Markers</h3>
-        <p>You can use the keyword argument <code>marker</code> to emphasize each point.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">plt.plot(ypoints, marker = 'o')</code></pre>
+
+          <h3>📌 Markers</h3>
+          <p>Use the <code>marker</code> keyword to emphasize each data point with a symbol.</p>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">ypoints = np.array([3, 8, 1, 10])
+plt.plot(ypoints, marker = 'o')     # Circle marker
+plt.show()</code></pre>
             <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
@@ -161,14 +234,62 @@ plt.show()</textarea>
                 <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
                 <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">plt.plot(ypoints, marker = 'o')</textarea>
+              <textarea class="tryit-editor" spellcheck="false">ypoints = np.array([3, 8, 1, 10])
+plt.plot(ypoints, marker = 'o')
+plt.show()</textarea>
               <div class="tryit-output"><iframe srcdoc=""></iframe></div>
             </div>
-            </div>
-        <h3>📌 Line Styles</h3>
-        <p><code>linestyle</code> or <code>ls</code>.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">plt.plot(ypoints, linestyle = 'dotted')</code></pre></section>
+          </div>
 
+          <h3>📌 Common Marker Characters</h3>
+          <ul>
+            <li><code>'o'</code> — Circle</li>
+            <li><code>'*'</code> — Star</li>
+            <li><code>'.'</code> — Point</li>
+            <li><code>','</code> — Pixel</li>
+            <li><code>'x'</code> — X mark</li>
+            <li><code>'+'</code> — Plus</li>
+            <li><code>'s'</code> — Square</li>
+            <li><code>'D'</code> — Diamond</li>
+            <li><code>'^'</code> — Triangle up</li>
+          </ul>
+
+          <h3>📌 Format Strings (fmt)</h3>
+          <p>Shortcut syntax: <code>'marker|line|color'</code>. Example: <code>'o:r'</code> = circle markers, dotted line, red color.</p>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">plt.plot(ypoints, 'o:r')  # Circle, dotted, red
+plt.show()</code></pre>
+          </div>
+
+          <h3>📌 Line Styles</h3>
+          <p>Use <code>linestyle</code> (or <code>ls</code>) to change the line style.</p>
+          <ul>
+            <li><code>'solid'</code> or <code>'-'</code> — Default solid line</li>
+            <li><code>'dotted'</code> or <code>':'</code> — Dotted</li>
+            <li><code>'dashed'</code> or <code>'--'</code> — Dashed</li>
+            <li><code>'dashdot'</code> or <code>'-.'</code> — Dash-dot</li>
+          </ul>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">plt.plot(ypoints, linestyle = 'dashed', color = 'hotpink', linewidth = 3)
+plt.show()</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">plt.plot(ypoints, linestyle = 'dashed', color = 'hotpink', linewidth = 3)
+plt.show()</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+          </div>
+
+          <h3>📌 Line Color</h3>
+          <p>Use <code>color</code> (or <code>c</code>). Accepts named colors (<code>'red'</code>), hex (<code>'#FF5733'</code>), or short form (<code>'r'</code>, <code>'g'</code>, <code>'b'</code>).</p>
+        </section>
+
+        <!-- ===== CH4: LABELS & TITLE ===== -->
         <section class="topic-section" id="Labels">
           <h1>Labels & Title</h1>
           <div class="chapter-badge">Chapter 4</div>
@@ -177,11 +298,20 @@ plt.show()</textarea>
             <a href="#Markers" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
             <a href="#Grid" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Add context to your graph.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">plt.xlabel("Average Pulse")
+
+          <h3>📌 Adding Context</h3>
+          <p>Always label your axes and add a title! It makes your graphs readable and professional.</p>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">x = np.array([80, 85, 90, 95, 100, 105, 110])
+y = np.array([240, 250, 260, 270, 280, 290, 300])
+
+plt.plot(x, y)
+
+plt.xlabel("Average Pulse")
 plt.ylabel("Calorie Burnage")
-plt.title("Sports Watch Data")</code></pre>
+plt.title("Sports Watch Data")
+
+plt.show()</code></pre>
             <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
@@ -189,14 +319,39 @@ plt.title("Sports Watch Data")</code></pre>
                 <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
                 <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">plt.xlabel("Average Pulse")
+              <textarea class="tryit-editor" spellcheck="false">x = np.array([80, 85, 90, 95, 100, 105, 110])
+y = np.array([240, 250, 260, 270, 280, 290, 300])
+
+plt.plot(x, y)
+
+plt.xlabel("Average Pulse")
 plt.ylabel("Calorie Burnage")
-plt.title("Sports Watch Data")</textarea>
+plt.title("Sports Watch Data")
+
+plt.show()</textarea>
               <div class="tryit-output"><iframe srcdoc=""></iframe></div>
             </div>
-            </div>
-      </section>
+          </div>
 
+          <h3>📌 Custom Font Properties</h3>
+          <p>Use a <code>fontdict</code> dictionary to customize fonts.</p>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">font_title = {'family':'serif', 'color':'blue', 'size':20}
+font_label = {'family':'serif', 'color':'darkred', 'size':15}
+
+plt.title("Sports Watch Data", fontdict = font_title)
+plt.xlabel("Average Pulse", fontdict = font_label)
+plt.ylabel("Calorie Burnage", fontdict = font_label)</code></pre>
+          </div>
+
+          <h3>📌 Title Positioning</h3>
+          <p>Use the <code>loc</code> parameter: <code>'left'</code>, <code>'right'</code>, or <code>'center'</code> (default).</p>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">plt.title("My Title", loc = 'left')</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== CH5: GRID ===== -->
         <section class="topic-section" id="Grid">
           <h1>Grid</h1>
           <div class="chapter-badge">Chapter 5</div>
@@ -205,10 +360,20 @@ plt.title("Sports Watch Data")</textarea>
             <a href="#Labels" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
             <a href="#Subplot" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Add grid lines to the plot.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">plt.grid()
-plt.grid(axis = 'x')</code></pre>
+
+          <h3>📌 Adding Grid Lines</h3>
+          <p>Use <code>plt.grid()</code> to add grid lines. You can control which axis gets lines.</p>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">x = np.array([80, 85, 90, 95, 100])
+y = np.array([240, 250, 260, 270, 280])
+
+plt.plot(x, y)
+plt.title("Sports Watch Data")
+plt.xlabel("Average Pulse")
+plt.ylabel("Calorie Burnage")
+
+plt.grid()  # Add grid
+plt.show()</code></pre>
             <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
@@ -216,13 +381,34 @@ plt.grid(axis = 'x')</code></pre>
                 <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
                 <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">plt.grid()
-plt.grid(axis = 'x')</textarea>
+              <textarea class="tryit-editor" spellcheck="false">x = np.array([80, 85, 90, 95, 100])
+y = np.array([240, 250, 260, 270, 280])
+
+plt.plot(x, y)
+plt.title("Sports Watch Data")
+plt.xlabel("Average Pulse")
+plt.ylabel("Calorie Burnage")
+
+plt.grid()
+plt.show()</textarea>
               <div class="tryit-output"><iframe srcdoc=""></iframe></div>
             </div>
-            </div>
-      </section>
+          </div>
 
+          <h3>📌 Specify Axis</h3>
+          <ul>
+            <li><code>plt.grid(axis = 'x')</code> — Only vertical grid lines</li>
+            <li><code>plt.grid(axis = 'y')</code> — Only horizontal grid lines</li>
+            <li><code>plt.grid(axis = 'both')</code> — Both (default)</li>
+          </ul>
+
+          <h3>📌 Grid Line Properties</h3>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">plt.grid(color = 'green', linestyle = '--', linewidth = 0.5)</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== CH6: SUBPLOTS ===== -->
         <section class="topic-section" id="Subplot">
           <h1>Subplots</h1>
           <div class="chapter-badge">Chapter 6</div>
@@ -231,16 +417,69 @@ plt.grid(axis = 'x')</textarea>
             <a href="#Grid" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
             <a href="#Scatter" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Display multiple plots in one figure.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python"># Plot 1
-plt.subplot(1, 2, 1) # 1 row, 2 cols, index 1
+
+          <h3>📌 Display Multiple Plots</h3>
+          <p>The <code>subplot()</code> function takes three arguments: <strong>rows</strong>, <strong>columns</strong>, and <strong>index</strong> (position).</p>
+
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+
+# Plot 1
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(1, 2, 1)  # 1 row, 2 cols, position 1
 plt.plot(x, y)
+plt.title("Plot 1")
 
 # Plot 2
-plt.subplot(1, 2, 2)
-plt.plot(x, y)</code></pre></section>
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
 
+plt.subplot(1, 2, 2)  # 1 row, 2 cols, position 2
+plt.plot(x, y)
+plt.title("Plot 2")
+
+plt.suptitle("My Subplots")
+plt.show()</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">import matplotlib.pyplot as plt
+import numpy as np
+
+plt.subplot(1, 2, 1)
+plt.plot([0,1,2,3], [3,8,1,10])
+plt.title("Plot 1")
+
+plt.subplot(1, 2, 2)
+plt.plot([0,1,2,3], [10,20,30,40])
+plt.title("Plot 2")
+
+plt.suptitle("My Subplots")
+plt.show()</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+          </div>
+
+          <h3>📌 Super Title</h3>
+          <p>Use <code>plt.suptitle()</code> to add a title for the entire figure (above all subplots).</p>
+
+          <h3>📌 2x2 Grid Layout</h3>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">plt.subplot(2, 2, 1)  # Top-left
+plt.subplot(2, 2, 2)  # Top-right
+plt.subplot(2, 2, 3)  # Bottom-left
+plt.subplot(2, 2, 4)  # Bottom-right</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== CH7: SCATTER ===== -->
         <section class="topic-section" id="Scatter">
           <h1>Scatter Plots</h1>
           <div class="chapter-badge">Chapter 7</div>
@@ -249,9 +488,19 @@ plt.plot(x, y)</code></pre></section>
             <a href="#Subplot" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
             <a href="#Bars" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Compare 2 variables.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">plt.scatter(x, y)</code></pre>
+
+          <h3>📌 Compare Two Variables</h3>
+          <p>Scatter plots are used to observe relationships between two numeric variables. Each dot represents one observation.</p>
+
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">x = np.array([5, 7, 8, 7, 2, 17, 2, 9, 4, 11])
+y = np.array([99, 86, 87, 88, 111, 86, 103, 87, 94, 78])
+
+plt.scatter(x, y)
+plt.xlabel("Car Age")
+plt.ylabel("Speed")
+plt.title("Car Age vs Speed")
+plt.show()</code></pre>
             <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
@@ -259,12 +508,34 @@ plt.plot(x, y)</code></pre></section>
                 <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
                 <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">plt.scatter(x, y)</textarea>
+              <textarea class="tryit-editor" spellcheck="false">x = np.array([5, 7, 8, 7, 2, 17, 2, 9, 4, 11])
+y = np.array([99, 86, 87, 88, 111, 86, 103, 87, 94, 78])
+
+plt.scatter(x, y)
+plt.xlabel("Car Age")
+plt.ylabel("Speed")
+plt.title("Car Age vs Speed")
+plt.show()</textarea>
               <div class="tryit-output"><iframe srcdoc=""></iframe></div>
             </div>
-            </div>
-      </section>
+          </div>
 
+          <h3>📌 Color, Size & Transparency</h3>
+          <p>Customize with <code>color</code>, <code>s</code> (size), and <code>alpha</code> (transparency).</p>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">colors = np.array([0, 10, 20, 30, 40, 50, 60, 70, 80, 90])
+sizes = np.array([20, 50, 100, 200, 500, 1000, 60, 90, 10, 300])
+
+plt.scatter(x, y, c=colors, s=sizes, alpha=0.5, cmap='viridis')
+plt.colorbar()  # Shows the color scale
+plt.show()</code></pre>
+          </div>
+
+          <h3>📌 Colormaps</h3>
+          <p>Popular colormaps: <code>'viridis'</code>, <code>'plasma'</code>, <code>'inferno'</code>, <code>'coolwarm'</code>, <code>'RdYlGn'</code>.</p>
+        </section>
+
+        <!-- ===== CH8: BAR CHARTS ===== -->
         <section class="topic-section" id="Bars">
           <h1>Bar Charts</h1>
           <div class="chapter-badge">Chapter 8</div>
@@ -273,11 +544,16 @@ plt.plot(x, y)</code></pre></section>
             <a href="#Scatter" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
             <a href="#Histograms" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Categorical data.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">x = ["Apples", "Bananas"]
-y = [400, 350]
-plt.bar(x, y)</code></pre>
+
+          <h3>📌 Vertical Bars</h3>
+          <p>Use <code>plt.bar()</code> to draw vertical bar charts. Great for comparing categorical data.</p>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">x = np.array(["Apples", "Bananas", "Cherries", "Dates"])
+y = np.array([400, 350, 500, 200])
+
+plt.bar(x, y, color = "#4CAF50", width = 0.5)
+plt.title("Fruit Sales")
+plt.show()</code></pre>
             <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
@@ -285,14 +561,32 @@ plt.bar(x, y)</code></pre>
                 <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
                 <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
               </div>
-              <textarea class="tryit-editor" spellcheck="false">x = ["Apples", "Bananas"]
-y = [400, 350]
-plt.bar(x, y)</textarea>
+              <textarea class="tryit-editor" spellcheck="false">x = np.array(["Apples", "Bananas", "Cherries", "Dates"])
+y = np.array([400, 350, 500, 200])
+
+plt.bar(x, y, color = "#4CAF50", width = 0.5)
+plt.title("Fruit Sales")
+plt.show()</textarea>
               <div class="tryit-output"><iframe srcdoc=""></iframe></div>
             </div>
-            </div>
-      </section>
+          </div>
 
+          <h3>📌 Horizontal Bars</h3>
+          <p>Use <code>plt.barh()</code> for horizontal bars. Use <code>height</code> instead of <code>width</code>.</p>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">plt.barh(x, y, color = "hotpink")
+plt.show()</code></pre>
+          </div>
+
+          <h3>📌 Bar Color & Width</h3>
+          <ul>
+            <li><code>color</code> — Set bar color (name, hex, or short form)</li>
+            <li><code>width</code> — Width of vertical bars (default 0.8)</li>
+            <li><code>height</code> — Height of horizontal bars (default 0.8)</li>
+          </ul>
+        </section>
+
+        <!-- ===== CH9: HISTOGRAMS ===== -->
         <section class="topic-section" id="Histograms">
           <h1>Histograms</h1>
           <div class="chapter-badge">Chapter 9</div>
@@ -301,10 +595,18 @@ plt.bar(x, y)</textarea>
             <a href="#Bars" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
             <a href="#Pie" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Frequency distribution.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">x = np.random.normal(170, 10, 250)
-plt.hist(x)</code></pre>
+
+          <h3>📌 Frequency Distribution</h3>
+          <p>A histogram shows frequency of data within specific ranges (bins). It's ideal for understanding the distribution of continuous data.</p>
+
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">x = np.random.normal(170, 10, 250)  # 250 values, mean=170, std=10
+
+plt.hist(x, bins=20, color='skyblue', edgecolor='black')
+plt.title("Height Distribution")
+plt.xlabel("Height (cm)")
+plt.ylabel("Frequency")
+plt.show()</code></pre>
             <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
             <div class="tryit-panel">
               <div class="tryit-toolbar">
@@ -313,12 +615,27 @@ plt.hist(x)</code></pre>
                 <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
               </div>
               <textarea class="tryit-editor" spellcheck="false">x = np.random.normal(170, 10, 250)
-plt.hist(x)</textarea>
+
+plt.hist(x, bins=20, color='skyblue', edgecolor='black')
+plt.title("Height Distribution")
+plt.xlabel("Height (cm)")
+plt.ylabel("Frequency")
+plt.show()</textarea>
               <div class="tryit-output"><iframe srcdoc=""></iframe></div>
             </div>
-            </div>
-      </section>
+          </div>
 
+          <h3>📌 Key Parameters</h3>
+          <ul>
+            <li><code>bins</code> — Number of bars/ranges (default: 10)</li>
+            <li><code>color</code> — Fill color</li>
+            <li><code>edgecolor</code> — Border color of each bar</li>
+            <li><code>alpha</code> — Transparency (0-1)</li>
+          </ul>
+          <p><strong>Tip:</strong> More bins = more detail. Fewer bins = smoother shape. The "right" number depends on your data size.</p>
+        </section>
+
+        <!-- ===== CH10: PIE CHARTS ===== -->
         <section class="topic-section" id="Pie">
           <h1>Pie Charts</h1>
           <div class="chapter-badge">Chapter 10</div>
@@ -327,12 +644,63 @@ plt.hist(x)</textarea>
             <a href="#Histograms" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
             <a href="#Projects" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p>Proportions.</p>
-        <div class="example-box"><pre class="example-code"><code class="language-python">y = np.array([35, 25, 25, 15])
-mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
-plt.pie(y, labels = mylabels)</code></pre></section>
 
+          <h3>📌 Show Proportions</h3>
+          <p>Pie charts are used to display data as proportions of a whole. Each slice represents a category's share.</p>
+
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+mycolors = ["#ff9999", "#ffcc99", "#99ff99", "#66b3ff"]
+
+plt.pie(y, labels=mylabels, colors=mycolors,
+        autopct='%1.1f%%', startangle=90)
+
+plt.title("Fruit Popularity")
+plt.show()</code></pre>
+            <button class="try-btn" onclick="openTryIt(this)">Try it Yourself <i class="fas fa-play"></i></button>
+            <div class="tryit-panel">
+              <div class="tryit-toolbar">
+                <span>Live Editor</span>
+                <button class="tryit-run" onclick="runTryIt(this)"><i class="fas fa-play"></i> Run Code</button>
+                <button class="tryit-close" onclick="closeTryIt(this)"><i class="fas fa-times"></i> Close</button>
+              </div>
+              <textarea class="tryit-editor" spellcheck="false">y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+mycolors = ["#ff9999", "#ffcc99", "#99ff99", "#66b3ff"]
+
+plt.pie(y, labels=mylabels, colors=mycolors,
+        autopct='%1.1f%%', startangle=90)
+
+plt.title("Fruit Popularity")
+plt.show()</textarea>
+              <div class="tryit-output"><iframe srcdoc=""></iframe></div>
+            </div>
+          </div>
+
+          <h3>📌 Key Parameters</h3>
+          <ul>
+            <li><code>labels</code> — List of labels for each slice</li>
+            <li><code>colors</code> — List of colors for each slice</li>
+            <li><code>autopct</code> — Display percentage on each slice</li>
+            <li><code>startangle</code> — Rotate the start (default: 0)</li>
+            <li><code>explode</code> — Pull out a slice for emphasis</li>
+            <li><code>shadow</code> — Add a shadow (True/False)</li>
+          </ul>
+
+          <h3>📌 Explode a Slice</h3>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">myexplode = [0.2, 0, 0, 0]  # Pull out Apples
+plt.pie(y, labels=mylabels, explode=myexplode, shadow=True)</code></pre>
+          </div>
+
+          <h3>📌 Legend</h3>
+          <div class="example-box">
+            <pre class="example-code"><code class="language-python">plt.legend(title = "Fruits:")</code></pre>
+          </div>
+        </section>
+
+        <!-- ===== CH11: PROJECTS ===== -->
         <section class="topic-section" id="Projects">
           <h1>🚀 Real World Projects</h1>
           <div class="chapter-badge">Chapter 11</div>
@@ -341,15 +709,24 @@ plt.pie(y, labels = mylabels)</code></pre></section>
             <a href="#Pie" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
             <a href="#MiniTask" class="nav-next" style="">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <h3>🟢 Beginner: Sales Graph</h3>
-        <p><strong>Goal:</strong> Bar chart of monthly sales.</p>
-        <h3>🟡 Intermediate: Stock Trends</h3>
-        <p><strong>Goal:</strong> Line graph of stock prices with grid and labels.</p>
-        <h3>🔴 Advanced: Dashboard</h3>
-        <p><strong>Goal:</strong> 4 subplots showing different metrics (Sales, Traffic, Conversion, Bounce Rate).</p>
-      </section>
 
+          <h3>🟢 Beginner: Monthly Sales Bar Chart</h3>
+          <p><strong>Goal:</strong> Create a bar chart showing monthly sales for a store. Use different colors per bar and add labels.</p>
+
+          <h3>🟡 Intermediate: Stock Price Line Graph</h3>
+          <p><strong>Goal:</strong> Plot daily stock prices over a month. Add grid lines, markers, a title, and axis labels. Overlay a moving average line.</p>
+
+          <h3>🔴 Advanced: Multi-Metric Dashboard</h3>
+          <p><strong>Goal:</strong> Create a 2x2 subplot layout showing 4 different metrics:</p>
+          <ol>
+            <li>Line chart — Revenue trend</li>
+            <li>Bar chart — Sales by category</li>
+            <li>Scatter plot — Price vs Quantity</li>
+            <li>Pie chart — Market share</li>
+          </ol>
+        </section>
+
+        <!-- ===== CH12: MINI TASK ===== -->
         <section class="topic-section" id="MiniTask">
           <h1>🎯 Matplotlib Mini Task</h1>
           <div class="chapter-badge">Chapter 12</div>
@@ -358,29 +735,30 @@ plt.pie(y, labels = mylabels)</code></pre></section>
             <a href="#Projects" class="nav-prev" style=""><i class="fas fa-chevron-left"></i> Previous</a>
             <a href="#" class="nav-next" style="visibility:hidden;">Next <i class="fas fa-chevron-right"></i></a>
           </div>
-          
-        <p><strong>Goal:</strong> Visualize Growth.</p>
-        <h4>📋 Requirements:</h4>
-        <ol>
-          <li> Create two arrays: Year (2020-2025) and Profit.</li>
-          <li> Plot a line graph.</li>
-          <li> Add a Title "Company Profit".</li>
-          <li> Show the grid.</li>
-        </ol>
-        <p><strong>Paint with data!</strong> 🎨</p>
+
+          <p><strong>Goal:</strong> Visualize Company Growth.</p>
+          <h4>📋 Requirements:</h4>
+          <ol>
+            <li>Create two arrays: Year (2020-2025) and Profit (use your own numbers).</li>
+            <li>Plot a <strong>line graph</strong> with circle markers.</li>
+            <li>Add a Title "Company Profit 2020-2025".</li>
+            <li>Label both axes.</li>
+            <li>Show the grid.</li>
+            <li><strong>Bonus:</strong> Add a second line for "Expenses" on the same plot.</li>
+          </ol>
+          <p><strong>Paint with data!</strong> 🎨</p>
+        </section>
+
       </div>
     </div>
-
 
     <div class="brand-hero" style="margin-top: 50px; text-align: center; padding: 40px; border-radius: 20px;">
       <h2 style="color: #00ff88; font-size: 2.5rem; margin-bottom: 10px;">🎉 Congratulations!</h2>
       <p style="font-size: 1.2rem; margin-bottom: 20px;">You've completed the Matplotlib module.</p>
       <button class="btn-control" style="margin: 0 auto; display: inline-flex; padding: 15px 30px; font-size: 1.1rem;"
         onclick="location.href='../index1.html'">Return to Dashboard</button>
-    
-        </section>
+    </div>
 
-      </div>
     </main>
   </div>
 
@@ -439,21 +817,19 @@ plt.pie(y, labels = mylabels)</code></pre></section>
   </script>
 
   <script>
-
-
     // Try It Editor functions (applied globally to all courses)
-    window.openTryIt = function(btn) {
+    window.openTryIt = function (btn) {
       const panel = btn.nextElementSibling;
       panel.classList.add('open');
       btn.style.display = 'none';
       runTryIt(panel.querySelector('.tryit-run'));
     };
-    window.closeTryIt = function(btn) {
+    window.closeTryIt = function (btn) {
       const panel = btn.closest('.tryit-panel');
       panel.classList.remove('open');
       panel.previousElementSibling.style.display = 'inline-flex';
     };
-    window.runTryIt = function(btn) {
+    window.runTryIt = function (btn) {
       const panel = btn.closest('.tryit-panel');
       const code = panel.querySelector('.tryit-editor').value;
       const iframe = panel.querySelector('iframe');
@@ -469,15 +845,15 @@ plt.pie(y, labels = mylabels)</code></pre></section>
     // Theme logic
     const toggleBtn = document.getElementById('theme-toggle');
     const updateThemeIcon = (isDark) => {
-      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
+      if (toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
     };
-    
+
     // Check saved theme
     let currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
     window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
 
-    if(toggleBtn) {
+    if (toggleBtn) {
       toggleBtn.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme');
         let newTheme = theme === 'dark' ? 'light' : 'dark';
