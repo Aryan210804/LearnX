@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. User Authentication Observer
   onAuthStateChanged(auth, (user) => {
     const protectedPages = ['index1.html', 'profile.html', 'admin.html', 'feedback.html'];
-    const isProtected = protectedPages.some(page => currentPath.endsWith(page));
+    const isProtected = protectedPages.some(page => currentPath.endsWith(page)) || currentPath.includes('/courses/');
 
     if (user) {
       // User is logged in

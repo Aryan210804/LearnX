@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ─── Sidebar active state syncing on scroll ───
-  const sections = document.querySelectorAll('.topic-section');
+  const sections = document.querySelectorAll('.topic-section, .lesson-section');
   const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
 
   if (sections.length > 0 && navLinks.length > 0) {

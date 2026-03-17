@@ -458,8 +458,8 @@ img {
   margin: 0 auto;
 }
 
-/* ─── TOPIC SECTION ─── */
-.topic-section {
+/* ─── TOPIC / LESSON SECTION ─── */
+.topic-section, .lesson-section {
   padding-bottom: 50px;
   border-bottom: 1px solid var(--border);
   margin-bottom: 50px;
@@ -467,11 +467,11 @@ img {
   /* Adjust for fixed headers */
 }
 
-.topic-section:last-child {
+.topic-section:last-child, .lesson-section:last-child {
   border-bottom: none;
 }
 
-.topic-section h1 {
+.topic-section h1, .lesson-section h1 {
   font-size: 34px;
   font-weight: 800;
   color: var(--text);
@@ -479,37 +479,37 @@ img {
   line-height: 1.2;
 }
 
-.topic-section h2 {
+.topic-section h2, .lesson-section h2 {
   font-size: 22px;
   font-weight: 700;
   color: var(--text);
   margin: 28px 0 10px;
 }
 
-.topic-section h3 {
+.topic-section h3, .lesson-section h3 {
   font-size: 17px;
   font-weight: 700;
   color: var(--text);
   margin: 20px 0 8px;
 }
 
-.topic-section p {
+.topic-section p, .lesson-section p {
   margin-bottom: 14px;
   color: var(--text-muted);
   line-height: 1.75;
 }
 
-.topic-section ul,
-.topic-section ol {
+.topic-section ul, .lesson-section ul,
+.topic-section ol, .lesson-section ol {
   padding-left: 26px;
   margin-bottom: 14px;
 }
 
-.topic-section li {
+.topic-section li, .lesson-section li {
   margin-bottom: 6px;
 }
 
-.topic-section hr {
+.topic-section hr, .lesson-section hr {
   border: none;
   border-top: 2px solid var(--border);
   margin: 24px 0;
