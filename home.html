@@ -10,273 +10,56 @@
     <link rel="icon" href="assets/img/LOGO.jpeg" type="image/jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="learnx-page">
+    <!-- TOP NAVIGATION -->
+    <nav class="top-nav">
+        <a href="home.html" class="brand">Learn<span>X</span></a>
+        
+        <div class="top-nav-links">
+            <a href="home.html">Home</a>
+            <a href="index1.html">Dashboard</a>
+            <a href="about.html">About</a>
+            <a href="Contact.html">Contact</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="admin.html" class="admin-link" id="admin-link" style="display:none;color:#ff4d4d; border-bottom:none;">Admin</a>
+        </div>
+
+        <div class="top-nav-actions">
+            <div class="top-nav-search">
+                <input type="text" placeholder="Search tutorials..." />
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <button id="theme-toggle" class="nav-btn nav-btn-outline">
+                <i class="fas fa-sun"></i>
+            </button>
+
+            <div class="user-pill" style="display:none;">
+                <span id="user-display">Learner</span>
+                <button class="logout-btn" id="logout-btn" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+
+            <div class="auth-btns">
+                <a href="index.html" class="nav-btn nav-btn-primary">Login</a>
+            </div>
+
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- TOP BAR (Legacy Promo) -->
+    <div class="topbar">
+        LearnX Masterclass is LIVE! Unlock 100+ new advanced tutorials. <a href="index1.html">Get Started</a>
+    </div>
+
     <style>
-        :root {
-            --primary: #04AA6D;
-            --primary-dark: #038a58;
-            --primary-light: #14c47d;
-            --accent: #00d2ff;
-            --bg-dark: #0d1117;
-            --bg-card: #161b22;
-            --bg-card2: #1c2230;
-            --border: rgba(255, 255, 255, 0.08);
-            --text: #e6edf3;
-            --text-muted: #8b949e;
-            --nav-bg: rgba(13, 17, 23, 0.95);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text);
-            overflow-x: hidden;
-        }
-
-        /* ─── TOP BAR ─── */
-        .topbar {
-            background: var(--primary);
-            text-align: center;
-            padding: 8px 20px;
-            font-size: 13px;
-            font-weight: 500;
-            color: #fff;
-            letter-spacing: 0.3px;
-        }
-
-        .topbar a {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        /* ─── NAVBAR ─── */
-        .navbar {
-            background: var(--nav-bg);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 0 5%;
-            display: flex;
-            align-items: center;
-            height: 60px;
-            gap: 0;
-        }
-
-        .nav-brand {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-            margin-right: 30px;
-            letter-spacing: -0.5px;
-            white-space: nowrap;
-        }
-
-        .nav-mega-links {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            flex: 1;
-        }
-
-        .nav-item {
-            position: relative;
-        }
-
-        .nav-item>a {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding: 0 14px;
-            height: 60px;
-            color: var(--text);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.2s, background 0.2s;
-            white-space: nowrap;
-        }
-
-        .nav-item>a:hover,
-        .nav-item.active>a {
-            color: var(--primary);
-            background: rgba(4, 170, 109, 0.06);
-        }
-
-        .nav-item>a i {
-            font-size: 10px;
-            transition: transform 0.2s;
-        }
-
-        .nav-item:hover>a i {
-            transform: rotate(180deg);
-        }
-
-        /* Mega dropdown */
-        .mega-dropdown {
-            display: none;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            min-width: 500px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-            animation: fadeDown 0.2s ease;
-        }
-
-        .nav-item:hover .mega-dropdown {
-            display: flex;
-            gap: 30px;
-        }
-
-        @keyframes fadeDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .mega-col h4 {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .mega-col a {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 7px 10px;
-            color: var(--text);
-            text-decoration: none;
-            font-size: 13px;
-            border-radius: 6px;
-            transition: all 0.2s;
-            margin-bottom: 2px;
-        }
-
-        .mega-col a:hover {
-            background: rgba(4, 170, 109, 0.1);
-            color: var(--primary);
-            transform: translateX(3px);
-        }
-
-        .mega-col a .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-left: auto;
-        }
-
-        .nav-search {
-            display: flex;
-            align-items: center;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: border-color 0.2s;
-        }
-
-        .nav-search:focus-within {
-            border-color: var(--primary);
-        }
-
-        .nav-search input {
-            background: none;
-            border: none;
-            outline: none;
-            color: var(--text);
-            padding: 7px 12px;
-            font-size: 13px;
-            width: 180px;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .nav-search button {
-            background: var(--primary);
-            border: none;
-            color: #fff;
-            padding: 7px 12px;
-            cursor: pointer;
-            font-size: 13px;
-            transition: background 0.2s;
-        }
-
-        .nav-search button:hover {
-            background: var(--primary-dark);
-        }
-
-        .btn-outline {
-            padding: 7px 16px;
-            border: 1px solid var(--primary);
-            background: transparent;
-            color: var(--primary);
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        .btn-primary {
-            padding: 7px 16px;
-            background: var(--primary);
-            border: none;
-            color: #fff;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-1px);
-        }
-
-        /* ─── HERO ─── */
         .hero {
             background: linear-gradient(135deg, #0d1117 0%, #0d2318 50%, #0d1117 100%);
             padding: 80px 5% 60px;
@@ -284,6 +67,7 @@
             position: relative;
             overflow: hidden;
         }
+
 
         .hero::before {
             content: '';
@@ -1469,28 +1253,10 @@
 
 
 
-  <script>
-    // Theme logic
-    const toggleBtn = document.getElementById('theme-toggle');
-    const updateThemeIcon = (isDark) => {
-      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
-    };
-    
-    // Check saved theme
-    let currentTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+    <!-- Shared theme toggle -->
+    <script src="assets/js/theme.js"></script>
+    <script type="module" src="assets/js/nav.js"></script>
 
-    if(toggleBtn) {
-      toggleBtn.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme');
-        let newTheme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme === 'dark');
-      });
-    }
-  </script>
 </body>
 
 

@@ -15,29 +15,46 @@
 
 <body class="dashboard-body">
 
-  <!-- Top Nav -->
-  <nav class="top-nav dashboard-topnav">
-    <a class="brand" href="home.html">LearnX</a>
+  <!-- TOP NAVIGATION -->
+  <nav class="top-nav">
+    <a href="home.html" class="brand">Learn<span>X</span></a>
+    
     <div class="top-nav-links">
-      <a href="home.html">Home</a>
-      <a href="index1.html" class="active">Dashboard</a>
-      <a href="about.html">About</a>
-      <a href="Contact.html">Contact</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="admin.html" class="admin-link" id="admin-link" style="display:none;color:#ff4d4d;">Admin</a>
+        <a href="home.html">Home</a>
+        <a href="index1.html">Dashboard</a>
+        <a href="about.html">About</a>
+        <a href="Contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="admin.html" class="admin-link" id="admin-link" style="display:none;color:#ff4d4d; border-bottom:none;">Admin</a>
     </div>
-    <div class="top-nav-search">
-      <input type="text" placeholder="Search courses..." />
-      <button><i class="fas fa-search"></i></button>
+
+    <div class="top-nav-actions">
+        <div class="top-nav-search">
+            <input type="text" placeholder="Search courses..." />
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        
+        <button id="theme-toggle" class="nav-btn nav-btn-outline">
+            <i class="fas fa-sun"></i>
+        </button>
+
+        <div class="user-pill" style="display:none;">
+            <span id="user-display">Learner</span>
+            <button class="logout-btn" id="logout-btn" title="Logout">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+
+        <div class="auth-btns" style="display:none;">
+            <a href="index.html" class="nav-btn nav-btn-primary">Login</a>
+        </div>
+
+        <button class="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
-    <button id="theme-toggle" class="nav-btn"
-      style="background:transparent; color:var(--text); border:1px solid var(--border); margin-right:15px; display:inline-flex; align-items:center; justify-content:center; cursor:pointer;"><i
-        class="fas fa-sun"></i></button>
-    <button class="hamburger" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
-    <button class="nav-btn logout-trigger" id="logout-trigger" style="background:#e53935;">
-      <i class="fas fa-sign-out-alt"></i> Logout
-    </button>
   </nav>
+
 
   <!-- Hero Banner -->
   <div class="dashboard-hero">
@@ -193,75 +210,11 @@
     </div>
   </div>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-    import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
-      authDomain: "learnx-d823d.firebaseapp.com",
-      projectId: "learnx-d823d",
-      storageBucket: "learnx-d823d.appspot.com",
-      messagingSenderId: "1036419202232",
-      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        document.getElementById("user-display-name").textContent = user.displayName || user.email.split('@')[0];
-        if (user.email === "aryankumar735588@gmail.com") {
-          document.getElementById("admin-link").style.display = "flex";
-        }
-      } else {
-        window.location.href = "index.html";
-      }
-    });
-
-    document.getElementById("logout-trigger").onclick = () =>
-      document.getElementById("logout-modal").classList.add("open");
-    document.getElementById("cancel-logout").onclick = () =>
-      document.getElementById("logout-modal").classList.remove("open");
-    document.getElementById("confirm-logout").onclick = () =>
-      signOut(auth).then(() => window.location.href = "index.html");
-    document.getElementById("logout-modal").addEventListener("click", e => {
-      if (e.target === document.getElementById("logout-modal"))
-        document.getElementById("logout-modal").classList.remove("open");
-    });
-  </script>
-  <script>
-    function toggleNav() {
-      document.querySelector('.top-nav-links').classList.toggle('open');
-    }
-  </script>
-
-
-
-  <script>
-    // Theme logic
-    const toggleBtn = document.getElementById('theme-toggle');
-    const updateThemeIcon = (isDark) => {
-      if (toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
-    };
-
-    // Check saved theme
-    let currentTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
-
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme');
-        let newTheme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme === 'dark');
-      });
-    }
-  </script>
+  <!-- Shared scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script type="module" src="assets/js/nav.js"></script>
 </body>
+
 
 
 </html>

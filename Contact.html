@@ -90,16 +90,43 @@
 
 <body class="dashboard-body">
 
-  <nav class="top-nav dashboard-topnav">
-    <a class="brand" href="home.html">LearnX</a>
-    <div class="top-nav-links">
-      <a href="home.html">Home</a>
-      <a href="index1.html">Dashboard</a>
-      <a href="about.html">About</a>
-      <a href="Contact.html" class="active">Contact</a>
-      <a href="feedback.html">Feedback</a>
+  <!-- TOP NAVIGATION -->
+  <nav class="top-nav">
+    <a href="home.html" class="brand">Learn<span>X</span></a>
     
-      <button id="theme-toggle" class="nav-btn" style="background:transparent; color:var(--text); border:1px solid var(--border); margin-left:auto; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; padding: 6px 12px;"><i class="fas fa-sun"></i></button>
+    <div class="top-nav-links">
+        <a href="home.html">Home</a>
+        <a href="index1.html">Dashboard</a>
+        <a href="about.html">About</a>
+        <a href="Contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="admin.html" class="admin-link" id="admin-link" style="display:none;color:#ff4d4d; border-bottom:none;">Admin</a>
+    </div>
+
+    <div class="top-nav-actions">
+        <div class="top-nav-search">
+            <input type="text" placeholder="Search..." />
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        
+        <button id="theme-toggle" class="nav-btn nav-btn-outline">
+            <i class="fas fa-sun"></i>
+        </button>
+
+        <div class="user-pill" style="display:none;">
+            <span id="user-display">Learner</span>
+            <button class="logout-btn" id="logout-btn" title="Logout">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+
+        <div class="auth-btns">
+            <a href="index.html" class="nav-btn nav-btn-primary">Login</a>
+        </div>
+
+        <button class="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
   </nav>
 
@@ -126,28 +153,10 @@
   </div>
 
 
-  <script>
-    // Theme logic
-    const toggleBtn = document.getElementById('theme-toggle');
-    const updateThemeIcon = (isDark) => {
-      if(toggleBtn) toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Light</span>' : '<i class="fas fa-moon" style="font-size:16px;"></i><span class="theme-text" style="margin-left:5px;">Dark</span>';
-    };
-    
-    // Check saved theme
-    let currentTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    window.addEventListener('DOMContentLoaded', () => updateThemeIcon(currentTheme === 'dark'));
+  <!-- Shared scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script type="module" src="assets/js/nav.js"></script>
 
-    if(toggleBtn) {
-      toggleBtn.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme');
-        let newTheme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme === 'dark');
-      });
-    }
-  </script>
 </body>
 
 </html>

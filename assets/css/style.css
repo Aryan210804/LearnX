@@ -96,181 +96,190 @@ img {
   background: var(--secondary);
   display: flex;
   align-items: center;
-  padding: 0 20px;
-  gap: 16px;
-  z-index: 2000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0 5%;
+  gap: 20px;
+  z-index: 2100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .top-nav .brand {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
   color: var(--primary);
   text-decoration: none;
   white-space: nowrap;
+  letter-spacing: -0.5px;
 }
 
-/* ─── SUB NAV (Row 2: Course Links Bar) ─── */
-.sub-nav {
-  position: fixed;
-  top: var(--topnav-height);
-  left: 0;
-  right: 0;
-  height: var(--subnav-height);
-  background: #333846;
+.top-nav .brand span {
+  color: #fff;
+}
+
+/* ─── TOP NAV LINKS ─── */
+.top-nav-links {
   display: flex;
   align-items: center;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  z-index: 1999;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 0 10px;
+  gap: 0;
+  height: 100%;
 }
 
-.sub-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.sub-nav a {
-  color: #ddd;
-  font-size: 12.5px;
+.top-nav-links a {
+  color: #ccc;
+  font-size: 13.5px;
   font-weight: 600;
-  padding: 0 14px;
-  height: var(--subnav-height);
+  padding: 0 15px;
+  height: 100%;
   display: flex;
   align-items: center;
   text-decoration: none;
-  transition: background 0.15s, color 0.15s;
+  transition: all 0.2s;
   white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  border-bottom: 2px solid transparent;
 }
 
-.sub-nav a:hover {
-  background: rgba(255, 255, 255, 0.08);
+.top-nav-links a:hover {
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
   text-decoration: none;
 }
 
-.sub-nav a.active {
-  background: var(--primary);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
+.top-nav-links a.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  background: rgba(4, 170, 109, 0.05);
+}
+
+/* ─── TOP NAV ACTIONS (Search, Theme, User) ─── */
+.top-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
 }
 
 .top-nav-search {
   display: flex;
   align-items: center;
-  background: #3d3f4e;
-  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   overflow: hidden;
-  flex: 1;
-  max-width: 260px;
-  margin-left: auto;
+  max-width: 220px;
+  transition: border-color 0.2s;
+  margin-left: 0; /* Override old margin */
+}
+
+.top-nav-search:focus-within {
+  border-color: var(--primary);
 }
 
 .top-nav-search input {
-  flex: 1;
   background: none;
   border: none;
   outline: none;
   color: #fff;
   padding: 8px 12px;
   font-size: 13px;
+  width: 100%;
   font-family: var(--font-main);
 }
 
-.top-nav-search input::placeholder {
-  color: #999;
-}
-
 .top-nav-search button {
-  background: var(--primary);
+  background: transparent;
   border: none;
-  color: #fff;
-  padding: 8px 12px;
+  color: #888;
+  padding: 8px 10px;
   cursor: pointer;
-  font-size: 13px;
 }
 
 .top-nav-search button:hover {
-  background: var(--primary-dark);
-}
-
-/* ─── TOP NAV LINKS (Inline Course Bar) ─── */
-.top-nav-links {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  flex: 1;
-  min-width: 0;
-}
-
-.top-nav-links::-webkit-scrollbar {
-  display: none;
-}
-
-.top-nav-links a {
-  color: #ccc;
-  font-size: 12.5px;
-  font-weight: 600;
-  padding: 0 12px;
-  height: var(--topnav-height);
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  transition: background 0.15s, color 0.15s;
-  white-space: nowrap;
-}
-
-.top-nav-links a:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  text-decoration: none;
-}
-
-.top-nav-links a.active {
-  background: var(--primary);
-  color: #fff;
-  text-decoration: none;
+  color: var(--primary);
 }
 
 .top-nav .nav-btn {
-  padding: 7px 14px;
-  background: var(--primary);
-  color: #fff;
-  border-radius: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
   font-size: 13px;
   font-weight: 600;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background 0.2s;
-}
-
-.top-nav .nav-btn:hover {
-  background: var(--primary-dark);
-  text-decoration: none;
-}
-
-.user-info-group,
-.nav-profile-links {
+  cursor: pointer;
+  transition: all 0.2s;
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-left: auto;
+  gap: 8px;
+  border: 1px solid transparent;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
 }
 
-.user-display-name,
-#user-display {
-  color: #aaa;
+.top-nav .nav-btn-outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ccc;
+}
+
+.top-nav .nav-btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.top-nav .nav-btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.top-nav .nav-btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.top-nav .nav-btn-danger {
+  background: rgba(229, 57, 51, 0.1);
+  color: #e53935;
+  border-color: rgba(229, 57, 51, 0.2);
+}
+
+.top-nav .nav-btn-danger:hover {
+  background: #e53935;
+  color: #fff;
+}
+
+/* User Pill */
+.user-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 4px 4px 12px;
+  border-radius: 100px;
+}
+
+.user-pill span {
   font-size: 13px;
   font-weight: 600;
+  color: #eee;
   white-space: nowrap;
+}
+
+.user-pill .logout-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.2s;
+}
+
+.user-pill .logout-btn:hover {
+  background: #e53935;
+  transform: scale(1.1);
 }
 
 .top-nav .hamburger {
@@ -282,6 +291,52 @@ img {
   cursor: pointer;
   padding: 5px 8px;
 }
+
+/* ─── SUB NAV (Course Switcher) ─── */
+.sub-nav {
+  position: fixed;
+  top: var(--topnav-height);
+  left: 0;
+  right: 0;
+  height: var(--subnav-height);
+  background: var(--secondary);
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 2050;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  scrollbar-width: none;
+}
+
+.sub-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.sub-nav a {
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.sub-nav a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sub-nav a.active {
+  background: var(--primary);
+  color: #fff;
+}
+
 
 /* ─── COURSE LAYOUT CONTAINER ─── */
 .course-layout {

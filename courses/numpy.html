@@ -14,41 +14,63 @@
 
 <body class="learnx-page">
 
-  <!-- TOP NAV -->
+  <!-- TOP NAVIGATION -->
   <nav class="top-nav">
-    <a href="../index1.html" class="brand">LearnX</a>
+    <a href="../home.html" class="brand">Learn<span>X</span></a>
+    
     <div class="top-nav-links">
-      <a href="../index1.html"><i class="fas fa-home" style="margin-right:5px"></i> Dashboard</a>
-      <a href="html.html">HTML</a>
-      <a href="css.html">CSS</a>
-      <a href="js.html">JavaScript</a>
-      <a href="python.html">Python</a>
-      <a href="sql.html">SQL</a>
-      <a href="java.html">Java</a>
-      <a href="c.html">C</a>
-      <a href="excel.html">Excel</a>
-      <a href="numpy.html" class="active">NumPy</a>
-      <a href="pandas.html">Pandas</a>
-      <a href="matplotlib.html">Matplotlib</a>
-
-      <a href="ai.html">AI & ML</a>
-      <a href="r.html">R</a>
+        <a href="../home.html">Home</a>
+        <a href="../index1.html">Dashboard</a>
+        <a href="../about.html">About</a>
+        <a href="../Contact.html">Contact</a>
+        <a href="../feedback.html">Feedback</a>
+        <a href="../admin.html" class="admin-link" id="admin-link" style="display:none;color:#ff4d4d; border-bottom:none;">Admin</a>
     </div>
 
-    <div class="top-nav-search">
-      <input type="text" placeholder="Search..." />
-      <button><i class="fas fa-search"></i></button>
-    </div>
+    <div class="top-nav-actions">
+        <div class="top-nav-search">
+            <input type="text" placeholder="Search..." />
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        
+        <button id="theme-toggle" class="nav-btn nav-btn-outline">
+            <i class="fas fa-sun"></i>
+        </button>
 
-    <div style="display:flex; gap:10px; margin-left:14px; align-items:center;">
-      <span id="user-display" style="color:#aaa; font-size:13px; font-weight:600;"></span>
-      <button id="theme-toggle" class="nav-btn"
-        style="background:transparent; border:1px solid #aaa; color:#ccc; margin-right:10px; display:inline-flex; align-items:center; cursor:pointer;"><i
-          class="fas fa-sun"></i></button>
-      <button id="logout-btn" class="nav-btn"
-        style="background:transparent; border:1px solid #aaa; color:#ccc;">Logout</button>
+        <div class="user-pill" style="display:none;">
+            <span id="user-display">Learner</span>
+            <button class="logout-btn" id="logout-btn" title="Logout">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+
+        <div class="auth-btns">
+            <a href="../index.html" class="nav-btn nav-btn-primary">Login</a>
+        </div>
+
+        <button class="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
   </nav>
+
+  <!-- SUB NAVIGATION (Course Switcher) -->
+  <nav class="sub-nav">
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JS</a>
+    <a href="python.html">PYTHON</a>
+    <a href="sql.html">SQL</a>
+    <a href="java.html">JAVA</a>
+    <a href="c.html">C</a>
+    <a href="excel.html">EXCEL</a>
+    <a href="numpy.html" class="active">NUMPY</a>
+    <a href="pandas.html">PANDAS</a>
+    <a href="matplotlib.html">MATPLOTLIB</a>
+    <a href="ai.html">AI</a>
+    <a href="r.html">R</a>
+  </nav>
+
 
   <!-- CONTENT WRAPPER -->
   <div class="course-layout">
