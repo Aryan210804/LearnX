@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnX | Login</title>
+  <link rel="icon" href="assets/img/LOGO.jpeg" type="image/jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: var(--font-main);
+      overflow-x: hidden;
+    }
+
+    /* Top Nav specific for login */
+    .login-nav {
+      height: var(--topnav-height);
+      background: var(--secondary);
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      justify-content: space-between;
+    }
+
+    .login-nav .brand {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Main Grid Layout */
+    .split-layout {
+      display: flex;
+      flex: 1;
+      width: 100%;
+    }
+
+    /* Left Side: Branding / Info */
+    .brand-side {
+      flex: 1;
+      background: linear-gradient(135deg, var(--secondary) 0%, #1a1d2e 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-side::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(4, 170, 109, 0.05) 0%, transparent 50%);
+      animation: rotate-bg 30s linear infinite;
+    }
+
+    @keyframes rotate-bg {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .brand-content {
+      position: relative;
+      z-index: 2;
+      max-width: 450px;
+    }
+
+    .brand-content h1 {
+      font-size: 50px;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .brand-content h1 span {
+      color: var(--primary);
+    }
+
+    .brand-content p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: grid;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .feature-item i {
+      font-size: 24px;
+      color: var(--primary);
+    }
+
+    .feature-item div {
+      font-size: 15px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Right Side: Form */
+    .form-side {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      background: var(--bg);
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 420px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 50px 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-container h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .form-container p.subtitle {
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .input-field {
+      position: relative;
+    }
+
+    .input-field i.icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+      font-size: 14px;
+    }
+
+    .input-field input {
+      width: 100%;
+      padding: 14px 40px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 15px;
+      font-family: var(--font-main);
+      transition: all 0.2s;
+    }
+
+    .input-field input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(4, 170, 109, 0.1);
+    }
+
+    .input-field i.toggle-pwd {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+      cursor: pointer;
+    }
+
+    .input-field i.toggle-pwd:hover {
+      color: var(--primary);
+    }
+
+    .auth-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.2s;
+    }
+
+    .auth-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .auth-btn:disabled {
+      background: var(--border);
+      color: var(--text-muted);
+      cursor: not-allowed;
+    }
+
+    .switch-mode {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .switch-mode span {
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    .switch-mode span:hover {
+      text-decoration: underline;
+    }
+
+    #message {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px;
+      border-radius: 6px;
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .split-layout {
+        flex-direction: column;
+      }
+
+      .brand-side {
+        padding: 40px 20px;
+        flex: none;
+      }
+
+      .brand-content h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Navigation (Login specific) -->
+  <nav class="login-nav">
+    <a href="index.html" class="brand">LearnX</a>
+    <button id="theme-toggle" class="nav-btn"
+      style="background:transparent; border:1px solid rgba(255,255,255,0.2); color:#fff; display:inline-flex; align-items:center; cursor:pointer; padding:6px 12px; border-radius:6px;">
+      <i class="fas fa-sun" style="font-size:14px;"></i><span class="theme-text"
+        style="margin-left:6px; font-size:13px; font-weight:600;">Light</span>
+    </button>
+  </nav>
+
+  <div class="split-layout">
+    <!-- Branding Side -->
+    <div class="brand-side">
+      <div class="brand-content">
+        <h1>Learn to Code.<br><span>Build the Future.</span></h1>
+        <p>Join the world's largest open-source platform for developers. Free tutorials, live editors, and comprehensive
+          curriculums.</p>
+
+        <div class="features">
+          <div class="feature-item">
+            <i class="fas fa-code"></i>
+            <div>Interactive "Try it Yourself" Editors</div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-layer-group"></i>
+            <div>14+ Masterclasses (HTML to Python)</div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-moon"></i>
+            <div>Global Dual-Theme UI System</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Side -->
+    <div class="form-side">
+      <div class="form-container">
+        <h2 id="form-title">Welcome Back</h2>
+        <p class="subtitle" id="form-subtitle">Enter your credentials to access the dashboard.</p>
+
+        <div id="message"></div>
+
+        <div class="input-group" id="name-group" style="display: none;">
+          <label>Full Name</label>
+          <div class="input-field">
+            <i class="fas fa-user icon"></i>
+            <input type="text" id="name" placeholder="John Doe" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Email Address</label>
+          <div class="input-field">
+            <i class="fas fa-envelope icon"></i>
+            <input type="email" id="email" placeholder="name@example.com" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <div class="input-field">
+            <i class="fas fa-lock icon"></i>
+            <input type="password" id="password" placeholder="••••••••" />
+            <i class="fas fa-eye toggle-pwd" id="toggle-password"></i>
+          </div>
+        </div>
+
+        <button id="auth-button" class="auth-btn">Sign In</button>
+
+        <div class="switch-mode" id="toggle-text">
+          New here? <span id="switch-mode">Create an account</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      updateProfile,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const nameGroup = document.getElementById('name-group');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const authButton = document.getElementById('auth-button');
+    const switchMode = document.getElementById('switch-mode');
+    const formTitle = document.getElementById('form-title');
+    const formSubtitle = document.getElementById('form-subtitle');
+    const messageDiv = document.getElementById('message');
+    const togglePassword = document.getElementById('toggle-password');
+    const toggleTextContainer = document.getElementById('toggle-text');
+
+    let isLogin = true;
+
+    function showMessage(msg, isError = true) {
+      messageDiv.textContent = msg;
+      messageDiv.style.display = 'block';
+      messageDiv.style.backgroundColor = isError ? 'rgba(229, 57, 53, 0.1)' : 'rgba(4, 170, 109, 0.1)';
+      messageDiv.style.color = isError ? '#e53935' : 'var(--primary)';
+      messageDiv.style.border = isError ? '1px solid rgba(229, 57, 53, 0.2)' : '1px solid rgba(4, 170, 109, 0.2)';
+    }
+
+    function updateForm() {
+      formTitle.textContent = isLogin ? "Welcome Back" : "Start Learning";
+      formSubtitle.textContent = isLogin ? "Enter your credentials to access the dashboard." : "Create a free account to unlock all masterclasses.";
+      authButton.textContent = isLogin ? "Sign In" : "Create Account";
+      nameGroup.style.display = isLogin ? "none" : "block";
+
+      toggleTextContainer.innerHTML = isLogin
+        ? `New here? <span id="switch-action">Create an account</span>`
+        : `Already a member? <span id="switch-action">Sign In</span>`;
+
+      document.getElementById("switch-action").onclick = () => {
+        isLogin = !isLogin;
+        messageDiv.style.display = 'none';
+        updateForm();
+      };
+    }
+
+    authButton.onclick = async () => {
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+      const name = nameInput.value.trim();
+
+      if (!email || !password || (!isLogin && !name)) {
+        showMessage('Please fill in all required fields.');
+        return;
+      }
+
+      authButton.disabled = true;
+      authButton.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Processing...';
+
+      try {
+        if (isLogin) {
+          await signInWithEmailAndPassword(auth, email, password);
+          showMessage("Login successful! Redirecting...", false);
+        } else {
+          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+          await updateProfile(userCredential.user, { displayName: name });
+          await setDoc(doc(db, "users", userCredential.user.uid), {
+            name: name, email: email, createdAt: new Date().toISOString(), role: "user"
+          });
+          showMessage("Account created! Redirecting...", false);
+        }
+        setTimeout(() => window.location.href = "index1.html", 1000);
+      } catch (error) {
+        showMessage(error.message.replace('Firebase: ', ''));
+        authButton.disabled = false;
+        authButton.textContent = isLogin ? "Sign In" : "Create Account";
+      }
+    };
+
+    togglePassword.onclick = () => {
+      const type = passwordInput.type === 'password' ? 'text' : 'password';
+      passwordInput.type = type;
+      togglePassword.className = type === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash';
+    };
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        window.location.href = "index1.html";
+      }
+    });
+
+    updateForm();
+  </script>
+
+  <script>
+    // Theme logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const updateThemeIconUI = (isDark) => {
+      if (themeToggleBtn) {
+        themeToggleBtn.innerHTML = isDark
+          ? '<i class="fas fa-sun" style="font-size:14px;"></i><span class="theme-text" style="margin-left:6px; font-size:13px; font-weight:600;">Light</span>'
+          : '<i class="fas fa-moon" style="font-size:14px;"></i><span class="theme-text" style="margin-left:6px; font-size:13px; font-weight:600;">Dark</span>';
+      }
+    };
+
+    let curTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', curTheme);
+    window.addEventListener('DOMContentLoaded', () => updateThemeIconUI(curTheme === 'dark'));
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        let t = document.documentElement.getAttribute('data-theme');
+        let newT = t === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newT);
+        localStorage.setItem('theme', newT);
+        updateThemeIconUI(newT === 'dark');
+      });
+    }
+  </script>
+</body>
+
+</html>

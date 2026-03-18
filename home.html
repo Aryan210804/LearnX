@@ -1,38 +1,454 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LearnX | Learn to Code - Free Tutorials & References</title>
-    <meta name="description"
-        content="LearnX offers free online tutorials, references and exercises in HTML, CSS, JavaScript, Python, SQL, Java, and many more. The world's largest web developer learning platform." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnX | Master Your Tech Future</title>
+    <!-- Basic Meta Tags -->
+    <meta name="description" content="Master coding and technology with LearnX - The premium platform for modern developers.">
+    <!-- Icon -->
     <link rel="icon" href="assets/img/LOGO.jpeg" type="image/jpeg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Shared Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Premium Overrides for Home Page */
+        :root {
+            --primary: #04AA6D;
+            --primary-glow: rgba(4, 170, 109, 0.4);
+            --accent: #06cc84;
+            --bg-glass: rgba(22, 27, 34, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --hero-gradient: linear-gradient(135deg, #0d1117 0%, #0d2318 100%);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #080c10;
+            overflow-x: hidden;
+            margin: 0;
+            color: #fff;
+        }
+
+        /* Smooth reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Abstract Background Elements */
+        .ambient-glow {
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(4, 170, 109, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+            top: -200px;
+            right: -200px;
+        }
+
+        .ambient-glow-2 {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(6, 204, 132, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            bottom: -100px;
+            left: -100px;
+            pointer-events: none;
+        }
+
+        /* Hero Section Redesign */
+        .hero-v2 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 5% 80px;
+            background: radial-gradient(circle at center, rgba(0, 242, 254, 0.03) 0%, #080c10 100%);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            z-index: 10;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 100px;
+            border: 1px solid var(--glass-border);
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-v2 h1 {
+            font-size: clamp(45px, 9vw, 92px);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -4px;
+            margin-bottom: 35px;
+            color: #fff;
+        }
+
+        .hero-v2 h1 span {
+            background: linear-gradient(135deg, #fff 40%, var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .hero-v2 p {
+            font-size: clamp(16px, 2vw, 21px);
+            color: #8b949e;
+            max-width: 650px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-premium {
+            padding: 20px 42px;
+            border-radius: 16px;
+            font-size: 17px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-glow {
+            background: var(--primary);
+            color: #000;
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3);
+        }
+
+        .btn-glow:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 15px 45px rgba(0, 242, 254, 0.5);
+            background: #fff;
+        }
+
+        .btn-blur {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-blur:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            border-color: #fff;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 100px 5%;
+            background: #080c10;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: #8b949e;
+            font-size: 18px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .glass-card {
+            background: rgba(22, 27, 34, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 50px 40px;
+            border-radius: 32px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(0, 242, 254, 0.1), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 242, 254, 0.4);
+            transform: translateY(-15px);
+            background: rgba(22, 27, 34, 0.6);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+        }
+
+        .glass-card:hover::before {
+            opacity: 1;
+        }
+
+        .glass-card i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+
+        .glass-card:hover i {
+            background: var(--primary);
+            color: #000;
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        .glass-card h3 {
+            font-size: 26px;
+            margin-bottom: 16px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .glass-card p {
+            color: #8b949e;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Stats Strip */
+        .stats-bar {
+            background: rgba(22, 27, 34, 0.8);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 60px 0;
+            display: flex;
+            justify-content: center;
+            gap: clamp(40px, 10vw, 120px);
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item h2 {
+            font-size: 52px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff, var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 13px;
+            color: #8b949e;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Path Cards Section */
+        .paths-section {
+            padding: 80px 5%;
+            background: radial-gradient(circle at bottom, rgba(4, 170, 109, 0.02) 0%, transparent 70%);
+        }
+
+        .paths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .path-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 45px 30px;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .path-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--primary);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .path-icon {
+            width: 84px;
+            height: 84px;
+            background: linear-gradient(135deg, rgba(4, 170, 109, 0.1), rgba(6, 204, 132, 0.1));
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            color: var(--primary);
+            margin-bottom: 28px;
+            border: 1px solid rgba(4, 170, 109, 0.2);
+            transition: all 0.5s;
+        }
+
+        .path-card:hover .path-icon {
+            background: var(--primary);
+            color: #000;
+            transform: rotateY(180deg);
+        }
+
+        .path-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .path-card p {
+            color: #8b949e;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .path-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .path-tags span {
+            background: rgba(0, 242, 254, 0.05);
+            padding: 5px 14px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            border: 1px solid rgba(0, 242, 254, 0.1);
+            letter-spacing: 0.5px;
+        }
+
+        /* Nav premium look */
+        .top-nav {
+            background: rgba(8, 12, 16, 0.8) !important;
+            backdrop-filter: blur(20px) !important;
+            border-bottom: 1px solid var(--glass-border) !important;
+        }
+
+        .top-nav-links a {
+            font-family: 'Outfit', sans-serif !important;
+            font-weight: 500 !important;
+            letter-spacing: 0.5px;
+        }
+
+        .brand {
+            font-family: 'Outfit', sans-serif !important;
+            font-weight: 800 !important;
+            font-size: 26px !important;
+            letter-spacing: -1px !important;
+        }
+
+        /* Mobile specific */
+        @media (max-width: 768px) {
+            .hero-v2 h1 { font-size: 50px; }
+            .hero-v2 { padding-top: 150px; }
+            .cta-group { flex-direction: column; }
+            .btn-premium { width: 100%; justify-content: center; }
+            .stats-bar { gap: 50px; }
+        }
+
+    </style>
 </head>
 
 <body class="learnx-page">
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-2"></div>
+    
     <!-- TOP NAVIGATION -->
     <nav class="top-nav">
         <a href="home.html" class="brand">Learn<span>X</span></a>
         
         <div class="top-nav-links">
-            <a href="home.html">Home</a>
+            <a href="home.html" class="active">Home</a>
             <a href="index1.html">Dashboard</a>
             <a href="about.html">About</a>
-            <a href="Contact.html">Contact</a>
             <a href="feedback.html">Feedback</a>
             <a href="admin.html" class="admin-link" id="admin-link" style="display:none;color:#ff4d4d; border-bottom:none;">Admin</a>
         </div>
 
         <div class="top-nav-actions">
-            <div class="top-nav-search">
-                <input type="text" placeholder="Search tutorials..." />
-                <button><i class="fas fa-search"></i></button>
-            </div>
-            
             <button id="theme-toggle" class="nav-btn nav-btn-outline">
                 <i class="fas fa-sun"></i>
             </button>
@@ -45,7 +461,7 @@
             </div>
 
             <div class="auth-btns">
-                <a href="index.html" class="nav-btn nav-btn-primary">Login</a>
+                <a href="auth.html" class="nav-btn nav-btn-primary">Get Started</a>
             </div>
 
             <button class="hamburger">
@@ -54,1210 +470,211 @@
         </div>
     </nav>
 
-    <!-- TOP BAR (Legacy Promo) -->
-    <div class="topbar">
-        LearnX Masterclass is LIVE! Unlock 100+ new advanced tutorials. <a href="index1.html">Get Started</a>
-    </div>
-
-    <style>
-        .hero {
-            background: linear-gradient(135deg, #0d1117 0%, #0d2318 50%, #0d1117 100%);
-            padding: 80px 5% 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(4, 170, 109, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(4, 170, 109, 0.1);
-            border: 1px solid rgba(4, 170, 109, 0.3);
-            color: var(--primary);
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 24px;
-            animation: pulse-border 2s ease infinite;
-        }
-
-        @keyframes pulse-border {
-
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(4, 170, 109, 0.3);
-            }
-
-            50% {
-                box-shadow: 0 0 0 6px rgba(4, 170, 109, 0);
-            }
-        }
-
-        .hero h1 {
-            font-size: clamp(36px, 5vw, 64px);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            letter-spacing: -1.5px;
-        }
-
-        .hero h1 span {
-            color: var(--primary);
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: var(--text-muted);
-            max-width: 580px;
-            margin: 0 auto 36px;
-            line-height: 1.7;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-        }
-
-        .btn-hero-primary {
-            padding: 14px 32px;
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-hero-primary:hover {
-            background: var(--primary-light);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(4, 170, 109, 0.35);
-        }
-
-        .btn-hero-outline {
-            padding: 14px 32px;
-            background: transparent;
-            color: var(--text);
-            border: 1.5px solid var(--border);
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-hero-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        /* Hero stats */
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-num {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--primary);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        /* ─── SEARCH BAR (big) ─── */
-        .search-section {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 30px 5%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .big-search {
-            display: flex;
-            align-items: center;
-            background: var(--bg-dark);
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            width: 100%;
-            max-width: 700px;
-            transition: border-color 0.3s;
-        }
-
-        .big-search:focus-within {
-            border-color: var(--primary);
-        }
-
-        .big-search i {
-            padding: 0 16px;
-            color: var(--text-muted);
-            font-size: 18px;
-        }
-
-        .big-search input {
-            flex: 1;
-            background: none;
-            border: none;
-            outline: none;
-            color: var(--text);
-            font-size: 16px;
-            padding: 16px 0;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .big-search input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .big-search button {
-            background: var(--primary);
-            border: none;
-            color: #fff;
-            padding: 16px 28px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .big-search button:hover {
-            background: var(--primary-dark);
-        }
-
-        /* ─── SECTION WRAPPER ─── */
-        .section-wrap {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 60px 5%;
-        }
-
-        .section-title {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .section-heading {
-            font-size: clamp(24px, 3vw, 36px);
-            font-weight: 800;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        .section-sub {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 40px;
-        }
-
-        /* ─── TUTORIALS GRID ─── */
-        .tutorials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 16px;
-        }
-
-        .tutorial-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px 20px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.3s;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tutorial-card::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--card-color, var(--primary));
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .tutorial-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--card-color, var(--primary));
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .tutorial-card:hover::before {
-            opacity: 1;
-        }
-
-        .tutorial-card i {
-            font-size: 36px;
-            color: var(--card-color, var(--primary));
-        }
-
-        .tutorial-card h3 {
-            font-size: 15px;
-            font-weight: 700;
-        }
-
-        .tutorial-card p {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        /* ─── LIVE CODE EDITOR ─── */
-        .editor-section {
-            background: linear-gradient(135deg, #0d2318 0%, #0d1117 100%);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .editor-wrap {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 60px 5%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .editor-info h2 {
-            font-size: clamp(26px, 3vw, 38px);
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
-            line-height: 1.2;
-        }
-
-        .editor-info h2 span {
-            color: var(--primary);
-        }
-
-        .editor-info p {
-            color: var(--text-muted);
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 24px;
-        }
-
-        .editor-features {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 28px;
-        }
-
-        .editor-features li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-        }
-
-        .editor-features li i {
-            color: var(--primary);
-            font-size: 14px;
-            width: 20px;
-        }
-
-        .editor-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .editor-tabs {
-            display: flex;
-            align-items: center;
-            background: var(--bg-dark);
-            border-bottom: 1px solid var(--border);
-            padding: 0 16px;
-            gap: 0;
-        }
-
-        .editor-tab {
-            padding: 12px 16px;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-muted);
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s;
-        }
-
-        .editor-tab.active {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-        }
-
-        .editor-lang {
-            margin-left: auto;
-            font-size: 12px;
-            color: var(--text-muted);
-            background: var(--bg-card);
-            padding: 4px 10px;
-            border-radius: 6px;
-        }
-
-        .editor-textarea {
-            width: 100%;
-            height: 200px;
-            background: var(--bg-card);
-            border: none;
-            outline: none;
-            color: #a9dc76;
-            font-family: 'Fira Code', 'Courier New', monospace;
-            font-size: 13px;
-            padding: 20px;
-            resize: none;
-            line-height: 1.7;
-        }
-
-        .editor-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 20px;
-            background: var(--bg-dark);
-            border-top: 1px solid var(--border);
-        }
-
-        .run-btn {
-            background: var(--primary);
-            border: none;
-            color: #fff;
-            padding: 8px 20px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .run-btn:hover {
-            background: var(--primary-light);
-            transform: translateY(-1px);
-        }
-
-        .editor-result {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-top: none;
-            border-radius: 0 0 16px 16px;
-            min-height: 120px;
-            overflow: hidden;
-        }
-
-        .editor-result iframe {
-            width: 100%;
-            height: 120px;
-            border: none;
-        }
-
-        /* ─── CATEGORIES ─── */
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .category-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 28px;
-            transition: all 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-            color: var(--text);
-            display: block;
-        }
-
-        .category-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .category-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-            font-size: 22px;
-        }
-
-        .category-card h3 {
-            font-size: 17px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .category-card p {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        .category-tags {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            padding: 3px 10px;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 100px;
-            font-size: 11px;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        /* ─── FEATURE STRIP ─── */
-        .features-strip {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .features-inner {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 50px 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-
-        .feature-icon {
-            width: 44px;
-            height: 44px;
-            background: rgba(4, 170, 109, 0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: var(--primary);
-            font-size: 18px;
-        }
-
-        .feature-text h4 {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .feature-text p {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        /* ─── CTA BANNER ─── */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #006b45 100%);
-            padding: 70px 5%;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 400px;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 50%;
-        }
-
-        .cta-section h2 {
-            font-size: clamp(26px, 4vw, 44px);
-            font-weight: 900;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-        }
-
-        .cta-section p {
-            font-size: 16px;
-            opacity: 0.85;
-            margin-bottom: 32px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-btns {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-white {
-            padding: 14px 32px;
-            background: #fff;
-            color: var(--primary-dark);
-            border: none;
-            border-radius: 10px;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-white:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-        }
-
-        .btn-ghost {
-            padding: 14px 32px;
-            background: transparent;
-            color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            border-radius: 10px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-ghost:hover {
-            border-color: #fff;
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-        }
-
-        /* ─── FOOTER ─── */
-        footer {
-            background: #080c10;
-            border-top: 1px solid var(--border);
-            padding: 50px 5% 30px;
-        }
-
-        .footer-grid {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand h3 {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .footer-brand p {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.7;
-            max-width: 280px;
-        }
-
-        .footer-col h4 {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .footer-col a {
-            display: block;
-            color: var(--text);
-            text-decoration: none;
-            font-size: 13px;
-            padding: 5px 0;
-            transition: color 0.2s;
-        }
-
-        .footer-col a:hover {
-            color: var(--primary);
-        }
-
-        .footer-bottom {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-            color: var(--text-muted);
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        /* ─── MOBILE ─── */
-        @media (max-width: 900px) {
-            .nav-mega-links {
-                display: none;
-            }
-
-            .editor-wrap {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .hero-stats {
-                gap: 25px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- Top Bar -->
-    <div class="topbar">
-        🎓 LearnX is completely free! <a href="index.html">Sign up</a> to track your progress 
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-        <a class="nav-brand" href="home.html">LearnX</a>
-
-        <div class="nav-mega-links">
-            <!-- Tutorials -->
-            <div class="nav-item">
-                <a href="#">Tutorials <i class="fas fa-chevron-down"></i></a>
-                <div class="mega-dropdown">
-                    <div class="mega-col">
-                        <h4>Web Basics</h4>
-                        <a href="index.html"><span class="dot" style="background:#e34c26"></span>HTML</a>
-                        <a href="index.html"><span class="dot" style="background:#1572b6"></span>CSS</a>
-                        <a href="index.html"><span class="dot" style="background:#f7df1e"></span>JavaScript</a>
-                    </div>
-                    <div class="mega-col">
-                        <h4>Backend</h4>
-                        <a href="index.html"><span class="dot" style="background:#3776ab"></span>Python</a>
-                        <a href="index.html"><span class="dot" style="background:#007396"></span>Java</a>
-                        <a href="index.html"><span class="dot" style="background:#04AA6D"></span>SQL</a>
-                    </div>
-                    <div class="mega-col">
-                        <h4>Data & AI</h4>
-                        <a href="index.html"><span class="dot" style="background:#150458"></span>Pandas</a>
-                        <a href="index.html"><span class="dot" style="background:#013243"></span>NumPy</a>
-                        <a href="index.html"><span class="dot" style="background:#ff9900"></span>Machine
-                            Learning</a>
-                        <a href="index.html"><span class="dot" style="background:#00d2ff"></span>AI</a>
-                    </div>
+    <main>
+        <!-- MODERN HERO -->
+        <section class="hero-v2">
+            <div class="hero-content reveal">
+                <div class="hero-badge">
+                    <i class="fas fa-bolt"></i> Future of Tutorials
+                </div>
+                <h1>Master the Art of <span>Modern Technology.</span></h1>
+                <p>LearnX provides deep, structured, and free technical educational resources. From high-level AI concepts to low-level machine architecture.</p>
+                <div class="cta-group">
+                    <a href="index1.html" class="btn-premium btn-glow">Start Learning <i class="fas fa-arrow-right"></i></a>
+                    <a href="about.html" class="btn-premium btn-blur">Knowledge Base</a>
                 </div>
             </div>
+        </section>
 
-            <div class="nav-item">
-                <a href="index1.html">Dashboard</a>
+        <!-- STATS STRIP -->
+        <section class="stats-bar reveal">
+            <div class="stat-item">
+                <h2>14+</h2>
+                <p>Core Courses</p>
             </div>
-
-            <div class="nav-item">
-                <a href="about.html">About</a>
+            <div class="stat-item">
+                <h2>10k+</h2>
+                <p>Active Users</p>
             </div>
-
-            <div class="nav-item">
-                <a href="Contact.html">Contact</a>
+            <div class="stat-item">
+                <h2>100%</h2>
+                <p>Free for All</p>
             </div>
-        </div>
-
-        <div class="nav-right">
-            <div class="nav-search">
-                <input type="text" placeholder="Search..." id="nav-search-input" />
-                <button onclick="doSearch()"><i class="fas fa-search"></i></button>
+            <div class="stat-item">
+                <h2>24/7</h2>
+                <p>Access</p>
             </div>
-             <button id="theme-toggle" class="nav-btn" style="background:#282A35; color:#fff; border:1px solid rgba(255,255,255,0.2); margin-right:15px; display:inline-flex; align-items:center; cursor:pointer;" title="Change Theme"><i class="fas fa-sun"></i></button>
-            <a href="index.html" class="btn-outline">Log In</a>
-            <a href="index.html" class="btn-primary">Sign Up Free</a>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-badge">
-            <i class="fas fa-bolt"></i> World's Largest Learning Platform for Developers
-        </div>
-        <h1>Learn to Code.<br><span>Build the Future.</span></h1>
-        <p>Free tutorials, references, and interactive exercises in HTML, CSS, JavaScript, Python, SQL, Java, and 50+
-            more languages.</p>
-        <div class="hero-actions">
-            <a href="index.html" class="btn-hero-primary"><i class="fas fa-rocket"></i> Start Learning Free</a>
-            <a href="#tutorials" class="btn-hero-outline"><i class="fas fa-play-circle"></i> Browse Tutorials</a>
-        </div>
-        <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-num">50+</span>
-                <span class="stat-label">Courses</span>
+        <!-- PATHS SECTION -->
+        <section class="paths-section">
+            <div class="section-header reveal">
+                <h2>Choose Your <span>Expert Path.</span></h2>
+                <p>Strategic learning tracks designed for career acceleration.</p>
             </div>
-            <div class="stat">
-                <span class="stat-num">10K+</span>
-                <span class="stat-label">Students</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num">100%</span>
-                <span class="stat-label">Free</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num">500+</span>
-                <span class="stat-label">Exercises</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Search Bar -->
-    <div class="search-section">
-        <div class="big-search">
-            <i class="fas fa-search"></i>
-            <input type="text"
-                placeholder="Search tutorials, e.g. &ldquo;HTML buttons&rdquo; or &ldquo;Python loops&rdquo;"
-                id="hero-search" />
-            <button onclick="doSearch()">Search</button>
-        </div>
-    </div>
-
-    <!-- Tutorials Grid -->
-    <div class="section-wrap" id="tutorials">
-        <p class="section-title">📚 Tutorials</p>
-        <h2 class="section-heading">Learn the Most Popular Languages</h2>
-        <p class="section-sub">Click any language to start your free tutorial right now.</p>
-
-        <div class="tutorials-grid">
-            <a href="courses/html.html" class="tutorial-card" style="--card-color:#e34c26">
-                <i class="fab fa-html5"></i>
-                <h3>HTML</h3>
-                <p>Web Structure</p>
-            </a>
-            <a href="courses/css.html" class="tutorial-card" style="--card-color:#1572b6">
-                <i class="fab fa-css3-alt"></i>
-                <h3>CSS</h3>
-                <p>Web Styling</p>
-            </a>
-            <a href="courses/js.html" class="tutorial-card" style="--card-color:#f7df1e">
-                <i class="fab fa-js"></i>
-                <h3>JavaScript</h3>
-                <p>Interactivity</p>
-            </a>
-            <a href="courses/python.html" class="tutorial-card" style="--card-color:#3776ab">
-                <i class="fab fa-python"></i>
-                <h3>Python</h3>
-                <p>General Purpose</p>
-            </a>
-            <a href="courses/sql.html" class="tutorial-card" style="--card-color:#04AA6D">
-                <i class="fas fa-database"></i>
-                <h3>SQL</h3>
-                <p>Databases</p>
-            </a>
-            <a href="courses/java.html" class="tutorial-card" style="--card-color:#007396">
-                <i class="fab fa-java"></i>
-                <h3>Java</h3>
-                <p>OOP Language</p>
-            </a>
-            <a href="courses/c.html" class="tutorial-card" style="--card-color:#a8b9cc">
-                <i class="fas fa-code"></i>
-                <h3>C</h3>
-                <p>Systems Language</p>
-            </a>
-            <a href="courses/r.html" class="tutorial-card" style="--card-color:#276dc3">
-                <i class="fas fa-chart-line"></i>
-                <h3>R</h3>
-                <p>Statistics</p>
-            </a>
-            <a href="courses/numpy.html" class="tutorial-card" style="--card-color:#013243">
-                <i class="fas fa-cubes"></i>
-                <h3>NumPy</h3>
-                <p>Numerical Python</p>
-            </a>
-            <a href="courses/pandas.html" class="tutorial-card" style="--card-color:#150458">
-                <i class="fas fa-table"></i>
-                <h3>Pandas</h3>
-                <p>Data Analysis</p>
-            </a>
-            <a href="courses/matplotlib.html" class="tutorial-card" style="--card-color:#11557c">
-                <i class="fas fa-chart-bar"></i>
-                <h3>Matplotlib</h3>
-                <p>Visualisation</p>
-            </a>
-            <a href="index.html" class="tutorial-card" style="--card-color:#ff9900">
-                <i class="fas fa-brain"></i>
-                <h3>ML</h3>
-                <p>Machine Learning</p>
-            </a>
-            <a href="courses/ai.html" class="tutorial-card" style="--card-color:#00d2ff">
-                <i class="fas fa-robot"></i>
-                <h3>AI</h3>
-                <p>Artificial Intelligence</p>
-            </a>
-            <a href="courses/excel.html" class="tutorial-card" style="--card-color:#217346">
-                <i class="fas fa-file-excel"></i>
-                <h3>Excel</h3>
-                <p>Data Spreadsheets</p>
-            </a>
-        </div>
-    </div>
-
-    <!-- Live Editor Section -->
-    <section class="editor-section">
-        <div class="editor-wrap">
-            <div class="editor-info">
-                <p class="section-title">💻 Try It Yourself</p>
-                <h2>Write Code.<br><span>See Results Instantly.</span></h2>
-                <p>Our built-in code editor lets you experiment with real code directly in your browser. No downloads,
-                    no setup — just write and run.</p>
-                <ul class="editor-features">
-                    <li><i class="fas fa-check-circle"></i> Live HTML/CSS/JS preview</li>
-                    <li><i class="fas fa-check-circle"></i> No installation required</li>
-                    <li><i class="fas fa-check-circle"></i> Available in every tutorial</li>
-                    <li><i class="fas fa-check-circle"></i> Save & share your code</li>
-                </ul>
-                <a href="index.html" class="btn-hero-primary" style="display: inline-flex; width: fit-content;">
-                    <i class="fas fa-play"></i> Open Full Editor
+            
+            <div class="paths-grid">
+                <a href="courses/html.html" class="path-card reveal">
+                    <div class="path-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Master the modern web stack from frontend aesthetics to backend architecture.</p>
+                    <div class="path-tags">
+                        <span>HTML5</span><span>CSS3</span><span>JS</span>
+                    </div>
+                </a>
+                <a href="courses/ai.html" class="path-card reveal">
+                    <div class="path-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Dive deep into neural networks, data modeling, and predictive analytics.</p>
+                    <div class="path-tags">
+                        <span>Python</span><span>ML</span><span>Applied AI</span>
+                    </div>
+                </a>
+                <a href="courses/sql.html" class="path-card reveal">
+                    <div class="path-icon"><i class="fas fa-database"></i></div>
+                    <h3>Data Engineering</h3>
+                    <p>Build robust data pipelines and master large-scale database management.</p>
+                    <div class="path-tags">
+                        <span>SQL</span><span>Python</span><span>DataViz</span>
+                    </div>
+                </a>
+                <a href="courses/c.html" class="path-card reveal">
+                    <div class="path-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Software Systems</h3>
+                    <p>Learn core algorithms, data structures, and low-level systems programming.</p>
+                    <div class="path-tags">
+                        <span>C</span><span>Java</span><span>CS Fundamentals</span>
+                    </div>
                 </a>
             </div>
+        </section>
 
+        <!-- ECOSYSTEM SECTION -->
+        <section style="padding: 60px 5%; background: #080c10;">
+             <div class="section-header reveal">
+                <h2>The Learning <span>Ecosystem.</span></h2>
+                <p>Everything you need to go from beginner to industry-pro.</p>
+            </div>
+            <div class="features-grid">
+                <div class="glass-card reveal">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Adaptive Workspace</h3>
+                    <p>Customizable coding environments that sync across all your devices seamlessly.</p>
+                </div>
+                <div class="glass-card reveal">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Progress Tracking</h3>
+                    <p>Advanced analytics to visualize your growth and identify areas for improvement.</p>
+                </div>
+                <div class="glass-card reveal">
+                    <i class="fas fa-award"></i>
+                    <h3>Professional Verification</h3>
+                    <p>Earn reputation and certifications as you master complex technical domains.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section class="features-section">
+            <div class="section-header reveal">
+                <h2>Built for <span>Next-Gen Creators.</span></h2>
+                <p>Everything you need to master tech, designed with precision.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="glass-card reveal">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Structured Path</h3>
+                    <p>Don't just learn syntax. Understand concepts through our carefully crafted curriculum designed for retention.</p>
+                </div>
+                <div class="glass-card reveal">
+                    <i class="fas fa-terminal"></i>
+                    <h3>Live Sandboxes</h3>
+                    <p>Write, test, and execute code directly in your browser. No local environment setup required to get started.</p>
+                </div>
+                <div class="glass-card reveal">
+                    <i class="fas fa-microchip"></i>
+                    <h3>AI Focused</h3>
+                    <p>Dedicated pathways for Artificial Intelligence, Machine Learning, and Data Science models.</p>
+                </div>
+                <div class="glass-card reveal">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Enterprise Ready</h3>
+                    <p>Learn the patterns used by industry leaders. We focus on scalable, best-practice software engineering.</p>
+                </div>
+                <div class="glass-card reveal">
+                    <i class="fas fa-cloud-sun"></i>
+                    <h3>Dynamic Themes</h3>
+                    <p>Eye-care comes first. Seamlessly toggle between dark and light modes optimized for long coding sessions.</p>
+                </div>
+                <div class="glass-card reveal">
+                    <i class="fas fa-search-plus"></i>
+                    <h3>Global Search</h3>
+                    <p>Instantly find exactly what you need across thousands of technical modules with our intelligent indexing.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section style="padding: 100px 5%; text-align: center; position: relative; overflow: hidden;">
+            <div class="reveal">
+                <h2 style="font-size: clamp(30px, 6vw, 56px); font-weight: 800; margin-bottom: 20px;">Ready to Level Up?</h2>
+                <p style="color: #8b949e; font-size: 19px; max-width: 600px; margin: 0 auto 40px;">Join thousands of developers worldwide learning the future of tech.</p>
+                <a href="auth.html" class="btn-premium btn-glow">Join LearnX Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 80px 5% 40px; border-top: 1px solid var(--glass-border); background: #080c10;">
+        <div style="max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left;">
             <div>
-                <div class="editor-box">
-                    <div class="editor-tabs">
-                        <span class="editor-tab active">HTML</span>
-                        <span class="editor-tab">CSS</span>
-                        <span class="editor-tab">JS</span>
-                        <span class="editor-lang">Try It Yourself ↗</span>
-                    </div>
-                    <textarea class="editor-textarea" id="live-editor" spellcheck="false">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;style&gt;
-    body { background: #1a1a2e; color: #eee; font-family: sans-serif; padding: 20px; }
-    h1 { color: #04AA6D; }
-    .box { background: #16213e; padding: 15px; border-radius: 8px; margin-top: 10px; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Hello, LearnX! 🚀&lt;/h1&gt;
-  &lt;div class="box"&gt;
-    &lt;p&gt;Edit this code and click &lt;b&gt;Run&lt;/b&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</textarea>
-                    <div class="editor-footer">
-                        <span style="font-size:12px;color:var(--text-muted)">Edit the code above &amp; click Run</span>
-                        <button class="run-btn" onclick="runCode()"><i class="fas fa-play"></i> Run &rsaquo;</button>
-                    </div>
-                </div>
-                <div class="editor-result">
-                    <iframe id="result-frame"></iframe>
+                <a href="#" class="brand" style="margin-bottom: 20px; display: block;">Learn<span>X</span></a>
+                <p style="color: #8b949e; font-size: 14px; line-height: 1.6;">The ultimate open-source platform for technical education. Crafting the next generation of engineers.</p>
+            </div>
+            <div>
+                <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #fff; margin-bottom: 20px;">Platform</h4>
+                <a href="index1.html" style="display: block; color: #8b949e; margin-bottom: 10px; font-size: 14px;">Dashboard</a>
+                <a href="about.html" style="display: block; color: #8b949e; margin-bottom: 10px; font-size: 14px;">About Us</a>
+                <a href="feedback.html" style="display: block; color: #8b949e; margin-bottom: 10px; font-size: 14px;">Feedback</a>
+            </div>
+            <div>
+                <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #fff; margin-bottom: 20px;">Support</h4>
+                <a href="contact.html" style="display: block; color: #8b949e; margin-bottom: 10px; font-size: 14px;">Contact</a>
+                <a href="LICENSE" style="display: block; color: #8b949e; margin-bottom: 10px; font-size: 14px;">Open Source</a>
+            </div>
+            <div>
+                <h4 style="font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #fff; margin-bottom: 20px;">Stay Updated</h4>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-github"></i></a>
+                    <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-discord"></i></a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Learning Paths / Categories -->
-    <div class="section-wrap">
-        <p class="section-title">🗺️ Learning Paths</p>
-        <h2 class="section-heading">Choose Your Path</h2>
-        <p class="section-sub">Structured learning journeys to take you from beginner to pro.</p>
-
-        <div class="categories-grid">
-            <a href="index.html" class="category-card">
-                <div class="category-icon" style="background:rgba(227,76,38,0.1)">
-                    <i class="fas fa-globe" style="color:#e34c26"></i>
-                </div>
-                <h3>Frontend Development</h3>
-                <p>Master the building blocks of the web with HTML, CSS, and JavaScript to build stunning user
-                    interfaces.</p>
-                <div class="category-tags">
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">JavaScript</span>
-                </div>
-            </a>
-            <a href="index.html" class="category-card">
-                <div class="category-icon" style="background:rgba(55,118,171,0.1)">
-                    <i class="fas fa-server" style="color:#3776ab"></i>
-                </div>
-                <h3>Backend Development</h3>
-                <p>Build powerful server-side applications and APIs with Python, Java, and SQL databases.</p>
-                <div class="category-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Java</span>
-                    <span class="tag">SQL</span>
-                </div>
-            </a>
-            <a href="index.html" class="category-card">
-                <div class="category-icon" style="background:rgba(255,153,0,0.1)">
-                    <i class="fas fa-brain" style="color:#ff9900"></i>
-                </div>
-                <h3>Data Science & AI</h3>
-                <p>Dive into the world of machine learning, data analysis, and artificial intelligence with Python
-                    libraries.</p>
-                <div class="category-tags">
-                    <span class="tag">NumPy</span>
-                    <span class="tag">Pandas</span>
-                    <span class="tag">ML</span>
-                    <span class="tag">AI</span>
-                </div>
-            </a>
-            <a href="index.html" class="category-card">
-                <div class="category-icon" style="background:rgba(4,170,109,0.1)">
-                    <i class="fas fa-database" style="color:#04AA6D"></i>
-                </div>
-                <h3>Databases</h3>
-                <p>Learn to design, query, and manage relational databases to store and retrieve data efficiently.</p>
-                <div class="category-tags">
-                    <span class="tag">SQL</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">Queries</span>
-                </div>
-            </a>
-            <a href="index.html" class="category-card">
-                <div class="category-icon" style="background:rgba(39,109,195,0.1)">
-                    <i class="fas fa-chart-line" style="color:#276dc3"></i>
-                </div>
-                <h3>Data Analytics</h3>
-                <p>Analyse, visualise, and interpret data using R, Matplotlib, and statistical computing techniques.</p>
-                <div class="category-tags">
-                    <span class="tag">R</span>
-                    <span class="tag">Matplotlib</span>
-                    <span class="tag">Statistics</span>
-                </div>
-            </a>
-            <a href="index.html" class="category-card">
-                <div class="category-icon" style="background:rgba(168,185,204,0.1)">
-                    <i class="fas fa-microchip" style="color:#a8b9cc"></i>
-                </div>
-                <h3>Systems Programming</h3>
-                <p>Understand low-level programming fundamentals with C — the language that powers operating systems and
-                    embedded software.</p>
-                <div class="category-tags">
-                    <span class="tag">C</span>
-                    <span class="tag">Memory</span>
-                    <span class="tag">Pointers</span>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <!-- Feature Strip -->
-    <section class="features-strip">
-        <div class="features-inner">
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                <div class="feature-text">
-                    <h4>Learn at Your Pace</h4>
-                    <p>All content is available 24/7. Learn whenever and wherever you want.</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-code"></i></div>
-                <div class="feature-text">
-                    <h4>Hands-on Exercises</h4>
-                    <p>Practice with hundreds of interactive coding examples and exercises.</p>
-                </div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-laptop-code"></i></div><div class="feature-text"><h4>Real-world Projects</h4><p>Build real-world projects to showcase your skills to employers.</p></div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-infinity"></i></div>
-                <div class="feature-text">
-                    <h4>Completely Free</h4>
-                    <p>All tutorials, exercises, and references are 100% free, forever.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Banner -->
-    <section class="cta-section">
-        <h2>Ready to Start Your Coding Journey?</h2>
-        <p>Join thousands of learners who are already mastering the future with LearnX — completely free.</p>
-        <div class="cta-btns">
-            <a href="index.html" class="btn-white"><i class="fas fa-user-plus"></i> Create Free Account</a>
-            <a href="#tutorials" class="btn-ghost"><i class="fas fa-book-open"></i> Browse Tutorials</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h3>LearnX</h3>
-                <p>The world's most comprehensive learning platform for developers. Free tutorials, references, and
-                    exercises in 50+ programming languages.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Tutorials</h4>
-                <a href="index.html">HTML</a>
-                <a href="index.html">CSS</a>
-                <a href="index.html">JavaScript</a>
-                <a href="index.html">Python</a>
-                <a href="index.html">SQL</a>
-            </div>
-            <div class="footer-col">
-                <h4>Data & AI</h4>
-                <a href="index.html">NumPy</a>
-                <a href="index.html">Pandas</a>
-                <a href="index.html">Matplotlib</a>
-                <a href="index.html">Machine Learning</a>
-                <a href="index.html">AI</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="about.html">About Us</a>
-                <a href="Contact.html">Contact</a>
-                <a href="feedback.html">Feedback</a>
-                <a href="index.html">Sign Up</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2025 LearnX. All rights reserved.</span>
-            <span>Made with <span style="color:#e34c26">♥</span> for learners worldwide</span>
+        <div style="border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px; padding-top: 30px; text-align: center; color: #555; font-size: 13px;">
+            <p>&copy; 2026 LearnX Platform. Designed for the Future.</p>
         </div>
     </footer>
 
-    <script>
-        // Live code editor
-        function runCode() {
-            const code = document.getElementById('live-editor').value;
-            const frame = document.getElementById('result-frame');
-            const doc = frame.contentDocument || frame.contentWindow.document;
-            doc.open();
-            doc.write(code);
-            doc.close();
-        }
-        // Run on load
-        window.addEventListener('load', runCode);
-
-        // Editor tab switching (visual only for demo)
-        document.querySelectorAll('.editor-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.editor-tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-            });
-        });
-
-        // Search handler
-        function doSearch() {
-            const query = document.getElementById('hero-search')?.value || document.getElementById('nav-search-input')?.value;
-            if (query) alert('Searching for: ' + query + '\n(Search feature coming soon!)');
-        }
-
-        ['hero-search', 'nav-search-input'].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', e => {
-                const target = document.querySelector(link.getAttribute('href'));
-                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-            });
-        });
-    </script>
-
-
-
-
-    <!-- Shared theme toggle -->
-    <script src="assets/js/theme.js"></script>
+    <!-- Scripts -->
     <script type="module" src="assets/js/nav.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script>
+        // Smooth Reveal Scroll Animation
+        const observerOptions = {
+            threshold: 0.1
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
-
 
 </html>

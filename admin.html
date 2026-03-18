@@ -187,6 +187,11 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .stat-num {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      margin-top: 10px;
+    }
   </style>
 </head>
 
@@ -239,6 +244,17 @@
       <a href="index1.html" class="back-link"><i class="fas fa-arrow-left"></i> Dashboard</a>
     </div>
 
+    <div class="admin-stats" id="admin-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
+      <div class="admin-card" style="text-align: center; padding: 30px; border-left: 4px solid #00d2ff;">
+        <div class="card-meta">Total Users</div>
+        <div class="stat-num" id="total-users-count" style="font-size: 32px; font-weight: 800; color: #fff;">0</div>
+      </div>
+      <div class="admin-card" style="text-align: center; padding: 30px; border-left: 4px solid #ff007a;">
+        <div class="card-meta">Feedbacks Received</div>
+        <div class="stat-num" id="total-feedback-count" style="font-size: 32px; font-weight: 800; color: #fff;">0</div>
+      </div>
+    </div>
+
     <div class="tabs">
       <div class="tab active" onclick="switchTab('feedback', this)"><i class="fas fa-comments"
           style="margin-right:6px;"></i>Feedbacks</div>
@@ -266,6 +282,8 @@
 
     const feedbackList = document.getElementById("feedback-list");
     const usersList = document.getElementById("users-list");
+    const totalUsersCount = document.getElementById("total-users-count");
+    const totalFeedbackCount = document.getElementById("total-feedback-count");
 
     window.switchTab = (tab, el) => {
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -283,6 +301,9 @@
 
       // Live Feedbacks
       onSnapshot(query(collection(db, "feedback"), orderBy("timestamp", "desc")), (snapshot) => {
+        // Update Stats
+        if (totalFeedbackCount) totalFeedbackCount.textContent = snapshot.size;
+
         feedbackList.innerHTML = snapshot.empty
           ? '<div class="no-data">No feedback yet.</div>'
           : "";
@@ -309,6 +330,9 @@
 
       // Live Users
       onSnapshot(collection(db, "users"), (snapshot) => {
+        // Update Stats
+        if (totalUsersCount) totalUsersCount.textContent = snapshot.size;
+
         usersList.innerHTML = snapshot.empty
           ? '<div class="no-data">No users found.</div>'
           : "";
