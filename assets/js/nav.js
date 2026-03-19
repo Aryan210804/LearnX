@@ -1,9 +1,22 @@
-/**
- * LearnX — Global Navigation Controller
- * Handles active state, user status (Firebase), theme toggling, and mobile menu.
- */
-import { auth } from './firebase-init.js';
-import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+// Firebase configuration (inline for file:// protocol compatibility)
+const firebaseConfig = {
+  apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+  authDomain: "learnx-d823d.firebaseapp.com",
+  projectId: "learnx-d823d",
+  storageBucket: "learnx-d823d.appspot.com",
+  messagingSenderId: "1036419202232",
+  appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const currentPath = window.location.pathname;
@@ -35,13 +48,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. Strict Auth Guard - Pre-loading Check
   const isSubdir = currentPath.includes('/courses/');
-  const protectedPages = ['index1.html', 'profile.html', 'admin.html', 'feedback.html'];
-  const isProtected = protectedPages.some(page => currentPath.endsWith(page)) || isSubdir;
+  // Determine if it's a 'Public Only' page (Home or Auth)
+  const isPublicOnly = isAtRoot || publicPages.some(page => fileName === page || currentPath.endsWith(page));
+  let isProtected = !isPublicOnly;
   
-  // Hide body immediately if protected so they don't see content before redirect
-  if (isProtected) {
-    document.body.style.visibility = 'hidden';
-  }
+  // Custom: Subdirectories like /courses/ are ALWAYS protected
+  if (isSubdir) isProtected = true;
+  
+  // Hide body by default for ALL protected OR public-only pages to avoid flicker
+  // We'll reveal it once we know the final auth state.
+  document.body.style.visibility = 'hidden';
+
+
+
 
   // 4. User Authentication Observer
   onAuthStateChanged(auth, (user) => {
@@ -59,6 +78,24 @@ document.addEventListener('DOMContentLoaded', () => {
       if (userPill) userPill.style.display = 'flex';
       if (authBtns) authBtns.style.display = 'none';
 
+      // MEMBERS: Show all nav links EXCEPT "HOME"
+      navLinks.forEach(link => {
+        const text = link.textContent.trim().toLowerCase();
+        if (text === 'home') {
+          link.style.display = 'none';
+        } else {
+          link.style.display = 'inline-flex';
+        }
+      });
+      
+      // ... Redirect logic ...
+      const isPublicOnly = !isProtected || isAtRoot || fileName === 'index.html' || fileName === 'auth.html';
+      const dashPath = isSubdir ? '../index1.html' : 'index1.html';
+      
+      if (isPublicOnly && currentPath.endsWith(fileName) && (fileName === 'index.html' || fileName === 'auth.html' || isAtRoot)) {
+         window.location.href = dashPath;
+         return;
+      }
       // Reveal hidden content if it was a protected page
       if (isProtected) {
         document.body.style.visibility = 'visible';
@@ -78,12 +115,28 @@ document.addEventListener('DOMContentLoaded', () => {
       // User is logged out
       if (userPill) userPill.style.display = 'none';
       if (authBtns) authBtns.style.display = 'flex';
+
+      // GUESTS: Hide ALL links EXCEPT "HOME"
+      navLinks.forEach(link => {
+        const text = link.textContent.trim().toLowerCase();
+        // Keep 'Home' visible, hide the rest
+        if (text !== 'home' && !link.classList.contains('brand')) {
+          link.style.display = 'none';
+        } else {
+          link.style.display = 'inline-flex';
+        }
+      });
       
       if (isProtected) {
         console.warn("🔐 Unauthorized access attempt. Redirecting to login...");
         window.location.href = loginPath;
+      } else {
+        // Reveal the public page (Home or Auth) only once we confirmed they are logged out
+        document.body.style.visibility = 'visible';
       }
     }
+
+
   });
 
   // 4. Logout Handler

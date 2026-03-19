@@ -53,39 +53,27 @@ Each course includes:
 
 ```
 LearnX/
-├── index.html          ← Login / Registration page (Firebase Auth)
+├── index.html          ← Premium Public Landing Page (Marketing)
+├── auth.html           ← Login / Registration page (Firebase Auth)
 ├── index1.html         ← Authenticated Dashboard (course listing)
-├── home.html           ← Public landing page (marketing)
-├── about.html          ← About the platform
+├── about.html          ← Detailed About Page
 ├── Contact.html        ← Developer contact information
-├── feedback.html       ← Feedback form (saves to Firestore)
-├── admin.html          ← Admin panel (Firestore: view feedback, manage users)
-├── profile.html        ← User profile editor (name, bio, location)
+├── feedback.html       ← User Feedback system (Firestore)
+├── admin.html          ← Protected Admin Command Center
+├── profile.html        ← Global User Profile manager
 │
 ├── assets/
 │   ├── css/
-│   │   └── style.css           ← Global design system (themes, layout, components)
+│   │   └── style.css           ← Core Design System & Theme Engine
 │   ├── js/
-│   │   ├── theme.js            ← Shared dark/light mode toggle
-│   │   ├── firebase-init.js    ← Shared Firebase initialization (ES Module)
-│   │   ├── course.js           ← Mobile sidebar toggle + scroll-sync
-│   │   └── tryit.js            ← "Try it Yourself" editor functionality
-│   └── img/                    ← Logos and course images
+│   │   ├── nav.js              ← Global Auth Guard & Navigation Controller
+│   │   ├── theme.js            ← Persistence-based Dark Mode manager
+│   │   ├── course.js           ← Specialized Course Layout logic
+│   │   └── tryit.js            ← Inline Code Execution Engine
+│   └── img/                    ← Project assets and logos
 │
 ├── courses/
-│   ├── html.html       ← 14 course pages, each with sidebar + chapters
-│   ├── css.html
-│   ├── js.html
-│   ├── python.html
-│   ├── sql.html
-│   ├── java.html
-│   ├── c.html
-│   ├── excel.html
-│   ├── numpy.html
-│   ├── pandas.html
-│   ├── matplotlib.html
-│   ├── ai.html
-│   └── r.html
+│   ├── [13-pages].html         ← Deep technical modules with interactive labs
 │
 ├── README.md
 └── LICENSE

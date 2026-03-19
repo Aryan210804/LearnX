@@ -127,39 +127,58 @@
 
   <div class="dashboard-container">
     <div class="page-container">
-      <h1 class="page-title"><i class="fas fa-book-reader" style="margin-right:8px;"></i> About LearnX</h1>
-
-      <div class="page-content">
-        <p><strong>LearnX</strong> is a premium, open-source educational platform developed as part of a mission to make
-          learning programming simple, accessible, and structured.</p>
-        <p>Our platform mimics the clean, straightforward methodology of top-tier coding bootcamps, removing the noise
-          and presenting you with purely practical, immediately usable knowledge.</p>
-
-        <h3 style="color:var(--text); margin-top:32px; margin-bottom:16px;">🌟 What We Build</h3>
-        <ul class="topic-list">
-          <li><i class="fab fa-html5"></i>
-            <div><strong>Web Basics:</strong> HTML, CSS, Javascript</div>
-          </li>
-          <li><i class="fab fa-python"></i>
-            <div><strong>Backend:</strong> Python, Java, C</div>
-          </li>
-          <li><i class="fas fa-database"></i>
-            <div><strong>Data & Analytics:</strong> SQL, NumPy, Pandas, Excel, R</div>
-          </li>
-          <li><i class="fas fa-robot"></i>
-            <div><strong>Machine Learning:</strong> AI & Predictive models</div>
-          </li>
-        </ul>
-
-        <p>The goal is to provide a comprehensive, structured digital notebook that anyone can reference while building
-          real-world projects. No arbitrary paywalls, no confusing navigation — just pure code.</p>
+      <div class="hero-mini" style="text-align:center; padding-bottom: 40px; border-bottom: 1px solid var(--border); margin-bottom: 40px;">
+        <h1 class="page-title"><i class="fas fa-book-reader" style="margin-right:12px; color: var(--primary);"></i> About LearnX</h1>
+        <p style="font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Building the future of open-source development training.</p>
       </div>
 
-      <div style="text-align: center;">
-        <a href="index1.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+      <div class="page-content">
+        <section class="mb-4">
+          <h2 style="font-size: 22px; font-weight: 800; margin-bottom: 16px;"><i class="fas fa-bullseye" style="margin-right:10px; color: var(--primary);"></i> Our Mission</h2>
+          <p><strong>LearnX</strong> was founded on a simple principle: high-quality technical education should be clear, accessible, and distraction-free. In an era of overwhelming information, we provide a structured path that mimics the rigor of a professional coding bootcamp, delivered entirely through a clean, premium interface.</p>
+        </section>
+
+        <section class="mb-4">
+          <h2 style="font-size: 22px; font-weight: 800; margin-bottom: 20px;"><i class="fas fa-star" style="margin-right:10px; color: var(--primary);"></i> Why LearnX?</h2>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="background: var(--bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
+              <h4 style="margin-bottom: 8px; color: var(--text);"><i class="fas fa-code" style="margin-right:8px; color: var(--primary);"></i> Zero Noise</h4>
+              <p style="font-size: 13px; margin-bottom:0;">We skip the fluff. Every lesson is designed to be purely practical, focusing on the syntax and patterns you'll use in real-world projects.</p>
+            </div>
+            <div style="background: var(--bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
+              <h4 style="margin-bottom: 8px; color: var(--text);"><i class="fas fa-keyboard" style="margin-right:8px; color: var(--primary);"></i> Hands-on Learning</h4>
+              <p style="font-size: 13px; margin-bottom:0;">With our integrated "Try It Yourself" editor, you can experiment with code directly on the page without installing any software.</p>
+            </div>
+            <div style="background: var(--bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
+              <h4 style="margin-bottom: 8px; color: var(--text);"><i class="fas fa-moon" style="margin-right:8px; color: var(--primary);"></i> Premium Experience</h4>
+              <p style="font-size: 13px; margin-bottom:0;">A beautifully designed interface with full dark-mode support ensures your learning environment is as comfortable as it is powerful.</p>
+            </div>
+            <div style="background: var(--bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
+              <h4 style="margin-bottom: 8px; color: var(--text);"><i class="fas fa-unlock" style="margin-right:8px; color: var(--primary);"></i> Open Access</h4>
+              <p style="font-size: 13px; margin-bottom:0;">LearnX is open-source and free to use. We believe in empowering developers worldwide by removing financial barriers.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-4">
+          <h2 style="font-size: 22px; font-weight: 800; margin-bottom: 16px;"><i class="fas fa-layer-group" style="margin-right:10px; color: var(--primary);"></i> The Curriculum</h2>
+          <p>Our curriculum is divided into three major pillars, covering the entire modern development stack:</p>
+          <ul class="topic-list">
+            <li><i class="fab fa-html5"></i> <div><strong>The Web Foundation:</strong> HTML, CSS, and modern JavaScript (ES6+).</div></li>
+            <li><i class="fab fa-python"></i> <div><strong>Systems & Logic:</strong> Backend logic with Python, Java, C, and SQL.</div></li>
+            <li><i class="fas fa-brain"></i> <div><strong>Data Intelligence:</strong> NumPy, Pandas, and Artificial Intelligence fundamentals.</div></li>
+          </ul>
+        </section>
+
+        <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 30px; border-radius: 16px; color: #fff; text-align: center; margin-top: 40px;">
+          <h3 style="margin-bottom: 10px;">Ready to start your journey?</h3>
+          <p style="opacity: 0.9; font-size: 14px; margin-bottom: 20px;">Join thousands of learners mastering development on LearnX today.</p>
+          <a href="index1.html" style="background: #fff; color: var(--primary); padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none;">Launch Dashboard</a>
+        </div>
       </div>
     </div>
   </div>
+
 
 
   <!-- Shared scripts -->

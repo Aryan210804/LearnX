@@ -276,9 +276,23 @@
   </div>
 
   <script type="module">
-    import { auth, db } from './assets/js/firebase-init.js';
-    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-    import { collection, query, orderBy, onSnapshot, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+    import { getFirestore, collection, query, orderBy, onSnapshot, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
+    // Firebase configuration (inline for file:// protocol compatibility)
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
+      authDomain: "learnx-d823d.firebaseapp.com",
+      projectId: "learnx-d823d",
+      storageBucket: "learnx-d823d.appspot.com",
+      messagingSenderId: "1036419202232",
+      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
 
     const feedbackList = document.getElementById("feedback-list");
     const usersList = document.getElementById("users-list");
@@ -367,8 +381,8 @@
     };
   </script>
 
-  <!-- Shared theme toggle -->
+  <!-- Shared scripts for consistent behavior -->
   <script src="assets/js/theme.js"></script>
+  <script type="module" src="assets/js/nav.js"></script>
 </body>
-
 </html>

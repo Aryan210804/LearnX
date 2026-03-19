@@ -187,20 +187,8 @@
   </div>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
-      authDomain: "learnx-d823d.firebaseapp.com",
-      projectId: "learnx-d823d",
-      storageBucket: "learnx-d823d.appspot.com",
-      messagingSenderId: "1036419202232",
-      appId: "1:1036419202232:web:4f7778b3b4c16f1a61084d"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+    import { auth, db, handleFirebaseError } from "./assets/js/firebase-init.js";
+    import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
     const feedbackForm = document.getElementById("feedback-form");
     const submitBtn = document.getElementById("submit-btn");
@@ -226,7 +214,7 @@
         feedbackForm.reset();
       } catch (error) {
         console.error("Error adding document: ", error);
-        alert("Error sending feedback. Please try again later.");
+        alert(handleFirebaseError(error));
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = "<i class='fas fa-paper-plane'></i> Send Feedback";

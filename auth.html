@@ -380,6 +380,7 @@
     } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
     import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
+    // Firebase configuration (inline to support file:// protocol compatibility)
     const firebaseConfig = {
       apiKey: "AIzaSyDrOAHTg-BuXyDRcBAV3uxoFHUwIzlV3bU",
       authDomain: "learnx-d823d.firebaseapp.com",
@@ -415,6 +416,27 @@
       messageDiv.style.border = isError ? '1px solid rgba(229, 57, 53, 0.2)' : '1px solid rgba(4, 170, 109, 0.2)';
     }
 
+    function handleFirebaseError(error) {
+      console.error("Firebase Error:", error);
+      let msg = error.message || "An unknown error occurred.";
+      msg = msg.replace("Firebase: ", "");
+      switch (error.code) {
+        case "auth/network-request-failed":
+          if (window.location.protocol === "file:") {
+            return "Network Error: Firebase Authentication fails when running from a local file (file://). Please use a local server (like Live Server) or check your connection.";
+          }
+          return "Network Error: Please check your internet connection.";
+        case "auth/invalid-email": return "The email address is not valid.";
+        case "auth/user-disabled": return "This user account has been disabled.";
+        case "auth/user-not-found":
+        case "auth/wrong-password":
+        case "auth/invalid-credential": return "Invalid email or password. Please try again.";
+        case "auth/email-already-in-use": return "An account already exists with this email address.";
+        case "auth/weak-password": return "Password is too weak (min 6 chars).";
+        default: return msg;
+      }
+    }
+
     function updateForm() {
       formTitle.textContent = isLogin ? "Welcome Back" : "Start Learning";
       formSubtitle.textContent = isLogin ? "Enter your credentials to access the dashboard." : "Create a free account to unlock all masterclasses.";
@@ -444,6 +466,7 @@
 
       authButton.disabled = true;
       authButton.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Processing...';
+      messageDiv.style.display = 'none';
 
       try {
         if (isLogin) {
@@ -459,7 +482,7 @@
         }
         setTimeout(() => window.location.href = "index1.html", 1000);
       } catch (error) {
-        showMessage(error.message.replace('Firebase: ', ''));
+        showMessage(handleFirebaseError(error));
         authButton.disabled = false;
         authButton.textContent = isLogin ? "Sign In" : "Create Account";
       }
